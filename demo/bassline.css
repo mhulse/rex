@@ -271,29 +271,34 @@ hr, .hr1, .hr2, .hr3, .hr4 {
  * structure is represented by typographic conventions rather than by
  * elements.
  * 
- * @see https://github.com/twitter/bootstrap/blob/master/less/code.less
+ * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
+ * @see http://perishablepress.com/wrapping-content/
  */
 
 pre {
 	font: .75em/2 Monaco, Menlo, Consolas, "Courier New", monospace; /* 12px/24px */
 	color: #333;
-	background-color: #ddd;
-	background-color: rgba(0, 0, 0, .1);
-	border-width: 1px; /* .083em */
-	border-style: solid;
-	border-color: #ccc;
-	border-color: rgba(0, 0, 0, .15);
+	border: 1px solid rgba(0, 0, 0, .15); /* .083em */
+	background: rgba(0, 0, 0, .1);
 	margin: 1.833em 0; /* 22px */
 	padding: .917em; /* 11px */
-	display: block;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	overflow: auto;
 	word-break: break-all;
 	word-wrap: break-word;
 	white-space: pre;
-	overflow: auto;
+	white-space: pre-wrap;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
 }
+	pre code {
+		color: inherit;
+		border: 0;
+		background: transparent;
+		padding: 0;
+		white-space: pre;
+		white-space: pre-wrap;
+	}
 
 /**
  * The `<blockquote>` element represents a section that is quoted from
@@ -614,9 +619,24 @@ data {}
 time {}
 
 /**
+ * The `<code>` element represents a fragment of computer code. This could
+ * be an XML element name, a file name, a computer program, or any other
+ * string that a computer would recognize.
+ *
+ * @see http://perishablepress.com/wrapping-content/
  */
 
-code {}
+code {
+	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	color: #333;
+	border: 1px solid rgba(0, 0, 0, .15);
+	background: rgba(0, 0, 0, .1);
+	padding: 1px 3px;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	white-space: nowrap;
+}
 
 /**
  */
