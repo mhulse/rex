@@ -6,9 +6,9 @@
 
 #### DEMO
 
-[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=https://github.com/mhulse/bassline/&chs=240x240)](https://mhulse.github.com/bassline/demo/)
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=https://github.com/mhulse/bassline/&chs=240x240)](http://mhulse.github.com/bassline/demo/)
 
-(Scan QR code with phone and/or click to [view the latest demo](https://mhulse.github.com/bassline/demo/).)
+(Scan QR code with phone and/or click to [view the latest demo](http://mhulse.github.com/bassline/demo/).)
 
 ---
 
