@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /**
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
@@ -260,7 +262,7 @@ hr, .hr1, .hr2, .hr3, .hr4 {
 	.hr4 {
 		border-top-width: .125em; /* 2px */
 		border-color: #999;
-		margin: .625em 0 .688em; /* 10px 0 11px */
+		margin: 1.375em 0 1.438em; /* 10px 0 11px */
 	}
 	.hr4 { border-style: dotted; }
 
@@ -578,21 +580,35 @@ q:after {
  * paragraph, description list group, or section that is the nearest
  * ancestor of the `<dfn>` element must also contain the definition(s) for
  * the term given by the `<dfn>` element.
+ *
+ * The `<abbr>` element represents an abbreviation or acronym. The
+ * optional `title` attribute may be used to provide an expansion of the
+ * abbreviation. If specified, the `title` attribute must contain an
+ * expansion of the abbreviation and nothing else.
  */
 
-dfn {}
+dfn,
+dfn[title],
+abbr,
+abbr[title] { border-bottom: 1px dotted #666; }
 
 /**
- */
-
-abbr {}
-
-/**
+ * The `<data>` element links a given content with a machine-readable
+ * translation. If the content is time- or date-related, the `<time>` must
+ * be used.
+ *
+ * This element is in the WHATWG version of HTML and not in the W3C draft
+ * of HTML5. That means it is a highly experimental feature and shouldn't
+ * be use on Web sites.
  */
 
 data {}
 
 /**
+ * The `<time>` element represents a precise date and/or time in the
+ * proleptic Gregorian calendar. The time element encodes modern dates and
+ * times in a machine-readable way, so that, for example, user agents
+ * could offer to add an event to the user's calendar.
  */
 
 time {}
@@ -672,7 +688,7 @@ bdo {}
 
 span {}
 	/* The italic version of an ampersand is more decorative and interesting than its roman counterpart. */
-	span.amp {
+	span.amp1 {
 		font-family: Baskerville, Palatino, "Book Antiqua", serif;
 		font-style: italic;
 	}
@@ -926,7 +942,7 @@ command {}
 
 menu {}
 
-/*----------------------------------( UTILITIES )----------------------------------*/
+/*----------------------------------( BASSLINE )----------------------------------*/
 
 /**
  * Baseline grid class.
@@ -964,28 +980,3 @@ menu {}
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 	}
-
-/**
- * Contains child margins (prevents margin collapse).
- *
- * @see http://snipplr.com/view/4831/
- */
-
-.force {
-	margin-top: -1px;
-	margin-bottom: -1px;
-	padding: 1px 0;
-}
-
-/*----------------------------------( DEMO ONLY )----------------------------------*/
-
-#container {
-	margin: 0 1.5em;
-	padding: 1.5em 0;
-}
-@media only screen and (min-width: 705px) { /* 640 + 50 + 15 */
-	#container {
-		width: 640px;
-		margin: 0 auto;
-	}
-}
