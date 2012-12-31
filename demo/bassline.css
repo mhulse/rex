@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 /**
+ * @TODO: Backup colors for `rgba` values.
+ *
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
  * @see http://webtypography.net/toc/
@@ -16,6 +18,30 @@
 
 /**
  * The `<html>` element represents the root of an HTML document.
+ *
+ * Base `font-size` = `16px`.
+ *
+ * PX to EM:
+ * Formula: size in pixels / parent size in pixels
+ * Example: 12px / 16px = .75em
+ *
+ * PX to %:
+ * Formula: size in pixels / parent size in pixels * 100
+ * Example: 12px / 16px * 100 = 75%
+ *
+ * PX to PT:
+ * Formula: size in pixels * (points per inch / pixels per inch)
+ * Example: 16px * (72pt / 96px) = 12pt
+ *
+ * EM to PX:
+ * Formula: size in EMs * parent size in pixels
+ * Example: .75em * 16px = 12px
+ *
+ * EM to %:
+ * Formula: size in EMs * 100
+ * Example: .75em * 100 = 75%
+ *
+ * @see http://pxtoem.com/
  */
 
 html {
@@ -28,27 +54,27 @@ html {
 
 /**
  * The `<body>` element represents the main content of the document.
- *
+ * 
  * Baseline grid:
  *
  * Base font size = 16px or 100% or 1em.
- * Base line height = 24px or 150% or 1.5em.
+ * Base line height = 28px or 175% or 1.75em.
  *
  * Rule: Make sure all elements take up a vertical height (including
- * margins) are multiples of our base line height (24).
+ * margins) are multiples of our base line height.
  * 
  * Calculate line height by dividing base line height by desired font size.
  *
- * If the font size greater than `24px`, then base your calculations on
- * the next full `line-height` value up: `1.5` * `2` = `3` (`48px`). For
- * example, if the desired font size is `2.875em` (`46px`), the math would
- * be: (`1.5` * `2`) / `2.875` = `1.04347826086957`.
+ * If the font size greater than `28px`, then base your calculations on
+ * the next full `line-height` value up: `1.75` * `2` = `3.5` (`56px`).
+ * For example, if the desired font size is `2.875em` (`46px`), the math
+ * would be: (`1.8` * `2`) / `2.875` = `1.25217391304348`.
  *
  * Line height chart:
- *
- * | x1 = (1.5em)     | x2 = (3em)                   | x3 = (4.5em)                  | x4 = (6em)                  | x5 = (7.5em)                   |
- * | 0 - 24px (1.5em) | 25px (1.563em) - 48px (3.em) | 49px (3.063em) - 72px (4.5em) | 73px (4.563em) - 96px (6em) | 97px (6.063em) - 120px (7.5em) |
- * |                  |                              |                               |                             |                                |
+ *                       |                  |                               |                               |                                |                              |
+ * Target `line-height`: | x1 = (1.8em)     | x2 = (3.6em)                  | x3 = (5.4em)                  | x4 = (7.2em)                   | x5 = (9em)                   |
+ *  Min/max `font-size`: | 0 - 28px (1.8em) | 29px (1.813em) - 57px (3.6em) | 58px (3.625em) - 86px (5.4em) | 87px (5.438em) - 115px (7.2em) | 116px (7.25em) - 144px (9em) |
+ *                       |                  |                               |                               |                                |                              |
  *
  * Important: WebKit needs at least ten-millionth decimal places; for
  * example: `line-height: 1.3333333;` (that's 7 decimal places).
@@ -60,11 +86,11 @@ html {
  * @see http://code.stephenmorley.org/html-and-css/the-myth-of-web-safe-fonts/
  * @see http://stackoverflow.com/questions/2703056/body-font-size-100-01-vs-body-font-size-100
  * @see http://www.sitepoint.com/typography-baseline-rhythm-deciphered/
- * @see http://modularscale.com/scale/?px1=16&px2=46&ra1=1.618&ra2=0
+ * @see http://modularscale.com/scale/?px1=16&px2=40&ra1=1.618&ra2=0
  */
 
 body {
-	font: 100.01%/1.5 Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
+	font: 100.01%/1.8 Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
 	color: #000;
 	/* Improve default text rendering, handling of kerning pairs and ligatures: */
 	-webkit-font-smoothing: antialiased;
@@ -138,31 +164,38 @@ aside {}
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { margin: 0; }
 
+/**
+ * (16px = base font size) * (6 heading levels) = (96px = "important number")
+ * Scale: 1:2 octave.
+ *
+ * @see http://modularscale.com/scale/?px1=16&px2=96&ra1=2&ra2=0
+ */
+
 h1, .h1 {
-	font-size: 2.875em; /* 46px */
-	line-height: 1.04347826086957;
+	font-size: 6em; /* 96px */
+	line-height: 1.2; /* 7.2 / 6 */
 }
 h2, .h2 {
-	font-size: 2.5em; /* 40px */
-	line-height: 1.2;
+	font-size: 4em; /* 64px */
+	line-height: 1.35; /* 5.4 / 4 */
 }
 h3, .h3 {
-	font-size: 2.125em; /* 34px */
-	line-height: 1.41176470588235;
+	font-size: 3em; /* 48px */
+	line-height: 1.2; /* 3.6 / 3 */
 }
 h4, .h4 {
-	font-size: 1.75em; /* 28px */
-	line-height: 1.71428571428571;
+	font-size: 2em; /* 32px */
+	line-height: 1.8; /* 3.6 / 2 */
 }
 h5, .h5 {
-	font-size: 1.375em; /* 22px */
-	line-height: 1.09090909090909;
-	padding: .54545454545455em 0; /* Half `line-height`. */
+	font-size: 1.5em; /* 24px */
+	line-height: 1.2; /* 1.8 / 1.5 */
+	padding: .6em 0; /* 1.2 / 2 */
 }
 h6, .h6 {
 	font-size: 1em; /* 16px */
-	line-height: 1.5;
-	padding: .75em 0; /* Half `line-height`. */
+	line-height: 1.8; /* 1.8 / 1 */
+	padding: .9em 0; /* 1.8 / 2 */
 }
 
 /**
@@ -211,8 +244,8 @@ address {}
 
 p {
 	font-size: 1.125em; /* 18px */
-	line-height: 1.33333333333333;
-	margin: 0 0 1.33333333333333em;
+	line-height: 1.6;
+	margin: 0 0 1.6em;
 	-webkit-hyphens: auto;
 	   -moz-hyphens: auto;
 	        hyphens: auto;
@@ -223,11 +256,11 @@ p {
 		font-weight: bold;
 		font-size: 96px;
 		font-size: 6rem; /* 96px */
-		line-height: 1;
+		line-height: 1.2;
 		color: #fff;
-		background: #999;
+		background: rgba(0, 0, 0, .25);
 		margin-right: 12px;
-		margin-right: .75rem; /* 12px */
+		margin-right: .8rem; /* 12px */
 		padding: 0 16px;
 		padding: 0 1rem;
 		float: left;
@@ -249,12 +282,13 @@ p {
  * @see https://github.com/twitter/bootstrap/blob/070c125ceceb2a164773f51226950350445160ee/docs/assets/css/bootstrap.css#L876-L881
  */
 
+/* @TODO: Use REM? */
 hr, .hr1, .hr2, .hr3, .hr4 {
-	/* `border` + `height` + `margin` = base line height (`1.5em` or `24px`). */
+	/* `border` + `height` + `margin` = base line height (`1.8em` or `28px`). */
 	border: 0;
 	border-top: .063em solid #ccc; /* 1px */
 	height: .063em; /* 1px */
-	margin: .688em 0; /* 11px */
+	margin: .8125em 0; /* 13px */
 	padding: 0;
 }
 	.hr2 { border-style: dotted; }
@@ -262,7 +296,7 @@ hr, .hr1, .hr2, .hr3, .hr4 {
 	.hr4 {
 		border-top-width: .125em; /* 2px */
 		border-color: #999;
-		margin: 1.375em 0 1.438em; /* 10px 0 11px */
+		margin: 1.5em 0 1.625em; /* (12px * 2 = 24px) 0 (13px * 2 = 26px) */
 	}
 	.hr4 { border-style: dotted; }
 
@@ -273,20 +307,18 @@ hr, .hr1, .hr2, .hr3, .hr4 {
  * 
  * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
  * @see http://perishablepress.com/wrapping-content/
+ * @see http://perishablepress.com/perfect-pre-tags/
  */
 
 pre {
-	font: .75em/2 Monaco, Menlo, Consolas, "Courier New", monospace; /* 12px/24px */
+	font: .875em/2.05714285714286 "Courier new", Courier, "Andale Mono", monospace; /* (14px / 16px = .875em)/(1.8em / .875em = 2.05714285714286) */
 	color: #333;
-	border: 1px solid rgba(0, 0, 0, .15); /* .083em */
+	border: .07142857142857em solid rgba(0, 0, 0, .15); /* 1px / 14px */
 	background: rgba(0, 0, 0, .1);
-	margin: 1.833em 0; /* 22px */
-	padding: .917em; /* 11px */
+	margin: 1em 0; /* (28px / 14px = 2em) / 2 = 1em */
+	padding: .92857142857143em; /* (28px - 2px (top/bottom borders) = 26px) / (14px = 1.85714285714286) / 2 */
 	overflow: auto;
-	word-break: break-all;
-	word-wrap: break-word;
 	white-space: pre;
-	white-space: pre-wrap;
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
 	        border-radius: 4px;
@@ -313,12 +345,12 @@ pre {
 
 blockquote {
 	border-left: 3px solid #ccc;
-	margin: 0 0 1.5em;
-	padding: 0 0 0 1.5em;
+	margin: 0 0 1.8em;
+	padding: 0 0 0 1.8em;
 	quotes: '“' '”';
 }
 	blockquote p {
-		font: italic 1.125em/1.33333333333333 Cambria, Georgia, serif; /* 18px */
+		font: italic 1.125em/1.6 Cambria, Georgia, serif; /* 18px */
 		text-indent: -.75em;
 		word-spacing: .05em;
 	}
@@ -340,9 +372,9 @@ blockquote {
 		blockquote p:last-of-type { margin: 0; }
 	blockquote footer {
 		font-size: .875em; /* 14px */
-		line-height: 1.71428571428571em;
+		line-height: 2.05714285714286;
 		color: #666;
-		margin: 0 0 1.71428571428571em;
+		margin: 0 0 2.05714285714286em;
 	}
 	/* For `<q>`s in `<blockquote>`s: */
 	blockquote q:before {
@@ -381,10 +413,10 @@ blockquote {
 ol,
 ul {
 	font-size: 1em; /* 16px */
-	line-height: 1.5em; /* 24px */
-	margin: 0 0 1.5em;
+	line-height: 1.8; /* 28px */
+	margin: 0 0 1.8em 2.5em;
 	padding: 0;
-	list-style-position: inside;
+	list-style-position: outside;
 }
 	li ol,
 	li ul { margin: 0 0 0 3em; }
@@ -411,11 +443,11 @@ ul {
  */
 
 dl {
-	margin: 0 0 1.5em;
+	margin: 0 0 1.8em;
 	padding: 0;
 }
 	dl dt { font-weight: bold; }
-	dl dd { margin-left: 1.5em; }
+	dl dd { margin-left: 1.8em; }
 
 /**
  * The `<figure>` element represents some flow content, optionally with a
@@ -525,8 +557,8 @@ b { letter-spacing: .015em; }
 small,
 p.small {
 	font-size: .875em; /* 14px */
-	line-height: 1.71428571428571em;
-	margin: 0 0 1.71428571428571em;
+	line-height: 1.02857142857143; /* 2.05714285714286 / 2 */
+	margin: 0 0 1.02857142857143em;
 }
 
 /**
@@ -627,11 +659,11 @@ time {}
  */
 
 code {
-	font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
+	font-family: "Courier new", Courier, "Andale Mono", monospace;
 	color: #333;
 	border: 1px solid rgba(0, 0, 0, .15);
 	background: rgba(0, 0, 0, .1);
-	padding: 1px 3px;
+	padding: 1px 2px;
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 	        border-radius: 3px;
@@ -980,7 +1012,7 @@ menu {}
 		background-image: -webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px);
 		background-image: -moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px);
 		background-image: linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px);
-		background-size: 100% 1.5rem;   /* Match base `line-height`. */
+		background-size: 100% 1.8rem;   /* Match base `line-height`. */
 		background-position: 0 0;       /* Put line adjustments here. */
 		background-origin: content-box; /* Regardless of padding, background will begin in the corner of the box. */
 		background-attachment: local;   /* For scrolling. */
@@ -993,8 +1025,8 @@ menu {}
 		content: "";
 		pointer-events: none; /* The element is never the target of mouse events. */
 	}
-	.bassline.half:before { background-size: 100% .75rem; } /* Half base `line-height`. */
-	.bassline.double:before { background-size: 100% 3rem; } /* Double base `line-height`. */
+	.bassline.half:before { background-size: 100% .9rem; } /* Half base `line-height`. */
+	.bassline.double:before { background-size: 100% 3.6rem; } /* Double base `line-height`. */
 	/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
 	.bassline * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
