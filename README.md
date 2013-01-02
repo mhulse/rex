@@ -1,8 +1,8 @@
-# Bassline *(beta!)*
+# Bassline *(super über beta!)*
 
 ### Vertical baseline rhythm experiments.
 
-Inspired by [cballenar](https://github.com/cballenar)'s [css-baseline-grid.css](https://gist.github.com/4277585)! ;)
+**BIG UPS** to [Carlos](https://github.com/cballenar) for the [code, help and inspiration](https://gist.github.com/4277585)!!!
 
 ---
 
