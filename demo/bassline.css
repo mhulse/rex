@@ -42,6 +42,7 @@
  * Example: .75em * 100 = 75%
  *
  * @see http://pxtoem.com/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-html-element-0
  */
 
 html {
@@ -87,6 +88,7 @@ html {
  * @see http://stackoverflow.com/questions/2703056/body-font-size-100-01-vs-body-font-size-100
  * @see http://www.sitepoint.com/typography-baseline-rhythm-deciphered/
  * @see http://modularscale.com/scale/?px1=16&px2=40&ra1=1.618&ra2=0
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-body-element-0
  */
 
 body {
@@ -94,7 +96,7 @@ body {
 	color: #000;
 	/* Improve default text rendering, handling of kerning pairs and ligatures: */
 	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	        font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	/* Initial height of `<html>`, but will expand taller if necessary: */
 	min-height: 100%; /* Compliant browsers. */
@@ -108,6 +110,8 @@ body {
  * chapters in a book, the various tabbed pages in a tabbed dialog box, or
  * the numbered sections of a thesis. A web site's home page could be
  * split into sections for an introduction, news items, contact information.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-section-element
  */
 
 section {}
@@ -121,6 +125,8 @@ section {}
  * groups of primary navigation links. In particular, it is common for
  * footers to have a list of links to various key parts of a site, but the
  * `<footer>` element is more appropriate in such cases.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-nav-element
  */
 
 nav {}
@@ -131,6 +137,8 @@ nav {}
  * site. This could be a forum post, a magazine or newspaper article, a
  * Web log entry, a user-submitted comment, or any other independent item
  * of content.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-article-element
  */
 
 article {}
@@ -141,6 +149,8 @@ article {}
  * `<aside>` element, and which could be considered separate from that
  * content. Such sections are often represented as sidebars in printed
  * typography.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-aside-element
  */
 
 aside {}
@@ -160,6 +170,7 @@ aside {}
  * @see http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/
  * @see https://github.com/stubbornella/oocss/blob/master/core/heading/heading.css
  * @see http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-h1-h2-h3-h4-h5-and-h6-elements
  */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { margin: 0; }
@@ -202,6 +213,8 @@ h6, .h6 {
  * The `<hgroup>` element represents the heading of a section. It is used
  * to group a set of `<h1>`–`<h6>` elements when the heading has multiple
  * levels, such as subheadings, alternative titles, or taglines.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-hgroup-element
  */
 
 hgroup {}
@@ -212,6 +225,8 @@ hgroup {}
  * elements to mark up a page's title with its subtitle or tagline. header
  * elements may, however, contain more than just the section's headings
  * and subheadings — e.g., version history information or publication date.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-header-element
  */
 
 header {}
@@ -222,6 +237,8 @@ header {}
  * section, such as who wrote it, links to related documents, copyright
  * data, etc. Contact information for the section given in a footer should
  * be marked up using the address element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-footer-element
  */
 
 footer {}
@@ -229,6 +246,8 @@ footer {}
 /**
  * Represents the contact information for its enclosing section. If it is
  * a child of the body element, then it applies to the document as a whole.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-address-element
  */
 
 address {}
@@ -237,6 +256,8 @@ address {}
 
 /**
  * The `<p>` element represents a paragraph.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-p-element
  */
 
 p {
@@ -305,6 +326,7 @@ p {
  * @see https://gist.github.com/4277585
  * @see https://github.com/h5bp/html5-boilerplate/blob/b378ce239dfb017e32fbeacc5ab0346258b089e2/css/main.css#L42-L53
  * @see https://github.com/twitter/bootstrap/blob/070c125ceceb2a164773f51226950350445160ee/docs/assets/css/bootstrap.css#L876-L881
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-hr-element-0
  */
 
 /* @TODO: Use REM? */
@@ -333,16 +355,18 @@ hr, .hr1, .hr2, .hr3, .hr4 {
  * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
  * @see http://perishablepress.com/wrapping-content/
  * @see http://perishablepress.com/perfect-pre-tags/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-pre-element
  */
 
 /* @TODO: Make `font-size` bigger. */
 pre {
-	font: .875em/2.05714285714286 "Courier new", Courier, "Andale Mono", monospace; /* (14px / 16px = .875em)/(1.8em / .875em = 2.05714285714286) */
+	font: .875em/2.05714285714286 Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif; /* (14px / 16px = .875em)/(1.8em / .875em = 2.05714285714286) */
 	color: #333;
 	border: .07142857142857em solid rgba(0, 0, 0, .15); /* 1px / 14px */
 	background: rgba(0, 0, 0, .1);
 	margin: 1em 0; /* (28px / 14px = 2em) / 2 = 1em */
 	padding: .92857142857143em; /* (28px - 2px (top/bottom borders) = 26px) / (14px = 1.85714285714286) / 2 */
+	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
 	-webkit-border-radius: 4px;
@@ -365,6 +389,7 @@ pre {
  *
  * @see http://html5doctor.com/blockquote-q-cite/
  * @see http://www.markinns.com/articles/full/hanging_quotation_marks
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-blockquote-element
  */
 
 blockquote {
@@ -432,6 +457,9 @@ blockquote {
  * parent element's list, as defined for those elements. Otherwise, the
  * list item has no defined list-related relationship to any other `<li>`
  * element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-ol-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-ul-element
  */
 
 ol,
@@ -464,6 +492,9 @@ ul {
  * list (`<dl>` element).
  *
  * @see http://www.maxdesign.com.au/articles/definition/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-dl-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-dt-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-dd-element
  */
 
 dl {
@@ -487,6 +518,9 @@ dl {
  * The `<figcaption>` element represents a caption or legend for the rest
  * of the contents of the `<figcaption>` element's parent figure element,
  * if any.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-figure-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-figcaption-element
  */
 
 figure { margin: 1.5em 0 0; }
@@ -521,6 +555,8 @@ figure { margin: 1.5em 0 0; }
  * children. It can be used with the `class`, `lang`, and `title`
  * attributes to mark up semantics common to a group of consecutive
  * elements.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-div-element
  */
 
 div {}
@@ -535,6 +571,8 @@ div {}
  *
  * The `target`, `rel`, `media`, `hreflang`, and `type` attributes must be
  * omitted if the `href` attribute is not present.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-a-element
  */
 
 a {
@@ -568,6 +606,9 @@ a {
  * for text with stress emphasis, `<strong>` for text with semantic
  * importance, `<cite>` for titles in a citation or bibliography, `<dfn>`
  * for defining a word, and `<var>` for mathematical variables.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-em-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-i-element
  */
 
 em,
@@ -590,6 +631,9 @@ i {}
  * `<h6>` elements, stress emphasis should use the `<em>` element,
  * importance should be denoted with the `<strong>` element, and text
  * marked or highlighted should use the `<mark>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-strong-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-b-element
  */
 
 strong,
@@ -600,6 +644,8 @@ b { letter-spacing: .015em; }
  * is not intended to be presentational. The `<small>` element should not
  * be used for extended spans of text such as multiple paragraphs, lists,
  * or sections of text. It is only intended for short runs of text.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-small-element
  */
 
 small,
@@ -612,12 +658,16 @@ p.small {
 /**
  * The `<s>` element represents contents that are no longer accurate or no
  * longer relevant.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-s-element
  */
 
 s { color: #666; }
 
 /**
  * Represents the title of a work.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-cite-element
  */
 
 cite {}
@@ -639,6 +689,7 @@ cite {}
  * `<span>` element can be used.)
  *
  * @see http://html5doctor.com/blockquote-q-cite/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-q-element
  */
 
 q { quotes: '“' '”' '‘' '’' '“' '”' '‘' '’'; } /* Four levels of nested quotes. */
@@ -670,6 +721,9 @@ q:after {
  * optional `title` attribute may be used to provide an expansion of the
  * abbreviation. If specified, the `title` attribute must contain an
  * expansion of the abbreviation and nothing else.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-dfn-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-abbr-element
  */
 
 dfn,
@@ -685,6 +739,8 @@ abbr[title] { border-bottom: 1px dotted #666; }
  * This element is in the WHATWG version of HTML and not in the W3C draft
  * of HTML5. That means it is a highly experimental feature and shouldn't
  * be use on Web sites.
+ *
+ * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-data-element
  */
 
 data {}
@@ -694,6 +750,8 @@ data {}
  * proleptic Gregorian calendar. The time element encodes modern dates and
  * times in a machine-readable way, so that, for example, user agents
  * could offer to add an event to the user's calendar.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-time-element
  */
 
 time {}
@@ -704,14 +762,16 @@ time {}
  * string that a computer would recognize.
  *
  * @see http://perishablepress.com/wrapping-content/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-code-element
  */
 
+/* @TODO: I'd like to have an code:after pseudo element to show line wrap. */
 code {
-	font-family: "Courier new", Courier, "Andale Mono", monospace;
+	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 	color: #333;
-	border: 1px solid rgba(0, 0, 0, .15);
+	/*border: 1px solid rgba(0, 0, 0, .15);*/
 	background: rgba(0, 0, 0, .1);
-	padding: 1px 2px;
+	padding: 0 2px;
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 	        border-radius: 3px;
@@ -726,19 +786,63 @@ code {
 }
 
 /**
+ * The `<var>` element represents a variable. This could be an actual
+ * variable in a mathematical expression or programming context, or it
+ * could just be a term used as a placeholder in prose.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-var-element
  */
 
-var {}
+var { font-style: italic; }
 
 /**
+ * The `<samp>` element represents (sample) output from a program or
+ * computing system.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-samp-element
  */
 
-samp {}
+samp {
+	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+	color: #333;
+}
 
 /**
+ * The `<kbd>` element represents user input (typically keyboard input,
+ * although it may also be used to represent other input, such as voice
+ * commands).
+ *
+ * When the `<kbd>` element is nested inside a `<samp>` element, it
+ * represents the input as it was echoed by the system. When the `<kbd>`
+ * element contains a `<samp>` element, it represents input based on
+ * system output, for example invoking a menu item.
+ *
+ * When the `<kbd>` element is nested inside another `<kbd>` element, it
+ * represents an actual key or other single unit of input as appropriate
+ * for the input mechanism.
+ *
+ * @see http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style
+ * @see http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-kbd-element
  */
 
-kbd {}
+kbd {
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	-webkit-border-radius:3px;
+	-webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+	background-color:#f7f7f7;
+	border:1px solid #ccc;
+	border-radius:3px;
+	box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+	color:#333;
+	display:inline-block;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:11px;
+	line-height:1.4;
+	margin:0 .1em;
+	padding:.1em .6em;
+	text-shadow:0 1px 0 #fff;
+}
 
 /**
  */
@@ -791,6 +895,7 @@ bdo {}
  * `lang`, or `dir`. It represents its children.
  *
  * @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-span-element
  */
 
 span {}
@@ -805,6 +910,8 @@ span {}
  * used only for line breaks that are actually part of the content, as in
  * poems or addresses. `<br>` elements must not be used for separating
  * thematic groups in a paragraph.
+ *
+ * http://dev.w3.org/html5/spec/Overview.html#the-br-element
  */
 
 br {}
@@ -829,6 +936,20 @@ del {}
 /*----------------------------------( EMBEDED CONTENT )----------------------------------*/
 
 /**
+ * An `<img>` element represents an image. The image given by the `src`
+ * attribute is the embedded content, and the value of the alt attribute
+ * is the `<img>` element's fallback content.
+ *
+ * The `src` attribute must be present, and must contain a valid non-empty
+ * URL potentially surrounded by spaces referencing a non-interactive,
+ * optionally animated, image resource that is neither paged nor scripted.
+ *
+ * The `<img>` element must not be used as a layout tool. In particular,
+ * `<img>` elements should not be used to display transparent images, as
+ * they rarely convey meaning and rarely add anything useful to the
+ * document.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-img-element
  */
 
 img {
@@ -1071,10 +1192,19 @@ menu {}
 .bassline { position: relative; }
 	/* Grid overlay: */
 	.bassline:before {
-		background-image: -webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px);
-		background-image: -moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px);
-		background-image: linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px);
-		background-size: 100% 1.8rem;   /* Match base `line-height`. */
+		background-image:
+			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-image:
+			-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), 
+			-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-image:
+			linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+			linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-size: 100% 1.8rem, 100% .9rem, 100% .45rem;   /* Match base `line-height`. */
 		background-position: 0 0;       /* Put line adjustments here. */
 		background-origin: content-box; /* Regardless of padding, background will begin in the corner of the box. */
 		background-attachment: local;   /* For scrolling. */
@@ -1087,10 +1217,8 @@ menu {}
 		content: "";
 		pointer-events: none; /* The element is never the target of mouse events. */
 	}
-	.bassline.half:before { background-size: 100% .9rem; } /* Half base `line-height`. */
-	.bassline.double:before { background-size: 100% 3.6rem; } /* Double base `line-height`. */
 	/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
-	.bassline * {
+	.bassline.debug * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 	}
