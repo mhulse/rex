@@ -1,11 +1,11 @@
 @charset "UTF-8";
 
-#container {
-	margin: 0 1.5em;
-	padding: 1.5em 0;
+.container {
+	margin: 0 10px;
+	padding: 10px 0;
 }
 @media only screen and (min-width: 705px) { /* 640 + 50 + 15 */
-	#container {
+	.container {
 		width: 640px;
 		margin: 0 auto;
 	}

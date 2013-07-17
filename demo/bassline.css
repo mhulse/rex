@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /**
- * @TODO: Backup colors for `rgba` values.
+ * @TODO Revert back to some of the CSS here: https://raw.github.com/mhulse/bassline/a1524dc6a8ded271730a1f5f06f221d590f640ea/demo/bassline.css
  *
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
@@ -12,7 +12,7 @@
 
 /*----------------------------------( NORMALIZE )----------------------------------*/
 
-/*! normalize.css v2.0.1 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre;white-space:pre-wrap;word-wrap:break-word}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid #c0c0c0;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+/*! normalize.css v2.1.2 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
 
@@ -22,23 +22,23 @@
  * Base `font-size` = `16px`.
  *
  * PX to EM:
- * Formula: size in pixels / parent size in pixels
+ * Formula: [desired `font-size` in `px`] / [parent `font-size` in `px`]
  * Example: 12px / 16px = .75em
  *
  * PX to %:
- * Formula: size in pixels / parent size in pixels * 100
- * Example: 12px / 16px * 100 = 75%
+ * Formula: ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * 100
+ * Example: (12px / 16px) * 100 = 75%
  *
  * PX to PT:
- * Formula: size in pixels * (points per inch / pixels per inch)
+ * Formula: [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])
  * Example: 16px * (72pt / 96px) = 12pt
  *
  * EM to PX:
- * Formula: size in EMs * parent size in pixels
+ * Formula: [desired `font-size` in `em`] * [parent `font-size` in `px`]
  * Example: .75em * 16px = 12px
  *
  * EM to %:
- * Formula: size in EMs * 100
+ * Formula: [desired `font-size` in `em`] * 100
  * Example: .75em * 100 = 75%
  *
  * @see http://pxtoem.com/
@@ -59,23 +59,24 @@ html {
  * Baseline grid:
  *
  * Base font size = 16px or 100% or 1em.
- * Base line height = 28px or 175% or 1.75em.
+ * Base line height = 24px or 150% or 1.5em.
  *
  * Rule: Make sure all elements take up a vertical height (including
- * margins) are multiples of our base line height.
+ * margins) are multiples of our base line height (24).
  * 
  * Calculate line height by dividing base line height by desired font size.
  *
- * If the font size greater than `28px`, then base your calculations on
- * the next full `line-height` value up: `1.75` * `2` = `3.5` (`56px`).
- * For example, if the desired font size is `2.875em` (`46px`), the math
- * would be: (`1.8` * `2`) / `2.875` = `1.25217391304348`.
+ * If the font size is greater than `24px`, then base your calculations on
+ * the next full `line-height` value up. For example, if the desired font
+ * size is `2.875em` (i.e. `46px`), the math would be:
+ *
+ * (`1.5` * `2`) / `2.875` = `1.04347826086957`
  *
  * Line height chart:
- *                       |                  |                               |                               |                                |                              |
- * Target `line-height`: | x1 = (1.8em)     | x2 = (3.6em)                  | x3 = (5.4em)                  | x4 = (7.2em)                   | x5 = (9em)                   |
- *  Min/max `font-size`: | 0 - 28px (1.8em) | 29px (1.813em) - 57px (3.6em) | 58px (3.625em) - 86px (5.4em) | 87px (5.438em) - 115px (7.2em) | 116px (7.25em) - 144px (9em) |
- *                       |                  |                               |                               |                                |                              |
+ *                       |                   |                              |                                |                            |                                 |
+ * Target `line-height`: | x1 = 24px = 1.5em | x2 = 48px = 3em              | x3 = 72px = 4.5em              | x4 = 96px = 6em            | x5 = 120px = 7.5em              |
+ *  Min/max `font-size`: | 0 - 24px (1.5em)  | 25px (1.5625em) - 48px (3em) | 49px (3.0625em) - 72px (4.5em) | 73px (4.5625) - 96px (6em) | 97px (6.0625em) - 120px (7.5em) |
+ *                       |                   |                              |                                |                            |                                 |
  *
  * Important: WebKit needs at least ten-millionth decimal places; for
  * example: `line-height: 1.3333333;` (that's 7 decimal places).
@@ -92,7 +93,7 @@ html {
  */
 
 body {
-	font: 100.01%/1.8 Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
+	font: 100%/1.5 Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
 	color: #000;
 	/* Improve default text rendering, handling of kerning pairs and ligatures: */
 	-webkit-font-smoothing: antialiased;
@@ -173,40 +174,39 @@ aside {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-h1-h2-h3-h4-h5-and-h6-elements
  */
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { margin: 0; }
-
-/**
- * (16px = base font size) * (6 heading levels) = (96px = "important number")
- * Scale: 1:2 octave.
- *
- * @see http://modularscale.com/scale/?px1=16&px2=96&ra1=2&ra2=0
- */
-
-h1, .h1 {
-	font-size: 6em; /* 96px */
-	line-height: 1.2; /* 7.2 / 6 */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+	font: bold 1em/1.5 Arial, sans-serif;
+	color: #000;
+	margin: 0 0 10px;
 }
-h2, .h2 {
-	font-size: 4em; /* 64px */
-	line-height: 1.35; /* 5.4 / 4 */
+.sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
+	font: 1em/1.5 Cambria, Georgia, serif;
+	color: #666;
+	margin: 10px 0;
 }
-h3, .h3 {
-	font-size: 3em; /* 48px */
-	line-height: 1.2; /* 3.6 / 3 */
+h1, .h1, .sh1 {
+	font-size: 2.875em; /* 46px */
+	line-height: 1.04347826086957;
 }
-h4, .h4 {
-	font-size: 2em; /* 32px */
-	line-height: 1.8; /* 3.6 / 2 */
+h2, .h2, .sh2 {
+	font-size: 2.5em; /* 40px */
+	line-height: 1.05; /* (((3 / 2.5) = 1.2) * .875) = 1.05 */
 }
-h5, .h5 {
-	font-size: 1.5em; /* 24px */
-	line-height: 1.2; /* 1.8 / 1.5 */
-	padding: .6em 0; /* 1.2 / 2 */
+h3, .h3, .sh3 {
+	font-size: 2.125em; /* 34px */
+	line-height: 1.05882352941176; /* (((3 / 2.125em) = 1.41176470588235) * .75) = 1.05882352941176 */
 }
-h6, .h6 {
-	font-size: 1em; /* 16px */
-	line-height: 1.8; /* 1.8 / 1 */
-	padding: .9em 0; /* 1.8 / 2 */
+h4, .h4, .sh4 {
+	font-size: 1.75em; /* 28px */
+	line-height: 1.07142857142857; /* (((3 / 1.75em) = 1.71428571428571) * .625) = 1.07142857142857 */
+}
+h5, .h5, .sh5 {
+	font-size: 1.375em; /* 22px */
+	line-height: 1.09090909090909;
+}
+h6, .h6, .sh6 {
+	font-size: 1.125em; /* 18px */
+	line-height: 1.16666666666666; /* (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666 */
 }
 
 /**
@@ -261,13 +261,24 @@ address {}
  */
 
 p {
-	font-size: 1.125em; /* 18px */
-	line-height: 1.6;
-	margin: 0 0 1.6em;
-	-webkit-hyphens: auto;
-	   -moz-hyphens: auto;
-	        hyphens: auto;
+	font-family: Cambria, Georgia, serif;
+	font-size: .875em; /* 14px */
+	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+	margin: 0 0 10px;
 }
+	p a {
+		color: #638008;
+		text-decoration: none;
+	}
+	p a:visited { color: #638008; }
+	p a:visited:hover,
+	p a:focus,
+	p a:focus:hover,
+	p a:hover,
+	p a:active {
+		color: #260880;
+		text-decoration: underline;
+	}
 	
 	/**
 	 * Drop caps.
@@ -281,14 +292,12 @@ p {
 	 * @see http://www.sitepoint.com/a-simple-css-drop-cap/
 	 */
 	
-	/*
 	.firsties {
 		font-family: Cambria, Georgia, serif;
 		font-style: normal;
 		font-weight: bold;
-		font-size: 100px;
-		font-size: 6.245rem;
-		line-height: 1.1529223378703;
+		font-size: 6.25rem; /* (100px / 16px) = 6.25em */
+		line-height: 1.2; /* (7.5em / 6.25em) = 1.2em */
 		color: #fff;
 		background: rgba(0, 0, 0, .25);
 		margin-right: 12px;
@@ -303,10 +312,9 @@ p {
 		        box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
 		text-shadow: 0 0 5px rgba(0, 0, 0, .75);
 	}
-	*/
 	
 	/*
-	#p:first-of-type:first-letter {
+	#story p:first-of-type:first-letter {
 		font-size: 9rem;
 		font-family: Cambria, Georgia, serif;
 		line-height: 6.5rem;
@@ -329,23 +337,21 @@ p {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-hr-element-0
  */
 
-/* @TODO: Use REM? */
 hr, .hr1, .hr2, .hr3, .hr4 {
-	/* `border` + `height` + `margin` = base line height (`1.8em` or `28px`). */
 	border: 0;
-	border-top: .063em solid #ccc; /* 1px */
-	height: .063em; /* 1px */
-	margin: .8125em 0; /* 13px */
+	border-top: 1px solid #ccc;
+	height: 1px;
+	margin: 9px 0 10px;
 	padding: 0;
 }
-	.hr2 { border-style: dotted; }
+	.hr2,
+	.hr4 { border-style: dotted; }
 	.hr3,
 	.hr4 {
-		border-top-width: .125em; /* 2px */
+		border-top-width: 2px;
 		border-color: #999;
-		margin: 1.5em 0 1.625em; /* (12px * 2 = 24px) 0 (13px * 2 = 26px) */
+		margin: 8px 0 10px;
 	}
-	.hr4 { border-style: dotted; }
 
 /**
  * The `<pre>` element represents a block of preformatted text, in which
