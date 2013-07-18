@@ -14,27 +14,32 @@
 	
 	<link rel="stylesheet" href="bassline.css">
 	<link rel="stylesheet" href="demo.css">
+	<link rel="stylesheet" href="temp/fonts/hulse2/hulse.css">
 	
 </head>
 <body>
 	
 	<div class="container">
+		
+		<h1 id="flag">M<span>icky Hulse</span></h1>
+		
+		<h1 class="marker"><code>address</code></h1>
+		
+		<address>
 			
+			<a href="#">Marcel Johnson</a>,
+			<a href="#">Bubba Johnson</a>,
+			<a href="#">Virgil Johnson</a>,
+			<a href="#">Erra Johnson</a>,
+			<a href="#">T-Bone Johnson</a>,
+			<a href="#">Jimmy Earl Johnson</a>,
+			<a href="#">Cooter Johnson</a>
+			
+		</address>
+		
 		<hr>
 		
-		<div class="hr1"></div>
-		
-		<hr class="hr2">
-		
-		<div class="hr2"></div>
-		
-		<hr class="hr3">
-		
-		<div class="hr3"></div>
-		
-		<hr class="hr4">
-		
-		<div class="hr4"></div>
+		<h1 class="marker"><code>h1</code> - <code>h6</code></h1>
 		
 		<h1>The quick brown fox hxy jumps over the lazy dog hxy</h1>
 		
@@ -61,6 +66,8 @@
 		<h6><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp1">&amp;</span> link</a></h6>
 		
 		<hr>
+		
+		<h1 class="marker"><code>.sh1</code> - <code>.sh6</code></h1>
 		
 		<h2 class="sh1">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		
@@ -134,29 +141,9 @@
 		
 		<hr>
 		
-		<p>Published: <time pubdate datetime="2012-12-27T00:00:00-08:00">Dec 27</time></p>
+		<h1 class="marker"><code>blockquote</code></h1>
 		
-		<p><span class="firsties">M</span>ost of that, they did by the phone. But many of the inhabitants of the five mobile home parks in the district don't have phones. So Steele and others went door-to-door, handing out brief income surveys. Of 100 or so surveys passed out three came back. The district tried again. But that second effort, since it was targeted only at the mobile home parks, invalidated the entire survey, the state Business Development Department said in 2010. It wasn't a "random sample." The district and the county are now trying to get a new survey together. Meanwhile, the pipes keep leaking.</p>
-		
-		<p>The Ducks rallied with three runs in the seventh inning Sunday at PK Park to end Kent State's 21-game winning streak with a 3-2 triumph to knot the NCAA super regional at a game apiece and force the deciding game. But when will it be played?</p>
-		
-		<p>ARAUCO earlier this year acquired a fiberboard and particleboard factory in North Carolina that will be folded into the former Flakeboard operations, which ARAUCO said will continue to operate under the Flakeboard name. Flakeboard CEO Kelly Shotbolt will combine and lead these operations, ARAUCO said.</p>
-		
-		<p>The <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr> started working on HTML5 in 2004.</p>
-		
-		<p>To get started with <code>HTML5</code> you just need <code>&lt;!DOCTYPE html&gt;</code> at the top of your <code>HTML</code> page (an <code>HTML5</code> <abbr title="Document Type Declaration">DTD</abbr>-<code>less</code> <code>DOCTYPE</code>)</p>
-		
-		<hr>
-		
-<pre>
-<code>var</code> q2 = oMQ.addQuery({
-	context               : ['small', 'medium'],
-	call_for_each_context : false,
-	match                 : function() { console.log('MATCH: small/medium'); },
-	unmatch               : function() { console.log('UNMATCH: small/medium'); }
-});
-</pre>
-		
+		<div class="bassline">
 		<blockquote>
 			
 			<p>The Ducks rallied with three runs in the seventh inning Sunday at PK Park to end Kent State's 21-game winning streak with a 3-2 triumph to knot the NCAA super regional at a game apiece and force the deciding game.</p>
@@ -166,6 +153,7 @@
 			<p>Here's an example of a <q>quote inside a quote</q>; <strong>how do you like it?</strong></p>
 			
 		</blockquote>
+		</div>
 		
 		<blockquote>
 			
@@ -175,14 +163,116 @@
 			
 		</blockquote>
 		
-		<hr>
-		
-		<p class="small">The quick brown fox <s>jumps over the lazy dog</s>!</p>
-		
-		<small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-alike license</a></small>
-		
-		<hr>
+		<figure>
 			
+			<blockquote>
+				
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare accumsan leo, viverra feugiat tellus lacinia eu. Morbi mattis faucibus velit, vitae commodo magna dictum eu. Aenean erat quam, lacinia eget tempus ac, ultrices vel nibh. Etiam eros dolor, aliquet vel sagittis ut, consequat et purus. Praesent cursus, tortor sed congue commodo, lacus neque rhoncus lectus, ac tempus enim tortor in nunc. Maecenas dolor nisi, luctus et sodales sed, cursus quis augue. Fusce eget ligula eu tellus commodo consequat. Suspendisse tempus mi metus, non hendrerit sapien. Sed a ipsum est, a mollis nisi. Nulla magna elit, pulvinar vel bibendum at, posuere et sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec augue ipsum, ultricies eget tristique id, ultricies eu massa. Vivamus quis magna vitae massa dapibus vulputate.</p>
+				
+				<p><code>&lt;small&gt;&lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;Creative Commons Attribution Share-alike license&lt;/a&gt;&lt;/small&gt;</code></p>
+				
+			</blockquote>
+			
+			<figcaption>Using <code>&lt;small&gt;</code> around a <a href="http://creativecommons.org/choose/" title="Choose a License">Creative Commons license</a> link with <code>rel="license"</code></figcaption>
+			
+		</figure>
+		
+		<hr>
+		
+		<h1 class="marker"><code>dl</code> + <code>dt</code> + <code>dd</code></h1>
+		
+		<dl>
+			<dt>Maecenas</dt>
+				<dd>Risus</dd>
+				<dd>Ullamcorper</dd>
+				<dd>Duis</dd>
+			<dt>Vestibulum</dt>
+				<dd>Praesent</dd>
+				<dd>Vivamus</dd>
+				<dd>Cras</dd>
+			<dt>Curabitur</dt>
+				<dd>Nulla</dd>
+				<dd>Vivamus</dd>
+				<dd>Nunc</dd>
+		</dl>
+		
+		<hr>
+		
+		<h1 class="marker"><code>figure</code></h1>
+		
+	</div> <!-- /.container -->
+	
+	<figure>
+		
+		<img src="3d.gif" alt="A couple walking along Monastary Beach.">
+		
+		<!--<figcaption>A couple walking along the shoreline of Monastary Beach near Monteray, California. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mauris nunc. Vivamus dictum dapibus egestas. Maecenas id rutrum elit.</figcaption>-->
+		
+	</figure>
+	
+	<div class="container">
+		
+		<hr>
+		
+		<h1 class="marker"><code>hr</code></h1>
+		
+		<hr>
+		
+		<div class="hr1"></div>
+		
+		<hr class="hr2">
+		
+		<div class="hr2"></div>
+		
+		<hr class="hr3">
+		
+		<div class="hr3"></div>
+		
+		<hr class="hr4">
+		
+		<div class="hr4"></div>
+		
+		<hr>
+		
+		<h1 class="marker"><code>p</code></h1>
+		
+		<p>Published: <time pubdate datetime="2012-12-27T00:00:00-08:00">Dec 27</time></p>
+		
+		<p><span class="firsties">M</span>ost of that, they did by the phone. But many of the inhabitants of the five mobile home parks in the district don't have phones. So Steele and others went door-to-door, handing out brief income surveys. Of 100 or so surveys passed out three came back. The district tried again. But that second effort, since it was targeted only at the mobile home parks, invalidated the entire survey, the state Business Development Department said in 2010. It wasn't a "random sample." The district and the county are now trying to get a new survey together. Meanwhile, the pipes keep leaking.</p>
+		
+		<p><a href="#">The Ducks rallied with three runs in the seventh inning Sunday</a> at PK Park to end Kent State's 21-game winning streak with a 3-2 triumph to knot the NCAA super regional at a game apiece and force the deciding game. But when will it be played?</p>
+		
+		<p>ARAUCO earlier this year acquired a fiberboard and particleboard factory in North Carolina that will be folded into the former Flakeboard operations, which ARAUCO said will continue to operate under the Flakeboard name. Flakeboard CEO Kelly Shotbolt will combine and lead these operations, ARAUCO said.</p>
+		
+		<p>The <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr> started working on HTML5 in 2004.</p>
+		
+		<p>To get started with <code>HTML5</code> you just need <code>&lt;!DOCTYPE html&gt;</code> at the top of your <code>HTML</code> page (an <code>HTML5</code> <abbr title="Document Type Declaration">DTD</abbr>-<code>less</code> <code>DOCTYPE</code>)</p>
+		
+		<hr>
+		
+		<h1 class="marker"><code>pre</code></h1>
+		
+<pre>
+<code>var</code> q2 = oMQ.addQuery({
+	context               : ['small', 'medium'],
+	call_for_each_context : false,
+	match                 : function() { console.log('MATCH: small/medium'); },
+	unmatch               : function() { console.log('UNMATCH: small/medium'); }
+});
+</pre>
+
+<pre>
+<samp>mike:mysite mike$ <kbd>git status</kbd>
+
+# On branch master
+nothing to commit (working directory clean)
+mike:mysite mike$</samp>
+</pre>
+		
+		<hr>
+		
+		<h1 class="marker"><code>ol</code> + <code>ul</code></h1>
+		
 		<ol>
 			<li><a href="#">Lorem ipsum dolor sit amet</a></li>
 			<li>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non massa non libero blandit dictum. In viverra elit id felis placerat non suscipit magna blandit. Sed lacinia arcu a nisi vehicula at vehicula purus laoreet.</li>
@@ -205,54 +295,23 @@
 			<li>Mauris ac sem mauris</li>
 		</ol>
 		
-		<dl>
-			<dt>Maecenas</dt>
-				<dd>Risus</dd>
-				<dd>Ullamcorper</dd>
-				<dd>Duis</dd>
-			<dt>Vestibulum</dt>
-				<dd>Praesent</dd>
-				<dd>Vivamus</dd>
-				<dd>Cras</dd>
-			<dt>Curabitur</dt>
-				<dd>Nulla</dd>
-				<dd>Vivamus</dd>
-				<dd>Nunc</dd>
-		</dl>
-		
 		<hr>
+		
+		<h1 class="marker"><code>abbr</code></h1>
 		
 		<p>While they're essential reading material for our job, the <dfn><abbr title="World Wide Web Consortium">W3C</abbr></dfn> specifications are not exactly George R. R. Martin-level reading material.</p>
 		
-	</div> <!-- /.container -->
-	
-	<figure>
+		<hr>
 		
-		<img src="3d.gif" alt="A couple walking along Monastary Beach.">
+		<h1 class="marker"><code>small</code></h1>
 		
-		<figcaption>A couple walking along the shoreline of Monastary Beach near Monteray, California.</figcaption>
+		<p class="small">The quick brown fox <s>jumps over the lazy dog</s>!</p>
 		
-	</figure>
-	
-	<div class="container">
+		<small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-alike license</a></small>
 		
 		<hr>
 		
-		<figure>
-			
-			<blockquote>
-				
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce ornare accumsan leo, viverra feugiat tellus lacinia eu. Morbi mattis faucibus velit, vitae commodo magna dictum eu. Aenean erat quam, lacinia eget tempus ac, ultrices vel nibh. Etiam eros dolor, aliquet vel sagittis ut, consequat et purus. Praesent cursus, tortor sed congue commodo, lacus neque rhoncus lectus, ac tempus enim tortor in nunc. Maecenas dolor nisi, luctus et sodales sed, cursus quis augue. Fusce eget ligula eu tellus commodo consequat. Suspendisse tempus mi metus, non hendrerit sapien. Sed a ipsum est, a mollis nisi. Nulla magna elit, pulvinar vel bibendum at, posuere et sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec augue ipsum, ultricies eget tristique id, ultricies eu massa. Vivamus quis magna vitae massa dapibus vulputate.</p>
-				
-				<p><code>&lt;small&gt;&lt;a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"&gt;Creative Commons Attribution Share-alike license&lt;/a&gt;&lt;/small&gt;</code></p>
-				
-			</blockquote>
-			
-			<figcaption>Using <code>&lt;small&gt;</code> around a <a href="http://creativecommons.org/choose/" title="Choose a License">Creative Commons license</a> link with <code>rel="license"</code></figcaption>
-			
-		</figure>
-		
-		<hr>
+		<h1 class="marker"><code>var</code></h1>
 		
 		<p><var>E</var> energy is equal to <var>m</var> mass multiplied by the <var>c</var> speed of light, squared.</p>
 		
@@ -260,15 +319,7 @@
 		
 		<hr>
 		
-<pre>
-<samp>mike:mysite mike$ <kbd>git status</kbd>
-
-# On branch master
-nothing to commit (working directory clean)
-mike:mysite mike$</samp>
-</pre>
-		
-		<hr>
+		<h1 class="marker"><code>kbd</code></h1>
 		
 		<div class="bassline">
 			

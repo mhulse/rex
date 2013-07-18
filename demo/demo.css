@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 .container {
+	text-align: left;
 	margin: 0 10px;
-	padding: 10px 0;
 }
 @media only screen and (min-width: 705px) { /* 640 + 50 + 15 */
 	.container {
@@ -10,3 +10,43 @@
 		margin: 0 auto;
 	}
 }
+
+.marker {
+	font: bold 1.375em/1.09090909090909 Arial, sans-serif; /* 22px */
+	color: #990;
+	text-transform: none;
+	background: #ff0;
+	margin: 5px 0 10px;
+	padding: .54545454545455em .54545454545455em;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+#flag {
+	font: 100px/1 "Hulse", Arial, sans-serif;
+	color: #FD5B84;
+	margin: 20px 0;
+	position: relative;
+	top: 0;
+	left: -20px;
+}
+	#flag span {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	#flag a,
+	#flag a:visited { color: #fff; }
+	#flag a:visited:hover,
+	#flag a:focus,
+	#flag a:focus:hover,
+	#flag a:hover,
+	#flag a:active { text-decoration: none; }
+	#flag a:active,
+	#flag a:focus { outline: none; }

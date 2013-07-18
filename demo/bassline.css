@@ -1,8 +1,6 @@
 @charset "UTF-8";
 
 /**
- * @TODO Revert back to some of the CSS here: https://raw.github.com/mhulse/bassline/a1524dc6a8ded271730a1f5f06f221d590f640ea/demo/bassline.css
- *
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
  * @see http://webtypography.net/toc/
@@ -13,6 +11,21 @@
 /*----------------------------------( NORMALIZE )----------------------------------*/
 
 /*! normalize.css v2.1.2 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+
+/*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
+
+/**
+ * Apply a natural box layout model to all elements.
+ *
+ * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * @see http://css-tricks.com/box-sizing/
+ */
+
+* {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
 
@@ -48,10 +61,45 @@
 html {
 	height: 100%; /* Expand to height of browser window. */
 	overflow-y: scroll; /* Force scrollbar in non-IE. */
-	-webkit-text-size-adjust: 100%; /* Remove iOS text size adjust without disabling user zoom. */
 }
 
 /*----------------------------------( SECTIONS )----------------------------------*/
+
+/**
+ * Represents the contact information for its enclosing section. If it is
+ * a child of the body element, then it applies to the document as a whole.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-address-element
+ */
+
+address {
+	margin: 0 0 10px;
+	font-style: italic;
+}
+
+/**
+ * The `<article>` element represents a section of a page that consists of
+ * a composition that forms an independent part of a document, page, or
+ * site. This could be a forum post, a magazine or newspaper article, a
+ * Web log entry, a user-submitted comment, or any other independent item
+ * of content.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-article-element
+ */
+
+article {}
+
+/**
+ * The `<aside>` element represents a section of a page consisting of
+ * content that is tangentially related to the content around the
+ * `<aside>` element, and which could be considered separate from that
+ * content. Such sections are often represented as sidebars in printed
+ * typography.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-aside-element
+ */
+
+aside {}
 
 /**
  * The `<body>` element represents the main content of the document.
@@ -94,6 +142,7 @@ html {
 
 body {
 	font: 100%/1.5 Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
+	text-align: center;
 	color: #000;
 	/* Improve default text rendering, handling of kerning pairs and ligatures: */
 	-webkit-font-smoothing: antialiased;
@@ -102,59 +151,20 @@ body {
 	/* Initial height of `<html>`, but will expand taller if necessary: */
 	min-height: 100%; /* Compliant browsers. */
 	_height: 100%; /* IE6 treats `height` as `min-height`. */
+	background: #fff;
 }
 
 /**
- * The `<section>` element represents a generic document or application
- * section. In this context, a section is a thematic grouping of content,
- * typically with a header, possibly with a footer. Examples include
- * chapters in a book, the various tabbed pages in a tabbed dialog box, or
- * the numbered sections of a thesis. A web site's home page could be
- * split into sections for an introduction, news items, contact information.
+ * The `<footer>` element represents the "footer" of a document or section
+ * of a document. It typically contains metadata about its enclosing
+ * section, such as who wrote it, links to related documents, copyright
+ * data, etc. Contact information for the section given in a footer should
+ * be marked up using the address element.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-section-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-footer-element
  */
 
-section {}
-
-/**
- * The `<nav>` element represents navigation for a document. It is a
- * section containing links to other documents or to parts within the
- * current document.
- *
- * Not all groups of links on a page need to be in a this element — only
- * groups of primary navigation links. In particular, it is common for
- * footers to have a list of links to various key parts of a site, but the
- * `<footer>` element is more appropriate in such cases.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-nav-element
- */
-
-nav {}
-
-/**
- * The `<article>` element represents a section of a page that consists of
- * a composition that forms an independent part of a document, page, or
- * site. This could be a forum post, a magazine or newspaper article, a
- * Web log entry, a user-submitted comment, or any other independent item
- * of content.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-article-element
- */
-
-article {}
-
-/**
- * The `<aside>` element represents a section of a page consisting of
- * content that is tangentially related to the content around the
- * `<aside>` element, and which could be considered separate from that
- * content. Such sections are often represented as sidebars in printed
- * typography.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-aside-element
- */
-
-aside {}
+footer {}
 
 /**
  * Represent headings and subheadings. These elements rank in importance
@@ -181,7 +191,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 }
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
 	font: 1em/1.5 Cambria, Georgia, serif;
-	color: #666;
+	color: #000;
 	margin: 10px 0;
 }
 h1, .h1, .sh1 {
@@ -210,16 +220,6 @@ h6, .h6, .sh6 {
 }
 
 /**
- * The `<hgroup>` element represents the heading of a section. It is used
- * to group a set of `<h1>`–`<h6>` elements when the heading has multiple
- * levels, such as subheadings, alternative titles, or taglines.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-hgroup-element
- */
-
-hgroup {}
-
-/**
  * The `<header>` element represents the "header" of a document or section
  * of a document. It is typically used to group a set of `<h1>`–`<h6>`
  * elements to mark up a page's title with its subtitle or tagline. header
@@ -232,159 +232,49 @@ hgroup {}
 header {}
 
 /**
- * The `<footer>` element represents the "footer" of a document or section
- * of a document. It typically contains metadata about its enclosing
- * section, such as who wrote it, links to related documents, copyright
- * data, etc. Contact information for the section given in a footer should
- * be marked up using the address element.
+ * The main element is an exact analogue of ARIA's `role="main"`, and is
+ * designed to show screenreaders and assistive technologies exactly where
+ * main content begins, so it can be a target for a "skip links" keyboard
+ * command, for example. It could also be used for content syndication;
+ * mobile browsers could zoom in on main when encountering non-responsive
+ * websites. It should therefore be used once per page. If you use
+ * something like `<div id="main">` (or similar, such as `<div
+ * id="content">`), simply replace that with `<main role="main">`.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-footer-element
+ * @see http://www.w3.org/html/wg/drafts/html/master/grouping-content.html#the-main-element
  */
 
-footer {}
+main {}
 
 /**
- * Represents the contact information for its enclosing section. If it is
- * a child of the body element, then it applies to the document as a whole.
+ * The `<nav>` element represents navigation for a document. It is a
+ * section containing links to other documents or to parts within the
+ * current document.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-address-element
+ * Not all groups of links on a page need to be in a this element — only
+ * groups of primary navigation links. In particular, it is common for
+ * footers to have a list of links to various key parts of a site, but the
+ * `<footer>` element is more appropriate in such cases.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-nav-element
  */
 
-address {}
+nav {}
+
+/**
+ * The `<section>` element represents a generic document or application
+ * section. In this context, a section is a thematic grouping of content,
+ * typically with a header, possibly with a footer. Examples include
+ * chapters in a book, the various tabbed pages in a tabbed dialog box, or
+ * the numbered sections of a thesis. A web site's home page could be
+ * split into sections for an introduction, news items, contact information.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-section-element
+ */
+
+section {}
 
 /*----------------------------------( GROUPING CONTENT )----------------------------------*/
-
-/**
- * The `<p>` element represents a paragraph.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-p-element
- */
-
-p {
-	font-family: Cambria, Georgia, serif;
-	font-size: .875em; /* 14px */
-	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	margin: 0 0 10px;
-}
-	p a {
-		color: #638008;
-		text-decoration: none;
-	}
-	p a:visited { color: #638008; }
-	p a:visited:hover,
-	p a:focus,
-	p a:focus:hover,
-	p a:hover,
-	p a:active {
-		color: #260880;
-		text-decoration: underline;
-	}
-	
-	/**
-	 * Drop caps.
-	 *
-	 * Firefox handled these classes better than Safari (Mac). For some
-	 * reason, a base `line-height` of `1.5` worked better in Safari. Safari's
-	 * page zoom does weird stuff... I'm tired of trying to get this to work.
-	 *
-	 * @see http://www.smashingmagazine.com/2012/04/03/drop-caps-historical-use-and-current-best-practices/
-	 * @see http://css-tricks.com/snippets/css/drop-caps/
-	 * @see http://www.sitepoint.com/a-simple-css-drop-cap/
-	 */
-	
-	.firsties {
-		font-family: Cambria, Georgia, serif;
-		font-style: normal;
-		font-weight: bold;
-		font-size: 6.25rem; /* (100px / 16px) = 6.25em */
-		line-height: 1.2; /* (7.5em / 6.25em) = 1.2em */
-		color: #fff;
-		background: rgba(0, 0, 0, .25);
-		margin-right: 12px;
-		margin-right: .8rem;
-		padding: 0 16px;
-		padding: 0 1rem;
-		float: left;
-		display: inline;
-		-webkit-border-radius: 5px;
-		        border-radius: 5px;
-		-webkit-box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
-		        box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
-		text-shadow: 0 0 5px rgba(0, 0, 0, .75);
-	}
-	
-	/*
-	#story p:first-of-type:first-letter {
-		font-size: 9rem;
-		font-family: Cambria, Georgia, serif;
-		line-height: 6.5rem;
-		margin: 0;
-		padding: 0;
-		text-transform: uppercase;
-		float: left;
-		display: inline;
-	}
-	*/
-
-/**
- * The `<hr>` element represents a paragraph-level thematic break. It
- * separates different topics within a section of prose, or between scenes
- * in a novel.
- *
- * @see https://gist.github.com/4277585
- * @see https://github.com/h5bp/html5-boilerplate/blob/b378ce239dfb017e32fbeacc5ab0346258b089e2/css/main.css#L42-L53
- * @see https://github.com/twitter/bootstrap/blob/070c125ceceb2a164773f51226950350445160ee/docs/assets/css/bootstrap.css#L876-L881
- * @see http://dev.w3.org/html5/spec/Overview.html#the-hr-element-0
- */
-
-hr, .hr1, .hr2, .hr3, .hr4 {
-	border: 0;
-	border-top: 1px solid #ccc;
-	height: 1px;
-	margin: 9px 0 10px;
-	padding: 0;
-}
-	.hr2,
-	.hr4 { border-style: dotted; }
-	.hr3,
-	.hr4 {
-		border-top-width: 2px;
-		border-color: #999;
-		margin: 8px 0 10px;
-	}
-
-/**
- * The `<pre>` element represents a block of preformatted text, in which
- * structure is represented by typographic conventions rather than by
- * elements.
- * 
- * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
- * @see http://perishablepress.com/wrapping-content/
- * @see http://perishablepress.com/perfect-pre-tags/
- * @see http://dev.w3.org/html5/spec/Overview.html#the-pre-element
- */
-
-/* @TODO: Make `font-size` bigger. */
-pre {
-	font: .875em/2.05714285714286 Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif; /* (14px / 16px = .875em)/(1.8em / .875em = 2.05714285714286) */
-	color: #333;
-	border: .07142857142857em solid rgba(0, 0, 0, .15); /* 1px / 14px */
-	background: rgba(0, 0, 0, .1);
-	margin: 1em 0; /* (28px / 14px = 2em) / 2 = 1em */
-	padding: .92857142857143em; /* (28px - 2px (top/bottom borders) = 26px) / (14px = 1.85714285714286) / 2 */
-	word-wrap: normal;
-	overflow: auto;
-	white-space: pre;
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-	        border-radius: 4px;
-}
-	pre code {
-		color: inherit;
-		border: 0;
-		background: transparent;
-		padding: 0;
-	}
 
 /**
  * The `<blockquote>` element represents a section that is quoted from
@@ -399,13 +289,35 @@ pre {
  */
 
 blockquote {
+	border-left: 3px solid #333;
+	margin: 0 0 20px;
+	padding: 0 0 0 1em;
+	position: relative;
+}
+	blockquote:before {
+		font: 6.25em/1 Arial, sans-serif; /* 100px */
+		color: #333;
+		display: block;
+		content: "\201C";
+		position: absolute;
+		left: -.4em;
+		top: -.1em;
+	}
+		blockquote p {
+			font: italic 1em/1.5 Arial, sans-serif; /* 16px */
+			color: #333;
+			margin: 0;
+		}
+
+/*
+blockquote {
 	border-left: 3px solid #ccc;
 	margin: 0 0 1.8em;
 	padding: 0 0 0 1.8em;
 	quotes: '“' '”';
 }
 	blockquote p {
-		font: italic 1.125em/1.6 Cambria, Georgia, serif; /* 18px */
+		font: italic 1.125em/1.6 Cambria, Georgia, serif;
 		text-indent: -.75em;
 		word-spacing: .05em;
 	}
@@ -426,12 +338,10 @@ blockquote {
 		}
 		blockquote p:last-of-type { margin: 0; }
 	blockquote footer {
-		font-size: .875em; /* 14px */
 		line-height: 2.05714285714286;
 		color: #666;
 		margin: 0 0 2.05714285714286em;
 	}
-	/* For `<q>`s in `<blockquote>`s: */
 	blockquote q:before {
 		content: '‘';
 		content: open-quote;
@@ -448,36 +358,18 @@ blockquote {
 			content: '”';
 			content: close-quote;
 		}
+*/
 
 /**
- * The `<ol>` element represents a list of items, where the items have
- * been intentionally ordered, such that changing the order would change
- * the meaning of the list.
+ * The `<div>` element has no special meaning at all. It represents its
+ * children. It can be used with the `class`, `lang`, and `title`
+ * attributes to mark up semantics common to a group of consecutive
+ * elements.
  *
- * The `<ul>` element represents a list of items, where the order of the
- * items is not important — that is, where changing the order would not
- * materially change the meaning of the list.
- *
- * The `<li>` element represents a list item. If its parent element is an
- * `<ol>`, `<ul>`, or `<menu>` element, then the element is an item of the
- * parent element's list, as defined for those elements. Otherwise, the
- * list item has no defined list-related relationship to any other `<li>`
- * element.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-ol-element
- * @see http://dev.w3.org/html5/spec/Overview.html#the-ul-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-div-element
  */
 
-ol,
-ul {
-	font-size: 1em; /* 16px */
-	line-height: 1.8; /* 28px */
-	margin: 0 0 1.8em 2.5em;
-	padding: 0;
-	list-style-position: outside;
-}
-	li ol,
-	li ul { margin: 0 0 0 3em; }
+div {}
 
 /**
  * The `<dl>` (description list) element represents a description list
@@ -529,17 +421,22 @@ dl {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-figcaption-element
  */
 
-figure { margin: 1.5em 0 0; }
+figure {
+	text-align: left;
+	display: inline-block;
+	max-width: 100%;
+	margin: 0;
+}
 	figure img {
 		background: #fff;
-		margin: .75em auto;
 		display: block;
 	}
 	figcaption {
 		font-size: .875em; /* 14px / 16px = .875em */
-		line-height: 2.05714285714286;
-		color: #666;
-		margin: .514285714285721em 0 .54285714285715em; /* Top = 1/4 `line-height`, bottom = 3/4 `line-height`. */
+		line-height: 1.28571428571428; /* (((1.5 / .875) * .75) = 1.28571428571428) */
+		color: rgba(43, 50, 77, .75);
+		background: rgba(173, 191, 199, .5);
+		padding: 5px 10px;
 	}
 		figcaption a {
 			font-weight: bold;
@@ -557,15 +454,164 @@ figure { margin: 1.5em 0 0; }
 			}
 
 /**
- * The `<div>` element has no special meaning at all. It represents its
- * children. It can be used with the `class`, `lang`, and `title`
- * attributes to mark up semantics common to a group of consecutive
- * elements.
+ * The `<hr>` element represents a paragraph-level thematic break. It
+ * separates different topics within a section of prose, or between scenes
+ * in a novel.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-div-element
+ * @see https://gist.github.com/4277585
+ * @see https://github.com/h5bp/html5-boilerplate/blob/b378ce239dfb017e32fbeacc5ab0346258b089e2/css/main.css#L42-L53
+ * @see https://github.com/twitter/bootstrap/blob/070c125ceceb2a164773f51226950350445160ee/docs/assets/css/bootstrap.css#L876-L881
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-hr-element-0
  */
 
-div {}
+hr, .hr1, .hr2, .hr3, .hr4 {
+	border: 0;
+	border-top: 1px solid #000;
+	height: 1px;
+	margin: 9px 0 10px;
+	padding: 0;
+}
+	.hr2,
+	.hr4 { border-style: dotted; }
+	.hr3,
+	.hr4 {
+		border-top-width: 2px;
+		margin: 8px 0 10px;
+	}
+
+/**
+ * The `<p>` element represents a paragraph.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-p-element
+ */
+
+p {
+	font-family: Cambria, Georgia, serif;
+	font-size: .875em; /* 14px */
+	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+	margin: 0 0 10px;
+}
+	p a {
+		color: #0D3A4F;
+		font-weight: bold;
+		text-decoration: none;
+	}
+	p a:visited { color: #0D3A4F; }
+	p a:visited:hover,
+	p a:focus,
+	p a:focus:hover,
+	p a:hover,
+	p a:active {
+		color: #046D8B;
+	}
+	
+	/**
+	 * Drop caps.
+	 *
+	 * Firefox handled these classes better than Safari (Mac). For some
+	 * reason, a base `line-height` of `1.5` worked better in Safari. Safari's
+	 * page zoom does weird stuff... I'm tired of trying to get this to work.
+	 *
+	 * @see http://www.smashingmagazine.com/2012/04/03/drop-caps-historical-use-and-current-best-practices/
+	 * @see http://css-tricks.com/snippets/css/drop-caps/
+	 * @see http://www.sitepoint.com/a-simple-css-drop-cap/
+	 */
+	
+	.firsties {
+		font-family: Cambria, Georgia, serif;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 6.25rem; /* (100px / 16px) = 6.25em */
+		line-height: 1.2; /* (7.5em / 6.25em) = 1.2em */
+		color: #fff;
+		background: rgba(0, 0, 0, .25);
+		margin-right: 12px;
+		margin-right: .8rem;
+		padding: 0 16px;
+		padding: 0 1rem;
+		float: left;
+		display: inline;
+		-webkit-border-radius: 5px;
+		        border-radius: 5px;
+		-webkit-box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
+		        box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
+		text-shadow: 0 0 5px rgba(0, 0, 0, .75);
+	}
+	
+	/*
+	#story p:first-of-type:first-letter {
+		font-size: 9rem;
+		font-family: Cambria, Georgia, serif;
+		line-height: 6.5rem;
+		margin: 0;
+		padding: 0;
+		text-transform: uppercase;
+		float: left;
+		display: inline;
+	}
+	*/
+
+/**
+ * The `<pre>` element represents a block of preformatted text, in which
+ * structure is represented by typographic conventions rather than by
+ * elements.
+ * 
+ * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
+ * @see http://perishablepress.com/wrapping-content/
+ * @see http://perishablepress.com/perfect-pre-tags/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-pre-element
+ */
+
+pre {
+	font: .875em/2.05714285714286 Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif; /* (14px / 16px = .875em)/(1.8em / .875em = 2.05714285714286) */
+	color: #333;
+	border: .07142857142857em solid rgba(0, 0, 0, .15); /* 1px / 14px */
+	background: rgba(0, 0, 0, .1);
+	margin: 1em 0; /* (28px / 14px = 2em) / 2 = 1em */
+	padding: .92857142857143em; /* (28px - 2px (top/bottom borders) = 26px) / (14px = 1.85714285714286) / 2 */
+	word-wrap: normal;
+	overflow: auto;
+	white-space: pre;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
+}
+	pre code {
+		color: inherit;
+		border: 0;
+		background: transparent;
+		padding: 0;
+	}
+
+/**
+ * The `<ol>` element represents a list of items, where the items have
+ * been intentionally ordered, such that changing the order would change
+ * the meaning of the list.
+ *
+ * The `<ul>` element represents a list of items, where the order of the
+ * items is not important — that is, where changing the order would not
+ * materially change the meaning of the list.
+ *
+ * The `<li>` element represents a list item. If its parent element is an
+ * `<ol>`, `<ul>`, or `<menu>` element, then the element is an item of the
+ * parent element's list, as defined for those elements. Otherwise, the
+ * list item has no defined list-related relationship to any other `<li>`
+ * element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-ol-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-ul-element
+ */
+
+ol,
+ul {
+	font-size: 1em; /* 16px */
+	line-height: 1.8; /* 28px */
+	margin: 0 0 1.8em 2.5em;
+	padding: 0;
+	list-style-position: outside;
+}
+	li ol,
+	li ul { margin: 0 0 0 3em; }
 
 /*----------------------------------( TEXT-LEVEL SEMANTICS )----------------------------------*/
 
@@ -582,18 +628,123 @@ div {}
  */
 
 a {
-	color: #000;
+	color: #4E801C;
 	text-decoration: none;
 }
-	a:visited { color: #000; }
+	a:visited { color: #4E801C; }
 	a:visited:hover,
 	a:focus,
 	a:focus:hover,
 	a:hover,
 	a:active {
-		color: #d11001;
+		color: #9EA301;
 		text-decoration: none;
 	}
+
+/**
+ * The `<abbr>` element represents an abbreviation or acronym. The
+ * optional `title` attribute may be used to provide an expansion of the
+ * abbreviation. If specified, the `title` attribute must contain an
+ * expansion of the abbreviation and nothing else.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-abbr-element
+ */
+
+abbr,
+abbr[title] { border-bottom: 1px dotted #666; }
+
+/**
+ * The `<bdi>` element represents a span of text that is to be isolated
+ * from its surroundings for the purposes of bidirectional text formatting.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-rp-element
+ */
+
+bdi {}
+
+/**
+ * The `<bdo>` element represents explicit text directionality formatting
+ * control for its children. It allows authors to override the Unicode
+ * bidirectional algorithm by explicitly specifying a direction override.
+ *
+ * @see http://dev.w3.org/html5/spec/text-level-semantics.html#the-bdo-element
+ */
+
+bdo {}
+
+/**
+ * The `<br>` element represents a line break. `<br>` elements must be
+ * used only for line breaks that are actually part of the content, as in
+ * poems or addresses. `<br>` elements must not be used for separating
+ * thematic groups in a paragraph.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-br-element
+ */
+
+br {}
+
+/**
+ * Represents the title of a work.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-cite-element
+ */
+
+cite {}
+
+/**
+ * The `<code>` element represents a fragment of computer code. This could
+ * be an XML element name, a file name, a computer program, or any other
+ * string that a computer would recognize.
+ *
+ * @see http://perishablepress.com/wrapping-content/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-code-element
+ */
+
+/* @TODO: I'd like to have an code:after pseudo element to show line wrap. */
+code {
+	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+	color: #333;
+	/*border: 1px solid rgba(0, 0, 0, .15);*/
+	background: rgba(0, 0, 0, .1);
+	padding: 0 2px;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
+	white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: break-word;      /* IE 5+ */
+}
+
+/**
+ * The `<data>` element links a given content with a machine-readable
+ * translation. If the content is time- or date-related, the `<time>` must
+ * be used.
+ *
+ * This element is in the WHATWG version of HTML and not in the W3C draft
+ * of HTML5. That means it is a highly experimental feature and shouldn't
+ * be use on Web sites.
+ *
+ * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-data-element
+ */
+
+data {}
+
+/**
+ * The `<dfn>` element represents the defining instance of a term. The
+ * paragraph, description list group, or section that is the nearest
+ * ancestor of the `<dfn>` element must also contain the definition(s) for
+ * the term given by the `<dfn>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-dfn-element
+ */
+
+dfn,
+dfn[title] { border-bottom: 1px dotted #666; }
 
 /**
  * The `<em>` element represents stress emphasis of its contents. The
@@ -621,62 +772,55 @@ em,
 i {}
 
 /**
- * The `<strong>` element represents strong importance for its contents.
- * Indicate relative importance by nesting strong elements; each strong
- * element increases the importance of its contents. Changing the
- * importance of a piece of text with the strong element does not change
- * the meaning of the sentence.
+ * The `<kbd>` element represents user input (typically keyboard input,
+ * although it may also be used to represent other input, such as voice
+ * commands).
  *
- * The `<b>` element represents a span of text to be stylistically offset
- * from the normal prose without conveying any extra importance. Examples
- * are key words in a document abstract, product names in a review, or
- * other spans of text whose typical typographic presentation is bold.
+ * When the `<kbd>` element is nested inside a `<samp>` element, it
+ * represents the input as it was echoed by the system. When the `<kbd>`
+ * element contains a `<samp>` element, it represents input based on
+ * system output, for example invoking a menu item.
  *
- * The `<b>` element should be used as a last resort when no other element
- * is more appropriate. In particular, headings should use the `<h1>` to
- * `<h6>` elements, stress emphasis should use the `<em>` element,
- * importance should be denoted with the `<strong>` element, and text
- * marked or highlighted should use the `<mark>` element.
+ * When the `<kbd>` element is nested inside another `<kbd>` element, it
+ * represents an actual key or other single unit of input as appropriate
+ * for the input mechanism.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-strong-element
- * @see http://dev.w3.org/html5/spec/Overview.html#the-b-element
+ * @see http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style
+ * @see http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-kbd-element
  */
 
-strong,
-b { letter-spacing: .015em; }
-
-/**
- * The `<small>` element represents side comments such as small print. It
- * is not intended to be presentational. The `<small>` element should not
- * be used for extended spans of text such as multiple paragraphs, lists,
- * or sections of text. It is only intended for short runs of text.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-small-element
- */
-
-small,
-p.small {
-	font-size: .875em; /* 14px */
-	line-height: 1.02857142857143; /* 2.05714285714286 / 2 */
-	margin: 0 0 1.02857142857143em;
+kbd {
+	-moz-border-radius: 3px;
+	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	-webkit-border-radius:3px;
+	-webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+	background-color:#f7f7f7;
+	border:1px solid #ccc;
+	border-radius:3px;
+	box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+	color:#333;
+	display:inline-block;
+	font-family:Arial,Helvetica,sans-serif;
+	font-size:11px;
+	line-height:1.4;
+	margin:0 .1em;
+	padding:.1em .6em;
+	text-shadow:0 1px 0 #fff;
 }
 
 /**
- * The `<s>` element represents contents that are no longer accurate or no
- * longer relevant.
+ * The `<mark>` element represents a run of text in one document marked or
+ * highlighted because of its relevance in another context.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-s-element
+ * When used in a quotation or other block of text referenced in a
+ * document, it indicates a highlight that was not present in the original
+ * document (e.g., a portion of text in an academic publication that has
+ * recently come under additional scrutiny).
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-mark-element
  */
 
-s { color: #666; }
-
-/**
- * Represents the title of a work.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-cite-element
- */
-
-cite {}
+mark {}
 
 /**
  * The `<cite>` element represents the title of a work (e.g. a book, a
@@ -718,88 +862,47 @@ q:after {
 	}
 
 /**
- * The `<dfn>` element represents the defining instance of a term. The
- * paragraph, description list group, or section that is the nearest
- * ancestor of the `<dfn>` element must also contain the definition(s) for
- * the term given by the `<dfn>` element.
+ * The `<rp>` element represents a container for parentheses used to wrap
+ * ruby text (`<rt>`) inside a `<ruby>` element. These are displayed by
+ * browsers which don't support `<ruby>`, allowing for graceful
+ * degradation of ruby content. Browsers which support `<ruby>` hide
+ * `<rp>` via `display: none`.
  *
- * The `<abbr>` element represents an abbreviation or acronym. The
- * optional `title` attribute may be used to provide an expansion of the
- * abbreviation. If specified, the `title` attribute must contain an
- * expansion of the abbreviation and nothing else.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-dfn-element
- * @see http://dev.w3.org/html5/spec/Overview.html#the-abbr-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
  */
 
-dfn,
-dfn[title],
-abbr,
-abbr[title] { border-bottom: 1px dotted #666; }
+rp {}
 
 /**
- * The `<data>` element links a given content with a machine-readable
- * translation. If the content is time- or date-related, the `<time>` must
- * be used.
+ * The `<rt>` element represents a container for ruby text inside a
+ * `<ruby>` element. The `<rt>` content becomes the small annotations
+ * rendered by default above horizontal base text or to the right of
+ * vertical base text.
  *
- * This element is in the WHATWG version of HTML and not in the W3C draft
- * of HTML5. That means it is a highly experimental feature and shouldn't
- * be use on Web sites.
- *
- * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-data-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
  */
 
-data {}
+rt {}
 
 /**
- * The `<time>` element represents a precise date and/or time in the
- * proleptic Gregorian calendar. The time element encodes modern dates and
- * times in a machine-readable way, so that, for example, user agents
- * could offer to add an event to the user's calendar.
+ * The `<ruby>` element represents a container for base text and ruby text
+ * — small annotations used for phonetic readings in languages such as
+ * Japanese and Chinese. Examples include furigana and zhùyin fúhào
+ * (bopomofo).
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-time-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-ruby-element
  */
 
-time {}
+ruby {}
 
 /**
- * The `<code>` element represents a fragment of computer code. This could
- * be an XML element name, a file name, a computer program, or any other
- * string that a computer would recognize.
+ * The `<s>` element represents contents that are no longer accurate or no
+ * longer relevant.
  *
- * @see http://perishablepress.com/wrapping-content/
- * @see http://dev.w3.org/html5/spec/Overview.html#the-code-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-s-element
  */
 
-/* @TODO: I'd like to have an code:after pseudo element to show line wrap. */
-code {
-	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-	color: #333;
-	/*border: 1px solid rgba(0, 0, 0, .15);*/
-	background: rgba(0, 0, 0, .1);
-	padding: 0 2px;
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
-	white-space: pre;           /* CSS 2.0 */
-	white-space: pre-wrap;      /* CSS 2.1 */
-	white-space: pre-line;      /* CSS 3.0 */
-	white-space: -pre-wrap;     /* Opera 4-6 */
-	white-space: -o-pre-wrap;   /* Opera 7 */
-	white-space: -moz-pre-wrap; /* Mozilla */
-	white-space: -hp-pre-wrap;  /* HP Printers */
-	word-wrap: break-word;      /* IE 5+ */
-}
-
-/**
- * The `<var>` element represents a variable. This could be an actual
- * variable in a mathematical expression or programming context, or it
- * could just be a term used as a placeholder in prose.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-var-element
- */
-
-var { font-style: italic; }
+s { color: #666; }
 
 /**
  * The `<samp>` element represents (sample) output from a program or
@@ -814,86 +917,20 @@ samp {
 }
 
 /**
- * The `<kbd>` element represents user input (typically keyboard input,
- * although it may also be used to represent other input, such as voice
- * commands).
+ * The `<small>` element represents side comments such as small print. It
+ * is not intended to be presentational. The `<small>` element should not
+ * be used for extended spans of text such as multiple paragraphs, lists,
+ * or sections of text. It is only intended for short runs of text.
  *
- * When the `<kbd>` element is nested inside a `<samp>` element, it
- * represents the input as it was echoed by the system. When the `<kbd>`
- * element contains a `<samp>` element, it represents input based on
- * system output, for example invoking a menu item.
- *
- * When the `<kbd>` element is nested inside another `<kbd>` element, it
- * represents an actual key or other single unit of input as appropriate
- * for the input mechanism.
- *
- * @see http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style
- * @see http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-kbd-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-small-element
  */
 
-kbd {
-	-moz-border-radius: 3px;
-	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-	-webkit-border-radius:3px;
-	-webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
-	background-color:#f7f7f7;
-	border:1px solid #ccc;
-	border-radius:3px;
-	box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
-	color:#333;
-	display:inline-block;
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:1.4;
-	margin:0 .1em;
-	padding:.1em .6em;
-	text-shadow:0 1px 0 #fff;
+small,
+.small {
+	font-size: .875em; /* 14px */
+	line-height: 1.02857142857143; /* 2.05714285714286 / 2 */
+	margin: 0 0 1.02857142857143em;
 }
-
-/**
- */
-
-sub {}
-
-/**
- */
-
-sup {}
-
-/**
- */
-
-u {}
-
-/**
- */
-
-mark {}
-
-/**
- */
-
-ruby {}
-
-/**
- */
-
-rt {}
-
-/**
- */
-
-rp {}
-
-/**
- */
-
-bdi {}
-
-/**
- */
-
-bdo {}
 
 /**
  * The `<span>` element doesn't mean anything on its own, but can be
@@ -912,17 +949,88 @@ span {}
 	}
 
 /**
- * The `<br>` element represents a line break. `<br>` elements must be
- * used only for line breaks that are actually part of the content, as in
- * poems or addresses. `<br>` elements must not be used for separating
- * thematic groups in a paragraph.
+ * The `<strong>` element represents strong importance for its contents.
+ * Indicate relative importance by nesting strong elements; each strong
+ * element increases the importance of its contents. Changing the
+ * importance of a piece of text with the strong element does not change
+ * the meaning of the sentence.
  *
- * http://dev.w3.org/html5/spec/Overview.html#the-br-element
+ * The `<b>` element represents a span of text to be stylistically offset
+ * from the normal prose without conveying any extra importance. Examples
+ * are key words in a document abstract, product names in a review, or
+ * other spans of text whose typical typographic presentation is bold.
+ *
+ * The `<b>` element should be used as a last resort when no other element
+ * is more appropriate. In particular, headings should use the `<h1>` to
+ * `<h6>` elements, stress emphasis should use the `<em>` element,
+ * importance should be denoted with the `<strong>` element, and text
+ * marked or highlighted should use the `<mark>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-strong-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-b-element
  */
 
-br {}
+strong,
+b { letter-spacing: .015em; }
 
 /**
+ * The `<sub>` element can be used inside a `<var>` element, for variables
+ * that have subscripts.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-sub-and-sup-elements
+ */
+
+sub {}
+
+/**
+ * The `<sup>` element represents a superscript and the `<sub>` element
+ * represents a subscript.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-sub-and-sup-elements
+ */
+
+sup {}
+
+/**
+ * The `<time>` element represents a precise date and/or time in the
+ * proleptic Gregorian calendar. The time element encodes modern dates and
+ * times in a machine-readable way, so that, for example, user agents
+ * could offer to add an event to the user's calendar.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-time-element
+ */
+
+time {}
+
+/**
+ * The `<u>` element represents a span of text with an unarticulated,
+ * though explicitly rendered, non-textual annotation (when you are
+ * annotating something, but not explicitly saying what it is). Examples
+ * include indicating misspelled words, labeling proper names in
+ * traditional Chinese prose, or indicating a family name when the name’s
+ * order is non-western.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-u-element
+ */
+
+u {}
+
+/**
+ * The `<var>` element represents a variable. This could be an actual
+ * variable in a mathematical expression or programming context, or it
+ * could just be a term used as a placeholder in prose.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-var-element
+ */
+
+var { font-style: italic; }
+
+/**
+ * The `<wbr>` element represents a line break opportunity. Any content
+ * inside `<wbr>` elements must not be considered part of the surrounding
+ * text.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-wbr-element
  */
 
 wbr {}
@@ -930,16 +1038,109 @@ wbr {}
 /*----------------------------------( EDITS )----------------------------------*/
 
 /**
- */
-
-ins {}
-
-/**
+ * The `<del>` element represents a removal from the document; `<del>`
+ * elements should not cross implied paragraph boundaries.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-del-element
  */
 
 del {}
 
+/**
+ * The `<ins>` element represents an addition to the document. The `<ins>`
+ * elements should not cross implied paragraph boundaries.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-ins-element
+ */
+
+ins {}
+
 /*----------------------------------( EMBEDED CONTENT )----------------------------------*/
+
+/**
+ * The `<area>` element represents either a hyperlink with some text and a
+ * corresponding area on an image map, or a dead area on an image map.
+ *
+ * If the `<area>` element has no `href` attribute, then the area
+ * represented by the element cannot be selected, and the `alt` attribute
+ * must be omitted.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-area-element
+ */
+
+area {}
+
+/**
+ * The `<audio>` element represents a sound or audio stream.
+ *
+ * Content may be nested inside the audio element. User agents should not
+ * show this content to the user. Authors should use this content to force
+ * older browsers to use a legacy audio plugin or to inform the user of
+ * how to access the audio content.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#audio
+ */
+
+audio {}
+
+/**
+ * The `<canvas>` element represents a resolution-dependent bitmap canvas,
+ * which can be used for rendering graphs, game graphics, or other visual
+ * images on the fly.
+ *
+ * Authors should not use the canvas element in a document when a more
+ * suitable element is available. For example, it is inappropriate to use
+ * a `<canvas>` element to render a page heading. If the desired
+ * presentation of the heading is graphically intense, it should be marked
+ * up using appropriate elements (typically `<h1>`) and then styled using
+ * CSS and supporting technologies such as XBL.
+ *
+ * When authors use the `<canvas>` element, they must also provide content
+ * that, when presented to the user, conveys essentially the same function
+ * or purpose as the bitmap canvas. This content should be nested within
+ * the `<canvas>` element as a fallback.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-canvas-element
+ */
+
+canvas {}
+
+/**
+ * The `<embed>` element represents an integration point for an external
+ * (typically non-HTML) application or interactive content.
+ *
+ * The optional `src` attribute specifies the URL of the resource being
+ * embedded.
+ *
+ * The optional `type` attribute specifies the MIME type of the plugin to
+ * instantiate. The value must be a valid MIME type, optionally with
+ * parameters. If both the `type` attribute and the `src` attribute are
+ * present, then the `type` attribute must specify the same MIME type as
+ * the explicit `Content-Type` metadata of the resource given by the `src`
+ * attribute.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-embed-element
+ */
+
+embed {}
+
+/**
+ * The `<iframe>` element represents a nested browsing context.
+ *
+ * For `<iframe>` elements in HTML documents, the attribute, if present,
+ * must have a value using the HTML syntax that consists of the following
+ * syntactic components, in the given order:
+ *
+ * * Any number of comments and space characters.
+ * * Optionally, a `<doctype>`.
+ * * Any number of comments and space characters.
+ * * The root element, in the form of an html element.
+ * * Any number of comments and space characters.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-iframe-element
+ */
+
+iframe {}
 
 /**
  * An `<img>` element represents an image. The image given by the `src`
@@ -968,226 +1169,432 @@ img {
 }
 
 /**
- */
-
-iframe {}
-
-/**
- */
-
-embed {}
-
-/**
- */
-
-object {}
-
-/**
- */
-
-param {}
-
-/**
- */
-
-video {}
-
-/**
- */
-
-audio {}
-
-/**
- */
-
-source {}
-
-/**
- */
-
-track {}
-
-/**
- */
-
-canvas {}
-
-/**
+ * The `<map>` element, in conjunction with any area element descendants,
+ * defines an image map. The element represents its children.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-map-element
  */
 
 map {}
 
 /**
+ * The top-level element in MathML is `<math>`. Every valid MathML
+ * instance must be wrapped in `<math>` tags. In addition you must not
+ * nest a second `<math>` element in another, but you can have an
+ * arbitrary number of other child elements in it.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#math
  */
 
-area {}
+math {}
 
 /**
+ * The `<object>` element can represent an external resource, which,
+ * depending on the type of the resource, will either be treated as an
+ * image, as a nested browsing context, or as an external resource to be
+ * processed by a plugin.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-object-element
+ */
+
+object {}
+
+/**
+ * The `<param>` element defines parameters for plugins invoked by
+ * `<object>` elements. It does not represent anything on its own.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-param-element
+ */
+
+param {}
+
+/**
+ * The `<source>` element allows authors to specify multiple alternative
+ * media resources for media elements. It does not represent anything on
+ * its own. The `src` attribute gives the address of the media resource.
+ * The value must be a valid non-empty URL potentially surrounded by
+ * spaces. This attribute must be present.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-source-element
+ */
+
+source {}
+
+/**
+ * The `<svg>` element can be used to nest a standalone SVG fragment
+ * inside the current document (which can be an HTML document). This
+ * standalone fragment has its own viewport and coordinate system.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#svg
  */
 
 svg {}
 
 /**
+ * The `<track>` element allows authors to specify explicit external timed
+ * text tracks for media elements. It does not represent anything on its
+ * own.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-track-element
  */
 
-math {}
+track {}
+
+/**
+ * The `<video>` element represents a video or movie.
+ *
+ * Content may be nested inside the `<video>` element. User agents should
+ * not show this content to the user. Authors should use this content to
+ * force older browsers to use a legacy video plugin or to inform the user
+ * of how to access the video content.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#video
+ */
+
+video {}
 
 /*----------------------------------( TABULAR DATA )----------------------------------*/
 
 /**
- */
-
-table {}
-
-/**
+ * The `<caption>` element represents the title of a `<table>` element.
+ *
+ * When a `<table>` element is the only content in a `<figure> element
+ * other than the `<figcaption>`, the `<caption>` element should be
+ * omitted in favor of the `<figcaption>`.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-caption-element
  */
 
 caption {}
 
 /**
- */
-
-colgroup {}
-
-/**
+ * The `<col>` element represents one or more columns in the column group
+ * represented by a `<table>` element's `<colgroup>`.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-col-element
  */
 
 col {}
 
 /**
+ * The `<colgroup>` element represents a group of one or more columns in a
+ * `<table>` element.
+ *
+ * If the `<colgroup>` element contains no `<col>` elements, then the
+ * element may have a `span` content attribute specified, whose value must
+ * be a valid non-negative integer greater than zero.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-colgroup-element
+ */
+
+colgroup {}
+
+/**
+ * The `<table>` element represents data with more than one dimension, in
+ * the form of a table. Tables must not be used as layout aids.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-table-element
+ */
+
+table {}
+
+/**
+ * The `<tbody>` element represents a block of rows that consist of a body
+ * of data for the parent `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-tbody-element
  */
 
 tbody {}
 
 /**
- */
-
-thead {}
-
-/**
- */
-
-tfoot {}
-
-/**
- */
-
-tr {}
-
-/**
+ * The `<td>` element represents a data cell in a `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-td-element
  */
 
 td {}
 
 /**
+ * The `<tfoot>` element represents the block of rows that consist of the
+ * column summaries (footers) for the parent `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-tfoot-element
+ */
+
+tfoot {}
+
+/**
+ * The `<th>` element represents a header cell in a `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-th-element
  */
 
 th {}
 
+/**
+ * The `<thead>` element represents the block of rows that consist of the
+ * column labels (headers) for the parent `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-thead-element
+ */
+
+thead {}
+
+/**
+ * The `<tr>` element represents a row of cells in a `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-tr-element
+ */
+
+tr {}
+
 /*----------------------------------( FORMS )----------------------------------*/
 
 /**
- */
-
-form {}
-
-/**
- */
-
-fieldset {}
-
-/**
- */
-
-legend {}
-
-/**
- */
-
-label {}
-
-/**
- */
-
-input {}
-
-/**
+ * The `<button>` element represents a button. If the element is not
+ * disabled, then the user agent should allow the user to activate the
+ * button.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-button-element
  */
 
 button {}
 
 /**
- */
-
-select {}
-
-/**
+ * The `<datalist>` element represents a set of option elements that
+ * represent predefined options for other controls. The contents of the
+ * element represents fallback content for legacy user agents, intermixed
+ * with `<option>` elements that represent the predefined options. In the
+ * rendering, the `<datalist>` element represents nothing and it, along
+ * with its children, should be hidden.
+ *
+ * The `<datalist>` element is hooked up to an `<input>` element using the
+ * `list` attribute on the `<input>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-datalist-element
  */
 
 datalist {}
 
 /**
+ * The `<fieldset>` element is expected to establish a new block
+ * formatting context.
+ *
+ * If the `<fieldset>` element has a child that matches the conditions in
+ * the list below, then the first such child is the `<fieldset>` element's
+ * rendered legend:
+ *
+ * * The child is a `<legend>` element.
+ * * The child is not out-of-flow (e.g. not absolutely positioned or floated).
+ * * The child is generating a box (e.g. it is not `display: none`).
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-fieldset-element
  */
 
-optgroup {}
+fieldset {}
 
 /**
+ * The `<form>` element represents a collection of form-associated
+ * elements, some of which can represent editable values that can be
+ * submitted to a server for processing.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-form-element
  */
 
-option {}
+form {}
 
 /**
+ * The `<input>` element represents a typed data field, usually with a
+ * form control to allow the user to edit the data.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-input-element
  */
 
-textarea {}
+input {}
 
 /**
+ * The `<keygen>` element represents a key pair generator control. When
+ * the control's form is submitted, the private key is stored in the local
+ * keystore, and the public key is packaged and sent to the server.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-keygen-element
  */
 
 keygen {}
 
 /**
+ * The `<label>` element represents a caption in a user interface which
+ * can be associated with a specific form control, known as the `<label>`
+ * element's labeled control, either using the `for` attribute, or by
+ * putting the form control inside the `<label>` element itself.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-label-element
+ */
+
+label {}
+
+/**
+ * The `<legend>` element represents a caption for the parent `<fieldset>`
+ * element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-legend-element
+ */
+
+legend {}
+
+/**
+ * When the meter binding applies to a `<meter>` element, the element is
+ * expected to render as an `inline-block` box with a `height` of `1em`
+ * and a `width` of `5em`, a `vertical-align` of `-0.2em`, and with its
+ * contents depicting a gauge.
+ *
+ * When the element is wider than it is tall (or square), the depiction is
+ * expected to be of a horizontal gauge, with the minimum value on the
+ * right if the `direction` property on this element has a computed value
+ * of `rtl`, and on the left otherwise. When the element is taller than it
+ * is wide, it is expected to depict a vertical gauge, with the minimum
+ * value on the bottom.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-meter-element-0
+ */
+
+meter {}
+
+/**
+ * The `<optgroup>` element represents a group of `<option>` elements with
+ * a common label. The element's group of `<option>` elements consists of
+ * the `<option>` elements that are children of the `<optgroup>` element.
+ *
+ * When showing `<option>` elements in `<select>` elements, user agents
+ * should show the `<option>` elements of such groups as being related to
+ * each other and separate from other `<option>` elements.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-optgroup-element
+ */
+
+optgroup {}
+
+/**
+ * The `<option>` element represents an option in a `<select>` element or
+ * as part of a list of suggestions in a `<datalist>` element.
+ *
+ * In certain circumstances described in the definition of the `<select>`
+ * element, an `<option>` element can be a `<select>` element's
+ * placeholder label option. A placeholder label option does not represent
+ * an actual option, but instead represents a label for the `<select>`
+ * control.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-option-element
+ */
+
+option {}
+
+/**
+ * The `<output>` element represents the result of a calculation.
+ *
+ * The optional `for` attribute allows an explicit relationship to be made
+ * between the result of a calculation and the elements representing the
+ * values that influenced the calculation. If specified, the `for`
+ * attribute must contain a string consisting of an unordered set of
+ * unique, space-separated tokens, each of which must be the `id` of an
+ * element in the same document.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-output-element
  */
 
 output {}
 
 /**
+ * The `<progress>` element epresents the completion progress of a task.
+ * Progress may be either indeterminate — meaning it is unclear how much
+ * work remains before the task is complete (e.g., the task is waiting for
+ * a response from a remote host) — or a numeric value between 0 and a
+ * given maximum, explicitly specifying the fraction of work that has so
+ * far been completed.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-progress-element
  */
 
 progress {}
 
 /**
+ * The `<select>` element represents a control for selecting amongst a set
+ * of options.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-select-element
  */
 
-meter {}
+select {}
+
+/**
+ * The `<textarea>` element represents a multiline plain text edit control
+ * for the element's raw value. The contents of the control represent the
+ * control's default value.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-textarea-element
+ */
+
+textarea {}
 
 /*----------------------------------( INTERACTIVE ELEMENTS )----------------------------------*/
 
 /**
+ * The `<details>` element represents a disclosure widget from which the
+ * user can obtain additional information or controls. However, the
+ * `<details>` element is not appropriate for footnotes.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-details-element
  */
 
 details {}
 
 /**
- */
-
-summary {}
-
-/**
- */
-
-command {}
-
-/**
+ * The `<menu>` element represents a list of commands.
+ *
+ * If a `<menu>` element's `type` attribute is in the context menu state,
+ * then the element represents the commands of a context menu, and the
+ * user can only interact with the commands if that context menu is
+ * activated. If a `<menu>` element's `type` attribute is in the toolbar
+ * state, then the element represents a list of active commands that the
+ * user can immediately interact with.
+ *
+ * If a `<menu>` element's `type` attribute is in the list state, then the
+ * element either represents an unordered list of items (each represented
+ * by an `<li>` element), each of which represents a command that the user
+ * can perform or activate, or, if the element has no `<li>` element
+ * children, flow content describing available commands.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#menus
  */
 
 menu {}
+
+/**
+ * The `<menuitem>` element represents a command which the user can invoke.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-menuitem-element
+ */
+
+menuitem {}
+
+/**
+ * The `<summary>` element represents a summary, caption, or legend for
+ * the rest of the contents of the summary element's parent `<details>`
+ * element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-summary-element
+ */
+
+summary {}
 
 /*----------------------------------( BASSLINE )----------------------------------*/
 
 /**
  * Baseline grid class.
- * It simulates a baseline grid based on `em`/`rems` which will allow you to size according to your site's `font-size`.
+ *
+ * It simulates a baseline grid based on `em`/`rems` which will allow you
+ * to size according to your site's `font-size`.
  *
  * @see https://gist.github.com/4277585
  * @see http://advent2012.digitpaint.nl/13/
@@ -1210,10 +1617,10 @@ menu {}
 			linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
 			linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
 			linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-		background-size: 100% 1.8rem, 100% .9rem, 100% .45rem;   /* Match base `line-height`. */
-		background-position: 0 0;       /* Put line adjustments here. */
-		background-origin: content-box; /* Regardless of padding, background will begin in the corner of the box. */
-		background-attachment: local;   /* For scrolling. */
+		background-size: 100% 1.5rem, 100% .75rem, 100% .375rem; /* Match base `line-height`. */
+		background-position: 0 0;                                /* Put line adjustments here. */
+		background-origin: content-box;                          /* Regardless of padding, background will begin in the corner of the box. */
+		background-attachment: local;                            /* For scrolling. */
 		width: 100%;
 		display: block;
 		position: absolute;
