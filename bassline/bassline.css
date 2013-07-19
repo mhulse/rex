@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+/* TEMP: */
+.container {
+	xwidth: 640px;
+	xmargin: 0 auto;
+}
+
 /**
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
@@ -7,10 +13,6 @@
  * @see http://www.alistapart.com/articles/more-meaningful-typography/
  * @see http://modularscale.com/
  */
-
-/*----------------------------------( NORMALIZE )----------------------------------*/
-
-/*! normalize.css v2.1.2 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden]{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:bold}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-0.5em}sub{bottom:-0.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0}input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
 
 /*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
 
@@ -142,7 +144,6 @@ aside {}
 
 body {
 	font: 100%/1.5 Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
-	text-align: center;
 	color: #000;
 	/* Improve default text rendering, handling of kerning pairs and ligatures: */
 	-webkit-font-smoothing: antialiased;
@@ -186,17 +187,15 @@ footer {}
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
 	font: bold 1em/1.5 Arial, sans-serif;
-	color: #000;
-	margin: 0 0 10px;
+	margin: 0 0 5px;
 }
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
 	font: 1em/1.5 Cambria, Georgia, serif;
-	color: #000;
-	margin: 10px 0;
+	margin: 0 0 10px;
 }
 h1, .h1, .sh1 {
 	font-size: 2.875em; /* 46px */
-	line-height: 1.04347826086957;
+	line-height: 1.04347826086957; /* (3 / 2.875) = 1.04347826086957*/
 }
 h2, .h2, .sh2 {
 	font-size: 2.5em; /* 40px */
@@ -212,7 +211,7 @@ h4, .h4, .sh4 {
 }
 h5, .h5, .sh5 {
 	font-size: 1.375em; /* 22px */
-	line-height: 1.09090909090909;
+	line-height: 1.09090909090909; /* (1.5 / 1.375) = 1.09090909090909 */
 }
 h6, .h6, .sh6 {
 	font-size: 1.125em; /* 18px */
@@ -289,14 +288,13 @@ section {}
  */
 
 blockquote {
-	border-left: 3px solid #333;
-	margin: 0 0 20px;
+	border-left: 3px solid #000;
+	margin: 0 0 10px;
 	padding: 0 0 0 1em;
 	position: relative;
 }
 	blockquote:before {
 		font: 6.25em/1 Arial, sans-serif; /* 100px */
-		color: #333;
 		display: block;
 		content: "\201C";
 		position: absolute;
@@ -305,60 +303,13 @@ blockquote {
 	}
 		blockquote p {
 			font: italic 1em/1.5 Arial, sans-serif; /* 16px */
-			color: #333;
 			margin: 0;
 		}
-
-/*
-blockquote {
-	border-left: 3px solid #ccc;
-	margin: 0 0 1.8em;
-	padding: 0 0 0 1.8em;
-	quotes: '“' '”';
-}
-	blockquote p {
-		font: italic 1.125em/1.6 Cambria, Georgia, serif;
-		text-indent: -.75em;
-		word-spacing: .05em;
-	}
-		blockquote p:before {
-			font-weight: bold;
-			letter-spacing: .5ex;
-			content: '“';
-			content: open-quote;
-		}
-		blockquote p:after {
-			content: '';
-			content: no-close-quote;
-		}
-		blockquote p:last-of-type:after {
-			font-weight: bold;
-			content: '”';
-			content: close-quote;
-		}
 		blockquote p:last-of-type { margin: 0; }
-	blockquote footer {
-		line-height: 2.05714285714286;
-		color: #666;
-		margin: 0 0 2.05714285714286em;
-	}
-	blockquote q:before {
-		content: '‘';
-		content: open-quote;
-	}
-	blockquote q:after {
-		content: '’';
-		content: close-quote;
-	}
-		blockquote q q:before {
-			content: '“';
-			content: open-quote;
+		blockquote footer {
+			font-size: .875em; /* 14px */
+			line-height: 1.71428571428571em; /* (1.5 / .875) = 1.71428571428571 */
 		}
-		blockquote q q:after {
-			content: '”';
-			content: close-quote;
-		}
-*/
 
 /**
  * The `<div>` element has no special meaning at all. It represents its
@@ -396,7 +347,7 @@ div {}
  */
 
 dl {
-	margin: 0 0 1.8em;
+	margin: 0 0 10px;
 	padding: 0;
 }
 	dl dt { font-weight: bold; }
@@ -421,37 +372,13 @@ dl {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-figcaption-element
  */
 
-figure {
-	text-align: left;
-	display: inline-block;
-	max-width: 100%;
-	margin: 0;
-}
-	figure img {
-		background: #fff;
-		display: block;
-	}
-	figcaption {
-		font-size: .875em; /* 14px / 16px = .875em */
+figure { margin: 0 0 10px; }
+	figure img { display: block; }
+	figure figcaption {
+		font-size: .875em; /* (14px / 16px) = .875em */
 		line-height: 1.28571428571428; /* (((1.5 / .875) * .75) = 1.28571428571428) */
-		color: rgba(43, 50, 77, .75);
-		background: rgba(173, 191, 199, .5);
 		padding: 5px 10px;
 	}
-		figcaption a {
-			font-weight: bold;
-			text-decoration: none;
-			color: #000;
-		}
-			figcaption a:visited,
-			figcaption a:visited:hover,
-			figcaption a:focus,
-			figcaption a:focus:hover,
-			figcaption a:hover,
-			figcaption a:active {
-				color: #000;
-				text-decoration: underline;
-			}
 
 /**
  * The `<hr>` element represents a paragraph-level thematic break. It
@@ -464,7 +391,7 @@ figure {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-hr-element-0
  */
 
-hr, .hr1, .hr2, .hr3, .hr4 {
+hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
 	border: 0;
 	border-top: 1px solid #000;
 	height: 1px;
@@ -476,7 +403,15 @@ hr, .hr1, .hr2, .hr3, .hr4 {
 	.hr3,
 	.hr4 {
 		border-top-width: 2px;
-		margin: 8px 0 10px;
+		margin-top: 8px;
+	}
+	.hr5 {
+		border-top-width: 4px;
+		margin-top: 6px;
+	}
+	.hr6 {
+		border-top-width: 6px;
+		margin-top: 4px;
 	}
 
 /**
@@ -487,23 +422,10 @@ hr, .hr1, .hr2, .hr3, .hr4 {
 
 p {
 	font-family: Cambria, Georgia, serif;
-	font-size: .875em; /* 14px */
-	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	margin: 0 0 10px;
+	font-size: 1em; /* 16px */
+	line-height: 1.5;
+	margin: 0 0 .75em; /* (1.5 / 2) = .75 */
 }
-	p a {
-		color: #0D3A4F;
-		font-weight: bold;
-		text-decoration: none;
-	}
-	p a:visited { color: #0D3A4F; }
-	p a:visited:hover,
-	p a:focus,
-	p a:focus:hover,
-	p a:hover,
-	p a:active {
-		color: #046D8B;
-	}
 	
 	/**
 	 * Drop caps.
@@ -515,34 +437,31 @@ p {
 	 * @see http://www.smashingmagazine.com/2012/04/03/drop-caps-historical-use-and-current-best-practices/
 	 * @see http://css-tricks.com/snippets/css/drop-caps/
 	 * @see http://www.sitepoint.com/a-simple-css-drop-cap/
+	 * @see http://phrogz.net/css/vertical-align/
 	 */
 	
-	.firsties {
+	span.firsties {
 		font-family: Cambria, Georgia, serif;
 		font-style: normal;
-		font-weight: bold;
-		font-size: 6.25rem; /* (100px / 16px) = 6.25em */
-		line-height: 1.2; /* (7.5em / 6.25em) = 1.2em */
+		font-weight: normal;
+		font-size: 3.125rem; /* (50px / 16px) = 3.125em */
+		line-height: 1.44; /* (4.5 / 3.125) = 1.44 */
 		color: #fff;
-		background: rgba(0, 0, 0, .25);
+		background: #000;
 		margin-right: 12px;
 		margin-right: .8rem;
 		padding: 0 16px;
 		padding: 0 1rem;
+		vertical-align: middle;
 		float: left;
 		display: inline;
-		-webkit-border-radius: 5px;
-		        border-radius: 5px;
-		-webkit-box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
-		        box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
-		text-shadow: 0 0 5px rgba(0, 0, 0, .75);
 	}
 	
 	/*
-	#story p:first-of-type:first-letter {
-		font-size: 9rem;
+	p:first-of-type:first-letter {
 		font-family: Cambria, Georgia, serif;
-		line-height: 6.5rem;
+		font-size: 6.25rem;
+		line-height: 1.2;
 		margin: 0;
 		padding: 0;
 		text-transform: uppercase;
@@ -627,19 +546,13 @@ ul {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-a-element
  */
 
-a {
-	color: #4E801C;
-	text-decoration: none;
-}
-	a:visited { color: #4E801C; }
+a { color: blue; }
+	a:visited { color: purple; }
 	a:visited:hover,
 	a:focus,
 	a:focus:hover,
 	a:hover,
-	a:active {
-		color: #9EA301;
-		text-decoration: none;
-	}
+	a:active { color: red; }
 
 /**
  * The `<abbr>` element represents an abbreviation or acronym. The
@@ -939,13 +852,19 @@ small,
  *
  * @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-span-element
+ * @see http://fluidbaselinegrid.com/css/style.css
  */
 
 span {}
 	/* The italic version of an ampersand is more decorative and interesting than its roman counterpart. */
 	span.amp1 {
-		font-family: Baskerville, Palatino, "Book Antiqua", serif;
+		font-size: 110%;
+		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
+		font-weight: 400;
 		font-style: italic;
+		line-height: 0;
+		vertical-align: baseline;
+		position:relative;
 	}
 
 /**
@@ -971,7 +890,10 @@ span {}
  */
 
 strong,
-b { letter-spacing: .015em; }
+b {
+	font-weight: bold;
+	letter-spacing: .015em;
+}
 
 /**
  * The `<sub>` element can be used inside a `<var>` element, for variables
