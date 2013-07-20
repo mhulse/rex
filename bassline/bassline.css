@@ -2,8 +2,14 @@
 
 /* TEMP: */
 .container {
-	xwidth: 640px;
-	xmargin: 0 auto;
+	text-align: left;
+	margin: 0 10px;
+}
+@media only screen and (min-width: 705px) { /* 640 + 50 + 15 */
+	.container {
+		width: 640px;
+		margin: 0 auto;
+	}
 }
 
 /**
@@ -482,18 +488,15 @@ p {
  */
 
 pre {
-	font: .875em/2.05714285714286 Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif; /* (14px / 16px = .875em)/(1.8em / .875em = 2.05714285714286) */
-	color: #333;
-	border: .07142857142857em solid rgba(0, 0, 0, .15); /* 1px / 14px */
-	background: rgba(0, 0, 0, .1);
-	margin: 1em 0; /* (28px / 14px = 2em) / 2 = 1em */
-	padding: .92857142857143em; /* (28px - 2px (top/bottom borders) = 26px) / (14px = 1.85714285714286) / 2 */
+	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+	font-size: .875em; /* (14px / 16px) = .875em */
+	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+	border: 1px solid #000;
+	margin: 0 0 10px; /* (28px / 14px = 2em) / 2 = 1em */
+	padding: 10px;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-	        border-radius: 4px;
 }
 	pre code {
 		color: inherit;
@@ -615,14 +618,7 @@ cite {}
 
 /* @TODO: I'd like to have an code:after pseudo element to show line wrap. */
 code {
-	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-	color: #333;
-	/*border: 1px solid rgba(0, 0, 0, .15);*/
-	background: rgba(0, 0, 0, .1);
-	padding: 0 2px;
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
+	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 	white-space: pre;           /* CSS 2.0 */
 	white-space: pre-wrap;      /* CSS 2.1 */
 	white-space: pre-line;      /* CSS 3.0 */
@@ -700,25 +696,25 @@ i {}
  *
  * @see http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style
  * @see http://www.w3.org/html/wg/drafts/html/master/text-level-semantics.html#the-kbd-element
+ * @see https://github.global.ssl.fastly.net/assets/github-5fd4717c630cd3f2772cb325130d5a24a09fdea0.css
+ * @see https://cdn.sstatic.net/superusermeta/all.css
  */
 
 kbd {
-	-moz-border-radius: 3px;
-	-moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-	-webkit-border-radius:3px;
-	-webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
-	background-color:#f7f7f7;
-	border:1px solid #ccc;
-	border-radius:3px;
-	box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
-	color:#333;
-	display:inline-block;
-	font-family:Arial,Helvetica,sans-serif;
-	font-size:11px;
-	line-height:1.4;
-	margin:0 .1em;
-	padding:.1em .6em;
-	text-shadow:0 1px 0 #fff;
+	font-family: Monaco, "Liberation Mono", Courier, monospace;
+	text-shadow: 0 1px 0 #fff;
+	color: #000;
+	background-color: #e7e7e7;
+	background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+	background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+	background-image: linear-gradient(#fefefe, #e7e7e7);
+	background-repeat: repeat-x;
+	-webkit-border-radius: 2px;
+	   -moz-border-radius: 2px;
+	        border-radius: 2px;
+	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	        box-shadow: 0 0 0 5px red, 0 6px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
 }
 
 /**
