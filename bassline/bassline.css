@@ -1,17 +1,5 @@
 @charset "UTF-8";
 
-/* TEMP: */
-.container {
-	text-align: left;
-	margin: 0 10px;
-}
-@media only screen and (min-width: 705px) { /* 640 + 50 + 15 */
-	.container {
-		width: 640px;
-		margin: 0 auto;
-	}
-}
-
 /**
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
@@ -295,9 +283,10 @@ section {}
 
 blockquote {
 	border-left: 3px solid #000;
-	margin: 0 0 10px;
+	margin: 10px 0;
 	padding: 0 0 0 1em;
 	position: relative;
+	quotes: none;
 }
 	blockquote:before {
 		font: 6.25em/1 Arial, sans-serif; /* 100px */
@@ -306,6 +295,10 @@ blockquote {
 		position: absolute;
 		left: -.4em;
 		top: -.1em;
+	}
+	blockquote:after {
+		content: '';
+		content: none;
 	}
 		blockquote p {
 			font: italic 1em/1.5 Arial, sans-serif; /* 16px */
@@ -353,11 +346,18 @@ div {}
  */
 
 dl {
-	margin: 0 0 10px;
+	font-size: 1em;
+	line-height: 1.125; /* (1.5 * .75) = 1.125 */
+	margin: 10px 0;
 	padding: 0;
 }
+	dl dd,
+	dl dt {
+		margin: 0 0 .375em; /* (1.5 * .25) = .375 */
+		padding: 0;
+	}
 	dl dt { font-weight: bold; }
-	dl dd { margin-left: 1.8em; }
+	dl dd { margin-left: .5em; }
 
 /**
  * The `<figure>` element represents some flow content, optionally with a
@@ -430,7 +430,7 @@ p {
 	font-family: Cambria, Georgia, serif;
 	font-size: 1em; /* 16px */
 	line-height: 1.5;
-	margin: 0 0 .75em; /* (1.5 / 2) = .75 */
+	margin: .75em 0; /* (1.5 / 2) = .75 */
 }
 	
 	/**
@@ -450,14 +450,10 @@ p {
 		font-family: Cambria, Georgia, serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 3.125rem; /* (50px / 16px) = 3.125em */
-		line-height: 1.44; /* (4.5 / 3.125) = 1.44 */
-		color: #fff;
-		background: #000;
-		margin-right: 12px;
-		margin-right: .8rem;
-		padding: 0 16px;
-		padding: 0 1rem;
+		font-size: 4.5rem; /* 72px */
+		line-height: 1; /* (4.5 / 4.5) = 1 */
+		margin-right: .5rem;
+		xpadding: 0 .5rem;
 		vertical-align: middle;
 		float: left;
 		display: inline;
@@ -491,8 +487,8 @@ pre {
 	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 	font-size: .875em; /* (14px / 16px) = .875em */
 	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	border: 1px solid #000;
-	margin: 0 0 10px; /* (28px / 14px = 2em) / 2 = 1em */
+	border: 1px solid #ccc;
+	margin: 10px 0;
 	padding: 10px;
 	word-wrap: normal;
 	overflow: auto;
@@ -526,14 +522,21 @@ pre {
 
 ol,
 ul {
-	font-size: 1em; /* 16px */
-	line-height: 1.8; /* 28px */
-	margin: 0 0 1.8em 2.5em;
+	font-size: 1em;
+	line-height: 1.125; /* (1.5 * .75) = 1.125 */
+	margin: 10px 0;
 	padding: 0;
 	list-style-position: outside;
 }
-	li ol,
-	li ul { margin: 0 0 0 3em; }
+ol { margin-left: 2.5em; }
+ul { margin-left: 1.5em; }
+	ol li,
+	ul li {
+		margin: 0 0 .375em; /* (1.5 * .25) = .375 */
+		padding: 0;
+	}
+	li ol { margin-left: 2.5em; }
+	li ul { margin-left: .5em; }
 
 /*----------------------------------( TEXT-LEVEL SEMANTICS )----------------------------------*/
 
@@ -564,19 +567,28 @@ a { color: blue; }
  * expansion of the abbreviation and nothing else.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-abbr-element
+ * @see http://www.maxdesign.com.au/articles/abbreviations/
+ * @see http://html5doctor.com/the-abbr-element/
  */
 
-abbr,
-abbr[title] { border-bottom: 1px dotted #666; }
+abbr { font-style: italic; }
+abbr[title] {
+	border-bottom: .1em dotted;
+	cursor: help;
+}
 
 /**
  * The `<bdi>` element represents a span of text that is to be isolated
  * from its surroundings for the purposes of bidirectional text formatting.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-rp-element
+ * @see http://stackoverflow.com/a/8546564/922323
  */
 
-bdi {}
+bdi {
+	direction: ltr;
+	unicode-bidi: bidi-override;
+}
 
 /**
  * The `<bdo>` element represents explicit text directionality formatting
@@ -605,7 +617,7 @@ br {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-cite-element
  */
 
-cite {}
+cite { font-style: italic; }
 
 /**
  * The `<code>` element represents a fragment of computer code. This could
@@ -639,6 +651,7 @@ code {
  * be use on Web sites.
  *
  * @see http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-data-element
+ * @see http://www.quackit.com/html_5/tags/html_data_tag.cfm
  */
 
 data {}
@@ -652,8 +665,11 @@ data {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-dfn-element
  */
 
-dfn,
-dfn[title] { border-bottom: 1px dotted #666; }
+dfn { font-weight: bold; }
+dfn[title] {
+	border-bottom: .1em dotted;
+	cursor: help;
+}
 
 /**
  * The `<em>` element represents stress emphasis of its contents. The
@@ -678,7 +694,7 @@ dfn[title] { border-bottom: 1px dotted #666; }
  */
 
 em,
-i {}
+i { font-style: italic; }
 
 /**
  * The `<kbd>` element represents user input (typically keyboard input,
@@ -701,20 +717,15 @@ i {}
  */
 
 kbd {
-	font-family: Monaco, "Liberation Mono", Courier, monospace;
+	font-family: monospace, serif;
 	text-shadow: 0 1px 0 #fff;
 	color: #000;
-	background-color: #e7e7e7;
-	background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
-	background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
-	background-image: linear-gradient(#fefefe, #e7e7e7);
-	background-repeat: repeat-x;
-	-webkit-border-radius: 2px;
-	   -moz-border-radius: 2px;
-	        border-radius: 2px;
-	-webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-	   -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
-	        box-shadow: 0 0 0 5px red, 0 6px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+	background: #eee;
+	margin: 0 .25em;
+	box-shadow:
+		0 0 0 2px #eee,
+		0 0 0 3px #fff,
+		0 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /**
@@ -727,9 +738,16 @@ kbd {
  * recently come under additional scrutiny).
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-mark-element
+ * @see http://html5doctor.com/draw-attention-with-mark/
  */
 
-mark {}
+mark {
+	text-decoration: none;
+	color: #525200;
+	background-color: rgba(255, 255, 0, .75);
+	margin: 0 .25em;
+	box-shadow: 0 0 0 4px rgba(255, 255, 0, .75);
+}
 
 /**
  * The `<cite>` element represents the title of a work (e.g. a book, a
@@ -749,6 +767,7 @@ mark {}
  *
  * @see http://html5doctor.com/blockquote-q-cite/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-q-element
+ * @see http://alistapart.com/article/qtag
  */
 
 q { quotes: '“' '”' '‘' '’' '“' '”' '‘' '’'; } /* Four levels of nested quotes. */
@@ -771,38 +790,31 @@ q:after {
 	}
 
 /**
+ * The `<ruby>` element represents a container for base text and ruby text
+ * — small annotations used for phonetic readings in languages such as
+ * Japanese and Chinese. Examples include furigana and zhùyin fúhào
+ * (bopomofo).
+ *
+ * The `<rt>` element represents a container for ruby text inside a
+ * `<ruby>` element. The `<rt>` content becomes the small annotations
+ * rendered by default above horizontal base text or to the right of
+ * vertical base text.
+ *
  * The `<rp>` element represents a container for parentheses used to wrap
  * ruby text (`<rt>`) inside a `<ruby>` element. These are displayed by
  * browsers which don't support `<ruby>`, allowing for graceful
  * degradation of ruby content. Browsers which support `<ruby>` hide
  * `<rp>` via `display: none`.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
- */
-
-rp {}
-
-/**
- * The `<rt>` element represents a container for ruby text inside a
- * `<ruby>` element. The `<rt>` content becomes the small annotations
- * rendered by default above horizontal base text or to the right of
- * vertical base text.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
- */
-
-rt {}
-
-/**
- * The `<ruby>` element represents a container for base text and ruby text
- * — small annotations used for phonetic readings in languages such as
- * Japanese and Chinese. Examples include furigana and zhùyin fúhào
- * (bopomofo).
- *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ruby-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
+ * @see http://html5doctor.com/ruby-rt-rp-element/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
  */
 
 ruby {}
+rt,
+rp {display: inline; font-size: 100%;}
 
 /**
  * The `<s>` element represents contents that are no longer accurate or no
@@ -835,11 +847,7 @@ samp {
  */
 
 small,
-.small {
-	font-size: .875em; /* 14px */
-	line-height: 1.02857142857143; /* 2.05714285714286 / 2 */
-	margin: 0 0 1.02857142857143em;
-}
+.small { font-size: smaller; }
 
 /**
  * The `<span>` element doesn't mean anything on its own, but can be
@@ -886,28 +894,28 @@ span {}
  */
 
 strong,
-b {
-	font-weight: bold;
-	letter-spacing: .015em;
-}
+b { font-weight: bold; }
 
 /**
  * The `<sub>` element can be used inside a `<var>` element, for variables
  * that have subscripts.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-sub-and-sup-elements
- */
-
-sub {}
-
-/**
  * The `<sup>` element represents a superscript and the `<sub>` element
  * represents a subscript.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-sub-and-sup-elements
+ * @see https://gist.github.com/unruthless/413930
  */
 
-sup {}
+sub,
+sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline
+}
+sub { bottom: -.25em; }
+sup { top: -.5em; }
 
 /**
  * The `<time>` element represents a precise date and/or time in the
@@ -916,6 +924,8 @@ sup {}
  * could offer to add an event to the user's calendar.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-time-element
+ * @see http://html5doctor.com/the-time-element/
+ * @see http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/
  */
 
 time {}
@@ -929,9 +939,10 @@ time {}
  * order is non-western.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-u-element
+ * @see http://html5doctor.com/u-element/
  */
 
-u {}
+u { text-decoration: underline; }
 
 /**
  * The `<var>` element represents a variable. This could be an actual
@@ -949,9 +960,13 @@ var { font-style: italic; }
  * text.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-wbr-element
+ * @see http://www.quirksmode.org/oddsandends/wbr.html
+ * @see http://gojomo.blogspot.com/2005/03/cross-browser-invisible-word-break-in.html
+ * @see http://www.html-5.com/tags/wbr-tag/index.html
  */
 
 wbr {}
+wbr:after { content: "\00200B"; }
 
 /*----------------------------------( EDITS )----------------------------------*/
 
@@ -962,7 +977,13 @@ wbr {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-del-element
  */
 
-del {}
+del {
+	text-decoration: line-through;
+	color: #600;
+	background-color: rgba(255, 0, 0, .25);
+	margin: 0 .15em;
+	box-shadow: 0 0 0 2px rgba(255, 0, 0, .25);
+}
 
 /**
  * The `<ins>` element represents an addition to the document. The `<ins>`
@@ -971,7 +992,13 @@ del {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ins-element
  */
 
-ins {}
+ins {
+	text-decoration: none;
+	color: #003d14;
+	background-color: rgba(0, 153, 51, .25);
+	margin: 0 .15em;
+	box-shadow: 0 0 0 2px rgba(0, 153, 51, .25);
+}
 
 /*----------------------------------( EMBEDED CONTENT )----------------------------------*/
 
@@ -997,6 +1024,7 @@ area {}
  * how to access the audio content.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#audio
+ * @see http://html5doctor.com/native-audio-in-the-browser/
  */
 
 audio {}
@@ -1214,7 +1242,14 @@ colgroup {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-table-element
  */
 
-table {}
+table { 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+	background-color: white;
+	width: 100%;
+	border: 1px solid #c3c9cc;
+	margin: 10px 0;
+}
 
 /**
  * The `<tbody>` element represents a block of rows that consist of a body
@@ -1231,7 +1266,11 @@ tbody {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-td-element
  */
 
-td {}
+td {
+	border-top: 1px solid #c3c9cc;
+	padding: 1em 0.75em;
+	text-align: left;
+}
 
 /**
  * The `<tfoot>` element represents the block of rows that consist of the
@@ -1248,7 +1287,12 @@ tfoot {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-th-element
  */
 
-th {}
+th {
+	background-color: #f5f5f5;
+	white-space: nowrap;
+	padding: 1em 0.75em;
+	text-align: left;
+}
 
 /**
  * The `<thead>` element represents the block of rows that consist of the
@@ -1266,6 +1310,7 @@ thead {}
  */
 
 tr {}
+tr:nth-of-type(odd) { background: #eee; }
 
 /*----------------------------------( FORMS )----------------------------------*/
 
@@ -1553,3 +1598,23 @@ summary {}
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 	}
+
+/* TEMP: */
+.container {
+	text-align: left;
+	margin: 0 auto;
+	padding: 40px;
+	max-width: 720px;
+}
+
+.marker {
+	font: bold 1.375em/1.09090909090909 Arial, sans-serif; /* 22px */
+	color: #990;
+	text-transform: none;
+	background: #ff0;
+	margin: 10px 0;
+	padding: .54545454545455em .54545454545455em;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}

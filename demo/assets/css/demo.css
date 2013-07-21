@@ -65,6 +65,8 @@ pre {
 	-webkit-border-radius: 4px;
 	   -moz-border-radius: 4px;
 	        border-radius: 4px;
+	-webkit-box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
+	        box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
 }
 
 code {
@@ -100,6 +102,7 @@ code {
 	*zoom: 1;
 }
 
+/* <h1 id="flag">M<span>icky Hulse</span></h1> */
 #flag {
 	font: 100px/1 "Hulse", Arial, sans-serif;
 	color: #FD5B84;
