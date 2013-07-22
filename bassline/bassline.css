@@ -282,20 +282,13 @@ section {}
  */
 
 blockquote {
-	border-left: 3px solid #000;
+	border-left: 3px solid rgba(0, 0, 0, .25);
 	margin: 10px 0;
 	padding: 0 0 0 1em;
 	position: relative;
 	quotes: none;
 }
-	blockquote:before {
-		font: 6.25em/1 Arial, sans-serif; /* 100px */
-		display: block;
-		content: "\201C";
-		position: absolute;
-		left: -.4em;
-		top: -.1em;
-	}
+	blockquote:before,
 	blockquote:after {
 		content: '';
 		content: none;
@@ -309,6 +302,17 @@ blockquote {
 			font-size: .875em; /* 14px */
 			line-height: 1.71428571428571em; /* (1.5 / .875) = 1.71428571428571 */
 		}
+@media all and (min-width: 720px) {
+	blockquote:before {
+		font: 6.25em/1 Arial, sans-serif; /* 100px */
+		color: rgba(0, 0, 0, .25);
+		display: block;
+		content: "\201C";
+		position: absolute;
+		left: -.4em;
+		top: -.1em;
+	}
+}
 
 /**
  * The `<div>` element has no special meaning at all. It represents its
@@ -378,12 +382,12 @@ dl {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-figcaption-element
  */
 
-figure { margin: 0 0 10px; }
+figure { margin: 10px 0; }
 	figure img { display: block; }
 	figure figcaption {
 		font-size: .875em; /* (14px / 16px) = .875em */
 		line-height: 1.28571428571428; /* (((1.5 / .875) * .75) = 1.28571428571428) */
-		padding: 5px 10px;
+		margin: .4375em 0; /* (.875 / 2) = .4375 */
 	}
 
 /**
@@ -399,7 +403,7 @@ figure { margin: 0 0 10px; }
 
 hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
 	border: 0;
-	border-top: 1px solid #000;
+	border-top: 1px solid rgba(0, 0, 0, .75);
 	height: 1px;
 	margin: 9px 0 10px;
 	padding: 0;
@@ -453,7 +457,6 @@ p {
 		font-size: 4.5rem; /* 72px */
 		line-height: 1; /* (4.5 / 4.5) = 1 */
 		margin-right: .5rem;
-		xpadding: 0 .5rem;
 		vertical-align: middle;
 		float: left;
 		display: inline;
@@ -487,12 +490,18 @@ pre {
 	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 	font-size: .875em; /* (14px / 16px) = .875em */
 	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	border: 1px solid #ccc;
+	border: 1px solid rgba(0, 0, 0, .15);
+	background: rgba(0, 0, 0, .05);
 	margin: 10px 0;
 	padding: 10px;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
+	-webkit-border-radius: 4px;
+	   -moz-border-radius: 4px;
+	        border-radius: 4px;
+	-webkit-box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
+	        box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
 }
 	pre code {
 		color: inherit;
@@ -639,6 +648,12 @@ code {
 	white-space: -moz-pre-wrap; /* Mozilla */
 	white-space: -hp-pre-wrap;  /* HP Printers */
 	word-wrap: break-word;      /* IE 5+ */
+	color: #333;
+	padding: 0 .25em;
+	background: rgba(0, 0, 0, .1);
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+	        border-radius: 3px;
 }
 
 /**
@@ -722,11 +737,20 @@ kbd {
 	color: #000;
 	background: #eee;
 	margin: 0 .25em;
+	padding: 0 .15em;
+	line-height: 0;
+	vertical-align: baseline;
+	position: relative;
+	top: -1px;
+	-webkit-border-radius: .05em;
+	   -moz-border-radius: .05em;
+	        border-radius: .05em;
 	box-shadow:
 		0 0 0 2px #eee,
 		0 0 0 3px #fff,
 		0 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
+	kbd kbd { top: 0; }
 
 /**
  * The `<mark>` element represents a run of text in one document marked or
@@ -868,7 +892,7 @@ span {}
 		font-style: italic;
 		line-height: 0;
 		vertical-align: baseline;
-		position:relative;
+		position: relative;
 	}
 
 /**
@@ -911,8 +935,8 @@ sub,
 sup {
 	font-size: 75%;
 	line-height: 0;
+	vertical-align: baseline;
 	position: relative;
-	vertical-align: baseline
 }
 sub { bottom: -.25em; }
 sup { top: -.5em; }
@@ -1202,6 +1226,56 @@ video {}
 /*----------------------------------( TABULAR DATA )----------------------------------*/
 
 /**
+ * The `<table>` element represents data with more than one dimension, in
+ * the form of a table. Tables must not be used as layout aids.
+ *
+ * Permitted content in this order:
+ *
+ * * an optional `<caption>` element,
+ * * zero or more `<colgroup>` elements,
+ * * an optional `<thead>` element,
+ * * one of the two alternatives:
+ *   * one `<tfoot>` element, followed by:
+ *     * zero or more `<tbody>` elements,
+ *     * or one or more `<tr>` elements,
+ *   * a second alternative followed by an optional `<tfoot>` element:
+ *     * either zero or more `<tbody>` elements,
+ *     * or one or more `<tr>` elements
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-table-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+ * @see http://www.maxdesign.com.au/2013/03/22/simple-responsive-table/
+ * @see http://creativeandcode.com/simple-solution-for-responsive-tables/
+ */
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	background: rgba(255, 255, 255, .25);
+	width: 100%;
+	margin: 10px 0;
+	empty-cells: show;
+}
+	.table-wrap {
+		width: 100%;
+		overflow-y: auto;
+		_overflow: auto;
+		margin: 10px 0;
+		-webkit-overflow-scrolling: touch;
+	}
+	.table-wrap::-webkit-scrollbar {
+		-webkit-appearance: none;
+		width: 14px;
+		height: 14px;
+	}
+	.table-wrap::-webkit-scrollbar-thumb {
+		border-radius: 8px;
+		border: 3px solid rgba(255, 255, 255, .25);
+		background-color: rgba(0, 0, 0, .3);
+	}
+		.table-wrap table { margin: 0; }
+
+/**
  * The `<caption>` element represents the title of a `<table>` element.
  *
  * When a `<table>` element is the only content in a `<figure> element
@@ -1211,16 +1285,13 @@ video {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-caption-element
  */
 
-caption {}
-
-/**
- * The `<col>` element represents one or more columns in the column group
- * represented by a `<table>` element's `<colgroup>`.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-col-element
- */
-
-col {}
+caption {
+	font-size: .875em; /* 14px */
+	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+	font-weight: bold;
+	text-align: left;
+	padding-bottom: .64285714285714em;
+}
 
 /**
  * The `<colgroup>` element represents a group of one or more columns in a
@@ -1230,69 +1301,15 @@ col {}
  * element may have a `span` content attribute specified, whose value must
  * be a valid non-negative integer greater than zero.
  *
+ * The `<col>` element represents one or more columns in the column group
+ * represented by a `<table>` element's `<colgroup>`.
+ *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-colgroup-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-col-element
  */
 
 colgroup {}
-
-/**
- * The `<table>` element represents data with more than one dimension, in
- * the form of a table. Tables must not be used as layout aids.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-table-element
- */
-
-table { 
-	border-collapse: collapse; 
-	border-spacing: 0; 
-	background-color: white;
-	width: 100%;
-	border: 1px solid #c3c9cc;
-	margin: 10px 0;
-}
-
-/**
- * The `<tbody>` element represents a block of rows that consist of a body
- * of data for the parent `<table>` element.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-tbody-element
- */
-
-tbody {}
-
-/**
- * The `<td>` element represents a data cell in a `<table>` element.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-td-element
- */
-
-td {
-	border-top: 1px solid #c3c9cc;
-	padding: 1em 0.75em;
-	text-align: left;
-}
-
-/**
- * The `<tfoot>` element represents the block of rows that consist of the
- * column summaries (footers) for the parent `<table>` element.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-tfoot-element
- */
-
-tfoot {}
-
-/**
- * The `<th>` element represents a header cell in a `<table>` element.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-th-element
- */
-
-th {
-	background-color: #f5f5f5;
-	white-space: nowrap;
-	padding: 1em 0.75em;
-	text-align: left;
-}
+colgroup col {}
 
 /**
  * The `<thead>` element represents the block of rows that consist of the
@@ -1304,13 +1321,53 @@ th {
 thead {}
 
 /**
- * The `<tr>` element represents a row of cells in a `<table>` element.
+ * The `<tfoot>` element represents the block of rows that consist of the
+ * column summaries (footers) for the parent `<table>` element.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-tr-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-tfoot-element
  */
 
-tr {}
-tr:nth-of-type(odd) { background: #eee; }
+tfoot {}
+	tfoot tr td,
+	tfoot tr th {
+		color: #333;
+		font-weight: normal;
+	}
+
+/**
+ * The `<tbody>` element represents a block of rows that consist of a body
+ * of data for the parent `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-tbody-element
+ */
+
+tbody {}
+
+/**
+ * The `<tr>` element represents a row of cells in a `<table>` element.
+ *
+ * The `<th>` element represents a header cell in a `<table>` element.
+ *
+ * The `<td>` element represents a data cell in a `<table>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-tr-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-th-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-td-element
+ */
+
+tr:nth-of-type(odd) { background: rgba(0, 0, 0, .05); }
+	tr th {
+		text-align: left;
+		border: 1px solid rgba(0, 0, 0, .25);
+		background-color: rgba(0, 0, 0, .05);
+		padding: 5px;
+		white-space: nowrap;
+	}
+	tr td {
+		text-align: left;
+		border: 1px solid rgba(0, 0, 0, .25);
+		padding: 5px;
+	}
 
 /*----------------------------------( FORMS )----------------------------------*/
 
@@ -1322,7 +1379,16 @@ tr:nth-of-type(odd) { background: #eee; }
  * @see http://dev.w3.org/html5/spec/Overview.html#the-button-element
  */
 
-button {}
+button {
+	line-height: normal;
+	vertical-align: baseline;
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+button::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
 
 /**
  * The `<datalist>` element represents a set of option elements that
@@ -1355,7 +1421,10 @@ datalist {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-fieldset-element
  */
 
-fieldset {}
+fieldset {
+	border: 0;
+	padding: 0;
+}
 
 /**
  * The `<form>` element represents a collection of form-associated
@@ -1365,7 +1434,7 @@ fieldset {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-form-element
  */
 
-form {}
+form { margin: 0; }
 
 /**
  * The `<input>` element represents a typed data field, usually with a
@@ -1374,7 +1443,22 @@ form {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-input-element
  */
 
-input {}
+input {
+	line-height: normal;
+	vertical-align: baseline;
+}
+input::-moz-focus-inner {
+	border: 0;
+	padding: 0;
+}
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	cursor: pointer;
+	-webkit-appearance: button;
+}
+input[type="search"] { -webkit-appearance: textfield; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
 
 /**
  * The `<keygen>` element represents a key pair generator control. When
@@ -1420,6 +1504,7 @@ legend {}
  * value on the bottom.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-meter-element-0
+ * @see http://html5doctor.com/measure-up-with-the-meter-tag/
  */
 
 meter {}
@@ -1434,6 +1519,7 @@ meter {}
  * each other and separate from other `<option>` elements.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-optgroup-element
+ * @see http://www.htmldog.com/reference/htmltags/optgroup/
  */
 
 optgroup {}
@@ -1464,6 +1550,7 @@ option {}
  * element in the same document.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-output-element
+ * @see http://html5doctor.com/the-output-element/
  */
 
 output {}
@@ -1477,6 +1564,7 @@ output {}
  * far been completed.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-progress-element
+ * @see http://html5doctor.com/the-progress-element/
  */
 
 progress {}
@@ -1488,7 +1576,7 @@ progress {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-select-element
  */
 
-select {}
+select { vertical-align: baseline; }
 
 /**
  * The `<textarea>` element represents a multiline plain text edit control
@@ -1496,9 +1584,16 @@ select {}
  * control's default value.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-textarea-element
+ * @see http://davidwalsh.name/textarea-resize
+ * @see http://www.456bereastreet.com/lab/styling-form-controls-revisited/text-input-multiple/
  */
 
-textarea {}
+textarea {
+	overflow: auto;
+	vertical-align: baseline;
+	resize: vertical; /* [ none | horizontal | vertical | both ] */
+	width: 100%;
+}
 
 /*----------------------------------( INTERACTIVE ELEMENTS )----------------------------------*/
 
@@ -1599,22 +1694,26 @@ summary {}
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 	}
 
-/* TEMP: */
+/*----------------------------------( TEMP )----------------------------------*/
+
 .container {
 	text-align: left;
 	margin: 0 auto;
-	padding: 40px;
-	max-width: 720px;
+	padding: 20px;
+	max-width: 680px;
 }
 
 .marker {
 	font: bold 1.375em/1.09090909090909 Arial, sans-serif; /* 22px */
 	color: #990;
 	text-transform: none;
-	background: #ff0;
+	background: rgba(255, 255, 0, .75);
 	margin: 10px 0;
-	padding: .54545454545455em .54545454545455em;
+	padding: 10px;
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
+	box-shadow:
+		inset 0 0 2px 2px rgba(255, 255, 255, .5),
+		0 0 5px 0 rgba(0, 0, 0, .1);
 }

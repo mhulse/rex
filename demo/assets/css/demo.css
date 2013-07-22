@@ -59,49 +59,6 @@ a {
 		text-decoration: none;
 	}
 
-pre {
-	border: 1px solid rgba(0, 0, 0, .15);
-	background: rgba(0, 0, 0, .1);
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-	        border-radius: 4px;
-	-webkit-box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
-	        box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
-}
-
-code {
-	color: #333;
-	padding: 0 2px;
-	background: rgba(0, 0, 0, .1);
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
-}
-
-
-.container {
-	text-align: left;
-	margin: 0 10px;
-}
-@media only screen and (min-width: 705px) { /* 640 + 50 + 15 */
-	.container {
-		width: 640px;
-		margin: 0 auto;
-	}
-}
-
-.marker {
-	font: bold 1.375em/1.09090909090909 Arial, sans-serif; /* 22px */
-	color: #990;
-	text-transform: none;
-	background: #ff0;
-	margin: 5px 0 10px;
-	padding: .54545454545455em .54545454545455em;
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-}
-
 /* <h1 id="flag">M<span>icky Hulse</span></h1> */
 #flag {
 	font: 100px/1 "Hulse", Arial, sans-serif;
