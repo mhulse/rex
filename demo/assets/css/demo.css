@@ -2,11 +2,6 @@
 
 body { text-align: center; }
 
-blockquote { border-left-color: #333; }
-blockquote:before { color: #333; }
-	blockquote p { color: #333; }
-	blockquote footer { color: #666; }
-
 figure {
 	text-align: left;
 	display: inline-block;
@@ -30,34 +25,6 @@ figure {
 				color: #000;
 				text-decoration: underline;
 			}
-
-p a {
-	color: #0D3A4F;
-	font-weight: bold;
-	text-decoration: none;
-}
-p a:visited { color: #0D3A4F; }
-p a:visited:hover,
-p a:focus,
-p a:focus:hover,
-p a:hover,
-p a:active {
-	color: #046D8B;
-}
-
-a {
-	color: #4E801C;
-	text-decoration: none;
-}
-	a:visited { color: #4E801C; }
-	a:visited:hover,
-	a:focus,
-	a:focus:hover,
-	a:hover,
-	a:active {
-		color: #9EA301;
-		text-decoration: none;
-	}
 
 /* <h1 id="flag">M<span>icky Hulse</span></h1> */
 #flag {
@@ -87,12 +54,3 @@ a {
 	#flag a:active { text-decoration: none; }
 	#flag a:active,
 	#flag a:focus { outline: none; }
-
-	span.firsties {
-		background: rgba(0, 0, 0, .25);
-		-webkit-border-radius: 5px;
-		        border-radius: 5px;
-		-webkit-box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
-		        box-shadow: inset 0 0 20px 5px rgba(0, 0, 0, .5);
-		text-shadow: 0 0 5px rgba(0, 0, 0, .75);
-	}

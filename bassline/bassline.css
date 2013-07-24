@@ -8,20 +8,53 @@
  * @see http://modularscale.com/
  */
 
-/*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
+/*----------------------------------( BASSLINE )----------------------------------*/
 
 /**
- * Apply a natural box layout model to all elements.
+ * Baseline grid class.
  *
- * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * @see http://css-tricks.com/box-sizing/
+ * It simulates a baseline grid based on `em`/`rems` which will allow you
+ * to size according to your site's `font-size`.
+ *
+ * @see https://gist.github.com/4277585
+ * @see http://advent2012.digitpaint.nl/13/
+ * @see http://stackoverflow.com/a/8905262/922323
+ * @see http://css-tricks.com/browser-support-pseudo-elements/
  */
 
-* {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
+.bassline { position: relative; }
+	/* Grid overlay: */
+	.bassline:before {
+		background-image:
+			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-image:
+			-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), 
+			-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-image:
+			linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+			linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-size: 100% 1.5rem, 100% .75rem, 100% .375rem; /* Match base `line-height`. */
+		background-position: 0 0;                                /* Put line adjustments here. */
+		background-origin: content-box;                          /* Regardless of padding, background will begin in the corner of the box. */
+		background-attachment: local;                            /* For scrolling. */
+		width: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: -1px; /* Allows for the bottom-most border to show. */
+		z-index: 999; /* Above all other content. */
+		content: "";
+		pointer-events: none; /* The element is never the target of mouse events. */
+	}
+	/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
+	.bassline.debug * {
+		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
+		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
+	}
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
 
@@ -54,10 +87,7 @@
  * @see http://dev.w3.org/html5/spec/Overview.html#the-html-element-0
  */
 
-html {
-	height: 100%; /* Expand to height of browser window. */
-	overflow-y: scroll; /* Force scrollbar in non-IE. */
-}
+html {}
 
 /*----------------------------------( SECTIONS )----------------------------------*/
 
@@ -69,8 +99,9 @@ html {
  */
 
 address {
+	font-size: 1em; /* 16px */
+	line-height: 1.125; /* (((1.5 / 1) = 1.5) * .75) = 1.125 */
 	margin: 0 0 10px;
-	font-style: italic;
 }
 
 /**
@@ -122,6 +153,12 @@ aside {}
  *  Min/max `font-size`: | 0 - 24px (1.5em)  | 25px (1.5625em) - 48px (3em) | 49px (3.0625em) - 72px (4.5em) | 73px (4.5625) - 96px (6em) | 97px (6.0625em) - 120px (7.5em) |
  *                       |                   |                              |                                |                            |                                 |
  *
+ * Use these values for `line-height` offsets:
+ *           |      |     |      |     |      |     |      |
+ * Fraction: | 1/8  | 1/4 | 3/8  | 1/2 | 5/8  | 3/4 | 7/8  |
+ *  Decimal: | .125 | .25 | .375 | .5  | .625 | .75 | .875 |
+ *           |      |     |      |     |      |     |      |
+ *
  * Important: WebKit needs at least ten-millionth decimal places; for
  * example: `line-height: 1.3333333;` (that's 7 decimal places).
  *
@@ -137,16 +174,8 @@ aside {}
  */
 
 body {
-	font: 100%/1.5 Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
-	color: #000;
-	/* Improve default text rendering, handling of kerning pairs and ligatures: */
-	-webkit-font-smoothing: antialiased;
-	        font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-	/* Initial height of `<html>`, but will expand taller if necessary: */
-	min-height: 100%; /* Compliant browsers. */
-	_height: 100%; /* IE6 treats `height` as `min-height`. */
-	background: #fff;
+	font-size: 100%;
+	line-height: 1.5;
 }
 
 /**
@@ -180,11 +209,13 @@ footer {}
  */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	font: bold 1em/1.5 Arial, sans-serif;
+	font-size: 1em;
+	line-height: 1.5;
 	margin: 0 0 5px;
 }
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
-	font: 1em/1.5 Cambria, Georgia, serif;
+	font-size: 1em;
+	line-height: 1.5;
 	margin: 0 0 10px;
 }
 h1, .h1, .sh1 {
@@ -281,38 +312,12 @@ section {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-blockquote-element
  */
 
-blockquote {
-	border-left: 3px solid rgba(0, 0, 0, .25);
-	margin: 10px 0;
-	padding: 0 0 0 1em;
-	position: relative;
-	quotes: none;
-}
-	blockquote:before,
-	blockquote:after {
-		content: '';
-		content: none;
+blockquote { margin: 10px 0; }
+	blockquote p:last-of-type { margin: 0; }
+	blockquote footer {
+		font-size: .875em; /* 14px */
+		line-height: 1.71428571428571em; /* (1.5 / .875) = 1.71428571428571 */
 	}
-		blockquote p {
-			font: italic 1em/1.5 Arial, sans-serif; /* 16px */
-			margin: 0;
-		}
-		blockquote p:last-of-type { margin: 0; }
-		blockquote footer {
-			font-size: .875em; /* 14px */
-			line-height: 1.71428571428571em; /* (1.5 / .875) = 1.71428571428571 */
-		}
-@media all and (min-width: 720px) {
-	blockquote:before {
-		font: 6.25em/1 Arial, sans-serif; /* 100px */
-		color: rgba(0, 0, 0, .25);
-		display: block;
-		content: "\201C";
-		position: absolute;
-		left: -.4em;
-		top: -.1em;
-	}
-}
 
 /**
  * The `<div>` element has no special meaning at all. It represents its
@@ -360,7 +365,6 @@ dl {
 		margin: 0 0 .375em; /* (1.5 * .25) = .375 */
 		padding: 0;
 	}
-	dl dt { font-weight: bold; }
 	dl dd { margin-left: .5em; }
 
 /**
@@ -401,28 +405,13 @@ figure { margin: 10px 0; }
  * @see http://dev.w3.org/html5/spec/Overview.html#the-hr-element-0
  */
 
-hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
+hr, .hr {
 	border: 0;
-	border-top: 1px solid rgba(0, 0, 0, .75);
+	border-top-width: 1px;
 	height: 1px;
-	margin: 9px 0 10px;
+	margin: 10px 0;
 	padding: 0;
 }
-	.hr2,
-	.hr4 { border-style: dotted; }
-	.hr3,
-	.hr4 {
-		border-top-width: 2px;
-		margin-top: 8px;
-	}
-	.hr5 {
-		border-top-width: 4px;
-		margin-top: 6px;
-	}
-	.hr6 {
-		border-top-width: 6px;
-		margin-top: 4px;
-	}
 
 /**
  * The `<p>` element represents a paragraph.
@@ -431,49 +420,10 @@ hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
  */
 
 p {
-	font-family: Cambria, Georgia, serif;
 	font-size: 1em; /* 16px */
 	line-height: 1.5;
 	margin: .75em 0; /* (1.5 / 2) = .75 */
 }
-	
-	/**
-	 * Drop caps.
-	 *
-	 * Firefox handled these classes better than Safari (Mac). For some
-	 * reason, a base `line-height` of `1.5` worked better in Safari. Safari's
-	 * page zoom does weird stuff... I'm tired of trying to get this to work.
-	 *
-	 * @see http://www.smashingmagazine.com/2012/04/03/drop-caps-historical-use-and-current-best-practices/
-	 * @see http://css-tricks.com/snippets/css/drop-caps/
-	 * @see http://www.sitepoint.com/a-simple-css-drop-cap/
-	 * @see http://phrogz.net/css/vertical-align/
-	 */
-	
-	span.firsties {
-		font-family: Cambria, Georgia, serif;
-		font-style: normal;
-		font-weight: normal;
-		font-size: 4.5rem; /* 72px */
-		line-height: 1; /* (4.5 / 4.5) = 1 */
-		margin-right: .5rem;
-		vertical-align: middle;
-		float: left;
-		display: inline;
-	}
-	
-	/*
-	p:first-of-type:first-letter {
-		font-family: Cambria, Georgia, serif;
-		font-size: 6.25rem;
-		line-height: 1.2;
-		margin: 0;
-		padding: 0;
-		text-transform: uppercase;
-		float: left;
-		display: inline;
-	}
-	*/
 
 /**
  * The `<pre>` element represents a block of preformatted text, in which
@@ -487,28 +437,15 @@ p {
  */
 
 pre {
-	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 	font-size: .875em; /* (14px / 16px) = .875em */
 	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	border: 1px solid rgba(0, 0, 0, .15);
-	background: rgba(0, 0, 0, .05);
 	margin: 10px 0;
 	padding: 10px;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
-	-webkit-border-radius: 4px;
-	   -moz-border-radius: 4px;
-	        border-radius: 4px;
-	-webkit-box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
-	        box-shadow:  0 0 5px 0 rgba(0, 0, 0, .1);
 }
-	pre code {
-		color: inherit;
-		border: 0;
-		background: transparent;
-		padding: 0;
-	}
+	pre code { padding: 0; }
 
 /**
  * The `<ol>` element represents a list of items, where the items have
@@ -535,7 +472,6 @@ ul {
 	line-height: 1.125; /* (1.5 * .75) = 1.125 */
 	margin: 10px 0;
 	padding: 0;
-	list-style-position: outside;
 }
 ol { margin-left: 2.5em; }
 ul { margin-left: 1.5em; }
@@ -561,13 +497,7 @@ ul { margin-left: 1.5em; }
  * @see http://dev.w3.org/html5/spec/Overview.html#the-a-element
  */
 
-a { color: blue; }
-	a:visited { color: purple; }
-	a:visited:hover,
-	a:focus,
-	a:focus:hover,
-	a:hover,
-	a:active { color: red; }
+a {}
 
 /**
  * The `<abbr>` element represents an abbreviation or acronym. The
@@ -580,11 +510,7 @@ a { color: blue; }
  * @see http://html5doctor.com/the-abbr-element/
  */
 
-abbr { font-style: italic; }
-abbr[title] {
-	border-bottom: .1em dotted;
-	cursor: help;
-}
+abbr {}
 
 /**
  * The `<bdi>` element represents a span of text that is to be isolated
@@ -594,10 +520,7 @@ abbr[title] {
  * @see http://stackoverflow.com/a/8546564/922323
  */
 
-bdi {
-	direction: ltr;
-	unicode-bidi: bidi-override;
-}
+bdi {}
 
 /**
  * The `<bdo>` element represents explicit text directionality formatting
@@ -626,7 +549,7 @@ br {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-cite-element
  */
 
-cite { font-style: italic; }
+cite {}
 
 /**
  * The `<code>` element represents a fragment of computer code. This could
@@ -639,7 +562,6 @@ cite { font-style: italic; }
 
 /* @TODO: I'd like to have an code:after pseudo element to show line wrap. */
 code {
-	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 	white-space: pre;           /* CSS 2.0 */
 	white-space: pre-wrap;      /* CSS 2.1 */
 	white-space: pre-line;      /* CSS 3.0 */
@@ -648,12 +570,7 @@ code {
 	white-space: -moz-pre-wrap; /* Mozilla */
 	white-space: -hp-pre-wrap;  /* HP Printers */
 	word-wrap: break-word;      /* IE 5+ */
-	color: #333;
 	padding: 0 .25em;
-	background: rgba(0, 0, 0, .1);
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-	        border-radius: 3px;
 }
 
 /**
@@ -680,11 +597,7 @@ data {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-dfn-element
  */
 
-dfn { font-weight: bold; }
-dfn[title] {
-	border-bottom: .1em dotted;
-	cursor: help;
-}
+dfn {}
 
 /**
  * The `<em>` element represents stress emphasis of its contents. The
@@ -709,7 +622,7 @@ dfn[title] {
  */
 
 em,
-i { font-style: italic; }
+i {}
 
 /**
  * The `<kbd>` element represents user input (typically keyboard input,
@@ -732,23 +645,12 @@ i { font-style: italic; }
  */
 
 kbd {
-	font-family: monospace, serif;
-	text-shadow: 0 1px 0 #fff;
-	color: #000;
-	background: #eee;
 	margin: 0 .25em;
 	padding: 0 .15em;
 	line-height: 0;
 	vertical-align: baseline;
 	position: relative;
 	top: -1px;
-	-webkit-border-radius: .05em;
-	   -moz-border-radius: .05em;
-	        border-radius: .05em;
-	box-shadow:
-		0 0 0 2px #eee,
-		0 0 0 3px #fff,
-		0 1px 2px 4px rgba(0, 0, 0, 0.2);
 }
 	kbd kbd { top: 0; }
 
@@ -765,13 +667,7 @@ kbd {
  * @see http://html5doctor.com/draw-attention-with-mark/
  */
 
-mark {
-	text-decoration: none;
-	color: #525200;
-	background-color: rgba(255, 255, 0, .75);
-	margin: 0 .25em;
-	box-shadow: 0 0 0 4px rgba(255, 255, 0, .75);
-}
+mark { margin: 0 .25em; }
 
 /**
  * The `<cite>` element represents the title of a work (e.g. a book, a
@@ -837,8 +733,8 @@ q:after {
  */
 
 ruby {}
-rt,
-rp {display: inline; font-size: 100%;}
+	rt {}
+	rp {}
 
 /**
  * The `<s>` element represents contents that are no longer accurate or no
@@ -847,7 +743,7 @@ rp {display: inline; font-size: 100%;}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-s-element
  */
 
-s { color: #666; }
+s {}
 
 /**
  * The `<samp>` element represents (sample) output from a program or
@@ -856,10 +752,7 @@ s { color: #666; }
  * @see http://dev.w3.org/html5/spec/Overview.html#the-samp-element
  */
 
-samp {
-	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-	color: #333;
-}
+samp {}
 
 /**
  * The `<small>` element represents side comments such as small print. It
@@ -878,22 +771,10 @@ small,
  * useful when used together with the global attributes, e.g. `class`,
  * `lang`, or `dir`. It represents its children.
  *
- * @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-span-element
- * @see http://fluidbaselinegrid.com/css/style.css
  */
 
 span {}
-	/* The italic version of an ampersand is more decorative and interesting than its roman counterpart. */
-	span.amp1 {
-		font-size: 110%;
-		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
-		font-weight: 400;
-		font-style: italic;
-		line-height: 0;
-		vertical-align: baseline;
-		position: relative;
-	}
 
 /**
  * The `<strong>` element represents strong importance for its contents.
@@ -918,7 +799,7 @@ span {}
  */
 
 strong,
-b { font-weight: bold; }
+b {}
 
 /**
  * The `<sub>` element can be used inside a `<var>` element, for variables
@@ -966,7 +847,7 @@ time {}
  * @see http://html5doctor.com/u-element/
  */
 
-u { text-decoration: underline; }
+u {}
 
 /**
  * The `<var>` element represents a variable. This could be an actual
@@ -976,7 +857,7 @@ u { text-decoration: underline; }
  * @see http://dev.w3.org/html5/spec/Overview.html#the-var-element
  */
 
-var { font-style: italic; }
+var {}
 
 /**
  * The `<wbr>` element represents a line break opportunity. Any content
@@ -1001,13 +882,7 @@ wbr:after { content: "\00200B"; }
  * @see http://dev.w3.org/html5/spec/Overview.html#the-del-element
  */
 
-del {
-	text-decoration: line-through;
-	color: #600;
-	background-color: rgba(255, 0, 0, .25);
-	margin: 0 .15em;
-	box-shadow: 0 0 0 2px rgba(255, 0, 0, .25);
-}
+del {}
 
 /**
  * The `<ins>` element represents an addition to the document. The `<ins>`
@@ -1016,13 +891,7 @@ del {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ins-element
  */
 
-ins {
-	text-decoration: none;
-	color: #003d14;
-	background-color: rgba(0, 153, 51, .25);
-	margin: 0 .15em;
-	box-shadow: 0 0 0 2px rgba(0, 153, 51, .25);
-}
+ins {}
 
 /*----------------------------------( EMBEDED CONTENT )----------------------------------*/
 
@@ -1129,14 +998,7 @@ iframe {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-img-element
  */
 
-img {
-	width: auto; /* IE */
-	height: auto;
-	max-width: 100%;
-	max-height: 100%;
-	vertical-align: middle; /* Remove the gap between images and the bottom of their containers. */
-	-ms-interpolation-mode: bicubic;
-}
+img {}
 
 /**
  * The `<map>` element, in conjunction with any area element descendants,
@@ -1251,29 +1113,10 @@ video {}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	background: rgba(255, 255, 255, .25);
 	width: 100%;
 	margin: 10px 0;
 	empty-cells: show;
 }
-	.table-wrap {
-		width: 100%;
-		overflow-y: auto;
-		_overflow: auto;
-		margin: 10px 0;
-		/*-webkit-overflow-scrolling: touch;*/
-	}
-	.table-wrap::-webkit-scrollbar {
-		-webkit-appearance: none;
-		width: 14px;
-		height: 14px;
-	}
-	.table-wrap::-webkit-scrollbar-thumb {
-		border-radius: 8px;
-		border: 3px solid rgba(255, 255, 255, .25);
-		background-color: rgba(0, 0, 0, .3);
-	}
-		.table-wrap table { margin: 0; }
 
 /**
  * The `<caption>` element represents the title of a `<table>` element.
@@ -1288,8 +1131,6 @@ table {
 caption {
 	font-size: .875em; /* 14px */
 	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	font-weight: bold;
-	text-align: left;
 	padding-bottom: .64285714285714em;
 }
 
@@ -1328,11 +1169,6 @@ thead {}
  */
 
 tfoot {}
-	tfoot tr td,
-	tfoot tr th {
-		color: #333;
-		font-weight: normal;
-	}
 
 /**
  * The `<tbody>` element represents a block of rows that consist of a body
@@ -1355,21 +1191,28 @@ tbody {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-td-element
  */
 
-tr:nth-of-type(odd) { background: rgba(0, 0, 0, .05); }
-	tr th {
-		text-align: left;
-		border: 1px solid rgba(0, 0, 0, .25);
-		background-color: rgba(0, 0, 0, .05);
-		padding: 5px;
-		white-space: nowrap;
-	}
-	tr td {
-		text-align: left;
-		border: 1px solid rgba(0, 0, 0, .25);
-		padding: 5px;
-	}
+tr th {
+	padding: 5px;
+	xwhite-space: nowrap;
+}
+tr td {
+	padding: 5px;
+}
 
 /*----------------------------------( FORMS )----------------------------------*/
+
+/**
+ * The `<form>` element represents a collection of form-associated
+ * elements, some of which can represent editable values that can be
+ * submitted to a server for processing.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-form-element
+ * @see http://purecss.io/forms/
+ * @see https://github.com/yui/pure/
+ * @see https://github.com/yui/yui3
+ */
+
+form { margin: 0; }
 
 /**
  * The `<button>` element represents a button. If the element is not
@@ -1427,18 +1270,6 @@ fieldset {
 }
 
 /**
- * The `<form>` element represents a collection of form-associated
- * elements, some of which can represent editable values that can be
- * submitted to a server for processing.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-form-element
- * @see http://purecss.io/forms/
- * @see https://github.com/yui/pure/
- */
-
-form { margin: 0; }
-
-/**
  * The `<input>` element represents a typed data field, usually with a
  * form control to allow the user to edit the data.
  *
@@ -1490,7 +1321,16 @@ label {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-legend-element
  */
 
-legend {}
+legend {
+	font-size: 1.125em; /* 18px */
+	line-height: 1; /* (((1.5 / 1.125) = 1.33333333333333) * .75) = 1 */
+	color: #333;
+	border-bottom: 1px solid #999;
+	width: 100%;
+	margin-bottom: 1em;
+	padding: .3em 0;
+	display: block;
+}
 
 /**
  * When the meter binding applies to a `<meter>` element, the element is
@@ -1592,7 +1432,7 @@ select { vertical-align: baseline; }
 
 textarea {
 	overflow: auto;
-	vertical-align: baseline;
+	vertical-align: top;
 	resize: vertical; /* [ none | horizontal | vertical | both ] */
 	width: 100%;
 }
@@ -1601,120 +1441,6 @@ textarea {
 
 
 
-
-.pure-button {
-    /* Structure */
-    display: inline-block;
-    *display: inline; /*IE 6/7*/
-    zoom: 1;
-    line-height: normal;
-    white-space: nowrap;
-    vertical-align: baseline;
-    text-align: center;
-    cursor: pointer;
-    -webkit-user-drag: none;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* Firefox: Get rid of the inner focus border */
-.pure-button::-moz-focus-inner {
-    padding: 0;
-    border: 0;
-}
-
-.pure-button {
-    font-size: 100%;
-    *font-size: 90%; /*IE 6/7 - To reduce IE's oversized button text*/
-    *overflow: visible; /*IE 6/7 - Because of IE's overly large left/right padding on buttons */
-    padding: 0.5em 1.5em 0.5em;
-    color: #444; /* rgba not supported (IE 8) */
-    color: rgba(0, 0, 0, 0.80); /* rgba supported */
-    *color: #444; /* IE 6 & 7 */
-    border: 1px solid #999; /*IE 6/7/8*/
-    border: none rgba(0, 0, 0, 0); /*IE9 + everything else*/
-    background-color: #E6E6E6;
-    text-decoration: none;
-    border-radius: 2px;
-    -webkit-font-smoothing: antialiased;
-    /* Transitions */
-    -webkit-transition: 0.1s linear -webkit-box-shadow;
-    -moz-transition: 0.1s linear -moz-box-shadow;
-    -ms-transition: 0.1s linear box-shadow;
-    -o-transition: 0.1s linear box-shadow;
-    transition: 0.1s linear box-shadow;
-}
-
-.pure-button-hover,
-.pure-button:hover,
-.pure-button:focus {
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#1a000000',GradientType=0);
-    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(transparent), color-stop(40%, rgba(0,0,0, 0.05)), to(rgba(0,0,0, 0.10)));
-    background-image: -webkit-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
-    background-image: -moz-linear-gradient(top, rgba(0,0,0, 0.05) 0%, rgba(0,0,0, 0.10));
-    background-image: -ms-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
-    background-image: -o-linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
-    background-image: linear-gradient(transparent, rgba(0,0,0, 0.05) 40%, rgba(0,0,0, 0.10));
-}
-.pure-button:focus {
-    outline: 0;
-}
-.pure-button-active,
-.pure-button:active {
-    box-shadow: 0 0 0 1px rgba(0,0,0, 0.15) inset, 0 0 6px rgba(0,0,0, 0.20) inset;
-}
-
-.pure-button[disabled],
-.pure-button-disabled,
-.pure-button-disabled:hover,
-.pure-button-disabled:focus,
-.pure-button-disabled:active {
-    border: none;
-    background-image: none;
-    filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
-    filter: alpha(opacity=40);
-    -khtml-opacity: 0.40;
-    -moz-opacity: 0.40;
-    opacity: 0.40;
-    cursor: not-allowed;
-    box-shadow: none;
-}
-
-.pure-button-hidden {
-    display: none;
-}
-
-/* Firefox: Get rid of the inner focus border */
-.pure-button::-moz-focus-inner{
-    padding: 0;
-    border: 0;
-}
-
-.pure-button-primary,
-.pure-button-selected,
-a.pure-button-primary,
-a.pure-button-selected {
-    background-color: rgb(0, 120, 231);
-    color: #fff;
-}
-
-
-
-
-
-fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
-}
-legend {
-    border: 0; /* 1 */
-    padding: 0;
-    white-space: normal; /* 2 */
-    *margin-left: -7px; /* 3 */
-}
 button,
 input,
 select,
@@ -1761,10 +1487,6 @@ button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0;
     padding: 0;
-}
-textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
 }
 
 
@@ -1886,19 +1608,7 @@ label {
     margin: 0.5em 0 0.2em;
     font-size: 90%;
 }
-fieldset {
-    margin: 0;
-    padding: 0.35em 0 0.75em;
-    border: 0;
-}
 legend {
-    display: block;
-    width: 100%;
-    padding: 0.3em 0;
-    margin-bottom: 0.3em;
-    font-size: 125%;
-    color: #333;
-    border-bottom: 1px solid #e5e5e5;
 }
 
 /*----------------------------------( INTERACTIVE ELEMENTS )----------------------------------*/
@@ -1952,62 +1662,7 @@ menuitem {}
 
 summary {}
 
-/*----------------------------------( BASSLINE )----------------------------------*/
-
-/**
- * Baseline grid class.
- *
- * It simulates a baseline grid based on `em`/`rems` which will allow you
- * to size according to your site's `font-size`.
- *
- * @see https://gist.github.com/4277585
- * @see http://advent2012.digitpaint.nl/13/
- * @see http://stackoverflow.com/a/8905262/922323
- * @see http://css-tricks.com/browser-support-pseudo-elements/
- */
-
-.bassline { position: relative; }
-	/* Grid overlay: */
-	.bassline:before {
-		background-image:
-			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-			-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-		background-image:
-			-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), 
-			-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-			-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-		background-image:
-			linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-			linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-			linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-		background-size: 100% 1.5rem, 100% .75rem, 100% .375rem; /* Match base `line-height`. */
-		background-position: 0 0;                                /* Put line adjustments here. */
-		background-origin: content-box;                          /* Regardless of padding, background will begin in the corner of the box. */
-		background-attachment: local;                            /* For scrolling. */
-		width: 100%;
-		display: block;
-		position: absolute;
-		top: 0;
-		bottom: -1px; /* Allows for the bottom-most border to show. */
-		z-index: 999; /* Above all other content. */
-		content: "";
-		pointer-events: none; /* The element is never the target of mouse events. */
-	}
-	/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
-	.bassline.debug * {
-		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
-		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
-	}
-
 /*----------------------------------( TEMP )----------------------------------*/
-
-.container {
-	text-align: left;
-	margin: 0 auto;
-	padding: 20px;
-	max-width: 680px;
-}
 
 .marker {
 	font: bold 1.375em/1.09090909090909 Arial, sans-serif; /* 22px */
