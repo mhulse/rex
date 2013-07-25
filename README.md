@@ -1,22 +1,20 @@
-# Bassline *(super über beta!)*
+# Stoops! *(super-duper über beta!)*
 
-### Vertical baseline rhythm experiments.
-
-**BIG UPS** to [Carlos](https://github.com/cballenar) for the [code, help and inspiration](https://gist.github.com/4277585)!!!
+### Ummmmmm ... You might as well hit the back button.
 
 ---
 
 #### DEMO
 
-[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=https://github.com/mhulse/bassline/&chs=240x240)](http://mhulse.github.com/bassline/demo/)
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=https://github.com/mhulse/stoops/&chs=240x240)](http://mhulse.github.com/stoops/demo/)
 
-(Scan QR code with phone and/or click to [view the latest demo](http://mhulse.github.com/bassline/demo/).)
+(Scan QR code with phone and/or click to [view the latest demo](http://mhulse.github.com/stoops/demo/).)
 
 ---
 
 #### LEGAL
 
-Copyright © 2013 [Micky Hulse](http://hulse.me)
+Copyright &copy; 2013 [Micky Hulse](http://mhulse.com)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not use this work except in compliance with the License. You may obtain a copy of the License in the LICENSE file, or at:
 
