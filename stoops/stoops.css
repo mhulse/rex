@@ -320,8 +320,8 @@ blockquote:after {
 		display: block;
 		content: "\201C";
 		position: absolute;
-		left: -.4rem;
-		top: -.1rem;
+		left: -.4em;
+		top: -.1em;
 	}
 }
 
