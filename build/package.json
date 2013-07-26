@@ -1,0 +1,27 @@
+{
+  "title": "Stoops!",
+  "name": "stoops",
+  "description": "Super-duper über beta!",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mhulse/stoops",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mhulse/stoops.git"
+  },
+  "author": {
+    "name": "Micky Hulse",
+    "url": "http://mhulse.com"
+  },
+  "dependencies": {
+    "grunt": "0.4.1",
+    "grunt-contrib-jshint": "0.6.0",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-uglify": "0.2.2",
+    "grunt-contrib-copy": "0.4.1",
+    "grunt-contrib-less": "0.6.4",
+    "grunt-contrib-watch": "0.5.1",
+    "grunt-preprocess": "2.3.0",
+    "grunt-env": "0.4.0"
+  },
+  "devDependencies": {}
+}

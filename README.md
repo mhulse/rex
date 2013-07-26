@@ -6,9 +6,11 @@
 
 #### DEMO
 
-[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=https://github.com/mhulse/stoops/&chs=240x240)](http://mhulse.github.com/stoops/demo/)
+DEVELOPMENT | PRODUCTION
+:-: | :-:
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/build/files/&chs=240x240)](http://mhulse.github.io/stoops/build/files/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/dist/&chs=240x240)](http://mhulse.github.io/stoops/dist/)
 
-(Scan QR code with phone and/or click to [view the latest demo](http://mhulse.github.com/stoops/demo/).)
+**Note:** All of the "production" demo's assets are hosted on `static.mhulse.com`.
 
 ---
 

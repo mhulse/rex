@@ -1,0 +1,16 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata></metadata>
+<defs>
+<font id="mhulse" horiz-adv-x="500" >
+<font-face units-per-em="1000" ascent="800" descent="-200" />
+<missing-glyph horiz-adv-x="500" />
+<glyph />
+<glyph />
+<glyph unicode="&#xd;" />
+<glyph unicode=" " />
+<glyph unicode="M" horiz-adv-x="1000" d="M0 500q0 136 67 251t182 182t251 67t251 -67t182 -182t67 -251t-67 -251t-182 -182t-251 -67t-251 67t-182 182t-67 251zM169 681q20 0 34.5 -14t14.5 -34v-238q0 -31 22 -53.5t54 -22.5h80v27q-20 0 -34.5 14.5t-14.5 34.5v109q0 26 17.5 43.5t43.5 17.5q25 0 43 -18 t18 -43v-109q0 -31 22.5 -53.5t53.5 -22.5h79v27q-20 0 -34.5 14.5t-14.5 34.5v111q2 25 19 42t42 17q26 0 43.5 -17.5t17.5 -43.5v-109q0 -31 22.5 -53.5t53.5 -22.5h80v27q-20 0 -34.5 14.5t-14.5 34.5v197q0 47 -34 72q-23 17 -51 17q-14 0 -29 -4q-9 -2 -18 -6.5 t-17 -10t-16 -12t-14.5 -13t-13 -13.5t-12 -13t-10 -12.5t-7 -10t-4.5 -6.5l-3 -4v16q1 47 -33 72q-23 17 -52 17q-14 0 -29 -4q-27 -7 -55.5 -32.5t-43.5 -46.5l-15 -22v57q0 31 -22.5 53.5t-53.5 22.5h-80v-28z" />
+<glyph unicode="&#xe000;" d="M0 0z" />
+</font>
+</defs></svg> 
