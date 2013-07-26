@@ -505,18 +505,15 @@ pre {
 	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
 	font-size: .875rem; /* (14px / 16px) = .875em */
 	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+	color: #333;
 	border: .0625rem solid rgba(0, 0, 0, .15);
-	background: rgba(0, 0, 0, .05);
+	background: rgba(0, 0, 0, .025);
 	margin: .625rem 0;
 	padding: .625rem;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
-	-webkit-border-radius: .25rem;
-	   -moz-border-radius: .25rem;
-	        border-radius: .25rem;
-	-webkit-box-shadow:  0 0 .3125rem 0 rgba(0, 0, 0, .1);
-	        box-shadow:  0 0 .3125rem 0 rgba(0, 0, 0, .1);
+	box-shadow: inset 0 0 .625rem 0 rgba(0, 0, 0, .1);
 }
 	pre code {
 		color: inherit;
