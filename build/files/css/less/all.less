@@ -1256,6 +1256,23 @@ video {}
 /*----------------------------------( TABULAR DATA )----------------------------------*/
 
 /**
+ * Simple solution for responsive tables.
+ *
+ * @see http://www.maxdesign.com.au/2013/03/22/simple-responsive-table/
+ * @see http://creativeandcode.com/simple-solution-for-responsive-tables/
+ */
+
+.stoops-scrollable {
+	width: 100%;
+	margin: .625rem 0;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+	.stoops-scrollable > * { margin: 0; }
+
+/*--------------------------------------------------------------------*/
+
+/**
  * The `<table>` element represents data with more than one dimension, in
  * the form of a table. Tables must not be used as layout aids.
  *
@@ -1279,27 +1296,9 @@ video {}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	background: rgba(255, 255, 255, .25);
 	width: 100%;
-	margin: 10px 0;
 	empty-cells: show;
 }
-	
-	/**
-	 * Simple solution for responsive tables.
-	 *
-	 * @see http://www.maxdesign.com.au/2013/03/22/simple-responsive-table/
-	 * @see http://creativeandcode.com/simple-solution-for-responsive-tables/
-	 */
-	
-	.table-wrap {
-		width: 100%;
-		overflow-y: auto;
-		_overflow: auto;
-		margin: 10px 0;
-		/*-webkit-overflow-scrolling: touch;*/
-	}
-		.table-wrap > table { margin: 0; }
 
 /**
  * The `<caption>` element represents the title of a `<table>` element.
@@ -1311,13 +1310,7 @@ table {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-caption-element
  */
 
-caption {
-	font-size: .875rem; /* 14px */
-	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	font-weight: bold;
-	text-align: left;
-	padding-bottom: .64285714285714rem;
-}
+caption {}
 
 /**
  * The `<colgroup>` element represents a group of one or more columns in a
@@ -1327,15 +1320,19 @@ caption {
  * element may have a `span` content attribute specified, whose value must
  * be a valid non-negative integer greater than zero.
  *
- * The `<col>` element represents one or more columns in the column group
- * represented by a `<table>` element's `<colgroup>`.
- *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-colgroup-element
- * @see http://dev.w3.org/html5/spec/Overview.html#the-col-element
  */
 
 colgroup {}
-colgroup col {}
+
+/**
+ * The `<col>` element represents one or more columns in the column group
+ * represented by a `<table>` element's `<colgroup>`.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-col-element
+ */
+
+col {}
 
 /**
  * The `<thead>` element represents the block of rows that consist of the
@@ -1354,11 +1351,6 @@ thead {}
  */
 
 tfoot {}
-	tfoot tr td,
-	tfoot tr th {
-		color: #333;
-		font-weight: normal;
-	}
 
 /**
  * The `<tbody>` element represents a block of rows that consist of a body
@@ -1382,15 +1374,34 @@ tbody {}
  */
 
 tr {}
-tr:nth-of-type(odd) { background: rgba(0, 0, 0, .05); }
-	tr th {
+
+/*--------------------------------------------------------------------*/
+
+.stoops-table {
+	background: rgba(255, 255, 255, .25);
+	margin: .625rem 0;
+}
+	.stoops-table caption {
+		font-size: .875rem; /* 14px */
+		line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+		font-weight: bold;
+		text-align: left;
+		padding-bottom: .64285714285714rem;
+	}
+	.stoops-table tfoot th
+	.stoops-table tfoot td {
+		color: #333;
+		font-weight: normal;
+	}
+	.stoops-table tr:nth-of-type(odd) { background: rgba(0, 0, 0, .05); }
+	.stoops-table th {
 		text-align: left;
 		border: .0625rem solid rgba(0, 0, 0, .25);
 		background-color: rgba(0, 0, 0, .05);
 		padding: .3125rem;
 		white-space: nowrap;
 	}
-	tr td {
+	.stoops-table td {
 		text-align: left;
 		border: .0625rem solid rgba(0, 0, 0, .25);
 		padding: .3125rem;
@@ -1914,21 +1925,6 @@ summary {}
 	margin: 0 auto;
 	padding: 20px;
 	max-width: 680px;
-}
-
-.marker {
-	font: bold 1.375em/1.09090909090909 Arial, sans-serif; /* 22px */
-	color: #990;
-	text-transform: none;
-	background: rgba(255, 255, 0, .75);
-	margin: 10px 0;
-	padding: 10px;
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-	box-shadow:
-		inset 0 0 2px 2px rgba(255, 255, 255, .5),
-		0 0 5px 0 rgba(0, 0, 0, .1);
 }
 
 body { text-align: center; }

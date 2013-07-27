@@ -1,0 +1,96 @@
+// https://github.com/twitter/bootstrap/blob/master/less/variables.less
+
+// Grays:
+@white: #fff;
+@gray1: #eee;
+@gray2: #ddd;
+@gray3: #ccc;
+@gray4: #bbb;
+@gray5: #aaa;
+@gray6: #999;
+@gray7: #888;
+@gray8: #777;
+@gray9: #666;
+@gray10: #555;
+@gray11: #444;
+@gray12: #333;
+@gray13: #222;
+@gray14: #111;
+@black: #000;
+// Base:
+@tan: #ae906f;
+@red: #ae1a1f;
+@blue: #0083ca;
+@green: #9ac80d;
+@yellow: #fc0;
+// Complementary:
+@tanC: spin(@tan, 180);
+@redC: spin(@red, 180);
+@blueC: spin(@blue, 180);
+@greenC: spin(@green, 180);
+@yellowC: spin(@yellow, 180);
+// Shades:
+@difference: 15%; // Difference (in perecent) between each shade.
+@tanDarker: darken(@tan, (@difference * 2));
+@tanDark: darken(@tan, @difference);
+@tanLight: lighten(@tan, @difference);
+@tanLighter: lighten(@tan, (@difference * 2));
+@redDarker: darken(@red, (@difference * 2));
+@redDark: darken(@red, @difference);
+@redLight: lighten(@red, @difference);
+@redLighter: lighten(@red, (@difference * 2));
+@blueDarker: darken(@blue, (@difference * 2));
+@blueDark: darken(@blue, @difference);
+@blueLight: lighten(@blue, @difference);
+@blueLighter: lighten(@blue, (@difference * 2));
+@greenDarker: darken(@green, (@difference * 2));
+@greenDark: darken(@green, @difference);
+@greenLight: lighten(@green, @difference);
+@greenLighter: lighten(@green, (@difference * 2));
+@yellowDarker: darken(@yellow, (@difference * 2));
+@yellowDark: darken(@yellow, @difference);
+@yellowLight: lighten(@yellow, @difference);
+@yellowLighter: lighten(@yellow, (@difference * 2));
+@tanCDarker: darken(@tanC, (@difference * 2));
+@tanCDark: darken(@tanC, @difference);
+@tanCLight: lighten(@tanC, @difference);
+@tanCLighter: lighten(@tanC, (@difference * 2));
+@redCDarker: darken(@redC, (@difference * 2));
+@redCDark: darken(@redC, @difference);
+@redCLight: lighten(@redC, @difference);
+@redCLighter: lighten(@redC, (@difference * 2));
+@blueCDarker: darken(@blueC, (@difference * 2));
+@blueCDark: darken(@blueC, @difference);
+@blueCLight: lighten(@blueC, @difference);
+@blueCLighter: lighten(@blueC, (@difference * 2));
+@greenCDarker: darken(@greenC, (@difference * 2));
+@greenCDark: darken(@greenC, @difference);
+@greenCLight: lighten(@greenC, @difference);
+@greenCLighter: lighten(@greenC, (@difference * 2));
+@yellowCDarker: darken(@yellowC, (@difference * 2));
+@yellowCDark: darken(@yellowC, @difference);
+@yellowCLight: lighten(@yellowC, @difference);
+@yellowCLighter: lighten(@yellowC, (@difference * 2));
+
+// Scaffolding:
+@bodyBackground: @white;
+@textColor: @black;
+
+@sansFontFamily: Arial, sans-serif;
+@serifFontFamily: Cambria, Georgia, serif;
+@monoFontFamily: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+
+@baseFontSize: 1em; /* 16px */
+@baseFontFamily: @serifFontFamily;
+@baseLineHeight: 1.5em; /* 24px */
+@altFontFamily: @sansFontFamily;
+
+@headingsFontFamily: "MillerHeadline Bold", @serifFontFamily;
+@headingsFontStyle: normal;
+@headingsFontWeight: bold;
+@headingsColor: @black;
+
+@subHeadingsFontFamily: "MillerHeadline Light", @serifFontFamily;
+@subHeadingsFontStyle: normal;
+@subHeadingsFontWeight: normal;
+@subHeadingsColor: @gray9;
