@@ -63,6 +63,10 @@ dl dd{margin-left:.5rem}
 figure{margin:.625rem 0}
 figure img{display:block}
 figure figcaption{font-size:.875rem;line-height:1.28571428571428;margin:.4375rem 0;}
+.stoops-figure{text-align:left;display:inline-block;max-width:100%}
+.stoops-figure figcaption{color:#395460;background:rgba(94,141,161,0.2);padding:.625rem}
+.stoops-figure figcaption a{font-weight:bold;text-decoration:none;color:#000}
+.stoops-figure figcaption a:visited,.stoops-figure figcaption a:visited:hover,.stoops-figure figcaption a:focus,.stoops-figure figcaption a:focus:hover,.stoops-figure figcaption a:hover,.stoops-figure figcaption a:active{color:#000;text-decoration:underline}
 hr,.hr,.hr1,.hr2,.hr3,.hr4,.hr5,.hr6{border:0;background:rgba(75,113,129,0.5);height:.0625rem;margin:.625rem 0;padding:0}
 .hr1{height:.125rem}
 .hr2{height:.25rem}
@@ -162,10 +166,6 @@ label{margin:0.5em 0 0.2em;font-size:90%}
 .baseline.debug *{-webkit-box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5);box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5)}
 .container{text-align:left;margin:0 auto;padding:20px;max-width:680px}
 body{text-align:center}
-figure{text-align:left;display:inline-block;max-width:100%}
-figure figcaption{color:#395460;background:rgba(94,141,161,0.2);padding:.625rem}
-figure figcaption a{font-weight:bold;text-decoration:none;color:#000}
-figure figcaption a:visited,figure figcaption a:visited:hover,figure figcaption a:focus,figure figcaption a:focus:hover,figure figcaption a:hover,figure figcaption a:active{color:#000;text-decoration:underline}
 #flag{position:relative;height:11.5625rem}
 #flag div{position:absolute;top:20px;left:50%}
 #flag h1{font:7.8125rem/1 "Hulse",Arial,sans-serif;color:#13aac9;position:relative;left:-50%}
