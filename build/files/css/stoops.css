@@ -166,11 +166,14 @@ figure{text-align:left;display:inline-block;max-width:100%}
 figure figcaption{color:#395460;background:rgba(94,141,161,0.2);padding:.625rem}
 figure figcaption a{font-weight:bold;text-decoration:none;color:#000}
 figure figcaption a:visited,figure figcaption a:visited:hover,figure figcaption a:focus,figure figcaption a:focus:hover,figure figcaption a:hover,figure figcaption a:active{color:#000;text-decoration:underline}
-#flag{font:100px/1 "Hulse",Arial,sans-serif;color:#13aac9;margin:1.25rem 0;position:relative;top:0;left:-1.3125rem}
+#flag{position:relative;height:11.5625rem}
+#flag div{position:absolute;top:20px;left:50%}
+#flag h1{font:7.8125rem/1 "Hulse",Arial,sans-serif;color:#13aac9;position:relative;left:-50%}
 #flag span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
 #flag a,#flag a:visited{color:#13aac9}
 #flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{color:#52d5ef;text-decoration:none}
 #flag a:active,#flag a:focus{outline:none}
+@media all and (min-width:45rem){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem}}
 
 .marker{font:bold 1.375rem/1.09090909090909 Arial,sans-serif;color:rgba(153,125,0,0.9);text-transform:none;background:rgba(255,209,0,0.9);margin:.625rem 0;padding:.625rem;display:inline-block;*display:inline;*zoom:1;box-shadow:0 0 .3125rem 0 rgba(153,125,0,0.25)}
 .marker code{color:inherit;padding:0;background:none;border:0;border-radius:0}

@@ -1,0 +1,51 @@
+/**
+ * <header id="flag"><div><h1>M<span>icky Hulse</span></h1><div></header>
+ *
+ * @see http://jsfiddle.net/Nalum/46pHK/
+ * @see http://jsfiddle.net/R2UkY/
+ */
+
+#flag {
+	position: relative;
+	height: 11.5625rem;
+}
+	#flag div {
+		position: absolute;
+		top: 20px;
+		left: 50%;
+	}
+	#flag h1 {
+		font: 7.8125rem/1 "Hulse", Arial, sans-serif; /* 125px */
+		color: rgba(19, 170, 201, 1);
+		position: relative;
+		left: -50%;
+	}
+	#flag span {
+		border: 0;
+		clip: rect(0 0 0 0);
+		height: 1px;
+		margin: -1px;
+		overflow: hidden;
+		padding: 0;
+		position: absolute;
+		width: 1px;
+	}
+	#flag a,
+	#flag a:visited { color: rgba(19, 170, 201, 1); } /* #13aac9 */
+	#flag a:visited:hover,
+	#flag a:focus,
+	#flag a:focus:hover,
+	#flag a:hover,
+	#flag a:active {
+		color: hsla(190, 83%, 63%, 1);
+		text-decoration: none;
+	}
+	#flag a:active,
+	#flag a:focus { outline: none; }
+@media all and (min-width: 45rem) { /* (720px / 16) = 45rem */
+	#flag div { left: 0; }
+	#flag h1 {
+		font-size: 6.25rem; /* 100px */
+		left: -1.3125rem;
+	}
+}
