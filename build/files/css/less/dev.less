@@ -26,22 +26,42 @@
 	margin: .625rem 0;
 }
 
-.swatches { *zoom: 1; } .swatches:before, .swatches:after { content: " "; display: table; } .swatches:after { clear: both; }
 .swatches {
-	margin-left: -.3125rem;
-	margin-top: -.3125rem;
+	margin: 10px 0;
+	text-align: center;
 }
 	.swatches-swatch {
-		width: 6.25rem;
-		height: 6.25rem;
-		margin-left: .3125rem;
-		margin-top: .3125rem;
-		float: left;
-		display: inline;
+		font-size: .875rem; /* (14px / 16px) = .875em */
+		line-height: 1.28571428571428; /* ((((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428) */
+		padding: .64285714285714rem 0;
+		margin: .3125rem 0;
+		border: 1px solid rgba(0, 0, 0, .1);
 	}
-	.blue { background-color: @blue }
-	.gold { background-color: @gold; }
-	.green { background-color: @green; }
-	.olive { background-color: @olive; }
-	.teal { background-color: @teal; }
-	.orange { background-color: @orange; }
+		.swatches-swatch code {
+			color: #fff;
+			background: rgba(0, 0, 0, .3);
+			border: .0625rem solid rgba(0, 0, 0, .35);
+		}
+	.bling { background-color: @bling; }
+	.goblin { background-color: @goblin; }
+	.hulk { background-color: @hulk; }
+	.prius { background-color: @prius; }
+	.smurf { background-color: @smurf; }
+	.lobster { background-color: @lobster; }
+	.bruise { background-color: @bruise; }
+	.white { background-color: @white }
+	.gray1 { background-color: @gray1 }
+	.gray2 { background-color: @gray2 }
+	.gray3 { background-color: @gray3 }
+	.gray4 { background-color: @gray4 }
+	.gray5 { background-color: @gray5 }
+	.gray6 { background-color: @gray6 }
+	.gray7 { background-color: @gray7 }
+	.gray8 { background-color: @gray8 }
+	.gray9 { background-color: @gray9 }
+	.gray10 { background-color: @gray10 }
+	.gray11 { background-color: @gray11 }
+	.gray12 { background-color: @gray12 }
+	.gray13 { background-color: @gray13 }
+	.gray14 { background-color: @gray14 }
+	.black { background-color: @black }

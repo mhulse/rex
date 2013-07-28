@@ -1,127 +1,40 @@
 /**
  * Color scheme for Stoops!
- * 
- *         |         |                       |                        |
- *   Blue: | #13aac9 | rgba(19, 170, 201, 1) | hsla(190, 83%, 43%, 1) |
- *   Gold: | #ffd100 | rgba(255, 209, 0, 1)  | hsla(49, 100%, 50%, 1) |
- *  Green: | #4e801c | rgba(78, 128, 28, 1)  | hsla(90, 64%, 31%, 1)  |
- *  Olive: | #9ea301 | rgba(158, 163, 1, 1)  | hsla(62, 99%, 32%, 1)  |
- *   Teal: | #5e8da1 | rgba(94, 141, 161, 1) | hsla(198, 26%, 50%, 1) |
- * Orange: | #cc3300 | rgba(204, 51, 0, 1)   | hsla(15, 100%, 40%, 1) |
- *         |         |                       |                        |
+ *
+ *        |          |         |                       |                        |
+ *   gold | @bling   | #ffd100 | rgba(255, 209, 0, 1)  | hsla(49, 100%, 50%, 1) |
+ *  olive | @goblin  | #9ea301 | rgba(158, 163, 1, 1)  | hsla(62, 99%, 32%, 1)  |
+ *  green | @hulk    | #4e801c | rgba(78, 128, 28, 1)  | hsla(90, 64%, 31%, 1)  |
+ *   teal | @prius   | #5e8da1 | rgba(94, 141, 161, 1) | hsla(198, 26%, 50%, 1) |
+ *   blue | @smurf   | #13aac9 | rgba(19, 170, 201, 1) | hsla(190, 83%, 43%, 1) |
+ * orange | @lobster | #cc3300 | rgba(204, 51, 0, 1)   | hsla(15, 100%, 40%, 1) |
+ * purple | @bruise  | #490a3d | rgba(73, 10, 61, 1)   | hsla(311, 76%, 16%, 1) |
+ *        |          |         |                       |                        |
  *
  * Using `rgba()` and `hsla()` for color variations.
  */
 
-@blue: rgb(19, 170, 201);
-@gold: rgb(255, 209, 0);
-@green: rgb(78, 128, 28);
-@olive: rgb(158, 163, 1);
-@teal: rgb(94, 141, 161);
-@orange: rgb(204, 51, 0);
+@bling: rgb(255, 209, 0);
+@goblin: rgb(158, 163, 1);
+@hulk: rgb(78, 128, 28);
+@prius: rgb(94, 141, 161);
+@smurf: rgb(19, 170, 201);
+@lobster: rgb(204, 51, 0);
+@bruise: rgb(73, 10, 61);
 
-/*
-@base: #663333;
-@complement1: spin(@base, 180);
-@complement2: darken(spin(@base, 180), 5%);
-@lighten1: lighten(@base, 15%);
-@lighten2: lighten(@base, 30%);
-
-
-@base: #663333;
-@lighter1: lighten(spin(@base, 5), 10%);
-@lighter2: lighten(spin(@base, 10), 20%);
-@darker1: darken(spin(@base, -5), 10%);
-@darker2: darken(spin(@base, -10), 20%);
-
-
-
-
-@c: rgb(58, 155, 255);
-
-@c-dark-1: darken(@c, 10%);
-@c-dark-2: darken(@c, 20%);
-@c-light-1: lighten(@c, 10%);
-@c-light-2: lighten(@c, 20%);
-
-@c-split-1: spin(@c, 150);
-@c-split-1-l: lighten(@c-split-1, 10%);
-@c-split-1-d: darken(@c-split-1, 10%);
-
-@c-split-2: spin(@c, 200);
-@c-split-2-l: lighten(@c-split-2, 10%);
-@c-split-2-d: darken(@c-split-2, 10%);
-
-
-// Grays:
-@white: #fff;
-@gray1: #eee;
-@gray2: #ddd;
-@gray3: #ccc;
-@gray4: #bbb;
-@gray5: #aaa;
-@gray6: #999;
-@gray7: #888;
-@gray8: #777;
-@gray9: #666;
-@gray10: #555;
-@gray11: #444;
-@gray12: #333;
-@gray13: #222;
-@gray14: #111;
-@black: #000;
-// Base:
-@tan: #ae906f;
-@red: #ae1a1f;
-@blue: #0083ca;
-@green: #9ac80d;
-@yellow: #fc0;
-// Complementary:
-@tanC: spin(@tan, 180);
-@redC: spin(@red, 180);
-@blueC: spin(@blue, 180);
-@greenC: spin(@green, 180);
-@yellowC: spin(@yellow, 180);
-// Shades:
-@difference: 15%; // Difference (in perecent) between each shade.
-@tanDarker: darken(@tan, (@difference * 2));
-@tanDark: darken(@tan, @difference);
-@tanLight: lighten(@tan, @difference);
-@tanLighter: lighten(@tan, (@difference * 2));
-@redDarker: darken(@red, (@difference * 2));
-@redDark: darken(@red, @difference);
-@redLight: lighten(@red, @difference);
-@redLighter: lighten(@red, (@difference * 2));
-@blueDarker: darken(@blue, (@difference * 2));
-@blueDark: darken(@blue, @difference);
-@blueLight: lighten(@blue, @difference);
-@blueLighter: lighten(@blue, (@difference * 2));
-@greenDarker: darken(@green, (@difference * 2));
-@greenDark: darken(@green, @difference);
-@greenLight: lighten(@green, @difference);
-@greenLighter: lighten(@green, (@difference * 2));
-@yellowDarker: darken(@yellow, (@difference * 2));
-@yellowDark: darken(@yellow, @difference);
-@yellowLight: lighten(@yellow, @difference);
-@yellowLighter: lighten(@yellow, (@difference * 2));
-@tanCDarker: darken(@tanC, (@difference * 2));
-@tanCDark: darken(@tanC, @difference);
-@tanCLight: lighten(@tanC, @difference);
-@tanCLighter: lighten(@tanC, (@difference * 2));
-@redCDarker: darken(@redC, (@difference * 2));
-@redCDark: darken(@redC, @difference);
-@redCLight: lighten(@redC, @difference);
-@redCLighter: lighten(@redC, (@difference * 2));
-@blueCDarker: darken(@blueC, (@difference * 2));
-@blueCDark: darken(@blueC, @difference);
-@blueCLight: lighten(@blueC, @difference);
-@blueCLighter: lighten(@blueC, (@difference * 2));
-@greenCDarker: darken(@greenC, (@difference * 2));
-@greenCDark: darken(@greenC, @difference);
-@greenCLight: lighten(@greenC, @difference);
-@greenCLighter: lighten(@greenC, (@difference * 2));
-@yellowCDarker: darken(@yellowC, (@difference * 2));
-@yellowCDark: darken(@yellowC, @difference);
-@yellowCLight: lighten(@yellowC, @difference);
-@yellowCLighter: lighten(@yellowC, (@difference * 2));
-*/
+@white: rgba(255, 255, 255, 1); // #fff | hsla(0, 0, 100%, 1)
+@gray1: rgba(238, 238, 238, 1); // #eee | hsla(0, 0, 93%, 1)
+@gray2: rgba(221, 221, 221, 1); // #ddd | hsla(0, 0, 87%, 1)
+@gray3: rgba(221, 221, 221, 1); // #ccc | hsla(0, 0, 80%, 1)
+@gray4: rgba(187, 187, 187, 1); // #bbb | hsla(0, 0, 73%, 1)
+@gray5: rgba(170, 170, 170, 1); // #aaa | hsla(0, 0, 67%, 1)
+@gray6: rgba(153, 153, 153, 1); // #999 | hsla(0, 0, 60%, 1)
+@gray7: rgba(136, 136, 136, 1); // #888 | hsla(0, 0, 53%, 1)
+@gray8: rgba(119, 119, 119, 1); // #777 | hsla(0, 0, 47%, 1)
+@gray9: rgba(102, 102, 102, 1); // #666 | hsla(0, 0, 40%, 1)
+@gray10: rgba(85, 85, 85, 1);   // #555 | hsla(0, 0, 33%, 1)
+@gray11: rgba(68, 68, 68, 1);   // #444 | hsla(0, 0, 27%, 1)
+@gray12: rgba(51, 51, 51, 1);   // #333 | hsla(0, 0, 20%, 1)
+@gray13: rgba(34, 34, 34, 1);   // #222 | hsla(0, 0, 13%, 1)
+@gray14: rgba(17, 17, 17, 1);   // #111 | hsla(0, 0, 7%, 1)
+@black: rgba(0, 0, 0, 1);       // #000 | hsla(0, 0, 0, 1)
