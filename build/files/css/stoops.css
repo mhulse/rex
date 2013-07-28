@@ -1,3 +1,4 @@
+@charset "UTF-8";
 article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}
 audio,canvas,video{display:inline-block}
 audio:not([controls]){display:none;height:0}
@@ -35,7 +36,6 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top;}
 table{border-collapse:collapse;border-spacing:0}
-@charset "UTF-8";
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 html{height:100%;overflow-y:scroll;}
 body{font-family:Arial,sans-serif;font-size:100%;line-height:1.5;color:#000;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;min-height:100%;background:#fff}
@@ -48,12 +48,14 @@ h3,.h3,.sh3{font-size:2.125rem;line-height:1.05882352941176;}
 h4,.h4,.sh4{font-size:1.75rem;line-height:1.07142857142857;}
 h5,.h5,.sh5{font-size:1.375rem;line-height:1.09090909090909;}
 h6,.h6,.sh6{font-size:1.125rem;line-height:1.16666666666666;}
-blockquote{border-left:.1875rem solid rgba(0,0,0,0.25);margin:.625rem 0;padding:0 0 0 1rem;position:relative;quotes:none}
+h1 a,.h1 a,h2 a,.h2 a,h3 a,.h3 a,h4 a,.h4 a,h5 a,.h5 a,h6 a,.h6 a,.sh1 a,.sh2 a,.sh3 a,.sh4 a,.sh5 a,.sh6 a{color:#4e801c;text-decoration:none}h1 a:visited,.h1 a:visited,h2 a:visited,.h2 a:visited,h3 a:visited,.h3 a:visited,h4 a:visited,.h4 a:visited,h5 a:visited,.h5 a:visited,h6 a:visited,.h6 a:visited,.sh1 a:visited,.sh2 a:visited,.sh3 a:visited,.sh4 a:visited,.sh5 a:visited,.sh6 a:visited{color:#4e801c}
+h1 a:visited:hover,.h1 a:visited:hover,h2 a:visited:hover,.h2 a:visited:hover,h3 a:visited:hover,.h3 a:visited:hover,h4 a:visited:hover,.h4 a:visited:hover,h5 a:visited:hover,.h5 a:visited:hover,h6 a:visited:hover,.h6 a:visited:hover,.sh1 a:visited:hover,.sh2 a:visited:hover,.sh3 a:visited:hover,.sh4 a:visited:hover,.sh5 a:visited:hover,.sh6 a:visited:hover,h1 a:focus,.h1 a:focus,h2 a:focus,.h2 a:focus,h3 a:focus,.h3 a:focus,h4 a:focus,.h4 a:focus,h5 a:focus,.h5 a:focus,h6 a:focus,.h6 a:focus,.sh1 a:focus,.sh2 a:focus,.sh3 a:focus,.sh4 a:focus,.sh5 a:focus,.sh6 a:focus,h1 a:focus:hover,.h1 a:focus:hover,h2 a:focus:hover,.h2 a:focus:hover,h3 a:focus:hover,.h3 a:focus:hover,h4 a:focus:hover,.h4 a:focus:hover,h5 a:focus:hover,.h5 a:focus:hover,h6 a:focus:hover,.h6 a:focus:hover,.sh1 a:focus:hover,.sh2 a:focus:hover,.sh3 a:focus:hover,.sh4 a:focus:hover,.sh5 a:focus:hover,.sh6 a:focus:hover,h1 a:hover,.h1 a:hover,h2 a:hover,.h2 a:hover,h3 a:hover,.h3 a:hover,h4 a:hover,.h4 a:hover,h5 a:hover,.h5 a:hover,h6 a:hover,.h6 a:hover,.sh1 a:hover,.sh2 a:hover,.sh3 a:hover,.sh4 a:hover,.sh5 a:hover,.sh6 a:hover,h1 a:active,.h1 a:active,h2 a:active,.h2 a:active,h3 a:active,.h3 a:active,h4 a:active,.h4 a:active,h5 a:active,.h5 a:active,h6 a:active,.h6 a:active,.sh1 a:active,.sh2 a:active,.sh3 a:active,.sh4 a:active,.sh5 a:active,.sh6 a:active{color:#9ea301;text-decoration:none}
+blockquote{border-left:.1875rem solid rgba(94,141,161,0.2);margin:.625rem 0;padding:0 0 0 1rem;position:relative;quotes:none}
 blockquote:before,blockquote:after{content:'';content:none}
 blockquote p{font-family:Arial,sans-serif;font-style:italic}
 blockquote p:last-of-type{margin:0}
 blockquote footer{font-size:.875rem;line-height:1.71428571428571;}
-@media all and (min-width:45rem){blockquote:before{font:6.25rem/1 Arial,sans-serif;color:rgba(0,0,0,0.25);display:block;content:"\201C";position:absolute;left:-0.4em;top:-0.1em}}
+@media all and (min-width:45rem){blockquote:before{font:6.25rem/1 Arial,sans-serif;color:rgba(75,113,129,0.4);display:block;content:"\201C";position:absolute;left:-0.4em;top:-0.1em}}
 dl{font-size:1rem;line-height:1.125;margin:.625rem 0;padding:0}
 dl dd,dl dt{margin:0 0 .375rem;padding:0}
 dl dt{font-weight:bold}
@@ -61,7 +63,7 @@ dl dd{margin-left:.5rem}
 figure{margin:.625rem 0}
 figure img{display:block}
 figure figcaption{font-size:.875rem;line-height:1.28571428571428;margin:.4375rem 0;}
-hr,.hr,.hr1,.hr2,.hr3,.hr4,.hr5,.hr6{border:0;background:rgba(0,0,0,0.75);height:.0625rem;margin:.625rem 0;padding:0}
+hr,.hr,.hr1,.hr2,.hr3,.hr4,.hr5,.hr6{border:0;background:rgba(75,113,129,0.5);height:.0625rem;margin:.625rem 0;padding:0}
 .hr1{height:.125rem}
 .hr2{height:.25rem}
 .hr3{height:.5rem}
@@ -69,10 +71,9 @@ hr,.hr,.hr1,.hr2,.hr3,.hr4,.hr5,.hr6{border:0;background:rgba(0,0,0,0.75);height
 .hr5{height:.75rem}
 .hr6{height:.875rem}
 p{font-family:Cambria, Georgia, serif;font-size:1rem;line-height:1.5;margin:.75rem 0;}
-p a{color:#0D3A4F;font-weight:bold;text-decoration:none}
-p a:visited{color:#0D3A4F}
-p a:visited:hover,p a:focus,p a:focus:hover,p a:hover,p a:active{color:#046D8B}
 p .firsties{font-family:Cambria, Georgia, serif;font-style:normal;font-weight:normal;font-size:4.5rem;line-height:1;margin-right:.5rem;vertical-align:middle;float:left;display:inline}
+::-moz-selection{background:rgba(255,105,180,0.5);text-shadow:none}
+::selection{background:rgba(255,105,180,0.5);text-shadow:none}
 pre{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:.875rem;line-height:1.28571428571428;color:#333;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(0,0,0,0.025);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;box-shadow:inset 0 0 .625rem 0 rgba(0,0,0,0.1)}
 pre code{color:inherit;border:0;background:transparent;padding:0}
 ol,ul{font-size:1em;line-height:1.125;margin:10px 0;padding:0;list-style-position:outside}
@@ -81,20 +82,20 @@ ul{margin-left:1.5em}
 ol li,ul li{margin:0 0 .375em;padding:0}
 li ol{margin-left:2.5em}
 li ul{margin-left:.5em}
-a{color:#4e801c;text-decoration:none}
-a:visited{color:#4e801c}
-a:visited:hover,a:focus,a:focus:hover,a:hover,a:active{color:#9ea301;text-decoration:none}
+a{color:#13aac9;text-decoration:none}
+a:visited{color:#13aac9}
+a:visited:hover,a:focus,a:focus:hover,a:hover,a:active{color:#13aac9;text-decoration:underline}
 abbr{font-style:italic}
 abbr[title]{border-bottom:.0625rem dotted;cursor:help}
 bdi{direction:ltr;unicode-bidi:bidi-override}
 cite{font-style:italic}
-code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;color:#333;padding:0 .25rem;background:rgba(0,0,0,0.1);-webkit-border-radius:.1875rem;-moz-border-radius:.1875rem;border-radius:.1875rem}
+code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;color:#c30;padding:0 .25rem;background:rgba(204,51,0,0.05);border:1px solid rgba(204,51,0,0.1);border-radius:.1875rem}
 dfn{font-weight:bold}
 dfn[title]{border-bottom:.1em dotted;cursor:help}
 em,i{font-style:italic}
 kbd{font-family:monospace, serif;text-shadow:0 .0625rem 0 #fff;color:#000;background:#eee;margin:0 .25rem;padding:0 .15rem;line-height:0;vertical-align:baseline;position:relative;top:-0.0625rem;-webkit-border-radius:.05rem;-moz-border-radius:.05rem;border-radius:.05rem;box-shadow:0 0 0 .125rem #eee,0 0 0 .1875rem #fff,0 .0625rem .125rem .25rem rgba(0,0,0,0.2)}
 kbd kbd{top:0}
-mark{text-decoration:none;color:#525200;background-color:rgba(255,255,0,0.75);margin:0 .25rem;box-shadow:0 0 0 .25rem rgba(255,255,0,0.75)}
+mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:3px 4px}
 q{quotes:'“' '”' '‘' '’' '“' '”' '‘' '’'}
 q:before{content:'“';content:open-quote}
 q:after{content:'”';content:close-quote}
@@ -103,7 +104,8 @@ q q:after{content:'’';content:close-quote}
 rp{font-size:100%;display:inline}
 s{color:#666}
 samp{font:1em Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;color:#333}
-small,.small{font-size:smaller}
+small,.small{font-family:Arial,sans-serif;font-size:smaller;letter-spacing:.03em}
+small a,.small a{font-weight:bold}
 span.amp1{font-size:110%;font-family:adobe-caslon-pro,Adobe Caslon Pro,Baskerville,"Goudy Old Style",Palatino,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;font-weight:400;font-style:italic;line-height:0;vertical-align:baseline;position:relative}
 strong,b{font-weight:bold}
 sub,sup{font-size:75%;line-height:0;vertical-align:baseline;position:relative}
@@ -112,8 +114,8 @@ sup{top:-0.5rem}
 u{text-decoration:underline}
 var{font-style:italic}
 wbr:after{content:"\00200B"}
-del{text-decoration:line-through;color:#600;background-color:rgba(255,0,0,0.25);margin:0 .15rem;box-shadow:0 0 0 .125rem rgba(255,0,0,0.25)}
-ins{text-decoration:none;color:#003d14;background-color:rgba(0,153,51,0.25);margin:0 .15rem;box-shadow:0 0 0 .125rem rgba(0,153,51,0.25)}
+del{text-decoration:line-through;color:#900;background-color:rgba(255,0,0,0.25);margin:0 .15rem;box-shadow:0 0 0 .125rem rgba(255,0,0,0.25)}
+ins{text-decoration:none;color:#031;background-color:rgba(0,153,51,0.25);margin:0 .15rem;box-shadow:0 0 0 .125rem rgba(0,153,51,0.25)}
 img{width:auto;height:auto;max-width:100%;max-height:100%;vertical-align:middle;-ms-interpolation-mode:bicubic}
 .stoops-scrollable{width:100%;margin:.625rem 0;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .stoops-scrollable>*{margin:0}
@@ -161,170 +163,26 @@ label{margin:0.5em 0 0.2em;font-size:90%}
 .container{text-align:left;margin:0 auto;padding:20px;max-width:680px}
 body{text-align:center}
 figure{text-align:left;display:inline-block;max-width:100%}
-figure figcaption{color:rgba(43,50,77,0.75);background:rgba(173,191,199,0.5)}
+figure figcaption{color:#395460;background:rgba(94,141,161,0.2);padding:.625rem}
 figure figcaption a{font-weight:bold;text-decoration:none;color:#000}
 figure figcaption a:visited,figure figcaption a:visited:hover,figure figcaption a:focus,figure figcaption a:focus:hover,figure figcaption a:hover,figure figcaption a:active{color:#000;text-decoration:underline}
-#flag{font:100px/1 "Hulse",Arial,sans-serif;color:#FD5B84;margin:20px 0;position:relative;top:0;left:-20px}
+#flag{font:100px/1 "Hulse",Arial,sans-serif;color:#13aac9;margin:1.25rem 0;position:relative;top:0;left:-1.3125rem}
 #flag span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
-#flag a,#flag a:visited{color:#fff}
-#flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{text-decoration:none}
+#flag a,#flag a:visited{color:#13aac9}
+#flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{color:#52d5ef;text-decoration:none}
 #flag a:active,#flag a:focus{outline:none}
 
-.marker{font:bold 1.375rem/1.09090909090909 Arial,sans-serif;color:#990;text-transform:none;background:rgba(255,255,0,0.75);margin:.625rem 0;padding:.625rem;display:inline-block;*display:inline;*zoom:1;box-shadow:inset 0 0 .125rem .125rem rgba(255,255,255,0.5),0 0 .3125rem 0 rgba(0,0,0,0.1)}
-.subtle{font:normal 1.188em/1.26262626262626 Courier,monospace;color:#999;margin:.625rem 0}
-.swatches::before,.swatches::after{content:" ";display:table}
-.swatches::after{clear:both}
+.marker{font:bold 1.375rem/1.09090909090909 Arial,sans-serif;color:rgba(153,125,0,0.9);text-transform:none;background:rgba(255,209,0,0.9);margin:.625rem 0;padding:.625rem;display:inline-block;*display:inline;*zoom:1;box-shadow:0 0 .3125rem 0 rgba(153,125,0,0.25)}
+.marker code{color:inherit;padding:0;background:none;border:0;border-radius:0}
+.subtle{font:normal 1.188rem/1.26262626262626 Courier,monospace;color:#999;margin:.625rem 0}
 .swatches{*zoom:1}
-.swatches>div{font:14px/50px Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;text-align:center;color:#fff;width:100%;height:50px;float:left;display:inline;cursor:pointer;cursor:hand;box-sizing:border-box;box-shadow:inset 0 0 10px 0 rgba(0,0,0,0.25)}.swatches>div::before{padding:3px 5px;background:rgba(0,0,0,0.1);border:1px solid rgba(0,0,0,0.08);border-radius:3px}
-.swatches.swatches-gray-1>div:nth-child(1){background:#fff}.swatches.swatches-gray-1>div:nth-child(1)::before{content:"#ffffff"}
-.swatches.swatches-gray-1>div:nth-child(1):hover::before{content:"@white"}
-.swatches.swatches-gray-1>div:nth-child(2){background:#eee}.swatches.swatches-gray-1>div:nth-child(2)::before{content:"#eeeeee"}
-.swatches.swatches-gray-1>div:nth-child(2):hover::before{content:"@gray1"}
-.swatches.swatches-gray-1>div:nth-child(3){background:#ddd}.swatches.swatches-gray-1>div:nth-child(3)::before{content:"#dddddd"}
-.swatches.swatches-gray-1>div:nth-child(3):hover::before{content:"@gray2"}
-.swatches.swatches-gray-1>div:nth-child(4){background:#ccc}.swatches.swatches-gray-1>div:nth-child(4)::before{content:"#cccccc"}
-.swatches.swatches-gray-1>div:nth-child(4):hover::before{content:"@gray3"}
-.swatches.swatches-gray-1>div:nth-child(5){background:#bbb}.swatches.swatches-gray-1>div:nth-child(5)::before{content:"#bbbbbb"}
-.swatches.swatches-gray-1>div:nth-child(5):hover::before{content:"@gray4"}
-.swatches.swatches-gray-1>div:nth-child(6){background:#aaa}.swatches.swatches-gray-1>div:nth-child(6)::before{content:"#aaaaaa"}
-.swatches.swatches-gray-1>div:nth-child(6):hover::before{content:"@gray5"}
-.swatches.swatches-gray-1>div:nth-child(7){background:#999}.swatches.swatches-gray-1>div:nth-child(7)::before{content:"#999999"}
-.swatches.swatches-gray-1>div:nth-child(7):hover::before{content:"@gray6"}
-.swatches.swatches-gray-1>div:nth-child(8){background:#888}.swatches.swatches-gray-1>div:nth-child(8)::before{content:"#888888"}
-.swatches.swatches-gray-1>div:nth-child(8):hover::before{content:"@gray7"}
-.swatches.swatches-gray-1>div:nth-child(9){background:#777}.swatches.swatches-gray-1>div:nth-child(9)::before{content:"#777777"}
-.swatches.swatches-gray-1>div:nth-child(9):hover::before{content:"@gray8"}
-.swatches.swatches-gray-1>div:nth-child(10){background:#666}.swatches.swatches-gray-1>div:nth-child(10)::before{content:"#666666"}
-.swatches.swatches-gray-1>div:nth-child(10):hover::before{content:"@gray9"}
-.swatches.swatches-gray-1>div:nth-child(11){background:#555}.swatches.swatches-gray-1>div:nth-child(11)::before{content:"#555555"}
-.swatches.swatches-gray-1>div:nth-child(11):hover::before{content:"@gray10"}
-.swatches.swatches-gray-1>div:nth-child(12){background:#444}.swatches.swatches-gray-1>div:nth-child(12)::before{content:"#444444"}
-.swatches.swatches-gray-1>div:nth-child(12):hover::before{content:"@gray11"}
-.swatches.swatches-gray-1>div:nth-child(13){background:#333}.swatches.swatches-gray-1>div:nth-child(13)::before{content:"#333333"}
-.swatches.swatches-gray-1>div:nth-child(13):hover::before{content:"@gray12"}
-.swatches.swatches-gray-1>div:nth-child(14){background:#222}.swatches.swatches-gray-1>div:nth-child(14)::before{content:"#222222"}
-.swatches.swatches-gray-1>div:nth-child(14):hover::before{content:"@gray13"}
-.swatches.swatches-gray-1>div:nth-child(15){background:#111}.swatches.swatches-gray-1>div:nth-child(15)::before{content:"#111111"}
-.swatches.swatches-gray-1>div:nth-child(15):hover::before{content:"@gray14"}
-.swatches.swatches-gray-1>div:nth-child(16){background:#000}.swatches.swatches-gray-1>div:nth-child(16)::before{content:"#000000"}
-.swatches.swatches-gray-1>div:nth-child(16):hover::before{content:"@black"}
-.swatches.swatches-base-1>div:nth-child(1){background:#ae906f}.swatches.swatches-base-1>div:nth-child(1)::before{content:"#ae906f"}
-.swatches.swatches-base-1>div:nth-child(1):hover::before{content:"@tan"}
-.swatches.swatches-base-1>div:nth-child(2){background:#ae1a1f}.swatches.swatches-base-1>div:nth-child(2)::before{content:"#ae1a1f"}
-.swatches.swatches-base-1>div:nth-child(2):hover::before{content:"@red"}
-.swatches.swatches-base-1>div:nth-child(3){background:#0083ca}.swatches.swatches-base-1>div:nth-child(3)::before{content:"#0083ca"}
-.swatches.swatches-base-1>div:nth-child(3):hover::before{content:"@blue"}
-.swatches.swatches-base-1>div:nth-child(4){background:#9ac80d}.swatches.swatches-base-1>div:nth-child(4)::before{content:"#9ac80d"}
-.swatches.swatches-base-1>div:nth-child(4):hover::before{content:"@green"}
-.swatches.swatches-base-1>div:nth-child(5){background:#fc0}.swatches.swatches-base-1>div:nth-child(5)::before{content:"#ffcc00"}
-.swatches.swatches-base-1>div:nth-child(5):hover::before{content:"@yellow"}
-.swatches.swatches-shade-1>div:nth-child(1){background:#544330}.swatches.swatches-shade-1>div:nth-child(1)::before{content:"#544330"}
-.swatches.swatches-shade-1>div:nth-child(1):hover::before{content:"@tanDarker"}
-.swatches.swatches-shade-1>div:nth-child(2){background:#856a4b}.swatches.swatches-shade-1>div:nth-child(2)::before{content:"#856a4b"}
-.swatches.swatches-shade-1>div:nth-child(2):hover::before{content:"@tanDark"}
-.swatches.swatches-shade-1>div:nth-child(3){background:#ae906f}.swatches.swatches-shade-1>div:nth-child(3)::before{content:"#ae906f"}
-.swatches.swatches-shade-1>div:nth-child(3):hover::before{content:"@tan"}
-.swatches.swatches-shade-1>div:nth-child(4){background:#cab6a0}.swatches.swatches-shade-1>div:nth-child(4)::before{content:"#cab6a0"}
-.swatches.swatches-shade-1>div:nth-child(4):hover::before{content:"@tanLight"}
-.swatches.swatches-shade-1>div:nth-child(5){background:#e5dbd1}.swatches.swatches-shade-1>div:nth-child(5)::before{content:"#e5dbd1"}
-.swatches.swatches-shade-1>div:nth-child(5):hover::before{content:"@tanLighter"}
-.swatches.swatches-shade-2>div:nth-child(1){background:#290607}.swatches.swatches-shade-2>div:nth-child(1)::before{content:"#290607"}
-.swatches.swatches-shade-2>div:nth-child(1):hover::before{content:"@redDarker"}
-.swatches.swatches-shade-2>div:nth-child(2){background:#6b1013}.swatches.swatches-shade-2>div:nth-child(2)::before{content:"#6b1013"}
-.swatches.swatches-shade-2>div:nth-child(2):hover::before{content:"@redDark"}
-.swatches.swatches-shade-2>div:nth-child(3){background:#ae1a1f}.swatches.swatches-shade-2>div:nth-child(3)::before{content:"#ae1a1f"}
-.swatches.swatches-shade-2>div:nth-child(3):hover::before{content:"@red"}
-.swatches.swatches-shade-2>div:nth-child(4){background:#e1343a}.swatches.swatches-shade-2>div:nth-child(4)::before{content:"#e1343a"}
-.swatches.swatches-shade-2>div:nth-child(4):hover::before{content:"@redLight"}
-.swatches.swatches-shade-2>div:nth-child(5){background:#eb767a}.swatches.swatches-shade-2>div:nth-child(5)::before{content:"#eb767a"}
-.swatches.swatches-shade-2>div:nth-child(5):hover::before{content:"@redLighter"}
-.swatches.swatches-shade-3>div:nth-child(1){background:#002031}.swatches.swatches-shade-3>div:nth-child(1)::before{content:"#002031"}
-.swatches.swatches-shade-3>div:nth-child(1):hover::before{content:"@blueDarker"}
-.swatches.swatches-shade-3>div:nth-child(2){background:#00517e}.swatches.swatches-shade-3>div:nth-child(2)::before{content:"#00517e"}
-.swatches.swatches-shade-3>div:nth-child(2):hover::before{content:"@blueDark"}
-.swatches.swatches-shade-3>div:nth-child(3){background:#0083ca}.swatches.swatches-shade-3>div:nth-child(3)::before{content:"#0083ca"}
-.swatches.swatches-shade-3>div:nth-child(3):hover::before{content:"@blue"}
-.swatches.swatches-shade-3>div:nth-child(4){background:#18aeff}.swatches.swatches-shade-3>div:nth-child(4)::before{content:"#18aeff"}
-.swatches.swatches-shade-3>div:nth-child(4):hover::before{content:"@blueLight"}
-.swatches.swatches-shade-3>div:nth-child(5){background:#64c9ff}.swatches.swatches-shade-3>div:nth-child(5)::before{content:"#64c9ff"}
-.swatches.swatches-shade-3>div:nth-child(5):hover::before{content:"@blueLighter"}
-.swatches.swatches-shade-4>div:nth-child(1){background:#2b3804}.swatches.swatches-shade-4>div:nth-child(1)::before{content:"#2b3804"}
-.swatches.swatches-shade-4>div:nth-child(1):hover::before{content:"@greenDarker"}
-.swatches.swatches-shade-4>div:nth-child(2){background:#638008}.swatches.swatches-shade-4>div:nth-child(2)::before{content:"#638008"}
-.swatches.swatches-shade-4>div:nth-child(2):hover::before{content:"@greenDark"}
-.swatches.swatches-shade-4>div:nth-child(3){background:#9ac80d}.swatches.swatches-shade-4>div:nth-child(3)::before{content:"#9ac80d"}
-.swatches.swatches-shade-4>div:nth-child(3):hover::before{content:"@green"}
-.swatches.swatches-shade-4>div:nth-child(4){background:#c2f230}.swatches.swatches-shade-4>div:nth-child(4)::before{content:"#c2f230"}
-.swatches.swatches-shade-4>div:nth-child(4):hover::before{content:"@greenLight"}
-.swatches.swatches-shade-4>div:nth-child(5){background:#d7f678}.swatches.swatches-shade-4>div:nth-child(5)::before{content:"#d7f678"}
-.swatches.swatches-shade-4>div:nth-child(5):hover::before{content:"@greenLighter"}
-.swatches.swatches-shade-5>div:nth-child(1){background:#665200}.swatches.swatches-shade-5>div:nth-child(1)::before{content:"#665200"}
-.swatches.swatches-shade-5>div:nth-child(1):hover::before{content:"@yellowDarker"}
-.swatches.swatches-shade-5>div:nth-child(2){background:#b38f00}.swatches.swatches-shade-5>div:nth-child(2)::before{content:"#b38f00"}
-.swatches.swatches-shade-5>div:nth-child(2):hover::before{content:"@yellowDark"}
-.swatches.swatches-shade-5>div:nth-child(3){background:#fc0}.swatches.swatches-shade-5>div:nth-child(3)::before{content:"#ffcc00"}
-.swatches.swatches-shade-5>div:nth-child(3):hover::before{content:"@yellow"}
-.swatches.swatches-shade-5>div:nth-child(4){background:#ffdb4d}.swatches.swatches-shade-5>div:nth-child(4)::before{content:"#ffdb4d"}
-.swatches.swatches-shade-5>div:nth-child(4):hover::before{content:"@yellowLight"}
-.swatches.swatches-shade-5>div:nth-child(5){background:#ffeb99}.swatches.swatches-shade-5>div:nth-child(5)::before{content:"#ffeb99"}
-.swatches.swatches-shade-5>div:nth-child(5):hover::before{content:"@yellowLighter"}
-.swatches.swatches-complement-1>div:nth-child(1){background:#6f8dae}.swatches.swatches-complement-1>div:nth-child(1)::before{content:"#6f8dae"}
-.swatches.swatches-complement-1>div:nth-child(1):hover::before{content:"@tanC"}
-.swatches.swatches-complement-1>div:nth-child(2){background:#1aaea9}.swatches.swatches-complement-1>div:nth-child(2)::before{content:"#1aaea9"}
-.swatches.swatches-complement-1>div:nth-child(2):hover::before{content:"@redC"}
-.swatches.swatches-complement-1>div:nth-child(3){background:#ca4700}.swatches.swatches-complement-1>div:nth-child(3)::before{content:"#ca4700"}
-.swatches.swatches-complement-1>div:nth-child(3):hover::before{content:"@blueC"}
-.swatches.swatches-complement-1>div:nth-child(4){background:#3b0dc8}.swatches.swatches-complement-1>div:nth-child(4)::before{content:"#3b0dc8"}
-.swatches.swatches-complement-1>div:nth-child(4):hover::before{content:"@greenC"}
-.swatches.swatches-complement-1>div:nth-child(5){background:#03f}.swatches.swatches-complement-1>div:nth-child(5)::before{content:"#0033ff"}
-.swatches.swatches-complement-1>div:nth-child(5):hover::before{content:"@yellowC"}
-.swatches.swatches-shade-c-1>div:nth-child(1){background:#304154}.swatches.swatches-shade-c-1>div:nth-child(1)::before{content:"#304154"}
-.swatches.swatches-shade-c-1>div:nth-child(1):hover::before{content:"@tanCDarker"}
-.swatches.swatches-shade-c-1>div:nth-child(2){background:#4b6785}.swatches.swatches-shade-c-1>div:nth-child(2)::before{content:"#4b6785"}
-.swatches.swatches-shade-c-1>div:nth-child(2):hover::before{content:"@tanDark"}
-.swatches.swatches-shade-c-1>div:nth-child(3){background:#6f8dae}.swatches.swatches-shade-c-1>div:nth-child(3)::before{content:"#6f8dae"}
-.swatches.swatches-shade-c-1>div:nth-child(3):hover::before{content:"@tanC"}
-.swatches.swatches-shade-c-1>div:nth-child(4){background:#a0b4ca}.swatches.swatches-shade-c-1>div:nth-child(4)::before{content:"#a0b4ca"}
-.swatches.swatches-shade-c-1>div:nth-child(4):hover::before{content:"@tanCLight"}
-.swatches.swatches-shade-c-1>div:nth-child(5){background:#d1dbe5}.swatches.swatches-shade-c-1>div:nth-child(5)::before{content:"#d1dbe5"}
-.swatches.swatches-shade-c-1>div:nth-child(5):hover::before{content:"@tanCLighter"}
-.swatches.swatches-shade-c-2>div:nth-child(1){background:#062928}.swatches.swatches-shade-c-2>div:nth-child(1)::before{content:"#062928"}
-.swatches.swatches-shade-c-2>div:nth-child(1):hover::before{content:"@redCDarker"}
-.swatches.swatches-shade-c-2>div:nth-child(2){background:#106b68}.swatches.swatches-shade-c-2>div:nth-child(2)::before{content:"#106b68"}
-.swatches.swatches-shade-c-2>div:nth-child(2):hover::before{content:"@redCDark"}
-.swatches.swatches-shade-c-2>div:nth-child(3){background:#1aaea9}.swatches.swatches-shade-c-2>div:nth-child(3)::before{content:"#1aaea9"}
-.swatches.swatches-shade-c-2>div:nth-child(3):hover::before{content:"@redC"}
-.swatches.swatches-shade-c-2>div:nth-child(4){background:#34e1db}.swatches.swatches-shade-c-2>div:nth-child(4)::before{content:"#34e1db"}
-.swatches.swatches-shade-c-2>div:nth-child(4):hover::before{content:"@redCLight"}
-.swatches.swatches-shade-c-2>div:nth-child(5){background:#76ebe7}.swatches.swatches-shade-c-2>div:nth-child(5)::before{content:"#76ebe7"}
-.swatches.swatches-shade-c-2>div:nth-child(5):hover::before{content:"@redCLighter"}
-.swatches.swatches-shade-c-3>div:nth-child(1){background:#311100}.swatches.swatches-shade-c-3>div:nth-child(1)::before{content:"#311100"}
-.swatches.swatches-shade-c-3>div:nth-child(1):hover::before{content:"@blueCDarker"}
-.swatches.swatches-shade-c-3>div:nth-child(2){background:#7e2c00}.swatches.swatches-shade-c-3>div:nth-child(2)::before{content:"#7e2c00"}
-.swatches.swatches-shade-c-3>div:nth-child(2):hover::before{content:"@blueCDark"}
-.swatches.swatches-shade-c-3>div:nth-child(3){background:#ca4700}.swatches.swatches-shade-c-3>div:nth-child(3)::before{content:"#ca4700"}
-.swatches.swatches-shade-c-3>div:nth-child(3):hover::before{content:"@blueC"}
-.swatches.swatches-shade-c-3>div:nth-child(4){background:#ff6918}.swatches.swatches-shade-c-3>div:nth-child(4)::before{content:"#ff6918"}
-.swatches.swatches-shade-c-3>div:nth-child(4):hover::before{content:"@blueCLight"}
-.swatches.swatches-shade-c-3>div:nth-child(5){background:#ff9a64}.swatches.swatches-shade-c-3>div:nth-child(5)::before{content:"#ff9a64"}
-.swatches.swatches-shade-c-3>div:nth-child(5):hover::before{content:"@blueCLighter"}
-.swatches.swatches-shade-c-4>div:nth-child(1){background:#110438}.swatches.swatches-shade-c-4>div:nth-child(1)::before{content:"#110438"}
-.swatches.swatches-shade-c-4>div:nth-child(1):hover::before{content:"@greenCDarker"}
-.swatches.swatches-shade-c-4>div:nth-child(2){background:#260880}.swatches.swatches-shade-c-4>div:nth-child(2)::before{content:"#260880"}
-.swatches.swatches-shade-c-4>div:nth-child(2):hover::before{content:"@greenCDark"}
-.swatches.swatches-shade-c-4>div:nth-child(3){background:#3b0dc8}.swatches.swatches-shade-c-4>div:nth-child(3)::before{content:"#3b0dc8"}
-.swatches.swatches-shade-c-4>div:nth-child(3):hover::before{content:"@greenC"}
-.swatches.swatches-shade-c-4>div:nth-child(4){background:#6030f2}.swatches.swatches-shade-c-4>div:nth-child(4)::before{content:"#6030f2"}
-.swatches.swatches-shade-c-4>div:nth-child(4):hover::before{content:"@greenCLight"}
-.swatches.swatches-shade-c-4>div:nth-child(5){background:#9778f6}.swatches.swatches-shade-c-4>div:nth-child(5)::before{content:"#9778f6"}
-.swatches.swatches-shade-c-4>div:nth-child(5):hover::before{content:"@greenCLighter"}
-.swatches.swatches-shade-c-5>div:nth-child(1){background:#001466}.swatches.swatches-shade-c-5>div:nth-child(1)::before{content:"#001466"}
-.swatches.swatches-shade-c-5>div:nth-child(1):hover::before{content:"@yellowCDarker"}
-.swatches.swatches-shade-c-5>div:nth-child(2){background:#0024b3}.swatches.swatches-shade-c-5>div:nth-child(2)::before{content:"#0024b3"}
-.swatches.swatches-shade-c-5>div:nth-child(2):hover::before{content:"@yellowCDark"}
-.swatches.swatches-shade-c-5>div:nth-child(3){background:#03f}.swatches.swatches-shade-c-5>div:nth-child(3)::before{content:"#0033ff"}
-.swatches.swatches-shade-c-5>div:nth-child(3):hover::before{content:"@yellowC"}
-.swatches.swatches-shade-c-5>div:nth-child(4){background:#4d70ff}.swatches.swatches-shade-c-5>div:nth-child(4)::before{content:"#4d70ff"}
-.swatches.swatches-shade-c-5>div:nth-child(4):hover::before{content:"@yellowCLight"}
-.swatches.swatches-shade-c-5>div:nth-child(5){background:#99adff}.swatches.swatches-shade-c-5>div:nth-child(5)::before{content:"#99adff"}
-.swatches.swatches-shade-c-5>div:nth-child(5):hover::before{content:"@yellowCLighter"}
+.swatches:before,.swatches:after{content:" ";display:table}
+.swatches:after{clear:both}
+.swatches{margin-left:-0.3125rem;margin-top:-0.3125rem}
+.swatches-swatch{width:6.25rem;height:6.25rem;margin-left:.3125rem;margin-top:.3125rem;float:left;display:inline}
+.blue{background-color:#13aac9}
+.gold{background-color:#ffd100}
+.green{background-color:#4e801c}
+.olive{background-color:#9ea301}
+.teal{background-color:#5e8da1}
+.orange{background-color:#c30}

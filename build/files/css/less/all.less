@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 /**
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
@@ -222,6 +220,22 @@ h6, .h6, .sh6 {
 	font-size: 1.125rem; /* 18px */
 	line-height: 1.16666666666666; /* (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666 */
 }
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
+.sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
+	a {
+		color: #4e801c;
+		text-decoration: none;
+		&:visited { color: #4e801c; }
+		&:visited:hover,
+		&:focus,
+		&:focus:hover,
+		&:hover,
+		&:active {
+			color: #9ea301;
+			text-decoration: none;
+		}
+	}
+}
 
 /**
  * The `<header>` element represents the "header" of a document or section
@@ -293,7 +307,7 @@ section {}
  */
 
 blockquote {
-	border-left: .1875rem solid rgba(0, 0, 0, .25); /* (3px / 16px) = .1875rem */
+	border-left: .1875rem solid rgba(94, 141, 161, .2); /* (3px / 16px) = .1875rem */
 	margin: .625rem 0;
 	padding: 0 0 0 1rem;
 	position: relative;
@@ -316,7 +330,7 @@ blockquote:after {
 @media all and (min-width: 45rem) { /* (720px / 16) = 45rem */
 	blockquote:before {
 		font: 6.25rem/1 Arial, sans-serif; /* 100px */
-		color: rgba(0, 0, 0, .25);
+		color: hsla(198, 26%, 40%, .4);
 		display: block;
 		content: "\201C";
 		position: absolute;
@@ -414,7 +428,7 @@ figure { margin: .625rem 0; }
 
 hr, .hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
 	border: 0;
-	background: rgba(0, 0, 0, .75);
+	background: hsla(198, 26%, 40%, .5);
 	height: .0625rem; /* 1px */
 	margin: .625rem 0;
 	padding: 0;
@@ -438,19 +452,20 @@ p {
 	line-height: 1.5;
 	margin: .75rem 0; /* (1.5 / 2) = .75 */
 }
+	/*
 	p a {
-		color: #0D3A4F;
-		font-weight: bold;
+		color: #5e13c9;
 		text-decoration: none;
 	}
-	p a:visited { color: #0D3A4F; }
+	p a:visited { color: #5e13c9; }
 	p a:visited:hover,
 	p a:focus,
 	p a:focus:hover,
 	p a:hover,
 	p a:active {
-		color: #046D8B;
+		color: #c812aa;
 	}
+	*/
 	
 	/**
 	 * Drop caps.
@@ -500,6 +515,16 @@ p {
  * @see http://perishablepress.com/perfect-pre-tags/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-pre-element
  */
+
+::-moz-selection {
+	background: rgba(255, 105, 180, .5);
+	text-shadow: none;
+}
+
+::selection {
+	background: rgba(255, 105, 180, .5);
+	text-shadow: none;
+}
 
 pre {
 	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
@@ -574,17 +599,17 @@ ul { margin-left: 1.5em; }
  */
 
 a {
-	color: #4e801c;
+	color: rgba(19, 170, 201, 1);
 	text-decoration: none;
 }
-	a:visited { color: #4e801c; }
+	a:visited { color: rgba(19, 170, 201, 1); }
 	a:visited:hover,
 	a:focus,
 	a:focus:hover,
 	a:hover,
 	a:active {
-		color: #9ea301;
-		text-decoration: none;
+		color: rgba(19, 170, 201, 1);
+		text-decoration: underline;
 	}
 
 /**
@@ -666,12 +691,11 @@ code {
 	white-space: -moz-pre-wrap; /* Mozilla */
 	white-space: -hp-pre-wrap;  /* HP Printers */
 	word-wrap: break-word;      /* IE 5+ */
-	color: #333;
+	color: rgba(204, 51, 0, 1); /* #c30 */
 	padding: 0 .25rem;
-	background: rgba(0, 0, 0, .1);
-	-webkit-border-radius: .1875rem;
-	   -moz-border-radius: .1875rem;
-	        border-radius: .1875rem;
+	background: rgba(204, 51, 0, .05);
+	border: 1px solid rgba(204, 51, 0, .1);
+	border-radius: .1875rem;
 }
 
 /**
@@ -786,10 +810,9 @@ kbd {
 
 mark {
 	text-decoration: none;
-	color: #525200;
+	color: hsla(60, 100%, 20%, 1);
 	background-color: rgba(255, 255, 0, .75);
-	margin: 0 .25rem;
-	box-shadow: 0 0 0 .25rem rgba(255, 255, 0, .75);
+	padding: 3px 4px;
 }
 
 /**
@@ -893,7 +916,13 @@ samp {
  */
 
 small,
-.small { font-size: smaller; }
+.small {
+	font-family: Arial, sans-serif;
+	font-size: smaller;
+	letter-spacing: .03em;
+}
+	small a,
+	.small a { font-weight: bold; }
 
 /**
  * The `<span>` element doesn't mean anything on its own, but can be
@@ -1033,7 +1062,7 @@ wbr:after { content: "\00200B"; }
 
 del {
 	text-decoration: line-through;
-	color: #600;
+	color: hsla(0, 100%, 30%, 1);
 	background-color: rgba(255, 0, 0, .25);
 	margin: 0 .15rem;
 	box-shadow: 0 0 0 .125rem rgba(255, 0, 0, .25);
@@ -1048,7 +1077,7 @@ del {
 
 ins {
 	text-decoration: none;
-	color: #003d14;
+	color: hsla(140, 100%, 10%, 1);
 	background-color: rgba(0, 153, 51, .25);
 	margin: 0 .15rem;
 	box-shadow: 0 0 0 .125rem rgba(0, 153, 51, .25);
@@ -1935,8 +1964,9 @@ figure {
 	max-width: 100%;
 }
 	figure figcaption {
-		color: rgba(43, 50, 77, .75);
-		background: rgba(173, 191, 199, .5);
+		color: hsla(198, 26%, 30%, 1);
+		background: rgba(94, 141, 161, .2); /* #5e8da1 */
+		padding: .625rem;
 	}
 		figure figcaption a {
 			font-weight: bold;
@@ -1956,11 +1986,11 @@ figure {
 /* <h1 id="flag">M<span>icky Hulse</span></h1> */
 #flag {
 	font: 100px/1 "Hulse", Arial, sans-serif;
-	color: #FD5B84;
-	margin: 20px 0;
+	color: rgba(19, 170, 201, 1);
+	margin: 1.25rem 0;
 	position: relative;
 	top: 0;
-	left: -20px;
+	left: -1.3125rem;
 }
 	#flag span {
 		border: 0;
@@ -1973,11 +2003,14 @@ figure {
 		width: 1px;
 	}
 	#flag a,
-	#flag a:visited { color: #fff; }
+	#flag a:visited { color: rgba(19, 170, 201, 1); } /* #13aac9 */
 	#flag a:visited:hover,
 	#flag a:focus,
 	#flag a:focus:hover,
 	#flag a:hover,
-	#flag a:active { text-decoration: none; }
+	#flag a:active {
+		color: hsla(190, 83%, 63%, 1);
+		text-decoration: none;
+	}
 	#flag a:active,
 	#flag a:focus { outline: none; }
