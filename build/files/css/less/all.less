@@ -102,10 +102,11 @@ html {
  * @see http://www.sitepoint.com/typography-baseline-rhythm-deciphered/
  * @see http://modularscale.com/scale/?px1=16&px2=40&ra1=1.618&ra2=0
  * @see http://dev.w3.org/html5/spec/Overview.html#the-body-element-0
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
  */
 
 body {
-	font-family: Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
+	font-family: @sans;
 	font-size: 100%;
 	line-height: 1.5;
 	color: @raven;
@@ -128,10 +129,10 @@ body {
  */
 
 address {
-	font-size: 1rem; /* 16px */
-	line-height: 1.125; /* (((1.5 / 1) = 1.5) * .75) = 1.125 */
+	font-size: 1rem; // 16px
+	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
 	font-style: italic;
-	margin: .625rem 0;
+	margin: .625rem 0; // 10px 0
 }
 
 /**
@@ -189,49 +190,49 @@ footer {}
  */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	font: bold 1rem/1.5 Arial, sans-serif; /* 16px */
-	margin: 0 0 .3125rem;
+	font: bold 1rem/1.5 Arial, sans-serif; // 16px
+	margin: 0 0 .3125rem; // 0 0 5px
 }
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
-	font: 1rem/1.5 Cambria, Georgia, serif; /* 16px */
-	margin: 0 0 .625rem;
+	font: 1rem/1.5 Cambria, Georgia, serif; // 16px
+	margin: 0 0 .625rem; // 0 0 10px
 }
 h1, .h1, .sh1 {
-	font-size: 2.875rem; /* 46px */
-	line-height: 1.04347826086957; /* (3 / 2.875) = 1.04347826086957*/
+	font-size: 2.875rem; // 46px
+	line-height: 1.04347826086957; // (3 / 2.875) = 1.04347826086957
 }
 h2, .h2, .sh2 {
-	font-size: 2.5rem; /* 40px */
-	line-height: 1.05; /* (((3 / 2.5) = 1.2) * .875) = 1.05 */
+	font-size: 2.5rem; // 40px
+	line-height: 1.05; // (((3 / 2.5) = 1.2) * .875) = 1.05
 }
 h3, .h3, .sh3 {
-	font-size: 2.125rem; /* 34px */
-	line-height: 1.05882352941176; /* (((3 / 2.125em) = 1.41176470588235) * .75) = 1.05882352941176 */
+	font-size: 2.125rem; // 34px
+	line-height: 1.05882352941176; // (((3 / 2.125em) = 1.41176470588235) * .75) = 1.05882352941176
 }
 h4, .h4, .sh4 {
-	font-size: 1.75rem; /* 28px */
-	line-height: 1.07142857142857; /* (((3 / 1.75em) = 1.71428571428571) * .625) = 1.07142857142857 */
+	font-size: 1.75rem; // 28px
+	line-height: 1.07142857142857; // (((3 / 1.75em) = 1.71428571428571) * .625) = 1.07142857142857
 }
 h5, .h5, .sh5 {
-	font-size: 1.375rem; /* 22px */
-	line-height: 1.09090909090909; /* (1.5 / 1.375) = 1.09090909090909 */
+	font-size: 1.375rem; // 22px
+	line-height: 1.09090909090909; // (1.5 / 1.375) = 1.09090909090909
 }
 h6, .h6, .sh6 {
-	font-size: 1.125rem; /* 18px */
-	line-height: 1.16666666666666; /* (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666 */
+	font-size: 1.125rem; // 18px
+	line-height: 1.16666666666666; // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
 }
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
 	a {
-		color: #4e801c;
+		color: @hulk;
 		text-decoration: none;
-		&:visited { color: #4e801c; }
+		&:visited { color: @hulk; }
 		&:visited:hover,
 		&:focus,
 		&:focus:hover,
 		&:hover,
 		&:active {
-			color: #9ea301;
+			color: @goblin;
 			text-decoration: none;
 		}
 	}
@@ -307,12 +308,12 @@ section {}
  */
 
 blockquote {
-	font-size: 1rem;
+	font-size: 1rem; // 16px
 	line-height: 1.5rem;
 	font-style: italic;
-	margin: .625rem 0;
-	padding-left: 1.5em;
-	border-left: .1875rem solid #ccc;
+	margin: .625rem 0; // 10px 0
+	padding-left: .625rem; // 10px
+	border-left: .1875rem solid @gray12; // 3px
 	quotes: none;
 }
 blockquote:before,
@@ -323,36 +324,37 @@ blockquote:after {
 
 .stoops-blockquote {
 	font-style: normal;
-	border-width: .0625rem; /* 1px */
-	border-left-width: .375rem; /* 3px */
+	border-width: .0625rem; // 1px
+	border-left-width: .375rem; // 3px
 	border-style: solid;
-	border-color: rgba(94, 141, 161, .2);
-	background: rgba(94, 141, 161, .03);
-	margin: .625rem 0;
-	padding: 1rem;
+	border-color: fade(@prius, 20%);
+	background: fade(@prius, 3%);
+	margin: .625rem 0; // 10px 0
+	padding: .625rem; // 10px
+	padding-left: 1.25rem; // 20px
 	position: relative;
-	border-radius: 0 .625rem .625rem 0;
+	border-radius: 0 .625rem .625rem 0; // 0 10px 10px 0
 }
 	.stoops-blockquote > :first-child { margin-top: 0 !important; }
 	.stoops-blockquote > :last-child { margin-bottom: 0 !important; }
 	.stoops-blockquote p {
-		color: hsla(198, 26%, 30%, 1);
+		color: darken(@prius, 20%);
 		font-style: italic;
 	}
 	.stoops-blockquote footer {
 		font-size: .875rem; /* 14px */
-		color: hsla(198, 26%, 40%, 1);
+		color: darken(@prius, 10%);
 		line-height: 1.71428571428571; /* (1.5 / .875) = 1.71428571428571 */
 	}
 @media all and (min-width: 45rem) { /* (720px / 16) = 45rem */
 	.stoops-blockquote:before {
 		font: 6.25rem/1 Arial, sans-serif; /* 100px */
-		color: hsla(198, 26%, 40%, .4);
+		color: fade(darken(@prius, 10%), 40%);
 		display: block;
 		content: "\201C";
 		position: absolute;
-		left: -.4em;
-		top: -.1em;
+		left: -.4375em; // -7px
+		top: -.125em; // 2px
 	}
 }
 
@@ -392,18 +394,18 @@ div {}
  */
 
 dl {
-	font-size: 1rem;
-	line-height: 1.125; /* (1.5 * .75) = 1.125 */
-	margin: .625rem 0;
+	font-size: 1rem; // 16px
+	line-height: 1.125; // (1.5 * .75) = 1.125
+	margin: .625rem 0; // 10px 0
 	padding: 0;
 }
 	dl dd,
 	dl dt {
-		margin: 0 0 .375rem; /* (1.5 * .25) = .375 */
+		margin: 0 0 .375rem; // 0 0 6px
 		padding: 0;
 	}
 	dl dt { font-weight: bold; }
-	dl dd { margin-left: .5rem; }
+	dl dd { margin-left: .5rem; } // 8px
 
 /**
  * The `<figure>` element represents some flow content, optionally with a
@@ -424,12 +426,12 @@ dl {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-figcaption-element
  */
 
-figure { margin: .625rem 0; }
+figure { margin: .625rem 0; } // 10px 0
 	figure img { display: block; }
 	figure figcaption {
-		font-size: .875rem; /* (14px / 16px) = .875em */
-		line-height: 1.28571428571428; /* ((((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428) */
-		margin: .4375rem 0; /* (.875 / 2) = .4375 */
+		font-size: .875rem; // (14px / 16px) = .875em
+		line-height: 1.28571428571428; // ((((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428)
+		margin: .4375rem 0; // (.875 / 2) = .4375
 	}
 
 .stoops-figure {
@@ -438,7 +440,7 @@ figure { margin: .625rem 0; }
 	max-width: 100%;
 }
 	.stoops-figure figcaption {
-		color: hsla(198, 26%, 30%, 1);
+		color: hsla(198, 26%, 30%, 1); ////////////////////////////////////////////// This is where I left off!
 		background: rgba(94, 141, 161, .2); /* #5e8da1 */
 		padding: .625rem;
 	}
@@ -819,14 +821,14 @@ kbd {
 	font-family: @mono;
 	font-size: small;
 	line-height: 0;
+	text-shadow: 0 .0625rem 0 @milk;
 	color: @gray3;
 	background: @gray14;
 	border: .0625rem solid @gray12; /* 1px */
+	border-radius: .1875rem; /* 3px */
 	margin: 0 .125rem; /* 0 2px */
 	padding: .125rem .3125rem; /* 2px 5px */
-	text-shadow: 0 .0625rem 0 @milk;
 	position: relative;
-	border-radius: .1875rem; /* 3px */
 	box-shadow:
 		0 .0625rem 0 rgba(0, 0, 0, .2),
 		0 0 0 .125rem @milk inset;
