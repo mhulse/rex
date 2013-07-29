@@ -83,7 +83,7 @@ p{font-family:Cambria, Georgia, serif;font-size:1rem;line-height:1.5;margin:.75r
 p .firsties{font-family:Cambria, Georgia, serif;font-style:normal;font-weight:normal;font-size:4.5rem;line-height:1;margin-right:.5rem;vertical-align:middle;float:left;display:inline}
 ::-moz-selection{background:rgba(228,58,197,0.75);text-shadow:none}
 ::selection{background:rgba(228,58,197,0.75);text-shadow:none}
-pre{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:.875rem;line-height:1.28571428571428;color:#333;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(0,0,0,0.025);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;box-shadow:inset 0 0 .625rem 0 rgba(0,0,0,0.1)}
+pre{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:.875rem;line-height:1.28571428571428;color:#333;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(0,0,0,0.025);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;box-shadow:inset 0 0 .625rem 0 rgba(0,0,0,0.1);-webkit-overflow-scrolling:touch}
 pre code{color:inherit;border:0;background:transparent;padding:0}
 ol,ul{font-size:1em;line-height:1.125;margin:10px 0;padding:0;list-style-position:outside}
 ol{margin-left:2.5em}
