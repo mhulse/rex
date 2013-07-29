@@ -307,10 +307,12 @@ section {}
  */
 
 blockquote {
-	border-left: .1875rem solid rgba(94, 141, 161, .2); /* (3px / 16px) = .1875rem */
+	font-size: 1rem;
+	line-height: 1.5rem;
+	font-style: italic;
 	margin: .625rem 0;
-	padding: 0 0 0 1rem;
-	position: relative;
+	padding-left: 1.5em;
+	border-left: .1875rem solid #ccc;
 	quotes: none;
 }
 blockquote:before,
@@ -318,17 +320,32 @@ blockquote:after {
 	content: '';
 	content: none;
 }
-	blockquote p {
-		font-family: Arial, sans-serif;
+
+.stoops-blockquote {
+	font-style: normal;
+	border-width: .0625rem; /* 1px */
+	border-left-width: .375rem; /* 3px */
+	border-style: solid;
+	border-color: rgba(94, 141, 161, .2);
+	background: rgba(94, 141, 161, .03);
+	margin: .625rem 0;
+	padding: 1rem;
+	position: relative;
+	border-radius: 0 .625rem .625rem 0;
+}
+	.stoops-blockquote > :first-child { margin-top: 0 !important; }
+	.stoops-blockquote > :last-child { margin-bottom: 0 !important; }
+	.stoops-blockquote p {
+		color: hsla(198, 26%, 30%, 1);
 		font-style: italic;
 	}
-	blockquote p:last-of-type { margin: 0; }
-	blockquote footer {
+	.stoops-blockquote footer {
 		font-size: .875rem; /* 14px */
+		color: hsla(198, 26%, 40%, 1);
 		line-height: 1.71428571428571; /* (1.5 / .875) = 1.71428571428571 */
 	}
 @media all and (min-width: 45rem) { /* (720px / 16) = 45rem */
-	blockquote:before {
+	.stoops-blockquote:before {
 		font: 6.25rem/1 Arial, sans-serif; /* 100px */
 		color: hsla(198, 26%, 40%, .4);
 		display: block;
@@ -542,12 +559,11 @@ p {
  */
 
 ::-moz-selection {
-	background: rgba(255, 105, 180, .5);
+	background: hsla(311, 76%, 56%, .75);
 	text-shadow: none;
 }
-
 ::selection {
-	background: rgba(255, 105, 180, .5);
+	background: hsla(311, 76%, 56%, .75);
 	text-shadow: none;
 }
 
