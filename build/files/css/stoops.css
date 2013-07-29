@@ -102,8 +102,8 @@ code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaV
 dfn{font-weight:bold}
 dfn[title]{border-bottom:.1em dotted;cursor:help}
 em,i{font-style:italic}
-kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;text-shadow:0 .0625rem 0 #fff;color:#490a3d;background:rgba(73,10,61,0.15);margin:0 .25rem;padding:0 .15rem;line-height:0;vertical-align:baseline;position:relative;top:-0.0625rem;border-radius:.05rem;box-shadow:0 0 0 .125rem rgba(73,10,61,0.15),0 0 0 .1875rem #fff,0 .0625rem .125rem .2rem rgba(73,10,61,0.35)}
-kbd kbd{font-size:1em;background:transparent;margin:0;padding:0;top:0;border-radius:0;box-shadow:none}
+kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;line-height:0;color:#333;background:#eee;border:.0625rem solid #ccc;margin:0 .125rem;padding:.125rem .3125rem;text-shadow:0 .0625rem 0 #fff;position:relative;border-radius:.1875rem;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2),0 0 0 .125rem #fff inset}
+kbd kbd{font-size:1em;background:transparent;margin:0;padding:0;top:0;border:0;border-radius:0;box-shadow:none}
 mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:3px 4px}
 q{quotes:'“' '”' '‘' '’' '“' '”' '‘' '’'}
 q:before{content:'“';content:open-quote}

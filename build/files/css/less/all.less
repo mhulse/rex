@@ -815,24 +815,21 @@ i { font-style: italic; }
  * @see https://cdn.sstatic.net/superusermeta/all.css
  */
 
-
 kbd {
 	font-family: @mono;
 	font-size: small;
-	text-shadow: 0 .0625rem 0 @milk;
-	color: @bruise;
-	background: fade(@bruise, 15%);
-	margin: 0 .25rem;
-	padding: 0 .15rem;
 	line-height: 0;
-	vertical-align: baseline;
+	color: @gray3;
+	background: @gray14;
+	border: .0625rem solid @gray12; /* 1px */
+	margin: 0 .125rem; /* 0 2px */
+	padding: .125rem .3125rem; /* 2px 5px */
+	text-shadow: 0 .0625rem 0 @milk;
 	position: relative;
-	top: -.0625rem;
-	border-radius: .05rem;
+	border-radius: .1875rem; /* 3px */
 	box-shadow:
-		0 0 0 .125rem fade(@bruise, 15%),
-		0 0 0 .1875rem @milk,
-		0 .0625rem .125rem .2rem fade(@bruise, 35%);
+		0 .0625rem 0 rgba(0, 0, 0, .2),
+		0 0 0 .125rem @milk inset;
 }
 	kbd kbd {
 		font-size: 1em;
@@ -840,6 +837,7 @@ kbd {
 		margin: 0;
 		padding: 0;
 		top: 0;
+		border: 0;
 		border-radius: 0;
 		box-shadow: none;
 	}
