@@ -102,8 +102,8 @@ code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaV
 dfn{font-weight:bold}
 dfn[title]{border-bottom:.1em dotted;cursor:help}
 em,i{font-style:italic}
-kbd{font-family:monospace, serif;text-shadow:0 .0625rem 0 #fff;color:#000;background:#eee;margin:0 .25rem;padding:0 .15rem;line-height:0;vertical-align:baseline;position:relative;top:-0.0625rem;-webkit-border-radius:.05rem;-moz-border-radius:.05rem;border-radius:.05rem;box-shadow:0 0 0 .125rem #eee,0 0 0 .1875rem #fff,0 .0625rem .125rem .25rem rgba(0,0,0,0.2)}
-kbd kbd{top:0}
+kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;text-shadow:0 .0625rem 0 #fff;color:#490a3d;background:rgba(73,10,61,0.15);margin:0 .25rem;padding:0 .15rem;line-height:0;vertical-align:baseline;position:relative;top:-0.0625rem;border-radius:.05rem;box-shadow:0 0 0 .125rem rgba(73,10,61,0.15),0 0 0 .1875rem #fff,0 .0625rem .125rem .2rem rgba(73,10,61,0.35)}
+kbd kbd{font-size:1em;background:transparent;margin:0;padding:0;top:0;border-radius:0;box-shadow:none}
 mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:3px 4px}
 q{quotes:'“' '”' '‘' '’' '“' '”' '‘' '’'}
 q:before{content:'“';content:open-quote}
@@ -112,7 +112,7 @@ q q:before{content:'‘';content:open-quote}
 q q:after{content:'’';content:close-quote}
 rp{font-size:100%;display:inline}
 s{color:#666}
-samp{font:1em Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;color:#333}
+samp{font:1em Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;color:inherit}
 small,.small{font-family:Arial,sans-serif;font-size:smaller;letter-spacing:.03em}
 small a,.small a{font-weight:bold}
 span.amp1{font-size:110%;font-family:adobe-caslon-pro,Adobe Caslon Pro,Baskerville,"Goudy Old Style",Palatino,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;font-weight:400;font-style:italic;line-height:0;vertical-align:baseline;position:relative}
@@ -154,7 +154,7 @@ body{text-align:center}
 #flag h1{font:7.8125rem/1 "Hulse",Arial,sans-serif;color:#13aac9;position:relative;left:-50%}
 #flag span{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}
 #flag a,#flag a:visited{color:#13aac9}
-#flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{color:#52d5ef;text-decoration:none}
+#flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{color:#53d4ef;text-decoration:none}
 #flag a:active,#flag a:focus{outline:none}
 @media all and (min-width:45rem){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem;}}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}
 button,input{line-height:normal}
@@ -182,6 +182,7 @@ label{margin:0.5em 0 0.2em;font-size:90%}
 .swatches{margin:10px 0;text-align:center}
 .swatches-swatch{font-size:.875rem;line-height:1.28571428571428;padding:.64285714285714rem 0;margin:.3125rem 0;border:1px solid rgba(0,0,0,0.1)}
 .swatches-swatch code{color:#fff;background:rgba(0,0,0,0.3);border:.0625rem solid rgba(0,0,0,0.35)}
+.white{background-color:#fff}
 .bling{background-color:#ffd100}
 .goblin{background-color:#9ea301}
 .hulk{background-color:#4e801c}
@@ -189,19 +190,4 @@ label{margin:0.5em 0 0.2em;font-size:90%}
 .smurf{background-color:#13aac9}
 .lobster{background-color:#c30}
 .bruise{background-color:#490a3d}
-.white{background-color:#fff}
-.gray1{background-color:#eee}
-.gray2{background-color:#ddd}
-.gray3{background-color:#ddd}
-.gray4{background-color:#bbb}
-.gray5{background-color:#aaa}
-.gray6{background-color:#999}
-.gray7{background-color:#888}
-.gray8{background-color:#777}
-.gray9{background-color:#666}
-.gray10{background-color:#555}
-.gray11{background-color:#444}
-.gray12{background-color:#333}
-.gray13{background-color:#222}
-.gray14{background-color:#111}
-.black{background-color:#000}
+.raven{background-color:#000}

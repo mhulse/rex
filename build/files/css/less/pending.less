@@ -26,7 +26,7 @@ body { text-align: center; }
 	}
 	#flag h1 {
 		font: 7.8125rem/1 "Hulse", Arial, sans-serif; /* 125px */
-		color: rgba(19, 170, 201, 1);
+		color: @smurf;
 		position: relative;
 		left: -50%;
 	}
@@ -41,13 +41,13 @@ body { text-align: center; }
 		width: 1px;
 	}
 	#flag a,
-	#flag a:visited { color: rgba(19, 170, 201, 1); } /* #13aac9 */
+	#flag a:visited { color: @smurf; }
 	#flag a:visited:hover,
 	#flag a:focus,
 	#flag a:focus:hover,
 	#flag a:hover,
 	#flag a:active {
-		color: hsla(190, 83%, 63%, 1);
+		color: lighten(@smurf, 20%);
 		text-decoration: none;
 	}
 	#flag a:active,

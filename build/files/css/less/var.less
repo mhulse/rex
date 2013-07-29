@@ -1,40 +1,73 @@
 /**
  * Color scheme for Stoops!
  *
- *        |          |         |                       |                        |
- *   gold | @bling   | #ffd100 | rgba(255, 209, 0, 1)  | hsla(49, 100%, 50%, 1) |
- *  olive | @goblin  | #9ea301 | rgba(158, 163, 1, 1)  | hsla(62, 99%, 32%, 1)  |
- *  green | @hulk    | #4e801c | rgba(78, 128, 28, 1)  | hsla(90, 64%, 31%, 1)  |
- *   teal | @prius   | #5e8da1 | rgba(94, 141, 161, 1) | hsla(198, 26%, 50%, 1) |
- *   blue | @smurf   | #13aac9 | rgba(19, 170, 201, 1) | hsla(190, 83%, 43%, 1) |
- * orange | @lobster | #cc3300 | rgba(204, 51, 0, 1)   | hsla(15, 100%, 40%, 1) |
- * purple | @bruise  | #490a3d | rgba(73, 10, 61, 1)   | hsla(311, 76%, 16%, 1) |
- *        |          |         |                       |                        |
+ *        |          |         |                        |                        |
+ *  white | @milk    | #fff    | rgba(255, 255, 255, 1) | hsla(0, 0, 100%, 1)    |
+ *   gold | @bling   | #ffd100 | rgba(255, 209, 0, 1)   | hsla(49, 100%, 50%, 1) |
+ *  olive | @goblin  | #9ea301 | rgba(158, 163, 1, 1)   | hsla(62, 99%, 32%, 1)  |
+ *  green | @hulk    | #4e801c | rgba(78, 128, 28, 1)   | hsla(90, 64%, 31%, 1)  |
+ *   teal | @prius   | #5e8da1 | rgba(94, 141, 161, 1)  | hsla(198, 26%, 50%, 1) |
+ *   blue | @smurf   | #13aac9 | rgba(19, 170, 201, 1)  | hsla(190, 83%, 43%, 1) |
+ * orange | @lobster | #c30    | rgba(204, 51, 0, 1)    | hsla(15, 100%, 40%, 1) |
+ * purple | @bruise  | #490a3d | rgba(73, 10, 61, 1)    | hsla(311, 76%, 16%, 1) |
+ *  black | @raven   | #000    | rgba(0, 0, 0, 1)       | hsla(0, 0, 0, 1)       |
+ *        |          |         |                        |                        |
  *
- * Using `rgba()` and `hsla()` for color variations.
+ * LESS color functions:
+ *
+ *   contrast(@color1, [@darkcolor: black], [@lightcolor: white], [@threshold: 43%]); 
+ *     darken(@color, 10%);
+ * desaturate(@color, 10%);
+ *       fade(@color, 50%);
+ *     fadein(@color, 10%);
+ *    fadeout(@color, 10%);
+ *  greyscale(@color);
+ *    lighten(@color, 10%);
+ *        mix(@color1, @color2, [@weight: 50%]);
+ *   saturate(@color, 10%);
+ *       spin(@color, 10);
+ *
+ *    average(@color1, @color2);
+ * difference(@color1, @color2);
+ *  exclusion(@color1, @color2);
+ *  hardlight(@color1, @color2);
+ *   multiply(@color1, @color2);
+ *   negation(@color1, @color2);
+ *    overlay(@color1, @color2);
+ *     screen(@color1, @color2);
+ *  softlight(@color1, @color2);
+ *
+ * @see http://lesscss.org/#reference
  */
 
-@bling: rgb(255, 209, 0);
-@goblin: rgb(158, 163, 1);
-@hulk: rgb(78, 128, 28);
-@prius: rgb(94, 141, 161);
-@smurf: rgb(19, 170, 201);
-@lobster: rgb(204, 51, 0);
-@bruise: rgb(73, 10, 61);
+@milk: #fff;
+@bling: #ffd100;
+@goblin: #9ea301;
+@hulk: #4e801c;
+@prius: #5e8da1;
+@smurf: #13aac9;
+@lobster: #c30;
+@bruise: #490a3d;
+@raven: #000;
 
-@white: rgba(255, 255, 255, 1); // #fff | hsla(0, 0, 100%, 1)
-@gray1: rgba(238, 238, 238, 1); // #eee | hsla(0, 0, 93%, 1)
-@gray2: rgba(221, 221, 221, 1); // #ddd | hsla(0, 0, 87%, 1)
-@gray3: rgba(221, 221, 221, 1); // #ccc | hsla(0, 0, 80%, 1)
-@gray4: rgba(187, 187, 187, 1); // #bbb | hsla(0, 0, 73%, 1)
-@gray5: rgba(170, 170, 170, 1); // #aaa | hsla(0, 0, 67%, 1)
-@gray6: rgba(153, 153, 153, 1); // #999 | hsla(0, 0, 60%, 1)
-@gray7: rgba(136, 136, 136, 1); // #888 | hsla(0, 0, 53%, 1)
-@gray8: rgba(119, 119, 119, 1); // #777 | hsla(0, 0, 47%, 1)
-@gray9: rgba(102, 102, 102, 1); // #666 | hsla(0, 0, 40%, 1)
-@gray10: rgba(85, 85, 85, 1);   // #555 | hsla(0, 0, 33%, 1)
-@gray11: rgba(68, 68, 68, 1);   // #444 | hsla(0, 0, 27%, 1)
-@gray12: rgba(51, 51, 51, 1);   // #333 | hsla(0, 0, 20%, 1)
-@gray13: rgba(34, 34, 34, 1);   // #222 | hsla(0, 0, 13%, 1)
-@gray14: rgba(17, 17, 17, 1);   // #111 | hsla(0, 0, 7%, 1)
-@black: rgba(0, 0, 0, 1);       // #000 | hsla(0, 0, 0, 1)
+@body: @milk;
+@text: @raven;
+
+@sans: Arial, sans-serif;
+@serif: Cambria, Georgia, serif;
+@mono: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+
+@baseFontSize: 100%; /* 16px */
+@baseFontFamily: @serif;
+@baseLineHeight: 1.5em; /* 24px */
+@altFontFamily: @sans;
+
+@headingsFontFamily: "MillerHeadline Bold", @serif;
+@headingsFontStyle: normal;
+@headingsFontWeight: bold;
+@headingsColor:;
+
+@subHeadingsFontFamily: "MillerHeadline Light", @serif;
+@subHeadingsFontStyle: normal;
+@subHeadingsFontWeight: normal;
+@subHeadingsColor:;

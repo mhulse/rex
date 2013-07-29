@@ -108,14 +108,14 @@ body {
 	font-family: Arial, sans-serif; /* Serif: Cambria, Georgia, serif; */
 	font-size: 100%;
 	line-height: 1.5;
-	color: #000;
+	color: @raven;
 	/* Improve default text rendering, handling of kerning pairs and ligatures: */
 	-webkit-font-smoothing: antialiased;
 	        font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	/* Initial height of `<html>`, but will expand taller if necessary: */
 	min-height: 100%; /* Compliant browsers. */
-	background: #fff;
+	background: @milk;
 }
 
 /*--------------------------------------------------------------------*/
@@ -817,25 +817,32 @@ i { font-style: italic; }
 
 
 kbd {
-	font-family: monospace, serif;
-	text-shadow: 0 .0625rem 0 #fff;
-	color: #000;
-	background: #eee;
+	font-family: @mono;
+	font-size: small;
+	text-shadow: 0 .0625rem 0 @milk;
+	color: @bruise;
+	background: fade(@bruise, 15%);
 	margin: 0 .25rem;
 	padding: 0 .15rem;
 	line-height: 0;
 	vertical-align: baseline;
 	position: relative;
 	top: -.0625rem;
-	-webkit-border-radius: .05rem;
-	   -moz-border-radius: .05rem;
-	        border-radius: .05rem;
+	border-radius: .05rem;
 	box-shadow:
-		0 0 0 .125rem #eee,
-		0 0 0 .1875rem #fff,
-		0 .0625rem .125rem .25rem rgba(0, 0, 0, 0.2);
+		0 0 0 .125rem fade(@bruise, 15%),
+		0 0 0 .1875rem @milk,
+		0 .0625rem .125rem .2rem fade(@bruise, 35%);
 }
-	kbd kbd { top: 0; }
+	kbd kbd {
+		font-size: 1em;
+		background: transparent;
+		margin: 0;
+		padding: 0;
+		top: 0;
+		border-radius: 0;
+		box-shadow: none;
+	}
 
 /**
  * The `<mark>` element represents a run of text in one document marked or
@@ -945,7 +952,7 @@ s { color: #666; }
 
 samp {
 	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-	color: #333;
+	color: inherit;
 }
 
 /**
