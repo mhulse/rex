@@ -81,8 +81,8 @@ hr,.hr,.hr1,.hr2,.hr3,.hr4,.hr5,.hr6{color:rgba(73,10,61,0.2);border:0;backgroun
 .hr6{background:rgba(73,10,61,0.75);height:.4375rem}
 p{font-family:Cambria,Georgia,serif;font-size:1rem;line-height:1.5;margin:.75rem 0}
 p .firsties{font-family:Cambria,Georgia,serif;font-style:normal;font-weight:normal;color:#333;font-size:4.5rem;line-height:1;margin-right:.5rem;vertical-align:middle;float:left;display:inline}
-pre{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:.875rem;line-height:1.28571428571428;color:#333;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(0,0,0,0.025);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;box-shadow:inset 0 0 .625rem 0 rgba(0,0,0,0.15);-webkit-overflow-scrolling:touch}
-pre code{color:inherit;border:0;background:transparent;padding:0}
+pre{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:.875rem;line-height:1.5;color:#333;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(0,0,0,0.025);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;box-shadow:inset 0 0 .625rem 0 rgba(0,0,0,0.15);-webkit-overflow-scrolling:touch}
+pre code,pre samp{text-shadow:none;color:inherit;border:0;background:transparent;padding:0}
 ol,ul{font-size:1em;line-height:1.125;margin:.625rem 0;padding:0;list-style-position:outside}
 ol{margin-left:2.5rem}
 ul{margin-left:1.5rem}
@@ -91,7 +91,7 @@ li ol{margin-left:2.5rem}
 li ul{margin-left:.5rem}
 a{color:#13aac9;text-decoration:none}
 a:visited{color:#13aac9}
-a:visited:hover,a:focus,a:focus:hover,a:hover,a:active{color:#490a3d;text-decoration:underline}
+a:visited:hover,a:focus,a:focus:hover,a:hover,a:active{color:#a31688;text-decoration:underline}
 abbr{font-style:italic}
 abbr[title]{border-bottom:.0625rem dotted;cursor:help}
 bdi{direction:ltr;unicode-bidi:bidi-override}
@@ -100,30 +100,33 @@ code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaV
 dfn{font-weight:bold;font-style:italic}
 dfn[title]{border-bottom:.0625rem dotted;cursor:help}
 em,i{font-style:italic}
-kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;line-height:0;text-shadow:0 .0625rem 0 #fff;color:#333;background:#eee;border:.0625rem solid #ccc;border-radius:.1875rem;margin:0 .125rem;padding:.125rem .3125rem;position:relative;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2),0 0 0 .125rem #fff inset}
+kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;line-height:0;text-shadow:0 .0625rem 0 #fff;color:#333;background:#eee;border:.0625rem solid #ccc;border-radius:.1875rem;margin:0 .125rem;padding:.125rem .3125rem;position:relative;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2), 0 0 0 .125rem #fff inset}
 kbd kbd{font-size:1em;background:transparent;margin:0;padding:0;top:0;border:0;border-radius:0;box-shadow:none}
-mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:3px 4px}
+kbd samp{text-shadow:none;color:inherit;border:0;background:transparent;padding:0}
+mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:.1875rem .25rem}
 q{quotes:'“' '”' '‘' '’' '“' '”' '‘' '’'}
 q:before{content:'“';content:open-quote}
 q:after{content:'”';content:close-quote}
 q q:before{content:'‘';content:open-quote}
 q q:after{content:'’';content:close-quote}
 rp{font-size:100%;display:inline}
-s{color:#666}
-samp{font:1em Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;color:inherit}
+s{color:#666;-webkit-text-decoration-color:#f00;-moz-text-decoration-color:#f00;text-decoration-color:#f00}
+samp{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;text-shadow:0 .0625rem 0 #000;line-height:0;color:#fff;background:rgba(17,17,17,0.75);padding:.125rem .3125rem;position:relative}
 small,.small{font-family:Arial,sans-serif;font-size:smaller;letter-spacing:.03em}
 small a,.small a{font-weight:bold}
 span.amp1{font-size:110%;font-family:adobe-caslon-pro,Adobe Caslon Pro,Baskerville,"Goudy Old Style",Palatino,"Palatino Linotype","Book Antiqua",Georgia,"Times New Roman",Times,serif;font-weight:400;font-style:italic;line-height:0;vertical-align:baseline;position:relative}
 strong,b{font-weight:bold}
 sub,sup{font-size:75%;line-height:0;vertical-align:baseline;position:relative}
-sub{bottom:-0.25rem}
-sup{top:-0.5rem}
+sub{bottom:-0.25em}
+sup{top:-0.5em}
 u{text-decoration:underline}
 var{font-style:italic}
 wbr:after{content:"\00200B"}
-del{text-decoration:line-through;color:#900;background-color:rgba(255,0,0,0.25);margin:0 .15rem;box-shadow:0 0 0 .125rem rgba(255,0,0,0.25)}
-ins{text-decoration:none;color:#031;background-color:rgba(0,153,51,0.25);margin:0 .15rem;box-shadow:0 0 0 .125rem rgba(0,153,51,0.25)}
-img{width:auto;height:auto;max-width:100%;max-height:100%;vertical-align:middle;-ms-interpolation-mode:bicubic}
+del,ins{line-height:0;border-radius:.1875rem;padding:.125rem .3125rem;position:relative}
+del{text-decoration:line-through;color:#900;background-color:rgba(255,0,0,0.25)}
+ins{text-decoration:none;color:#031;background-color:rgba(0,153,51,0.25)}
+img{max-width:100%;max-height:100%;vertical-align:middle}
+.stoops-img-default{max-width:none;max-height:none}
 .stoops-scrollable{width:100%;margin:.625rem 0;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .stoops-scrollable>*{margin:0}
 table{border-collapse:collapse;border-spacing:0;width:100%;empty-cells:show}
@@ -145,8 +148,8 @@ input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
 legend{font-size:1.125em;line-height:1;color:#333;border-bottom:1px solid #999;width:100%;margin-bottom:1em;padding:.3em 0;display:block}
 select{vertical-align:baseline}
 textarea{overflow:auto;vertical-align:top;resize:vertical;width:100%}
-::-moz-selection{background:rgba(228,58,197,0.75);text-shadow:none}
-::selection{background:rgba(228,58,197,0.75);text-shadow:none}
+::-moz-selection{background:rgba(228,59,196,0.75);text-shadow:none}
+::selection{background:rgba(228,59,196,0.75);text-shadow:none}
 body{text-align:center}
 .container{text-align:left;margin:0 auto;padding:20px;max-width:680px}
 .foo{text-align:left;display:inline-block;max-width:100%}

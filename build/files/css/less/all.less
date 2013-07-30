@@ -551,7 +551,7 @@ p {
 pre {
 	font-family: @mono;
 	font-size: .875rem; // (14px / 16px) = .875em
-	line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	line-height: 1.5; // (((1.5 / .875) = 1.71428571428571) * .875) = 1.5
 	color: @gray3;
 	border: .0625rem solid fade(@raven, 15%);
 	background: fade(@raven, 2.5%);
@@ -563,7 +563,9 @@ pre {
 	box-shadow: inset 0 0 .625rem 0 fade(@raven, 15%);
 	-webkit-overflow-scrolling: touch;
 }
-	pre code {
+	pre code,
+	pre samp {
+		text-shadow: none;
 		color: inherit;
 		border: 0;
 		background: transparent;
@@ -615,7 +617,7 @@ ul { margin-left: 1.5rem; } // 24px
  * attribute, then the element represents a placeholder for where a link
  * might otherwise have been placed, if it had been relevant.
  *
- * The `target`, `rel`, `media`, `hreflang`, and `type` attributes must be
+ * The `target`, `rel`, `media`, `hreflang` and `type` attributes must be
  * omitted if the `href` attribute is not present.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-a-element
@@ -631,7 +633,7 @@ a {
 	a:focus:hover,
 	a:hover,
 	a:active {
-		color: @bruise;
+		color: lighten(@bruise, 20%);
 		text-decoration: underline;
 	}
 
@@ -743,6 +745,7 @@ data {}
  * the term given by the `<dfn>` element.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-dfn-element
+ * @see http://camendesign.com/code/abbr_redux
  */
 
 dfn {
@@ -803,17 +806,17 @@ kbd {
 	font-family: @mono;
 	font-size: small;
 	line-height: 0;
-	text-shadow: 0 .0625rem 0 @milk;
+	text-shadow: 0 .0625rem 0 @milk; // 0 1px 0
 	color: @gray3;
 	background: @gray14;
-	border: .0625rem solid @gray12; /* 1px */
-	border-radius: .1875rem; /* 3px */
-	margin: 0 .125rem; /* 0 2px */
-	padding: .125rem .3125rem; /* 2px 5px */
+	border: .0625rem solid @gray12; // 1px
+	border-radius: .1875rem; // 3px
+	margin: 0 .125rem; // 0 2px
+	padding: .125rem .3125rem; // 2px 5px
 	position: relative;
 	box-shadow:
-		0 .0625rem 0 rgba(0, 0, 0, .2),
-		0 0 0 .125rem @milk inset;
+		0 .0625rem 0 fade(@raven, 20%), // 0 1px 0
+		0 0 0 .125rem @milk inset; // 0 0 0 2px
 }
 	kbd kbd {
 		font-size: 1em;
@@ -824,6 +827,13 @@ kbd {
 		border: 0;
 		border-radius: 0;
 		box-shadow: none;
+	}
+	kbd samp {
+		text-shadow: none;
+		color: inherit;
+		border: 0;
+		background: transparent;
+		padding: 0;
 	}
 
 /**
@@ -841,9 +851,9 @@ kbd {
 
 mark {
 	text-decoration: none;
-	color: hsla(60, 100%, 20%, 1);
-	background-color: rgba(255, 255, 0, .75);
-	padding: 3px 4px;
+	color: darken(@duck, 30%);
+	background-color: fade(@duck, 75%);
+	padding: .1875rem .25rem; // 3px 4px
 }
 
 /**
@@ -921,9 +931,16 @@ ruby {}
  * longer relevant.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-s-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color
+ * @see http://stackoverflow.com/a/10876429/922323
  */
 
-s { color: #666; }
+s {
+	color: @gray6;
+	-webkit-text-decoration-color: @chili;
+	   -moz-text-decoration-color: @chili;
+	        text-decoration-color: @chili;
+}
 
 /**
  * The `<samp>` element represents (sample) output from a program or
@@ -933,8 +950,14 @@ s { color: #666; }
  */
 
 samp {
-	font: 1em Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-	color: inherit;
+	font-family: @mono;
+	font-size: small;
+	text-shadow: 0 .0625rem 0 @raven; // 0 1px 0
+	line-height: 0;
+	color: @milk;
+	background: fade(@gray1, 75%);
+	padding: .125rem .3125rem; // 2px 5px
+	position: relative;
 }
 
 /**
@@ -976,7 +999,7 @@ span {}
 	
 	span.amp1 {
 		font-size: 110%;
-		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
+		font-family: @amp;
 		font-weight: 400;
 		font-style: italic;
 		line-height: 0;
@@ -1027,8 +1050,8 @@ sup {
 	vertical-align: baseline;
 	position: relative;
 }
-sub { bottom: -.25rem; }
-sup { top: -.5rem; }
+sub { bottom: -.25em; }
+sup { top: -.5em; }
 
 /**
  * The `<time>` element represents a precise date and/or time in the
@@ -1089,29 +1112,29 @@ wbr:after { content: "\00200B"; }
  * elements should not cross implied paragraph boundaries.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-del-element
- */
-
-del {
-	text-decoration: line-through;
-	color: hsla(0, 100%, 30%, 1);
-	background-color: rgba(255, 0, 0, .25);
-	margin: 0 .15rem;
-	box-shadow: 0 0 0 .125rem rgba(255, 0, 0, .25);
-}
-
-/**
+ *
  * The `<ins>` element represents an addition to the document. The `<ins>`
  * elements should not cross implied paragraph boundaries.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ins-element
  */
 
+del,
+ins {
+	line-height: 0;
+	border-radius: .1875rem;
+	padding: .125rem .3125rem; // 2px 5px
+	position: relative;
+}
+del {
+	text-decoration: line-through;
+	color: darken(@chili, 20%);
+	background-color: fade(@chili, 25%);
+}
 ins {
 	text-decoration: none;
-	color: hsla(140, 100%, 10%, 1);
-	background-color: rgba(0, 153, 51, .25);
-	margin: 0 .15rem;
-	box-shadow: 0 0 0 .125rem rgba(0, 153, 51, .25);
+	color: darken(@frog, 20%);
+	background-color: fade(@frog, 25%);
 }
 
 /*----------------------------------( EMBEDED CONTENT )----------------------------------*/
@@ -1220,13 +1243,14 @@ iframe {}
  */
 
 img {
-	width: auto; /* IE */
-	height: auto;
 	max-width: 100%;
 	max-height: 100%;
-	vertical-align: middle; /* Remove the gap between images and the bottom of their containers. */
-	-ms-interpolation-mode: bicubic;
+	vertical-align: middle;
 }
+	.stoops-img-default {
+		max-width: none;
+		max-height: none;
+	}
 
 /**
  * The `<map>` element, in conjunction with any area element descendants,
@@ -1324,7 +1348,7 @@ video {}
 
 .stoops-scrollable {
 	width: 100%;
-	margin: .625rem 0;
+	margin: .625rem 0; // 10px 0
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -1438,33 +1462,33 @@ tr {}
 /*--------------------------------------------------------------------*/
 
 .stoops-table {
-	background: rgba(255, 255, 255, .25);
-	margin: .625rem 0;
+	background: fade(@milk, 25%);
+	margin: .625rem 0; // 10px 0
 }
 	.stoops-table caption {
-		font-size: .875rem; /* 14px */
-		line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
+		font-size: .875rem; // 14px
+		line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
 		font-weight: bold;
 		text-align: left;
-		padding-bottom: .64285714285714rem;
+		padding-bottom: .64285714285714rem; // (1.28571428571428 / 2) = .64285714285714
 	}
 	.stoops-table tfoot th
 	.stoops-table tfoot td {
-		color: #333;
+		color: @gray3;
 		font-weight: normal;
 	}
-	.stoops-table tr:nth-of-type(odd) { background: rgba(0, 0, 0, .05); }
+	.stoops-table tr:nth-of-type(odd) { background: fade(@raven, 5%); }
 	.stoops-table th {
 		text-align: left;
-		border: .0625rem solid rgba(0, 0, 0, .25);
-		background-color: rgba(0, 0, 0, .05);
-		padding: .3125rem;
+		border: .0625rem solid fade(@raven, 25%); // 1px
+		background-color: fade(@raven, 5%);
+		padding: .3125rem; // 5px
 		white-space: nowrap;
 	}
 	.stoops-table td {
 		text-align: left;
-		border: .0625rem solid rgba(0, 0, 0, .25);
-		padding: .3125rem;
+		border: .0625rem solid fade(@raven, 25%); // 1px
+		padding: .3125rem; // 5px
 	}
 
 /*----------------------------------( FORMS )----------------------------------*/
@@ -1770,10 +1794,10 @@ summary {}
  */
 
 ::-moz-selection {
-	background: hsla(311, 76%, 56%, .75);
+	background: fade(lighten(@bruise, 40%), 75%);
 	text-shadow: none;
 }
 ::selection {
-	background: hsla(311, 76%, 56%, .75);
+	background: fade(lighten(@bruise, 40%), 75%);
 	text-shadow: none;
 }
