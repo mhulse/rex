@@ -190,11 +190,11 @@ footer {}
  */
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-	font: bold 1rem/1.5 Arial, sans-serif; // 16px
+	font: bold 1rem/1.5 @sans; // 16px
 	margin: 0 0 .3125rem; // 0 0 5px
 }
 .sh1, .sh2, .sh3, .sh4, .sh5, .sh6 {
-	font: 1rem/1.5 Cambria, Georgia, serif; // 16px
+	font: 1rem/1.5 @serif; // 16px
 	margin: 0 0 .625rem; // 0 0 10px
 }
 h1, .h1, .sh1 {
@@ -342,13 +342,13 @@ blockquote:after {
 		font-style: italic;
 	}
 	.stoops-blockquote footer {
-		font-size: .875rem; /* 14px */
+		font-size: .875rem; // 14px
 		color: darken(@prius, 10%);
-		line-height: 1.71428571428571; /* (1.5 / .875) = 1.71428571428571 */
+		line-height: 1.71428571428571; // (1.5 / .875) = 1.71428571428571
 	}
-@media all and (min-width: 45rem) { /* (720px / 16) = 45rem */
+@media all and (min-width: 45rem) { // (720px / 16) = 45rem
 	.stoops-blockquote:before {
-		font: 6.25rem/1 Arial, sans-serif; /* 100px */
+		font: 6.25rem/1 @sans; // 100px
 		color: fade(darken(@prius, 10%), 40%);
 		display: block;
 		content: "\201C";
@@ -426,38 +426,30 @@ dl {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-figcaption-element
  */
 
-figure { margin: .625rem 0; } // 10px 0
+figure {
+	font-family: @sans;
+	margin: .625rem 0; // 10px 0
+}
 	figure img { display: block; }
 	figure figcaption {
 		font-size: .875rem; // (14px / 16px) = .875em
-		line-height: 1.28571428571428; // ((((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428)
+		line-height: 1.5; // ((((1.5 / .875) = 1.71428571428571) * .875) = 1.28571428571428)
 		margin: .4375rem 0; // (.875 / 2) = .4375
 	}
+	figure p {
+		font-family: inherit;
+		font-size: inherit;
+		margin: inherit;
+	}
+		figure figcaption > :first-child { margin-top: 0 !important; }
+		figure figcaption > :last-child { margin-bottom: 0 !important; }
 
-.stoops-figure {
-	text-align: left;
-	display: inline-block;
-	max-width: 100%;
-}
+.stoops-figure {}
 	.stoops-figure figcaption {
-		color: hsla(198, 26%, 30%, 1); ////////////////////////////////////////////// This is where I left off!
-		background: rgba(94, 141, 161, .2); /* #5e8da1 */
+		color: darken(@prius, 20%);
+		background: fade(@prius, 20%);
 		padding: .625rem;
 	}
-		.stoops-figure figcaption a {
-			font-weight: bold;
-			text-decoration: none;
-			color: #000;
-		}
-			.stoops-figure figcaption a:visited,
-			.stoops-figure figcaption a:visited:hover,
-			.stoops-figure figcaption a:focus,
-			.stoops-figure figcaption a:focus:hover,
-			.stoops-figure figcaption a:hover,
-			.stoops-figure figcaption a:active {
-				color: #000;
-				text-decoration: underline;
-			}
 
 /**
  * The `<hr>` element represents a paragraph-level thematic break. It
@@ -468,21 +460,41 @@ figure { margin: .625rem 0; } // 10px 0
  * @see https://github.com/h5bp/html5-boilerplate/blob/b378ce239dfb017e32fbeacc5ab0346258b089e2/css/main.css#L42-L53
  * @see https://github.com/twitter/bootstrap/blob/070c125ceceb2a164773f51226950350445160ee/docs/assets/css/bootstrap.css#L876-L881
  * @see http://dev.w3.org/html5/spec/Overview.html#the-hr-element-0
+ * @see http://www.maxdesign.com.au/articles/hr/
  */
 
 hr, .hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
+	color: fade(@bruise, 20%);
 	border: 0;
-	background: hsla(198, 26%, 40%, .5);
-	height: .0625rem; /* 1px */
-	margin: .625rem 0;
+	background: fade(@bruise, 20%);
+	height: .0625rem; // 1px
+	margin: .625rem 0; // 10px
 	padding: 0;
 }
-	.hr1 { height: .125rem; } /* 2px */
-	.hr2 { height: .25rem; } /* 4px */
-	.hr3 { height: .5rem; } /* 8px */
-	.hr4 { height: .625rem; } /* 10px */
-	.hr5 { height: .75rem; } /* 12px */
-	.hr6 { height: .875rem; } /* 14px */
+	.hr1 {
+		background: fade(@bruise, 25%);
+		height: .125rem; // 2px
+	}
+	.hr2 {
+		background: fade(@bruise, 35%);
+		height: .1875rem; // 3px
+	}
+	.hr3 {
+		background: fade(@bruise, 45%);
+		height: .25rem; // 4px
+	}
+	.hr4 {
+		background: fade(@bruise, 55%);
+		height: .3125rem; // 5px
+	}
+	.hr5 {
+		background: fade(@bruise, 65%);
+		height: .375rem; // 6px
+	}
+	.hr6 {
+		background: fade(@bruise, 75%);
+		height: .4375rem; // 7px
+	}
 
 /**
  * The `<p>` element represents a paragraph.
@@ -491,25 +503,11 @@ hr, .hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
  */
 
 p {
-	font-family: Cambria, Georgia, serif;
-	font-size: 1rem; /* 16px */
+	font-family: @serif;
+	font-size: 1rem; // 16px
 	line-height: 1.5;
-	margin: .75rem 0; /* (1.5 / 2) = .75 */
+	margin: .75rem 0; // (1.5 / 2) = .75
 }
-	/*
-	p a {
-		color: #5e13c9;
-		text-decoration: none;
-	}
-	p a:visited { color: #5e13c9; }
-	p a:visited:hover,
-	p a:focus,
-	p a:focus:hover,
-	p a:hover,
-	p a:active {
-		color: #c812aa;
-	}
-	*/
 	
 	/**
 	 * Drop caps.
@@ -525,11 +523,12 @@ p {
 	 */
 	
 	p .firsties {
-		font-family: Cambria, Georgia, serif;
+		font-family: @serif;
 		font-style: normal;
 		font-weight: normal;
-		font-size: 4.5rem; /* 72px */
-		line-height: 1; /* (4.5 / 4.5) = 1 */
+		color: @gray3;
+		font-size: 4.5rem; // 72px
+		line-height: 1; // (4.5 / 4.5) = 1
 		margin-right: .5rem;
 		vertical-align: middle;
 		float: left;
@@ -538,7 +537,7 @@ p {
 	
 	/*
 	p:first-of-type:first-letter {
-		font-family: Cambria, Georgia, serif;
+		font-family: @serif;
 		font-size: 6.25rem;
 		line-height: 1.2;
 		margin: 0;
@@ -549,39 +548,19 @@ p {
 	}
 	*/
 
-/**
- * The `<pre>` element represents a block of preformatted text, in which
- * structure is represented by typographic conventions rather than by
- * elements.
- * 
- * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
- * @see http://perishablepress.com/wrapping-content/
- * @see http://perishablepress.com/perfect-pre-tags/
- * @see http://dev.w3.org/html5/spec/Overview.html#the-pre-element
- */
-
-::-moz-selection {
-	background: hsla(311, 76%, 56%, .75);
-	text-shadow: none;
-}
-::selection {
-	background: hsla(311, 76%, 56%, .75);
-	text-shadow: none;
-}
-
 pre {
-	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
-	font-size: .875rem; /* (14px / 16px) = .875em */
-	line-height: 1.28571428571428; /* (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428 */
-	color: #333;
-	border: .0625rem solid rgba(0, 0, 0, .15);
-	background: rgba(0, 0, 0, .025);
+	font-family: @mono;
+	font-size: .875rem; // (14px / 16px) = .875em
+	line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	color: @gray3;
+	border: .0625rem solid fade(@raven, 15%);
+	background: fade(@raven, 2.5%);
 	margin: .625rem 0;
 	padding: .625rem;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
-	box-shadow: inset 0 0 .625rem 0 rgba(0, 0, 0, .1);
+	box-shadow: inset 0 0 .625rem 0 fade(@raven, 15%);
 	-webkit-overflow-scrolling: touch;
 }
 	pre code {
@@ -612,21 +591,21 @@ pre {
 
 ol,
 ul {
-	font-size: 1em;
-	line-height: 1.125; /* (1.5 * .75) = 1.125 */
-	margin: 10px 0;
+	font-size: 1em; // 16px
+	line-height: 1.125; // (1.5 * .75) = 1.125
+	margin: .625rem 0; // 10px 0
 	padding: 0;
 	list-style-position: outside;
 }
-ol { margin-left: 2.5em; }
-ul { margin-left: 1.5em; }
+ol { margin-left: 2.5rem; } // 40px
+ul { margin-left: 1.5rem; } // 24px
 	ol li,
 	ul li {
-		margin: 0 0 .375em; /* (1.5 * .25) = .375 */
+		margin: 0 0 .375rem; // (1.5 * .25) = .375 (6px)
 		padding: 0;
 	}
-	li ol { margin-left: 2.5em; }
-	li ul { margin-left: .5em; }
+	li ol { margin-left: 2.5rem; } // 40px
+	li ul { margin-left: .5rem; } // 8px
 
 /*----------------------------------( TEXT-LEVEL SEMANTICS )----------------------------------*/
 
@@ -643,16 +622,16 @@ ul { margin-left: 1.5em; }
  */
 
 a {
-	color: rgba(19, 170, 201, 1);
+	color: @smurf;
 	text-decoration: none;
 }
-	a:visited { color: rgba(19, 170, 201, 1); }
+	a:visited { color: @smurf; }
 	a:visited:hover,
 	a:focus,
 	a:focus:hover,
 	a:hover,
 	a:active {
-		color: rgba(19, 170, 201, 1);
+		color: @bruise;
 		text-decoration: underline;
 	}
 
@@ -669,7 +648,7 @@ a {
 
 abbr { font-style: italic; }
 abbr[title] {
-	border-bottom: .0625rem dotted;
+	border-bottom: .0625rem dotted; // 1px
 	cursor: help;
 }
 
@@ -726,7 +705,7 @@ cite { font-style: italic; }
 
 /* @TODO: I'd like to have an code:after pseudo element to show line wrap. */
 code {
-	font-family: Consolas, Menlo, Monaco, "Lucida Console", "Liberation Mono", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Courier New", monospace, serif;
+	font-family: @mono;
 	white-space: pre;           /* CSS 2.0 */
 	white-space: pre-wrap;      /* CSS 2.1 */
 	white-space: pre-line;      /* CSS 3.0 */
@@ -735,11 +714,11 @@ code {
 	white-space: -moz-pre-wrap; /* Mozilla */
 	white-space: -hp-pre-wrap;  /* HP Printers */
 	word-wrap: break-word;      /* IE 5+ */
-	color: rgba(204, 51, 0, 1); /* #c30 */
-	padding: 0 .25rem;
-	background: rgba(204, 51, 0, .05);
-	border: .0625rem solid rgba(204, 51, 0, .1);
-	border-radius: .1875rem;
+	color: @lobster;
+	padding: 0 .25rem; // 4px
+	background: fade(@lobster, 5%);
+	border: .0625rem solid fade(@lobster, 20%); // 1px
+	border-radius: .1875rem; // 3px
 }
 
 /**
@@ -766,9 +745,12 @@ data {}
  * @see http://dev.w3.org/html5/spec/Overview.html#the-dfn-element
  */
 
-dfn { font-weight: bold; }
+dfn {
+	font-weight: bold;
+	font-style: italic;
+}
 dfn[title] {
-	border-bottom: .1em dotted;
+	border-bottom: .0625rem dotted; // 1px
 	cursor: help;
 }
 
@@ -1773,3 +1755,25 @@ menuitem {}
  */
 
 summary {}
+
+/*----------------------------------( SELECTION )----------------------------------*/
+
+/**
+ * The `<pre>` element represents a block of preformatted text, in which
+ * structure is represented by typographic conventions rather than by
+ * elements.
+ * 
+ * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
+ * @see http://perishablepress.com/wrapping-content/
+ * @see http://perishablepress.com/perfect-pre-tags/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-pre-element
+ */
+
+::-moz-selection {
+	background: hsla(311, 76%, 56%, .75);
+	text-shadow: none;
+}
+::selection {
+	background: hsla(311, 76%, 56%, .75);
+	text-shadow: none;
+}
