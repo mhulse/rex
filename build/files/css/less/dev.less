@@ -1,53 +1,78 @@
 @import "var";
 
 .marker {
-	font: bold 1.375rem/1.09090909090909 Arial, sans-serif; /* 22px */
-	color: hsla(49, 100%, 30%, .9);
+	font: bold 1.375rem/1.09090909090909 @sans; // 22px
+	color: darken(@bling, 20%);
 	text-transform: none;
-	background: rgba(255, 209, 0, .9); /* #ffd100 */
-	margin: .625rem 0;
-	padding: .625rem;
+	background: fade(@bling, 90%);
+	margin: .625rem 0; // 10px 0
+	padding: .625rem; // 10px
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	box-shadow: 0 0 .3125rem 0 hsla(49, 100%, 30%, .25);
+	box-shadow: 0 0 .3125rem 0 fade(darken(@bling, 30%), 20%); // 0 0 5px 0
 }
-	.marker code {
+.subtle {
+	font: normal 1.188rem/1.26262626262626 @mono; // 19px
+	color: @gray9;
+	margin: .625rem 0; // 10px 0
+}
+	.marker code,
+	.subtle code {
+		// Move to mixin:
+		text-shadow: none;
+		line-height: inherit;
 		color: inherit;
+		font-size: 1em;
+		background: transparent;
+		margin: 0;
 		padding: 0;
-		background: none;
+		top: 0;
 		border: 0;
+		padding: 0;
 		border-radius: 0;
+		box-shadow: none;
 	}
 
-.subtle {
-	font: normal 1.188rem/1.26262626262626 Courier, monospace; /* 19px */
-	color: #999;
-	margin: .625rem 0;
-}
-
 .swatches {
-	margin: 10px 0;
+	margin: .625rem 0; // 10 0
 	text-align: center;
 }
 	.swatches-swatch {
-		font-size: .875rem; /* (14px / 16px) = .875em */
-		line-height: 1.28571428571428; /* ((((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428) */
-		padding: .64285714285714rem 0;
-		margin: .3125rem 0;
-		border: 1px solid rgba(0, 0, 0, .1);
+		font-size: .875rem; // 14px
+		line-height: 1.28571428571428; // ((((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428)
+		padding: .64285714285714rem 0; // (1.28571428571428 / 2) = .64285714285714
+		margin: .3125rem 0; // 5px 0
+		border: .0625rem solid fade(@raven, 10%); // 1px
 	}
 		.swatches-swatch code {
-			color: #fff;
-			background: rgba(0, 0, 0, .3);
-			border: .0625rem solid rgba(0, 0, 0, .35);
+			color: @milk;
+			background: fade(@raven, 30%);
+			border: .0625rem solid fade(@raven, 35%); // 1px
 		}
-	.white { background-color: @milk; }
-	.bling { background-color: @bling; }
-	.goblin { background-color: @goblin; }
-	.hulk { background-color: @hulk; }
-	.prius { background-color: @prius; }
-	.smurf { background-color: @smurf; }
-	.lobster { background-color: @lobster; }
-	.bruise { background-color: @bruise; }
-	.raven { background-color: @raven; }
+	.milk    { background: @milk;    }
+	.bling   { background: @bling;   }
+	.goblin  { background: @goblin;  }
+	.hulk    { background: @hulk;    }
+	.prius   { background: @prius;   }
+	.smurf   { background: @smurf;   }
+	.lobster { background: @lobster; }
+	.bruise  { background: @bruise;  }
+	.raven   { background: @raven;   }
+	.gray14  { background: @gray14;  }
+	.gray13  { background: @gray13;  }
+	.gray12  { background: @gray12;  }
+	.gray11  { background: @gray11;  }
+	.gray10  { background: @gray10;  }
+	.gray9   { background: @gray9;   }
+	.gray8   { background: @gray8;   }
+	.gray7   { background: @gray7;   }
+	.gray6   { background: @gray6;   }
+	.gray5   { background: @gray5;   }
+	.gray4   { background: @gray4;   }
+	.gray3   { background: @gray3;   }
+	.gray2   { background: @gray2;   }
+	.gray1   { background: @gray1;   }
+	.duck    { background: @duck;    }
+	.chili   { background: @chili;   }
+	.frog    { background: @frog;    }

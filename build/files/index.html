@@ -347,7 +347,26 @@
 		
 		<h1 class="marker"><code>pre</code></h1>
 		
+		<h2 class="subtle">Default:</h2>
+
 <pre>
+  ! " # $ % &amp; ' ( ) * + , - . /
+0 1 2 3 4 5 6 7 8 9 : ; &lt; = &gt; ?
+@ A B C D E F G H I J K L M N O
+P Q R S T U V W X Y Z [ \ ] ^ _
+` a b c d e f g h i j k l m n o
+p q r s t u v w x y z { | } ~ 
+</pre>
+
+<pre>
+ 0.5138707 0.1757256 0.3086337 0.5345317 0.9476302 0.1717277 0.7022309 0.2264168 0.4947661 0.1246986
+ 0.0838954 0.3896298 0.2772301 0.3680532 0.9834590 0.5353862 0.7656789 0.6464736 0.7671438 0.7802362
+ 0.8229621 0.1519211 0.6254769 0.3146764 0.3469039 0.9172033 0.5197607 0.4011658 0.6067690 0.7854244
+</pre>
+
+		<h2 class="subtle"><code>stoops-pre</code> class:</h2>
+
+<pre class="stoops-pre">
 <code>var</code> q2 = oMQ.addQuery({
 	context               : ['small', 'medium'],
 	call_for_each_context : false,
@@ -356,14 +375,33 @@
 });
 </pre>
 
-<pre>
-<samp>mike:mysite mike$ <kbd>git status</kbd>
+<pre class="stoops-pre">
+<samp><span class="prompt">jdoe@mowmow:~$</span> <kbd>ssh demo.example.com</kbd>
+Last login: Tue Apr 12 09:10:17 2005 from mowmow.example.com on pts/1
+Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SMP Tue Feb 1 11:22:36 PST 2005 i686 unknown
 
-# On branch master
-nothing to commit (working directory clean)
-mike:mysite mike$</samp>
+<span class="prompt">jdoe@demo:~$</span> <span class="cursor">_</span></samp>
 </pre>
-		
+
+		<h2 class="subtle"><code>stoops-pre</code> + <code>stooops-pre-terminal</code> classes:</h2>
+
+<pre class="stoops-pre stoops-pre-terminal">
+<code>var</code> q2 = oMQ.addQuery({
+	context               : ['small', 'medium'],
+	call_for_each_context : false,
+	match                 : function() { console.log('MATCH: small/medium'); },
+	unmatch               : function() { console.log('UNMATCH: small/medium'); }
+});
+</pre>
+
+<pre class="stoops-pre stoops-pre-terminal">
+<samp><span class="prompt">jdoe@mowmow:~$</span> <kbd>ssh demo.example.com</kbd>
+Last login: Tue Apr 12 09:10:17 2005 from mowmow.example.com on pts/1
+Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SMP Tue Feb 1 11:22:36 PST 2005 i686 unknown
+
+<span class="prompt">jdoe@demo:~$</span> <span class="cursor">_</span></samp>
+</pre>
+
 		<hr>
 		
 		<h1 class="marker"><code>ol</code></h1>
