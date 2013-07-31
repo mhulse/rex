@@ -549,7 +549,9 @@ p {
 	*/
 
 pre {
-	font: 1rem/1.5 @mono;
+	font-family: @mono;
+	font-size: .875rem; // (14px / 16px) = .875em
+	line-height: 1.5; // (((1.5 / .875) = 1.71428571428571) * .875) = 1.5
 	border: .0625rem solid fade(@raven, 15%);
 	background: fade(@milk, 50%);
 	margin: .625rem 0;
@@ -577,12 +579,11 @@ pre {
 	}
 
 .stoops-pre {
-	font-size: .875rem; // (14px / 16px) = .875em
-	line-height: 1.5; // (((1.5 / .875) = 1.71428571428571) * .875) = 1.5
 	color: @gray3;
 	background: fade(@raven, 2.5%);
 	box-shadow: inset 0 0 .625rem 0 fade(@raven, 15%); // 10px
 }
+	.stoops-pre .prompt { color: @raven; }
 .stoops-pre-terminal {
 	letter-spacing: .05em;
 	color: lighten(@hulk, 20%);
@@ -590,7 +591,7 @@ pre {
 	background: fade(@gray1, 90%);
 	box-shadow: inset 0 0 .3125rem 0 fade(@raven, 50%); // 5px
 }
-	.prompt { color: lighten(@hulk, 50%); }
+	.stoops-pre-terminal .prompt { color: lighten(@hulk, 50%); }
 	
 	/**
 	 * Blinking cursor.
@@ -848,7 +849,7 @@ kbd {
 	border: .0625rem solid @gray12; // 1px
 	border-radius: .1875rem; // 3px
 	margin: 0 .125rem; // 0 2px
-	padding: .125rem .3125rem; // 2px 5px
+	padding: .0625rem .3125rem; // 1px 5px
 	position: relative;
 	box-shadow:
 		0 .0625rem 0 fade(@raven, 20%), // 0 1px 0
@@ -986,13 +987,18 @@ s {
 samp {
 	font-family: @mono;
 	font-size: small;
-	text-shadow: 0 .0625rem 0 @raven; // 0 1px 0
+	color: inherit;
 	line-height: 0;
-	color: @milk;
-	background: fade(@gray1, 75%);
+	text-shadow: 0 .0625rem 0 @milk; // 0 1px 0
+	background: fade(@gray9, 25%);
 	padding: .125rem .3125rem; // 2px 5px
 	position: relative;
 }
+	.stoops-samp {
+		text-shadow: 0 .0625rem 0 @raven; // 0 1px 0
+		color: @milk;
+		background: fade(@gray2, 75%);
+	}
 
 /**
  * The `<small>` element represents side comments such as small print. It
