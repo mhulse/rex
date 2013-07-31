@@ -10,9 +10,9 @@
  * @see http://css-tricks.com/browser-support-pseudo-elements/
  */
 
-.baseline { position: relative; }
+.stoops-baseline { position: relative; }
 	/* Grid overlay: */
-	.baseline:before {
+	.stoops-baseline:before {
 		background-image:
 			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
 			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
@@ -39,7 +39,7 @@
 		pointer-events: none; /* The element is never the target of mouse events. */
 	}
 	/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
-	.baseline.debug * {
+	.stoops-baseline-debug * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 	}

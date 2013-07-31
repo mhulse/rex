@@ -448,7 +448,7 @@ figure {
 	.stoops-figure figcaption {
 		color: darken(@prius, 20%);
 		background: fade(@prius, 20%);
-		padding: .625rem;
+		padding: .625rem; // 10px
 	}
 
 /**
@@ -554,8 +554,8 @@ pre {
 	line-height: 1.5; // (((1.5 / .875) = 1.71428571428571) * .875) = 1.5
 	border: .0625rem solid fade(@raven, 15%);
 	background: fade(@milk, 50%);
-	margin: .625rem 0;
-	padding: .625rem;
+	margin: .625rem 0; // 10px
+	padding: .625rem; // 10px
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
@@ -573,7 +573,6 @@ pre {
 		padding: 0;
 		top: 0;
 		border: 0;
-		padding: 0;
 		border-radius: 0;
 		box-shadow: none;
 	}
@@ -626,6 +625,7 @@ pre {
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ol-element
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ul-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-li-element
  */
 
 ol,
@@ -726,8 +726,22 @@ bdo {}
 br {}
 
 /**
- * Represents the title of a work.
+ * The `<cite>` element represents the title of a work (e.g. a book, a
+ * paper, an essay, a poem, a score, a song, a script, a film, a TV show,
+ * a game, a sculpture, a painting, a theater production, a play, an
+ * opera, a musical, an exhibition, a legal case report, etc). This can be
+ * a work that is being quoted or referenced in detail (i.e. a citation),
+ * or it can just be a work that is mentioned in passing.
  *
+ * A person's name is not the title of a work — even if people call that
+ * person a piece of work — and the element must therefore not be used to
+ * mark up people's names. (In some cases, the `<b>` element might be
+ * appropriate for names; e.g. in a gossip article where the names of
+ * famous people are keywords rendered with a different style to draw
+ * attention to them. In other cases, if an element is really needed, the
+ * `<span>` element can be used.)
+ *
+ * @see http://html5doctor.com/blockquote-q-cite/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-cite-element
  */
 
@@ -740,9 +754,9 @@ cite { font-style: italic; }
  *
  * @see http://perishablepress.com/wrapping-content/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-code-element
+ * @todo I'd like to have an code:after pseudo element to show line wrap.
  */
 
-/* @TODO: I'd like to have an code:after pseudo element to show line wrap. */
 code {
 	font-family: @mono;
 	white-space: pre;           /* CSS 2.0 */
@@ -754,7 +768,7 @@ code {
 	white-space: -hp-pre-wrap;  /* HP Printers */
 	word-wrap: break-word;      /* IE 5+ */
 	color: @lobster;
-	padding: 0 .25rem; // 4px
+	padding: 0 .25em; // 4px
 	background: fade(@lobster, 5%);
 	border: .0625rem solid fade(@lobster, 20%); // 1px
 	border-radius: .1875rem; // 3px
@@ -848,8 +862,8 @@ kbd {
 	background: @gray14;
 	border: .0625rem solid @gray12; // 1px
 	border-radius: .1875rem; // 3px
-	margin: 0 .125rem; // 0 2px
-	padding: .0625rem .3125rem; // 1px 5px
+	margin: 0 .125em; // 0 2px
+	padding: .0625em .3125em; // 1px 5px
 	position: relative;
 	box-shadow:
 		0 .0625rem 0 fade(@raven, 20%), // 0 1px 0
@@ -866,7 +880,6 @@ kbd {
 		padding: 0;
 		top: 0;
 		border: 0;
-		padding: 0;
 		border-radius: 0;
 		box-shadow: none;
 	}
@@ -888,24 +901,12 @@ mark {
 	text-decoration: none;
 	color: darken(@duck, 30%);
 	background-color: fade(@duck, 75%);
-	padding: .1875rem .25rem; // 3px 4px
+	padding: .1875em .25em; // 3px 4px
 }
 
 /**
- * The `<cite>` element represents the title of a work (e.g. a book, a
- * paper, an essay, a poem, a score, a song, a script, a film, a TV show,
- * a game, a sculpture, a painting, a theater production, a play, an
- * opera, a musical, an exhibition, a legal case report, etc). This can be
- * a work that is being quoted or referenced in detail (i.e. a citation),
- * or it can just be a work that is mentioned in passing.
- *
- * A person's name is not the title of a work — even if people call that
- * person a piece of work — and the element must therefore not be used to
- * mark up people's names. (In some cases, the `<b>` element might be
- * appropriate for names; e.g. in a gossip article where the names of
- * famous people are keywords rendered with a different style to draw
- * attention to them. In other cases, if an element is really needed, the
- * `<span>` element can be used.)
+ * The `q` element represents some phrasing content quoted from another
+ * source.
  *
  * @see http://html5doctor.com/blockquote-q-cite/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-q-element
@@ -950,8 +951,8 @@ q:after {
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ruby-element
  * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
- * @see http://html5doctor.com/ruby-rt-rp-element/
  * @see http://dev.w3.org/html5/spec/Overview.html#the-rt-element
+ * @see http://html5doctor.com/ruby-rt-rp-element/
  */
 
 ruby {}
@@ -1151,18 +1152,17 @@ wbr:after { content: "\00200B"; }
  * The `<del>` element represents a removal from the document; `<del>`
  * elements should not cross implied paragraph boundaries.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-del-element
- *
  * The `<ins>` element represents an addition to the document. The `<ins>`
  * elements should not cross implied paragraph boundaries.
  *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-del-element
  * @see http://dev.w3.org/html5/spec/Overview.html#the-ins-element
  */
 
 del,
 ins {
 	line-height: 0;
-	border-radius: .1875rem;
+	border-radius: .1875rem; // 3px
 	padding: .125rem .3125rem; // 2px 5px
 	position: relative;
 }
@@ -1415,13 +1415,12 @@ video {}
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-table-element
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
+ * @see http://www.vanseodesign.com/web-design/baseline-grid-non-textual/
  */
 
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	width: 100%;
-	empty-cells: show;
 }
 
 /**
@@ -1434,7 +1433,11 @@ table {
  * @see http://dev.w3.org/html5/spec/Overview.html#the-caption-element
  */
 
-caption {}
+caption {
+	font-size: .875rem; // 14px
+	line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	padding: .21428571428572em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
+}
 
 /**
  * The `<colgroup>` element represents a group of one or more columns in a
@@ -1466,6 +1469,7 @@ col {}
  */
 
 thead {}
+thead th {}
 
 /**
  * The `<tfoot>` element represents the block of rows that consist of the
@@ -1488,48 +1492,64 @@ tbody {}
 /**
  * The `<tr>` element represents a row of cells in a `<table>` element.
  *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-tr-element
+ */
+
+tr {}
+
+/**
  * The `<th>` element represents a header cell in a `<table>` element.
  *
  * The `<td>` element represents a data cell in a `<table>` element.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-tr-element
  * @see http://dev.w3.org/html5/spec/Overview.html#the-th-element
  * @see http://dev.w3.org/html5/spec/Overview.html#the-td-element
  */
 
-tr {}
+th,
+td {
+	font-size: 1rem; // 16px
+	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
+	margin: 0;
+	////////////////////////////////////////////////////////////////////////////////////////// Left off on getting the default table on the baseline.
+	padding: .1875em 0; // (((1.5 * .25) = .375) / 2) = .1875
+}
 
 /*--------------------------------------------------------------------*/
 
 .stoops-table {
 	background: fade(@milk, 25%);
 	margin: .625rem 0; // 10px 0
+	width: 100%;
 }
 	.stoops-table caption {
-		font-size: .875rem; // 14px
-		line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
 		font-weight: bold;
 		text-align: left;
-		padding-bottom: .64285714285714rem; // (1.28571428571428 / 2) = .64285714285714
 	}
 	.stoops-table tfoot th
 	.stoops-table tfoot td {
 		color: @gray3;
 		font-weight: normal;
 	}
-	.stoops-table tr:nth-of-type(odd) { background: fade(@raven, 5%); }
 	.stoops-table th {
 		text-align: left;
 		border: .0625rem solid fade(@raven, 25%); // 1px
 		background-color: fade(@raven, 5%);
 		padding: .3125rem; // 5px
 		white-space: nowrap;
+		vertical-align: bottom;
 	}
 	.stoops-table td {
 		text-align: left;
 		border: .0625rem solid fade(@raven, 25%); // 1px
 		padding: .3125rem; // 5px
 	}
+	.stoops-table th,
+	.stoops-table td {
+		vertical-align: top;
+	}
+
+.stoops-table-striped tr:nth-of-type(odd) { background: fade(@raven, 5%); }
 
 /*----------------------------------( FORMS )----------------------------------*/
 

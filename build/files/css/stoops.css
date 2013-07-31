@@ -36,9 +36,9 @@ input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit
 button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top;}
 table{border-collapse:collapse;border-spacing:0}
-.baseline{position:relative}
-.baseline:before{background-image:-webkit-linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),-webkit-linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),-webkit-linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-image:-moz-linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),-moz-linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),-moz-linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-image:linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-size:100% 1.5rem, 100% .75rem, 100% .375rem;background-position:0 0;background-origin:content-box;background-attachment:local;width:100%;display:block;position:absolute;top:0;bottom:-1px;z-index:999;content:"";pointer-events:none;}
-.baseline.debug *{-webkit-box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5);box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5)}
+.stoops-baseline{position:relative}
+.stoops-baseline:before{background-image:-webkit-linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),-webkit-linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),-webkit-linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-image:-moz-linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),-moz-linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),-moz-linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-image:linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-size:100% 1.5rem, 100% .75rem, 100% .375rem;background-position:0 0;background-origin:content-box;background-attachment:local;width:100%;display:block;position:absolute;top:0;bottom:-1px;z-index:999;content:"";pointer-events:none;}
+.stoops-baseline-debug *{-webkit-box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5);box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5)}
 *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 html{height:100%;overflow-y:scroll;}
 body{font-family:Arial,sans-serif;font-size:100%;line-height:1.5;color:#000;-webkit-font-smoothing:antialiased;font-smoothing:antialiased;text-rendering:optimizeLegibility;min-height:100%;background:#fff}
@@ -82,7 +82,7 @@ hr,.hr,.hr1,.hr2,.hr3,.hr4,.hr5,.hr6{color:rgba(73,10,61,0.2);border:0;backgroun
 p{font-family:Cambria,Georgia,serif;font-size:1rem;line-height:1.5;margin:.75rem 0}
 p .firsties{font-family:Cambria,Georgia,serif;font-style:normal;font-weight:normal;color:#333;font-size:4.5rem;line-height:1;margin-right:.5rem;vertical-align:middle;float:left;display:inline}
 pre{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:.875rem;line-height:1.5;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(255,255,255,0.5);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;-webkit-overflow-scrolling:touch}
-pre code,pre kbd,pre samp{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;top:0;border:0;padding:0;border-radius:0;box-shadow:none}
+pre code,pre kbd,pre samp{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;padding:0;top:0;border:0;border-radius:0;box-shadow:none}
 .stoops-pre{color:#333;background:rgba(0,0,0,0.025);box-shadow:inset 0 0 .625rem 0 rgba(0,0,0,0.15)}
 .stoops-pre .prompt{color:#000}
 .stoops-pre-terminal{letter-spacing:.05em;color:#81d230;text-shadow:0 .0625rem 0 #000;background:rgba(17,17,17,0.9);box-shadow:inset 0 0 .3125rem 0 rgba(0,0,0,0.5)}
@@ -101,13 +101,13 @@ abbr{font-style:italic}
 abbr[title]{border-bottom:.0625rem dotted;cursor:help}
 bdi{direction:ltr;unicode-bidi:bidi-override}
 cite{font-style:italic}
-code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;color:#c30;padding:0 .25rem;background:rgba(204,51,0,0.05);border:.0625rem solid rgba(204,51,0,0.2);border-radius:.1875rem}
+code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;color:#c30;padding:0 .25em;background:rgba(204,51,0,0.05);border:.0625rem solid rgba(204,51,0,0.2);border-radius:.1875rem}
 dfn{font-weight:bold;font-style:italic}
 dfn[title]{border-bottom:.0625rem dotted;cursor:help}
 em,i{font-style:italic}
-kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;line-height:0;text-shadow:0 .0625rem 0 #fff;color:#333;background:#eee;border:.0625rem solid #ccc;border-radius:.1875rem;margin:0 .125rem;padding:.0625rem .3125rem;position:relative;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2), 0 0 0 .125rem #fff inset}
-kbd kbd,kbd samp{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;top:0;border:0;padding:0;border-radius:0;box-shadow:none}
-mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:.1875rem .25rem}
+kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;line-height:0;text-shadow:0 .0625rem 0 #fff;color:#333;background:#eee;border:.0625rem solid #ccc;border-radius:.1875rem;margin:0 .125em;padding:.0625em .3125em;position:relative;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2), 0 0 0 .125rem #fff inset}
+kbd kbd,kbd samp{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;padding:0;top:0;border:0;border-radius:0;box-shadow:none}
+mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:.1875em .25em}
 q{quotes:'“' '”' '‘' '’' '“' '”' '‘' '’'}
 q:before{content:'“';content:open-quote}
 q:after{content:'”';content:close-quote}
@@ -134,13 +134,16 @@ img{max-width:100%;max-height:100%;vertical-align:middle}
 .stoops-img-default{max-width:none;max-height:none}
 .stoops-scrollable{width:100%;margin:.625rem 0;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .stoops-scrollable>*{margin:0}
-table{border-collapse:collapse;border-spacing:0;width:100%;empty-cells:show}
-.stoops-table{background:rgba(255,255,255,0.25);margin:.625rem 0}
-.stoops-table caption{font-size:.875rem;line-height:1.28571428571428;font-weight:bold;text-align:left;padding-bottom:.64285714285714rem}
+table{border-collapse:collapse;border-spacing:0}
+caption{font-size:.875rem;line-height:1.28571428571428;padding:.21428571428572em 0}
+th,td{font-size:1rem;line-height:1.125;margin:0;padding:.1875em 0}
+.stoops-table{background:rgba(255,255,255,0.25);margin:.625rem 0;width:100%}
+.stoops-table caption{font-weight:bold;text-align:left}
 .stoops-table tfoot th .stoops-table tfoot td{color:#333;font-weight:normal}
-.stoops-table tr:nth-of-type(odd){background:rgba(0,0,0,0.05)}
-.stoops-table th{text-align:left;border:.0625rem solid rgba(0,0,0,0.25);background-color:rgba(0,0,0,0.05);padding:.3125rem;white-space:nowrap}
+.stoops-table th{text-align:left;border:.0625rem solid rgba(0,0,0,0.25);background-color:rgba(0,0,0,0.05);padding:.3125rem;white-space:nowrap;vertical-align:bottom}
 .stoops-table td{text-align:left;border:.0625rem solid rgba(0,0,0,0.25);padding:.3125rem}
+.stoops-table th,.stoops-table td{vertical-align:top}
+.stoops-table-striped tr:nth-of-type(odd){background:rgba(0,0,0,0.05)}
 form{margin:0}
 button{line-height:normal;vertical-align:baseline;cursor:pointer;-webkit-appearance:button}
 button::-moz-focus-inner{border:0;padding:0}
