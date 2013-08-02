@@ -67,7 +67,7 @@ dl dt{font-weight:bold}
 dl dd{margin-left:.5rem}
 figure{font-family:Arial,sans-serif;margin:.625rem 0}
 figure img{display:block}
-figure figcaption{font-size:.875rem;line-height:1.5;margin:.4375rem 0}
+figure figcaption{font-size:.875rem;line-height:1.5;xmargin:.4375rem 0}
 figure p{font-family:inherit;font-size:inherit;margin:inherit}
 figure figcaption>:first-child{margin-top:0 !important}
 figure figcaption>:last-child{margin-bottom:0 !important}
@@ -158,9 +158,7 @@ select{vertical-align:baseline}
 textarea{overflow:auto;vertical-align:top;resize:vertical;width:100%}
 ::-moz-selection{background:rgba(228,59,196,0.75);text-shadow:none}
 ::selection{background:rgba(228,59,196,0.75);text-shadow:none}
-body{text-align:center}
-.container{text-align:left;margin:0 auto;padding:20px;max-width:680px}
-.foo{text-align:left;display:inline-block;max-width:100%}
+.container{margin:0 auto;padding:20px;max-width:680px}
 #flag{position:relative;height:11.5625rem;}
 #flag div{position:absolute;top:1.25rem;left:50%}
 #flag h1{font:7.8125rem/1 "Hulse",Arial,sans-serif;color:#13aac9;position:relative;left:-50%}
