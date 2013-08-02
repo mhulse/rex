@@ -60,7 +60,6 @@
 		<h1 class="marker"><code>address</code></h1>
 		
 		<address>
-			
 			<a href="#">Marcel Johnson</a>, 
 			<a href="#">Bubba Johnson</a>, 
 			<a href="#">Virgil Johnson</a>, 
@@ -69,7 +68,33 @@
 			<a href="#">T-Bone Johnson</a>, 
 			<a href="#">Jimmy Earl Johnson</a>, 
 			<a href="#">Cooter Johnson</a>
-			
+		</address>
+		
+		<address>This document was written by: <a href="mailto:foo@example.com">Homer Simpson</a></address>
+		
+		<address class="vcard">
+			<div class="fn org">Acme, Inc.</div>
+			<div class="adr">
+				<div class="street-address">12345, Foo Street</div>
+				<span class="locality">Eugene</span>, <span class="region">OR</span>&nbsp;&nbsp;<span class="postal-code">90210</span>
+			</div>
+		</address>
+		
+		<address itemscope itemtype="http://data-vocabulary.org/Organization">
+			<span itemprop="name">Acme, Inc.</span>
+			Postal Address:
+			<span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+				<span itemprop="street-address">PO Box 90210</span>,
+				<span itemprop="locality">Melbourne</span>,
+				<span itemprop="region">Victoria</span>,
+				<span itemprop="country-name">Australia</span>.
+			</span>
+			<span itemprop="geo" itemscope itemtype="http://www.data-vocabulary.org/Geo/">
+				Latitude: <span itemprop="latitude">37.49 S </span> 
+				Longitude: <span itemprop="longitude">144.58 E</span>
+			</span>
+			Phone: <span itemprop="tel">+61 (0) 3 9023 0074</span>
+			<a href="http://net.tutsplus.com/" itemprop="url">Nettuts+ | Web development tutorials, from beginner to advanced.</a>.
 		</address>
 		
 		<hr>
