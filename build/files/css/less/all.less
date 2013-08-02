@@ -584,14 +584,17 @@ pre {
 	 */
 	
 	.stoops-pre-cursor {
-		animation-duration: 2s;
-		animation-name: cursor-blink;
-		animation-iteration-count: infinite;
-		animation-timing-function: steps(2, start);
+		-webkit-animation-duration: 2s;
+		        animation-duration: 2s;
+		-webkit-animation-name: stoops-cursor-blink;
+		        animation-name: stoops-cursor-blink;
+		-webkit-animation-iteration-count: infinite;
+		        animation-iteration-count: infinite;
+		-webkit-animation-timing-function: steps(2, start);
+		        animation-timing-function: steps(2, start);
 	}
-		@keyframes cursor-blink {
-			80% { visibility: hidden; }
-		}
+		@-webkit-keyframes stoops-cursor-blink { 80% { visibility: hidden; } }
+		        @keyframes stoops-cursor-blink { 80% { visibility: hidden; } }
 
 .stoops-pre {
 	color: @gray3;
