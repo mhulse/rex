@@ -576,21 +576,6 @@ pre {
 		border-radius: 0;
 		box-shadow: none;
 	}
-
-.stoops-pre {
-	color: @gray3;
-	background: fade(@raven, 2.5%);
-	box-shadow: inset 0 0 .625rem 0 fade(@raven, 15%); // 10px
-}
-	.stoops-pre .prompt { color: @raven; }
-.stoops-pre-terminal {
-	letter-spacing: .05em;
-	color: lighten(@hulk, 20%);
-	text-shadow: 0 .0625rem 0 @raven; // 0 1px 0
-	background: fade(@gray1, 90%);
-	box-shadow: inset 0 0 .3125rem 0 fade(@raven, 50%); // 5px
-}
-	.stoops-pre-terminal .prompt { color: lighten(@hulk, 50%); }
 	
 	/**
 	 * Blinking cursor.
@@ -598,7 +583,7 @@ pre {
 	 * @see http://fredericiana.com/2012/11/04/html5-blink-tag/
 	 */
 	
-	.cursor {
+	.stoops-pre-cursor {
 		animation-duration: 2s;
 		animation-name: cursor-blink;
 		animation-iteration-count: infinite;
@@ -607,6 +592,21 @@ pre {
 		@keyframes cursor-blink {
 			80% { visibility: hidden; }
 		}
+
+.stoops-pre {
+	color: @gray3;
+	background: fade(@raven, 2.5%);
+	box-shadow: inset 0 0 .625rem 0 fade(@raven, 15%); // 10px
+}
+	.stoops-pre .stoops-pre-prompt { color: @raven; }
+.stoops-pre-terminal {
+	letter-spacing: .05em;
+	color: lighten(spin(@hulk, 45), 20%);
+	text-shadow: 0 .0625rem 0 @raven; // 0 1px 0
+	background: fade(@gray1, 90%);
+	box-shadow: inset 0 0 .3125rem 0 fade(@raven, 50%); // 5px
+}
+	.stoops-pre-terminal .stoops-pre-prompt { color: lighten(spin(@hulk, 90), 20%); }
 
 /**
  * The `<ol>` element represents a list of items, where the items have
