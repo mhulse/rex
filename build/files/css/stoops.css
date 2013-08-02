@@ -159,6 +159,8 @@ textarea{overflow:auto;vertical-align:top;resize:vertical;width:100%}
 ::-moz-selection{background:rgba(228,59,196,0.75);text-shadow:none}
 ::selection{background:rgba(228,59,196,0.75);text-shadow:none}
 .container{margin:0 auto;padding:20px;max-width:680px}
+.stoops-el{xposition:relative}
+.stoops-figure-test{xposition:relative}
 #flag{position:relative;height:11.5625rem;}
 #flag div{position:absolute;top:1.25rem;left:50%}
 #flag h1{font:7.8125rem/1 "Hulse",Arial,sans-serif;color:#13aac9;position:relative;left:-50%}
