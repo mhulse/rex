@@ -60,7 +60,7 @@ blockquote:before,blockquote:after{content:'';content:none}
 .stoops-blockquote>:last-child{margin-bottom:0 !important}
 .stoops-blockquote p{color:#385561;font-style:italic}
 .stoops-blockquote footer{font-size:.875rem;color:#4b7181;line-height:1.71428571428571}
-@media all and (min-width:45rem){.stoops-blockquote:before{font:6.25rem/1 Arial,sans-serif;color:rgba(75,113,129,0.4);display:block;content:"\201C";position:absolute;left:-0.4375em;top:-0.125em}}
+@media all and (min-width:45em){.stoops-blockquote:before{font:6.25rem/1 Arial,sans-serif;color:rgba(75,113,129,0.4);display:block;content:"\201C";position:absolute;left:-0.4375em;top:-0.125em}}
 dl{font-size:1rem;line-height:1.125;margin:.625rem 0;padding:0}
 dl dd,dl dt{margin:0 0 .375rem;padding:0}
 dl dt{font-weight:bold}
@@ -168,7 +168,7 @@ body{text-align:center}
 #flag a,#flag a:visited{color:#13aac9}
 #flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{color:#53d4ef;text-decoration:none}
 #flag a:active,#flag a:focus{outline:none}
-@media all and (min-width:45rem){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem;}}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}
+@media all and (min-width:45em){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem;}}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}
 button,input{line-height:normal}
 button,input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible;}
 button[disabled],input[disabled]{cursor:default}
