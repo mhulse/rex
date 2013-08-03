@@ -4,12 +4,21 @@ STOOPS.register(function() {
 	
 	'use strict';
 	
-	console.log('test');
+	var $test = $('.test'),
+	    $se = $test.wrap('<div class="foo" />'),
+	    offset = $test.offset(),
+	    x,
+	    y;
 	
-	var $se = $('.stoops-figure-test').wrap('<div class="stoops-el" />');
+	console.log($se.height());
 	
-	console.log('stoops-el height:', $se.height());
+	x = offset.left;
+	y = offset.top;
 	
-	// $('.stoops-el').height($se.height());
+	console.log('x: ' + x + ' y: ' + y);
+	
+	//$('.fooz').offset({'top': y});
+	
+	//$test.height($se.height() + 50);
 	
 }); // STOOPS!
