@@ -134,25 +134,24 @@ img{max-width:100%;max-height:100%;vertical-align:middle}
 .stoops-img-default{max-width:none;max-height:none}
 .stoops-scrollable{width:100%;margin:.625rem 0;overflow-y:auto;-webkit-overflow-scrolling:touch}
 .stoops-scrollable>*{margin:0 !important}
-table{border-collapse:collapse;border-spacing:0}
+table{border-collapse:collapse;border-spacing:0;empty-cells:hide}
 caption{font-size:.875rem;line-height:1.28571428571428;padding:.21428571428572em 0}
 th,td{font-size:1rem;line-height:1.125;margin:0;padding:.1875em 0}
 .stoops-table{margin:.625rem 0;width:100%}
-.stoops-table caption{text-align:left}
+.stoops-table caption{color:#333;text-align:left}
 .stoops-table thead{vertical-align:bottom}
-.stoops-table tfoot th .stoops-table tfoot td{font-weight:normal;color:#333}
+.stoops-table tfoot th,.stoops-table tfoot td{color:#333}
 .stoops-table th,.stoops-table td{text-align:left;padding-right:.625rem;padding-left:.625rem}
 .stoops-table th:first-child,.stoops-table td:first-child{padding-left:0}
 .stoops-table th:last-child,.stoops-table td:last-child{padding-right:0}
 .stoops-table th{white-space:nowrap}
 .stoops-table tbody{vertical-align:top}
-.stoops-table-border-x th,.stoops-table-border-x td{border-top:.0625rem solid rgba(0,0,0,0.25);border-bottom:.0625rem solid rgba(0,0,0,0.25)}
-.stoops-table-border-x tr:first-child th{border-top:0}
-.stoops-table-border-x tbody tr:last-child th,.stoops-table-border-x tr:last-child td{border-bottom:0}
+.stoops-table-border-x thead th,.stoops-table-border-x tbody th,.stoops-table-border-x tbody td{border-bottom:.0625rem solid rgba(0,0,0,0.25)}
+.stoops-table-border-x tfoot th,.stoops-table-border-x tfoot td{border-top:.0625rem solid rgba(0,0,0,0.25)}
+.stoops-table-border-x tbody tr:last-child th,.stoops-table-border-x tbody tr:last-child td{border-bottom:0}
 .stoops-table-border-y th,.stoops-table-border-y td{border-right:.0625rem solid rgba(0,0,0,0.25);border-left:.0625rem solid rgba(0,0,0,0.25)}
 .stoops-table-border-y th:first-child,.stoops-table-border-y td:first-child{border-left:none}
 .stoops-table-border-y th:last-child,.stoops-table-border-y td:last-child{border-right:none}
-.stoops-table-striped tbody tr:nth-of-type(odd){background:rgba(0,0,0,0.05)}
 form{margin:0}
 button{line-height:normal;vertical-align:baseline;cursor:pointer;-webkit-appearance:button}
 button::-moz-focus-inner{border:0;padding:0}

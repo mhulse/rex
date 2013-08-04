@@ -1423,6 +1423,7 @@ video {}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+	empty-cells: hide;
 }
 
 /**
@@ -1522,13 +1523,16 @@ td {
 	margin: .625rem 0; // 10px 0
 	width: 100%;
 }
-	.stoops-table caption { text-align: left; }
-	.stoops-table thead { vertical-align: bottom; }
-	.stoops-table tfoot th
-	.stoops-table tfoot td {
-		font-weight: normal;
+	.stoops-table caption {
 		color: @gray3;
+		text-align: left;
 	}
+	.stoops-table thead { vertical-align: bottom; }
+	// @TODO: Make class?
+	/*.stoops-table thead th:empty,
+	.stoops-table thead td:empty { border: 0 !important; }*/
+	.stoops-table tfoot th,
+	.stoops-table tfoot td { color: @gray3; }
 	.stoops-table th,
 	.stoops-table td {
 		text-align: left;
@@ -1542,27 +1546,23 @@ td {
 	.stoops-table th { white-space: nowrap; }
 	.stoops-table tbody { vertical-align: top; }
 
-.stoops-table-border-x th,
-.stoops-table-border-x td {
-	border-top: .0625rem solid fade(@raven, 25%);
-	border-bottom: .0625rem solid fade(@raven, 25%);
-}
-.stoops-table-border-x tr:first-child th { border-top: 0; }
+.stoops-table-border-x thead th,
+.stoops-table-border-x tbody th,
+.stoops-table-border-x tbody td { border-bottom: .0625rem solid fade(@raven, 25%); }
+.stoops-table-border-x tfoot th,
+.stoops-table-border-x tfoot td { border-top: .0625rem solid fade(@raven, 25%); }
 .stoops-table-border-x tbody tr:last-child th,
-.stoops-table-border-x tr:last-child td { border-bottom: 0; }
+.stoops-table-border-x tbody tr:last-child td { border-bottom: 0; }
 
-.stoops-table-border-y {}
-	.stoops-table-border-y th,
-	.stoops-table-border-y td {
-		border-right: .0625rem solid fade(@raven, 25%); // 1px
-		border-left: .0625rem solid fade(@raven, 25%); // 1px
-	}
-		.stoops-table-border-y th:first-child,
-		.stoops-table-border-y td:first-child { border-left: none; }
-		.stoops-table-border-y th:last-child,
-		.stoops-table-border-y td:last-child { border-right: none; }
-
-.stoops-table-striped tbody tr:nth-of-type(odd) { background: fade(@raven, 5%); }
+.stoops-table-border-y th,
+.stoops-table-border-y td {
+	border-right: .0625rem solid fade(@raven, 25%); // 1px
+	border-left: .0625rem solid fade(@raven, 25%); // 1px
+}
+	.stoops-table-border-y th:first-child,
+	.stoops-table-border-y td:first-child { border-left: none; }
+	.stoops-table-border-y th:last-child,
+	.stoops-table-border-y td:last-child { border-right: none; }
 
 /*----------------------------------( FORMS )----------------------------------*/
 
