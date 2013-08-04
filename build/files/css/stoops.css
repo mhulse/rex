@@ -81,7 +81,7 @@ hr,.hr,.hr1,.hr2,.hr3,.hr4,.hr5,.hr6{color:rgba(73,10,61,0.2);border:0;backgroun
 .hr6{background:rgba(73,10,61,0.75);height:.4375rem}
 p{font-family:Cambria,Georgia,serif;font-size:1rem;line-height:1.5;margin:.75rem 0}
 p .firsties{font-family:Cambria,Georgia,serif;font-style:normal;font-weight:normal;color:#333;font-size:4.5rem;line-height:1;margin-right:.5rem;vertical-align:middle;float:left;display:inline}
-pre{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:.875rem;line-height:1.5;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(255,255,255,0.5);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;-webkit-overflow-scrolling:touch}
+pre{font-family:monospace,serif;font-size:.875rem;line-height:1.5;border:.0625rem solid rgba(0,0,0,0.15);background:rgba(255,255,255,0.5);margin:.625rem 0;padding:.625rem;word-wrap:normal;overflow:auto;white-space:pre;-webkit-overflow-scrolling:touch}
 pre code,pre kbd,pre samp{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;padding:0;top:0;border:0;border-radius:0;box-shadow:none}
 .stoops-pre-cursor{-webkit-animation-duration:2s;animation-duration:2s;-webkit-animation-name:stoops-cursor-blink;animation-name:stoops-cursor-blink;-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite;-webkit-animation-timing-function:steps(2, start);animation-timing-function:steps(2, start)}
 @-webkit-keyframes stoops-cursor-blink{80%{visibility:hidden}}@keyframes stoops-cursor-blink{80%{visibility:hidden}}.stoops-pre{color:#333;background:rgba(0,0,0,0.025);box-shadow:inset 0 0 .625rem 0 rgba(0,0,0,0.15)}
@@ -101,11 +101,11 @@ abbr{font-style:italic}
 abbr[title]{border-bottom:.0625rem dotted;cursor:help}
 bdi{direction:ltr;unicode-bidi:bidi-override}
 cite{font-style:italic}
-code{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;color:#c30;padding:0 .25em;background:rgba(204,51,0,0.05);border:.0625rem solid rgba(204,51,0,0.2);border-radius:.1875rem}
+code{font-family:monospace,serif;white-space:pre;white-space:pre-wrap;white-space:pre-line;white-space:-pre-wrap;white-space:-o-pre-wrap;white-space:-moz-pre-wrap;white-space:-hp-pre-wrap;word-wrap:break-word;color:#c30;padding:0 .25em;background:rgba(204,51,0,0.05);border:.0625rem solid rgba(204,51,0,0.2);border-radius:.1875rem}
 dfn{font-weight:bold;font-style:italic}
 dfn[title]{border-bottom:.0625rem dotted;cursor:help}
 em,i{font-style:italic}
-kbd{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;line-height:0;text-shadow:0 .0625rem 0 #fff;color:#333;background:#eee;border:.0625rem solid #ccc;border-radius:.1875rem;margin:0 .125em;padding:.0625em .3125em;position:relative;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2), 0 0 0 .125rem #fff inset}
+kbd{font-family:monospace,serif;line-height:0;text-shadow:0 .0625rem 0 #fff;color:#333;background:#eee;border:.0625rem solid #ccc;border-radius:.1875rem;margin:0 .125em;padding:.0625em .3125em;position:relative;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2), 0 0 0 .125rem #fff inset}
 kbd kbd,kbd samp{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;padding:0;top:0;border:0;border-radius:0;box-shadow:none}
 mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:.1875em .25em}
 q{quotes:'“' '”' '‘' '’' '“' '”' '‘' '’'}
@@ -115,7 +115,7 @@ q q:before{content:'‘';content:open-quote}
 q q:after{content:'’';content:close-quote}
 rp{font-size:100%;display:inline}
 s{color:#666;-webkit-text-decoration-color:#f00;-moz-text-decoration-color:#f00;text-decoration-color:#f00}
-samp{font-family:Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;font-size:small;color:inherit;line-height:0;text-shadow:0 .0625rem 0 #fff;background:rgba(153,153,153,0.25);padding:.125rem .3125rem;position:relative}
+samp{font-family:monospace,serif;color:inherit;line-height:0;text-shadow:0 .0625rem 0 #fff;background:rgba(153,153,153,0.25);padding:.125rem .3125rem;position:relative}
 .stoops-samp{text-shadow:0 .0625rem 0 #000;color:#fff;background:rgba(34,34,34,0.75)}
 small,.small{font-family:Arial,sans-serif;font-size:smaller;letter-spacing:.03em}
 small a,.small a{font-weight:bold}
@@ -133,17 +133,26 @@ ins{text-decoration:none;color:#031;background-color:rgba(0,153,51,0.25)}
 img{max-width:100%;max-height:100%;vertical-align:middle}
 .stoops-img-default{max-width:none;max-height:none}
 .stoops-scrollable{width:100%;margin:.625rem 0;overflow-y:auto;-webkit-overflow-scrolling:touch}
-.stoops-scrollable>*{margin:0}
+.stoops-scrollable>*{margin:0 !important}
 table{border-collapse:collapse;border-spacing:0}
 caption{font-size:.875rem;line-height:1.28571428571428;padding:.21428571428572em 0}
 th,td{font-size:1rem;line-height:1.125;margin:0;padding:.1875em 0}
-.stoops-table{background:rgba(255,255,255,0.25);margin:.625rem 0;width:100%}
-.stoops-table caption{font-weight:bold;text-align:left}
-.stoops-table tfoot th .stoops-table tfoot td{color:#333;font-weight:normal}
-.stoops-table th{text-align:left;border:.0625rem solid rgba(0,0,0,0.25);background-color:rgba(0,0,0,0.05);padding:.3125rem;white-space:nowrap;vertical-align:bottom}
-.stoops-table td{text-align:left;border:.0625rem solid rgba(0,0,0,0.25);padding:.3125rem}
-.stoops-table th,.stoops-table td{vertical-align:top}
-.stoops-table-striped tr:nth-of-type(odd){background:rgba(0,0,0,0.05)}
+.stoops-table{margin:.625rem 0;width:100%}
+.stoops-table caption{text-align:left}
+.stoops-table thead{vertical-align:bottom}
+.stoops-table tfoot th .stoops-table tfoot td{font-weight:normal;color:#333}
+.stoops-table th,.stoops-table td{text-align:left;padding-right:.625rem;padding-left:.625rem}
+.stoops-table th:first-child,.stoops-table td:first-child{padding-left:0}
+.stoops-table th:last-child,.stoops-table td:last-child{padding-right:0}
+.stoops-table th{white-space:nowrap}
+.stoops-table tbody{vertical-align:top}
+.stoops-table-border-x th,.stoops-table-border-x td{border-top:.0625rem solid rgba(0,0,0,0.25);border-bottom:.0625rem solid rgba(0,0,0,0.25)}
+.stoops-table-border-x tr:first-child th{border-top:0}
+.stoops-table-border-x tbody tr:last-child th,.stoops-table-border-x tr:last-child td{border-bottom:0}
+.stoops-table-border-y th,.stoops-table-border-y td{border-right:.0625rem solid rgba(0,0,0,0.25);border-left:.0625rem solid rgba(0,0,0,0.25)}
+.stoops-table-border-y th:first-child,.stoops-table-border-y td:first-child{border-left:none}
+.stoops-table-border-y th:last-child,.stoops-table-border-y td:last-child{border-right:none}
+.stoops-table-striped tbody tr:nth-of-type(odd){background:rgba(0,0,0,0.05)}
 form{margin:0}
 button{line-height:normal;vertical-align:baseline;cursor:pointer;-webkit-appearance:button}
 button::-moz-focus-inner{border:0;padding:0}
@@ -187,7 +196,7 @@ select[multiple]{height:auto}
 label{margin:0.5em 0 0.2em;font-size:90%}
 
 .marker{font:bold 1.375rem/1.09090909090909 Arial,sans-serif;color:#997d00;text-transform:none;background:rgba(255,209,0,0.9);margin:.625rem 0;padding:.625rem;display:inline-block;*display:inline;*zoom:1;box-shadow:0 0 .3125rem 0 rgba(102,84,0,0.2)}
-.subtle{font:normal 1.188rem/1.26262626262626 Consolas,Menlo,Monaco,"Lucida Console","Liberation Mono","DejaVu Sans Mono","Bitstream Vera Sans Mono","Courier New",monospace,serif;color:#999;margin:.625rem 0}
+.subtle{font:normal 1.188rem/1.26262626262626 monospace,serif;color:#999;margin:.625rem 0}
 .marker code,.subtle code{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;top:0;border:0;padding:0;border-radius:0;box-shadow:none}
 .swatches{margin:.625rem 0;text-align:center}
 .swatches-swatch{font-size:.875rem;line-height:1.28571428571428;padding:.64285714285714rem 0;margin:.3125rem 0;border:.0625rem solid rgba(0,0,0,0.1)}
