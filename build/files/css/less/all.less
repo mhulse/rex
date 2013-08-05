@@ -1472,7 +1472,6 @@ col {}
  */
 
 thead {}
-thead th {}
 
 /**
  * The `<tfoot>` element represents the block of rows that consist of the
@@ -1528,9 +1527,6 @@ td {
 		text-align: left;
 	}
 	.stoops-table thead { vertical-align: bottom; }
-	// @TODO: Make class?
-	/*.stoops-table thead th:empty,
-	.stoops-table thead td:empty { border: 0 !important; }*/
 	.stoops-table tfoot th,
 	.stoops-table tfoot td { color: @gray3; }
 	.stoops-table th,
@@ -1549,6 +1545,12 @@ td {
 .stoops-table-border-x thead th,
 .stoops-table-border-x tbody th,
 .stoops-table-border-x tbody td { border-bottom: .0625rem solid fade(@raven, 25%); }
+/*
+.stoops-table-border-x th:empty,
+.stoops-table-border-x td:empty {
+	border-bottom: 0;
+}
+*/
 .stoops-table-border-x tfoot th,
 .stoops-table-border-x tfoot td { border-top: .0625rem solid fade(@raven, 25%); }
 .stoops-table-border-x tbody tr:last-child th,
@@ -1560,9 +1562,9 @@ td {
 	border-left: .0625rem solid fade(@raven, 25%); // 1px
 }
 	.stoops-table-border-y th:first-child,
-	.stoops-table-border-y td:first-child { border-left: none; }
+	.stoops-table-border-y td:first-child { border-left: 0; }
 	.stoops-table-border-y th:last-child,
-	.stoops-table-border-y td:last-child { border-right: none; }
+	.stoops-table-border-y td:last-child { border-right: 0; }
 
 /*----------------------------------( FORMS )----------------------------------*/
 
@@ -1572,47 +1574,10 @@ td {
  * submitted to a server for processing.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-form-element
- * @see http://purecss.io/forms/
- * @see https://github.com/yui/pure/
- * @see https://github.com/yui/yui3
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
  */
 
 form { margin: 0; }
-
-/**
- * The `<button>` element represents a button. If the element is not
- * disabled, then the user agent should allow the user to activate the
- * button.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-button-element
- */
-
-button {
-	line-height: normal;
-	vertical-align: baseline;
-	cursor: pointer;
-	-webkit-appearance: button;
-}
-button::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-
-/**
- * The `<datalist>` element represents a set of option elements that
- * represent predefined options for other controls. The contents of the
- * element represents fallback content for legacy user agents, intermixed
- * with `<option>` elements that represent the predefined options. In the
- * rendering, the `<datalist>` element represents nothing and it, along
- * with its children, should be hidden.
- *
- * The `<datalist>` element is hooked up to an `<input>` element using the
- * `list` attribute on the `<input>` element.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-datalist-element
- */
-
-datalist {}
 
 /**
  * The `<fieldset>` element is expected to establish a new block
@@ -1627,6 +1592,7 @@ datalist {}
  * * The child is generating a box (e.g. it is not `display: none`).
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-fieldset-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
  */
 
 fieldset {
@@ -1635,38 +1601,14 @@ fieldset {
 }
 
 /**
- * The `<input>` element represents a typed data field, usually with a
- * form control to allow the user to edit the data.
+ * The `<legend>` element represents a caption for the parent `<fieldset>`
+ * element.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-input-element
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-legend-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend
  */
 
-input {
-	line-height: normal;
-	vertical-align: baseline;
-}
-input::-moz-focus-inner {
-	border: 0;
-	padding: 0;
-}
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	cursor: pointer;
-	-webkit-appearance: button;
-}
-input[type="search"] { -webkit-appearance: textfield; }
-input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
-
-/**
- * The `<keygen>` element represents a key pair generator control. When
- * the control's form is submitted, the private key is stored in the local
- * keystore, and the public key is packaged and sent to the server.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-keygen-element
- */
-
-keygen {}
+legend {}
 
 /**
  * The `<label>` element represents a caption in a user interface which
@@ -1675,46 +1617,176 @@ keygen {}
  * putting the form control inside the `<label>` element itself.
  *
  * @see http://dev.w3.org/html5/spec/Overview.html#the-label-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
  */
 
 label {}
 
 /**
- * The `<legend>` element represents a caption for the parent `<fieldset>`
- * element.
+ * The `<input>` element represents a typed data field, usually with a
+ * form control to allow the user to edit the data.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-legend-element
+ * The default type is `text`, if this attribute is not specified.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-input-element
+ * @see http://html5doctor.com/html5-forms-input-types/
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
  */
 
-legend {
-	font-size: 1.125em; /* 18px */
-	line-height: 1; /* (((1.5 / 1.125) = 1.33333333333333) * .75) = 1 */
-	color: #333;
-	border-bottom: 1px solid #999;
+// A push button with no default behavior.
+
+input[type="button"] {}
+
+// A check box. You must use the `value` attribute to define the value
+// submitted by this item. Use the `checked` attribute to indicate whether
+// this item is selected. You can also use the `indeterminate` attribute
+// to indicate that the checkbox is in an "indeterminate" state (on most
+// platforms, this draws a horizontal line across the `checkbox`).
+
+input[type="checkbox"] {}
+
+// A control for specifying a color.
+
+input[type="color"] {}
+
+// A control for entering a date (year, month, and day, with no time).
+
+input[type="date"] {}
+
+// A control for entering a date and time (hour, minute, second, and
+// fraction of a second) based on UTC time zone.
+
+input[type="datetime"] {}
+
+// A control for entering a date and time, with no time zone.
+
+input[type="datetime-local"] {}
+
+// A field for editing an e-mail address. The `:valid` and `:invalid` CSS
+// pseudo-classes are applied as appropriate.
+
+input[type="email"] {}
+input[type="email"]:valid {}
+input[type="email"]:invalid {}
+
+// A control that lets the user select a file. Use the `accept` attribute
+// to define the types of files that the control can select.
+// @see https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications
+
+input[type="file"] {}
+
+// A control that is not displayed, but whose value is submitted to the
+// server.
+
+input[type="hidden"] {}
+
+// A graphical `submit` button. You must use the `src` attribute to define
+// the source of the image and the `alt` attribute to define alternative
+// text. You can use the `height` and `width` attributes to define the
+// size of the image in pixels.
+
+input[type="image"] {}
+
+// A control for entering a month and year, with no time zone.
+
+input[type="month"] {}
+
+// A control for entering a floating point number.
+
+input[type="number"] {}
+
+// A single-line text field whose value is obscured. Use the `maxlength`
+// attribute to specify the maximum length of the value that can be entered.
+
+input[type="password"] {}
+
+// A radio button. You must use the `value` attribute to define the value
+// submitted by this item. Use the `checked` attribute to indicate whether
+// this item is selected by default. Radio buttons that have the same
+// value for the `name` attribute are in the same "radio button group";
+// only one radio button in a group can be selected at one time.
+
+input[type="radio"] {}
+
+// A control for entering a number whose exact value is not important.
+
+input[type="range"] {}
+
+// A button that resets the contents of the form to default values.
+
+input[type="reset"] {}
+
+// A single-line text field for entering search strings; line-breaks are
+// automatically removed from the input value.
+
+input[type="search"] {}
+
+// A button that submits the form.
+
+input[type="submit"] {}
+
+// A control for entering a telephone number; line-breaks are
+// automatically removed from the input value, but no other syntax is
+// enforced. You can use attributes such as `pattern` and `maxlength` to
+// restrict values entered in the control. The `:valid` and `:invalid` CSS
+// pseudo-classes are applied as appropriate.
+
+input[type="tel"] {}
+input[type="tel"]:valid {}
+input[type="tel"]:invalid {}
+
+// A single-line text field; line-breaks are automatically removed from
+// the input value.
+
+input,
+input[type="text"] {}
+
+// A control for entering a time value with no time zone.
+
+input[type="time"] {}
+
+// A field for editing a URL. The user may enter a blank or invalid
+// address. Line-breaks are automatically removed from the input value.
+// You can use attributes such as `pattern` and `maxlength` to restrict
+// values entered in the control. The `:valid` and `:invalid` CSS
+// pseudo-classes are applied as appropriate.
+
+input[type="url"] {}
+input[type="url"]:valid {}
+input[type="url"]:invalid {}
+
+// A control for entering a date consisting of a week-year number and a
+// week number with no time zone.
+
+input[type="week"] {}
+
+/**
+ * The `<textarea>` element represents a multiline plain text edit control
+ * for the element's raw value. The contents of the control represent the
+ * control's default value.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-textarea-element
+ * @see http://davidwalsh.name/textarea-resize
+ * @see http://www.456bereastreet.com/lab/styling-form-controls-revisited/text-input-multiple/
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
+ */
+
+textarea {
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical; /* [ none | horizontal | vertical | both ] */
 	width: 100%;
-	margin-bottom: 1em;
-	padding: .3em 0;
-	display: block;
 }
 
 /**
- * When the meter binding applies to a `<meter>` element, the element is
- * expected to render as an `inline-block` box with a `height` of `1em`
- * and a `width` of `5em`, a `vertical-align` of `-0.2em`, and with its
- * contents depicting a gauge.
+ * The `<select>` element represents a control for selecting amongst a set
+ * of options.
  *
- * When the element is wider than it is tall (or square), the depiction is
- * expected to be of a horizontal gauge, with the minimum value on the
- * right if the `direction` property on this element has a computed value
- * of `rtl`, and on the left otherwise. When the element is taller than it
- * is wide, it is expected to depict a vertical gauge, with the minimum
- * value on the bottom.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-meter-element-0
- * @see http://html5doctor.com/measure-up-with-the-meter-tag/
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-select-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
  */
 
-meter {}
+select {}
 
 /**
  * The `<optgroup>` element represents a group of `<option>` elements with
@@ -1747,6 +1819,63 @@ optgroup {}
 option {}
 
 /**
+ * The `<button>` element represents a button. If the element is not
+ * disabled, then the user agent should allow the user to activate the
+ * button.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-button-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
+ */
+
+button {}
+
+/**
+ * The `<datalist>` element represents a set of option elements that
+ * represent predefined options for other controls. The contents of the
+ * element represents fallback content for legacy user agents, intermixed
+ * with `<option>` elements that represent the predefined options. In the
+ * rendering, the `<datalist>` element represents nothing and it, along
+ * with its children, should be hidden.
+ *
+ * The `<datalist>` element is hooked up to an `<input>` element using the
+ * `list` attribute on the `<input>` element.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-datalist-element
+ * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
+ */
+
+datalist {}
+
+/**
+ * The `<keygen>` element represents a key pair generator control. When
+ * the control's form is submitted, the private key is stored in the local
+ * keystore, and the public key is packaged and sent to the server.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-keygen-element
+ */
+
+keygen {}
+
+/**
+ * When the meter binding applies to a `<meter>` element, the element is
+ * expected to render as an `inline-block` box with a `height` of `1em`
+ * and a `width` of `5em`, a `vertical-align` of `-0.2em`, and with its
+ * contents depicting a gauge.
+ *
+ * When the element is wider than it is tall (or square), the depiction is
+ * expected to be of a horizontal gauge, with the minimum value on the
+ * right if the `direction` property on this element has a computed value
+ * of `rtl`, and on the left otherwise. When the element is taller than it
+ * is wide, it is expected to depict a vertical gauge, with the minimum
+ * value on the bottom.
+ *
+ * @see http://dev.w3.org/html5/spec/Overview.html#the-meter-element-0
+ * @see http://html5doctor.com/measure-up-with-the-meter-tag/
+ */
+
+meter {}
+
+/**
  * The `<output>` element represents the result of a calculation.
  *
  * The optional `for` attribute allows an explicit relationship to be made
@@ -1775,32 +1904,6 @@ output {}
  */
 
 progress {}
-
-/**
- * The `<select>` element represents a control for selecting amongst a set
- * of options.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-select-element
- */
-
-select { vertical-align: baseline; }
-
-/**
- * The `<textarea>` element represents a multiline plain text edit control
- * for the element's raw value. The contents of the control represent the
- * control's default value.
- *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-textarea-element
- * @see http://davidwalsh.name/textarea-resize
- * @see http://www.456bereastreet.com/lab/styling-form-controls-revisited/text-input-multiple/
- */
-
-textarea {
-	overflow: auto;
-	vertical-align: top;
-	resize: vertical; /* [ none | horizontal | vertical | both ] */
-	width: 100%;
-}
 
 /*----------------------------------( INTERACTIVE ELEMENTS )----------------------------------*/
 

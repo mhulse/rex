@@ -150,19 +150,10 @@ th,td{font-size:1rem;line-height:1.125;margin:0;padding:.1875em 0}
 .stoops-table-border-x tfoot th,.stoops-table-border-x tfoot td{border-top:.0625rem solid rgba(0,0,0,0.25)}
 .stoops-table-border-x tbody tr:last-child th,.stoops-table-border-x tbody tr:last-child td{border-bottom:0}
 .stoops-table-border-y th,.stoops-table-border-y td{border-right:.0625rem solid rgba(0,0,0,0.25);border-left:.0625rem solid rgba(0,0,0,0.25)}
-.stoops-table-border-y th:first-child,.stoops-table-border-y td:first-child{border-left:none}
-.stoops-table-border-y th:last-child,.stoops-table-border-y td:last-child{border-right:none}
+.stoops-table-border-y th:first-child,.stoops-table-border-y td:first-child{border-left:0}
+.stoops-table-border-y th:last-child,.stoops-table-border-y td:last-child{border-right:0}
 form{margin:0}
-button{line-height:normal;vertical-align:baseline;cursor:pointer;-webkit-appearance:button}
-button::-moz-focus-inner{border:0;padding:0}
 fieldset{border:0;padding:0}
-input{line-height:normal;vertical-align:baseline}
-input::-moz-focus-inner{border:0;padding:0}
-input[type="button"],input[type="reset"],input[type="submit"]{cursor:pointer;-webkit-appearance:button}
-input[type="search"]{-webkit-appearance:textfield}
-input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
-legend{font-size:1.125em;line-height:1;color:#333;border-bottom:1px solid #999;width:100%;margin-bottom:1em;padding:.3em 0;display:block}
-select{vertical-align:baseline}
 textarea{overflow:auto;vertical-align:top;resize:vertical;width:100%}
 ::-moz-selection{background:rgba(228,59,196,0.75);text-shadow:none}
 ::selection{background:rgba(228,59,196,0.75);text-shadow:none}
@@ -174,25 +165,8 @@ textarea{overflow:auto;vertical-align:top;resize:vertical;width:100%}
 #flag a,#flag a:visited{color:#13aac9}
 #flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{color:#53d4ef;text-decoration:none}
 #flag a:active,#flag a:focus{outline:none}
-@media all and (min-width:45em){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem;}}button,input,select,textarea{font-size:100%;margin:0;vertical-align:baseline;*vertical-align:middle;}
-button,input{line-height:normal}
-button,input[type="button"],input[type="reset"],input[type="submit"]{-webkit-appearance:button;cursor:pointer;*overflow:visible;}
-button[disabled],input[disabled]{cursor:default}
-input[type="checkbox"],input[type="radio"]{box-sizing:border-box;padding:0;*height:13px;*width:13px;}
-input[type="search"]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}
-input[type="search"]::-webkit-search-cancel-button,input[type="search"]::-webkit-search-decoration{-webkit-appearance:none}
-button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
-input[type="text"],input[type="password"],input[type="email"],input[type="url"],input[type="date"],input[type="month"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="week"],input[type="number"],input[type="search"],input[type="tel"],input[type="color"],select,textarea{padding:0.5em 0.6em;display:inline-block;border:1px solid #ccc;font-size:0.8em;box-shadow:inset 0 1px 3px #ddd;border-radius:4px;-webkit-transition:0.3s linear border;-moz-transition:0.3s linear border;-ms-transition:0.3s linear border;-o-transition:0.3s linear border;transition:0.3s linear border;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-font-smoothing:antialiased}
-input[type="text"]:focus,input[type="password"]:focus,input[type="email"]:focus,input[type="url"]:focus,input[type="date"]:focus,input[type="month"]:focus,input[type="time"]:focus,input[type="datetime"]:focus,input[type="datetime-local"]:focus,input[type="week"]:focus,input[type="number"]:focus,input[type="search"]:focus,input[type="tel"]:focus,input[type="color"]:focus,select:focus,textarea:focus{outline:0;outline:thin dotted \9;border-color:#129FEA}
-input[type="file"]:focus,input[type="radio"]:focus,input[type="checkbox"]:focus{outline:thin dotted #333;outline:1px auto #129FEA}
-input[type="text"][disabled],input[type="password"][disabled],input[type="email"][disabled],input[type="url"][disabled],input[type="date"][disabled],input[type="month"][disabled],input[type="time"][disabled],input[type="datetime"][disabled],input[type="datetime-local"][disabled],input[type="week"][disabled],input[type="number"][disabled],input[type="search"][disabled],input[type="tel"][disabled],input[type="color"][disabled],select[disabled],textarea[disabled]{cursor:not-allowed;background-color:#eaeded;color:#cad2d3}
-input[readonly],select[readonly],textarea[readonly],input[readonly]:focus,select[readonly]:focus,textarea[readonly]:focus{background:#eee;color:#777;border-color:#ccc}
-input:focus:invalid,textarea:focus:invalid,select:focus:invalid{color:#b94a48;border:1px solid #ee5f5b}
-input:focus:invalid:focus,textarea:focus:invalid:focus,select:focus:invalid:focus{border-color:#e9322d}
-input[type="file"]:focus:invalid:focus,input[type="radio"]:focus:invalid:focus,input[type="checkbox"]:focus:invalid:focus{outline-color:#e9322d}
-select{border:1px solid #ccc;background-color:white}
-select[multiple]{height:auto}
-label{margin:0.5em 0 0.2em;font-size:90%}
+@media all and (min-width:45em){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem;}}input[type="text"],input[type="password"],input[type="email"],input[type="url"],input[type="date"],input[type="month"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="week"],input[type="search"],input[type="tel"],input[type="color"],textarea{padding:0.5em 0.6em;display:inline-block;border:1px solid #ccc;font-size:0.8em;box-shadow:inset 0 1px 3px #ddd;border-radius:4px;width:100%;display:block}
+fieldset>div{margin:10px 0}
 
 .marker{font:bold 1.375rem/1.09090909090909 Arial,sans-serif;color:#997d00;text-transform:none;background:rgba(255,209,0,0.9);margin:.625rem 0;padding:.625rem;display:inline-block;*display:inline;*zoom:1;box-shadow:0 0 .3125rem 0 rgba(102,84,0,0.2)}
 .subtle{font:normal 1.188rem/1.26262626262626 monospace,serif;color:#999;margin:.625rem 0}
