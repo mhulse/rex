@@ -60,30 +60,28 @@
 
 /*--------------------------------------------------------------------*/
 
-input[type="text"],
-input[type="password"],
-input[type="email"],
-input[type="url"],
-input[type="date"],
-input[type="month"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="week"],
-//input[type="number"],
-input[type="search"],
-input[type="tel"],
-input[type="color"],
-textarea {
-	padding: 0.5em 0.6em;
-	display: inline-block;
-	border: 1px solid #ccc;
-	font-size: 0.8em;
-	box-shadow: inset 0 1px 3px #ddd;
-	border-radius: 4px;
-	width: 100%;
-	display: block;
+.stoops-form fieldset > div {
+	margin: .625rem 0;
 }
-fieldset > div {
-	margin: 10px 0;
+.stoops-form label {
+	font-size: .875rem; // 14px
+	line-height: 1.71428571428571;
+	xfont-weight: bold;
+	color: @gray6;
+	xtext-transform: uppercase;
+	letter-spacing: .05em;
+}
+.stoops-form input[type="text"],
+.stoops-form input[type="tel"] {
+	color: @gray3;
+	line-height: 2.25;
+	letter-spacing: .05em;
+	border: 1px solid fade(@raven, 20%);
+	padding: 0 .75rem;
+	background: fade(@raven, 1%);
+	box-shadow: inset 0 .1em .2em .1em fade(@raven, 10%);
+	width: 50%;
+	height: 2.25rem;
+	border-radius: .1875rem;
+	display: block;
 }

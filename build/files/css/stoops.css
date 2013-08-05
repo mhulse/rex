@@ -165,8 +165,9 @@ textarea{overflow:auto;vertical-align:top;resize:vertical;width:100%}
 #flag a,#flag a:visited{color:#13aac9}
 #flag a:visited:hover,#flag a:focus,#flag a:focus:hover,#flag a:hover,#flag a:active{color:#53d4ef;text-decoration:none}
 #flag a:active,#flag a:focus{outline:none}
-@media all and (min-width:45em){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem;}}input[type="text"],input[type="password"],input[type="email"],input[type="url"],input[type="date"],input[type="month"],input[type="time"],input[type="datetime"],input[type="datetime-local"],input[type="week"],input[type="search"],input[type="tel"],input[type="color"],textarea{padding:0.5em 0.6em;display:inline-block;border:1px solid #ccc;font-size:0.8em;box-shadow:inset 0 1px 3px #ddd;border-radius:4px;width:100%;display:block}
-fieldset>div{margin:10px 0}
+@media all and (min-width:45em){#flag div{left:0} #flag h1{font-size:6.25rem;left:-1.3125rem;}}.stoops-form fieldset>div{margin:.625rem 0}
+.stoops-form label{font-size:.875rem;line-height:1.71428571428571;xfont-weight:bold;color:#666;xtext-transform:uppercase;letter-spacing:.05em}
+.stoops-form input[type="text"],.stoops-form input[type="tel"]{color:#333;line-height:2.25;letter-spacing:.05em;border:1px solid rgba(0,0,0,0.2);padding:0 .75rem;background:rgba(0,0,0,0.01);box-shadow:inset 0 .1em .2em .1em rgba(0,0,0,0.1);width:50%;height:2.25rem;border-radius:.1875rem;display:block}
 
 .marker{font:bold 1.375rem/1.09090909090909 Arial,sans-serif;color:#997d00;text-transform:none;background:rgba(255,209,0,0.9);margin:.625rem 0;padding:.625rem;display:inline-block;*display:inline;*zoom:1;box-shadow:0 0 .3125rem 0 rgba(102,84,0,0.2)}
 .subtle{font:normal 1.188rem/1.26262626262626 monospace,serif;color:#999;margin:.625rem 0}
