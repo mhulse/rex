@@ -107,7 +107,7 @@ dfn[title]{border-bottom:.0625rem dotted;cursor:help}
 em,i{font-style:italic}
 kbd{font-family:monospace,serif;line-height:0;text-shadow:0 .0625rem 0 #fff;color:#333;background:#eee;border:.0625rem solid #ccc;border-radius:.1875rem;margin:0 .125em;padding:.0625em .3125em;position:relative;box-shadow:0 .0625rem 0 rgba(0,0,0,0.2), 0 0 0 .125rem #fff inset}
 kbd kbd,kbd samp{text-shadow:none;line-height:inherit;color:inherit;font-size:1em;background:transparent;margin:0;padding:0;top:0;border:0;border-radius:0;box-shadow:none}
-mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.75);padding:.1875em .25em}
+mark{text-decoration:none;color:#660;background-color:rgba(255,255,0,0.5);padding:.1875em .25em}
 q{quotes:'“' '”' '‘' '’' '“' '”' '‘' '’'}
 q:before{content:'“';content:open-quote}
 q:after{content:'”';content:close-quote}
