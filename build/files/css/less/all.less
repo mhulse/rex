@@ -11,6 +11,7 @@
 /**
  * Apply a natural box layout model to all elements.
  *
+ * https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
  * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * @see http://css-tricks.com/box-sizing/
  */
@@ -19,7 +20,7 @@
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
-}
+	}
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
 
@@ -1597,6 +1598,7 @@ form { margin: 0; }
 
 fieldset {
 	border: 0;
+	margin: .625rem 0;
 	padding: 0;
 }
 
@@ -1608,7 +1610,18 @@ fieldset {
  * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend
  */
 
-legend {}
+legend {
+	font-size: 1.125rem; // 18px
+	line-height: 1.33333333333333; // (1.5 / 1.125) = 1.33333333333333
+	font-weight: bold;
+	letter-spacing: -.01em;
+	border-bottom: .0625rem solid @gray9; // 1px
+	width: 100%;
+	margin: 0;
+	padding: 0 0 .33333333333333em; // (1.33333333333333 * .25) = .33333333333333
+	display: block;
+	white-space: normal; /* Corrects text not wrapping in Firefox 3. */
+}
 
 /**
  * The `<label>` element represents a caption in a user interface which
@@ -1760,6 +1773,35 @@ input[type="url"]:invalid {}
 
 input[type="week"] {}
 
+/**********************************************************************/
+
+input[type="color"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="email"],
+input[type="month"],
+input[type="number"],
+input[type="password"],
+input[type="range"],
+input[type="text"],
+input[type="time"],
+input[type="url"],
+input[type="week"] {
+	height: 1.5rem;
+	padding: 0 .25em;
+	margin: 0;
+	vertical-align: baseline;
+}
+
+.stoops-form input[type="color"] {
+	box-sizing: content-box;
+	padding-top: .1875em;
+	padding-bottom: .1875em;
+}
+
+/**********************************************************************/
+
 /**
  * The `<textarea>` element represents a multiline plain text edit control
  * for the element's raw value. The contents of the control represent the
@@ -1775,7 +1817,13 @@ textarea {
 	overflow: auto;
 	vertical-align: top;
 	resize: vertical; /* [ none | horizontal | vertical | both ] */
+}
+
+.stoops-form textarea {
+	height: 15rem;
+	display: block;
 	width: 100%;
+	padding: .3125rem; // 5px
 }
 
 /**

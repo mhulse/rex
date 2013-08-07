@@ -1695,31 +1695,42 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 			
 			<h1 class="marker"><code>form</code> + children</h1>
 			
-			<form id="fm" class="stoops-form" name="fm" action="" method="post">
+			
+			<form id="fm" name="fm" action="" method="post">
 				
 				<fieldset>
 					
-					<legend><code>&lt;input&gt;</code> types:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy The quick brown fox hxy The quick brown fox hxy The quick brown fox hxy The quick brown fox hxy The quick brown fox hxy The quick brown fox hxy</legend>
 					
-					<div>
+					<p><code>&lt;fieldset&gt;</code> &amp; <code>&lt;legend&gt;</code> elements only &#8593;</p>
+					
+				</fieldset>
+				
+				<fieldset>
+					
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
+					
+					<p><code>&lt;input&gt;</code> element types:</p>
+					
+					<div class="stoops-baseline">
 						<label for="fm_input-button">Button</label>
 						<input type="button" id="fm_input-button" name="input-button" value="button">
 					</div>
 					
-					<div>
-						<label for="fm_input-checkbox-1">Checkbox</label>
+					<div class="stoops-baseline">
 						<input type="checkbox" id="fm_input-checkbox-1" name="input-checkbox[]" value="checkbox">
-						<label for="fm_input-checkbox-2">Checkbox</label>
+						<label for="fm_input-checkbox-1">Checkbox</label>
 						<input type="checkbox" id="fm_input-checkbox-2" name="input-checkbox[]" value="checkbox">
-						<label for="fm_input-checkbox-3">Checkbox</label>
+						<label for="fm_input-checkbox-2">Checkbox</label>
 						<input type="checkbox" id="fm_input-checkbox-3" name="input-checkbox[]" value="checkbox">
-						<label for="fm_input-checkbox-4">Checkbox</label>
+						<label for="fm_input-checkbox-3">Checkbox</label>
 						<input type="checkbox" id="fm_input-checkbox-4" name="input-checkbox[]" value="checkbox">
-						<label for="fm_input-checkbox-5">Checkbox</label>
+						<label for="fm_input-checkbox-4">Checkbox</label>
 						<input type="checkbox" id="fm_input-checkbox-5" name="input-checkbox[]" value="checkbox">
+						<label for="fm_input-checkbox-5">Checkbox</label>
 					</div>
 					
-					<div>
+					<div class="stoops-baseline">
 						<label for="fm_input-color">Color</label>
 						<input type="color" id="fm_input-color" name="input-color">
 					</div>
@@ -1775,16 +1786,16 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 					</div>
 					
 					<div>
-						<label for="fm_input-radio-1">Radio</label>
 						<input type="radio" id="fm_input-radio-1" name="input-radio" value="radio">
-						<label for="fm_input-radio-2">Radio</label>
+						<label for="fm_input-radio-1">Radio</label>
 						<input type="radio" id="fm_input-radio-2" name="input-radio" value="radio">
-						<label for="fm_input-radio-3">Radio</label>
+						<label for="fm_input-radio-2">Radio</label>
 						<input type="radio" id="fm_input-radio-3" name="input-radio" value="radio">
-						<label for="fm_input-radio-4">Radio</label>
+						<label for="fm_input-radio-3">Radio</label>
 						<input type="radio" id="fm_input-radio-4" name="input-radio" value="radio">
-						<label for="fm_input-radio-5">Radio</label>
+						<label for="fm_input-radio-4">Radio</label>
 						<input type="radio" id="fm_input-radio-5" name="input-radio" value="radio">
+						<label for="fm_input-radio-5">Radio</label>
 					</div>
 					
 					<div>
@@ -1846,7 +1857,9 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 				
 				<fieldset>
 					
-					<legend><code>&lt;textarea&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
+					
+					<p><code>&lt;textarea&gt;</code> element:</p>
 					
 					<div>
 						<label for="fm_input-textarea-1">Textarea</label>
@@ -1858,7 +1871,7 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 						<textarea id="fm_input-textarea-2" name="textarea-2" rows="5" cols="20"></textarea>
 					</div>
 					
-					<div>
+					<div class="stoops-baseline">
 						<label for="fm_input-textarea-3">Textarea</label>
 						<textarea id="fm_input-textarea-3" name="textarea-3" rows="10" cols="50">Write something here</textarea>
 					</div>
@@ -1867,7 +1880,9 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 				
 				<fieldset>
 					
-					<legend><code>&lt;select&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
+					
+					<p><code>&lt;select&gt;</code></p>
 					
 					<div>
 						<label for="fm_select-1">Select</label>
@@ -1896,7 +1911,7 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 						</select>
 					</div>
 					
-					<div>
+					<div class="stoops-baseline">
 						<label for="fm_select-3">Select</label>
 						<select id="fm_select-3" name="select-3">
 							<optgroup label="Cats">
@@ -1945,13 +1960,15 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 				
 				<fieldset>
 					
-					<legend><code>&lt;button&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
+					
+					<p><code>&lt;button&gt;</code> element:</p>
 					
 					<div>
 						<button type="button" name="button-button">Button</button>
 					</div>
 					
-					<div>
+					<div class="stoops-baseline">
 						<button type="reset" name="button-reset">Reset</button>
 					</div>
 					
@@ -1963,9 +1980,11 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 				
 				<fieldset>
 					
-					<legend><code>&lt;datalist&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
 					
-					<div>
+					<p><code>&lt;datalist&gt;</code> element:</p>
+					
+					<div class="stoops-baseline">
 						<label for="fm_datalist-1">Select your preferred code editor</label>
 						<input type="text" id="fm_datalist-1" name="datalist-1" list="fm_ide" placeholder="Type editor name &hellip;">
 						<datalist id="fm_ide">
@@ -2003,9 +2022,11 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 				
 				<fieldset>
 					
-					<legend><code>&lt;keygen&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
 					
-					<div>
+					<p><code>&lt;keygen&gt;</code> element:</p>
+					
+					<div class="stoops-baseline">
 						<label for="fm_keygen">Keygen</label>
 						<keygen id="fm_keygen" name="keygen" challenge="challenge string" keytype="type" keyparams="pqg-params">
 					</div>
@@ -2014,19 +2035,28 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 				
 				<fieldset>
 					
-					<legend><code>&lt;meter&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
 					
+					<p><code>&lt;meter&gt;</code> element:</p>
+					
+					<div class="stoops-baseline">
 					<p><meter value="0.5">Moderate activity,</meter> Usenet, 618 subscribers</p>
 					<p><meter value="0.25">Low activity,</meter> Usenet, 22 subscribers</p>
+					</div>
+					
 					<p><meter value="0.25">Low activity,</meter> Usenet, 66 subscribers</p>
 					
 				</fieldset>
 				
 				<fieldset>
 					
-					<legend><code>&lt;meter&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
 					
-					<h2 class="subtle"><code>&lt;progress&gt;</code>:</h2>
+					<p><code>&lt;progress&gt;</code> element:</p>
+					
+					<div class="stoops-baseline">
+					<progress></progress>
+					</div>
 					
 					<progress></progress>
 					
@@ -2038,9 +2068,11 @@ Linux demo 2.6.10-grsec+gg3+e+fhs6b+nfs+gr0501+++p3+c4a+gr2b-reslog-v6.189 #1 SM
 				
 				<fieldset>
 					
-					<legend><code>&lt;output&gt;</code>:</legend>
+					<legend>The quick brown fox hxy The quick brown fox hxy</legend>
 					
-					<div>
+					<p><code>&lt;output&gt;</code> element:</p>
+					
+					<div class="stoops-baseline">
 						<input type="number" id="a" name="a" step="any"> + <input type="number" id="b" name="b" step="any"> = <output for="a b" name="o"></output>
 					</div>
 					
