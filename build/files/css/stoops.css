@@ -156,6 +156,7 @@ form{margin:0}
 fieldset{border:0;margin:.625rem 0;padding:0}
 legend{font-size:1.125rem;line-height:1.33333333333333;font-weight:bold;letter-spacing:-0.01em;border-bottom:.0625rem solid #999;width:100%;margin:0;padding:0 0 .33333333333333em;display:block;white-space:normal;}
 input[type="color"],input[type="date"],input[type="datetime"],input[type="datetime-local"],input[type="email"],input[type="month"],input[type="number"],input[type="password"],input[type="range"],input[type="text"],input[type="time"],input[type="url"],input[type="week"]{height:1.5rem;padding:0 .25em;margin:0;vertical-align:baseline}
+input[type=checkbox],input[type=radio]{vertical-align:middle;position:relative;bottom:.125em}
 .stoops-form input[type="color"]{box-sizing:content-box;padding-top:.1875em;padding-bottom:.1875em}
 textarea{overflow:auto;vertical-align:top;resize:vertical;}
 .stoops-form textarea{height:15rem;display:block;width:100%;padding:.3125rem}
