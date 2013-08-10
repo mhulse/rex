@@ -62,7 +62,7 @@ blockquote:before,blockquote:after{content:'';content:none}
 .stoops-blockquote footer{font-size:.875rem;color:#4b7181;line-height:1.71428571428571}
 @media all and (min-width:45em){.stoops-blockquote:before{font:6.25rem/1 Arial,sans-serif;color:rgba(75,113,129,0.4);display:block;content:"\201C";position:absolute;left:-0.4375em;top:-0.125em}}
 dl{font-size:1rem;line-height:1.125;margin:.625rem 0;padding:0}
-dl dd,dl dt{margin:0 0 .375rem;padding:0}
+dl dt,dl dd{margin:0 0 .375rem;padding:0}
 dl dt{font-weight:bold}
 dl dd{margin-left:.5rem}
 figure{font-family:Arial,sans-serif;margin:.625rem 0}

@@ -11,9 +11,11 @@
 /**
  * Apply a natural box layout model to all elements.
  *
- * https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing
  * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
  * @see http://css-tricks.com/box-sizing/
+ *
+ * @see https://developer.mozilla.org/docs/web/css/universal_selectors
+ * @see https://developer.mozilla.org/docs/web/css/box-sizing
  */
 
 * {
@@ -50,6 +52,8 @@
  * Example: .75em * 100 = 75%
  *
  * @see http://pxtoem.com/
+ *
+ * @see https://developer.mozilla.org/docs/web/html/element/html
  *
  * @see http://dev.w3.org/html5/spec#the-html-element
  * @see http://ç.whatwg.org#the-html-element
@@ -104,8 +108,8 @@ html {
  * @see http://stackoverflow.com/questions/2703056/body-font-size-100-01-vs-body-font-size-100
  * @see http://www.sitepoint.com/typography-baseline-rhythm-deciphered/
  * @see http://modularscale.com/scale/?px1=16&px2=40&ra1=1.618&ra2=0
- * @see https://developer.mozilla.org/en-US/docs/Web/CSS/font-smooth
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/body
+ * @see https://developer.mozilla.org/docs/web/css/font-smooth
  * @see http://dev.w3.org/html5/spec#the-body-element
  * @see http://ç.whatwg.org#the-body-element
  */
@@ -130,6 +134,7 @@ body {
  * Represents the contact information for its enclosing section. If it is
  * a child of the body element, then it applies to the document as a whole.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/address
  * @see http://dev.w3.org/html5/spec#the-address-element
  * @see http://ç.whatwg.org#the-address-element
  */
@@ -148,6 +153,7 @@ address {
  * Web log entry, a user-submitted comment, or any other independent item
  * of content.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/article
  * @see http://dev.w3.org/html5/spec#the-article-element
  * @see http://ç.whatwg.org#the-article-element
  */
@@ -161,6 +167,7 @@ article {}
  * content. Such sections are often represented as sidebars in printed
  * typography.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/aside
  * @see http://dev.w3.org/html5/spec#the-aside-element
  * @see http://ç.whatwg.org#the-aside-element
  */
@@ -174,6 +181,7 @@ aside {}
  * data, etc. Contact information for the section given in a footer should
  * be marked up using the address element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/footer
  * @see http://dev.w3.org/html5/spec#the-footer-element
  * @see http://ç.whatwg.org#the-footer-element
  */
@@ -195,7 +203,7 @@ footer {}
  * @see http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/
  * @see https://github.com/stubbornella/oocss/blob/master/core/heading/heading.css
  * @see http://csswizardry.com/2012/02/pragmatic-practical-font-sizing-in-css/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/heading_elements
  * @see http://dev.w3.org/html5/spec#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
  * @see http://ç.whatwg.org#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
  */
@@ -256,6 +264,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
  * elements may, however, contain more than just the section's headings
  * and subheadings — e.g., version history information or publication date.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/header
  * @see http://dev.w3.org/html5/spec#the-header-element
  * @see http://ç.whatwg.org#the-header-element
  */
@@ -272,6 +281,7 @@ header {}
  * something like `<div id="main">` (or similar, such as `<div
  * id="content">`), simply replace that with `<main role="main">`.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/main
  * @see http://dev.w3.org/html5/spec#the-main-element
  * @see http://ç.whatwg.org#the-main-element
  */
@@ -288,6 +298,7 @@ main {}
  * footers to have a list of links to various key parts of a site, but the
  * `<footer>` element is more appropriate in such cases.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/nav
  * @see http://dev.w3.org/html5/spec#the-nav-element
  * @see http://ç.whatwg.org#the-nav-element
  */
@@ -302,6 +313,7 @@ nav {}
  * the numbered sections of a thesis. A web site's home page could be
  * split into sections for an introduction, news items, contact information.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/section
  * @see http://dev.w3.org/html5/spec#the-section-element
  * @see http://ç.whatwg.org#the-section-element
  */
@@ -319,7 +331,7 @@ section {}
  *
  * @see http://html5doctor.com/blockquote-q-cite/
  * @see http://www.markinns.com/articles/full/hanging_quotation_marks
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/blockquote
  * @see http://dev.w3.org/html5/spec#the-blockquote-element
  * @see http://ç.whatwg.org#the-blockquote-element
  */
@@ -381,6 +393,7 @@ blockquote:after {
  * attributes to mark up semantics common to a group of consecutive
  * elements.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/div
  * @see http://dev.w3.org/html5/spec#the-div-element
  * @see http://ç.whatwg.org#the-div-element
  */
@@ -406,7 +419,9 @@ div {}
  * list (`<dl>` element).
  *
  * @see http://www.maxdesign.com.au/articles/definition/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/dl
+ * @see https://developer.mozilla.org/docs/web/html/element/dt
+ * @see https://developer.mozilla.org/docs/web/html/element/dd
  * @see http://dev.w3.org/html5/spec#the-dl-element
  * @see http://ç.whatwg.org#the-dl-element
  * @see http://dev.w3.org/html5/spec#the-dt-element
@@ -421,8 +436,8 @@ dl {
 	margin: .625rem 0; // 10px 0
 	padding: 0;
 }
-	dl dd,
-	dl dt {
+	dl dt,
+	dl dd {
 		margin: 0 0 .375rem; // 0 0 6px
 		padding: 0;
 	}
@@ -444,6 +459,8 @@ dl {
  * of the contents of the `<figcaption>` element's parent figure element,
  * if any.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/figure
+ * @see https://developer.mozilla.org/docs/web/html/element/figcaption
  * @see http://dev.w3.org/html5/spec#the-figure-element
  * @see http://ç.whatwg.org#the-figure-element
  * @see http://dev.w3.org/html5/spec#the-figcaption-element
@@ -484,7 +501,7 @@ figure {
  * @see https://github.com/h5bp/html5-boilerplate/blob/b378ce239dfb017e32fbeacc5ab0346258b089e2/css/main.css#L42-L53
  * @see https://github.com/twitter/bootstrap/blob/070c125ceceb2a164773f51226950350445160ee/docs/assets/css/bootstrap.css#L876-L881
  * @see http://www.maxdesign.com.au/articles/hr/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/hr
  * @see http://dev.w3.org/html5/spec#the-hr-element
  * @see http://ç.whatwg.org#the-hr-element
  */
@@ -525,6 +542,7 @@ hr, .hr, .hr1, .hr2, .hr3, .hr4, .hr5, .hr6 {
 /**
  * The `<p>` element represents a paragraph.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/p
  * @see http://dev.w3.org/html5/spec#the-p-element
  * @see http://ç.whatwg.org#the-p-element
  */
@@ -583,7 +601,7 @@ p {
  * @see https://raw.github.com/twitter/bootstrap/master/docs/assets/css/bootstrap.css
  * @see http://perishablepress.com/wrapping-content/
  * @see http://perishablepress.com/perfect-pre-tags/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/pre
  * @see http://dev.w3.org/html5/spec#the-pre-element
  * @see http://ç.whatwg.org#the-pre-element
  */
@@ -666,6 +684,9 @@ pre {
  * list item has no defined list-related relationship to any other `<li>`
  * element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/ol
+ * @see https://developer.mozilla.org/docs/web/html/element/ul
+ * @see https://developer.mozilla.org/docs/web/html/element/li
  * @see http://dev.w3.org/html5/spec#the-ol-element
  * @see http://ç.whatwg.org#the-ol-element
  * @see http://dev.w3.org/html5/spec#the-ul-element
@@ -703,6 +724,7 @@ ul { margin-left: 1.5rem; } // 24px
  * The `target`, `rel`, `media`, `hreflang` and `type` attributes must be
  * omitted if the `href` attribute is not present.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/a
  * @see http://dev.w3.org/html5/spec#the-a-element
  * @see http://ç.whatwg.org#the-a-element
  */
@@ -730,6 +752,7 @@ a {
  * @see http://www.maxdesign.com.au/articles/abbreviations/
  * @see http://html5doctor.com/the-abbr-element/
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/abbr
  * @see http://dev.w3.org/html5/spec#the-abbr-element
  * @see http://ç.whatwg.org#the-abbr-element
  */
@@ -746,6 +769,7 @@ abbr[title] {
  *
  * @see http://stackoverflow.com/a/8546564/922323
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/bdi
  * @see http://dev.w3.org/html5/spec#the-rp-element
  * @see http://ç.whatwg.org#the-rp-element
  */
@@ -760,6 +784,7 @@ bdi {
  * control for its children. It allows authors to override the Unicode
  * bidirectional algorithm by explicitly specifying a direction override.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/bdo
  * @see http://dev.w3.org/html5/spec#the-bdo-element
  * @see http://ç.whatwg.org#the-bdo-element
  */
@@ -772,6 +797,7 @@ bdo {}
  * poems or addresses. `<br>` elements must not be used for separating
  * thematic groups in a paragraph.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/br
  * @see http://dev.w3.org/html5/spec#the-br-element
  * @see http://ç.whatwg.org#the-br-element
  */
@@ -795,7 +821,7 @@ br {}
  * `<span>` element can be used.)
  *
  * @see http://html5doctor.com/blockquote-q-cite/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/cite
  * @see http://dev.w3.org/html5/spec#the-cite-element
  * @see http://ç.whatwg.org#the-cite-element
  */
@@ -810,7 +836,7 @@ cite { font-style: italic; }
  * @todo I'd like to have an code:after pseudo element to show line wrap.
  *
  * @see http://perishablepress.com/wrapping-content/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/code
  * @see http://dev.w3.org/html5/spec#the-code-element
  * @see http://ç.whatwg.org#the-code-element
  */
@@ -842,7 +868,7 @@ code {
  * be use on Web sites.
  *
  * @see http://www.quackit.com/html_5/tags/html_data_tag.cfm
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/data
  * @see http://dev.w3.org/html5/spec#the-data-element
  * @see http://ç.whatwg.org#the-data-element
  */
@@ -856,7 +882,7 @@ data {}
  * the term given by the `<dfn>` element.
  *
  * @see http://camendesign.com/code/abbr_redux
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/dfn
  * @see http://dev.w3.org/html5/spec#the-dfn-element
  * @see http://ç.whatwg.org#the-dfn-element
  */
@@ -888,6 +914,8 @@ dfn[title] {
  * importance, `<cite>` for titles in a citation or bibliography, `<dfn>`
  * for defining a word, and `<var>` for mathematical variables.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/em
+ * @see https://developer.mozilla.org/docs/web/html/element/i
  * @see http://dev.w3.org/html5/spec#the-em-element
  * @see http://ç.whatwg.org#the-em-element
  * @see http://dev.w3.org/html5/spec#the-i-element
@@ -914,7 +942,7 @@ i { font-style: italic; }
  * @see http://meta.superuser.com/questions/4788/css-for-the-new-kbd-style
  * @see https://github.global.ssl.fastly.net/assets/github-5fd4717c630cd3f2772cb325130d5a24a09fdea0.css
  * @see https://cdn.sstatic.net/superusermeta/all.css
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/kbd
  * @see http://dev.w3.org/html5/spec#the-kbd-element
  * @see http://ç.whatwg.org#the-kbd-element
  */
@@ -959,7 +987,7 @@ kbd {
  * recently come under additional scrutiny).
  *
  * @see http://html5doctor.com/draw-attention-with-mark/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/mark
  * @see http://dev.w3.org/html5/spec#the-mark-element
  * @see http://ç.whatwg.org#the-mark-element
  */
@@ -977,8 +1005,8 @@ mark {
  *
  * @see http://html5doctor.com/blockquote-q-cite/
  * @see http://alistapart.com/article/qtag
- * http://www.html-5.com/tags/q-tag/index.html
- *
+ * @see http://www.html-5.com/tags/q-tag/index.html
+ * @see https://developer.mozilla.org/docs/web/html/element/q
  * @see http://dev.w3.org/html5/spec#the-q-element
  * @see http://ç.whatwg.org#the-q-element
  */
@@ -1020,7 +1048,9 @@ q:after {
  * `<rp>` via `display: none`.
  *
  * @see http://html5doctor.com/ruby-rt-rp-element/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/ruby
+ * @see https://developer.mozilla.org/docs/web/html/element/rt
+ * @see https://developer.mozilla.org/docs/web/html/element/rp
  * @see http://dev.w3.org/html5/spec#the-ruby-element
  * @see http://ç.whatwg.org#the-ruby-element
  * @see http://dev.w3.org/html5/spec#the-rt-element
@@ -1040,9 +1070,9 @@ ruby {}
  * The `<s>` element represents contents that are no longer accurate or no
  * longer relevant.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/CSS/text-decoration-color
  * @see http://stackoverflow.com/a/10876429/922323
- *
+ * @see https://developer.mozilla.org/docs/web/css/text-decoration-color
+ * @see https://developer.mozilla.org/docs/web/html/element/s
  * @see http://dev.w3.org/html5/spec#the-s-element
  * @see http://ç.whatwg.org#the-s-element
  */
@@ -1058,6 +1088,7 @@ s {
  * The `<samp>` element represents (sample) output from a program or
  * computing system.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/samp
  * @see http://dev.w3.org/html5/spec#the-samp-element
  * @see http://ç.whatwg.org#the-samp-element
  */
@@ -1083,6 +1114,7 @@ samp {
  * be used for extended spans of text such as multiple paragraphs, lists,
  * or sections of text. It is only intended for short runs of text.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/small
  * @see http://dev.w3.org/html5/spec#the-small-element
  * @see http://ç.whatwg.org#the-small-element
  */
@@ -1101,6 +1133,7 @@ small,
  * useful when used together with the global attributes, e.g. `class`,
  * `lang`, or `dir`. It represents its children.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/span
  * @see http://dev.w3.org/html5/spec#the-span-element
  * @see http://ç.whatwg.org#the-span-element
  */
@@ -1143,6 +1176,8 @@ span {}
  * importance should be denoted with the `<strong>` element, and text
  * marked or highlighted should use the `<mark>` element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/strong
+ * @see https://developer.mozilla.org/docs/web/html/element/b
  * @see http://dev.w3.org/html5/spec#the-strong-element
  * @see http://ç.whatwg.org#the-strong-element
  * @see http://dev.w3.org/html5/spec#the-b-element
@@ -1160,7 +1195,8 @@ b { font-weight: bold; }
  * represents a subscript.
  *
  * @see https://gist.github.com/unruthless/413930
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/sub
+ * @see https://developer.mozilla.org/docs/web/html/element/sup
  * @see http://dev.w3.org/html5/spec#the-sub-and-sup-elements
  * @see http://ç.whatwg.org#the-sub-and-sup-elements
  */
@@ -1183,7 +1219,7 @@ sup { top: -.5em; }
  *
  * @see http://html5doctor.com/the-time-element/
  * @see http://www.webmonkey.com/2012/02/the-html5-time-element-is-back-and-better-than-ever/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/time
  * @see http://dev.w3.org/html5/spec#the-time-element
  * @see http://ç.whatwg.org#the-time-element
  */
@@ -1199,7 +1235,7 @@ time {}
  * order is non-western.
  *
  * @see http://html5doctor.com/u-element/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/u
  * @see http://dev.w3.org/html5/spec#the-u-element
  * @see http://ç.whatwg.org#the-u-element
  */
@@ -1211,6 +1247,7 @@ u { text-decoration: underline; }
  * variable in a mathematical expression or programming context, or it
  * could just be a term used as a placeholder in prose.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/var
  * @see http://dev.w3.org/html5/spec#the-var-element
  * @see http://ç.whatwg.org#the-var-element
  */
@@ -1225,7 +1262,7 @@ var { font-style: italic; }
  * @see http://www.quirksmode.org/oddsandends/wbr.html
  * @see http://gojomo.blogspot.com/2005/03/cross-browser-invisible-word-break-in.html
  * @see http://www.html-5.com/tags/wbr-tag/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/wbr
  * @see http://dev.w3.org/html5/spec#the-wbr-element
  * @see http://ç.whatwg.org#the-wbr-element
  */
@@ -1243,6 +1280,8 @@ wbr:after { content: "\00200B"; }
  * The `<ins>` element represents an addition to the document. The `<ins>`
  * elements should not cross implied paragraph boundaries.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/del
+ * @see https://developer.mozilla.org/docs/web/html/element/ins
  * @see http://dev.w3.org/html5/spec#the-del-element
  * @see http://ç.whatwg.org#the-del-element
  * @see http://dev.w3.org/html5/spec#the-ins-element
@@ -1277,6 +1316,7 @@ ins {
  * represented by the element cannot be selected, and the `alt` attribute
  * must be omitted.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/area
  * @see http://dev.w3.org/html5/spec#the-area-element
  * @see http://ç.whatwg.org#the-area-element
  */
@@ -1292,7 +1332,7 @@ area {}
  * how to access the audio content.
  *
  * @see http://html5doctor.com/native-audio-in-the-browser/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/audio
  * @see http://dev.w3.org/html5/spec#the-audio-element
  * @see http://ç.whatwg.org#the-audio-element
  */
@@ -1316,6 +1356,7 @@ audio {}
  * or purpose as the bitmap canvas. This content should be nested within
  * the `<canvas>` element as a fallback.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/canvas
  * @see http://dev.w3.org/html5/spec#the-canvas-element
  * @see http://ç.whatwg.org#the-canvas-element
  */
@@ -1336,6 +1377,7 @@ canvas {}
  * the explicit `Content-Type` metadata of the resource given by the `src`
  * attribute.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/embed
  * @see http://dev.w3.org/html5/spec#the-embed-element
  * @see http://ç.whatwg.org#the-embed-element
  */
@@ -1355,6 +1397,7 @@ embed {}
  * * The root element, in the form of an html element.
  * * Any number of comments and space characters.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/iframe
  * @see http://dev.w3.org/html5/spec#the-iframe-element
  * @see http://ç.whatwg.org#the-iframe-element
  */
@@ -1375,6 +1418,7 @@ iframe {}
  * they rarely convey meaning and rarely add anything useful to the
  * document.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/img
  * @see http://dev.w3.org/html5/spec#the-img-element
  * @see http://ç.whatwg.org#the-img-element
  */
@@ -1393,6 +1437,7 @@ img {
  * The `<map>` element, in conjunction with any area element descendants,
  * defines an image map. The element represents its children.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/map
  * @see http://dev.w3.org/html5/spec#the-map-element
  * @see http://ç.whatwg.org#the-map-element
  */
@@ -1405,6 +1450,7 @@ map {}
  * nest a second `<math>` element in another, but you can have an
  * arbitrary number of other child elements in it.
  *
+ * @see https://developer.mozilla.org/docs/web/mathml/element/math
  * @see http://dev.w3.org/html5/spec#mathml
  * @see http://ç.whatwg.org#mathml
  */
@@ -1417,6 +1463,7 @@ math {}
  * image, as a nested browsing context, or as an external resource to be
  * processed by a plugin.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/object
  * @see http://dev.w3.org/html5/spec#the-object-element
  * @see http://ç.whatwg.org#the-object-element
  */
@@ -1427,6 +1474,7 @@ object {}
  * The `<param>` element defines parameters for plugins invoked by
  * `<object>` elements. It does not represent anything on its own.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/param
  * @see http://dev.w3.org/html5/spec#the-param-element
  * @see http://ç.whatwg.org#the-param-element
  */
@@ -1440,6 +1488,7 @@ param {}
  * The value must be a valid non-empty URL potentially surrounded by
  * spaces. This attribute must be present.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/source
  * @see http://dev.w3.org/html5/spec#the-source-element
  * @see http://ç.whatwg.org#the-source-element
  */
@@ -1451,6 +1500,7 @@ source {}
  * inside the current document (which can be an HTML document). This
  * standalone fragment has its own viewport and coordinate system.
  *
+ * @see https://developer.mozilla.org/docs/web/svg/element/svg
  * @see http://dev.w3.org/html5/spec#svg
  * @see http://ç.whatwg.org#svg
  */
@@ -1462,6 +1512,7 @@ svg {}
  * text tracks for media elements. It does not represent anything on its
  * own.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/track
  * @see http://dev.w3.org/html5/spec#the-track-element
  * @see http://ç.whatwg.org#the-track-element
  */
@@ -1476,6 +1527,7 @@ track {}
  * force older browsers to use a legacy video plugin or to inform the user
  * of how to access the video content.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/video
  * @see http://dev.w3.org/html5/spec#video
  * @see http://ç.whatwg.org#video
  */
@@ -1518,9 +1570,8 @@ video {}
  *     * either zero or more `<tbody>` elements,
  *     * or one or more `<tr>` elements
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/table
  * @see http://www.vanseodesign.com/web-design/baseline-grid-non-textual/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/table
  * @see http://dev.w3.org/html5/spec#the-table-element
  * @see http://ç.whatwg.org#the-table-element
  */
@@ -1538,6 +1589,7 @@ table {
  * other than the `<figcaption>`, the `<caption>` element should be
  * omitted in favor of the `<figcaption>`.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/caption
  * @see http://dev.w3.org/html5/spec#the-caption-element
  * @see http://ç.whatwg.org#the-caption-element
  */
@@ -1556,6 +1608,7 @@ caption {
  * element may have a `span` content attribute specified, whose value must
  * be a valid non-negative integer greater than zero.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/colgroup
  * @see http://dev.w3.org/html5/spec#the-colgroup-element
  * @see http://ç.whatwg.org#the-colgroup-element
  */
@@ -1566,8 +1619,7 @@ colgroup {}
  * The `<col>` element represents one or more columns in the column group
  * represented by a `<table>` element's `<colgroup>`.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/col
  * @see http://dev.w3.org/html5/spec#the-col-element
  * @see http://ç.whatwg.org#the-col-element
  */
@@ -1578,6 +1630,7 @@ col {}
  * The `<thead>` element represents the block of rows that consist of the
  * column labels (headers) for the parent `<table>` element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/thead
  * @see http://dev.w3.org/html5/spec#the-thead-element
  * @see http://ç.whatwg.org#the-thead-element
  */
@@ -1588,6 +1641,7 @@ thead {}
  * The `<tfoot>` element represents the block of rows that consist of the
  * column summaries (footers) for the parent `<table>` element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/tfoot
  * @see http://dev.w3.org/html5/spec#the-tfoot-element
  * @see http://ç.whatwg.org#the-tfoot-element
  */
@@ -1598,6 +1652,7 @@ tfoot {}
  * The `<tbody>` element represents a block of rows that consist of a body
  * of data for the parent `<table>` element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/tbody
  * @see http://dev.w3.org/html5/spec#the-tbody-element
  * @see http://ç.whatwg.org#the-tbody-element
  */
@@ -1607,6 +1662,7 @@ tbody {}
 /**
  * The `<tr>` element represents a row of cells in a `<table>` element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/tr
  * @see http://dev.w3.org/html5/spec#the-tr-element
  * @see http://ç.whatwg.org#the-tr-element
  */
@@ -1618,6 +1674,8 @@ tr {}
  *
  * The `<td>` element represents a data cell in a `<table>` element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/th
+ * @see https://developer.mozilla.org/docs/web/html/element/td
  * @see http://dev.w3.org/html5/spec#the-th-element
  * @see http://ç.whatwg.org#the-th-element
  * @see http://dev.w3.org/html5/spec#the-td-element
@@ -1689,8 +1747,7 @@ td {
  * elements, some of which can represent editable values that can be
  * submitted to a server for processing.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/form
  * @see http://dev.w3.org/html5/spec#the-form-element
  * @see http://ç.whatwg.org#the-form-element
  */
@@ -1709,8 +1766,7 @@ form { margin: 0; }
  * * The child is not out-of-flow (e.g. not absolutely positioned or floated).
  * * The child is generating a box (e.g. it is not `display: none`).
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/fieldset
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/fieldset
  * @see http://dev.w3.org/html5/spec#the-fieldset-element
  * @see http://ç.whatwg.org#the-fieldset-element
  */
@@ -1725,8 +1781,7 @@ fieldset {
  * The `<legend>` element represents a caption for the parent `<fieldset>`
  * element.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/legend
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/legend
  * @see http://dev.w3.org/html5/spec#the-legend-element
  * @see http://ç.whatwg.org#the-legend-element
  */
@@ -1750,8 +1805,7 @@ legend {
  * element's labeled control, either using the `for` attribute, or by
  * putting the form control inside the `<label>` element itself.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/label
  * @see http://dev.w3.org/html5/spec#the-label-element
  * @see http://ç.whatwg.org#the-label-element
  */
@@ -1764,9 +1818,10 @@ label {}
  *
  * The default type is `text`, if this attribute is not specified.
  *
- * @see http://dev.w3.org/html5/spec/Overview.html#the-input-element
  * @see http://html5doctor.com/html5-forms-input-types/
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input
+ * @see https://developer.mozilla.org/docs/web/html/element/input
+ * @see http://dev.w3.org/html5/spec#the-input-element
+ * @see http://ç.whatwg.org#the-input-element
  */
 
 /**
@@ -1795,7 +1850,6 @@ input[type="checkbox"] {}
  * A control for specifying a color.
  *
  * @see http://caniuse.com/input-color
- *
  * @see http://dev.w3.org/html5/spec#color-state-(type=color)
  * @see http://ç.whatwg.org#color-state-(type=color)
  */
@@ -1806,7 +1860,6 @@ input[type="color"] {}
  * A control for entering a date (year, month, and day, with no time).
  *
  * @see http://caniuse.com/input-datetime
- *
  * @see http://dev.w3.org/html5/spec#date-state-(type=date)
  * @see http://ç.whatwg.org#date-state-(type=date)
  */
@@ -1818,7 +1871,6 @@ input[type="date"] {}
  * fraction of a second) based on UTC time zone.
  *
  * @see http://caniuse.com/input-datetime
- *
  * @see http://dev.w3.org/html5/spec#date-and-time-state-(type=datetime)
  * @see http://ç.whatwg.org#date-and-time-state-(type=datetime)
  */
@@ -1829,7 +1881,6 @@ input[type="datetime"] {}
  * A control for entering a date and time, with no time zone.
  *
  * @see http://caniuse.com/input-datetime
- *
  * @see http://dev.w3.org/html5/spec#local-date-and-time-state-(type=datetime-local)
  * @see http://ç.whatwg.org#local-date-and-time-state-(type=datetime-local)
  */
@@ -1852,8 +1903,7 @@ input[type="email"]:invalid {}
  * A control that lets the user select a file. Use the `accept` attribute
  * to define the types of files that the control can select.
  *
- * @see https://developer.mozilla.org/en-US/docs/Using_files_from_web_applications
- *
+ * @see https://developer.mozilla.org/docs/using_files_from_web_applications
  * @see http://dev.w3.org/html5/spec#file-upload-state-(type=file)
  * @see http://ç.whatwg.org#file-upload-state-(type=file)
  */
@@ -1895,7 +1945,6 @@ input[type="month"] {}
  * A control for entering a floating point number.
  *
  * @see http://caniuse.com/input-number
- *
  * @see http://dev.w3.org/html5/spec#number-state-(type=number)
  * @see http://ç.whatwg.org#number-state-(type=number)
  */
@@ -1929,7 +1978,6 @@ input[type="radio"] {}
  * A control for entering a number whose exact value is not important.
  *
  * @see http://caniuse.com/input-range
- *
  * @see http://dev.w3.org/html5/spec#range-state-(type=range)
  * @see http://ç.whatwg.org#range-state-(type=range)
  */
@@ -2067,8 +2115,7 @@ input[type="radio"] {
  *
  * @see http://davidwalsh.name/textarea-resize
  * @see http://www.456bereastreet.com/lab/styling-form-controls-revisited/text-input-multiple/
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/textarea
  * @see http://dev.w3.org/html5/spec#the-textarea-element
  * @see http://ç.whatwg.org#the-textarea-element
  */
@@ -2090,8 +2137,7 @@ textarea {
  * The `<select>` element represents a control for selecting amongst a set
  * of options.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/select
  * @see http://dev.w3.org/html5/spec#the-select-element
  * @see http://ç.whatwg.org#the-select-element
  */
@@ -2108,7 +2154,7 @@ select {}
  * each other and separate from other `<option>` elements.
  *
  * @see http://www.htmldog.com/reference/htmltags/optgroup/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/optgroup
  * @see http://dev.w3.org/html5/spec#the-optgroup-element
  * @see http://ç.whatwg.org#the-optgroup-element
  */
@@ -2125,6 +2171,7 @@ optgroup {}
  * an actual option, but instead represents a label for the `<select>`
  * control.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/option
  * @see http://dev.w3.org/html5/spec#the-option-element
  * @see http://ç.whatwg.org#the-option-element
  */
@@ -2136,8 +2183,7 @@ option {}
  * disabled, then the user agent should allow the user to activate the
  * button.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/button
  * @see http://dev.w3.org/html5/spec#the-button-element
  * @see http://ç.whatwg.org#the-button-element
  */
@@ -2155,8 +2201,7 @@ button {}
  * The `<datalist>` element is hooked up to an `<input>` element using the
  * `list` attribute on the `<input>` element.
  *
- * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/datalist
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/datalist
  * @see http://dev.w3.org/html5/spec#the-datalist-element
  * @see http://ç.whatwg.org#the-datalist-element
  */
@@ -2168,6 +2213,7 @@ datalist {}
  * the control's form is submitted, the private key is stored in the local
  * keystore, and the public key is packaged and sent to the server.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/keygen
  * @see http://dev.w3.org/html5/spec#the-keygen-element
  * @see http://ç.whatwg.org#the-keygen-element
  */
@@ -2188,7 +2234,7 @@ keygen {}
  * value on the bottom.
  *
  * @see http://html5doctor.com/measure-up-with-the-meter-tag/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/meter
  * @see http://dev.w3.org/html5/spec#the-meter-element
  * @see http://ç.whatwg.org#the-meter-element
  */
@@ -2206,7 +2252,7 @@ meter {}
  * element in the same document.
  *
  * @see http://html5doctor.com/the-output-element/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/output
  * @see http://dev.w3.org/html5/spec#the-output-element
  * @see http://ç.whatwg.org#the-output-element
  */
@@ -2222,7 +2268,7 @@ output {}
  * far been completed.
  *
  * @see http://html5doctor.com/the-progress-element/
- *
+ * @see https://developer.mozilla.org/docs/web/html/element/progress
  * @see http://dev.w3.org/html5/spec#the-progress-element
  * @see http://ç.whatwg.org#the-progress-element
  */
@@ -2236,6 +2282,7 @@ progress {}
  * user can obtain additional information or controls. However, the
  * `<details>` element is not appropriate for footnotes.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/details
  * @see http://dev.w3.org/html5/spec#the-details-element
  * @see http://ç.whatwg.org#the-details-element
  */
@@ -2258,6 +2305,7 @@ details {}
  * can perform or activate, or, if the element has no `<li>` element
  * children, flow content describing available commands.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/menu
  * @see http://dev.w3.org/html5/spec#the-menu-element
  * @see http://ç.whatwg.org#the-menu-element
  */
@@ -2267,6 +2315,7 @@ menu {}
 /**
  * The `<menuitem>` element represents a command which the user can invoke.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/menuitem
  * @see http://dev.w3.org/html5/spec#the-menuitem-element
  * @see http://ç.whatwg.org#the-menuitem-element
  */
@@ -2278,6 +2327,7 @@ menuitem {}
  * the rest of the contents of the summary element's parent `<details>`
  * element.
  *
+ * @see https://developer.mozilla.org/docs/web/html/element/summary
  * @see http://dev.w3.org/html5/spec#the-summary-element
  * @see http://ç.whatwg.org#the-summary-element
  */
