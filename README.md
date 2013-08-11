@@ -6,13 +6,17 @@
 
 #### DEMO
 
-DEVELOPMENT ([css](#)/[html](#)) | PRODUCTION ([css](#)/[html](#))
+DEVELOPMENT &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/build/stoops/index.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/build/stoops/stoops.css) | PRODUCTION &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/stoops/index.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/stoops/stoops.min.css)
 :-: | :-:
 [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/build/stoops/&chs=240x240)](http://mhulse.github.io/stoops/build/stoops/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/stoops/&chs=240x240)](http://mhulse.github.io/stoops/stoops/)
 
 **Note:** Only the [`DEVELOPMENT` demo](http://mhulse.github.io/stoops/build/stoops/) uses [`normalize.css`](http://necolas.github.io/normalize.css/).
 
-More (boring) informatin coming soon.
+---
+
+#### ABOUT
+
+More (boring) information coming soon.
 
 ---
 
