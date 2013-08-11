@@ -1,4 +1,4 @@
-/*global module:false, console:false, process:false*/
+/*global module:false, console:false, process:false */
 
 module.exports = function(grunt) {
 	
@@ -8,16 +8,31 @@ module.exports = function(grunt) {
 		
 		pkg : grunt.file.readJSON('package.json'),
 		
-		/**
-		 * Build date and version.
-		 *
-		 * @see http://tanepiper.com/blog/2012/11/25/building-and-testing-javascript-with-gruntjs/
-		 * @see http://blog.stevenlevithan.com/archives/date-time-format
-		 */
+		/*----------------------------------( BANNER )----------------------------------*/
 		
-		now : grunt.template.today('yyyymmdd'), // Alternative: yyyymmddhhMMss
-		
-		ver : 1, // Increment if more than one build is needed in a single day.
+		banner : {
+			
+			short : '/*! ' +
+			        '<%= pkg.title || pkg.name %>' +
+			        '<%= pkg.version ? " v" + pkg.version : "" %>' +
+			        '<%= pkg.licenses ? " | " + _.pluck(pkg.licenses, "type").join(", ") : "" %>' +
+			        '<%= pkg.homepage ? " | " + pkg.homepage : "" %>' +
+			        ' */',
+			
+			long : '/**\n' +
+			       ' * <%= pkg.title || pkg.name %>\n' +
+			       '<%= pkg.description ? " * " + pkg.description + "\\n" : "" %>' +
+			       ' *\n' +
+			       '<%= pkg.author.name ? " * @author " + pkg.author.name + "\\n" : "" %>' +
+			       '<%= pkg.author.url ? " * @link " + pkg.author.url + "\\n" : "" %>' +
+			       '<%= pkg.homepage ? " * @docs " + pkg.homepage + "\\n" : "" %>' +
+			       ' * @copyright Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>.\n' +
+			       '<%= pkg.licenses ? " * @license Released under the " + _.pluck(pkg.licenses, "type").join(", ") + ".\\n" : "" %>' +
+			       '<%= pkg.version ? " * @version " + pkg.version + "\\n" : "" %>' +
+			       ' * @date <%= grunt.template.today("yyyy/mm/dd") %>\n' +
+			       ' */\n\n',
+			
+		},
 		
 		/*----------------------------------( WATCH )----------------------------------*/
 		
@@ -36,19 +51,19 @@ module.exports = function(grunt) {
 				
 				files : [
 					
-					'./files/css/less/*.less',
+					'<%= jshint.init %>',
+					'./files/less/*.less',
 					'./files/html/*.html',
-					'./files/js/*.js'
 					
 				],
 				
-				tasks : ['dev']
+				tasks : ['dev'],
 				
-			}
+			},
 			
 		},
 		
-		/*----------------------------------( PREFLIGHT )----------------------------------*/
+		/*----------------------------------( JSHINT )----------------------------------*/
 		
 		/**
 		 * Validate files with JSHint.
@@ -61,20 +76,19 @@ module.exports = function(grunt) {
 			
 			options : {
 				
-				jshintrc : '.jshintrc'
+				jshintrc : '.jshintrc',
 				
 			},
 			
 			init : [
 				
 				'./Gruntfile.js',
-				'./files/js/<%= pkg.name %>.*.js'
 				
-			]
+			],
 			
 		},
 		
-		/*----------------------------------( ENVIRONMENT )----------------------------------*/
+		/*----------------------------------( ENV )----------------------------------*/
 		
 		/**
 		 * Grunt task to automate environment configuration for future tasks.
@@ -87,26 +101,26 @@ module.exports = function(grunt) {
 			/*
 			options : {
 				
-				globalOption : 'foo'
+				globalOption : 'foo',
 				
 			},
 			*/
 			
 			dev : {
 				
-				NODE_ENV : 'DEVELOPMENT'
+				NODE_ENV : 'DEVELOPMENT',
 				
 			},
 			
 			prod : {
 				
-				NODE_ENV : 'PRODUCTION'
+				NODE_ENV : 'PRODUCTION',
 				
-			}
+			},
 			
 		},
 		
-		/*----------------------------------( 01 )----------------------------------*/
+		/*----------------------------------( CLEAN )----------------------------------*/
 		
 		/**
 		 * Clean files and folders.
@@ -118,7 +132,7 @@ module.exports = function(grunt) {
 			
 			options : {
 				
-				force : true // Sketchy!
+				force : true, // Sketchy!
 				
 			},
 			
@@ -126,10 +140,10 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'./files/index.html',
-					'./files/css/<%= pkg.name %>.css'
+					'./temp/**/*',
+					'./<%= pkg.name %>/**/*',
 					
-				]
+				],
 				
 			},
 			
@@ -137,15 +151,15 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'../dist/<%= pkg.version %>/<%= now %>/<%= ver %>/**/*'
+					'../<%= pkg.name %>/**/*',
 					
-				]
+				],
 				
-			}
+			},
 			
 		},
 		
-		/*----------------------------------( 04 )----------------------------------*/
+		/*----------------------------------( LESS )----------------------------------*/
 		
 		/**
 		 * Compile LESS files to CSS.
@@ -157,7 +171,7 @@ module.exports = function(grunt) {
 			
 			options : {
 				
-				compress : true
+				compress : true,
 				
 			},
 			
@@ -165,12 +179,13 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'./files/css/<%= pkg.name %>.css' : [
-						'./files/css/less/<%= pkg.name %>.less',
-						'./files/css/less/develop.less'
-					]
+					'./temp/<%= pkg.name %>.css' : [
+						'./files/less/normalize.less',
+						'./files/less/<%= pkg.name %>.less',
+						'./files/less/develop.less',
+					],
 					
-				}
+				},
 				
 			},
 			
@@ -178,55 +193,21 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					yuicompress : true
+					yuicompress : true,
 					
 				},
 				
 				files : {
 					
-					'../dist/<%= pkg.version %>/<%= now %>/<%= ver %>/css/<%= pkg.name %>.min.css' : './files/css/less/<%= pkg.name %>.less'
+					'./temp/<%= pkg.name %>.min.css' : './files/less/<%= pkg.name %>.less',
 					
-				}
+				},
 				
-			}
+			},
 			
 		},
 		
-		/*----------------------------------( 05 )----------------------------------*/
-		
-		/**
-		 * Copy files and folders.
-		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-copy
-		 * @see http://gruntjs.com/configuring-tasks#globbing-patterns
-		 */
-		
-		copy : {
-			
-			prod : {
-				
-				files : [
-					
-					{
-						
-						expand : true,
-						cwd : './files/',
-						src : [
-							'font/**',
-							'img/**',
-							'!img/junk/**'
-						],
-						dest : '../dist/<%= pkg.version %>/<%= now %>/<%= ver %>/'
-						
-					}
-					
-				]
-				
-			}
-			
-		},
-		
-		/*----------------------------------( 06 )----------------------------------*/
+		/*----------------------------------( PREPROCESS )----------------------------------*/
 		
 		/**
 		 * Grunt task around preprocess npm module.
@@ -241,55 +222,169 @@ module.exports = function(grunt) {
 				
 				context : {
 					
+					title : '<%= pkg.title %>',
+					description : '<%= pkg.description %>',
 					name : '<%= pkg.name %>',
 					version : '<%= pkg.version %>',
-					now : '<%= now %>',
-					ver : '<%= ver %>',
-					path : '/<%= pkg.name %>/dist/<%= pkg.version %>/<%= now %>/<%= ver %>'
+					homepage : '<%= pkg.homepage %>',
 					
-				}
+				},
 				
 			},
 			
-			dev : {
+			all : {
 				
 				src : './files/html/index.html',
-				dest : './files/index.html'
+				dest : './temp/index.html',
+				
+			},
+			
+		},
+		
+		/*----------------------------------( HTMLMIN )----------------------------------*/
+		
+		/**
+		 * Minify HTML.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-htmlmin
+		 * @see http://perfectionkills.com/experimenting-with-html-minifier/#options
+		 */
+		
+		htmlmin : {
+			
+			prod : {
+				
+				options : {
+					
+					removeComments : true,
+					collapseWhitespace : true,
+					collapseBooleanAttributes : true,
+					removeRedundantAttributes : true,
+					useShortDoctype : true,
+					removeEmptyAttributes : true,
+					
+				},
+				
+				files : {
+					
+					'../<%= pkg.name %>/index.html' : './temp/index.html',
+					
+				},
+				
+			},
+			
+		},
+		
+		/*----------------------------------( CONCAT )----------------------------------*/
+		
+		concat : {
+			
+			dev : {
+				
+				options : {
+					
+					banner : '<%= banner.long %>',
+					
+				},
+				
+				src : ['./temp/<%= pkg.name %>.css',],
+				dest : './<%= pkg.name %>/<%= pkg.name %>.css',
 				
 			},
 			
 			prod : {
 				
-				files : {
+				options : {
 					
-					'../dist/<%= pkg.version %>/<%= now %>/<%= ver %>/index.html' : './files/html/index.html',
-					'../dist/index.html' : './files/html/latest.html'
+					banner : '<%= banner.short %>',
 					
 				},
 				
+				src : ['./temp/<%= pkg.name %>.min.css',],
+				dest : '../<%= pkg.name %>/<%= pkg.name %>.min.css',
+				
 			}
 			
-		}
+		},
+		
+		/*----------------------------------( COPY )----------------------------------*/
+		
+		/**
+		 * Copy files and folders.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-copy
+		 * @see http://gruntjs.com/configuring-tasks#globbing-patterns
+		 */
+		
+		copy : {
+			
+			dev : {
+				
+				files : [
+					
+					{
+						
+						expand : true,
+						cwd : './files/img/',
+						src : '**',
+						dest : './<%= pkg.name %>/',
+						
+					},
+					
+					{
+						
+						filter : 'isFile',
+						expand : true,
+						cwd : './temp/',
+						src : 'index.html',
+						dest : './<%= pkg.name %>/',
+						
+					},
+					
+				],
+				
+			},
+			
+			prod : {
+				
+				files : [
+					
+					{
+						
+						expand : true,
+						cwd : './files/img/',
+						src : '**',
+						dest : '../<%= pkg.name %>/',
+						
+					},
+					
+				],
+				
+			},
+			
+		},
 		
 	});
 	
 	/*----------------------------------( TASKS )----------------------------------*/
 	
-	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 	
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	
-	grunt.loadNpmTasks('grunt-contrib-uglify');
+	grunt.loadNpmTasks('grunt-env');
 	
-	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-clean');
 	
 	grunt.loadNpmTasks('grunt-contrib-less');
 	
-	grunt.loadNpmTasks('grunt-contrib-watch');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 	
 	grunt.loadNpmTasks('grunt-preprocess');
 	
-	grunt.loadNpmTasks('grunt-env');
+	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	
 	//----------------------------------
 	
@@ -300,12 +395,12 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('printenv', function () { console.log(process.env); });
 	
-	//grunt.registerTask('default', ['clean', 'jshint', 'uglify', 'copy']);
+	//----------------------------------
 	
-	grunt.registerTask('default', ['jshint']);
+	grunt.registerTask('default', ['jshint',]);
 	
-	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'preprocess:dev']);
+	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'preprocess:all', 'concat:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['jshint', 'env:prod', 'clean:prod', 'uglify:prod', 'less:prod', 'copy:prod', 'preprocess:prod']);
+	grunt.registerTask('prod', ['jshint', 'env:prod', 'clean:prod', 'less:prod', 'preprocess:all', 'htmlmin', 'concat:prod', 'copy:prod',]);
 	
 };

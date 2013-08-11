@@ -1,16 +1,18 @@
 # Stoops! *(super-duper über beta!)*
 
-### Ummmmmm ... You might as well hit the back button.
+### Booooooooorrrrrriiiiiinnnnnnnnggggggg ... Boring. Bored.
 
 ---
 
 #### DEMO
 
-DEVELOPMENT | PRODUCTION
+DEVELOPMENT ([css](#)/[html](#)) | PRODUCTION ([css](#)/[html](#))
 :-: | :-:
-[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/build/files/&chs=240x240)](http://mhulse.github.io/stoops/build/files/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/dist/&chs=240x240)](http://mhulse.github.io/stoops/dist/)
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/build/stoops/&chs=240x240)](http://mhulse.github.io/stoops/build/stoops/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/stoops/&chs=240x240)](http://mhulse.github.io/stoops/stoops/)
 
-**Note:** All of the "production" demo's assets are hosted on `static.mhulse.com`.
+**Note:** Only the [`DEVELOPMENT` demo](http://mhulse.github.io/stoops/build/stoops/) uses [`normalize.css`](http://necolas.github.io/normalize.css/).
+
+More (boring) informatin coming soon.
 
 ---
 
