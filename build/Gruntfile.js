@@ -145,40 +145,6 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( 02 )----------------------------------*/
-		
-		/**
-		 * Minify files with UglifyJS.
-		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-uglify
-		 * @see http://lisperator.net/uglifyjs/
-		 */
-		
-		uglify : {
-			
-			prod : {
-				
-				files : {
-					
-					'../dist/<%= pkg.version %>/<%= now %>/<%= ver %>/js/preflight.min.js' : [
-						'./files/js/preflight.js'
-					],
-					
-					'../dist/<%= pkg.version %>/<%= now %>/<%= ver %>/js/<%= pkg.name %>.min.js' : [
-						'./files/js/matchMedia.js',
-						'./files/js/matchMedia.addListener.js',
-						'./files/js/jquery.*.js',
-						'./files/js/<%= pkg.name %>.js',
-						'./files/js/<%= pkg.name %>.mod.*.js',
-						'./files/js/<%= pkg.name %>.init.js'
-					],
-					
-				}
-				
-			}
-			
-		},
-		
 		/*----------------------------------( 04 )----------------------------------*/
 		
 		/**
@@ -201,7 +167,7 @@ module.exports = function(grunt) {
 					
 					'./files/css/<%= pkg.name %>.css' : [
 						'./files/css/less/<%= pkg.name %>.less',
-						'./files/css/less/dev.less'
+						'./files/css/less/develop.less'
 					]
 					
 				}
