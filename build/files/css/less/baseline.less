@@ -6,15 +6,24 @@
  * It simulates a baseline grid based on `em`/`rems` which will allow you
  * to size according to your site's `font-size`.
  *
+ * Using "flexible namespacing":
+ *
+ * `<img class="NAMESPACE-baseline" alt="">`
+ *
  * @see https://gist.github.com/4277585
  * @see http://advent2012.digitpaint.nl/13/
  * @see http://stackoverflow.com/a/8905262/922323
  * @see http://css-tricks.com/browser-support-pseudo-elements/
+ * @see http://learn.shayhowe.com/advanced-html-css/complex-selectors
  */
 
-.stoops-baseline { position: relative; }
+[class$="baseline"] {
+	position: relative;
+	cursor: pointer;
+	cursor: hand;
+}
 	/* Grid overlay: */
-	.stoops-baseline:before {
+	[class$="baseline"]:hover::before {
 		background-image:
 			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
 			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
@@ -41,7 +50,7 @@
 		pointer-events: none; /* The element is never the target of mouse events. */
 	}
 	/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
-	.stoops-baseline-debug * {
+	[class$="baseline"]:active * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 	}
@@ -271,7 +280,15 @@ h6, [class$="h6"], [class$="sh6"] {
 h1, h2, h3, h4, h5, h6 {
 	+ p { margin-top: 0; }
 }
-h1:empty { display: none; } /* Use for `title`-free sections. */
+
+/**
+ * Used for `title`-free sections.
+ *
+ * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
+ * @see http://camendesign.com/design/design.css
+ */
+
+h1:empty { display: none; }
 
 /**
  * The `<header>` element represents the "header" of a document or section
@@ -359,8 +376,8 @@ blockquote {
 	padding: .625rem; // 10px
 	quotes: none;
 }
-blockquote:before,
-blockquote:after {
+blockquote::before,
+blockquote::after {
 	content: '';
 	content: none;
 }
@@ -966,8 +983,7 @@ span {}
 	 * @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
 	 * @see http://fluidbaselinegrid.com/css/style.css
 	 */
-
-	span[title="ampersand"],
+	
 	span[class$="amp"] {
 		font-size: 110%;
 		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;
@@ -1239,13 +1255,6 @@ img {
 	max-height: 100%;
 	vertical-align: middle;
 }
-	
-	/**
-	 * Flexible namespacing.
-	 *
-	 * `<img class="NAMESPACE-reset" alt="">`
-	 */
-	
 	img[class$="reset"] {
 		max-width: none;
 		max-height: none;
