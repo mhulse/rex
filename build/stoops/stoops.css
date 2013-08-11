@@ -49,7 +49,6 @@ button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}
 textarea{overflow:auto;vertical-align:top;}
 table{border-collapse:collapse;border-spacing:0}
 
-@charset "UTF-8";
 [class$="baseline"]{position:relative;cursor:pointer;cursor:hand}
 [class$="baseline"]:hover::before{background-image:-webkit-linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),-webkit-linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),-webkit-linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-image:-moz-linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),-moz-linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),-moz-linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-image:linear-gradient(rgba(255,0,0,0.75) 1px, transparent 1px),linear-gradient(rgba(0,255,255,0.75) 1px, transparent 1px),linear-gradient(rgba(0,255,255,0.25) 1px, transparent 1px);background-size:100% 1.5rem, 100% .75rem, 100% .375rem;background-position:0 0;background-origin:content-box;background-attachment:local;width:100%;display:block;position:absolute;top:0;bottom:-1px;z-index:999;content:"";pointer-events:none;}
 [class$="baseline"]:active *{-webkit-box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5);box-shadow:inset 0 0 0 1px rgba(255,0,0,0.5)}
