@@ -6,15 +6,20 @@
  * It simulates a baseline grid based on `em`/`rems` which will allow you
  * to size according to your site's `font-size`.
  *
+ * Important: Added to `<body>`:
+ *
+ * `<body ontouchstart="">...</body>`
+ *
  * Using "flexible namespacing":
  *
- * `<img class="NAMESPACE-baseline" alt="">`
+ * `<img class="MY-NAMESPACE-baseline" alt="">`
  *
  * @see https://gist.github.com/4277585
  * @see http://advent2012.digitpaint.nl/13/
  * @see http://stackoverflow.com/a/8905262/922323
  * @see http://css-tricks.com/browser-support-pseudo-elements/
  * @see http://learn.shayhowe.com/advanced-html-css/complex-selectors
+ * @see http://stackoverflow.com/a/8877902/922323
  */
 
 [class$="baseline"] {
@@ -23,8 +28,7 @@
 	cursor: hand;
 }
 	/* Grid overlay: */
-	[class$="baseline"]:hover::before,
-	[class$="baseline"]:active::before {
+	[class$="baseline"]:hover::before {
 		background-image:
 			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
 			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
@@ -54,21 +58,21 @@
 	[class$="baseline"]:active * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
+		-webkit-user-select: none; /* Disable selection in WebKit/iOS. */
 	}
 	/* Let the user know it's there: */
 	[class$="baseline"]::after {
 		font-size: 1rem;
-		line-height: 0;
+		line-height: 1;
+		font-weight: bold;
 		color: red;
-		content:'\2630';
+		content:'\2630'; /* The unicode symbol. */
 		position: absolute;
 		top: 0;
 		right: 0;
 	}
 	/* Clean up on hover: */
-	[class$="baseline"]:hover::after {
-		display: none;
-	}
+	[class$="baseline"]:hover::after { display: none; }
 
 /*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
 
