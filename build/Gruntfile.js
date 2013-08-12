@@ -34,6 +34,33 @@ module.exports = function(grunt) {
 			
 		},
 		
+		/*----------------------------------( BOWER )----------------------------------*/
+		
+		/**
+		 * Install Bower packages. Smartly.
+		 *
+		 * Use this task to update dependencies defined in `bower.json`.
+		 *
+		 * @see https://github.com/yatskevich/grunt-bower-task
+		 * @see http://bower.io/
+		 */
+		
+		bower : {
+			
+			install : {
+				
+				options : {
+					
+					targetDir : './files/plugins', // A directory where you want to keep your Bower packages.
+					cleanup: true, // Will clean target and bower directories.
+					verbose: true, // Debug output.
+					
+				},
+				
+			},
+			
+		},
+		
 		/*----------------------------------( WATCH )----------------------------------*/
 		
 		/**
@@ -52,8 +79,8 @@ module.exports = function(grunt) {
 				files : [
 					
 					'<%= jshint.init %>',
-					'./files/less/*.less',
-					'./files/html/*.html',
+					'./files/styles/*.less',
+					'./files/templates/*.html',
 					
 				],
 				
@@ -180,9 +207,9 @@ module.exports = function(grunt) {
 				files : {
 					
 					'./temp/<%= pkg.name %>.css' : [
-						'./files/less/normalize.less',
-						'./files/less/<%= pkg.name %>.less',
-						'./files/less/develop.less',
+						'./files/plugins/normalize-css/normalize.css', // Bower package.
+						'./files/styles/<%= pkg.name %>.less',
+						'./files/styles/develop.less',
 					],
 					
 				},
@@ -199,7 +226,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'./temp/<%= pkg.name %>.min.css' : './files/less/<%= pkg.name %>.less',
+					'./temp/<%= pkg.name %>.min.css' : './files/styles/<%= pkg.name %>.less',
 					
 				},
 				
@@ -234,7 +261,7 @@ module.exports = function(grunt) {
 			
 			all : {
 				
-				src : './files/html/index.html',
+				src : './files/templates/index.html',
 				dest : './temp/index.html',
 				
 			},
@@ -325,7 +352,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : './files/img/',
+						cwd : './files/images/',
 						src : '**',
 						dest : './<%= pkg.name %>/',
 						
@@ -352,7 +379,7 @@ module.exports = function(grunt) {
 					{
 						
 						expand : true,
-						cwd : './files/img/',
+						cwd : './files/images/',
 						src : '**',
 						dest : '../<%= pkg.name %>/',
 						
@@ -367,6 +394,8 @@ module.exports = function(grunt) {
 	});
 	
 	/*----------------------------------( TASKS )----------------------------------*/
+	
+	grunt.loadNpmTasks('grunt-bower-task');
 	
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	
