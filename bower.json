@@ -1,17 +1,12 @@
 {
   "name": "stoops",
   "version": "0.1.0",
-  "main": "stoops/stoops.min.css",
   "ignore": [
     "LICENSE",
     ".*",
     "*.md",
-    "*.html",
-    "*.json",
-    "*.png",
-    "*.gif",
-    "images/",
-    "plugins/"
+    "LICENSE",
+    "build/"
   ],
   "dependencies": {},
   "devDependencies": {}
