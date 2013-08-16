@@ -6,24 +6,7 @@ module.exports = function(grunt) {
 	
 	grunt.initConfig({
 		
-		/*----------------------------------( JSON )----------------------------------*/
-		
-		/**
-		 * Read this project's `package.json`.
-		 *
-		 * The `package.json` file belongs in the root directory of your project,
-		 * next to the `Gruntfile`, and should be committed with your project
-		 * source. Running `npm install` in the same folder as a `package.json`
-		 * file will install the correct version of each dependency listed therein.
-		 * @see https://npmjs.org/doc/json.html
-		 */
-		
 		pkg : grunt.file.readJSON('package.json'),
-		
-		/*----------------------------------( FOLDERS )----------------------------------*/
-		
-		dev_dir : 'development',
-		prod_dir : 'production',
 		
 		/*----------------------------------( BANNER )----------------------------------*/
 		
@@ -185,7 +168,7 @@ module.exports = function(grunt) {
 				src : [
 					
 					'./temp/**/*',
-					'../<%= pkg.name %>/<%= dev_dir %>/**/*',
+					'./<%= pkg.name %>/**/*',
 					
 				],
 				
@@ -195,7 +178,7 @@ module.exports = function(grunt) {
 				
 				src : [
 					
-					'../<%= pkg.name %>/<%= prod_dir %>/**/*',
+					'../<%= pkg.name %>/**/*',
 					
 				],
 				
@@ -311,7 +294,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../<%= pkg.name %>/<%= prod_dir %>/index.html' : './temp/index.html',
+					'../<%= pkg.name %>/index.html' : './temp/index.html',
 					
 				},
 				
@@ -332,7 +315,7 @@ module.exports = function(grunt) {
 				},
 				
 				src : ['./temp/<%= pkg.name %>.css',],
-				dest : '../<%= pkg.name %>/<%= dev_dir %>/<%= pkg.name %>.css',
+				dest : './<%= pkg.name %>/<%= pkg.name %>.css',
 				
 			},
 			
@@ -345,7 +328,7 @@ module.exports = function(grunt) {
 				},
 				
 				src : ['./temp/<%= pkg.name %>.min.css',],
-				dest : '../<%= pkg.name %>/<%= prod_dir %>/<%= pkg.name %>.min.css',
+				dest : '../<%= pkg.name %>/<%= pkg.name %>.min.css',
 				
 			}
 			
@@ -371,7 +354,7 @@ module.exports = function(grunt) {
 						expand : true,
 						cwd : './files/images/',
 						src : '**',
-						dest : '../<%= pkg.name %>/<%= dev_dir %>/',
+						dest : './<%= pkg.name %>/',
 						
 					},
 					
@@ -381,7 +364,7 @@ module.exports = function(grunt) {
 						expand : true,
 						cwd : './temp/',
 						src : 'index.html',
-						dest : '../<%= pkg.name %>/<%= dev_dir %>/',
+						dest : './<%= pkg.name %>/',
 						
 					},
 					
@@ -398,7 +381,7 @@ module.exports = function(grunt) {
 						expand : true,
 						cwd : './files/images/',
 						src : '**',
-						dest : '../<%= pkg.name %>/<%= prod_dir %>/',
+						dest : '../<%= pkg.name %>/',
 						
 					},
 					
