@@ -168,7 +168,7 @@ module.exports = function(grunt) {
 				src : [
 					
 					'./temp/**/*',
-					'./<%= pkg.name %>/**/*',
+					'../<%= pkg.name %>/dev/**/*',
 					
 				],
 				
