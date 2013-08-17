@@ -82,7 +82,7 @@ module.exports = function(grunt) {
 				
 			],
 			
-			tasks : ['dev'],
+			tasks : ['default'],
 			
 		},
 		
@@ -159,12 +159,21 @@ module.exports = function(grunt) {
 				
 			},
 			
-			all : {
+			start : {
 				
 				src : [
 					
-					'./temp/**/*',
 					'../demo/**/*',
+					
+				],
+				
+			},
+			
+			finish : {
+				
+				src : [
+					
+					'./temp',
 					
 				],
 				
@@ -384,12 +393,12 @@ module.exports = function(grunt) {
 	
 	//----------------------------------
 	
-	grunt.registerTask('init', ['jshint', 'clean',]);
+	grunt.registerTask('init', ['jshint', 'clean:start',]);
 	
 	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'less:dev', 'concat:dev',]);
 	
 	grunt.registerTask('prod', ['env:prod', 'preprocess:prod', 'htmlmin:prod', 'less:prod', 'concat:prod',]);
 	
-	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy',]);
+	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy', 'clean:finish',]);
 	
 };
