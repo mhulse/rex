@@ -198,8 +198,10 @@ body {
 
 address {
 	font-size: 1rem; // 16px
-	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
+	line-height: @baseline; // (((1.5 / 1) = 1.5) * .75) = 1.125
 	margin: .625rem 0; // 10px 0
+	
+	.baseline(1, .75);
 }
 
 /**
