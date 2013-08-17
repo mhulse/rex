@@ -6,11 +6,11 @@
 
 #### DEMO
 
-DEVELOPMENT &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/build/stoops/index.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/build/stoops/stoops.css) | PRODUCTION &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/stoops/index.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/stoops/stoops.min.css)
+DEVELOPMENT &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/source/demo/index.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/source/demo/stoops.css) | PRODUCTION &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/demo/index.min.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/demo/stoops.min.css)
 :-: | :-:
-[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/build/stoops/&chs=240x240)](http://mhulse.github.io/stoops/build/stoops/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/stoops/&chs=240x240)](http://mhulse.github.io/stoops/stoops/)
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/source/stoops/&chs=240x240)](http://mhulse.github.io/stoops/source/stoops/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/stoops/&chs=240x240)](http://mhulse.github.io/stoops/stoops/)
 
-**Note:** Only the [`DEVELOPMENT` demo](http://mhulse.github.io/stoops/build/stoops/) uses [`normalize.css`](http://necolas.github.io/normalize.css/).
+**Note:** Only the [`DEVELOPMENT` demo](http://mhulse.github.io/stoops/source/stoops/) uses [`normalize.css`](http://necolas.github.io/normalize.css/).
 
 ---
 

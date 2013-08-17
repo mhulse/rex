@@ -74,19 +74,15 @@ module.exports = function(grunt) {
 		
 		watch : {
 			
-			tmpl : {
+			files : [
 				
-				files : [
-					
-					'<%= jshint.init %>',
-					'./files/styles/*.less',
-					'./files/templates/*.html',
-					
-				],
+				'<%= jshint.init %>',
+				'./files/styles/*.less',
+				'./files/templates/*.html',
 				
-				tasks : ['dev'],
-				
-			},
+			],
+			
+			tasks : ['dev'],
 			
 		},
 		
@@ -163,24 +159,111 @@ module.exports = function(grunt) {
 				
 			},
 			
-			dev : {
+			all : {
 				
 				src : [
 					
 					'./temp/**/*',
-					'./<%= pkg.name %>/**/*',
+					'../demo/**/*',
 					
 				],
 				
 			},
 			
+		},
+		
+		/*----------------------------------( PREPROCESS )----------------------------------*/
+		
+		/**
+		 * Grunt task around preprocess npm module.
+		 *
+		 * @see https://github.com/onehealth/grunt-preprocess
+		 * @see https://github.com/onehealth/preprocess
+		 */
+		
+		preprocess : {
+			
+			options : {
+				
+				context : {
+					
+					title : '<%= pkg.title %>',
+					description : '<%= pkg.description %>',
+					name : '<%= pkg.name %>',
+					version : '<%= pkg.version %>',
+					homepage : '<%= pkg.homepage %>',
+					
+				},
+				
+			},
+			
+			dev : {
+				
+				src : './files/templates/index.html',
+				dest : '../demo/index.html',
+				
+			},
+			
 			prod : {
 				
-				src : [
+				src : './files/templates/index.html',
+				dest : './temp/index.html',
+				
+			},
+			
+		},
+		
+		/*----------------------------------( HTMLMIN )----------------------------------*/
+		
+		/**
+		 * Minify HTML.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-htmlmin
+		 * @see http://perfectionkills.com/experimenting-with-html-minifier/#options
+		 */
+		
+		htmlmin : {
+			
+			options : {
+				
+				removeComments : true,
+				collapseWhitespace : true,
+				collapseBooleanAttributes : true,
+				removeRedundantAttributes : true,
+				useShortDoctype : true,
+				removeEmptyAttributes : true,
+				
+			},
+			
+			prod : {
+				
+				files : {
 					
-					'../<%= pkg.name %>/**/*',
+					'../demo/index.min.html' : './temp/index.html',
 					
-				],
+				},
+				
+			},
+			
+		},
+		
+		/*----------------------------------( COPY )----------------------------------*/
+		
+		/**
+		 * Copy files and folders.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-copy
+		 * @see http://gruntjs.com/configuring-tasks#globbing-patterns
+		 */
+		
+		copy : {
+			
+			all : {
+				
+				expand : true,
+				cwd : './files/images/',
+				src : '**',
+				dest : '../demo/',
 				
 			},
 			
@@ -234,74 +317,6 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( PREPROCESS )----------------------------------*/
-		
-		/**
-		 * Grunt task around preprocess npm module.
-		 *
-		 * @see https://github.com/onehealth/grunt-preprocess
-		 * @see https://github.com/onehealth/preprocess
-		 */
-		
-		preprocess : {
-			
-			options : {
-				
-				context : {
-					
-					title : '<%= pkg.title %>',
-					description : '<%= pkg.description %>',
-					name : '<%= pkg.name %>',
-					version : '<%= pkg.version %>',
-					homepage : '<%= pkg.homepage %>',
-					
-				},
-				
-			},
-			
-			all : {
-				
-				src : './files/templates/index.html',
-				dest : './temp/index.html',
-				
-			},
-			
-		},
-		
-		/*----------------------------------( HTMLMIN )----------------------------------*/
-		
-		/**
-		 * Minify HTML.
-		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-htmlmin
-		 * @see http://perfectionkills.com/experimenting-with-html-minifier/#options
-		 */
-		
-		htmlmin : {
-			
-			prod : {
-				
-				options : {
-					
-					removeComments : true,
-					collapseWhitespace : true,
-					collapseBooleanAttributes : true,
-					removeRedundantAttributes : true,
-					useShortDoctype : true,
-					removeEmptyAttributes : true,
-					
-				},
-				
-				files : {
-					
-					'../<%= pkg.name %>/index.html' : './temp/index.html',
-					
-				},
-				
-			},
-			
-		},
-		
 		/*----------------------------------( CONCAT )----------------------------------*/
 		
 		concat : {
@@ -315,7 +330,7 @@ module.exports = function(grunt) {
 				},
 				
 				src : ['./temp/<%= pkg.name %>.css',],
-				dest : './<%= pkg.name %>/<%= pkg.name %>.css',
+				dest : '../demo/<%= pkg.name %>.css',
 				
 			},
 			
@@ -328,66 +343,9 @@ module.exports = function(grunt) {
 				},
 				
 				src : ['./temp/<%= pkg.name %>.min.css',],
-				dest : '../<%= pkg.name %>/<%= pkg.name %>.min.css',
+				dest : '../demo/<%= pkg.name %>.min.css',
 				
 			}
-			
-		},
-		
-		/*----------------------------------( COPY )----------------------------------*/
-		
-		/**
-		 * Copy files and folders.
-		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-copy
-		 * @see http://gruntjs.com/configuring-tasks#globbing-patterns
-		 */
-		
-		copy : {
-			
-			dev : {
-				
-				files : [
-					
-					{
-						
-						expand : true,
-						cwd : './files/images/',
-						src : '**',
-						dest : './<%= pkg.name %>/',
-						
-					},
-					
-					{
-						
-						filter : 'isFile',
-						expand : true,
-						cwd : './temp/',
-						src : 'index.html',
-						dest : './<%= pkg.name %>/',
-						
-					},
-					
-				],
-				
-			},
-			
-			prod : {
-				
-				files : [
-					
-					{
-						
-						expand : true,
-						cwd : './files/images/',
-						src : '**',
-						dest : '../<%= pkg.name %>/',
-						
-					},
-					
-				],
-				
-			},
 			
 		},
 		
@@ -405,13 +363,13 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	
-	grunt.loadNpmTasks('grunt-contrib-less');
-	
-	grunt.loadNpmTasks('grunt-contrib-copy');
-	
 	grunt.loadNpmTasks('grunt-preprocess');
 	
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
+	
+	grunt.loadNpmTasks('grunt-contrib-copy');
+	
+	grunt.loadNpmTasks('grunt-contrib-less');
 	
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	
@@ -426,10 +384,12 @@ module.exports = function(grunt) {
 	
 	//----------------------------------
 	
-	grunt.registerTask('default', ['jshint',]);
+	grunt.registerTask('init', ['jshint', 'clean',]);
 	
-	grunt.registerTask('dev', ['jshint', 'env:dev', 'clean:dev', 'less:dev', 'preprocess:all', 'concat:dev', 'copy:dev',]);
+	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'less:dev', 'concat:dev',]);
 	
-	grunt.registerTask('prod', ['jshint', 'env:prod', 'clean:prod', 'less:prod', 'preprocess:all', 'htmlmin', 'concat:prod', 'copy:prod',]);
+	grunt.registerTask('prod', ['env:prod', 'preprocess:prod', 'htmlmin:prod', 'less:prod', 'concat:prod',]);
+	
+	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy',]);
 	
 };
