@@ -2,7 +2,7 @@
   "name": "stoops",
   "version": "0.2.0",
   "main": [
-    "./stoops/stoops.min.css"
+    "./source/files/styles/stoops.less"
   ],
   "ignore": [
     "**/.*"
