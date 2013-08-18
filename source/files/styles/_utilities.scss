@@ -49,5 +49,5 @@ $line-height-base: 24px;
 
 /*----------------------------------( TESTS )----------------------------------*/
 
-.class { line-height: baseline(16px); }
-#id { line-height: baseline(97px, .75); }
+.test1 { line-height: baseline(16px); }
+.test2 { line-height: baseline(97px, .75); }
