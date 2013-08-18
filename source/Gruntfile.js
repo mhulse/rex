@@ -335,11 +335,21 @@ module.exports = function(grunt) {
 		
 		concat : {
 			
+			options : {
+				
+				process : function(src) {
+					
+					return src.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1');
+					
+				},
+				
+			},
+			
 			dev : {
 				
 				options : {
 					
-					banner : '<%= banner.long %>',
+					banner : '@charset "UTF-8";\n\n<%= banner.long %>',
 					
 				},
 				
@@ -352,7 +362,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					banner : '<%= banner.short %>',
+					banner : '@charset "UTF-8";<%= banner.short %>',
 					
 				},
 				

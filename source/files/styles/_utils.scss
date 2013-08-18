@@ -1,15 +1,17 @@
-/*
-@font-size-base: 16px;
+$font-size-base: 16px;
 
-@line-height-base: 24px;
-*/
+$line-height-base: 24px;
 
-// http://www.johnfaulds.com.au/journal/less-baseline-grid-calculator/
-// http://www.ifdattic.com/2011/10/19/converting-px-to-ems-with-less/
-// https://github.com/mhulse/bassline/blob/gh-pages/demo/bassline.css
+@function baseline($context: 1, $offset: 1, $base: $line-height-base) {
+	
+	@return ($base / $context) * $offset;
+	
+}
 
 
 #stoops {
+	
+	font-size: baseline();
 	
 	/**
 	 * Simple baseline mixin calculator.

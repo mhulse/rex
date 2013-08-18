@@ -1,6 +1,8 @@
+@charset "UTF-8";
+
 /**
  * Stoops!
- * Super-duper über beta!
+ * Super-duper uber beta!
  *
  * @author Micky Hulse
  * @link http://mhulse.com
@@ -11,13 +13,8 @@
  * @date 2013/08/17
  */
 
-@charset "UTF-8";
-/*
-@font-size-base: 16px;
-
-@line-height-base: 24px;
-*/
 #stoops {
+  font-size: 24px;
   /**
    * Simple baseline mixin calculator.
    *
@@ -504,7 +501,7 @@ table {
   font-weight: bold;
   color: red;
   content: '\2630';
-  /* The ☰ unicode symbol. */
+  /* The unicode "TRIGRAM FOR HEAVEN" symbol: http://en.wikipedia.org/wiki/Bagua */
   position: absolute;
   top: 0;
   right: 0;
@@ -2418,13 +2415,13 @@ body {
   font: bold 1.375rem/1.09090909090909 Arial, sans-serif;
   color: #fff;
   text-transform: none;
-  background: black;
+  background: rgba(0, 0, 0, 0.85);
   margin: .625rem 0;
   padding: .625rem;
   display: inline-block;
   *display: inline;
   *zoom: 1;
-  box-shadow: 0 0 0.3125rem 0 black;
+  box-shadow: 0 0 0.3125rem 0 rgba(0, 0, 0, 0.55);
 }
 
 /*--------------------------------------------------------------------*/
