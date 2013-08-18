@@ -11,18 +11,34 @@ $font-size-base: 16px;
 $line-height-base: 24px;
 
 /**
+ * `px` to `em`; a.k.a., convert `px` to relative unit.
+ */
+
+@function em($px: $font-size-base, $font-size: $font-size-base) {
+	
+	@return ($px / $font-size); // Have `baseline()` use?
+	
+}
+
+/**
  * Simple baseline mixin calculator.
  *
  * Usage:
  * ```
- * .class { line-height: baseline(16px); }
- * #id { line-height: baseline(97px, .75); }
+ * .class1 {
+ *     font-size: em(25px)+rem;                  // (25 / 16) = 1.5625
+ *     line-height: baseline(16px, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
+ *     padding: (baseline(16px, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
+ * }
  * ```
  *
  * Output:
  * ```
- * .class { line-height: 1.5; }
- * #id { line-height: 0.92783505154639; }
+ * .class1 {
+ *     font-size: 1.5625rem;
+ *     line-height: 1.2;
+ *     padding: 0.36em 0;
+ * }
  * ```
  *
  * Tip: Concat a unit to a variable: `unit(@baseline, px)`.
@@ -39,15 +55,12 @@ $line-height-base: 24px;
 	
 }
 
-/*
-.pxtorem(@px, @base: @font-size-base) {
-	
-	@pxtorem: unit(@px / @base, rem);
-	
-}
-*/
-
 /*----------------------------------( TESTS )----------------------------------*/
 
 .test1 { line-height: baseline(16px); }
-.test2 { line-height: baseline(97px, .75); }
+
+.test2 {
+	font-size: em(25px)+rem; // (25 / 16) = 1.5625
+	line-height: baseline(25px, .625); // (((3 / 1.5625) = 1.92) * .625) = 1.2
+	padding: (baseline(25px, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
+}

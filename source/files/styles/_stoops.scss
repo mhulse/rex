@@ -6,6 +6,26 @@
  * @see http://modularscale.com/
  */
 
+/*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
+
+/**
+ * Apply a natural box layout model to all elements.
+ *
+ * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ * @see http://css-tricks.com/box-sizing/
+ * @see https://developer.mozilla.org/docs/web/css/universal_selectors
+ * @see https://developer.mozilla.org/docs/web/css/box-sizing
+ * @see https://github.com/twbs/bootstrap
+ */
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
 /*----------------------------------( BASELINE )----------------------------------*/
 
 /**
@@ -37,7 +57,8 @@
 	cursor: hand;
 }
 	/* Grid overlay: */
-	[class$="baseline"]:hover::before {
+	//[class$="baseline"]:hover::before {
+	[class$="baseline"]::before {
 		background-image:
 			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
 			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
@@ -82,26 +103,6 @@
 	}
 	/* Clean up on hover: */
 	[class$="baseline"]:hover::after { display: none; }
-
-/*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
-
-/**
- * Apply a natural box layout model to all elements.
- *
- * @see http://www.paulirish.com/2012/box-sizing-border-box-ftw/
- * @see http://css-tricks.com/box-sizing/
- * @see https://developer.mozilla.org/docs/web/css/universal_selectors
- * @see https://developer.mozilla.org/docs/web/css/box-sizing
- * @see https://github.com/twbs/bootstrap
- */
-
-*,
-*:before,
-*:after {
-	-webkit-box-sizing: border-box;
-	   -moz-box-sizing: border-box;
-	        box-sizing: border-box;
-}
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
 
