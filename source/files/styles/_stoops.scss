@@ -51,14 +51,15 @@
  * @see https://coderwall.com/p/jsb-vw
  */
 
-[class$="baseline"] {
+.stoops-baseline {
+	
 	position: relative;
+	/* Show the mouse as a hand: */
 	cursor: pointer;
 	cursor: hand;
-}
+	
 	/* Grid overlay: */
-	//[class$="baseline"]:hover::before {
-	[class$="baseline"]::before {
+	&::before {
 		background-image:
 			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
 			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
@@ -84,25 +85,18 @@
 		content: "";
 		pointer-events: none; /* The element is never the target of mouse events. */
 	}
-	/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
-	[class$="baseline"]:active * {
+	
+	/* On click, hide grid: */
+	&:active::before { display: none; }
+	
+	/* On click, add a faux border to child elements to view where they begin/end in relationship to the baseline: */
+	&:active * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		-webkit-user-select: none; /* Disable selection in WebKit/iOS. */
 	}
-	/* Let the user know it's there: */
-	[class$="baseline"]::after {
-		font-size: 1rem;
-		line-height: 1;
-		font-weight: bold;
-		color: red;
-		content:'\2630'; /* The unicode "TRIGRAM FOR HEAVEN" symbol: http://en.wikipedia.org/wiki/Bagua */
-		position: absolute;
-		top: 0;
-		right: 0;
-	}
-	/* Clean up on hover: */
-	[class$="baseline"]:hover::after { display: none; }
+	
+}
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
 

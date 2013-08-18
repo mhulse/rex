@@ -478,14 +478,16 @@ table {
  * @see http://stackoverflow.com/a/8877902/922323
  * @see https://coderwall.com/p/jsb-vw
  */
-[class$="baseline"] {
+.stoops-baseline {
   position: relative;
+  /* Show the mouse as a hand: */
   cursor: pointer;
   cursor: hand;
+  /* Grid overlay: */
+  /* On click, hide grid: */
+  /* On click, add a faux border to child elements to view where they begin/end in relationship to the baseline: */
 }
-
-/* Grid overlay: */
-[class$="baseline"]::before {
+.stoops-baseline::before {
   background-image: -webkit-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
   background-image: -moz-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
   background-image: linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
@@ -509,31 +511,14 @@ table {
   pointer-events: none;
   /* The element is never the target of mouse events. */
 }
-
-/* Add a faux border to child elements to view where they begin/end in relationship to the baseline: */
-[class$="baseline"]:active * {
+.stoops-baseline:active::before {
+  display: none;
+}
+.stoops-baseline:active * {
   -webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
   box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
   -webkit-user-select: none;
   /* Disable selection in WebKit/iOS. */
-}
-
-/* Let the user know it's there: */
-[class$="baseline"]::after {
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: bold;
-  color: red;
-  content: '\2630';
-  /* The unicode "TRIGRAM FOR HEAVEN" symbol: http://en.wikipedia.org/wiki/Bagua */
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-/* Clean up on hover: */
-[class$="baseline"]:hover::after {
-  display: none;
 }
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
