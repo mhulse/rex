@@ -2,7 +2,7 @@
   "name": "stoops",
   "version": "0.3.0",
   "main": [
-    "./source/files/styles/production.scss"
+    "./demo/stoops.css"
   ],
   "ignore": [
     "**/.*"

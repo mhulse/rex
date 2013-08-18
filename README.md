@@ -1,4 +1,4 @@
-# Stoops! *(super-duper uber beta!)*
+# Stoops! *(super-duper uuber beta!)*
 
 ### Booooooooorrrrrriiiiiinnnnnnnnggggggg ... Boring. Bored.
 
