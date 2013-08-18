@@ -1,57 +1,53 @@
+/**
+ * Base `font-size`.
+ */
+
 $font-size-base: 16px;
+
+/**
+ * Base `line-height`.
+ */
 
 $line-height-base: 24px;
 
-@function baseline($context: 1, $offset: 1, $base: $line-height-base) {
-	
-	@return ($base / $context) * $offset;
-	
-}
+/**
+ * Simple baseline mixin calculator.
+ *
+ * Usage:
+ * ```
+ * .class { line-height: baseline(16px); }
+ * #id { line-height: baseline(97px, .75); }
+ * ```
+ *
+ * Output:
+ * ```
+ * .class { line-height: 1.5; }
+ * #id { line-height: 0.92783505154639; }
+ * ```
+ *
+ * Tip: Concat a unit to a variable: `unit(@baseline, px)`.
+ *
+ * @see http://flippinawesome.org/2013/05/20/less-tips-and-tricks/
+ *
+ * @todo Namespace.
+ * @todo Make/mark required attributes.
+ */
 
-
-#stoops {
+@function baseline($font-size: $font-size-base, $offset: 1, $line-height: $line-height-base) {
 	
-	font-size: baseline();
-	
-	/**
-	 * Simple baseline mixin calculator.
-	 *
-	 * Usage:
-	 *
-	 * ```
-	 * 	address {
-	 * 		font-size: 1rem; // 16px
-	 * 		line-height: @baseline; // Mixin variable. Math: (((1.5 / 1) = 1.5) * .75) = 1.125
-	 * 		.baseline(1, .75); // Mixin call.
-	 * 	}
-	 * ```
-	 *
-	 * Tip: Concat a unit to a variable: `unit(@baseline, px)`.
-	 *
-	 * @see http://flippinawesome.org/2013/05/20/less-tips-and-tricks/
-	 *
-	 * @todo Namespace.
-	 * @todo Make/mark required attributes.
-	 */
-	
-	/*
-	.baseline(@context; @offset: 1; @base: 1.5) {
-		
-		@baseline: (@base / @context) * @offset;
-		
-	}
-	
-	.pxtorem(@px, @base: @font-size-base) {
-		
-		@pxtorem: unit(@px / @base, rem);
-		
-	}
-	*/
+	@return ((($line-height * ceil($font-size / $line-height)) / $font-size) * $offset);
 	
 }
 
 /*
-.billy {
-	font-size: (#stoops > .pxtorem(12));
+.pxtorem(@px, @base: @font-size-base) {
+	
+	@pxtorem: unit(@px / @base, rem);
+	
 }
 */
+
+/*----------------------------------( TESTS )----------------------------------*/
+
+.class { line-height: baseline(16px); }
+#id { line-height: baseline(97px, .75); }

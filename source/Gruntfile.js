@@ -6,9 +6,28 @@ module.exports = function(grunt) {
 	
 	grunt.initConfig({
 		
+		/*----------------------------------( PACKAGE )----------------------------------*/
+		
+		/**
+		 * The `package.json` file belongs in the root directory of your project,
+		 * next to the `Gruntfile`, and should be committed with your project
+		 * source. Running `npm install` in the same folder as a `package.json`
+		 * file will install the correct version of each dependency listed therein.
+		 *
+		 * Install project dependencies with `npm install` (or `npm update`).
+		 *
+		 * @see http://gruntjs.com/getting-started#package.json
+		 */
+		
 		pkg : grunt.file.readJSON('package.json'),
 		
 		/*----------------------------------( BANNER )----------------------------------*/
+		
+		/**
+		 * Short and long banners.
+		 *
+		 * @see http://gruntjs.com/getting-started#an-example-gruntfile
+		 */
 		
 		banner : {
 			
@@ -333,12 +352,20 @@ module.exports = function(grunt) {
 		
 		/*----------------------------------( CONCAT )----------------------------------*/
 		
+		/**
+		 * Concatenate files.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-concat
+		 * @see https://github.com/gruntjs/grunt-contrib-concat/pull/25
+		 */
+		
 		concat : {
 			
 			options : {
 				
 				process : function(src) {
 					
+					// Removes "@charset "UTF-8"" inserted by SCSS:
 					return src.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1');
 					
 				},
