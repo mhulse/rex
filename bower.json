@@ -1,8 +1,8 @@
 {
   "name": "stoops",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "main": [
-    "./source/files/styles/stoops.less"
+    "./source/files/styles/production.scss"
   ],
   "ignore": [
     "**/.*"

@@ -45,3 +45,4 @@ node_modules
 npm-debug.log
 temp/
 bower_components/
+.sass-cache

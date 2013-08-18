@@ -1,3 +1,11 @@
+/**
+ * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
+ * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
+ * @see http://webtypography.net/toc/
+ * @see http://www.alistapart.com/articles/more-meaningful-typography/
+ * @see http://modularscale.com/
+ */
+
 /*----------------------------------( BASELINE )----------------------------------*/
 
 /**
@@ -84,9 +92,12 @@
  * @see http://css-tricks.com/box-sizing/
  * @see https://developer.mozilla.org/docs/web/css/universal_selectors
  * @see https://developer.mozilla.org/docs/web/css/box-sizing
+ * @see https://github.com/twbs/bootstrap
  */
 
-* {
+*,
+*:before,
+*:after {
 	-webkit-box-sizing: border-box;
 	   -moz-box-sizing: border-box;
 	        box-sizing: border-box;
@@ -198,10 +209,8 @@ body {
 
 address {
 	font-size: 1rem; // 16px
-	line-height: @baseline; // (((1.5 / 1) = 1.5) * .75) = 1.125
+	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
 	margin: .625rem 0; // 10px 0
-	
-	.baseline(1, .75);
 }
 
 /**

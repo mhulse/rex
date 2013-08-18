@@ -77,7 +77,7 @@ module.exports = function(grunt) {
 			files : [
 				
 				'<%= jshint.init %>',
-				'./files/styles/*.less',
+				'./files/styles/*.scss',
 				'./files/templates/*.html',
 				
 			],
@@ -278,31 +278,36 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( LESS )----------------------------------*/
+		/*----------------------------------( SASS )----------------------------------*/
 		
 		/**
-		 * Compile LESS files to CSS.
+		 * Compile Sass to CSS.
 		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-less
+		 * @see https://github.com/gruntjs/grunt-contrib-sass
+		 * @see http://sass-lang.com/docs/yardoc/file.SASS_REFERENCE.html#output_style
 		 */
 		
-		less : {
+		sass : {
 			
 			options : {
 				
-				compress : true,
+				precision : 14,
+				noCache: true,
+				trace: true,
 				
 			},
 			
 			dev : {
 				
+				options : {
+					
+					style : 'expanded',
+					
+				},
+				
 				files : {
 					
-					'./temp/<%= pkg.name %>.css' : [
-						'./files/plugins/normalize-css/normalize.css', // Bower package.
-						'./files/styles/<%= pkg.name %>.less',
-						'./files/styles/develop.less',
-					],
+					'./temp/<%= pkg.name %>.css' : './files/styles/development.scss',
 					
 				},
 				
@@ -312,13 +317,13 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					yuicompress : true,
+					style : 'compressed',
 					
 				},
 				
 				files : {
 					
-					'./temp/<%= pkg.name %>.min.css' : './files/styles/<%= pkg.name %>.less',
+					'./temp/<%= pkg.name %>.min.css' : './files/styles/production.scss',
 					
 				},
 				
@@ -378,7 +383,7 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	
-	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-sass');
 	
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	
@@ -395,9 +400,9 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('init', ['jshint', 'clean:start',]);
 	
-	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'less:dev', 'concat:dev',]);
+	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev',]);
 	
-	grunt.registerTask('prod', ['env:prod', 'preprocess:prod', 'htmlmin:prod', 'less:prod', 'concat:prod',]);
+	grunt.registerTask('prod', ['env:prod', 'preprocess:prod', 'htmlmin:prod', 'sass:prod', 'concat:prod',]);
 	
 	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy', 'clean:finish',]);
 	
