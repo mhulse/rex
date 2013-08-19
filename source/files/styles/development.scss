@@ -21,6 +21,12 @@ body { padding: 1rem; }
 	box-shadow: 0 0 .3125rem 0 fade-out(#000, .45); // 0 0 5px 0
 }
 
+.#{$NS}subtle {
+	font: normal 1.188rem/1.26262626262626 monospace, serif; // 19px
+	color: #666;
+	margin: .625rem 0; // 10px 0
+}
+
 /*--------------------------------------------------------------------*/
 
 /*

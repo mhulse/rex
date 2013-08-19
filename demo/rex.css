@@ -1995,6 +1995,12 @@ body {
   box-shadow: 0 0 0.3125rem 0 rgba(0, 0, 0, 0.55);
 }
 
+.rex_subtle {
+  font: normal 1.188rem/1.26262626262626 monospace, serif;
+  color: #666;
+  margin: .625rem 0;
+}
+
 /*--------------------------------------------------------------------*/
 /*
 .rex_container {
