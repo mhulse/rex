@@ -1,22 +1,17 @@
-# Stoops! *(super-duper uuber beta!)*
+# Rex (O'Herlihan)
 
-### Booooooooorrrrrriiiiiinnnnnnnnggggggg ... Boring. Bored.
+[![ScreenShot](rex.gif)](http://youtu.be/LBkYqku11V0)
+**Oh yeah, root's kicking in**
 
 ---
 
 #### DEMO
 
-DEVELOPMENT &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/demo/index.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/demo/stoops.css) | PRODUCTION &bull; [html](https://raw.github.com/mhulse/stoops/gh-pages/demo/index.min.html) &bull; [css](https://raw.github.com/mhulse/stoops/gh-pages/demo/stoops.min.css)
+DEVELOPMENT &bull; [html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.html) &bull; [css](https://raw.github.com/mhulse/rex/gh-pages/demo/rex.css) | PRODUCTION &bull; [html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.min.html) &bull; [css](https://raw.github.com/mhulse/rex/gh-pages/demo/rex.min.css)
 :-: | :-:
-[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/demo/&chs=240x240)](http://mhulse.github.io/stoops/demo/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/stoops/demo/index.min.html&chs=240x240)](http://mhulse.github.io/stoops/demo/index.min.html)
+[![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/rex/demo/&chs=240x240)](http://mhulse.github.io/rex/demo/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/rex/demo/index.min.html&chs=240x240)](http://mhulse.github.io/rex/demo/index.min.html)
 
-**Note:** Only the [`DEVELOPMENT` demo](http://mhulse.github.io/stoops/demo/) uses [`normalize.css`](http://necolas.github.io/normalize.css/).
-
----
-
-#### ABOUT
-
-More (boring) information coming soon.
+**Note:** Only the [`DEVELOPMENT` demo](http://mhulse.github.io/rex/demo/) uses [`normalize.css`](http://necolas.github.io/normalize.css/).
 
 ---
 

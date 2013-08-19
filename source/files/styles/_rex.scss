@@ -1,403 +1,13 @@
 /**
- * Stoops!
- * Super-duper uuber beta!
- *
- * @author Micky Hulse
- * @link http://mhulse.com
- * @docs https://github.com/mhulse/stoops
- * @copyright Copyright (c) 2013 Micky Hulse.
- * @license Released under the Apache License, Version 2.0.
- * @version 0.3.0
- * @date 2013/08/18
- */
-
-.test1 {
-  line-height: 1.5;
-}
-
-.test2 {
-  font-size: 1.5625rem;
-  line-height: 1.2;
-  padding: 0.36em 0;
-}
-
-/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined in IE 8/9.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block;
-}
-
-/**
- * Correct `inline-block` display not defined in IE 8/9.
- */
-audio,
-canvas,
-video {
-  display: inline-block;
-}
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address styling not present in IE 8/9.
- */
-[hidden] {
-  display: none;
-}
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/**
- * Remove default margin.
- */
-body {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Links
-   ========================================================================== */
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
- */
-a:focus {
-  outline: thin dotted;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/**
- * Address styling not present in IE 8/9, Safari 5, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
-b,
-strong {
-  font-weight: bold;
-}
-
-/**
- * Address styling not present in Safari 5 and Chrome.
- */
-dfn {
-  font-style: italic;
-}
-
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/**
- * Address styling not present in IE 8/9.
- */
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/**
- * Correct font family set oddly in Safari 5 and Chrome.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-/**
- * Improve readability of pre-formatted text in all browsers.
- */
-pre {
-  white-space: pre-wrap;
-}
-
-/**
- * Set consistent quote types.
- */
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-/* ==========================================================================
-   Embedded content
-   ========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9.
- */
-img {
-  border: 0;
-}
-
-/**
- * Correct overflow displayed oddly in IE 9.
- */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-figure {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-/**
- * Define consistent border, margin, and padding.
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/**
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- */
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 2 */
-  margin: 0;
-  /* 3 */
-}
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-button,
-input {
-  line-height: normal;
-}
-
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
-button,
-select {
-  text-transform: none;
-}
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-}
-
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9.
- * 2. Remove excess padding in IE 8/9.
- */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box;
-}
-
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/**
- * 1. Remove default vertical scrollbar in IE 8/9.
- * 2. Improve readability and alignment in all browsers.
- */
-textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */
-}
-
-/* ==========================================================================
-   Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/**
  * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
  * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
  * @see http://webtypography.net/toc/
  * @see http://www.alistapart.com/articles/more-meaningful-typography/
  * @see http://modularscale.com/
  */
+
 /*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
+
 /**
  * Apply a natural box layout model to all elements.
  *
@@ -407,15 +17,17 @@ table {
  * @see https://developer.mozilla.org/docs/web/css/box-sizing
  * @see https://github.com/twbs/bootstrap
  */
+
 *,
 *:before,
 *:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
 }
 
 /*----------------------------------( BASELINE )----------------------------------*/
+
 /**
  * Baseline grid class.
  *
@@ -438,50 +50,56 @@ table {
  * @see http://stackoverflow.com/a/8877902/922323
  * @see https://coderwall.com/p/jsb-vw
  */
-.stoops-baseline {
-  position: relative;
-  /* Show the mouse as a hand: */
-  cursor: pointer;
-  cursor: hand;
-  /* Grid overlay: */
-  /* On click, hide grid: */
-  /* On click, add a faux border to child elements to view where they begin/end in relationship to the baseline: */
-}
-.stoops-baseline::before {
-  background-image: -webkit-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
-  background-image: -moz-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
-  background-image: linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
-  background-size: 100% 1.5rem, 100% .75rem, 100% .375rem;
-  /* Match base `line-height`. */
-  background-position: 0 0;
-  /* Put line adjustments here. */
-  background-origin: content-box;
-  /* Regardless of padding, background will begin in the corner of the box. */
-  background-attachment: local;
-  /* For scrolling. */
-  width: 100%;
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  /* Allows for the bottom-most border to show. */
-  z-index: 999;
-  /* Above all other content. */
-  content: "";
-  pointer-events: none;
-  /* The element is never the target of mouse events. */
-}
-.stoops-baseline:active::before {
-  display: none;
-}
-.stoops-baseline:active * {
-  -webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
-  box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
-  -webkit-user-select: none;
-  /* Disable selection in WebKit/iOS. */
+
+.rex-baseline {
+	
+	position: relative;
+	/* Show the mouse as a hand: */
+	cursor: pointer;
+	cursor: hand;
+	
+	/* Grid overlay: */
+	&::before {
+		background-image:
+			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-image:
+			-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), 
+			-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-image:
+			linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+			linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+			linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+		background-size: 100% 1.5rem, 100% .75rem, 100% .375rem; /* Match base `line-height`. */
+		background-position: 0 0;                                /* Put line adjustments here. */
+		background-origin: content-box;                          /* Regardless of padding, background will begin in the corner of the box. */
+		background-attachment: local;                            /* For scrolling. */
+		width: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: -1px; /* Allows for the bottom-most border to show. */
+		z-index: 999; /* Above all other content. */
+		content: "";
+		pointer-events: none; /* The element is never the target of mouse events. */
+	}
+	
+	/* On click, hide grid: */
+	&:active::before { display: none; }
+	
+	/* On click, add a faux border to child elements to view where they begin/end in relationship to the baseline: */
+	&:active * {
+		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
+		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
+		-webkit-user-select: none; /* Disable selection in WebKit/iOS. */
+	}
+	
 }
 
 /*----------------------------------( ROOT ELEMENT )----------------------------------*/
+
 /**
  * The `<html>` element represents the root of an HTML document.
  *
@@ -512,7 +130,11 @@ table {
  * @see http://dev.w3.org/html5/spec#the-html-element
  * @see http://ç.whatwg.org#the-html-element
  */
+
+html {}
+
 /*----------------------------------( SECTIONS )----------------------------------*/
+
 /**
  * The `<body>` element represents the main content of the document.
  * 
@@ -560,15 +182,17 @@ table {
  * @see http://dev.w3.org/html5/spec#the-body-element
  * @see http://ç.whatwg.org#the-body-element
  */
+
 body {
-  font-size: 100%;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
+	font-size: 100%;
+	line-height: 1.5;
+	-webkit-font-smoothing: antialiased;
+	        font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
 }
 
 /*--------------------------------------------------------------------*/
+
 /**
  * Represents the contact information for its enclosing section. If it is
  * a child of the body element, then it applies to the document as a whole.
@@ -577,10 +201,11 @@ body {
  * @see http://dev.w3.org/html5/spec#the-address-element
  * @see http://ç.whatwg.org#the-address-element
  */
+
 address {
-  font-size: 1rem;
-  line-height: 1.125;
-  margin: .625rem 0;
+	font-size: 1rem; // 16px
+	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
+	margin: .625rem 0; // 10px 0
 }
 
 /**
@@ -594,6 +219,9 @@ address {
  * @see http://dev.w3.org/html5/spec#the-article-element
  * @see http://ç.whatwg.org#the-article-element
  */
+
+article {}
+
 /**
  * The `<aside>` element represents a section of a page consisting of
  * content that is tangentially related to the content around the
@@ -605,6 +233,9 @@ address {
  * @see http://dev.w3.org/html5/spec#the-aside-element
  * @see http://ç.whatwg.org#the-aside-element
  */
+
+aside {}
+
 /**
  * The `<footer>` element represents the "footer" of a document or section
  * of a document. It typically contains metadata about its enclosing
@@ -616,6 +247,9 @@ address {
  * @see http://dev.w3.org/html5/spec#the-footer-element
  * @see http://ç.whatwg.org#the-footer-element
  */
+
+footer {}
+
 /**
  * Represent headings and subheadings. These elements rank in importance
  * according to the number in their name. The `<h1>` element is said to
@@ -635,51 +269,42 @@ address {
  * @see http://dev.w3.org/html5/spec#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
  * @see http://ç.whatwg.org#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
  */
+
 h1, h2, h3, h4, h5, h6,
 [class$="h1"], [class$="h2"], [class$="h3"], [class$="h4"], [class$="h5"], [class$="h6"],
 [class$="sh1"], [class$="sh2"], [class$="sh3"], [class$="sh4"], [class$="sh5"], [class$="sh6"] {
-  font-size: 1rem;
-  line-height: 1.5;
-  font-weight: bold;
-  margin: 0;
+	font-size: 1rem; // 16px
+	line-height: 1.5;
+	font-weight: bold;
+	margin: 0;
 }
-
-[class$="sh1"], [class$="sh2"], [class$="sh3"], [class$="sh4"], [class$="sh5"], [class$="sh6"] {
-  font-weight: normal;
-}
-
+[class$="sh1"], [class$="sh2"], [class$="sh3"], [class$="sh4"], [class$="sh5"], [class$="sh6"] { font-weight: normal; }
 h1, [class$="h1"], [class$="sh1"] {
-  font-size: 2.875rem;
-  line-height: 1.04347826086957;
+	font-size: 2.875rem; // 46px
+	line-height: 1.04347826086957; // (3 / 2.875) = 1.04347826086957
 }
-
 h2, [class$="h2"], [class$="sh2"] {
-  font-size: 2.5rem;
-  line-height: 1.05;
+	font-size: 2.5rem; // 40px
+	line-height: 1.05; // (((3 / 2.5) = 1.2) * .875) = 1.05
 }
-
 h3, [class$="h3"], [class$="sh3"] {
-  font-size: 2.125rem;
-  line-height: 1.05882352941176;
+	font-size: 2.125rem; // 34px
+	line-height: 1.05882352941176; // (((3 / 2.125) = 1.41176470588235) * .75) = 1.05882352941176
 }
-
 h4, [class$="h4"], [class$="sh4"] {
-  font-size: 1.75rem;
-  line-height: 1.07142857142857;
+	font-size: 1.75rem; // 28px
+	line-height: 1.07142857142857; // (((3 / 1.75) = 1.71428571428571) * .625) = 1.07142857142857
 }
-
 h5, [class$="h5"], [class$="sh5"] {
-  font-size: 1.375rem;
-  line-height: 1.09090909090909;
+	font-size: 1.375rem; // 22px
+	line-height: 1.09090909090909; // (1.5 / 1.375) = 1.09090909090909
 }
-
 h6, [class$="h6"], [class$="sh6"] {
-  font-size: 1.125rem;
-  line-height: 1.16666666666666;
+	font-size: 1.125rem; // 18px
+	line-height: 1.16666666666666; // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
 }
-
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
-  margin-top: 0;
+h1, h2, h3, h4, h5, h6 {
+	+ p { margin-top: 0; }
 }
 
 /**
@@ -688,9 +313,8 @@ h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p {
  * @see https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
  * @see http://camendesign.com/design/design.css
  */
-h1:empty {
-  display: none;
-}
+
+h1:empty { display: none; }
 
 /**
  * The `<header>` element represents the "header" of a document or section
@@ -703,6 +327,9 @@ h1:empty {
  * @see http://dev.w3.org/html5/spec#the-header-element
  * @see http://ç.whatwg.org#the-header-element
  */
+
+header {}
+
 /**
  * The main element is an exact analogue of ARIA's `role="main"`, and is
  * designed to show screenreaders and assistive technologies exactly where
@@ -717,6 +344,9 @@ h1:empty {
  * @see http://dev.w3.org/html5/spec#the-main-element
  * @see http://ç.whatwg.org#the-main-element
  */
+
+main {}
+
 /**
  * The `<nav>` element represents navigation for a document. It is a
  * section containing links to other documents or to parts within the
@@ -731,6 +361,9 @@ h1:empty {
  * @see http://dev.w3.org/html5/spec#the-nav-element
  * @see http://ç.whatwg.org#the-nav-element
  */
+
+nav {}
+
 /**
  * The `<section>` element represents a generic document or application
  * section. In this context, a section is a thematic grouping of content,
@@ -743,7 +376,11 @@ h1:empty {
  * @see http://dev.w3.org/html5/spec#the-section-element
  * @see http://ç.whatwg.org#the-section-element
  */
+
+section {}
+
 /*----------------------------------( GROUPING CONTENT )----------------------------------*/
+
 /**
  * The `<blockquote>` element represents a section that is quoted from
  * another source.
@@ -757,32 +394,25 @@ h1:empty {
  * @see http://dev.w3.org/html5/spec#the-blockquote-element
  * @see http://ç.whatwg.org#the-blockquote-element
  */
-blockquote {
-  font-size: 1rem;
-  line-height: 1.5rem;
-  margin: .625rem 0;
-  padding: .625rem;
-  quotes: none;
-}
 
+blockquote {
+	font-size: 1rem; // 16px
+	line-height: 1.5rem;
+	margin: .625rem 0; // 10px 0
+	padding: .625rem; // 10px
+	quotes: none;
+}
 blockquote::before,
 blockquote::after {
-  content: '';
-  content: none;
+	content: '';
+	content: none;
 }
-
-blockquote footer {
-  font-size: .875rem;
-  line-height: 1.71428571428571;
-}
-
-blockquote > :first-child {
-  margin-top: 0 !important;
-}
-
-blockquote > :last-child {
-  margin-bottom: 0 !important;
-}
+	blockquote footer {
+		font-size: .875rem; // 14px
+		line-height: 1.71428571428571; // (1.5 / .875) = 1.71428571428571
+	}
+	blockquote > :first-child { margin-top: 0 !important; }
+	blockquote > :last-child { margin-bottom: 0 !important; }
 
 /**
  * The `<div>` element has no special meaning at all. It represents its
@@ -794,6 +424,9 @@ blockquote > :last-child {
  * @see http://dev.w3.org/html5/spec#the-div-element
  * @see http://ç.whatwg.org#the-div-element
  */
+
+div {}
+
 /**
  * The `<dl>` (description list) element represents a description list
  * consisting of zero or more name-value groups. Each group must consist
@@ -823,26 +456,20 @@ blockquote > :last-child {
  * @see http://dev.w3.org/html5/spec#the-dd-element
  * @see http://ç.whatwg.org#the-dd-element
  */
+
 dl {
-  font-size: 1rem;
-  line-height: 1.125;
-  margin: .625rem 0;
-  padding: 0;
+	font-size: 1rem; // 16px
+	line-height: 1.125; // (1.5 * .75) = 1.125
+	margin: .625rem 0; // 10px 0
+	padding: 0;
 }
-
-dl dt,
-dl dd {
-  margin: 0 0 .375rem;
-  padding: 0;
-}
-
-dl dt {
-  font-weight: bold;
-}
-
-dl dd {
-  margin-left: .5rem;
-}
+	dl dt,
+	dl dd {
+		margin: 0 0 .375rem; // 0 0 6px
+		padding: 0;
+	}
+	dl dt { font-weight: bold; }
+	dl dd { margin-left: .5rem; } // 8px
 
 /**
  * The `<figure>` element represents some flow content, optionally with a
@@ -866,32 +493,20 @@ dl dd {
  * @see http://dev.w3.org/html5/spec#the-figcaption-element
  * @see http://ç.whatwg.org#the-figcaption-element
  */
-figure {
-  margin: .625rem 0;
-}
 
-figure img {
-  display: block;
-}
-
-figure figcaption {
-  font-size: .875rem;
-  line-height: 1.5;
-}
-
-figure p {
-  font-family: inherit;
-  font-size: inherit;
-  margin: inherit;
-}
-
-figure figcaption > :first-child {
-  margin-top: 0 !important;
-}
-
-figure figcaption > :last-child {
-  margin-bottom: 0 !important;
-}
+figure { margin: .625rem 0; } // 10px 0
+	figure img { display: block; }
+	figure figcaption {
+		font-size: .875rem; // (14px / 16px) = .875em
+		line-height: 1.5; // ((((1.5 / .875) = 1.71428571428571) * .875) = 1.28571428571428)
+	}
+	figure p {
+		font-family: inherit;
+		font-size: inherit;
+		margin: inherit;
+	}
+		figure figcaption > :first-child { margin-top: 0 !important; }
+		figure figcaption > :last-child { margin-bottom: 0 !important; }
 
 /**
  * The `<hr>` element represents a paragraph-level thematic break. It
@@ -906,38 +521,21 @@ figure figcaption > :last-child {
  * @see http://dev.w3.org/html5/spec#the-hr-element
  * @see http://ç.whatwg.org#the-hr-element
  */
+
 hr, [class$="hr"], [class$="hr1"], [class$="hr2"], [class$="hr3"], [class$="hr4"], [class$="hr5"], [class$="hr6"] {
-  color: black;
-  border: 0;
-  background: black;
-  height: .0625rem;
-  margin: .625rem 0;
-  padding: 0;
+	color: black;
+	border: 0;
+	background: black;
+	height: .0625rem; // 1px
+	margin: .625rem 0; // 10px
+	padding: 0;
 }
-
-[class$="hr1"] {
-  height: .125rem;
-}
-
-[class$="hr2"] {
-  height: .1875rem;
-}
-
-[class$="hr3"] {
-  height: .25rem;
-}
-
-[class$="hr4"] {
-  height: .3125rem;
-}
-
-[class$="hr5"] {
-  height: .375rem;
-}
-
-[class$="hr6"] {
-  height: .4375rem;
-}
+	[class$="hr1"] { height: .125rem; } // 2px
+	[class$="hr2"] { height: .1875rem; } // 3px
+	[class$="hr3"] { height: .25rem; } // 4px
+	[class$="hr4"] { height: .3125rem; } // 5px
+	[class$="hr5"] { height: .375rem; } // 6px
+	[class$="hr6"] { height: .4375rem; } // 7px
 
 /**
  * The `<p>` element represents a paragraph.
@@ -946,34 +544,36 @@ hr, [class$="hr"], [class$="hr1"], [class$="hr2"], [class$="hr3"], [class$="hr4"
  * @see http://dev.w3.org/html5/spec#the-p-element
  * @see http://ç.whatwg.org#the-p-element
  */
-p {
-  font-size: 1rem;
-  line-height: 1.5;
-  margin: .75rem 0;
-}
 
-/**
- * Drop caps.
- *
- * Firefox handled these classes better than Safari (Mac). For some
- * reason, a base `line-height` of `1.5` worked better in Safari. Safari's
- * page zoom does weird stuff... I'm tired of trying to get this to work.
- *
- * @see http://www.smashingmagazine.com/2012/04/03/drop-caps-historical-use-and-current-best-practices/
- * @see http://css-tricks.com/snippets/css/drop-caps/
- * @see http://www.sitepoint.com/a-simple-css-drop-cap/
- * @see http://phrogz.net/css/vertical-align/
- */
-p[class$="dropcap"]:first-of-type:first-letter {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 4.5rem;
-  line-height: 1;
-  margin: .15em .1em 0 0;
-  vertical-align: middle;
-  float: left;
-  display: inline;
+p {
+	font-size: 1rem; // 16px
+	line-height: 1.5;
+	margin: .75rem 0; // (1.5 / 2) = .75
 }
+	
+	/**
+	 * Drop caps.
+	 *
+	 * Firefox handled these classes better than Safari (Mac). For some
+	 * reason, a base `line-height` of `1.5` worked better in Safari. Safari's
+	 * page zoom does weird stuff... I'm tired of trying to get this to work.
+	 *
+	 * @see http://www.smashingmagazine.com/2012/04/03/drop-caps-historical-use-and-current-best-practices/
+	 * @see http://css-tricks.com/snippets/css/drop-caps/
+	 * @see http://www.sitepoint.com/a-simple-css-drop-cap/
+	 * @see http://phrogz.net/css/vertical-align/
+	 */
+	
+	p[class$="dropcap"]:first-of-type:first-letter {
+		font-style: normal;
+		font-weight: normal;
+		font-size: 4.5rem; // 72px
+		line-height: 1; // (4.5 / 4.5) = 1
+		margin: .15em .1em 0 0;
+		vertical-align: middle;
+		float: left;
+		display: inline;
+	}
 
 /**
  * The `<pre>` element represents a block of preformatted text, in which
@@ -987,15 +587,16 @@ p[class$="dropcap"]:first-of-type:first-letter {
  * @see http://dev.w3.org/html5/spec#the-pre-element
  * @see http://ç.whatwg.org#the-pre-element
  */
+
 pre {
-  font-size: .875rem;
-  line-height: 1.28571428571428;
-  margin: .625rem 0;
-  padding: .625rem;
-  word-wrap: normal;
-  overflow: auto;
-  white-space: pre;
-  -webkit-overflow-scrolling: touch;
+	font-size: .875rem; // (14px / 16px) = .875em
+	line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	margin: .625rem 0; // 10px
+	padding: .625rem; // 10px
+	word-wrap: normal;
+	overflow: auto;
+	white-space: pre;
+	-webkit-overflow-scrolling: touch;
 }
 
 /**
@@ -1023,38 +624,27 @@ pre {
  * @see http://dev.w3.org/html5/spec#the-li-element
  * @see http://ç.whatwg.org#the-li-element
  */
+
 ol,
 ul {
-  font-size: 1em;
-  line-height: 1.125;
-  margin: .625rem 0;
-  padding: 0;
-  list-style-position: outside;
+	font-size: 1em; // 16px
+	line-height: 1.125; // (1.5 * .75) = 1.125
+	margin: .625rem 0; // 10px 0
+	padding: 0;
+	list-style-position: outside;
 }
-
-ol {
-  margin-left: 2.5rem;
-}
-
-ul {
-  margin-left: 1.5rem;
-}
-
-ol li,
-ul li {
-  margin: 0 0 .375rem;
-  padding: 0;
-}
-
-li ol {
-  margin-left: 2.5rem;
-}
-
-li ul {
-  margin-left: .5rem;
-}
+ol { margin-left: 2.5rem; } // 40px
+ul { margin-left: 1.5rem; } // 24px
+	ol li,
+	ul li {
+		margin: 0 0 .375rem; // (1.5 * .25) = .375 (6px)
+		padding: 0;
+	}
+	li ol { margin-left: 2.5rem; } // 40px
+	li ul { margin-left: .5rem; } // 8px
 
 /*----------------------------------( TEXT-LEVEL SEMANTICS )----------------------------------*/
+
 /**
  * If the `<a>` element has an `href` attribute, then it represents a
  * hyperlink (a hypertext anchor). If the `<a>` element has no `href`
@@ -1069,6 +659,9 @@ li ul {
  * @see http://dev.w3.org/html5/spec#the-a-element
  * @see http://ç.whatwg.org#the-a-element
  */
+
+a {}
+
 /**
  * The `<abbr>` element represents an abbreviation or acronym. The
  * optional `title` attribute may be used to provide an expansion of the
@@ -1082,19 +675,14 @@ li ul {
  * @see http://dev.w3.org/html5/spec#the-abbr-element
  * @see http://ç.whatwg.org#the-abbr-element
  */
+
 abbr {
-  font-style: italic;
-  cursor: help;
+	font-style: italic;
+	cursor: help;
 }
-
-abbr[title] {
-  border-bottom: .0625rem dotted;
-}
-
+abbr[title] { border-bottom: .0625rem dotted; } // 1px
 abbr[title="et cetera"],
-[class$="etc"] {
-  font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive;
-}
+[class$="etc"] { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
 
 /**
  * The `<bdi>` element represents a span of text that is to be isolated
@@ -1106,9 +694,10 @@ abbr[title="et cetera"],
  * @see http://dev.w3.org/html5/spec#the-rp-element
  * @see http://ç.whatwg.org#the-rp-element
  */
+
 bdi {
-  direction: ltr;
-  unicode-bidi: bidi-override;
+	direction: ltr;
+	unicode-bidi: bidi-override;
 }
 
 /**
@@ -1120,6 +709,9 @@ bdi {
  * @see http://dev.w3.org/html5/spec#the-bdo-element
  * @see http://ç.whatwg.org#the-bdo-element
  */
+
+bdo {}
+
 /**
  * The `<br>` element represents a line break. `<br>` elements must be
  * used only for line breaks that are actually part of the content, as in
@@ -1130,6 +722,9 @@ bdi {
  * @see http://dev.w3.org/html5/spec#the-br-element
  * @see http://ç.whatwg.org#the-br-element
  */
+
+br {}
+
 /**
  * The `<cite>` element represents the title of a work (e.g. a book, a
  * paper, an essay, a poem, a score, a song, a script, a film, a TV show,
@@ -1151,9 +746,8 @@ bdi {
  * @see http://dev.w3.org/html5/spec#the-cite-element
  * @see http://ç.whatwg.org#the-cite-element
  */
-cite {
-  font-style: italic;
-}
+
+cite { font-style: italic; }
 
 /**
  * The `<code>` element represents a fragment of computer code. This could
@@ -1167,23 +761,16 @@ cite {
  * @see http://dev.w3.org/html5/spec#the-code-element
  * @see http://ç.whatwg.org#the-code-element
  */
+
 code {
-  white-space: pre;
-  /* CSS 2.0 */
-  white-space: pre-wrap;
-  /* CSS 2.1 */
-  white-space: pre-line;
-  /* CSS 3.0 */
-  white-space: -pre-wrap;
-  /* Opera 4-6 */
-  white-space: -o-pre-wrap;
-  /* Opera 7 */
-  white-space: -moz-pre-wrap;
-  /* Mozilla */
-  white-space: -hp-pre-wrap;
-  /* HP Printers */
-  word-wrap: break-word;
-  /* IE 5+ */
+	white-space: pre;           /* CSS 2.0 */
+	white-space: pre-wrap;      /* CSS 2.1 */
+	white-space: pre-line;      /* CSS 3.0 */
+	white-space: -pre-wrap;     /* Opera 4-6 */
+	white-space: -o-pre-wrap;   /* Opera 7 */
+	white-space: -moz-pre-wrap; /* Mozilla */
+	white-space: -hp-pre-wrap;  /* HP Printers */
+	word-wrap: break-word;      /* IE 5+ */
 }
 
 /**
@@ -1200,6 +787,9 @@ code {
  * @see http://dev.w3.org/html5/spec#the-data-element
  * @see http://ç.whatwg.org#the-data-element
  */
+
+data {}
+
 /**
  * The `<dfn>` element represents the defining instance of a term. The
  * paragraph, description list group, or section that is the nearest
@@ -1211,14 +801,14 @@ code {
  * @see http://dev.w3.org/html5/spec#the-dfn-element
  * @see http://ç.whatwg.org#the-dfn-element
  */
-dfn {
-  font-weight: bold;
-  font-style: italic;
-}
 
+dfn {
+	font-weight: bold;
+	font-style: italic;
+}
 dfn[title] {
-  border-bottom: .0625rem dotted;
-  cursor: help;
+	border-bottom: .0625rem dotted; // 1px
+	cursor: help;
 }
 
 /**
@@ -1246,10 +836,9 @@ dfn[title] {
  * @see http://dev.w3.org/html5/spec#the-i-element
  * @see http://ç.whatwg.org#the-i-element
  */
+
 em,
-i {
-  font-style: italic;
-}
+i { font-style: italic; }
 
 /**
  * The `<kbd>` element represents user input (typically keyboard input,
@@ -1272,6 +861,9 @@ i {
  * @see http://dev.w3.org/html5/spec#the-kbd-element
  * @see http://ç.whatwg.org#the-kbd-element
  */
+
+kbd {}
+
 /**
  * The `<mark>` element represents a run of text in one document marked or
  * highlighted because of its relevance in another context.
@@ -1286,9 +878,8 @@ i {
  * @see http://dev.w3.org/html5/spec#the-mark-element
  * @see http://ç.whatwg.org#the-mark-element
  */
-mark {
-  text-decoration: none;
-}
+
+mark { text-decoration: none; }
 
 /**
  * The `q` element represents some phrasing content quoted from another
@@ -1301,31 +892,25 @@ mark {
  * @see http://dev.w3.org/html5/spec#the-q-element
  * @see http://ç.whatwg.org#the-q-element
  */
-q {
-  quotes: '“' '”' '‘' '’' '“' '”' '‘' '’';
-}
 
-/* Four levels of nested quotes. */
+q { quotes: '“' '”' '‘' '’' '“' '”' '‘' '’'; } /* Four levels of nested quotes. */
 /* Extra content definitions for pre-2011 WebKit: */
 q:before {
-  content: '“';
-  content: open-quote;
+	content: '“';
+	content: open-quote;
 }
-
 q:after {
-  content: '”';
-  content: close-quote;
+	content: '”';
+	content: close-quote;
 }
-
-q q:before {
-  content: '‘';
-  content: open-quote;
-}
-
-q q:after {
-  content: '’';
-  content: close-quote;
-}
+	q q:before {
+		content: '‘';
+		content: open-quote;
+	}
+	q q:after {
+		content: '’';
+		content: close-quote;
+	}
 
 /**
  * The `<ruby>` element represents a container for base text and ruby text
@@ -1356,10 +941,13 @@ q q:after {
  * @see http://dev.w3.org/html5/spec#the-rp-element
  * @see http://ç.whatwg.org#the-rp-element
  */
-rp {
-  font-size: 100%;
-  display: inline;
-}
+
+ruby {}
+	rt {}
+	rp {
+		font-size: 100%;
+		display: inline;
+	}
 
 /**
  * The `<s>` element represents contents that are no longer accurate or no
@@ -1371,6 +959,9 @@ rp {
  * @see http://dev.w3.org/html5/spec#the-s-element
  * @see http://ç.whatwg.org#the-s-element
  */
+
+s {}
+
 /**
  * The `<samp>` element represents (sample) output from a program or
  * computing system.
@@ -1379,6 +970,9 @@ rp {
  * @see http://dev.w3.org/html5/spec#the-samp-element
  * @see http://ç.whatwg.org#the-samp-element
  */
+
+samp {}
+
 /**
  * The `<small>` element represents side comments such as small print. It
  * is not intended to be presentational. The `<small>` element should not
@@ -1389,10 +983,11 @@ rp {
  * @see http://dev.w3.org/html5/spec#the-small-element
  * @see http://ç.whatwg.org#the-small-element
  */
+
 small,
 [class$="small"] {
-  font-size: smaller;
-  letter-spacing: .03em;
+	font-size: smaller;
+	letter-spacing: .03em;
 }
 
 /**
@@ -1404,21 +999,25 @@ small,
  * @see http://dev.w3.org/html5/spec#the-span-element
  * @see http://ç.whatwg.org#the-span-element
  */
-/**
- * The italic version of an ampersand is more decorative and interesting
- * than its roman counterpart.
- *
- * @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
- * @see http://fluidbaselinegrid.com/css/style.css
- */
-span[class$="amp"] {
-  font-size: 110%;
-  font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
-  font-weight: 400;
-  line-height: 0;
-  vertical-align: baseline;
-  position: relative;
-}
+
+span {}
+	
+	/**
+	 * The italic version of an ampersand is more decorative and interesting
+	 * than its roman counterpart.
+	 *
+	 * @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
+	 * @see http://fluidbaselinegrid.com/css/style.css
+	 */
+	
+	span[class$="amp"] {
+		font-size: 110%;
+		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;
+		font-weight: 400;
+		line-height: 0;
+		vertical-align: baseline;
+		position: relative;
+	}
 
 /**
  * The `<strong>` element represents strong importance for its contents.
@@ -1445,10 +1044,9 @@ span[class$="amp"] {
  * @see http://dev.w3.org/html5/spec#the-b-element
  * @see http://ç.whatwg.org#the-b-element
  */
+
 strong,
-b {
-  font-weight: bold;
-}
+b { font-weight: bold; }
 
 /**
  * The `<sub>` element can be used inside a `<var>` element, for variables
@@ -1463,21 +1061,16 @@ b {
  * @see http://dev.w3.org/html5/spec#the-sub-and-sup-elements
  * @see http://ç.whatwg.org#the-sub-and-sup-elements
  */
+
 sub,
 sup {
-  font-size: 75%;
-  line-height: 0;
-  vertical-align: baseline;
-  position: relative;
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+	position: relative;
 }
-
-sub {
-  bottom: -.25em;
-}
-
-sup {
-  top: -.5em;
-}
+sub { bottom: -.25em; }
+sup { top: -.5em; }
 
 /**
  * The `<time>` element represents a precise date and/or time in the
@@ -1491,6 +1084,9 @@ sup {
  * @see http://dev.w3.org/html5/spec#the-time-element
  * @see http://ç.whatwg.org#the-time-element
  */
+
+time {}
+
 /**
  * The `<u>` element represents a span of text with an unarticulated,
  * though explicitly rendered, non-textual annotation (when you are
@@ -1504,9 +1100,8 @@ sup {
  * @see http://dev.w3.org/html5/spec#the-u-element
  * @see http://ç.whatwg.org#the-u-element
  */
-u {
-  text-decoration: underline;
-}
+
+u { text-decoration: underline; }
 
 /**
  * The `<var>` element represents a variable. This could be an actual
@@ -1517,9 +1112,8 @@ u {
  * @see http://dev.w3.org/html5/spec#the-var-element
  * @see http://ç.whatwg.org#the-var-element
  */
-var {
-  font-style: italic;
-}
+
+var { font-style: italic; }
 
 /**
  * The `<wbr>` element represents a line break opportunity. Any content
@@ -1533,11 +1127,12 @@ var {
  * @see http://dev.w3.org/html5/spec#the-wbr-element
  * @see http://ç.whatwg.org#the-wbr-element
  */
-wbr:after {
-  content: "\00200B";
-}
+
+wbr {}
+wbr:after { content: "\00200B"; }
 
 /*----------------------------------( EDITS )----------------------------------*/
+
 /**
  * The `<del>` element represents a removal from the document; `<del>`
  * elements should not cross implied paragraph boundaries.
@@ -1546,9 +1141,8 @@ wbr:after {
  * @see http://dev.w3.org/html5/spec#the-del-element
  * @see http://ç.whatwg.org#the-del-element
  */
-del {
-  text-decoration: line-through;
-}
+
+del { text-decoration: line-through; }
 
 /**
  * The `<ins>` element represents an addition to the document. The `<ins>`
@@ -1558,19 +1152,13 @@ del {
  * @see http://dev.w3.org/html5/spec#the-ins-element
  * @see http://ç.whatwg.org#the-ins-element
  */
-ins {
-  text-decoration: none;
-}
 
-ins:before {
-  content: "[";
-}
-
-ins:after {
-  content: "]";
-}
+ins { text-decoration: none; }
+	ins:before {content: "[";}
+	ins:after {content: "]";}
 
 /*----------------------------------( EMBEDED CONTENT )----------------------------------*/
+
 /**
  * The `<area>` element represents either a hyperlink with some text and a
  * corresponding area on an image map, or a dead area on an image map.
@@ -1583,6 +1171,9 @@ ins:after {
  * @see http://dev.w3.org/html5/spec#the-area-element
  * @see http://ç.whatwg.org#the-area-element
  */
+
+area {}
+
 /**
  * The `<audio>` element represents a sound or audio stream.
  *
@@ -1597,6 +1188,9 @@ ins:after {
  * @see http://dev.w3.org/html5/spec#the-audio-element
  * @see http://ç.whatwg.org#the-audio-element
  */
+
+audio {}
+
 /**
  * The `<canvas>` element represents a resolution-dependent bitmap canvas,
  * which can be used for rendering graphs, game graphics, or other visual
@@ -1619,6 +1213,9 @@ ins:after {
  * @see http://dev.w3.org/html5/spec#the-canvas-element
  * @see http://ç.whatwg.org#the-canvas-element
  */
+
+canvas {}
+
 /**
  * The `<embed>` element represents an integration point for an external
  * (typically non-HTML) application or interactive content.
@@ -1637,6 +1234,9 @@ ins:after {
  * @see http://dev.w3.org/html5/spec#the-embed-element
  * @see http://ç.whatwg.org#the-embed-element
  */
+
+embed {}
+
 /**
  * The `<iframe>` element represents a nested browsing context.
  *
@@ -1654,6 +1254,9 @@ ins:after {
  * @see http://dev.w3.org/html5/spec#the-iframe-element
  * @see http://ç.whatwg.org#the-iframe-element
  */
+
+iframe {}
+
 /**
  * An `<img>` element represents an image. The image given by the `src`
  * attribute is the embedded content, and the value of the alt attribute
@@ -1672,16 +1275,16 @@ ins:after {
  * @see http://dev.w3.org/html5/spec#the-img-element
  * @see http://ç.whatwg.org#the-img-element
  */
-img {
-  max-width: 100%;
-  max-height: 100%;
-  vertical-align: middle;
-}
 
-img[class$="reset"] {
-  max-width: none;
-  max-height: none;
+img {
+	max-width: 100%;
+	max-height: 100%;
+	vertical-align: middle;
 }
+	img[class$="reset"] {
+		max-width: none;
+		max-height: none;
+	}
 
 /**
  * The `<map>` element, in conjunction with any area element descendants,
@@ -1691,6 +1294,9 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#the-map-element
  * @see http://ç.whatwg.org#the-map-element
  */
+
+map {}
+
 /**
  * The top-level element in MathML is `<math>`. Every valid MathML
  * instance must be wrapped in `<math>` tags. In addition you must not
@@ -1701,6 +1307,9 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#mathml
  * @see http://ç.whatwg.org#mathml
  */
+
+math {}
+
 /**
  * The `<object>` element can represent an external resource, which,
  * depending on the type of the resource, will either be treated as an
@@ -1711,6 +1320,9 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#the-object-element
  * @see http://ç.whatwg.org#the-object-element
  */
+
+object {}
+
 /**
  * The `<param>` element defines parameters for plugins invoked by
  * `<object>` elements. It does not represent anything on its own.
@@ -1719,6 +1331,9 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#the-param-element
  * @see http://ç.whatwg.org#the-param-element
  */
+
+param {}
+
 /**
  * The `<source>` element allows authors to specify multiple alternative
  * media resources for media elements. It does not represent anything on
@@ -1730,6 +1345,9 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#the-source-element
  * @see http://ç.whatwg.org#the-source-element
  */
+
+source {}
+
 /**
  * The `<svg>` element can be used to nest a standalone SVG fragment
  * inside the current document (which can be an HTML document). This
@@ -1740,6 +1358,9 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#svg
  * @see http://ç.whatwg.org#svg
  */
+
+svg {}
+
 /**
  * The `<track>` element allows authors to specify explicit external timed
  * text tracks for media elements. It does not represent anything on its
@@ -1749,6 +1370,9 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#the-track-element
  * @see http://ç.whatwg.org#the-track-element
  */
+
+track {}
+
 /**
  * The `<video>` element represents a video or movie.
  *
@@ -1762,25 +1386,28 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#video
  * @see http://ç.whatwg.org#video
  */
+
+video {}
+
 /*----------------------------------( TABULAR DATA )----------------------------------*/
+
 /**
  * Simple solution for responsive tables.
  *
  * @see http://www.maxdesign.com.au/2013/03/22/simple-responsive-table/
  * @see http://creativeandcode.com/simple-solution-for-responsive-tables/
  */
-[class$="scroll"] {
-  width: 100%;
-  margin: .625rem 0;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-}
 
-[class$="scroll"] > * {
-  margin: 0 !important;
+[class$="scroll"] {
+	width: 100%;
+	margin: .625rem 0; // 10px 0
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
 }
+	[class$="scroll"] > * { margin: 0 !important; }
 
 /*--------------------------------------------------------------------*/
+
 /**
  * The `<table>` element represents data with more than one dimension, in
  * the form of a table. Tables must not be used as layout aids.
@@ -1803,10 +1430,11 @@ img[class$="reset"] {
  * @see http://dev.w3.org/html5/spec#the-table-element
  * @see http://ç.whatwg.org#the-table-element
  */
+
 table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  empty-cells: hide;
+	border-collapse: collapse;
+	border-spacing: 0;
+	empty-cells: hide;
 }
 
 /**
@@ -1820,10 +1448,11 @@ table {
  * @see http://dev.w3.org/html5/spec#the-caption-element
  * @see http://ç.whatwg.org#the-caption-element
  */
+
 caption {
-  font-size: .875rem;
-  line-height: 1.28571428571428;
-  padding: .21428571428572em 0;
+	font-size: .875rem; // 14px
+	line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	padding: .21428571428572em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
 }
 
 /**
@@ -1838,6 +1467,9 @@ caption {
  * @see http://dev.w3.org/html5/spec#the-colgroup-element
  * @see http://ç.whatwg.org#the-colgroup-element
  */
+
+colgroup {}
+
 /**
  * The `<col>` element represents one or more columns in the column group
  * represented by a `<table>` element's `<colgroup>`.
@@ -1846,6 +1478,9 @@ caption {
  * @see http://dev.w3.org/html5/spec#the-col-element
  * @see http://ç.whatwg.org#the-col-element
  */
+
+col {}
+
 /**
  * The `<thead>` element represents the block of rows that consist of the
  * column labels (headers) for the parent `<table>` element.
@@ -1854,6 +1489,9 @@ caption {
  * @see http://dev.w3.org/html5/spec#the-thead-element
  * @see http://ç.whatwg.org#the-thead-element
  */
+
+thead {}
+
 /**
  * The `<tfoot>` element represents the block of rows that consist of the
  * column summaries (footers) for the parent `<table>` element.
@@ -1862,6 +1500,9 @@ caption {
  * @see http://dev.w3.org/html5/spec#the-tfoot-element
  * @see http://ç.whatwg.org#the-tfoot-element
  */
+
+tfoot {}
+
 /**
  * The `<tbody>` element represents a block of rows that consist of a body
  * of data for the parent `<table>` element.
@@ -1870,6 +1511,9 @@ caption {
  * @see http://dev.w3.org/html5/spec#the-tbody-element
  * @see http://ç.whatwg.org#the-tbody-element
  */
+
+tbody {}
+
 /**
  * The `<tr>` element represents a row of cells in a `<table>` element.
  *
@@ -1877,6 +1521,9 @@ caption {
  * @see http://dev.w3.org/html5/spec#the-tr-element
  * @see http://ç.whatwg.org#the-tr-element
  */
+
+tr {}
+
 /**
  * The `<th>` element represents a header cell in a `<table>` element.
  *
@@ -1889,15 +1536,17 @@ caption {
  * @see http://dev.w3.org/html5/spec#the-td-element
  * @see http://ç.whatwg.org#the-td-element
  */
+
 th,
 td {
-  font-size: 1rem;
-  line-height: 1.125;
-  margin: 0;
-  padding: .1875em 0;
+	font-size: 1rem; // 16px
+	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
+	margin: 0;
+	padding: .1875em 0; // (((1.5 * .25) = .375) / 2) = .1875
 }
 
 /*----------------------------------( FORMS )----------------------------------*/
+
 /**
  * The `<form>` element represents a collection of form-associated
  * elements, some of which can represent editable values that can be
@@ -1907,9 +1556,8 @@ td {
  * @see http://dev.w3.org/html5/spec#the-form-element
  * @see http://ç.whatwg.org#the-form-element
  */
-form {
-  margin: 0;
-}
+
+form { margin: 0; }
 
 /**
  * The `<fieldset>` element is expected to establish a new block
@@ -1927,10 +1575,11 @@ form {
  * @see http://dev.w3.org/html5/spec#the-fieldset-element
  * @see http://ç.whatwg.org#the-fieldset-element
  */
+
 fieldset {
-  border: 0;
-  margin: .625rem 0;
-  padding: .0625rem 0 0;
+	border: 0;
+	margin: .625rem 0; // 10px
+	padding: .0625rem 0 0; // 1px (prevents margin collapse)
 }
 
 /**
@@ -1941,15 +1590,15 @@ fieldset {
  * @see http://dev.w3.org/html5/spec#the-legend-element
  * @see http://ç.whatwg.org#the-legend-element
  */
+
 legend {
-  font-size: 1.125rem;
-  line-height: 1.16666666666666;
-  width: 100%;
-  margin: 0;
-  padding: 0 0 .33333333333333em;
-  display: block;
-  white-space: normal;
-  /* Corrects text not wrapping in Firefox 3. */
+	font-size: 1.125rem; // 18px
+	line-height: 1.16666666666666; // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
+	width: 100%;
+	margin: 0;
+	padding: 0 0 .33333333333333em; // (1.33333333333333 * .25) = .33333333333333
+	display: block;
+	white-space: normal; /* Corrects text not wrapping in Firefox 3. */
 }
 
 /**
@@ -1962,6 +1611,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#the-label-element
  * @see http://ç.whatwg.org#the-label-element
  */
+
+label {}
+
 /**
  * The `<input>` element represents a typed data field, usually with a
  * form control to allow the user to edit the data.
@@ -1973,12 +1625,16 @@ legend {
  * @see http://dev.w3.org/html5/spec#the-input-element
  * @see http://ç.whatwg.org#the-input-element
  */
+
 /**
  * A push button with no default behavior.
  *
  * @see http://dev.w3.org/html5/spec#button-state-(type=button)
  * @see http://ç.whatwg.org#button-state-(type=button)
  */
+
+input[type="button"] {}
+
 /**
  * A check box. You must use the `value` attribute to define the value
  * submitted by this item. Use the `checked` attribute to indicate whether
@@ -1989,6 +1645,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#checkbox-state-(type=checkbox)
  * @see http://ç.whatwg.org#checkbox-state-(type=checkbox)
  */
+
+input[type="checkbox"] {}
+
 /**
  * A control for specifying a color.
  *
@@ -1996,6 +1655,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#color-state-(type=color)
  * @see http://ç.whatwg.org#color-state-(type=color)
  */
+
+input[type="color"] {}
+
 /**
  * A control for entering a date (year, month, and day, with no time).
  *
@@ -2003,6 +1665,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#date-state-(type=date)
  * @see http://ç.whatwg.org#date-state-(type=date)
  */
+
+input[type="date"] {}
+
 /**
  * A control for entering a date and time (hour, minute, second, and
  * fraction of a second) based on UTC time zone.
@@ -2011,6 +1676,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#date-and-time-state-(type=datetime)
  * @see http://ç.whatwg.org#date-and-time-state-(type=datetime)
  */
+
+input[type="datetime"] {}
+
 /**
  * A control for entering a date and time, with no time zone.
  *
@@ -2018,6 +1686,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#local-date-and-time-state-(type=datetime-local)
  * @see http://ç.whatwg.org#local-date-and-time-state-(type=datetime-local)
  */
+
+input[type="datetime-local"] {}
+
 /**
  * A field for editing an e-mail address. The `:valid` and `:invalid` CSS
  * pseudo-classes are applied as appropriate.
@@ -2025,6 +1696,11 @@ legend {
  * @see http://dev.w3.org/html5/spec#e-mail-state-(type=email)
  * @see http://ç.whatwg.org#e-mail-state-(type=email)
  */
+
+input[type="email"] {}
+input[type="email"]:valid {}
+input[type="email"]:invalid {}
+
 /**
  * A control that lets the user select a file. Use the `accept` attribute
  * to define the types of files that the control can select.
@@ -2033,6 +1709,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#file-upload-state-(type=file)
  * @see http://ç.whatwg.org#file-upload-state-(type=file)
  */
+
+input[type="file"] {}
+
 /**
  * A control that is not displayed, but whose value is submitted to the
  * server.
@@ -2040,6 +1719,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#hidden-state-(type=hidden)
  * @see http://ç.whatwg.org#hidden-state-(type=hidden)
  */
+
+input[type="hidden"] {}
+
 /**
  * A graphical `submit` button. You must use the `src` attribute to define
  * the source of the image and the `alt` attribute to define alternative
@@ -2049,12 +1731,18 @@ legend {
  * @see http://dev.w3.org/html5/spec#image-button-state-(type=image)
  * @see http://ç.whatwg.org#image-button-state-(type=image)
  */
+
+input[type="image"] {}
+
 /**
  * A control for entering a month and year, with no time zone.
  *
  * @see http://dev.w3.org/html5/spec#month-state-(type=month)
  * @see http://ç.whatwg.org#month-state-(type=month)
  */
+
+input[type="month"] {}
+
 /**
  * A control for entering a floating point number.
  *
@@ -2062,6 +1750,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#number-state-(type=number)
  * @see http://ç.whatwg.org#number-state-(type=number)
  */
+
+input[type="number"] {}
+
 /**
  * A single-line text field whose value is obscured. Use the `maxlength`
  * attribute to specify the maximum length of the value that can be entered.
@@ -2069,6 +1760,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#password-state-(type=password)
  * @see http://ç.whatwg.org#password-state-(type=password)
  */
+
+input[type="password"] {}
+
 /**
  * A radio button. You must use the `value` attribute to define the value
  * submitted by this item. Use the `checked` attribute to indicate whether
@@ -2079,6 +1773,9 @@ legend {
  * @see http://dev.w3.org/html5/spec#radio-button-state-(type=radio)
  * @see http://ç.whatwg.org#radio-button-state-(type=radio)
  */
+
+input[type="radio"] {}
+
 /**
  * A control for entering a number whose exact value is not important.
  *
@@ -2086,12 +1783,18 @@ legend {
  * @see http://dev.w3.org/html5/spec#range-state-(type=range)
  * @see http://ç.whatwg.org#range-state-(type=range)
  */
+
+input[type="range"] {}
+
 /**
  * A button that resets the contents of the form to default values.
  *
  * @see http://dev.w3.org/html5/spec#reset-button-state-(type=reset)
  * @see http://ç.whatwg.org#reset-button-state-(type=reset)
  */
+
+input[type="reset"] {}
+
 /**
  * A single-line text field for entering search strings; line-breaks are
  * automatically removed from the input value.
@@ -2099,12 +1802,18 @@ legend {
  * @see http://dev.w3.org/html5/spec#text-(type=text)-state-and-search-state-(type=search)
  * @see http://ç.whatwg.org#text-(type=text)-state-and-search-state-(type=search)
  */
+
+input[type="search"] {}
+
 /**
  * A button that submits the form.
  *
  * @see http://dev.w3.org/html5/spec#submit-button-state-(type=submit)
  * @see http://ç.whatwg.org#submit-button-state-(type=submit)
  */
+
+input[type="submit"] {}
+
 /**
  * A control for entering a telephone number; line-breaks are
  * automatically removed from the input value, but no other syntax is
@@ -2115,6 +1824,11 @@ legend {
  * @see http://dev.w3.org/html5/spec#telephone-state-(type=tel)
  * @see http://ç.whatwg.org#telephone-state-(type=tel)
  */
+
+input[type="tel"] {}
+input[type="tel"]:valid {}
+input[type="tel"]:invalid {}
+
 /**
  * A single-line text field; line-breaks are automatically removed from
  * the input value.
@@ -2122,12 +1836,19 @@ legend {
  * @see http://dev.w3.org/html5/spec#text-(type=text)-state-and-search-state-(type=search)
  * @see http://ç.whatwg.org#text-(type=text)-state-and-search-state-(type=search)
  */
+
+input,
+input[type="text"] {}
+
 /**
  * A control for entering a time value with no time zone.
  *
  * @see http://dev.w3.org/html5/spec#time-state-(type=time)
  * @see http://ç.whatwg.org#time-state-(type=time)
  */
+
+input[type="time"] {}
+
 /**
  * A field for editing a URL. The user may enter a blank or invalid
  * address. Line-breaks are automatically removed from the input value.
@@ -2138,6 +1859,11 @@ legend {
  * @see http://dev.w3.org/html5/spec#url-state-(type=url)
  * @see http://ç.whatwg.org#url-state-(type=url)
  */
+
+input[type="url"] {}
+input[type="url"]:valid {}
+input[type="url"]:invalid {}
+
 /**
  * A control for entering a date consisting of a week-year number and a
  * week number with no time zone.
@@ -2145,7 +1871,11 @@ legend {
  * @see http://dev.w3.org/html5/spec#week-state-(type=week)
  * @see http://ç.whatwg.org#week-state-(type=week)
  */
+
+input[type="week"] {}
+
 /**********************************************************************/
+
 input[type="color"],
 input[type="date"],
 input[type="datetime"],
@@ -2154,24 +1884,26 @@ input[type="email"],
 input[type="month"],
 input[type="number"],
 input[type="password"],
+//input[type="range"],
 input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-  height: 1.5rem;
-  padding: 0 .25em;
-  margin: 0;
-  vertical-align: baseline;
+	height: 1.5rem;
+	padding: 0 .25em;
+	margin: 0;
+	vertical-align: baseline;
 }
 
 input[type="checkbox"],
 input[type="radio"] {
-  vertical-align: middle;
-  position: relative;
-  bottom: .125em;
+	vertical-align: middle;
+	position: relative;
+	bottom: .125em;
 }
 
 /**********************************************************************/
+
 /**
  * The `<textarea>` element represents a multiline plain text edit control
  * for the element's raw value. The contents of the control represent the
@@ -2183,11 +1915,11 @@ input[type="radio"] {
  * @see http://dev.w3.org/html5/spec#the-textarea-element
  * @see http://ç.whatwg.org#the-textarea-element
  */
+
 textarea {
-  overflow: auto;
-  vertical-align: top;
-  resize: vertical;
-  /* [ none | horizontal | vertical | both ] */
+	overflow: auto;
+	vertical-align: top;
+	resize: vertical; /* [ none | horizontal | vertical | both ] */
 }
 
 /**
@@ -2198,6 +1930,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-select-element
  * @see http://ç.whatwg.org#the-select-element
  */
+
+select {}
+
 /**
  * The `<optgroup>` element represents a group of `<option>` elements with
  * a common label. The element's group of `<option>` elements consists of
@@ -2212,6 +1947,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-optgroup-element
  * @see http://ç.whatwg.org#the-optgroup-element
  */
+
+optgroup {}
+
 /**
  * The `<option>` element represents an option in a `<select>` element or
  * as part of a list of suggestions in a `<datalist>` element.
@@ -2226,6 +1964,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-option-element
  * @see http://ç.whatwg.org#the-option-element
  */
+
+option {}
+
 /**
  * The `<button>` element represents a button. If the element is not
  * disabled, then the user agent should allow the user to activate the
@@ -2235,6 +1976,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-button-element
  * @see http://ç.whatwg.org#the-button-element
  */
+
+button {}
+
 /**
  * The `<datalist>` element represents a set of option elements that
  * represent predefined options for other controls. The contents of the
@@ -2251,6 +1995,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-datalist-element
  * @see http://ç.whatwg.org#the-datalist-element
  */
+
+datalist {}
+
 /**
  * The `<keygen>` element represents a key pair generator control. When
  * the control's form is submitted, the private key is stored in the local
@@ -2260,6 +2007,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-keygen-element
  * @see http://ç.whatwg.org#the-keygen-element
  */
+
+keygen {}
+
 /**
  * When the meter binding applies to a `<meter>` element, the element is
  * expected to render as an `inline-block` box with a `height` of `1em`
@@ -2279,6 +2029,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-meter-element
  * @see http://ç.whatwg.org#the-meter-element
  */
+
+meter {}
+
 /**
  * The `<output>` element represents the result of a calculation.
  *
@@ -2294,6 +2047,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-output-element
  * @see http://ç.whatwg.org#the-output-element
  */
+
+output {}
+
 /**
  * The `<progress>` element epresents the completion progress of a task.
  * Progress may be either indeterminate — meaning it is unclear how much
@@ -2308,7 +2064,11 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-progress-element
  * @see http://ç.whatwg.org#the-progress-element
  */
+
+progress {}
+
 /*----------------------------------( INTERACTIVE ELEMENTS )----------------------------------*/
+
 /**
  * The `<details>` element represents a disclosure widget from which the
  * user can obtain additional information or controls. However, the
@@ -2319,6 +2079,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-details-element
  * @see http://ç.whatwg.org#the-details-element
  */
+
+details {}
+
 /**
  * The `<menu>` element represents a list of commands.
  *
@@ -2339,6 +2102,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-menu-element
  * @see http://ç.whatwg.org#the-menu-element
  */
+
+menu {}
+
 /**
  * The `<menuitem>` element represents a command which the user can invoke.
  *
@@ -2346,6 +2112,9 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-menuitem-element
  * @see http://ç.whatwg.org#the-menuitem-element
  */
+
+menuitem {}
+
 /**
  * The `<summary>` element represents a summary, caption, or legend for
  * the rest of the contents of the summary element's parent `<details>`
@@ -2356,34 +2125,5 @@ textarea {
  * @see http://dev.w3.org/html5/spec#the-summary-element
  * @see http://ç.whatwg.org#the-summary-element
  */
-/*--------------------------------------------------------------------*/
-body {
-  padding: 1rem;
-}
 
-/*--------------------------------------------------------------------*/
-.marker {
-  font: bold 1.375rem/1.09090909090909 Arial, sans-serif;
-  color: #fff;
-  text-transform: none;
-  background: rgba(0, 0, 0, 0.85);
-  margin: .625rem 0;
-  padding: .625rem;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-  box-shadow: 0 0 0.3125rem 0 rgba(0, 0, 0, 0.55);
-}
-
-/*--------------------------------------------------------------------*/
-/*
-.container {
-	margin: 0 auto;
-	padding: 20px;
-	max-width: 680px;
-}
-*/
-/*--------------------------------------------------------------------*/
-fieldset > div {
-  margin: .625rem 0;
-}
+summary {}

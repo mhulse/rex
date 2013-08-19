@@ -1,12 +1,12 @@
 {
-  "title": "Stoops!",
-  "name": "stoops",
-  "description": "Super-duper uuber beta!",
+  "title": "Rex (O'Herlihan)",
+  "name": "rex",
+  "description": "Oh yeah, root's kicking in.",
   "version": "0.3.0",
-  "homepage": "https://github.com/mhulse/stoops",
+  "homepage": "https://github.com/mhulse/rex",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mhulse/stoops.git"
+    "url": "git://github.com/mhulse/rex.git"
   },
   "author": {
     "name": "Micky Hulse",
