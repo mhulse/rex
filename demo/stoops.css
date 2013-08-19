@@ -1,5 +1,3 @@
-@charset "UTF-8";
-
 /**
  * Stoops!
  * Super-duper uuber beta!
@@ -13,44 +11,6 @@
  * @date 2013/08/18
  */
 
-/**
- * Base `font-size`.
- */
-/**
- * Base `line-height`.
- */
-/**
- * `px` to `em`; a.k.a., convert `px` to relative unit.
- */
-/**
- * Simple baseline mixin calculator.
- *
- * Usage:
- * ```
- * .class1 {
- *     font-size: em(25px)+rem;                  // (25 / 16) = 1.5625
- *     line-height: baseline(16px, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
- *     padding: (baseline(16px, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
- * }
- * ```
- *
- * Output:
- * ```
- * .class1 {
- *     font-size: 1.5625rem;
- *     line-height: 1.2;
- *     padding: 0.36em 0;
- * }
- * ```
- *
- * Tip: Concat a unit to a variable: `unit(@baseline, px)`.
- *
- * @see http://flippinawesome.org/2013/05/20/less-tips-and-tricks/
- *
- * @todo Namespace.
- * @todo Make/mark required attributes.
- */
-/*----------------------------------( TESTS )----------------------------------*/
 .test1 {
   line-height: 1.5;
 }

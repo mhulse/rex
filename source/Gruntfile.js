@@ -376,7 +376,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					banner : '@charset "UTF-8";\n\n<%= banner.long %>',
+					banner : '<%= banner.long %>',
 					
 				},
 				
@@ -389,7 +389,7 @@ module.exports = function(grunt) {
 				
 				options : {
 					
-					banner : '@charset "UTF-8";<%= banner.short %>',
+					banner : '<%= banner.short %>',
 					
 				},
 				

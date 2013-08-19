@@ -1,61 +1,46 @@
-/**
- * Base `font-size`.
- */
-
+// Base `font-size`:
 $font-size-base: 16px;
 
-/**
- * Base `line-height`.
- */
-
+// Base `line-height`.
 $line-height-base: 24px;
 
-/**
- * `px` to `em`; a.k.a., convert `px` to relative unit.
- */
-
+// `px` to `em`; a.k.a., convert `px` to relative unit.
 @function em($px: $font-size-base, $font-size: $font-size-base) {
 	
 	@return ($px / $font-size); // Have `baseline()` use?
 	
 }
 
-/**
- * Simple baseline mixin calculator.
- *
- * Usage:
- * ```
- * .class1 {
- *     font-size: em(25px)+rem;                  // (25 / 16) = 1.5625
- *     line-height: baseline(16px, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
- *     padding: (baseline(16px, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
- * }
- * ```
- *
- * Output:
- * ```
- * .class1 {
- *     font-size: 1.5625rem;
- *     line-height: 1.2;
- *     padding: 0.36em 0;
- * }
- * ```
- *
- * Tip: Concat a unit to a variable: `unit(@baseline, px)`.
- *
- * @see http://flippinawesome.org/2013/05/20/less-tips-and-tricks/
- *
- * @todo Namespace.
- * @todo Make/mark required attributes.
- */
-
+// Simple baseline mixin calculator.
+//
+// Usage:
+// ```
+// .class1 {
+//     font-size: em(25px)+rem;                  // (25 / 16) = 1.5625
+//     line-height: baseline(16px, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
+//     padding: (baseline(16px, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
+// }
+// ```
+//
+// Output:
+// ```
+// .class1 {
+//     font-size: 1.5625rem;
+//     line-height: 1.2;
+//     padding: 0.36em 0;
+// }
+// ```
+//
+// @todo Namespace.
 @function baseline($font-size: $font-size-base, $offset: 1, $line-height: $line-height-base) {
 	
 	@return ((($line-height * ceil($font-size / $line-height)) / $font-size) * $offset);
 	
 }
 
-/*----------------------------------( TESTS )----------------------------------*/
+//==========================================================================
+// Tests:
+//==========================================================================
 
 .test1 { line-height: baseline(16px); }
 
