@@ -1,11 +1,3 @@
-/**
- * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
- * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
- * @see http://webtypography.net/toc/
- * @see http://www.alistapart.com/articles/more-meaningful-typography/
- * @see http://modularscale.com/
- */
-
 /*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
 
 /**
@@ -51,7 +43,7 @@
  * @see https://coderwall.com/p/jsb-vw
  */
 
-.rex-baseline {
+.#{$NS}baseline {
 	
 	position: relative;
 	/* Show the mouse as a hand: */
@@ -271,35 +263,35 @@ footer {}
  */
 
 h1, h2, h3, h4, h5, h6,
-[class$="h1"], [class$="h2"], [class$="h3"], [class$="h4"], [class$="h5"], [class$="h6"],
-[class$="sh1"], [class$="sh2"], [class$="sh3"], [class$="sh4"], [class$="sh5"], [class$="sh6"] {
+.#{$NS}h1, .#{$NS}h2, .#{$NS}h3, .#{$NS}h4, .#{$NS}h5, .#{$NS}h6,
+.#{$NS}sh1, .#{$NS}sh2, .#{$NS}sh3, .#{$NS}sh4, .#{$NS}sh5, .#{$NS}sh6 {
 	font-size: 1rem; // 16px
 	line-height: 1.5;
 	font-weight: bold;
 	margin: 0;
 }
-[class$="sh1"], [class$="sh2"], [class$="sh3"], [class$="sh4"], [class$="sh5"], [class$="sh6"] { font-weight: normal; }
-h1, [class$="h1"], [class$="sh1"] {
+.#{$NS}sh1, .#{$NS}sh2, .#{$NS}sh3, .#{$NS}sh4, .#{$NS}sh5, .#{$NS}sh6 { font-weight: normal; }
+h1, .#{$NS}h1, .#{$NS}sh1 {
 	font-size: 2.875rem; // 46px
 	line-height: 1.04347826086957; // (3 / 2.875) = 1.04347826086957
 }
-h2, [class$="h2"], [class$="sh2"] {
+h2, .#{$NS}h2, .#{$NS}sh2 {
 	font-size: 2.5rem; // 40px
 	line-height: 1.05; // (((3 / 2.5) = 1.2) * .875) = 1.05
 }
-h3, [class$="h3"], [class$="sh3"] {
+h3, .#{$NS}h3, .#{$NS}sh3 {
 	font-size: 2.125rem; // 34px
 	line-height: 1.05882352941176; // (((3 / 2.125) = 1.41176470588235) * .75) = 1.05882352941176
 }
-h4, [class$="h4"], [class$="sh4"] {
+h4, .#{$NS}h4, .#{$NS}sh4 {
 	font-size: 1.75rem; // 28px
 	line-height: 1.07142857142857; // (((3 / 1.75) = 1.71428571428571) * .625) = 1.07142857142857
 }
-h5, [class$="h5"], [class$="sh5"] {
+h5, .#{$NS}h5, .#{$NS}sh5 {
 	font-size: 1.375rem; // 22px
 	line-height: 1.09090909090909; // (1.5 / 1.375) = 1.09090909090909
 }
-h6, [class$="h6"], [class$="sh6"] {
+h6, .#{$NS}h6, .#{$NS}sh6 {
 	font-size: 1.125rem; // 18px
 	line-height: 1.16666666666666; // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
 }
@@ -522,7 +514,7 @@ figure { margin: .625rem 0; } // 10px 0
  * @see http://ç.whatwg.org#the-hr-element
  */
 
-hr, [class$="hr"], [class$="hr1"], [class$="hr2"], [class$="hr3"], [class$="hr4"], [class$="hr5"], [class$="hr6"] {
+hr, .#{$NS}hr, .#{$NS}hr1, .#{$NS}hr2, .#{$NS}hr3, .#{$NS}hr4, .#{$NS}hr5, .#{$NS}hr6 {
 	color: black;
 	border: 0;
 	background: black;
@@ -530,12 +522,12 @@ hr, [class$="hr"], [class$="hr1"], [class$="hr2"], [class$="hr3"], [class$="hr4"
 	margin: .625rem 0; // 10px
 	padding: 0;
 }
-	[class$="hr1"] { height: .125rem; } // 2px
-	[class$="hr2"] { height: .1875rem; } // 3px
-	[class$="hr3"] { height: .25rem; } // 4px
-	[class$="hr4"] { height: .3125rem; } // 5px
-	[class$="hr5"] { height: .375rem; } // 6px
-	[class$="hr6"] { height: .4375rem; } // 7px
+	.#{$NS}hr1 { height: .125rem; } // 2px
+	.#{$NS}hr2 { height: .1875rem; } // 3px
+	.#{$NS}hr3 { height: .25rem; } // 4px
+	.#{$NS}hr4 { height: .3125rem; } // 5px
+	.#{$NS}hr5 { height: .375rem; } // 6px
+	.#{$NS}hr6 { height: .4375rem; } // 7px
 
 /**
  * The `<p>` element represents a paragraph.
@@ -564,7 +556,7 @@ p {
 	 * @see http://phrogz.net/css/vertical-align/
 	 */
 	
-	p[class$="dropcap"]:first-of-type:first-letter {
+	p.#{$NS}dropcap:first-of-type:first-letter {
 		font-style: normal;
 		font-weight: normal;
 		font-size: 4.5rem; // 72px
@@ -682,7 +674,7 @@ abbr {
 }
 abbr[title] { border-bottom: .0625rem dotted; } // 1px
 abbr[title="et cetera"],
-[class$="etc"] { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
+.#{$NS}etc { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
 
 /**
  * The `<bdi>` element represents a span of text that is to be isolated
@@ -985,7 +977,7 @@ samp {}
  */
 
 small,
-[class$="small"] {
+.#{$NS}small {
 	font-size: smaller;
 	letter-spacing: .03em;
 }
@@ -1010,7 +1002,7 @@ span {}
 	 * @see http://fluidbaselinegrid.com/css/style.css
 	 */
 	
-	span[class$="amp"] {
+	span.#{$NS}amp {
 		font-size: 110%;
 		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;
 		font-weight: 400;
@@ -1281,7 +1273,7 @@ img {
 	max-height: 100%;
 	vertical-align: middle;
 }
-	img[class$="reset"] {
+	img.#{$NS}reset {
 		max-width: none;
 		max-height: none;
 	}
@@ -1398,13 +1390,13 @@ video {}
  * @see http://creativeandcode.com/simple-solution-for-responsive-tables/
  */
 
-[class$="scroll"] {
+.#{$NS}scroll {
 	width: 100%;
 	margin: .625rem 0; // 10px 0
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
-	[class$="scroll"] > * { margin: 0 !important; }
+	.#{$NS}scroll > * { margin: 0 !important; }
 
 /*--------------------------------------------------------------------*/
 

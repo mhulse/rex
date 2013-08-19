@@ -1,7 +1,5 @@
-@import "utilities";
-
-@import "normalize";
-
+@import "variables";
+@import "functions";
 @import "rex";
 
 /*--------------------------------------------------------------------*/
@@ -10,7 +8,7 @@ body { padding: 1rem; }
 
 /*--------------------------------------------------------------------*/
 
-.marker {
+.#{$NS}marker {
 	font: bold 1.375rem/1.09090909090909 Arial, sans-serif; // 22px
 	color: #fff;
 	text-transform: none;
@@ -26,7 +24,7 @@ body { padding: 1rem; }
 /*--------------------------------------------------------------------*/
 
 /*
-.container {
+.#{$NS}container {
 	margin: 0 auto;
 	padding: 20px;
 	max-width: 680px;

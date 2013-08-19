@@ -6,44 +6,46 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title><!-- @echo title --> | v<!-- @echo version --> | <!-- @echo NODE_ENV --></title>
-	<meta name="description" content="<!-- @echo description -->">
+	<title><!--@echo title--> | v<!--@echo version--> | <!--@echo NODE_ENV--></title>
+	<meta name="description" content="<!--@echo description-->">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<!-- @if NODE_ENV == 'DEVELOPMENT' -->
 	
-	<link rel="stylesheet" href="<!-- @echo name -->.css">
+	<link rel="stylesheet" href="normalize.css">
+	<link rel="stylesheet" href="<!--@echo name-->.css">
 	
 	<!-- @endif -->
 	
 	<!-- @if NODE_ENV == 'PRODUCTION' -->
 	
-	<link rel="stylesheet" href="<!-- @echo name -->.min.css">
+	<link rel="stylesheet" href="<!--@echo name-->.min.css">
 	
 	<!-- @endif -->
 	
 </head>
 <body ontouchstart>
 	
-	<h1><a href="<!-- @echo homepage -->">rex!</a> <small>(super-duper uuber beta!)</small></h1>
+	<h1><a href="<!--@echo homepage-->"><!--@echo title--></a></h1>
+	<h2 class="<!--@echo ns-->h4">v<!--@echo version--> | <!--@echo NODE_ENV--></h2>
 	
 	<hr>
 	
 	<!-- @include tests.html -->
 	
 	<section>
-		
-		<h1 class="marker"><code>address</code></h1>
+	
+	<h1 class="<!--@echo ns-->marker"><code>address</code></h1>
 		
 		<address>
-			<a href="#">Marcel Johnson</a>, 
-			<a href="#">Bubba Johnson</a>, 
-			<a href="#">Virgil Johnson</a>, 
-			<a href="#">Erra Johnson</a>, 
-			<a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a>, 
-			<a href="#">T-Bone Johnson</a>, 
-			<a href="#">Jimmy Earl Johnson</a>, 
+			<a href="#">Marcel Johnson</a>,
+			<a href="#">Bubba Johnson</a>,
+			<a href="#">Virgil Johnson</a>,
+			<a href="#">Erra Johnson</a>,
+			<a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a>,
+			<a href="#">T-Bone Johnson</a>,
+			<a href="#">Jimmy Earl Johnson</a>,
 			<a href="#">Cooter Johnson</a>
 		</address>
 		
@@ -80,7 +82,7 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>h1</code> - <code>h6</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>h1</code> - <code>h6</code></h1>
 		
 		<h1></h1> <!-- Testing `:empty` pseudo-class. -->
 		
@@ -92,31 +94,31 @@
 		
 		<h2>The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		
-		<h2><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h2>
+		<h2><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h2>
 		
 		<hr>
 		
 		<h3>The quick brown fox hxy jumps over the lazy dog hxy</h3>
 		
-		<h3><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h3>
+		<h3><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h3>
 		
 		<hr>
 		
 		<h4>The quick brown fox hxy jumps over the lazy dog hxy</h4>
 		
-		<h4><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h4>
+		<h4><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h4>
 		
 		<hr>
 		
 		<h5>The quick brown fox hxy jumps over the lazy dog hxy</h5>
 		
-		<h5><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h5>
+		<h5><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h5>
 		
 		<hr>
 		
 		<h6>The quick brown fox hxy jumps over the lazy dog hxy</h6>
 		
-		<h6><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h6>
+		<h6><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h6>
 		
 	</section>
 	
@@ -124,41 +126,41 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>.sh1</code> - <code>.sh6</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>.sh1</code> - <code>.sh6</code></h1>
 		
-		<h2 class="sh1">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h2 class="<!--@echo ns-->sh1">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		
-		<h2 class="sh1"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h2>
-		
-		<hr>
-		
-		<h2 class="sh2">The quick brown fox hxy jumps over the lazy dog hxy</h2>
-		
-		<h2 class="sh2"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h2>
+		<h2 class="<!--@echo ns-->sh1"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h2>
 		
 		<hr>
 		
-		<h2 class="sh3">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h2 class="<!--@echo ns-->sh2">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		
-		<h2 class="sh3"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h2>
-		
-		<hr>
-		
-		<h2 class="sh4">The quick brown fox hxy jumps over the lazy dog hxy</h2>
-		
-		<h2 class="sh4"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h2>
+		<h2 class="<!--@echo ns-->sh2"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h2>
 		
 		<hr>
 		
-		<h2 class="sh5">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h2 class="<!--@echo ns-->sh3">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		
-		<h2 class="sh5"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h2>
+		<h2 class="<!--@echo ns-->sh3"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h2>
 		
 		<hr>
 		
-		<h2 class="sh6">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h2 class="<!--@echo ns-->sh4">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		
-		<h2 class="sh6"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="amp">&amp;</span> link</a></h2>
+		<h2 class="<!--@echo ns-->sh4"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h2>
+		
+		<hr>
+		
+		<h2 class="<!--@echo ns-->sh5">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		
+		<h2 class="<!--@echo ns-->sh5"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h2>
+		
+		<hr>
+		
+		<h2 class="<!--@echo ns-->sh6">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		
+		<h2 class="<!--@echo ns-->sh6"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy <span class="<!--@echo ns-->amp">&amp;</span> link</a></h2>
 		
 	</section>
 	
@@ -166,40 +168,40 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>h1</code> - <code>h6</code> + <code>.sh1</code> - <code>.sh6</code> + <code>p</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>h1</code> - <code>h6</code> + <code>.sh1</code> - <code>.sh6</code> + <code>p</code></h1>
 		
 		<h1><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
-		<h2 class="sh1">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h2 class="<!--@echo ns-->sh1">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mauris nunc. Vivamus dictum dapibus egestas. Maecenas id rutrum elit. Sed venenatis laoreet eleifend. Praesent pretium tortor ut sem suscipit non lobortis diam tempus.</p>
 		
 		<hr>
 		
-		<h1 class="h2"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
-		<h2 class="sh2">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h1 class="<!--@echo ns-->h2"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
+		<h2 class="<!--@echo ns-->sh2">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mauris nunc. Vivamus dictum dapibus egestas. Maecenas id rutrum elit. Sed venenatis laoreet eleifend. Praesent pretium tortor ut sem suscipit non lobortis diam tempus.</p>
 		
 		<hr>
 		
-		<h1 class="h3"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
-		<h2 class="sh3">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h1 class="<!--@echo ns-->h3"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
+		<h2 class="<!--@echo ns-->sh3">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mauris nunc. Vivamus dictum dapibus egestas. Maecenas id rutrum elit. Sed venenatis laoreet eleifend. Praesent pretium tortor ut sem suscipit non lobortis diam tempus.</p>
 		
 		<hr>
 		
-		<h1 class="h4"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
-		<h2 class="sh4">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h1 class="<!--@echo ns-->h4"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
+		<h2 class="<!--@echo ns-->sh4">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mauris nunc. Vivamus dictum dapibus egestas. Maecenas id rutrum elit. Sed venenatis laoreet eleifend. Praesent pretium tortor ut sem suscipit non lobortis diam tempus.</p>
 		
 		<hr>
 		
-		<h1 class="h5"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
-		<h2 class="sh5">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h1 class="<!--@echo ns-->h5"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
+		<h2 class="<!--@echo ns-->sh5">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mauris nunc. Vivamus dictum dapibus egestas. Maecenas id rutrum elit. Sed venenatis laoreet eleifend. Praesent pretium tortor ut sem suscipit non lobortis diam tempus.</p>
 		
 		<hr>
 		
-		<h1 class="h6"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
-		<h2 class="sh6">The quick brown fox hxy jumps over the lazy dog hxy</h2>
+		<h1 class="<!--@echo ns-->h6"><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></h1>
+		<h2 class="<!--@echo ns-->sh6">The quick brown fox hxy jumps over the lazy dog hxy</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse in mauris nunc. Vivamus dictum dapibus egestas. Maecenas id rutrum elit. Sed venenatis laoreet eleifend. Praesent pretium tortor ut sem suscipit non lobortis diam tempus.</p>
 		
 	</section>
@@ -208,7 +210,7 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>blockquote</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>blockquote</code></h1>
 		
 		<blockquote>
 			
@@ -258,7 +260,7 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>dl</code> + <code>dt</code> + <code>dd</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>dl</code> + <code>dt</code> + <code>dd</code></h1>
 		
 		<dl>
 			<dt>The quick brown fox hxy jumps over the lazy dog hxy</dt>
@@ -293,7 +295,7 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>figure</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>figure</code></h1>
 		
 		<figure>
 			
@@ -333,35 +335,35 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>hr</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>hr</code></h1>
 		
 		<hr>
 		
-		<div class="hr"></div>
+		<div class="<!--@echo ns-->hr"></div>
 		
-		<hr class="hr1">
+		<hr class="<!--@echo ns-->hr1">
 		
-		<div class="hr1"></div>
+		<div class="<!--@echo ns-->hr1"></div>
 		
-		<hr class="hr2">
+		<hr class="<!--@echo ns-->hr2">
 		
-		<div class="hr2"></div>
+		<div class="<!--@echo ns-->hr2"></div>
 		
-		<hr class="hr3">
+		<hr class="<!--@echo ns-->hr3">
 		
-		<div class="hr3"></div>
+		<div class="<!--@echo ns-->hr3"></div>
 		
-		<hr class="hr4">
+		<hr class="<!--@echo ns-->hr4">
 		
-		<div class="hr4"></div>
+		<div class="<!--@echo ns-->hr4"></div>
 		
-		<hr class="hr5">
+		<hr class="<!--@echo ns-->hr5">
 		
-		<div class="hr5"></div>
+		<div class="<!--@echo ns-->hr5"></div>
 		
-		<hr class="hr6">
+		<hr class="<!--@echo ns-->hr6">
 		
-		<div class="hr6"></div>
+		<div class="<!--@echo ns-->hr6"></div>
 		
 	</section>
 	
@@ -369,7 +371,7 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>p</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>p</code></h1>
 		
 		<p name="drop-cap">Most of that, they did by the phone. But many of the inhabitants of the five mobile home parks in the district don't have phones. So Steele and others went door-to-door, handing out brief income surveys. Of 100 or so surveys passed out three came back. The district tried again. But that second effort, since it was targeted only at the mobile home parks, invalidated the entire survey, the state Business Development Department said in 2010. It wasn't a "random sample." The district and the county are now trying to get a new survey together. Meanwhile, the pipes keep leaking.</p>
 		
@@ -391,7 +393,7 @@
 	
 	<section>
 		
-		<h1 class="marker"><code>pre</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>pre</code></h1>
 
 <pre>
 ! " # $ % &amp; ' ( ) * + , - . /
@@ -448,7 +450,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>ol</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>ol</code></h1>
 		
 		<ol>
 			<li><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></li>
@@ -485,7 +487,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>ul</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>ul</code></h1>
 		
 		<ul>
 			<li><a href="#">The quick brown fox hxy jumps over the lazy dog hxy</a></li>
@@ -522,7 +524,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>a</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>a</code></h1>
 		
 		<p><a href="#">This</a> is a <a href="#">link</a>.</p>
 		
@@ -532,7 +534,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>abbr</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>abbr</code></h1>
 		
 		<p>While they're essential reading material for our job, the <dfn><abbr title="World Wide Web Consortium">W3C</abbr></dfn> specifications are not exactly George R. R. Martin-level reading material.</p>
 		
@@ -548,7 +550,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>bdi</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>bdi</code></h1>
 		
 		<p>This arabic word <bdi>أحمد</bdi> is automatically displayed right-to-left.</p>
 		
@@ -558,7 +560,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>bdo</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>bdo</code></h1>
 		
 		<p><bdo dir="rtl">Don't cheat by reading this in a mirror!</bdo></p>
 		
@@ -568,7 +570,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>cite</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>cite</code></h1>
 		
 		<p>My favourite book is <cite>Snow Crash</cite> by Neal Stephenson.</p>
 		
@@ -594,7 +596,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>code</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>code</code></h1>
 		
 		<p>To get started with HTML5 you just need at this top of your page <code>&lt;!DOCTYPE html&gt;</code></p>
 		
@@ -618,7 +620,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>data</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>data</code></h1>
 		
 		<ul>
 			<li><data value="1118012526">HTML5 For Dummies</data></li>
@@ -632,7 +634,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>dfn</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>dfn</code></h1>
 		
 		<p>The concept of <dfn>progressive enhancement</dfn> has been about for a few years. You could say that it describes an approach to web development from the point of view that 'the glass is half full' rather than 'the glass is half empty.' Progressive enhancement came to the public's attention when &hellip;</p>
 		
@@ -663,7 +665,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>em</code> + <code>i</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>em</code> + <code>i</code></h1>
 		
 		<p>You <em>hit me</em>. Look don't make me <i>participate in your stupid crap</i> if you don't like the way I do it. <em>You make me get out of bed</em>, you make me come over here. You make me make a phony phone call to Edward Rooney? The man could <i>squash my nuts</i> into oblivion. And-and-and then, and then, you <em>deliberately hurt my feelings</em>.</p>
 		
@@ -673,7 +675,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>kbd</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>kbd</code></h1>
 		
 		<p style="text-align:center">
 			<kbd>`</kbd><wbr><kbd>1</kbd><wbr><kbd>2</kbd><wbr><kbd>3</kbd><wbr><kbd>4</kbd><wbr><kbd>5</kbd><wbr><kbd>6</kbd><wbr><kbd>7</kbd><wbr><kbd>8</kbd><wbr><kbd>9</kbd><wbr><kbd>0</kbd><wbr><kbd>-</kbd><wbr><kbd>=</kbd><wbr><kbd>Bkspc</kbd>
@@ -701,7 +703,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>mark</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>mark</code></h1>
 		
 		<p>In this sentence we'll be using the mark element. <mark>HTML5</mark> Can you see where it has been used?</p>
 		
@@ -723,7 +725,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>q</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>q</code></h1>
 		
 		<p>And then he said <q>I heart HTML5</q></p>
 		
@@ -743,7 +745,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>ruby</code> + <code>rp</code> + <code>rt</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>ruby</code> + <code>rp</code> + <code>rt</code></h1>
 		
 		<p><ruby>攻殻<rp>（</rp><rt>こうかく</rt><rp>）</rp>機動隊<rp>（</rp><rt>きどうたい</rt><rp>）</rp></ruby></p>
 		
@@ -763,7 +765,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>s</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>s</code></h1>
 		
 		<p><s>For some reason, the bad guy was always a Colonel who had a beautiful daughter and about a thousand head of cattle which you would hear but never see.</s></p>
 		
@@ -781,7 +783,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>samp</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>samp</code></h1>
 		
 		<p>The computer said <samp>Too much cheese in tray two</samp> but I didn't know what that meant.</p>
 		
@@ -799,13 +801,13 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>small</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>small</code></h1>
 		
-		<p><span class="small">The quick brown fox <s>jumps over the lazy dog</s>!</span> The quick brown fox hxy jumps over the lazy dog hxy. <span class="small">The quick brown fox hxy jumps over the lazy dog hxy.</span> The quick brown fox hxy jumps over the lazy dog hxy. <span class="small">The quick brown fox hxy jumps over the lazy dog hxy.</span></p>
+		<p><span class="<!--@echo ns-->small">The quick brown fox <s>jumps over the lazy dog</s>!</span> The quick brown fox hxy jumps over the lazy dog hxy. <span class="<!--@echo ns-->small">The quick brown fox hxy jumps over the lazy dog hxy.</span> The quick brown fox hxy jumps over the lazy dog hxy. <span class="<!--@echo ns-->small">The quick brown fox hxy jumps over the lazy dog hxy.</span></p>
 		
 		<p><small><a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Attribution Share-alike license.</a> The skeleton ran out of shampoo in the shower.</small></p>
 		
-		<p class="small">This is a paragraph with a class of <code>small</code>: Unique New York. The arsonist had oddly shaped feet. The human torch was denied a bank loan. How now brown cow. The skeleton ran out of shampoo in the shower.</p>
+		<p class="<!--@echo ns-->small">This is a paragraph with a class of <code>small</code>: Unique New York. The arsonist had oddly shaped feet. The human torch was denied a bank loan. How now brown cow. The skeleton ran out of shampoo in the shower.</p>
 		
 	</section>
 	
@@ -813,7 +815,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>strong</code> + <code>b</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>strong</code> + <code>b</code></h1>
 		
 		<p>Hey <strong>batta</strong> batta <strong>batta</strong> hey batta <strong>batta</strong> batta SWING <strong>batta</strong>! He <b>can't hit</b> he <b>can't hit</b> he <b>can't hit</b> suuuuhwing <b>batta</b>!</p>
 		
@@ -823,7 +825,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>sub</code> + <code>sup</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>sub</code> + <code>sup</code></h1>
 		
 		<p>H<sub>2</sub>O is the chemical formula for water; today is the 2<sup>nd</sup> of May.</p>
 		
@@ -845,7 +847,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>time</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>time</code></h1>
 		
 		<p>Published: <time pubdate datetime="2012-12-27T00:00:00-08:00">Dec 27</time></p>
 		
@@ -867,7 +869,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>u</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>u</code></h1>
 		
 		<p><span itemscope itemtype="http://schema.org/Person" lang="ja-latn"><u itemprop="familyName">Son</u> <span itemprop="givenName">Goku</span></span></p>
 		
@@ -883,7 +885,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>var</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>var</code></h1>
 		
 		<p><var>E</var> energy is equal to <var>m</var> mass multiplied by the <var>c</var> speed of light, squared.</p>
 		
@@ -903,7 +905,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>wbr</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>wbr</code></h1>
 		
 		<p><code>getElements<wbr>ByTagName()</code></p>
 		
@@ -913,7 +915,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>del</code> + <code>ins</code></h1>
+		<h1 class="<!--@echo ns-->marker"><code>del</code> + <code>ins</code></h1>
 		
 		<p>My favorite color is <del>purple</del> <ins>cow</ins>! Mooooooooooooo?</p>
 		
@@ -933,10 +935,10 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>table</code> + children</h1>
+		<h1 class="<!--@echo ns-->marker"><code>table</code> + children</h1>
 		
-		<div class="rex-baseline">
-		<div class="scroll">
+		<div class="<!--@echo ns-->rex-baseline">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</caption>
 				<thead>
@@ -978,7 +980,7 @@ jdoe@demo:~$ _</samp>
 		</div>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</caption>
 				<thead>
@@ -1019,7 +1021,7 @@ jdoe@demo:~$ _</samp>
 			</table>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</caption>
 				<thead>
@@ -1060,7 +1062,7 @@ jdoe@demo:~$ _</samp>
 			</table>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</caption>
 				<thead>
@@ -1101,7 +1103,7 @@ jdoe@demo:~$ _</samp>
 			</table>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<caption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</caption>
 				<thead>
@@ -1142,7 +1144,7 @@ jdoe@demo:~$ _</samp>
 			</table>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<caption>The quick brown fox hxy jumps over the lazy dog hxy and the quick brown fox hxy jumps over the lazy dog hxy and the quick brown fox hxy jumps over the lazy dog hxy.</caption>
 				<thead>
@@ -1203,7 +1205,7 @@ jdoe@demo:~$ _</samp>
 			</table>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<tr>
 					<th>Header 1</th>
@@ -1268,7 +1270,7 @@ jdoe@demo:~$ _</samp>
 			</table>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table summary="Provide a more detailed description of the table than is suitable for the caption element.">
 				<caption>The quick brown fox hxy jumps over the lazy dog hxy.</caption>
 				<thead>
@@ -1347,7 +1349,7 @@ jdoe@demo:~$ _</samp>
 		
 		<p>Simple <code>table</code>:</p>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<tr>
 					<td>John</td>
@@ -1362,7 +1364,7 @@ jdoe@demo:~$ _</samp>
 		
 		<p>Simple <code>table</code> with header:</p>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<tr>
 					<th>First name</th>
@@ -1381,7 +1383,7 @@ jdoe@demo:~$ _</samp>
 		
 		<p>A <code>table</code> with <code>thead</code>, <code>tfoot</code>, and <code>tbody</code></p>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<thead>
 					<tr>
@@ -1406,7 +1408,7 @@ jdoe@demo:~$ _</samp>
 		
 		<p>A <code>table</code> with <code>colgroup</code>:</p>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<colgroup span="4"></colgroup>
 				<tr>
@@ -1432,7 +1434,7 @@ jdoe@demo:~$ _</samp>
 		
 		<p>A <code>table</code> with <code>colgroup</code> and <code>col</code>:</p>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<colgroup>
 					<col>
@@ -1451,7 +1453,7 @@ jdoe@demo:~$ _</samp>
 			</table>
 		</div>
 		
-		<div class="scroll">
+		<div class="<!--@echo ns-->scroll">
 			<table>
 				<tbody>
 					<tr>
@@ -1652,7 +1654,7 @@ jdoe@demo:~$ _</samp>
 	
 	<section>
 		
-		<h1 class="marker"><code>form</code> + children</h1>
+		<h1 class="<!--@echo ns-->marker"><code>form</code> + children</h1>
 		
 		<form id="fm" name="fm" action="" method="post">
 			
@@ -1670,12 +1672,12 @@ jdoe@demo:~$ _</samp>
 				
 				<p><code>&lt;input&gt;</code> element types:</p>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<label for="fm_input-button">Button</label>
 					<input type="button" id="fm_input-button" name="input-button" value="button">
 				</div>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<input type="checkbox" id="fm_input-checkbox-1" name="input-checkbox[]" value="checkbox">&nbsp;<label for="fm_input-checkbox-1">Checkbox</label>
 					<input type="checkbox" id="fm_input-checkbox-2" name="input-checkbox[]" value="checkbox">&nbsp;<label for="fm_input-checkbox-2">Checkbox</label>
 					<input type="checkbox" id="fm_input-checkbox-3" name="input-checkbox[]" value="checkbox">&nbsp;<label for="fm_input-checkbox-3">Checkbox</label>
@@ -1683,7 +1685,7 @@ jdoe@demo:~$ _</samp>
 					<input type="checkbox" id="fm_input-checkbox-5" name="input-checkbox[]" value="checkbox">&nbsp;<label for="fm_input-checkbox-5">Checkbox</label>
 				</div>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<label for="fm_input-color">Color</label>
 					<input type="color" id="fm_input-color" name="input-color">
 				</div>
@@ -1776,7 +1778,7 @@ jdoe@demo:~$ _</samp>
 					<input id="fm_input-default" name="input-default">
 				</div>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<label for="fm_input-text-1">Text</label>
 					<input type="text" id="fm_input-text-1" name="input-text-1">
 				</div>
@@ -1814,7 +1816,7 @@ jdoe@demo:~$ _</samp>
 					<textarea id="fm_input-textarea-1" name="textarea-1"></textarea>
 				</div>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<label for="fm_input-textarea-2">Textarea</label>
 					<textarea id="fm_input-textarea-2" name="textarea-2"></textarea>
 				</div>
@@ -1854,7 +1856,7 @@ jdoe@demo:~$ _</samp>
 					</select>
 				</div>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<label for="fm_select-3">Select</label>
 					<select id="fm_select-3" name="select-3">
 						<optgroup label="Cats">
@@ -1911,7 +1913,7 @@ jdoe@demo:~$ _</samp>
 					<button type="button" name="button-button">Button</button>
 				</div>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<button type="reset" name="button-reset">Reset</button>
 				</div>
 				
@@ -1927,7 +1929,7 @@ jdoe@demo:~$ _</samp>
 				
 				<p><code>&lt;datalist&gt;</code> element:</p>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<label for="fm_datalist-1">Select your preferred code editor</label>
 					<input type="text" id="fm_datalist-1" name="datalist-1" list="fm_ide" placeholder="Type editor name &hellip;">
 					<datalist id="fm_ide">
@@ -1969,7 +1971,7 @@ jdoe@demo:~$ _</samp>
 				
 				<p><code>&lt;keygen&gt;</code> element:</p>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<label for="fm_keygen">Keygen</label>
 					<keygen id="fm_keygen" name="keygen" challenge="challenge string" keytype="type" keyparams="pqg-params">
 				</div>
@@ -1982,7 +1984,7 @@ jdoe@demo:~$ _</samp>
 				
 				<p><code>&lt;meter&gt;</code> element:</p>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 				<p><meter value="0.5">Moderate activity,</meter> Usenet, 618 subscribers</p>
 				<p><meter value="0.25">Low activity,</meter> Usenet, 22 subscribers</p>
 				</div>
@@ -2015,7 +2017,7 @@ jdoe@demo:~$ _</samp>
 				
 				<p><code>&lt;output&gt;</code> element:</p>
 				
-				<div class="rex-baseline">
+				<div class="<!--@echo ns-->baseline">
 					<input type="number" id="a" name="a" step="any"> + <input type="number" id="b" name="b" step="any"> = <output for="a b" name="o"></output>
 				</div>
 				

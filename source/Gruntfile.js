@@ -17,6 +17,9 @@ module.exports = function(grunt) {
 		 * Install project dependencies with `npm install` (or `npm update`).
 		 *
 		 * @see http://gruntjs.com/getting-started#package.json
+		 * @see https://npmjs.org/doc/json.html
+		 * @see http://package.json.nodejitsu.com/
+		 * @see http://stackoverflow.com/a/10065754/922323
 		 */
 		
 		pkg : grunt.file.readJSON('package.json'),
@@ -218,6 +221,7 @@ module.exports = function(grunt) {
 					title : '<%= pkg.title %>',
 					description : '<%= pkg.description %>',
 					name : '<%= pkg.name %>',
+					ns : '<%= pkg.ns %>',
 					version : '<%= pkg.version %>',
 					homepage : '<%= pkg.homepage %>',
 					
@@ -400,6 +404,25 @@ module.exports = function(grunt) {
 			
 		},
 		
+		/*----------------------------------( SYMLINK )----------------------------------*/
+		
+		/**
+		 * Create symbolic links.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-symlink
+		 */
+		
+		symlink: {
+			
+			dev: {
+				
+				src: '<%= bower.install.options.targetDir %>/normalize-css/normalize.css',
+				dest: '../demo/normalize.css',
+				
+			},
+			
+		},
+		
 	});
 	
 	/*----------------------------------( TASKS )----------------------------------*/
@@ -424,6 +447,8 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	
+	grunt.loadNpmTasks('grunt-contrib-symlink');
+	
 	//----------------------------------
 	
 	/**
@@ -437,7 +462,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('init', ['jshint', 'clean:start',]);
 	
-	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev',]);
+	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev', 'symlink:dev',]);
 	
 	grunt.registerTask('prod', ['env:prod', 'preprocess:prod', 'htmlmin:prod', 'sass:prod', 'concat:prod',]);
 	

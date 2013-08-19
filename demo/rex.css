@@ -1,6 +1,6 @@
 /**
  * Rex (O'Herlihan)
- * Oh yeah, root's kicking in.
+ * Oh yeah, root's kicking in!
  *
  * @author Micky Hulse
  * @link http://mhulse.com
@@ -8,395 +8,19 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 0.3.0
- * @date 2013/08/18
+ * @date 2013/08/19
  */
 
-.test1 {
+.rex_test1 {
   line-height: 1.5;
 }
 
-.test2 {
+.rex_test2 {
   font-size: 1.5625rem;
   line-height: 1.2;
   padding: 0.36em 0;
 }
 
-/*! normalize.css v2.1.2 | MIT License | git.io/normalize */
-/* ==========================================================================
-   HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined in IE 8/9.
- */
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-main,
-nav,
-section,
-summary {
-  display: block;
-}
-
-/**
- * Correct `inline-block` display not defined in IE 8/9.
- */
-audio,
-canvas,
-video {
-  display: inline-block;
-}
-
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
-audio:not([controls]) {
-  display: none;
-  height: 0;
-}
-
-/**
- * Address styling not present in IE 8/9.
- */
-[hidden] {
-  display: none;
-}
-
-/* ==========================================================================
-   Base
-   ========================================================================== */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS text size adjust after orientation change, without disabling
- *    user zoom.
- */
-html {
-  font-family: sans-serif;
-  /* 1 */
-  -ms-text-size-adjust: 100%;
-  /* 2 */
-  -webkit-text-size-adjust: 100%;
-  /* 2 */
-}
-
-/**
- * Remove default margin.
- */
-body {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Links
-   ========================================================================== */
-/**
- * Address `outline` inconsistency between Chrome and other browsers.
- */
-a:focus {
-  outline: thin dotted;
-}
-
-/**
- * Improve readability when focused and also mouse hovered in all browsers.
- */
-a:active,
-a:hover {
-  outline: 0;
-}
-
-/* ==========================================================================
-   Typography
-   ========================================================================== */
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari 5, and Chrome.
- */
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
-}
-
-/**
- * Address styling not present in IE 8/9, Safari 5, and Chrome.
- */
-abbr[title] {
-  border-bottom: 1px dotted;
-}
-
-/**
- * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
- */
-b,
-strong {
-  font-weight: bold;
-}
-
-/**
- * Address styling not present in Safari 5 and Chrome.
- */
-dfn {
-  font-style: italic;
-}
-
-/**
- * Address differences between Firefox and other browsers.
- */
-hr {
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-/**
- * Address styling not present in IE 8/9.
- */
-mark {
-  background: #ff0;
-  color: #000;
-}
-
-/**
- * Correct font family set oddly in Safari 5 and Chrome.
- */
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-/**
- * Improve readability of pre-formatted text in all browsers.
- */
-pre {
-  white-space: pre-wrap;
-}
-
-/**
- * Set consistent quote types.
- */
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-/**
- * Address inconsistent and variable font size in all browsers.
- */
-small {
-  font-size: 80%;
-}
-
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
-sub,
-sup {
-  font-size: 75%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sup {
-  top: -0.5em;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-/* ==========================================================================
-   Embedded content
-   ========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9.
- */
-img {
-  border: 0;
-}
-
-/**
- * Correct overflow displayed oddly in IE 9.
- */
-svg:not(:root) {
-  overflow: hidden;
-}
-
-/* ==========================================================================
-   Figures
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari 5.
- */
-figure {
-  margin: 0;
-}
-
-/* ==========================================================================
-   Forms
-   ========================================================================== */
-/**
- * Define consistent border, margin, and padding.
- */
-fieldset {
-  border: 1px solid #c0c0c0;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
-}
-
-/**
- * 1. Correct `color` not being inherited in IE 8/9.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
-legend {
-  border: 0;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * 1. Correct font family not being inherited in all browsers.
- * 2. Correct font size not being inherited in all browsers.
- * 3. Address margins set differently in Firefox 4+, Safari 5, and Chrome.
- */
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-  /* 1 */
-  font-size: 100%;
-  /* 2 */
-  margin: 0;
-  /* 3 */
-}
-
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
-button,
-input {
-  line-height: normal;
-}
-
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Chrome, Safari 5+, and IE 8+.
- * Correct `select` style inheritance in Firefox 4+ and Opera.
- */
-button,
-select {
-  text-transform: none;
-}
-
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
-button,
-html input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-  -webkit-appearance: button;
-  /* 2 */
-  cursor: pointer;
-  /* 3 */
-}
-
-/**
- * Re-set default cursor for disabled elements.
- */
-button[disabled],
-html input[disabled] {
-  cursor: default;
-}
-
-/**
- * 1. Address box sizing set to `content-box` in IE 8/9.
- * 2. Remove excess padding in IE 8/9.
- */
-input[type="checkbox"],
-input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-
-/**
- * 1. Address `appearance` set to `searchfield` in Safari 5 and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari 5 and Chrome
- *    (include `-moz` to future-proof).
- */
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  /* 2 */
-  box-sizing: content-box;
-}
-
-/**
- * Remove inner padding and search cancel button in Safari 5 and Chrome
- * on OS X.
- */
-input[type="search"]::-webkit-search-cancel-button,
-input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
-
-/**
- * Remove inner padding and border in Firefox 4+.
- */
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-/**
- * 1. Remove default vertical scrollbar in IE 8/9.
- * 2. Improve readability and alignment in all browsers.
- */
-textarea {
-  overflow: auto;
-  /* 1 */
-  vertical-align: top;
-  /* 2 */
-}
-
-/* ==========================================================================
-   Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-/**
- * @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
- * @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
- * @see http://webtypography.net/toc/
- * @see http://www.alistapart.com/articles/more-meaningful-typography/
- * @see http://modularscale.com/
- */
 /*----------------------------------( BOX MODEL NORMALIZE )----------------------------------*/
 /**
  * Apply a natural box layout model to all elements.
@@ -438,7 +62,7 @@ table {
  * @see http://stackoverflow.com/a/8877902/922323
  * @see https://coderwall.com/p/jsb-vw
  */
-.rex-baseline {
+.rex_baseline {
   position: relative;
   /* Show the mouse as a hand: */
   cursor: pointer;
@@ -447,7 +71,7 @@ table {
   /* On click, hide grid: */
   /* On click, add a faux border to child elements to view where they begin/end in relationship to the baseline: */
 }
-.rex-baseline::before {
+.rex_baseline::before {
   background-image: -webkit-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
   background-image: -moz-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
   background-image: linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
@@ -471,10 +95,10 @@ table {
   pointer-events: none;
   /* The element is never the target of mouse events. */
 }
-.rex-baseline:active::before {
+.rex_baseline:active::before {
   display: none;
 }
-.rex-baseline:active * {
+.rex_baseline:active * {
   -webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
   box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
   -webkit-user-select: none;
@@ -636,44 +260,44 @@ address {
  * @see http://ç.whatwg.org#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
  */
 h1, h2, h3, h4, h5, h6,
-[class$="h1"], [class$="h2"], [class$="h3"], [class$="h4"], [class$="h5"], [class$="h6"],
-[class$="sh1"], [class$="sh2"], [class$="sh3"], [class$="sh4"], [class$="sh5"], [class$="sh6"] {
+.rex_h1, .rex_h2, .rex_h3, .rex_h4, .rex_h5, .rex_h6,
+.rex_sh1, .rex_sh2, .rex_sh3, .rex_sh4, .rex_sh5, .rex_sh6 {
   font-size: 1rem;
   line-height: 1.5;
   font-weight: bold;
   margin: 0;
 }
 
-[class$="sh1"], [class$="sh2"], [class$="sh3"], [class$="sh4"], [class$="sh5"], [class$="sh6"] {
+.rex_sh1, .rex_sh2, .rex_sh3, .rex_sh4, .rex_sh5, .rex_sh6 {
   font-weight: normal;
 }
 
-h1, [class$="h1"], [class$="sh1"] {
+h1, .rex_h1, .rex_sh1 {
   font-size: 2.875rem;
   line-height: 1.04347826086957;
 }
 
-h2, [class$="h2"], [class$="sh2"] {
+h2, .rex_h2, .rex_sh2 {
   font-size: 2.5rem;
   line-height: 1.05;
 }
 
-h3, [class$="h3"], [class$="sh3"] {
+h3, .rex_h3, .rex_sh3 {
   font-size: 2.125rem;
   line-height: 1.05882352941176;
 }
 
-h4, [class$="h4"], [class$="sh4"] {
+h4, .rex_h4, .rex_sh4 {
   font-size: 1.75rem;
   line-height: 1.07142857142857;
 }
 
-h5, [class$="h5"], [class$="sh5"] {
+h5, .rex_h5, .rex_sh5 {
   font-size: 1.375rem;
   line-height: 1.09090909090909;
 }
 
-h6, [class$="h6"], [class$="sh6"] {
+h6, .rex_h6, .rex_sh6 {
   font-size: 1.125rem;
   line-height: 1.16666666666666;
 }
@@ -906,7 +530,7 @@ figure figcaption > :last-child {
  * @see http://dev.w3.org/html5/spec#the-hr-element
  * @see http://ç.whatwg.org#the-hr-element
  */
-hr, [class$="hr"], [class$="hr1"], [class$="hr2"], [class$="hr3"], [class$="hr4"], [class$="hr5"], [class$="hr6"] {
+hr, .rex_hr, .rex_hr1, .rex_hr2, .rex_hr3, .rex_hr4, .rex_hr5, .rex_hr6 {
   color: black;
   border: 0;
   background: black;
@@ -915,27 +539,27 @@ hr, [class$="hr"], [class$="hr1"], [class$="hr2"], [class$="hr3"], [class$="hr4"
   padding: 0;
 }
 
-[class$="hr1"] {
+.rex_hr1 {
   height: .125rem;
 }
 
-[class$="hr2"] {
+.rex_hr2 {
   height: .1875rem;
 }
 
-[class$="hr3"] {
+.rex_hr3 {
   height: .25rem;
 }
 
-[class$="hr4"] {
+.rex_hr4 {
   height: .3125rem;
 }
 
-[class$="hr5"] {
+.rex_hr5 {
   height: .375rem;
 }
 
-[class$="hr6"] {
+.rex_hr6 {
   height: .4375rem;
 }
 
@@ -964,7 +588,7 @@ p {
  * @see http://www.sitepoint.com/a-simple-css-drop-cap/
  * @see http://phrogz.net/css/vertical-align/
  */
-p[class$="dropcap"]:first-of-type:first-letter {
+p.rex_dropcap:first-of-type:first-letter {
   font-style: normal;
   font-weight: normal;
   font-size: 4.5rem;
@@ -1092,7 +716,7 @@ abbr[title] {
 }
 
 abbr[title="et cetera"],
-[class$="etc"] {
+.rex_etc {
   font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive;
 }
 
@@ -1390,7 +1014,7 @@ rp {
  * @see http://ç.whatwg.org#the-small-element
  */
 small,
-[class$="small"] {
+.rex_small {
   font-size: smaller;
   letter-spacing: .03em;
 }
@@ -1411,7 +1035,7 @@ small,
  * @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
  * @see http://fluidbaselinegrid.com/css/style.css
  */
-span[class$="amp"] {
+span.rex_amp {
   font-size: 110%;
   font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
   font-weight: 400;
@@ -1678,7 +1302,7 @@ img {
   vertical-align: middle;
 }
 
-img[class$="reset"] {
+img.rex_reset {
   max-width: none;
   max-height: none;
 }
@@ -1769,14 +1393,14 @@ img[class$="reset"] {
  * @see http://www.maxdesign.com.au/2013/03/22/simple-responsive-table/
  * @see http://creativeandcode.com/simple-solution-for-responsive-tables/
  */
-[class$="scroll"] {
+.rex_scroll {
   width: 100%;
   margin: .625rem 0;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-[class$="scroll"] > * {
+.rex_scroll > * {
   margin: 0 !important;
 }
 
@@ -2362,7 +1986,7 @@ body {
 }
 
 /*--------------------------------------------------------------------*/
-.marker {
+.rex_marker {
   font: bold 1.375rem/1.09090909090909 Arial, sans-serif;
   color: #fff;
   text-transform: none;
@@ -2377,7 +2001,7 @@ body {
 
 /*--------------------------------------------------------------------*/
 /*
-.container {
+.rex_container {
 	margin: 0 auto;
 	padding: 20px;
 	max-width: 680px;

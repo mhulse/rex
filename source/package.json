@@ -1,7 +1,8 @@
 {
   "title": "Rex (O'Herlihan)",
   "name": "rex",
-  "description": "Oh yeah, root's kicking in.",
+  "ns": "rex_",
+  "description": "Oh yeah, root's kicking in!",
   "version": "0.3.0",
   "homepage": "https://github.com/mhulse/rex",
   "repository": {
@@ -18,6 +19,9 @@
       "url": "http://www.apache.org/licenses/LICENSE-2.0"
     }
   ],
+  "bugs": {
+    "url": "https://github.com/mhulse/rex/issues"
+  },
   "dependencies": {
     "grunt": "0.4.1",
     "grunt-contrib-jshint": "0.6.3",
@@ -27,6 +31,7 @@
     "grunt-contrib-watch": "0.5.2",
     "grunt-contrib-htmlmin": "0.1.3",
     "grunt-contrib-concat": "0.3.0",
+    "grunt-contrib-symlink": "0.2.0",
     "grunt-env": "0.4.0",
     "grunt-preprocess": "2.3.0",
     "grunt-bower-task": "0.3.1"
