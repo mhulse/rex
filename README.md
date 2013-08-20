@@ -1,6 +1,6 @@
 # Rex (O'Herlihan)
 
-[![ScreenShot](rex.gif)](http://youtu.be/LBkYqku11V0)
+[![ScreenShot](rex.gif)](http://youtu.be/LBkYqku11V0?t=1m57s)
 **Oh yeah, root's kicking in!**
 
 ---
