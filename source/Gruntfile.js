@@ -290,6 +290,17 @@ module.exports = function(grunt) {
 		
 		copy : {
 			
+			dev : {
+				
+				filter : 'isFile',
+				expand : true,
+				cwd : './files/plugins/',
+				src : '**',
+				dest : '../demo/',
+				flatten: true,
+				
+			},
+			
 			all : {
 				
 				expand : true,
@@ -404,25 +415,6 @@ module.exports = function(grunt) {
 			
 		},
 		
-		/*----------------------------------( SYMLINK )----------------------------------*/
-		
-		/**
-		 * Create symbolic links.
-		 *
-		 * @see https://github.com/gruntjs/grunt-contrib-symlink
-		 */
-		
-		symlink: {
-			
-			dev: {
-				
-				src: '<%= bower.install.options.targetDir %>/normalize-css/normalize.css',
-				dest: '../demo/normalize.css',
-				
-			},
-			
-		},
-		
 	});
 	
 	/*----------------------------------( TASKS )----------------------------------*/
@@ -447,8 +439,6 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	
-	grunt.loadNpmTasks('grunt-contrib-symlink');
-	
 	//----------------------------------
 	
 	/**
@@ -462,10 +452,10 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('init', ['jshint', 'clean:start',]);
 	
-	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev', 'symlink:dev',]);
+	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev', 'copy:dev',]);
 	
 	grunt.registerTask('prod', ['env:prod', 'preprocess:prod', 'htmlmin:prod', 'sass:prod', 'concat:prod',]);
 	
-	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy', 'clean:finish',]);
+	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy:all', 'clean:finish',]);
 	
 };
