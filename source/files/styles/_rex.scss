@@ -77,11 +77,20 @@
 	/* On click, hide grid: */
 	&:active::before { display: none; }
 	
+	/* Disable selection in WebKit/iOS: */
+	&:active {
+		-webkit-touch-callout: none;
+		-webkit-user-select: none;
+		   -moz-user-select: none;
+		    -ms-user-select: none;
+		     -o-user-select: none;
+		        user-select: none;
+	}
+	
 	/* On click, add a faux border to child elements to view where they begin/end in relationship to the baseline: */
 	&:active * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
-		-webkit-user-select: none; /* Disable selection in WebKit/iOS. */
 	}
 	
 }
