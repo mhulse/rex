@@ -49,12 +49,17 @@
 	cursor: hand;
 	
 	// Disable selection in WebKit/iOS:
+	-webkit-highlight: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 	-webkit-touch-callout: none;
-	-webkit-user-select: none !important;
-	   -moz-user-select: none !important;
-	    -ms-user-select: none !important;
-	     -o-user-select: none !important;
-	        user-select: none !important;
+	-webkit-user-drag: none;
+	-webkit-user-modify: none;
+	-webkit-user-select: none;
+	 -khtml-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	     -o-user-select: none;
+	        user-select: none;
 	
 	// Grid overlay:
 	&::before {
