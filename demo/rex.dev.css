@@ -1,0 +1,43 @@
+.rex_test1 {
+  line-height: 1.5;
+}
+
+.rex_test2 {
+  font-size: 1.5625rem;
+  line-height: 1.2;
+  padding: 0.36em 0;
+}
+
+body {
+  padding: 1rem;
+}
+
+.rex_marker {
+  font: bold 1.375rem/1.09090909090909 Arial, sans-serif;
+  color: #fff;
+  text-transform: none;
+  background: rgba(0, 0, 0, 0.85);
+  margin: .625rem 0;
+  padding: .625rem;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  box-shadow: 0 0 0.3125rem 0 rgba(0, 0, 0, 0.55);
+}
+
+.rex_subtle {
+  font: normal 1.188rem/1.26262626262626 monospace, serif;
+  color: #666;
+  margin: .625rem 0;
+}
+
+/*
+.rex_container {
+	margin: 0 auto;
+	padding: 20px;
+	max-width: 680px;
+}
+*/
+fieldset > div {
+  margin: .625rem 0;
+}

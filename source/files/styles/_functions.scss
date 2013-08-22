@@ -1,4 +1,9 @@
+//======================================================================
+// Functions:
+//======================================================================
+
 // Remove units from number.
+
 @function unitless($num) {
 	
 	@return ($num / ($num * 0 + 1));
@@ -6,6 +11,7 @@
 }
 
 // `px` to `em`; a.k.a., convert `px` to relative unit.
+
 @function em($px: $font-size-base, $context: $font-size-base) {
 	
 	@return (unitless($px) / unitless($context)); // Have `baseline()` use?
@@ -31,6 +37,7 @@
 //     padding: 0.36em 0;
 // }
 // ```
+
 @function baseline($px: $font-size-base, $offset: 1, $context: $line-height-base) {
 	
 	$px: unitless($px);
@@ -39,16 +46,4 @@
 	
 	@return ((($context * ceil($px / $context)) / $px) * $offset);
 	
-}
-
-//==========================================================================
-// Tests:
-//==========================================================================
-
-.#{$NS}test1 { line-height: baseline(16); }
-
-.#{$NS}test2 {
-	font-size: em(25px)+rem;                  // (25 / 16) = 1.5625
-	line-height: baseline(25, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
-	padding: (baseline(25, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
