@@ -381,8 +381,13 @@ module.exports = function(grunt) {
 				
 				process : function(src) {
 					
-					// Removes "@charset "UTF-8"" inserted by SCSS:
-					return src.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1');
+					return src
+						// Removes "@charset "UTF-8"" inserted by SCSS:
+						.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1')
+						// Convert space indentation to tab:
+						.replace(/\n\s\s/g, '\n\t')
+						// Single-line styles:
+						.replace(/\{\n\t(.*)\n\}/g, '{ $1 }');
 					
 				},
 				

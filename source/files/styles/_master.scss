@@ -479,7 +479,6 @@ figure { margin: .625rem 0; } // 10px 0
 	figure p {
 		font-family: inherit;
 		font-size: inherit;
-		margin: inherit;
 	}
 		figure figcaption > :first-child { margin-top: 0 !important; }
 		figure figcaption > :last-child { margin-bottom: 0 !important; }
@@ -534,7 +533,7 @@ p {
 	// @see http://www.sitepoint.com/a-simple-css-drop-cap/
 	// @see http://phrogz.net/css/vertical-align/
 	
-	p.#{$NS}dropcap:first-of-type:first-letter {
+	p.#{$NS}dropcap:first-letter {
 		font-style: normal;
 		font-weight: normal;
 		font-size: 4.5rem; // 72px
