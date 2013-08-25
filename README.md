@@ -7,8 +7,10 @@
 
 - [About](#about)
 	- [What is a baseline?](#what-is-a-baseline)
-	- [What is a "global" baseline?]()
-	- [What is a "local" baseline?]()
+	- [What is a "global" baseline grid?]()
+	- [What is a "local" baseline grid?]()
+	- [Why use a "local" baseline?]()
+	- [Why "Rex"?]()
 - [Demonstration]()
 - [Installation]()
 	- [Build process]()
@@ -34,23 +36,25 @@ Essentially, this code serves as a "local" baseline grid toolkit for use in othe
 
 > … the baseline is the line upon which most letters "sit" and below which descenders extend.
 
-For more information, [use Google](https://www.google.com/search?q="baseline+grid").
+### What is a "global" baseline grid?
 
-### What is a "global" baseline?
+A "global" baseline grid (or, "document-based" baseline grid) consists of applying a grid to the document's `<body>` and then aligning all the text to a vertical grid, set in even increments all the way down the page, where the bottom of each letter is positioned onto the grid, just like writing on lined paper.
 
-A "global" baseline (or, just "baseline grid") typically consists of applying a horizontal grid to the `<body>` and then aligning everything from there; this is the most commonly used technique as it's closely related to how baseline grids are done in print.
+### What is a "local" baseline grid?
 
-Again, [use Google](https://www.google.com/search?q="baseline+grids"+on+the+web) for more information.
+A "local" baseline grid is exactly like the above, except the grid gets applied directly to "modules", "content areas" or elements and the alignment happens relative to the application of the vertical grid.
 
-### What is a "local" baseline?
+### Why use a "local" baseline?
 
-Simply put, a "local" baseline gets applied directly to "modules", "content areas" or elements and the alignment happens relative to the application of the grid.
+While a "global" baseline grid might work well in print, on the web there are numerous situations where baseline grid alignment isn't practical.
+
+Using a "local" baseline allows the developer to focus on the baseline grid alignment for a particular "module", "content area" or element whilst relieving the pressure to maintain baseline alignment between the aforementioned items.
+
+The goal is to use a "local" baseline (and the math that powers it) as a quick and easy way to add vertical "meaning" to a page's content (much in the same way that a "horizontal" grid (rows/cols) gives "meaning" to a page's layout).
 
 ### Why "Rex"?
 
-Because, Rex O'Herlihan **rocks!**
-
-**[Buy Rustlers' Rhapsody](http://amzn.to/19CUPdE)!!!!** ([Amazon VOD](http://amzn.to/18PXwre)).
+Just watch **[Rustlers' Rhapsody](http://amzn.to/19CUPdE)** ([Amazon VOD](http://amzn.to/18PXwre)) and all will be explained. :)
 
 ## Demonstration
 
@@ -76,7 +80,7 @@ In order to build from source, you'll need to install [Grunt.js: The JavaScript 
 
 From there, `$ cd source/` and run `$ npm install`; after the [dependencies](https://github.com/mhulse/rex/blob/gh-pages/source/package.json) have been installed, run `$ grunt bower` (this installs [`normalize.css`](http://necolas.github.io/normalize.css/) as a [Bower](http://bower.io/) dependency).
 
-For subsequent builds, just run `$ grunt`; this default task will generate and copy files, based on files found in the `/source` folder, into the `/demo` folder.
+For subsequent builds, just run `$ grunt`; this default task will generate or copy files, based on files found in the `/source` folder, into the `/demo` folder.
 
 ## SCSS
 
