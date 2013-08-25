@@ -3,7 +3,7 @@
   "name": "rex",
   "ns": "rex_",
   "description": "Oh yeah, root's kicking in!",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "homepage": "https://github.com/mhulse/rex",
   "repository": {
     "type": "git",

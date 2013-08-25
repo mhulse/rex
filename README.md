@@ -7,22 +7,23 @@
 
 - [About](#about)
 	- [What is a baseline?](#what-is-a-baseline)
-	- [What is a "global" baseline grid?]()
-	- [What is a "local" baseline grid?]()
-	- [Why use a "local" baseline?]()
-	- [Why "Rex"?]()
-- [Demonstration]()
-- [Installation]()
-	- [Build process]()
-- [SCSS](#scss)
+	- [What is a "global" baseline grid?](#what-is-a-global-baseline-grid)
+	- [What is a "local" baseline grid?](#what-is-a-local-baseline-grid)
+	- [Why use a "local" baseline?](#why-use-a-local-baseline)
+	- [Why "Rex"?](#why-rex)
+- [Demonstration](#demonstration)
+- [Installation](#installation)
+	- [Build process](#build-process)
+- [SCSS API](#scss-api)
+	- [Variables](#variables)
+	- [Functions](#functions)
 - [CSS](#css)
-	- [Baseline defaults]()
-	- [Line height chart]()
-	- [Line height offsets]()
-	- [Unit conversion formulas]()
-	- [Tips]()
-- [Inspiration, links and resources]()
-- [Feedback]()
+	- [Baseline defaults](#baseline-defaults)
+	- [Line height chart](#line-height-chart)
+	- [Line height offsets](#line-height-offsets)
+	- [Unit conversion formulas](#unit-conversion-formulas)
+	- [Tips](#tips)
+- [Feedback](#feedback)
 - [Changelog](#changelog)
 - [LEGAL](#legal)
 
@@ -80,15 +81,27 @@ In order to build from source, you'll need to install [Grunt.js: The JavaScript 
 
 From there, `$ cd source/` and run `$ npm install`; after the [dependencies](https://github.com/mhulse/rex/blob/gh-pages/source/package.json) have been installed, run `$ grunt bower` (this installs [`normalize.css`](http://necolas.github.io/normalize.css/) as a [Bower](http://bower.io/) dependency).
 
-For subsequent builds, just run `$ grunt`; this default task will generate or copy files, based on files found in the `/source` folder, into the `/demo` folder.
+For subsequent builds, just run `$ grunt`; this default task will generate or copy files, based on the [`Gruntfile.js`](https://github.com/mhulse/rex/blob/gh-pages/source/Gruntfile.js) configuration and files found in the `/source` folder, into the `/demo` folder.
 
-## SCSS
+## SCSS API
 
-Details on helper functions and variables coming soon.
+Available SCSS overrides:
+
+### Variables:
+
+* **`$NS`:** Namespace prefix. Default: `rex_`.
+* **`$font-size-base`:** Base `font-size`. Default: `16px`.
+* **`$line-height-base`:** Base `line-height`. Default: `24px`. 
+
+### Functions
+
+* **`unitless()`:** Remove units from number.
+* **`em()`:** `px` to `em`; a.k.a., convert `px` to relative unit.
+* **`baseline()`:** Simple baseline mixin calculator.
 
 ## CSS
 
-This section needs a description.
+Formulas and other numbers that help to explain the math used to calculate the values of the CSS' properties.
 
 ### Baseline defaults:
 
@@ -149,32 +162,15 @@ Assuming that your base font size is `16px` (or equivalent):
 * If the font size is greater than your base line height (e.g., `24`), then base your calculations on the next full `line-height` value up (see "[Line height chart](#line-height-chart)" below). For example, if the desired font size is `2.875em` (i.e. `46px`), the math would be: (`1.5` * `2`) / `2.875` = `1.04347826086957`
 * **Important:** When calculating line height, WebKit needs at least ten-millionth decimal places; for example: `line-height: 1.3333333;` (that's 7 decimal places).
 
-## Inspiration, links and resources
-
-This section needs a description.
-
-**Typography:**
-
-* [8 Simple Ways to Improve Typography In Your Designs](http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/)
-* [Five simple steps to better typography](http://markboulton.co.uk/journal/five-simple-steps-to-better-typography)
-* [The Elements of Typographic Style Applied to the Web](http://webtypography.net/toc/)
-* [More Meaningful Typography](http://alistapart.com/article/more-meaningful-typography)
-
-**Baseline/vertical rhythm:**
-
-* [Modular Scale](http://modularscale.com/)
-
-… more links coming soon.
-
 ## Feedback
 
 [Bugs? Constructive feedback? Questions?](https://github.com/mhulse/rex/issues)
 
 ## Changelog
 
-* vX.X.X
-	* YYYY/MM/DD
-		* …
+* v0.4.0
+	* 2013/08/25
+		* Changelog started.
 
 ---
 

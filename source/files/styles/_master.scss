@@ -1,3 +1,9 @@
+// @see http://www.aisleone.net/2009/design/8-ways-to-improve-your-typography/
+// @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
+// @see http://webtypography.net/toc/
+// @see http://alistapart.com/article/more-meaningful-typography
+// http://modularscale.com/
+
 //======================================================================
 // BOX MODEL NORMALIZE
 //======================================================================
@@ -106,28 +112,6 @@
 
 // The `<html>` element represents the root of an HTML document.
 //
-// Base `font-size` = `16px`.
-//
-// PX to EM:
-// Formula: [desired `font-size` in `px`] / [parent `font-size` in `px`]
-// Example: 12px / 16px = .75em
-//
-// PX to %:
-// Formula: ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * 100
-// Example: (12px / 16px) * 100 = 75%
-//
-// PX to PT:
-// Formula: [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])
-// Example: 16px * (72pt / 96px) = 12pt
-//
-// EM to PX:
-// Formula: [desired `font-size` in `em`] * [parent `font-size` in `px`]
-// Example: .75em * 16px = 12px
-//
-// EM to %:
-// Formula: [desired `font-size` in `em`] * 100
-// Example: .75em * 100 = 75%
-//
 // @see http://pxtoem.com/
 // @see https://developer.mozilla.org/docs/web/html/element/html
 // @see http://dev.w3.org/html5/spec#the-html-element
@@ -140,37 +124,6 @@ html {}
 //======================================================================
 
 // The `<body>` element represents the main content of the document.
-// 
-// Baseline grid:
-//
-// Base font size = 16px or 100% or 1em.
-// Base line height = 24px or 150% or 1.5em.
-//
-// Rule: Make sure all elements take up a vertical height (including
-// margins) are multiples of our base line height (24).
-// 
-// Calculate line height by dividing base line height by desired font size.
-//
-// If the font size is greater than `24px`, then base your calculations on
-// the next full `line-height` value up. For example, if the desired font
-// size is `2.875em` (i.e. `46px`), the math would be:
-//
-// (`1.5` * `2`) / `2.875` = `1.04347826086957`
-//
-// Line height chart:
-//                       |                   |                              |                                |                            |                                 |
-// Target `line-height`: | x1 = 24px = 1.5em | x2 = 48px = 3em              | x3 = 72px = 4.5em              | x4 = 96px = 6em            | x5 = 120px = 7.5em              |
-//  Min/max `font-size`: | 0 - 24px (1.5em)  | 25px (1.5625em) - 48px (3em) | 49px (3.0625em) - 72px (4.5em) | 73px (4.5625) - 96px (6em) | 97px (6.0625em) - 120px (7.5em) |
-//                       |                   |                              |                                |                            |                                 |
-//
-// Use these values for `line-height` offsets:
-//           |      |     |      |     |      |     |      |
-// Fraction: | 1/8  | 1/4 | 3/8  | 1/2 | 5/8  | 3/4 | 7/8  |
-//  Decimal: | .125 | .25 | .375 | .5  | .625 | .75 | .875 |
-//           |      |     |      |     |      |     |      |
-//
-// Important: WebKit needs at least ten-millionth decimal places; for
-// example: `line-height: 1.3333333;` (that's 7 decimal places).
 //
 // @see https://gist.github.com/4277585
 // @see http://advent2012.digitpaint.nl/13/
@@ -651,7 +604,6 @@ abbr[title="et cetera"],
 // from its surroundings for the purposes of bidirectional text formatting.
 //
 // @see http://stackoverflow.com/a/8546564/922323
-//
 // @see https://developer.mozilla.org/docs/web/html/element/bdi
 // @see http://dev.w3.org/html5/spec#the-rp-element
 // @see http://ç.whatwg.org#the-rp-element
