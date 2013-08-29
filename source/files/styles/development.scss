@@ -48,4 +48,4 @@ body { padding: 1rem; }
 
 //----------------------------------------------------------------------
 
-fieldset > div { margin: .625rem 0; } // 10px
+fieldset > div { margin: em(10px)+rem 0; } // 10px
