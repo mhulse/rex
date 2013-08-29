@@ -22,6 +22,11 @@
 	- [Line height chart](#line-height-chart)
 	- [Line height offsets](#line-height-offsets)
 	- [Unit conversion formulas](#unit-conversion-formulas)
+		- [Convert `px` to `em`](convert-px-to-em)
+		- [Convert `px` to `%`](convert-px-to-)
+		- [Convert `px` to `pt`](convert-px-to-pt)
+		- [Convert `em` to `px`](convert-em-to-px)
+		- [Convert `em` to `%`](convert-em-to-)
 	- [Tips](#tips)
 - [Feedback](#feedback)
 - [Changelog](#changelog)
@@ -89,15 +94,19 @@ Available SCSS overrides:
 
 ### Variables:
 
-* **`$NS`:** Namespace prefix. Default: `rex_`.
-* **`$font-size-base`:** Base `font-size`. Default: `16px`.
-* **`$line-height-base`:** Base `line-height`. Default: `24px`. 
+Name | Description | Default
+:-- | :-- | :--
+`$NS` | Namespace prefix. | `rex_`
+`$font-size-base` | Base `font-size`. | `16px`
+`$line-height-base` | Base `line-height`. | `24px` 
 
 ### Functions
 
-* **`unitless()`:** Remove units from number.
-* **`em()`:** `px` to `em`; a.k.a., convert `px` to relative unit.
-* **`baseline()`:** Simple baseline mixin calculator.
+Name | Description
+:-- | :--
+`unitless()` | Remove units from number.
+`em()` | `px` to `em`; a.k.a., convert `px` to relative unit.
+`baseline()` | Simple baseline calculator.
 
 ## CSS
 
@@ -105,16 +114,18 @@ Formulas and other numbers that help to explain the math used to calculate the v
 
 ### Baseline defaults:
 
-**Base `font-size`:** `16px` or `100%` or `1em`.
-
-**Base `line-height`:** `24px` or `150%` or `1.5em`.
+Property | Value
+:-- | :--
+`font-size` | `16px` or `100%` or `1em`.
+`line-height` | `24px` or `150%` or `1.5em`.
+`margin` | `10px` or `.625rem`.
 
 ### Line height chart:
 
 Assumes baseline defaults above are being used:
 
 x? | Target `line-height` | Min/max `font-size`
-:-: | --- | ---
+:-: | :-- | :--
 **x1** | `24px` = `1.5em` | `0` - `24px` (`1.5em`)
 **x2** | `48px` = `3em` | `25px` (`1.5625em`) - `48px` (`3em`)
 **x3** | `72px` = `4.5em` | `49px` (`3.0625em`) - `72px` (`4.5em`)
@@ -139,21 +150,30 @@ Fraction | Decimal
 
 Assuming that your base font size is `16px` (or equivalent):
 
-* `px` to `em`:
-	* **Formula:** [desired `font-size` in `px`] / [parent `font-size` in `px`]
-	* **Example:** `12px` / `16px` = `.75em`
-* `px` to `%`:
-	* **Formula:** ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * `100`
-	* **Example:** (`12px` / `16px`) * `100` = `75%`
-* `px` to `pt`:
-	* **Formula:** [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])
-	* **Example:** `16px` * (`72pt` / `96px`) = `12pt`
-* `em` to `px`:
-	* **Formula:** [desired `font-size` in `em`] * [parent `font-size` in `px`]
-	* **Example:** `.75em` * `16px` = `12px`
-* `em` to `%`:
-	* **Formula:** [desired `font-size` in `em`] * `100`
-	* **Example:** `.75em` * `100` = `75%`
+#### Convert `px` to `em`:
+
+**Formula:** [desired `font-size` in `px`] / [parent `font-size` in `px`]  
+**Example:** `12px` / `16px` = `.75em`
+
+#### Convert `px` to `%`:
+
+**Formula:** ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * `100`  
+**Example:** (`12px` / `16px`) * `100` = `75%`
+
+#### Convert `px` to `pt`:
+
+**Formula:** [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])  
+**Example:** `16px` * (`72pt` / `96px`) = `12pt`
+
+#### Convert `em` to `px`:
+
+**Formula:** [desired `font-size` in `em`] * [parent `font-size` in `px`]  
+**Example:** `.75em` * `16px` = `12px`
+
+#### Convert `em` to `%`:
+
+**Formula:** [desired `font-size` in `em`] * `100`  
+**Example:** `.75em` * `100` = `75%`
 
 ### Tips:
 
