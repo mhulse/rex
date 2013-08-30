@@ -12,6 +12,8 @@
 	
 }
 
+//----------------------------------------------------------------------
+
 // `px` to `em`; a.k.a., convert `px` to relative unit.
 //
 // @see 
@@ -21,6 +23,8 @@
 	@return (unitless($px) / unitless($context)); // Have `baseline()` use?
 	
 }
+
+//----------------------------------------------------------------------
 
 // Simple baseline mixin calculator.
 //
@@ -51,3 +55,97 @@
 	@return ((($context * ceil($px / $context)) / $px) * $offset);
 	
 }
+
+//----------------------------------------------------------------------
+
+// Convert `px` to `%`.
+//
+// Formula: ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * `100`
+// Example: (`12px` / `16px`) * `100` = `75%`
+//
+// Usage:
+// ```
+// ...
+// ```
+//
+// Output:
+// ```
+// ...
+// ```
+
+@function px2pct($px: $font-size-base, $context: $font-size-base) {
+	
+	@return ((unitless($px) / unitless($context)) * 100);
+	
+}
+
+//----------------------------------------------------------------------
+
+// Convert `px` to `pt`.
+//
+// Formula: [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])  
+// Example: `16px` * (`72pt` / `96px`) = `12pt`
+//
+// Usage:
+// ```
+// ...
+// ```
+//
+// Output:
+// ```
+// ...
+// ```
+
+@function px2pt($px: $font-size-base) {
+	
+	@return (unitless($px) * (72 / 96));
+	
+}
+
+//----------------------------------------------------------------------
+
+// Convert `em` to `px`.
+//
+// Formula: [desired `font-size` in `em`] * [parent `font-size` in `px`]
+// Example: `.75em` * `16px` = `12px`
+//
+// Usage:
+// ```
+// ...
+// ```
+//
+// Output:
+// ```
+// ...
+// ```
+
+@function em2px($em, $context: $font-size-base) {
+	
+	@return (unitless($em) * unitless($context));
+	
+}
+
+//----------------------------------------------------------------------
+
+// Convert `em` to `%`:
+//
+// Formula: [desired `font-size` in `em`] * `100`
+// Example: `.75em` * `100` = `75%`
+//
+// Usage:
+// ```
+// ...
+// ```
+//
+// Output:
+// ```
+// ...
+// ```
+
+@function em2px($em) {
+	
+	@return (unitless($em) * 100);
+	
+}
+
+//----------------------------------------------------------------------
