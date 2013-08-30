@@ -6,46 +6,38 @@
 .#{$NS}test1 { line-height: baseline(16); }
 
 .#{$NS}test2 {
-	font-size: em(25px)+rem;                // (25 / 16) = 1.5625
+	font-size: #{relative(25)}rem;          // (25 / 16) = 1.5625
 	line-height: baseline(25, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
-	padding: (baseline(25, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
+	padding: #{baseline(25, .375)/2}em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
+
+.#{$NS}test3 { line-height: unitless(1.5em); }
 
 //----------------------------------------------------------------------
 
-body { padding: 1rem; }
+body { padding: #{relative(10)}rem; }
 
 //----------------------------------------------------------------------
 
 .#{$NS}marker {
-	font: bold 1.375rem/1.09090909090909 Arial, sans-serif; // 22px
+	font: bold #{relative(22)}rem/baseline(22, .875) Arial, sans-serif;
 	color: #fff;
 	text-transform: none;
 	background: fade-out(#000, .15);
-	margin: .625rem 0; // 10px 0
-	padding: .625rem; // 10px
+	margin: #{relative($base_margin)}rem 0;
+	padding: #{baseline(22, .875)/2}em;
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	box-shadow: 0 0 .3125rem 0 fade-out(#000, .45); // 0 0 5px 0
+	box-shadow: 0 0 #{relative(5)}rem 0 fade-out(#000, .45);
 }
 
 .#{$NS}subtle {
-	font: normal 1.188rem/1.26262626262626 monospace, serif; // 19px
+	font: normal #{relative(19)}rem/baseline(19, .875) monospace, serif;
 	color: #666;
-	margin: .625rem 0; // 10px 0
+	margin: #{relative($base_margin)}rem 0;
 }
 
 //----------------------------------------------------------------------
 
-/*
-.#{$NS}container {
-	margin: 0 auto;
-	padding: 20px;
-	max-width: 680px;
-}
-*/
-
-//----------------------------------------------------------------------
-
-fieldset > div { margin: em(10px)+rem 0; } // 10px
+fieldset > div { margin: #{relative(10)}rem 0; } // 10px

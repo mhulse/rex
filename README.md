@@ -152,27 +152,27 @@ Assuming that your base font size is `16px` (or equivalent):
 
 #### Convert `px` to `em`:
 
-**Formula:** [desired `font-size` in `px`] / [parent `font-size` in `px`]  
+**Formula:** [desired `font-size` in `px`] / [parent `font-size` in `px`]
 **Example:** `12px` / `16px` = `.75em`
 
 #### Convert `px` to `%`:
 
-**Formula:** ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * `100`  
+**Formula:** ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * `100`
 **Example:** (`12px` / `16px`) * `100` = `75%`
 
 #### Convert `px` to `pt`:
 
-**Formula:** [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])  
+**Formula:** [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])
 **Example:** `16px` * (`72pt` / `96px`) = `12pt`
 
 #### Convert `em` to `px`:
 
-**Formula:** [desired `font-size` in `em`] * [parent `font-size` in `px`]  
+**Formula:** [desired `font-size` in `em`] * [parent `font-size` in `px`]
 **Example:** `.75em` * `16px` = `12px`
 
 #### Convert `em` to `%`:
 
-**Formula:** [desired `font-size` in `em`] * `100`  
+**Formula:** [desired `font-size` in `em`] * `100`
 **Example:** `.75em` * `100` = `75%`
 
 ### Tips:

@@ -2,25 +2,57 @@
 // Functions:
 //======================================================================
 
-// Remove units from number.
+// Remove units from value.
+//
+// Usage:
+//
+// `.foo { line-height: unitless(1.5em); }`
+//
+// Output:
+//
+// `.foo { line-height: 1.5; }`
 //
 // @see https://github.com/mhulse/rex/issues/77
+// @see http://stackoverflow.com/a/12335841/922323
+//
+// @param { integer } $value Any value with optional unit.
+// @return { integer } $value minus its unit.
 
-@function unitless($num) {
+@function unitless($value) {
 	
-	@return ($num / ($num * 0 + 1));
+	@return ($value / ($value * 0 + 1));
 	
 }
 
 //----------------------------------------------------------------------
 
-// `px` to `em`; a.k.a., convert `px` to relative unit.
+// Convert value to relative number.
 //
-// @see 
+// Usage:
+//
+// ```
+// .foo {
+//     font-size: relative(25px)+rem;
+//     margin: relative(10)+em 0;
+// }
+// ```
+//
+// Output:
+//
+// ```
+// .foo {
+//     font-size: 1.5625rem;
+//     margin: 0.625rem 0;
+// }
+// ```
+//
+// @param { integer } [ $value = $base_font-size ] Can be a value with or without a unit.
+// @param { integer } [ $context = $base_font-size ] Context of relative unit calculation.
+// @return { integer } Relative result based on input params.
 
-@function em($px: $base_font-size, $context: $base_font-size) {
+@function relative($value: $base_font-size, $context: $base_font-size) {
 	
-	@return (unitless($px) / unitless($context)); // Have `baseline()` use?
+	@return (unitless($value) / unitless($context));
 	
 }
 
@@ -29,123 +61,34 @@
 // Simple baseline mixin calculator.
 //
 // Usage:
+//
 // ```
-// .class1 {
-//     font-size: em(25)+rem;                  // (25 / 16) = 1.5625
-//     line-height: baseline(25, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
-//     padding: (baseline(25, .375) / 2)+em 0; // (((1.92 * .375) = .72) / 2) = .36
+// .foo {
+//     line-height: baseline(25, .625);
+//     padding: (baseline(25, .375) / 2)+em 0;
 // }
 // ```
 //
 // Output:
+//
 // ```
-// .class1 {
-//     font-size: 1.5625rem;
+// .foo {
 //     line-height: 1.2;
 //     padding: 0.36em 0;
 // }
 // ```
+//
+// @param { integer } [ $value = $base_font-size ] An integer, assumed to be in pixels, where unit is optional.
+// @param { integer } [ $offset = 1 ] Multiply the return value by this number.
+// @param { integer } [ $context = $base_line-height ] Base `line-height` of document.
+// @return { integer } A number relative to baseline.
 
-@function baseline($px: $base_font-size, $offset: 1, $context: $base_line-height) {
+@function baseline($value: $base_font-size, $offset: 1, $context: $base_line-height) {
 	
-	$px: unitless($px);
+	$value: unitless($value);
 	$offset: unitless($offset);
 	$context: unitless($context);
 	
-	@return ((($context * ceil($px / $context)) / $px) * $offset);
+	@return ((($context * ceil($value / $context)) / $value) * $offset);
 	
 }
-
-//----------------------------------------------------------------------
-
-// Convert `px` to `%`.
-//
-// Formula: ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * `100`
-// Example: (`12px` / `16px`) * `100` = `75%`
-//
-// Usage:
-// ```
-// ...
-// ```
-//
-// Output:
-// ```
-// ...
-// ```
-
-@function px2pct($px: $base_font-size, $context: $base_font-size) {
-	
-	@return ((unitless($px) / unitless($context)) * 100);
-	
-}
-
-//----------------------------------------------------------------------
-
-// Convert `px` to `pt`.
-//
-// Formula: [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])  
-// Example: `16px` * (`72pt` / `96px`) = `12pt`
-//
-// Usage:
-// ```
-// ...
-// ```
-//
-// Output:
-// ```
-// ...
-// ```
-
-@function px2pt($px: $base_font-size) {
-	
-	@return (unitless($px) * (72 / 96));
-	
-}
-
-//----------------------------------------------------------------------
-
-// Convert `em` to `px`.
-//
-// Formula: [desired `font-size` in `em`] * [parent `font-size` in `px`]
-// Example: `.75em` * `16px` = `12px`
-//
-// Usage:
-// ```
-// ...
-// ```
-//
-// Output:
-// ```
-// ...
-// ```
-
-@function em2px($em, $context: $base_font-size) {
-	
-	@return (unitless($em) * unitless($context));
-	
-}
-
-//----------------------------------------------------------------------
-
-// Convert `em` to `%`:
-//
-// Formula: [desired `font-size` in `em`] * `100`
-// Example: `.75em` * `100` = `75%`
-//
-// Usage:
-// ```
-// ...
-// ```
-//
-// Output:
-// ```
-// ...
-// ```
-
-@function em2px($em) {
-	
-	@return (unitless($em) * 100);
-	
-}
-
-//----------------------------------------------------------------------
