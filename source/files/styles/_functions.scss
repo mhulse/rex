@@ -18,7 +18,7 @@
 //
 // @see 
 
-@function em($px: $font-size-base, $context: $font-size-base) {
+@function em($px: $base_font-size, $context: $base_font-size) {
 	
 	@return (unitless($px) / unitless($context)); // Have `baseline()` use?
 	
@@ -46,7 +46,7 @@
 // }
 // ```
 
-@function baseline($px: $font-size-base, $offset: 1, $context: $line-height-base) {
+@function baseline($px: $base_font-size, $offset: 1, $context: $base_line-height) {
 	
 	$px: unitless($px);
 	$offset: unitless($offset);
@@ -73,7 +73,7 @@
 // ...
 // ```
 
-@function px2pct($px: $font-size-base, $context: $font-size-base) {
+@function px2pct($px: $base_font-size, $context: $base_font-size) {
 	
 	@return ((unitless($px) / unitless($context)) * 100);
 	
@@ -96,7 +96,7 @@
 // ...
 // ```
 
-@function px2pt($px: $font-size-base) {
+@function px2pt($px: $base_font-size) {
 	
 	@return (unitless($px) * (72 / 96));
 	
@@ -119,7 +119,7 @@
 // ...
 // ```
 
-@function em2px($em, $context: $font-size-base) {
+@function em2px($em, $context: $base_font-size) {
 	
 	@return (unitless($em) * unitless($context));
 	
