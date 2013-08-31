@@ -4,7 +4,7 @@ By following the simple guidelines below it will make your pull request easier t
 
 ## Reporting issues
 
-Please read the following guidelines before [opening an issue](./issues/).
+Please read the following guidelines before opening an issue.
 
 1. **Search for existing issues.** Make sure that the same issue hasn't already been reported and/or resolved.
 1. **Create an isolated and reproducible test case.** Be sure the problem exists in this repo's code with a reduced test case that should be included in each bug report.
