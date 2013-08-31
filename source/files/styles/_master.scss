@@ -2,7 +2,63 @@
 // @see http://markboulton.co.uk/journal/five-simple-steps-to-better-typography
 // @see http://webtypography.net/toc/
 // @see http://alistapart.com/article/more-meaningful-typography
-// http://modularscale.com/
+// @see http://modularscale.com/
+
+// Unit conversion formulas.*
+//
+// PX to EM:
+// Formula: [desired `font-size` in `px`] / [parent `font-size` in `px`]
+// Example: 12px / 16px = .75em
+//
+// PX to %:
+// Formula: ([desired `font-size` in `px`] / [parent `font-size` in `px`]) * 100
+// Example: (12px / 16px) * 100 = 75%
+//
+// PX to PT:
+// Formula: [desired `font-size` in `px`] * ([`pts` per `in`] / [`px` per `in`])
+// Example: 16px * (72pt / 96px) = 12pt
+//
+// EM to PX:
+// Formula: [desired `font-size` in `em`] * [parent `font-size` in `px`]
+// Example: .75em * 16px = 12px
+//
+// EM to %:
+// Formula: [desired `font-size` in `em`] * 100
+// Example: .75em * 100 = 75%
+//
+// * Assuming that your base font size is `16px` (or equivalent).
+
+// Baseline grid:
+//
+// Base font size = 16px or 100% or 1em.
+// Base line height = 24px or 150% or 1.5em.
+//
+// When inside a "local" baseline, make sure all elements take up a
+// vertical height (including margins) that are multiples of the base line
+// height (e.g., `24`).
+//
+// Calculate line height by dividing base line height by desired font size.
+//
+// If the font size is greater than `24px`, then base your calculations on
+// the next full `line-height` value up. For example, if the desired font
+// size is `2.875em` (i.e. `46px`), the math would be:
+//
+// (`1.5` * `2`) / `2.875` = `1.04347826086957`
+//
+// Line height chart:
+//                       |                   |                              |                                |                            |                                 |
+// Target `line-height`: | x1 = 24px = 1.5em | x2 = 48px = 3em              | x3 = 72px = 4.5em              | x4 = 96px = 6em            | x5 = 120px = 7.5em              |
+//  Min/max `font-size`: | 0 - 24px (1.5em)  | 25px (1.5625em) - 48px (3em) | 49px (3.0625em) - 72px (4.5em) | 73px (4.5625) - 96px (6em) | 97px (6.0625em) - 120px (7.5em) |
+//                       |                   |                              |                                |                            |                                 |
+//
+// Use these values for `line-height` offsets:
+//           |      |     |      |     |      |     |      |
+// Fraction: | 1/8  | 1/4 | 3/8  | 1/2 | 5/8  | 3/4 | 7/8  |
+//  Decimal: | .125 | .25 | .375 | .5  | .625 | .75 | .875 |
+//           |      |     |      |     |      |     |      |
+//
+// Important: WebKit needs at least ten-millionth decimal places; for
+// example: `line-height: 1.3333333;` (that's 7 decimal places).
 
 //======================================================================
 // BOX MODEL NORMALIZE
@@ -17,7 +73,7 @@
 // @see https://github.com/twbs/bootstrap
 
 @if $flag_natural-box-model == true {
-	
+
 	*,
 	*:before,
 	*:after {
@@ -25,7 +81,7 @@
 		   -moz-box-sizing: border-box;
 		        box-sizing: border-box;
 	}
-	
+
 }
 
 //======================================================================
@@ -50,14 +106,14 @@
 // @see https://coderwall.com/p/jsb-vw
 
 .#{$NS}baseline {
-	
+
 	// For positioning of pseudo elements:
 	position: relative;
-	
+
 	// Show the mouse as a hand:
 	cursor: pointer;
 	cursor: hand;
-	
+
 	// Disable selection in WebKit/iOS:
 	-webkit-highlight: none;
 	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -70,7 +126,7 @@
 	    -ms-user-select: none;
 	     -o-user-select: none;
 	        user-select: none;
-	
+
 	// Grid overlay:
 	&::before {
 		background-image:
@@ -78,7 +134,7 @@
 			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
 			-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
 		background-image:
-			-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), 
+			-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
 			-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
 			-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
 		background-image:
@@ -98,16 +154,16 @@
 		content: "";
 		pointer-events: none; // The element is never the target of mouse events.
 	}
-	
+
 	// On click, hide grid:
 	&:active::before { display: none; }
-	
+
 	// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
 	&:active * {
 		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
 	}
-	
+
 }
 
 //======================================================================
@@ -478,7 +534,7 @@ p {
 	line-height: 1.5;
 	margin: .75rem 0; // (1.5 / 2) = .75
 }
-	
+
 	// Drop caps.
 	//
 	// Firefox handled these classes better than Safari (Mac). For some
@@ -489,7 +545,7 @@ p {
 	// @see http://css-tricks.com/snippets/css/drop-caps/
 	// @see http://www.sitepoint.com/a-simple-css-drop-cap/
 	// @see http://phrogz.net/css/vertical-align/
-	
+
 	p.#{$NS}dropcap:first-letter {
 		font-style: normal;
 		font-weight: normal;
@@ -888,13 +944,13 @@ small,
 // @see http://ç.whatwg.org#the-span-element
 
 span {}
-	
+
 	// The italic version of an ampersand is more decorative and interesting
 	// than its roman counterpart.
 	//
 	// @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
 	// @see http://fluidbaselinegrid.com/css/style.css
-	
+
 	span.#{$NS}amp {
 		font-size: 110%;
 		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;
