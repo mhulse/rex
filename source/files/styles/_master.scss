@@ -4,7 +4,8 @@
 // @see http://alistapart.com/article/more-meaningful-typography
 // @see http://modularscale.com/
 
-// Unit conversion formulas.*
+// Unit conversion formulas.
+// Assuming that your base font size is `16px` (or equivalent).
 //
 // PX to EM:
 // Formula: [desired `font-size` in `px`] / [parent `font-size` in `px`]
@@ -25,8 +26,6 @@
 // EM to %:
 // Formula: [desired `font-size` in `em`] * 100
 // Example: .75em * 100 = 75%
-//
-// * Assuming that your base font size is `16px` (or equivalent).
 
 // Baseline grid:
 //
@@ -73,7 +72,7 @@
 // @see https://github.com/twbs/bootstrap
 
 @if $flag_natural-box-model == true {
-
+	
 	*,
 	*:before,
 	*:after {
@@ -81,7 +80,7 @@
 		   -moz-box-sizing: border-box;
 		        box-sizing: border-box;
 	}
-
+	
 }
 
 //======================================================================
@@ -105,65 +104,69 @@
 // @see http://stackoverflow.com/a/8877902/922323
 // @see https://coderwall.com/p/jsb-vw
 
-.#{$NS}baseline {
-
-	// For positioning of pseudo elements:
-	position: relative;
-
-	// Show the mouse as a hand:
-	cursor: pointer;
-	cursor: hand;
-
-	// Disable selection in WebKit/iOS:
-	-webkit-highlight: none;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-	-webkit-touch-callout: none;
-	-webkit-user-drag: none;
-	-webkit-user-modify: none;
-	-webkit-user-select: none;
-	 -khtml-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	     -o-user-select: none;
-	        user-select: none;
-
-	// Grid overlay:
-	&::before {
-		background-image:
-			-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-			-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-			-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-		background-image:
-			-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-			-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-			-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-		background-image:
-			linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-			linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-			linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-		background-size: 100% 1.5rem, 100% .75rem, 100% .375rem; // Match base `line-height`.
-		background-position: 0 0;                                // Put line adjustments here.
-		background-origin: content-box;                          // Regardless of padding, background will begin in the corner of the box.
-		background-attachment: local;                            // For scrolling.
-		width: 100%;
-		display: block;
-		position: absolute;
-		top: 0;
-		bottom: -1px; // Allows for the bottom-most border to show.
-		z-index: 999; // Above all other content.
-		content: "";
-		pointer-events: none; // The element is never the target of mouse events.
+@if $flag_baseline == true {
+	
+	.#{$NS}baseline {
+		
+		// For positioning of pseudo elements:
+		position: relative;
+		
+		// Show the mouse as a hand:
+		cursor: pointer;
+		cursor: hand;
+		
+		// Disable selection in WebKit/iOS:
+		-webkit-highlight: none;
+		-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		-webkit-touch-callout: none;
+		-webkit-user-drag: none;
+		-webkit-user-modify: none;
+		-webkit-user-select: none;
+		 -khtml-user-select: none;
+		   -moz-user-select: none;
+		    -ms-user-select: none;
+		     -o-user-select: none;
+		        user-select: none;
+		
+		// Grid overlay:
+		&::before {
+			background-image:
+				-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+				-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+				-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+			background-image:
+				-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+				-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+				-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+			background-image:
+				linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
+				linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
+				linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+			background-size: 100% 1.5rem, 100% .75rem, 100% .375rem; // Match base `line-height`.
+			background-position: 0 0;                                // Put line adjustments here.
+			background-origin: content-box;                          // Regardless of padding, background will begin in the corner of the box.
+			background-attachment: local;                            // For scrolling.
+			width: 100%;
+			display: block;
+			position: absolute;
+			top: 0;
+			bottom: -1px; // Allows for the bottom-most border to show.
+			z-index: 999; // Above all other content.
+			content: "";
+			pointer-events: none; // The element is never the target of mouse events.
+		}
+		
+		// On click, hide grid:
+		&:active::before { display: none; }
+		
+		// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
+		&:active * {
+			-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
+			box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
+		}
+		
 	}
-
-	// On click, hide grid:
-	&:active::before { display: none; }
-
-	// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
-	&:active * {
-		-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
-		box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
-	}
-
+	
 }
 
 //======================================================================
@@ -275,41 +278,96 @@ footer {}
 // @see http://dev.w3.org/html5/spec#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 // @see http://ç.whatwg.org#the-h1,-h2,-h3,-h4,-h5,-and-h6-elements
 
-h1, h2, h3, h4, h5, h6,
-.#{$NS}h1, .#{$NS}h2, .#{$NS}h3, .#{$NS}h4, .#{$NS}h5, .#{$NS}h6,
-.#{$NS}sh1, .#{$NS}sh2, .#{$NS}sh3, .#{$NS}sh4, .#{$NS}sh5, .#{$NS}sh6 {
-	font-size: 1rem; // 16px
-	line-height: 1.5;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+%h1-h6 {
+	font-size: #{relative(16)}rem;
+	line-height: relative($base_line-height);
 	font-weight: bold;
 	margin: 0;
 }
-.#{$NS}sh1, .#{$NS}sh2, .#{$NS}sh3, .#{$NS}sh4, .#{$NS}sh5, .#{$NS}sh6 { font-weight: normal; }
-h1, .#{$NS}h1, .#{$NS}sh1 {
-	font-size: 2.875rem; // 46px
-	line-height: 1.04347826086957; // (3 / 2.875) = 1.04347826086957
+
+h1,
+%h1 {
+	font-size: #{relative(46)}rem;
+	line-height: baseline(46); // (3 / 2.875) = 1.04347826086957
 }
-h2, .#{$NS}h2, .#{$NS}sh2 {
-	font-size: 2.5rem; // 40px
-	line-height: 1.05; // (((3 / 2.5) = 1.2) * .875) = 1.05
+
+h2,
+%h2 {
+	font-size: #{relative(40)}rem;
+	line-height: baseline(40, .875); // (((3 / 2.5) = 1.2) * .875) = 1.05
 }
-h3, .#{$NS}h3, .#{$NS}sh3 {
-	font-size: 2.125rem; // 34px
-	line-height: 1.05882352941176; // (((3 / 2.125) = 1.41176470588235) * .75) = 1.05882352941176
+
+h3,
+%h3 {
+	font-size: #{relative(34)}rem;
+	line-height: baseline(34, .75); // (((3 / 2.125) = 1.41176470588235) * .75) = 1.05882352941176
 }
-h4, .#{$NS}h4, .#{$NS}sh4 {
-	font-size: 1.75rem; // 28px
-	line-height: 1.07142857142857; // (((3 / 1.75) = 1.71428571428571) * .625) = 1.07142857142857
+
+h4,
+%h4 {
+	font-size: #{relative(28)}rem;
+	line-height: baseline(28, .625); // (((3 / 1.75) = 1.71428571428571) * .625) = 1.07142857142857
 }
-h5, .#{$NS}h5, .#{$NS}sh5 {
-	font-size: 1.375rem; // 22px
-	line-height: 1.09090909090909; // (1.5 / 1.375) = 1.09090909090909
+
+h5,
+%h5 {
+	font-size: #{relative(22)}rem;
+	line-height: baseline(22); // (1.5 / 1.375) = 1.09090909090909
 }
-h6, .#{$NS}h6, .#{$NS}sh6 {
-	font-size: 1.125rem; // 18px
-	line-height: 1.16666666666666; // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
+
+h6,
+%h6 {
+	font-size: #{relative(18)}rem;
+	line-height: baseline(18, .875); // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
 }
-h1, h2, h3, h4, h5, h6 {
-	+ p { margin-top: 0; }
+
+@if $flag_class-selectors == true {
+	
+	.#{$NS}h1,
+	.#{$NS}h2,
+	.#{$NS}h3,
+	.#{$NS}h4,
+	.#{$NS}h5,
+	.#{$NS}h6 { @extend %h1-h6; }
+	
+	.#{$NS}h1 { @extend %h1; }
+	.#{$NS}h2 { @extend %h2; }
+	.#{$NS}h3 { @extend %h3; }
+	.#{$NS}h4 { @extend %h4; }
+	.#{$NS}h5 { @extend %h5; }
+	.#{$NS}h6 { @extend %h6; }
+	
+}
+
+@if $flag_sub-headings {
+	
+	.#{$NS}sh1,
+	.#{$NS}sh2,
+	.#{$NS}sh3,
+	.#{$NS}sh4,
+	.#{$NS}sh5,
+	.#{$NS}sh6 { @extend %h1-h6; }
+	
+	.#{$NS}sh1,
+	.#{$NS}sh2,
+	.#{$NS}sh3,
+	.#{$NS}sh4,
+	.#{$NS}sh5,
+	.#{$NS}sh6 { font-weight: normal; }
+	
+	.#{$NS}sh1 { @extend %h1; }
+	.#{$NS}sh2 { @extend %h2; }
+	.#{$NS}sh3 { @extend %h3; }
+	.#{$NS}sh4 { @extend %h4; }
+	.#{$NS}sh5 { @extend %h5; }
+	.#{$NS}sh6 { @extend %h6; }
+	
 }
 
 // Used for `title`-free sections.
@@ -392,9 +450,11 @@ section {}
 
 blockquote {
 	font-size: 1rem; // 16px
-	line-height: 1.5rem;
-	margin: .625rem 0; // 10px 0
-	padding: .625rem; // 10px
+	line-height: 1.5;
+	xmargin: .625rem 0; // 10px 0
+	margin: 0;
+	xpadding: .625rem; // 10px
+	padding: 0;
 	quotes: none;
 }
 blockquote::before,
@@ -508,7 +568,8 @@ figure { margin: .625rem 0; } // 10px 0
 // @see http://dev.w3.org/html5/spec#the-hr-element
 // @see http://ç.whatwg.org#the-hr-element
 
-hr, .#{$NS}hr, .#{$NS}hr1, .#{$NS}hr2, .#{$NS}hr3, .#{$NS}hr4, .#{$NS}hr5, .#{$NS}hr6 {
+hr,
+%hr {
 	color: black;
 	border: 0;
 	background: black;
@@ -516,12 +577,25 @@ hr, .#{$NS}hr, .#{$NS}hr1, .#{$NS}hr2, .#{$NS}hr3, .#{$NS}hr4, .#{$NS}hr5, .#{$N
 	margin: .625rem 0; // 10px
 	padding: 0;
 }
-	.#{$NS}hr1 { height: .125rem; } // 2px
-	.#{$NS}hr2 { height: .1875rem; } // 3px
-	.#{$NS}hr3 { height: .25rem; } // 4px
-	.#{$NS}hr4 { height: .3125rem; } // 5px
-	.#{$NS}hr5 { height: .375rem; } // 6px
-	.#{$NS}hr6 { height: .4375rem; } // 7px
+
+@if $flag_class-selectors == true {
+	
+	.#{$NS}hr,
+	.#{$NS}hr1,
+	.#{$NS}hr2,
+	.#{$NS}hr3,
+	.#{$NS}hr4,
+	.#{$NS}hr5,
+	.#{$NS}hr6 { @extend %hr; }
+	
+	.#{$NS}hr1 { height: #{relative(2)}rem; }
+	.#{$NS}hr2 { height: #{relative(3)}rem; }
+	.#{$NS}hr3 { height: #{relative(4)}rem; }
+	.#{$NS}hr4 { height: #{relative(5)}rem; }
+	.#{$NS}hr5 { height: #{relative(6)}rem; }
+	.#{$NS}hr6 { height: #{relative(7)}rem; }
+	
+}
 
 // The `<p>` element represents a paragraph.
 //
@@ -534,7 +608,7 @@ p {
 	line-height: 1.5;
 	margin: .75rem 0; // (1.5 / 2) = .75
 }
-
+	
 	// Drop caps.
 	//
 	// Firefox handled these classes better than Safari (Mac). For some
@@ -545,7 +619,7 @@ p {
 	// @see http://css-tricks.com/snippets/css/drop-caps/
 	// @see http://www.sitepoint.com/a-simple-css-drop-cap/
 	// @see http://phrogz.net/css/vertical-align/
-
+	
 	p.#{$NS}dropcap:first-letter {
 		font-style: normal;
 		font-weight: normal;
@@ -944,13 +1018,13 @@ small,
 // @see http://ç.whatwg.org#the-span-element
 
 span {}
-
+	
 	// The italic version of an ampersand is more decorative and interesting
 	// than its roman counterpart.
 	//
 	// @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
 	// @see http://fluidbaselinegrid.com/css/style.css
-
+	
 	span.#{$NS}amp {
 		font-size: 110%;
 		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;

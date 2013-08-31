@@ -1,7 +1,7 @@
 @import "variables", "functions";
 
 //======================================================================
-// DEVELOPMENT ONLY CSS
+// DEVELOPMENT-ONLY CSS
 //======================================================================
 
 // SCSS tests:
@@ -10,8 +10,8 @@
 .#{$NS}test1 { line-height: baseline(16); }
 
 .#{$NS}test2 {
-	font-size: #{relative(25)}rem;          // (25 / 16) = 1.5625
-	line-height: baseline(25, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
+	font-size: #{relative(25)}rem;        // (25 / 16) = 1.5625
+	line-height: baseline(25, .625);      // (((3 / 1.5625) = 1.92) * .625) = 1.2
 	padding: #{baseline(25, .375)/2}em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
 
@@ -22,6 +22,9 @@
 
 body { padding: #{relative(10)}rem; }
 
+fieldset > div { margin: #{relative(10)}rem 0; } // 10px
+
+// Custom headings:
 //----------------------------------------------------------------------
 
 .#{$NS}marker {
@@ -43,6 +46,9 @@ body { padding: #{relative(10)}rem; }
 	margin: #{relative($base_margin)}rem 0;
 }
 
+// Pending:
 //----------------------------------------------------------------------
 
-fieldset > div { margin: #{relative(10)}rem 0; } // 10px
+h1, h2, h3, h4, h5, h6 {
+	+ p { margin-top: 0; }
+}

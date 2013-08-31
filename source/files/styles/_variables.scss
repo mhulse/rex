@@ -11,10 +11,18 @@ $NS: 'rex_';
 //----------------------------------------------------------------------
 
 $base_font-size: 16px;
+
 $base_line-height: 24px;
+
 $base_margin: 10px;
 
 // Flags:
 //----------------------------------------------------------------------
 
 $flag_natural-box-model: true;
+
+$flag_baseline: true;
+
+$flag_class-selectors: true;
+
+$flag_sub-headings: true;

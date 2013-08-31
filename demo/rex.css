@@ -72,56 +72,88 @@ address {
 	margin: .625rem 0;
 }
 
-h1, h2, h3, h4, h5, h6,
-.rex_h1, .rex_h2, .rex_h3, .rex_h4, .rex_h5, .rex_h6,
-.rex_sh1, .rex_sh2, .rex_sh3, .rex_sh4, .rex_sh5, .rex_sh6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.rex_h1,
+.rex_h2,
+.rex_h3,
+.rex_h4,
+.rex_h5,
+.rex_h6,
+.rex_sh1,
+.rex_sh2,
+.rex_sh3,
+.rex_sh4,
+.rex_sh5,
+.rex_sh6 {
 	font-size: 1rem;
 	line-height: 1.5;
 	font-weight: bold;
 	margin: 0;
 }
 
-.rex_sh1, .rex_sh2, .rex_sh3, .rex_sh4, .rex_sh5, .rex_sh6 { font-weight: normal; }
-
-h1, .rex_h1, .rex_sh1 {
+h1,
+.rex_h1,
+.rex_sh1 {
 	font-size: 2.875rem;
 	line-height: 1.04347826086957;
 }
 
-h2, .rex_h2, .rex_sh2 {
+h2,
+.rex_h2,
+.rex_sh2 {
 	font-size: 2.5rem;
 	line-height: 1.05;
 }
 
-h3, .rex_h3, .rex_sh3 {
+h3,
+.rex_h3,
+.rex_sh3 {
 	font-size: 2.125rem;
 	line-height: 1.05882352941176;
 }
 
-h4, .rex_h4, .rex_sh4 {
+h4,
+.rex_h4,
+.rex_sh4 {
 	font-size: 1.75rem;
 	line-height: 1.07142857142857;
 }
 
-h5, .rex_h5, .rex_sh5 {
+h5,
+.rex_h5,
+.rex_sh5 {
 	font-size: 1.375rem;
 	line-height: 1.09090909090909;
 }
 
-h6, .rex_h6, .rex_sh6 {
+h6,
+.rex_h6,
+.rex_sh6 {
 	font-size: 1.125rem;
-	line-height: 1.16666666666666;
+	line-height: 1.16666666666667;
 }
 
-h1 + p, h2 + p, h3 + p, h4 + p, h5 + p, h6 + p { margin-top: 0; }
+.rex_sh1,
+.rex_sh2,
+.rex_sh3,
+.rex_sh4,
+.rex_sh5,
+.rex_sh6 { font-weight: normal; }
 
 h1:empty { display: none; }
 
 blockquote {
 	font-size: 1rem;
-	line-height: 1.5rem;
-	margin: .625rem 0;
-	padding: .625rem;
+	line-height: 1.5;
+	xmargin: .625rem 0;
+	margin: 0;
+	xpadding: .625rem;
+	padding: 0;
 	quotes: none;
 }
 
@@ -175,7 +207,14 @@ figure figcaption > :first-child { margin-top: 0 !important; }
 
 figure figcaption > :last-child { margin-bottom: 0 !important; }
 
-hr, .rex_hr, .rex_hr1, .rex_hr2, .rex_hr3, .rex_hr4, .rex_hr5, .rex_hr6 {
+hr,
+.rex_hr,
+.rex_hr1,
+.rex_hr2,
+.rex_hr3,
+.rex_hr4,
+.rex_hr5,
+.rex_hr6 {
 	color: black;
 	border: 0;
 	background: black;
@@ -184,17 +223,17 @@ hr, .rex_hr, .rex_hr1, .rex_hr2, .rex_hr3, .rex_hr4, .rex_hr5, .rex_hr6 {
 	padding: 0;
 }
 
-.rex_hr1 { height: .125rem; }
+.rex_hr1 { height: 0.125rem; }
 
-.rex_hr2 { height: .1875rem; }
+.rex_hr2 { height: 0.1875rem; }
 
-.rex_hr3 { height: .25rem; }
+.rex_hr3 { height: 0.25rem; }
 
-.rex_hr4 { height: .3125rem; }
+.rex_hr4 { height: 0.3125rem; }
 
-.rex_hr5 { height: .375rem; }
+.rex_hr5 { height: 0.375rem; }
 
-.rex_hr6 { height: .4375rem; }
+.rex_hr6 { height: 0.4375rem; }
 
 p {
 	font-size: 1rem;
