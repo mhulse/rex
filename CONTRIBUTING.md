@@ -62,7 +62,7 @@ Use tabs for outdents and spaces for lining things up. An example:
 }(jQuery, window, document));
 ```
 
-### HTML:
+### HyperText Markup Language (`.html`):
 
 1. Tabs for indentation.
 1. Double quotes only.
@@ -71,43 +71,43 @@ Use tabs for outdents and spaces for lining things up. An example:
 1. Use tags and elements appropriate for an HTML5 doctype.
 1. Please omit the ` /` on self-closing tags.
 
-### CSS:
+### Cascading Style Sheets (`.css`):
 
-1. Suggested (approximate) precedence of commonly used CSS properties:
+Suggested (approximate) precedence of commonly used CSS properties:
 
-	```css
-	selector {
-		font: value;
-		font-*: value;
-		color: value;
-		text-*: value;
-		letter-spacing: value;
-		word-spacing: value;
-		line-height: value;
-		list-*: value;
-		background: value;
-		background-*: value;
-		border: value;
-		border-*: value;
-		margin: value;
-		margin-*: value;
-		padding: value;
-		padding-*: value;
-		width: value;
-		height: value;
-		float: value;
-		display: value;
-		clear: value;
-		position: value;
-		left: value;
-		right: value;
-		top: value;
-		bottom: value;
-		overflow: value;
-		z-index: value;
-		-prefixed-and-css3: value;
-	}
-	```
+```css
+selector {
+	font: value;
+	font-*: value;
+	color: value;
+	text-*: value;
+	letter-spacing: value;
+	word-spacing: value;
+	line-height: value;
+	list-*: value;
+	background: value;
+	background-*: value;
+	border: value;
+	border-*: value;
+	margin: value;
+	margin-*: value;
+	padding: value;
+	padding-*: value;
+	width: value;
+	height: value;
+	float: value;
+	display: value;
+	clear: value;
+	position: value;
+	left: value;
+	right: value;
+	top: value;
+	bottom: value;
+	overflow: value;
+	z-index: value;
+	-prefixed-and-css3: value;
+}
+```
 
 1. Multiple-line approach (one property and value per line).
 1. Always add a space after a property's colon (.e.g, `display: block;`, not `display:block;`).
@@ -116,7 +116,7 @@ Use tabs for outdents and spaces for lining things up. An example:
 1. Attribute selectors, like `input[type="text"]` should always wrap the attribute's value in double quotes, for consistency and safety (see this [blog post on unquoted attribute values](http://mathiasbynens.be/notes/unquoted-attribute-values) that can lead to XSS attacks).
 1. For style definitions that contain a single `property: value;`, always put opening and closing curly braces on the same line (e.g., `.foo { property: value; }`).
 
-### JS:
+### Javascript (`.js`):
 
 1. Tab indentation.
 1. Single-quotes.
@@ -127,6 +127,14 @@ Use tabs for outdents and spaces for lining things up. An example:
 1. Space after keywords and between arguments and operators.
 1. Don't "[equality overkill](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/)".
 1. Avoid [spaghetti code](http://en.wikipedia.org/wiki/Spaghetti_code) and try to have one exit point for methods.
+
+### Python (`.py`):
+
+Follow [PEP 8 -- Style Guide for Python Code](http://www.python.org/dev/peps/pep-0008/).
+
+### PHP: Hypertext Preprocessor (`.php`):
+
+* TBA
 
 ## License
 
