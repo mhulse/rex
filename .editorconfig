@@ -14,7 +14,6 @@ trim_trailing_whitespace = false
 indent_size = 4
 indent_style = space
 
-# Tab indentation:
 [*.js]
 indent_size = 4
 indent_style = tab

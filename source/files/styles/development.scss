@@ -20,7 +20,12 @@
 // Layout:
 //----------------------------------------------------------------------
 
-body { padding: #{relative(10)}rem; }
+body {
+	padding: #{relative(10)}rem;
+	-webkit-font-smoothing: antialiased;
+	        font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
 
 fieldset > div { margin: #{relative(10)}rem 0; } // 10px
 

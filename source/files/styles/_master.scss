@@ -131,21 +131,24 @@
 		// Grid overlay:
 		&::before {
 			background-image:
-				-webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-				-webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-				-webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+				-webkit-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+				-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+				-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
 			background-image:
-				-moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-				-moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-				-moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+				-moz-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+				-moz-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+				-moz-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
 			background-image:
-				linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px),
-				linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px),
-				linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-			background-size: 100% 1.5rem, 100% .75rem, 100% .375rem; // Match base `line-height`.
-			background-position: 0 0;                                // Put line adjustments here.
-			background-origin: content-box;                          // Regardless of padding, background will begin in the corner of the box.
-			background-attachment: local;                            // For scrolling.
+				linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+				linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+				linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+			background-size:
+				100% #{relative($base_line-height)}rem,     // Match base `line-height`.
+				100% #{relative($base_line-height) / 2}rem, // Half base `line-height`.
+				100% #{relative($base_line-height) / 4}rem; // Quarter base `line-height`.
+			background-position: 0 0;       // Put line adjustments here.
+			background-origin: content-box; // Regardless of padding, background will begin in the corner of the box.
+			background-attachment: local;   // For scrolling.
 			width: 100%;
 			display: block;
 			position: absolute;
@@ -160,10 +163,7 @@
 		&:active::before { display: none; }
 		
 		// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
-		&:active * {
-			-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
-			box-shadow: inset 0 0 0 1px rgba(255, 0, 0, .5);
-		}
+		&:active * { box-shadow: inset 0 0 0 1px fade-out($baseline_outline-color, .5); }
 		
 	}
 	
@@ -203,10 +203,7 @@ html {}
 
 body {
 	font-size: 100%;
-	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-	        font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
+	line-height: relative($base_line-height);
 }
 
 //----------------------------------------------------------------------
@@ -219,9 +216,9 @@ body {
 // @see http://ç.whatwg.org#the-address-element
 
 address {
-	font-size: 1rem; // 16px
-	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
-	margin: .625rem 0; // 10px 0
+	font-size: #{relative(16)}rem; // 16px
+	line-height: baseline(16, .75); // (((1.5 / 1) = 1.5) * .75) = 1.125
+	margin: #{relative(10)}rem 0; // 10px 0
 }
 
 // The `<article>` element represents a section of a page that consists of

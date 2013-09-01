@@ -39,7 +39,7 @@
 	background-image: -webkit-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
 	background-image: -moz-linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
 	background-image: linear-gradient(rgba(255, 0, 0, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, 0.25) 1px, transparent 1px);
-	background-size: 100% 1.5rem, 100% .75rem, 100% .375rem;
+	background-size: 100% 1.5rem, 100% 0.75rem, 100% 0.375rem;
 	background-position: 0 0;
 	background-origin: content-box;
 	background-attachment: local;
@@ -53,23 +53,17 @@
 	pointer-events: none;
 }
 .rex_baseline:active::before { display: none; }
-.rex_baseline:active * {
-	-webkit-box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
-	box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5);
-}
+.rex_baseline:active * { box-shadow: inset 0 0 0 1px rgba(255, 0, 0, 0.5); }
 
 body {
 	font-size: 100%;
 	line-height: 1.5;
-	-webkit-font-smoothing: antialiased;
-	font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
 }
 
 address {
 	font-size: 1rem;
 	line-height: 1.125;
-	margin: .625rem 0;
+	margin: 0.625rem 0;
 }
 
 h1,
