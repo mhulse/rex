@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 0.4.0
- * @date 2013/08/31
+ * @date 2013/09/01
  */
 
 *,
@@ -141,26 +141,7 @@ h6,
 
 h1:empty { display: none; }
 
-blockquote {
-	font-size: 1rem;
-	line-height: 1.5;
-	xmargin: .625rem 0;
-	margin: 0;
-	xpadding: .625rem;
-	padding: 0;
-	quotes: none;
-}
-
-blockquote::before,
-blockquote::after {
-	content: '';
-	content: none;
-}
-
-blockquote footer {
-	font-size: .875rem;
-	line-height: 1.71428571428571;
-}
+blockquote { margin: 0.625rem 1.25rem; }
 
 blockquote > :first-child { margin-top: 0 !important; }
 
@@ -169,26 +150,26 @@ blockquote > :last-child { margin-bottom: 0 !important; }
 dl {
 	font-size: 1rem;
 	line-height: 1.125;
-	margin: .625rem 0;
+	margin: 0.625rem 0;
 	padding: 0;
 }
 
 dl dt,
 dl dd {
-	margin: 0 0 .375rem;
+	margin: 0 0 0.375rem;
 	padding: 0;
 }
 
 dl dt { font-weight: bold; }
 
-dl dd { margin-left: .5rem; }
+dl dd { margin-left: 0.5rem; }
 
-figure { margin: .625rem 0; }
+figure { margin: 0.625rem 0; }
 
 figure img { display: block; }
 
 figure figcaption {
-	font-size: .875rem;
+	font-size: 0.875rem;
 	line-height: 1.5;
 }
 
@@ -212,8 +193,8 @@ hr,
 	color: black;
 	border: 0;
 	background: black;
-	height: .0625rem;
-	margin: .625rem 0;
+	height: 0.0625rem;
+	margin: 0.625rem 0;
 	padding: 0;
 }
 
@@ -232,36 +213,24 @@ hr,
 p {
 	font-size: 1rem;
 	line-height: 1.5;
-	margin: .75rem 0;
-}
-
-p.rex_dropcap:first-letter {
-	font-style: normal;
-	font-weight: normal;
-	font-size: 4.5rem;
-	line-height: 1;
-	margin: .15em .1em 0 0;
-	vertical-align: middle;
-	float: left;
-	display: inline;
+	margin: 0.75rem 0;
 }
 
 pre {
-	font-size: .875rem;
-	line-height: 1.28571428571428;
-	margin: .625rem 0;
-	padding: .625rem;
+	font-size: 0.875rem;
+	line-height: 1.28571428571429;
+	margin: 0.625rem 0;
+	padding: 0.625rem;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
-	-webkit-overflow-scrolling: touch;
 }
 
 ol,
 ul {
-	font-size: 1em;
+	font-size: 1rem;
 	line-height: 1.125;
-	margin: .625rem 0;
+	margin: 0.625rem 0;
 	padding: 0;
 	list-style-position: outside;
 }
@@ -272,20 +241,20 @@ ul { margin-left: 1.5rem; }
 
 ol li,
 ul li {
-	margin: 0 0 .375rem;
+	margin: 0 0 0.375rem;
 	padding: 0;
 }
 
 li ol { margin-left: 2.5rem; }
 
-li ul { margin-left: .5rem; }
+li ul { margin-left: 0.5rem; }
 
 abbr {
 	font-style: italic;
 	cursor: help;
 }
 
-abbr[title] { border-bottom: .0625rem dotted; }
+abbr[title] { border-bottom: 0.0625rem dotted; }
 
 abbr[title="et cetera"],
 .rex_etc { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
@@ -314,7 +283,7 @@ dfn {
 }
 
 dfn[title] {
-	border-bottom: .0625rem dotted;
+	border-bottom: 0.0625rem dotted;
 	cursor: help;
 }
 
@@ -323,27 +292,7 @@ i { font-style: italic; }
 
 mark { text-decoration: none; }
 
-q { quotes: '“' '”' '‘' '’' '“' '”' '‘' '’'; }
-
-q:before {
-	content: '“';
-	content: open-quote;
-}
-
-q:after {
-	content: '”';
-	content: close-quote;
-}
-
-q q:before {
-	content: '‘';
-	content: open-quote;
-}
-
-q q:after {
-	content: '’';
-	content: close-quote;
-}
+q { quotes: '“' '”' '‘' '’'; }
 
 rp {
 	font-size: 100%;
@@ -407,7 +356,7 @@ img.rex_reset {
 
 .rex_scroll {
 	width: 100%;
-	margin: .625rem 0;
+	margin: 0.625rem 0;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -421,9 +370,9 @@ table {
 }
 
 caption {
-	font-size: .875rem;
-	line-height: 1.28571428571428;
-	padding: .21428571428572em 0;
+	font-size: 0.875rem;
+	line-height: 1.28571428571429;
+	padding: 0.21428571428571em 0;
 }
 
 th,
@@ -431,23 +380,23 @@ td {
 	font-size: 1rem;
 	line-height: 1.125;
 	margin: 0;
-	padding: .1875em 0;
+	padding: 0.1875em 0;
 }
 
 form { margin: 0; }
 
 fieldset {
 	border: 0;
-	margin: .625rem 0;
-	padding: .0625rem 0 0;
+	margin: 1rem 0;
+	padding: 0.0625rem 0 0;
 }
 
 legend {
 	font-size: 1.125rem;
-	line-height: 1.16666666666666;
+	line-height: 1.16666666666667;
 	width: 100%;
 	margin: 0;
-	padding: 0 0 .33333333333333em;
+	padding: 0 0 0.33333333333333em;
 	display: block;
 	white-space: normal;
 }
@@ -465,7 +414,7 @@ input[type="time"],
 input[type="url"],
 input[type="week"] {
 	height: 1.5rem;
-	padding: 0 .25em;
+	padding: 0 0.25em;
 	margin: 0;
 	vertical-align: baseline;
 }
@@ -474,7 +423,7 @@ input[type="checkbox"],
 input[type="radio"] {
 	vertical-align: middle;
 	position: relative;
-	bottom: .125em;
+	bottom: 0.125em;
 }
 
 textarea {

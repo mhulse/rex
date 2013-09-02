@@ -216,9 +216,9 @@ body {
 // @see http://ç.whatwg.org#the-address-element
 
 address {
-	font-size: #{relative(16)}rem; // 16px
+	font-size: #{relative(16)}rem;
 	line-height: baseline(16, .75); // (((1.5 / 1) = 1.5) * .75) = 1.125
-	margin: #{relative(10)}rem 0; // 10px 0
+	margin: #{relative($base_margin)}rem 0;
 }
 
 // The `<article>` element represents a section of a page that consists of
@@ -439,30 +439,42 @@ section {}
 // Content inside a `<blockquote>` must be quoted from another source,
 // whose address, if it has one, may be cited in the `cite` attribute.
 //
+// American English quoting rules:
+//
+// 1) Periods and commas always go inside quotation marks, even inside single
+//    quotes.
+// 2) The placement of question marks with quotes follows logic. If a
+//    question is in quotation marks, the question mark should be placed
+//    inside the quotation marks.
+// 3) When you have a question outside quoted material AND inside quoted
+//    material, use only one question mark and place it inside the quotation
+//    mark.
+// 4) Use single quotation marks for quotes within quotes. Note that the
+//    period goes inside all quote marks.
+// 5) Use quotation marks to set off a direct quotation only.
+// 6) Do not use quotation marks on a direct quotation that is more than
+//    three lines in length; instead, use a colon. In this situation, leave a
+//    blank line above and below the quoted material. Single space the long
+//    quotation. Some style manuals say to indent one-half inch on both the
+//    left and right margins; others say to indent only on the left margin.
+// 7) When you are quoting something that has a spelling or grammar mistake
+//    or presents material in a confusing way, insert the term sic in italics
+//    and enclose it in brackets. Sic means, "This is the way the original
+//    material was."
+//
+// @see http://www.grammarbook.com/punctuation/quotes.asp
+// @see http://www.grammarbook.com/punctuation/colons.asp
 // @see http://html5doctor.com/blockquote-q-cite/
 // @see http://www.markinns.com/articles/full/hanging_quotation_marks
+// @see http://www.studiopress.com/design/how-to-use-block-quotes.htm
+// @see http://monc.se/kitchen/129/rendering-quotes-with-css
+// @see http://www.456bereastreet.com/archive/200411/quotations_and_citations_quoting_text/
+// @see http://www.smashingmagazine.com/2008/06/12/block-quotes-and-pull-quotes-examples-and-good-practices/
 // @see https://developer.mozilla.org/docs/web/html/element/blockquote
 // @see http://dev.w3.org/html5/spec#the-blockquote-element
 // @see http://ç.whatwg.org#the-blockquote-element
 
-blockquote {
-	font-size: 1rem; // 16px
-	line-height: 1.5;
-	xmargin: .625rem 0; // 10px 0
-	margin: 0;
-	xpadding: .625rem; // 10px
-	padding: 0;
-	quotes: none;
-}
-blockquote::before,
-blockquote::after {
-	content: '';
-	content: none;
-}
-	blockquote footer {
-		font-size: .875rem; // 14px
-		line-height: 1.71428571428571; // (1.5 / .875) = 1.71428571428571
-	}
+blockquote { margin: #{relative($base_margin)}rem #{relative($base_margin * 2)}rem; }
 	blockquote > :first-child { margin-top: 0 !important; }
 	blockquote > :last-child { margin-bottom: 0 !important; }
 
@@ -506,18 +518,18 @@ div {}
 // @see http://ç.whatwg.org#the-dd-element
 
 dl {
-	font-size: 1rem; // 16px
-	line-height: 1.125; // (1.5 * .75) = 1.125
-	margin: .625rem 0; // 10px 0
+	font-size: #{relative(16)}rem;
+	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
+	margin: #{relative($base_margin)}rem 0;
 	padding: 0;
 }
 	dl dt,
 	dl dd {
-		margin: 0 0 .375rem; // 0 0 6px
+		margin: 0 0 #{relative(6)}rem;
 		padding: 0;
 	}
 	dl dt { font-weight: bold; }
-	dl dd { margin-left: .5rem; } // 8px
+	dl dd { margin-left: #{relative(8)}rem; }
 
 // The `<figure>` element represents some flow content, optionally with a
 // caption, that is self-contained and is typically referenced as a single
@@ -540,11 +552,11 @@ dl {
 // @see http://dev.w3.org/html5/spec#the-figcaption-element
 // @see http://ç.whatwg.org#the-figcaption-element
 
-figure { margin: .625rem 0; } // 10px 0
+figure { margin: #{relative(10)}rem 0; }
 	figure img { display: block; }
 	figure figcaption {
-		font-size: .875rem; // (14px / 16px) = .875em
-		line-height: 1.5; // ((((1.5 / .875) = 1.71428571428571) * .875) = 1.28571428571428)
+		font-size: #{relative(14)}rem;
+		line-height: #{baseline(14, .875)}; // ((((1.5 / .875) = 1.71428571428571) * .875) = 1.5)
 	}
 	figure p {
 		font-family: inherit;
@@ -570,8 +582,8 @@ hr,
 	color: black;
 	border: 0;
 	background: black;
-	height: .0625rem; // 1px
-	margin: .625rem 0; // 10px
+	height: #{relative(1)}rem;
+	margin: #{relative($base_margin)}rem 0;
 	padding: 0;
 }
 
@@ -601,32 +613,10 @@ hr,
 // @see http://ç.whatwg.org#the-p-element
 
 p {
-	font-size: 1rem; // 16px
-	line-height: 1.5;
-	margin: .75rem 0; // (1.5 / 2) = .75
+	font-size: #{relative(16)}rem;
+	line-height: baseline(16);
+	margin: #{baseline(16, .5)}rem 0; // (1.5 / 2) = .75
 }
-	
-	// Drop caps.
-	//
-	// Firefox handled these classes better than Safari (Mac). For some
-	// reason, a base `line-height` of `1.5` worked better in Safari. Safari's
-	// page zoom does weird stuff... I'm tired of trying to get this to work.
-	//
-	// @see http://www.smashingmagazine.com/2012/04/03/drop-caps-historical-use-and-current-best-practices/
-	// @see http://css-tricks.com/snippets/css/drop-caps/
-	// @see http://www.sitepoint.com/a-simple-css-drop-cap/
-	// @see http://phrogz.net/css/vertical-align/
-	
-	p.#{$NS}dropcap:first-letter {
-		font-style: normal;
-		font-weight: normal;
-		font-size: 4.5rem; // 72px
-		line-height: 1; // (4.5 / 4.5) = 1
-		margin: .15em .1em 0 0;
-		vertical-align: middle;
-		float: left;
-		display: inline;
-	}
 
 // The `<pre>` element represents a block of preformatted text, in which
 // structure is represented by typographic conventions rather than by
@@ -640,14 +630,14 @@ p {
 // @see http://ç.whatwg.org#the-pre-element
 
 pre {
-	font-size: .875rem; // (14px / 16px) = .875em
-	line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
-	margin: .625rem 0; // 10px
-	padding: .625rem; // 10px
+	font-size: #{relative(14)}rem; // (14px / 16px) = .875em
+	line-height: baseline(14, .75); // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	margin: #{relative(10)}rem 0; // 10px
+	padding: #{relative(10)}rem; // 10px
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
-	-webkit-overflow-scrolling: touch;
+	//-webkit-overflow-scrolling: touch;
 }
 
 // The `<ol>` element represents a list of items, where the items have
@@ -676,21 +666,21 @@ pre {
 
 ol,
 ul {
-	font-size: 1em; // 16px
-	line-height: 1.125; // (1.5 * .75) = 1.125
-	margin: .625rem 0; // 10px 0
+	font-size: #{relative(16)}rem;
+	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
+	margin: #{relative(10)}rem 0;
 	padding: 0;
 	list-style-position: outside;
 }
-ol { margin-left: 2.5rem; } // 40px
-ul { margin-left: 1.5rem; } // 24px
+ol { margin-left: #{relative(40)}rem; }
+ul { margin-left: #{relative(24)}rem; }
 	ol li,
 	ul li {
-		margin: 0 0 .375rem; // (1.5 * .25) = .375 (6px)
+		margin: 0 0 #{baseline(16, .25)}rem; // (1.5 * .25) = .375 (6px)
 		padding: 0;
 	}
-	li ol { margin-left: 2.5rem; } // 40px
-	li ul { margin-left: .5rem; } // 8px
+	li ol { margin-left: #{relative(40)}rem; }
+	li ul { margin-left: #{relative(8)}rem; }
 
 //======================================================================
 // TEXT-LEVEL SEMANTICS
@@ -727,7 +717,7 @@ abbr {
 	font-style: italic;
 	cursor: help;
 }
-abbr[title] { border-bottom: .0625rem dotted; } // 1px
+abbr[title] { border-bottom: #{relative(1)}rem dotted; }
 abbr[title="et cetera"],
 .#{$NS}etc { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
 
@@ -839,7 +829,7 @@ dfn {
 	font-style: italic;
 }
 dfn[title] {
-	border-bottom: .0625rem dotted; // 1px
+	border-bottom: #{relative(1)}rem dotted; // 1px
 	cursor: help;
 }
 
@@ -917,24 +907,7 @@ mark { text-decoration: none; }
 // @see http://dev.w3.org/html5/spec#the-q-element
 // @see http://ç.whatwg.org#the-q-element
 
-q { quotes: '“' '”' '‘' '’' '“' '”' '‘' '’'; } // Four levels of nested quotes.
-// Extra content definitions for pre-2011 WebKit:
-q:before {
-	content: '“';
-	content: open-quote;
-}
-q:after {
-	content: '”';
-	content: close-quote;
-}
-	q q:before {
-		content: '‘';
-		content: open-quote;
-	}
-	q q:after {
-		content: '’';
-		content: close-quote;
-	}
+q { quotes: '“' '”' '‘' '’'; }
 
 // The `<ruby>` element represents a container for base text and ruby text
 // — small annotations used for phonetic readings in languages such as
@@ -1372,7 +1345,7 @@ video {}
 
 .#{$NS}scroll {
 	width: 100%;
-	margin: .625rem 0; // 10px 0
+	margin: #{relative(10)}rem 0;
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
@@ -1418,9 +1391,9 @@ table {
 // @see http://ç.whatwg.org#the-caption-element
 
 caption {
-	font-size: .875rem; // 14px
-	line-height: 1.28571428571428; // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
-	padding: .21428571428572em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
+	font-size: #{relative(14)}rem;
+	line-height: baseline(14, .75); // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	padding: #{baseline(14, .25) / 2}em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
 }
 
 // The `<colgroup>` element represents a group of one or more columns in a
@@ -1493,10 +1466,10 @@ tr {}
 
 th,
 td {
-	font-size: 1rem; // 16px
-	line-height: 1.125; // (((1.5 / 1) = 1.5) * .75) = 1.125
+	font-size: #{relative(16)}rem;
+	line-height: baseline(16, .75); // (((1.5 / 1) = 1.5) * .75) = 1.125
 	margin: 0;
-	padding: .1875em 0; // (((1.5 * .25) = .375) / 2) = .1875
+	padding: #{baseline(16, .25) / 2}em 0; // (((1.5 * .25) = .375) / 2) = .1875
 }
 
 //======================================================================
@@ -1530,8 +1503,8 @@ form { margin: 0; }
 
 fieldset {
 	border: 0;
-	margin: .625rem 0; // 10px
-	padding: .0625rem 0 0; // 1px (prevents margin collapse)
+	margin: #{relative(16)}rem 0;
+	padding: #{relative(1)}rem 0 0; // 1px (prevents margin collapse)
 }
 
 // The `<legend>` element represents a caption for the parent `<fieldset>`
@@ -1542,11 +1515,11 @@ fieldset {
 // @see http://ç.whatwg.org#the-legend-element
 
 legend {
-	font-size: 1.125rem; // 18px
-	line-height: 1.16666666666666; // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
+	font-size: #{relative(18)}rem;
+	line-height: baseline(18, .875); // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
 	width: 100%;
 	margin: 0;
-	padding: 0 0 .33333333333333em; // (1.33333333333333 * .25) = .33333333333333
+	padding: 0 0 #{baseline(18, .25)}em; // (1.33333333333333 * .25) = .33333333333333
 	display: block;
 	white-space: normal; // Corrects text not wrapping in Firefox 3.
 }
@@ -1793,8 +1766,8 @@ input[type="text"],
 input[type="time"],
 input[type="url"],
 input[type="week"] {
-	height: 1.5rem;
-	padding: 0 .25em;
+	height: #{relative($base_line-height)}rem;
+	padding: 0 #{relative(4)}em;
 	margin: 0;
 	vertical-align: baseline;
 }
@@ -1803,7 +1776,7 @@ input[type="checkbox"],
 input[type="radio"] {
 	vertical-align: middle;
 	position: relative;
-	bottom: .125em;
+	bottom: #{relative(2)}em;
 }
 
 //----------------------------------------------------------------------

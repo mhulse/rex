@@ -32,8 +32,8 @@
 //
 // ```
 // .foo {
-//     font-size: relative(25px)+rem;
-//     margin: relative(10)+em 0;
+//     font-size: #{relative(25px)}rem;
+//     margin: #{relative(10)}em 0;
 // }
 // ```
 //
@@ -65,7 +65,7 @@
 // ```
 // .foo {
 //     line-height: baseline(25, .625);
-//     padding: (baseline(25, .375) / 2)+em 0;
+//     padding: #{baseline(25, .375) / 2)}em 0;
 // }
 // ```
 //
