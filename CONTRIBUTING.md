@@ -33,6 +33,11 @@ Please read the following guidelines before opening an issue.
 
 In general, and for anything not listed below, take care to maintain the existing coding style of the document(s) your editing.
 
+### Always add newline at the end of files.
+
+* [No newline at end of file](http://stackoverflow.com/a/5813359/922323)
+* [Why should files end with a newline?](http://stackoverflow.com/questions/729692/why-should-files-end-with-a-newline)
+
 ### Indentation:
 
 Unless otherwise specified, please use [K&R style](http://en.wikipedia.org/wiki/Indent_style#K.26R_style) indentation.
@@ -134,7 +139,70 @@ Follow [PEP 8 -- Style Guide for Python Code](http://www.python.org/dev/peps/pep
 
 ### PHP: Hypertext Preprocessor (`.php`):
 
-* TBA
+**NOT!**
+
+Cushion nots like this:
+
+```php
+<?php if ( ! is_wp_error($rss)): ?>
+```
+
+... not this:
+
+```php
+<?php if(!is_wp_error($rss)): ?>
+```
+
+**Cushion ifs:**
+
+See above.
+
+**Cushion spaces:**
+
+* Do not add cushion spaces, for example: `bloginfo( 'name' );`; this is prefered: `bloginfo('name');`.
+
+**Comments:**
+
+* For indent-level single line comments, use a `#` character.
+    * If the comment refers to the line after, append a ":" (colon) to end of comment (unless comment calls for some other sort of punctuation).
+* For single line comments at the end of code lines, use `//` characters.
+    * Because this comment refers to the line its on, put a period at end.
+* For descriptive comments, it's preferable to use [DocBlock comment styles](http://en.wikipedia.org/wiki/PHPDoc).
+    * From [PEP8](http://www.python.org/dev/peps/pep-0008/#maximum-line-length): **"For flowing long blocks of text (docstrings or comments), limiting the length to 72 characters is recommended."** I'm not totally hardcore about this restriction, but I think it looks good and makes sense.
+* For all comments, use proper capitalization and punctuation.
+
+Simple example:
+
+```php
+<?php
+	
+	/**
+	 * Description goes here.
+	 *<---- If an empty line, no space here. Example:
+	 *
+	 * Note space on other side of astrix? That's so it lines up with top/left-most `**`.
+	 */
+	//<----- No space here. Some IDEs will add space here if you hit return key after the `*/`.
+	global $page, $paged;
+	
+	wp_title('|', true, 'right');
+	
+	# Add the blog name:
+	
+	bloginfo('name');
+	
+	# Add the blog description for the home/front page:
+	
+	$site_description = get_bloginfo('description', 'display'); // Blah blah blah.
+	
+	if ($site_description && (is_home() || is_front_page())) echo ' | ' . $site_description;
+	
+	# Add a page number if necessary:
+	
+	if ($paged >= 2 || $page >= 2) echo ' | ' . sprintf(__('Page %s', 'octavo'), max($paged, $page));
+	
+?>
+```
 
 ## License
 

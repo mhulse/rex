@@ -78,6 +78,10 @@ From there, `$ cd source/` and run `$ npm install`; after the [dependencies](htt
 
 For subsequent builds, just run `$ grunt`; this default task will generate or copy files, based on the [`Gruntfile.js`](https://github.com/mhulse/rex/blob/gh-pages/source/Gruntfile.js) configuration and files found in the `/source` folder, into the `/demo` folder.
 
+Run `$ grunt watch` to automatically regenerate build files when you modify the `Gruntfile.js`, any of the templates or sass files.
+
+**Bonus:** Install the [LiveReload](http://feedback.livereload.com/knowledgebase/articles/86242) browser plugin to automatically reload your demo page when Grunt regenerates a new build (I'm using [Sublime Text 2](http://www.sublimetext.com/) and [LiveReload for Sublime Text 2](https://github.com/dz0ny/LiveReload-sublimetext2)).
+
 ## SCSS API
 
 Available SCSS overrides and utilities:
