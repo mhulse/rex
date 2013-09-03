@@ -1,4 +1,4 @@
-@import "variables", "functions";
+@import "functions", "variables";
 
 //======================================================================
 // DEVELOPMENT-ONLY CSS
@@ -10,24 +10,12 @@
 .#{$NS}test1 { line-height: baseline(16); }
 
 .#{$NS}test2 {
-	font-size: #{relative(25)}rem;        // (25 / 16) = 1.5625
-	line-height: baseline(25, .625);      // (((3 / 1.5625) = 1.92) * .625) = 1.2
-	padding: #{baseline(25, .375)/2}em 0; // (((1.92 * .375) = .72) / 2) = .36
+	font-size: #{relative(25)}rem;          // (25 / 16) = 1.5625
+	line-height: baseline(25, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
+	padding: #{baseline(25, .375) / 2}em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
 
 .#{$NS}test3 { line-height: unitless(1.5em); }
-
-// Layout:
-//----------------------------------------------------------------------
-
-body {
-	padding: #{relative(10)}rem;
-	-webkit-font-smoothing: antialiased;
-	        font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-}
-
-fieldset > div { margin: #{relative(10)}rem 0; } // 10px
 
 // Custom headings:
 //----------------------------------------------------------------------
@@ -37,8 +25,8 @@ fieldset > div { margin: #{relative(10)}rem 0; } // 10px
 	color: #fff;
 	text-transform: none;
 	background: fade-out(#000, .15);
-	margin: #{relative($base_margin)}rem 0;
-	padding: #{baseline(22, .875)/2}em;
+	margin: #{relative(12)}rem 0;
+	padding: #{baseline(22, .875) / 2}em;
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
@@ -48,12 +36,77 @@ fieldset > div { margin: #{relative(10)}rem 0; } // 10px
 .#{$NS}subtle {
 	font: normal #{relative(19)}rem/baseline(19, .875) monospace, serif;
 	color: #666;
-	margin: #{relative($base_margin)}rem 0;
+	margin: #{relative(12)}rem 0;
 }
 
 // Pending:
 //----------------------------------------------------------------------
 
+body {
+	padding: #{relative(12)}rem;
+	-webkit-font-smoothing: antialiased;
+	        font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	+ p { margin-top: 0; }
 }
+
+abbr {
+	
+	font-style: italic;
+	cursor: help;
+	
+	&[title] { border-bottom: #{relative(1)}rem dotted; }
+	
+	&[title="et cetera"],
+	.#{$NS}etc { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
+	
+}
+
+cite { font-style: italic; }
+
+dfn {
+	
+	font-weight: bold;
+	font-style: italic;
+	
+	&[title] {
+		border-bottom: #{relative(1)}rem dotted;
+		cursor: help;
+	}
+	
+}
+
+q { quotes: '“' '”' '‘' '’'; }
+
+span {
+	
+	// The italic version of an ampersand is more decorative and interesting
+	// than its roman counterpart.
+	//
+	// @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
+	// @see http://fluidbaselinegrid.com/css/style.css
+	
+	&.#{$NS}amp {
+		font-size: 110%;
+		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;
+		font-weight: 400;
+		line-height: 0;
+		vertical-align: baseline;
+		position: relative;
+	}
+	
+}
+
+ins {
+	
+	text-decoration: none;
+	
+	&:before { content: "["; }
+	&:after { content: "]"; }
+	
+}
+
+fieldset > div { margin: #{relative(12)}rem 0; }

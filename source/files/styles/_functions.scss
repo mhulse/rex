@@ -46,13 +46,16 @@
 // }
 // ```
 //
-// @param { integer } [ $value = $base_font-size ] Can be a value with or without a unit.
+// @param { integer } $value Can be a value with or without a unit.
 // @param { integer } [ $context = $base_font-size ] Context of relative unit calculation.
 // @return { integer } Relative result based on input params.
 
-@function relative($value: $base_font-size, $context: $base_font-size) {
+@function relative($value, $context: $base_font-size) {
 	
-	@return (unitless($value) / unitless($context));
+	$value: unitless($value);
+	$context: unitless($context);
+	
+	@return ($value / $context);
 	
 }
 
@@ -78,12 +81,12 @@
 // }
 // ```
 //
-// @param { integer } [ $value = $base_font-size ] An integer, assumed to be in pixels, where unit is optional.
+// @param { integer } $value An integer, assumed to be in pixels, where unit is optional.
 // @param { integer } [ $offset = 1 ] Multiply the return value by this number.
 // @param { integer } [ $context = $base_line-height ] Base `line-height` of document.
 // @return { integer } A number relative to baseline.
 
-@function baseline($value: $base_font-size, $offset: 1, $context: $base_line-height) {
+@function baseline($value, $offset: 1, $context: $base_line-height) {
 	
 	$value: unitless($value);
 	$offset: unitless($offset);

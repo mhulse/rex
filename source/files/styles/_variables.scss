@@ -2,36 +2,29 @@
 // VARIABLES
 //======================================================================
 
-// Namespace:
-//----------------------------------------------------------------------
+// Selector's pseudo namespace:
+$NS: 'rex_' !default;
 
-$NS: 'rex_';
+// Base `font-size`:
+$base_font-size: 16px !default;
 
-// Base values:
-//----------------------------------------------------------------------
+// Base `line-height`:
+$base_line-height: 24px !default;
 
-$base_font-size: 16px;
+// Natural box layout?
+$flag_natural-box-model: true !default;
 
-$base_line-height: 24px;
+// Include the baseline class?
+$flag_baseline: true !default;
 
-$base_margin: 10px;
+// Heading classes?
+$flag_heading-classes: true !default;
 
-// Flags:
-//----------------------------------------------------------------------
+// Subheading classes?
+$flag_subheading-classes: true !default;
 
-$flag_natural-box-model: true;
+// Responsive images?
+$flag_responsive-images: true !default;
 
-$flag_baseline: true;
-
-$flag_class-selectors: true;
-
-$flag_sub-headings: true;
-
-// Baseline:
-//----------------------------------------------------------------------
-
-$baseline_major-grid-color: #f00;
-
-$baseline_minor-grid-color: #0ff;
-
-$baseline_outline-color: #f00;
+// Element scroller?
+$flag_element-scroller: true !default;

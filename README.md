@@ -24,7 +24,7 @@
 
 ## About
 
-Essentially, this code serves as a "local" baseline grid toolkit for use in other css projects.
+Essentially, this code serves as a slightly opinionated yet very simple "local baseline grid" toolkit for use in other css projects.
 
 ### What is a baseline?
 
@@ -80,7 +80,7 @@ For subsequent builds, just run `$ grunt`; this default task will generate or co
 
 ## SCSS API
 
-Available SCSS overrides:
+Available SCSS overrides and utilities:
 
 ### Variables:
 

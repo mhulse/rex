@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 0.4.0
- * @date 2013/09/01
+ * @date 2013/09/02
  */
 
 *,
@@ -63,7 +63,7 @@ body {
 address {
 	font-size: 1rem;
 	line-height: 1.125;
-	margin: 0.625rem 0;
+	margin: 0.75rem 0;
 }
 
 h1,
@@ -86,7 +86,6 @@ h6,
 .rex_sh6 {
 	font-size: 1rem;
 	line-height: 1.5;
-	font-weight: bold;
 	margin: 0;
 }
 
@@ -141,74 +140,43 @@ h6,
 
 h1:empty { display: none; }
 
-blockquote { margin: 0.625rem 1.25rem; }
-
+blockquote { margin: 0.75rem 1.5rem; }
 blockquote > :first-child { margin-top: 0 !important; }
-
 blockquote > :last-child { margin-bottom: 0 !important; }
 
 dl {
 	font-size: 1rem;
 	line-height: 1.125;
-	margin: 0.625rem 0;
+	margin: 0.75rem 0;
 	padding: 0;
 }
-
 dl dt,
 dl dd {
 	margin: 0 0 0.375rem;
 	padding: 0;
 }
-
 dl dt { font-weight: bold; }
-
 dl dd { margin-left: 0.5rem; }
 
-figure { margin: 0.625rem 0; }
-
+figure { margin: 0.75rem 0; }
 figure img { display: block; }
-
 figure figcaption {
 	font-size: 0.875rem;
 	line-height: 1.5;
 }
-
-figure p {
-	font-family: inherit;
-	font-size: inherit;
-}
-
+figure figcaption p { font-size: inherit; }
 figure figcaption > :first-child { margin-top: 0 !important; }
-
 figure figcaption > :last-child { margin-bottom: 0 !important; }
 
 hr,
-.rex_hr,
-.rex_hr1,
-.rex_hr2,
-.rex_hr3,
-.rex_hr4,
-.rex_hr5,
-.rex_hr6 {
+.rex_hr {
 	color: black;
 	border: 0;
 	background: black;
 	height: 0.0625rem;
-	margin: 0.625rem 0;
+	margin: 0.75rem 0;
 	padding: 0;
 }
-
-.rex_hr1 { height: 0.125rem; }
-
-.rex_hr2 { height: 0.1875rem; }
-
-.rex_hr3 { height: 0.25rem; }
-
-.rex_hr4 { height: 0.3125rem; }
-
-.rex_hr5 { height: 0.375rem; }
-
-.rex_hr6 { height: 0.4375rem; }
 
 p {
 	font-size: 1rem;
@@ -219,52 +187,33 @@ p {
 pre {
 	font-size: 0.875rem;
 	line-height: 1.28571428571429;
-	margin: 0.625rem 0;
-	padding: 0.625rem;
+	margin: 0.75rem 0;
+	padding: 0.75rem;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
+	/*-webkit-overflow-scrolling: touch;*/
 }
 
 ol,
 ul {
 	font-size: 1rem;
 	line-height: 1.125;
-	margin: 0.625rem 0;
+	margin: 0.75rem 0;
 	padding: 0;
 	list-style-position: outside;
 }
-
-ol { margin-left: 2.5rem; }
-
-ul { margin-left: 1.5rem; }
-
 ol li,
 ul li {
 	margin: 0 0 0.375rem;
 	padding: 0;
 }
 
+ol { margin-left: 2.5rem; }
 li ol { margin-left: 2.5rem; }
 
+ul { margin-left: 1.5rem; }
 li ul { margin-left: 0.5rem; }
-
-abbr {
-	font-style: italic;
-	cursor: help;
-}
-
-abbr[title] { border-bottom: 0.0625rem dotted; }
-
-abbr[title="et cetera"],
-.rex_etc { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
-
-bdi {
-	direction: ltr;
-	unicode-bidi: bidi-override;
-}
-
-cite { font-style: italic; }
 
 code {
 	white-space: pre;
@@ -277,45 +226,11 @@ code {
 	word-wrap: break-word;
 }
 
-dfn {
-	font-weight: bold;
-	font-style: italic;
-}
-
-dfn[title] {
-	border-bottom: 0.0625rem dotted;
-	cursor: help;
-}
-
-em,
-i { font-style: italic; }
-
-mark { text-decoration: none; }
-
-q { quotes: '“' '”' '‘' '’'; }
-
-rp {
-	font-size: 100%;
-	display: inline;
-}
-
 small,
 .rex_small {
 	font-size: smaller;
 	letter-spacing: .03em;
 }
-
-span.rex_amp {
-	font-size: 110%;
-	font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;
-	font-weight: 400;
-	line-height: 0;
-	vertical-align: baseline;
-	position: relative;
-}
-
-strong,
-b { font-weight: bold; }
 
 sub,
 sup {
@@ -329,26 +244,13 @@ sub { bottom: -.25em; }
 
 sup { top: -.5em; }
 
-u { text-decoration: underline; }
-
-var { font-style: italic; }
-
 wbr:after { content: "\00200B"; }
-
-del { text-decoration: line-through; }
-
-ins { text-decoration: none; }
-
-ins:before { content: "["; }
-
-ins:after { content: "]"; }
 
 img {
 	max-width: 100%;
 	max-height: 100%;
 	vertical-align: middle;
 }
-
 img.rex_reset {
 	max-width: none;
 	max-height: none;
@@ -356,11 +258,10 @@ img.rex_reset {
 
 .rex_scroll {
 	width: 100%;
-	margin: 0.625rem 0;
+	margin: 0.75rem 0;
 	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
+	/*-webkit-overflow-scrolling: touch;*/
 }
-
 .rex_scroll > * { margin: 0 !important; }
 
 table {

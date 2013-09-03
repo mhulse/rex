@@ -71,7 +71,7 @@
 // @see https://developer.mozilla.org/docs/web/css/box-sizing
 // @see https://github.com/twbs/bootstrap
 
-@if $flag_natural-box-model == true {
+@if $flag_natural-box-model {
 	
 	*,
 	*:before,
@@ -104,7 +104,7 @@
 // @see http://stackoverflow.com/a/8877902/922323
 // @see https://coderwall.com/p/jsb-vw
 
-@if $flag_baseline == true {
+@if $flag_baseline {
 	
 	.#{$NS}baseline {
 		
@@ -131,17 +131,17 @@
 		// Grid overlay:
 		&::before {
 			background-image:
-				-webkit-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-				-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-				-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+				-webkit-linear-gradient(fade-out(#f00, .25) 1px, transparent 1px),
+				-webkit-linear-gradient(fade-out(#0ff, .25) 1px, transparent 1px),
+				-webkit-linear-gradient(fade-out(#0ff, .75) 1px, transparent 1px);
 			background-image:
-				-moz-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-				-moz-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-				-moz-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+				-moz-linear-gradient(fade-out(#f00, .25) 1px, transparent 1px),
+				-moz-linear-gradient(fade-out(#0ff, .25) 1px, transparent 1px),
+				-moz-linear-gradient(fade-out(#0ff, .75) 1px, transparent 1px);
 			background-image:
-				linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-				linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-				linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+				linear-gradient(fade-out(#f00, .25) 1px, transparent 1px),
+				linear-gradient(fade-out(#0ff, .25) 1px, transparent 1px),
+				linear-gradient(fade-out(#0ff, .75) 1px, transparent 1px);
 			background-size:
 				100% #{relative($base_line-height)}rem,     // Match base `line-height`.
 				100% #{relative($base_line-height) / 2}rem, // Half base `line-height`.
@@ -163,7 +163,7 @@
 		&:active::before { display: none; }
 		
 		// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
-		&:active * { box-shadow: inset 0 0 0 1px fade-out($baseline_outline-color, .5); }
+		&:active * { box-shadow: inset 0 0 0 1px fade-out(#f00, .5); }
 		
 	}
 	
@@ -218,7 +218,7 @@ body {
 address {
 	font-size: #{relative(16)}rem;
 	line-height: baseline(16, .75); // (((1.5 / 1) = 1.5) * .75) = 1.125
-	margin: #{relative($base_margin)}rem 0;
+	margin: #{relative(12)}rem 0;
 }
 
 // The `<article>` element represents a section of a page that consists of
@@ -281,10 +281,9 @@ h3,
 h4,
 h5,
 h6,
-%h1-h6 {
+%h1-h2-h3-h4-h5-h6 {
 	font-size: #{relative(16)}rem;
-	line-height: relative($base_line-height);
-	font-weight: bold;
+	line-height: baseline(16);
 	margin: 0;
 }
 
@@ -324,14 +323,14 @@ h6,
 	line-height: baseline(18, .875); // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
 }
 
-@if $flag_class-selectors == true {
+@if $flag_heading-classes {
 	
 	.#{$NS}h1,
 	.#{$NS}h2,
 	.#{$NS}h3,
 	.#{$NS}h4,
 	.#{$NS}h5,
-	.#{$NS}h6 { @extend %h1-h6; }
+	.#{$NS}h6 { @extend %h1-h2-h3-h4-h5-h6; }
 	
 	.#{$NS}h1 { @extend %h1; }
 	.#{$NS}h2 { @extend %h2; }
@@ -342,14 +341,14 @@ h6,
 	
 }
 
-@if $flag_sub-headings {
+@if $flag_subheading-classes {
 	
 	.#{$NS}sh1,
 	.#{$NS}sh2,
 	.#{$NS}sh3,
 	.#{$NS}sh4,
 	.#{$NS}sh5,
-	.#{$NS}sh6 { @extend %h1-h6; }
+	.#{$NS}sh6 { @extend %h1-h2-h3-h4-h5-h6; }
 	
 	.#{$NS}sh1,
 	.#{$NS}sh2,
@@ -474,9 +473,14 @@ section {}
 // @see http://dev.w3.org/html5/spec#the-blockquote-element
 // @see http://ç.whatwg.org#the-blockquote-element
 
-blockquote { margin: #{relative($base_margin)}rem #{relative($base_margin * 2)}rem; }
-	blockquote > :first-child { margin-top: 0 !important; }
-	blockquote > :last-child { margin-bottom: 0 !important; }
+blockquote {
+	
+	margin: #{relative(12)}rem #{relative(24)}rem;
+	
+	& > :first-child { margin-top: 0 !important; }
+	& > :last-child { margin-bottom: 0 !important; }
+	
+}
 
 // The `<div>` element has no special meaning at all. It represents its
 // children. It can be used with the `class`, `lang`, and `title`
@@ -518,18 +522,22 @@ div {}
 // @see http://ç.whatwg.org#the-dd-element
 
 dl {
+	
 	font-size: #{relative(16)}rem;
 	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
-	margin: #{relative($base_margin)}rem 0;
+	margin: #{relative(12)}rem 0;
 	padding: 0;
-}
-	dl dt,
-	dl dd {
+	
+	& dt,
+	dd {
 		margin: 0 0 #{relative(6)}rem;
 		padding: 0;
 	}
-	dl dt { font-weight: bold; }
-	dl dd { margin-left: #{relative(8)}rem; }
+	
+	& dt { font-weight: bold; }
+	& dd { margin-left: #{relative(8)}rem; }
+	
+}
 
 // The `<figure>` element represents some flow content, optionally with a
 // caption, that is self-contained and is typically referenced as a single
@@ -552,18 +560,25 @@ dl {
 // @see http://dev.w3.org/html5/spec#the-figcaption-element
 // @see http://ç.whatwg.org#the-figcaption-element
 
-figure { margin: #{relative(10)}rem 0; }
-	figure img { display: block; }
-	figure figcaption {
+figure {
+	
+	margin: #{relative(12)}rem 0;
+	
+	& img { display: block; }
+	
+	& figcaption {
+		
 		font-size: #{relative(14)}rem;
 		line-height: #{baseline(14, .875)}; // ((((1.5 / .875) = 1.71428571428571) * .875) = 1.5)
+		
+		& p { font-size: inherit; }
+		
+		& > :first-child { margin-top: 0 !important; }
+		& > :last-child { margin-bottom: 0 !important; }
+		
 	}
-	figure p {
-		font-family: inherit;
-		font-size: inherit;
-	}
-		figure figcaption > :first-child { margin-top: 0 !important; }
-		figure figcaption > :last-child { margin-bottom: 0 !important; }
+	
+}
 
 // The `<hr>` element represents a paragraph-level thematic break. It
 // separates different topics within a section of prose, or between scenes
@@ -578,32 +593,13 @@ figure { margin: #{relative(10)}rem 0; }
 // @see http://ç.whatwg.org#the-hr-element
 
 hr,
-%hr {
+.#{$NS}hr {
 	color: black;
 	border: 0;
 	background: black;
 	height: #{relative(1)}rem;
-	margin: #{relative($base_margin)}rem 0;
+	margin: #{relative(12)}rem 0;
 	padding: 0;
-}
-
-@if $flag_class-selectors == true {
-	
-	.#{$NS}hr,
-	.#{$NS}hr1,
-	.#{$NS}hr2,
-	.#{$NS}hr3,
-	.#{$NS}hr4,
-	.#{$NS}hr5,
-	.#{$NS}hr6 { @extend %hr; }
-	
-	.#{$NS}hr1 { height: #{relative(2)}rem; }
-	.#{$NS}hr2 { height: #{relative(3)}rem; }
-	.#{$NS}hr3 { height: #{relative(4)}rem; }
-	.#{$NS}hr4 { height: #{relative(5)}rem; }
-	.#{$NS}hr5 { height: #{relative(6)}rem; }
-	.#{$NS}hr6 { height: #{relative(7)}rem; }
-	
 }
 
 // The `<p>` element represents a paragraph.
@@ -630,14 +626,14 @@ p {
 // @see http://ç.whatwg.org#the-pre-element
 
 pre {
-	font-size: #{relative(14)}rem; // (14px / 16px) = .875em
+	font-size: #{relative(14)}rem;
 	line-height: baseline(14, .75); // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
-	margin: #{relative(10)}rem 0; // 10px
-	padding: #{relative(10)}rem; // 10px
+	margin: #{relative(12)}rem 0;
+	padding: #{relative(12)}rem;
 	word-wrap: normal;
 	overflow: auto;
 	white-space: pre;
-	//-webkit-overflow-scrolling: touch;
+	/*-webkit-overflow-scrolling: touch;*/
 }
 
 // The `<ol>` element represents a list of items, where the items have
@@ -666,21 +662,35 @@ pre {
 
 ol,
 ul {
+	
 	font-size: #{relative(16)}rem;
 	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
-	margin: #{relative(10)}rem 0;
+	margin: #{relative(12)}rem 0;
 	padding: 0;
 	list-style-position: outside;
-}
-ol { margin-left: #{relative(40)}rem; }
-ul { margin-left: #{relative(24)}rem; }
-	ol li,
-	ul li {
+	
+	& li {
 		margin: 0 0 #{baseline(16, .25)}rem; // (1.5 * .25) = .375 (6px)
 		padding: 0;
 	}
-	li ol { margin-left: #{relative(40)}rem; }
-	li ul { margin-left: #{relative(8)}rem; }
+	
+}
+
+ol {
+	
+	margin-left: #{relative(40)}rem;
+	
+	li & { margin-left: #{relative(40)}rem; }
+	
+}
+
+ul {
+	
+	margin-left: #{relative(24)}rem;
+	
+	li & { margin-left: #{relative(8)}rem; }
+	
+}
 
 //======================================================================
 // TEXT-LEVEL SEMANTICS
@@ -713,13 +723,7 @@ a {}
 // @see http://dev.w3.org/html5/spec#the-abbr-element
 // @see http://ç.whatwg.org#the-abbr-element
 
-abbr {
-	font-style: italic;
-	cursor: help;
-}
-abbr[title] { border-bottom: #{relative(1)}rem dotted; }
-abbr[title="et cetera"],
-.#{$NS}etc { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
+abbr {}
 
 // The `<bdi>` element represents a span of text that is to be isolated
 // from its surroundings for the purposes of bidirectional text formatting.
@@ -729,10 +733,7 @@ abbr[title="et cetera"],
 // @see http://dev.w3.org/html5/spec#the-rp-element
 // @see http://ç.whatwg.org#the-rp-element
 
-bdi {
-	direction: ltr;
-	unicode-bidi: bidi-override;
-}
+bdi {}
 
 // The `<bdo>` element represents explicit text directionality formatting
 // control for its children. It allows authors to override the Unicode
@@ -775,7 +776,7 @@ br {}
 // @see http://dev.w3.org/html5/spec#the-cite-element
 // @see http://ç.whatwg.org#the-cite-element
 
-cite { font-style: italic; }
+cite {}
 
 // The `<code>` element represents a fragment of computer code. This could
 // be an XML element name, a file name, a computer program, or any other
@@ -824,14 +825,7 @@ data {}
 // @see http://dev.w3.org/html5/spec#the-dfn-element
 // @see http://ç.whatwg.org#the-dfn-element
 
-dfn {
-	font-weight: bold;
-	font-style: italic;
-}
-dfn[title] {
-	border-bottom: #{relative(1)}rem dotted; // 1px
-	cursor: help;
-}
+dfn {}
 
 // The `<em>` element represents stress emphasis of its contents. The
 // level of emphasis that a particular piece of content has is given by
@@ -858,7 +852,7 @@ dfn[title] {
 // @see http://ç.whatwg.org#the-i-element
 
 em,
-i { font-style: italic; }
+i {}
 
 // The `<kbd>` element represents user input (typically keyboard input,
 // although it may also be used to represent other input, such as voice
@@ -895,7 +889,7 @@ kbd {}
 // @see http://dev.w3.org/html5/spec#the-mark-element
 // @see http://ç.whatwg.org#the-mark-element
 
-mark { text-decoration: none; }
+mark {}
 
 // The `q` element represents some phrasing content quoted from another
 // source.
@@ -907,7 +901,7 @@ mark { text-decoration: none; }
 // @see http://dev.w3.org/html5/spec#the-q-element
 // @see http://ç.whatwg.org#the-q-element
 
-q { quotes: '“' '”' '‘' '’'; }
+q {}
 
 // The `<ruby>` element represents a container for base text and ruby text
 // — small annotations used for phonetic readings in languages such as
@@ -937,12 +931,12 @@ q { quotes: '“' '”' '‘' '’'; }
 // @see http://dev.w3.org/html5/spec#the-rp-element
 // @see http://ç.whatwg.org#the-rp-element
 
-ruby {}
+ruby {
+	
 	rt {}
-	rp {
-		font-size: 100%;
-		display: inline;
-	}
+	rp {}
+	
+}
 
 // The `<s>` element represents contents that are no longer accurate or no
 // longer relevant.
@@ -988,21 +982,6 @@ small,
 // @see http://ç.whatwg.org#the-span-element
 
 span {}
-	
-	// The italic version of an ampersand is more decorative and interesting
-	// than its roman counterpart.
-	//
-	// @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
-	// @see http://fluidbaselinegrid.com/css/style.css
-	
-	span.#{$NS}amp {
-		font-size: 110%;
-		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;
-		font-weight: 400;
-		line-height: 0;
-		vertical-align: baseline;
-		position: relative;
-	}
 
 // The `<strong>` element represents strong importance for its contents.
 // Indicate relative importance by nesting strong elements; each strong
@@ -1029,7 +1008,7 @@ span {}
 // @see http://ç.whatwg.org#the-b-element
 
 strong,
-b { font-weight: bold; }
+b {}
 
 // The `<sub>` element can be used inside a `<var>` element, for variables
 // that have subscripts.
@@ -1078,7 +1057,7 @@ time {}
 // @see http://dev.w3.org/html5/spec#the-u-element
 // @see http://ç.whatwg.org#the-u-element
 
-u { text-decoration: underline; }
+u {}
 
 // The `<var>` element represents a variable. This could be an actual
 // variable in a mathematical expression or programming context, or it
@@ -1088,7 +1067,7 @@ u { text-decoration: underline; }
 // @see http://dev.w3.org/html5/spec#the-var-element
 // @see http://ç.whatwg.org#the-var-element
 
-var { font-style: italic; }
+var {}
 
 // The `<wbr>` element represents a line break opportunity. Any content
 // inside `<wbr>` elements must not be considered part of the surrounding
@@ -1101,8 +1080,9 @@ var { font-style: italic; }
 // @see http://dev.w3.org/html5/spec#the-wbr-element
 // @see http://ç.whatwg.org#the-wbr-element
 
-wbr {}
-wbr:after { content: "\00200B"; }
+wbr {
+	&:after { content: "\00200B"; }
+}
 
 //======================================================================
 // EDITS
@@ -1115,7 +1095,7 @@ wbr:after { content: "\00200B"; }
 // @see http://dev.w3.org/html5/spec#the-del-element
 // @see http://ç.whatwg.org#the-del-element
 
-del { text-decoration: line-through; }
+del {}
 
 // The `<ins>` element represents an addition to the document. The `<ins>`
 // elements should not cross implied paragraph boundaries.
@@ -1124,9 +1104,7 @@ del { text-decoration: line-through; }
 // @see http://dev.w3.org/html5/spec#the-ins-element
 // @see http://ç.whatwg.org#the-ins-element
 
-ins { text-decoration: none; }
-	ins:before { content: "["; }
-	ins:after { content: "]"; }
+ins {}
 
 //======================================================================
 // EMBEDED CONTENT
@@ -1237,15 +1215,22 @@ iframe {}
 // @see http://dev.w3.org/html5/spec#the-img-element
 // @see http://ç.whatwg.org#the-img-element
 
-img {
-	max-width: 100%;
-	max-height: 100%;
-	vertical-align: middle;
-}
-	img.#{$NS}reset {
-		max-width: none;
-		max-height: none;
+@if $flag_responsive-images {
+	
+	img {
+		
+		max-width: 100%;
+		max-height: 100%;
+		vertical-align: middle;
+		
+		&.#{$NS}reset {
+			max-width: none;
+			max-height: none;
+		}
+		
 	}
+	
+}
 
 // The `<map>` element, in conjunction with any area element descendants,
 // defines an image map. The element represents its children.
@@ -1343,13 +1328,20 @@ video {}
 // @see http://www.maxdesign.com.au/2013/03/22/simple-responsive-table/
 // @see http://creativeandcode.com/simple-solution-for-responsive-tables/
 
-.#{$NS}scroll {
-	width: 100%;
-	margin: #{relative(10)}rem 0;
-	overflow-y: auto;
-	-webkit-overflow-scrolling: touch;
+@if $flag_element-scroller {
+	
+	.#{$NS}scroll {
+		
+		width: 100%;
+		margin: #{relative(12)}rem 0;
+		overflow-y: auto;
+		/*-webkit-overflow-scrolling: touch;*/
+		
+		& > * { margin: 0 !important; }
+		
+	}
+	
 }
-	.#{$NS}scroll > * { margin: 0 !important; }
 
 //----------------------------------------------------------------------
 
@@ -1606,9 +1598,12 @@ input[type="datetime-local"] {}
 // @see http://dev.w3.org/html5/spec#e-mail-state-(type=email)
 // @see http://ç.whatwg.org#e-mail-state-(type=email)
 
-input[type="email"] {}
-input[type="email"]:valid {}
-input[type="email"]:invalid {}
+input[type="email"] {
+	
+	&:valid {}
+	&:invalid {}
+	
+}
 
 // A control that lets the user select a file. Use the `accept` attribute
 // to define the types of files that the control can select.
@@ -1710,9 +1705,12 @@ input[type="submit"] {}
 // @see http://dev.w3.org/html5/spec#telephone-state-(type=tel)
 // @see http://ç.whatwg.org#telephone-state-(type=tel)
 
-input[type="tel"] {}
-input[type="tel"]:valid {}
-input[type="tel"]:invalid {}
+input[type="tel"] {
+	
+	&:valid {}
+	&:invalid {}
+	
+}
 
 // A single-line text field; line-breaks are automatically removed from
 // the input value.
@@ -1720,8 +1718,11 @@ input[type="tel"]:invalid {}
 // @see http://dev.w3.org/html5/spec#text-(type=text)-state-and-search-state-(type=search)
 // @see http://ç.whatwg.org#text-(type=text)-state-and-search-state-(type=search)
 
-input,
-input[type="text"] {}
+input {
+	
+	&[type="text"] {}
+	
+}
 
 // A control for entering a time value with no time zone.
 //
@@ -1739,9 +1740,12 @@ input[type="time"] {}
 // @see http://dev.w3.org/html5/spec#url-state-(type=url)
 // @see http://ç.whatwg.org#url-state-(type=url)
 
-input[type="url"] {}
-input[type="url"]:valid {}
-input[type="url"]:invalid {}
+input[type="url"] {
+	
+	&:valid {}
+	&:invalid {}
+	
+}
 
 // A control for entering a date consisting of a week-year number and a
 // week number with no time zone.
