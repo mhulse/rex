@@ -18,6 +18,7 @@
 	- [Variables](#variables)
 	- [Functions](#functions)
 - [CSS](#css)
+	- [Features](#features)
 - [Feedback](#feedback)
 - [Changelog](#changelog)
 - [LEGAL](#legal)
@@ -100,7 +101,7 @@ Name | Description | Default
 `$flag_responsive-images` | Responsive images? | `true`
 `$flag_element-scroller` | Element scroller? | `true`
 
-### Functions
+### Functions:
 
 Name | Description
 :-- | :--
@@ -110,7 +111,9 @@ Name | Description
 
 ## CSS
 
-A table of the CSS features:
+CSS details:
+
+### Features:
 
 Feature | Description
 :-- | :--
