@@ -78,7 +78,7 @@ From there, `$ cd source/` and run `$ npm install`; after the [dependencies](htt
 
 For subsequent builds, just run `$ grunt`; this default task will generate or copy files, based on the [`Gruntfile.js`](https://github.com/mhulse/rex/blob/gh-pages/source/Gruntfile.js) configuration and files found in the `/source` folder, into the `/demo` folder.
 
-Run `$ grunt watch` to automatically regenerate build files when you modify the `Gruntfile.js`, any of the templates or sass files.
+Run `$ grunt watch` to automatically regenerate build files when you modify the `Gruntfile.js`, any of the templates or SCSS files.
 
 **Bonus:** Install the [LiveReload](http://feedback.livereload.com/knowledgebase/articles/86242) browser plugin to automatically reload your demo page when Grunt regenerates a new build (I'm using [Sublime Text 2](http://www.sublimetext.com/) and [LiveReload for Sublime Text 2](https://github.com/dz0ny/LiveReload-sublimetext2)).
 
@@ -90,21 +90,37 @@ Available SCSS overrides and utilities:
 
 Name | Description | Default
 :-- | :-- | :--
-`$NS` | Namespace prefix. | `rex_`
-`$font-size-base` | Base `font-size`. | `16px`
-`$line-height-base` | Base `line-height`. | `24px` 
+`$NS` | Selector's "pseudo namespace" prefix | `rex_`
+`$base_font-size` | Base `font-size`. | `16px`
+`$base_line-height` | Base `line-height`. | `24px`
+`$flag_natural-box-model` | Natural box layout? | `true`
+`$flag_baseline` | Include the baseline class? | `true`
+`$flag_heading-classes` | Heading classes? | `true`
+`$flag_subheading-classes` | Subheading classes? | `true`
+`$flag_responsive-images` | Responsive images? | `true`
+`$flag_element-scroller` | Element scroller? | `true`
 
 ### Functions
 
 Name | Description
 :-- | :--
-`unitless()` | Remove units from number.
-`em()` | `px` to `em`; a.k.a., convert `px` to relative unit.
-`baseline()` | Simple baseline calculator.
+`unitless($value, ...)` | Remove units from `$value`.
+`relative($value, ...)` | Convert `$value` to relative number.
+`baseline($value, ...)` | Calculate baseline from `$value`, which is assumed to be the baseline's element's `font-size`.
 
 ## CSS
 
-...
+A list of the CSS features:
+
+1. All rex classes have a "pseudo namespace" (which is controlled via the SCSS `$NS` variable).
+1. Base `font-size` is `16px` and base `line-height` is `24px`; both of these values can be controlled via the SCSS variables `$base_font-size` and `$base_line-height` respectively.
+1. All units are relative; using `rem` and `em` where appropriate. 
+1. If `$flag_natural-box-model` is `true`, then all elements (including pseudo elements) will use `box-sizing: border-box;`; this change affects the box model in that the `width` and `height` properties include the `padding` and `border`, but not the `margin`.
+1. If `$flag_baseline` is `true`, then a `.rex_baseline` class becomes available for use; this class should be applied to a wrapping `div` in order to test a "module", "content area" or element's placement on a "local" baseline grid. When the grid is clicked (i.e., `:active`) the base lines will hide and each child element will be outlined with a red border.
+1. All headings (e.g., `h1` through `h6`) have a corresponding class of the same name (i.e., `.h1` through `.h6`); for more information, read: [Don’t Style Headings Using HTML5 Sections](http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/). These classes can be disabled via the `$flag_heading-classes` variable.
+1. In the same vein as the heading classes above, there's a set of subheading classes (i.e., `.sh1` through `.sh6`) that have similar functionality and can be disable via the `$flag_subheading-classes` variable.
+1. Responsive image styles have been included and are used mostly for the sake of the demo (disable via the ``$flag_responsive-images` variable); note that this feature may be removed in the near future.
+1. An "element" scroller class (`.rex_scroller`) has been included for the sake of wide tables; this class can be disabled via the `$flag_element-scroller` variable.
 
 ## Feedback
 

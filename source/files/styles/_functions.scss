@@ -2,7 +2,7 @@
 // Functions:
 //======================================================================
 
-// Remove units from value.
+// Remove units from `$value`.
 //
 // Usage:
 //
@@ -26,7 +26,7 @@
 
 //----------------------------------------------------------------------
 
-// Convert value to relative number.
+// Convert `$value` to relative number.
 //
 // Usage:
 //
@@ -61,7 +61,8 @@
 
 //----------------------------------------------------------------------
 
-// Simple baseline mixin calculator.
+// Calculate baseline from `$value`, which is assumed to be the baseline's
+// element's `font-size`.
 //
 // Usage:
 //
