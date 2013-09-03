@@ -674,6 +674,11 @@ ul {
 		padding: 0;
 	}
 	
+	& li img {
+		display: inline;
+		vertical-align: top;
+	}
+	
 }
 
 ol {
@@ -1417,7 +1422,7 @@ col {}
 // @see http://dev.w3.org/html5/spec#the-thead-element
 // @see http://ç.whatwg.org#the-thead-element
 
-thead {}
+thead { vertical-align: bottom; }
 
 // The `<tfoot>` element represents the block of rows that consist of the
 // column summaries (footers) for the parent `<table>` element.
@@ -1426,7 +1431,7 @@ thead {}
 // @see http://dev.w3.org/html5/spec#the-tfoot-element
 // @see http://ç.whatwg.org#the-tfoot-element
 
-tfoot {}
+tfoot { vertical-align: top; }
 
 // The `<tbody>` element represents a block of rows that consist of a body
 // of data for the parent `<table>` element.

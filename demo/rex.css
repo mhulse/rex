@@ -208,6 +208,11 @@ ul li {
 	margin: 0 0 0.375rem;
 	padding: 0;
 }
+ol li img,
+ul li img {
+	display: inline;
+	vertical-align: top;
+}
 
 ol { margin-left: 2.5rem; }
 li ol { margin-left: 2.5rem; }
@@ -275,6 +280,10 @@ caption {
 	line-height: 1.28571428571429;
 	padding: 0.21428571428571em 0;
 }
+
+thead { vertical-align: bottom; }
+
+tfoot { vertical-align: top; }
 
 th,
 td {
