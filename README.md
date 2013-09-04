@@ -127,9 +127,12 @@ Feature | Description
 
 [Bugs? Constructive feedback? Questions?](https://github.com/mhulse/rex/issues)
 
-## Release History
+## [Release History](https://github.com/mhulse/rex/releases)
 
-* 2013-08-25   v0.4.0   Release History started.
+* 2013-08-25   [v0.4.0](https://github.com/mhulse/rex/releases/tag/v0.4.0)   Bower version bump.
+* 2013-08-18   [v0.3.0](https://github.com/mhulse/rex/releases/tag/v0.3.0)   SCSS build setup.
+* 2013-08-16   [v0.2.0](https://github.com/mhulse/rex/releases/tag/v0.2.0)   Bower pre-release.
+* 2013-08-10   [v0.1.0](https://github.com/mhulse/rex/releases/tag/v0.1.0)   Maximum Grunt setup (next versions will be simplified Grunt builds).
 
 ---
 
