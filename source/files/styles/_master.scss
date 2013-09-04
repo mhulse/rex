@@ -665,7 +665,6 @@ pre {
 	font-size: #{relative(14)}rem;
 	line-height: baseline(14, .75); // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
 	margin: #{relative(12)}rem 0;
-	padding: #{relative(12)}rem;
 }
 
 // The `<ul>` element represents a list of items, where the order of the
