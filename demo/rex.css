@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 0.4.0
- * @date 2013/09/03
+ * @date 2013/09/04
  */
 
 *,
@@ -174,19 +174,6 @@ hr,
 	padding: 0;
 }
 
-p {
-	font-size: 1rem;
-	line-height: 1.5;
-	margin: 0.75rem 0;
-}
-
-pre {
-	font-size: 0.875rem;
-	line-height: 1.28571428571429;
-	margin: 0.75rem 0;
-	padding: 0.75rem;
-}
-
 ol,
 ul {
 	font-size: 1rem;
@@ -208,6 +195,19 @@ ul li img {
 
 ol { margin-left: 2.5rem; }
 li ol { margin-left: 2.5rem; }
+
+p {
+	font-size: 1rem;
+	line-height: 1.5;
+	margin: 0.75rem 0;
+}
+
+pre {
+	font-size: 0.875rem;
+	line-height: 1.28571428571429;
+	margin: 0.75rem 0;
+	padding: 0.75rem;
+}
 
 ul { margin-left: 1.5rem; }
 li ul { margin-left: 0.5rem; }

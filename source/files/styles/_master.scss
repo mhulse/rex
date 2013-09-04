@@ -592,6 +592,52 @@ hr,
 	padding: 0;
 }
 
+// The `<ol>` element represents a list of items, where the items have
+// been intentionally ordered, such that changing the order would change
+// the meaning of the list.
+//
+// The `<li>` element represents a list item. If its parent element is an
+// `<ol>`, `<ul>`, or `<menu>` element, then the element is an item of the
+// parent element's list, as defined for those elements. Otherwise, the
+// list item has no defined list-related relationship to any other `<li>`
+// element.
+//
+// @see https://developer.mozilla.org/docs/web/html/element/ol
+// @see https://developer.mozilla.org/docs/web/html/element/li
+// @see http://dev.w3.org/html5/spec#the-ol-element
+// @see http://ç.whatwg.org#the-ol-element
+// @see http://dev.w3.org/html5/spec#the-li-element
+// @see http://ç.whatwg.org#the-li-element
+
+ol,
+%ol {
+	
+	font-size: #{relative(16)}rem;
+	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
+	margin: #{relative(12)}rem 0;
+	padding: 0;
+	list-style-position: outside;
+	
+	& li {
+		margin: 0 0 #{baseline(16, .25)}rem; // (1.5 * .25) = .375 (6px)
+		padding: 0;
+	}
+	
+	& li img {
+		display: inline;
+		vertical-align: top;
+	}
+	
+}
+
+ol {
+	
+	margin-left: #{relative(40)}rem;
+	
+	li & { margin-left: #{relative(40)}rem; }
+	
+}
+
 // The `<p>` element represents a paragraph.
 //
 // @see https://developer.mozilla.org/docs/web/html/element/p
@@ -622,58 +668,15 @@ pre {
 	padding: #{relative(12)}rem;
 }
 
-// The `<ol>` element represents a list of items, where the items have
-// been intentionally ordered, such that changing the order would change
-// the meaning of the list.
-//
 // The `<ul>` element represents a list of items, where the order of the
 // items is not important — that is, where changing the order would not
 // materially change the meaning of the list.
 //
-// The `<li>` element represents a list item. If its parent element is an
-// `<ol>`, `<ul>`, or `<menu>` element, then the element is an item of the
-// parent element's list, as defined for those elements. Otherwise, the
-// list item has no defined list-related relationship to any other `<li>`
-// element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/ol
 // @see https://developer.mozilla.org/docs/web/html/element/ul
-// @see https://developer.mozilla.org/docs/web/html/element/li
-// @see http://dev.w3.org/html5/spec#the-ol-element
-// @see http://ç.whatwg.org#the-ol-element
 // @see http://dev.w3.org/html5/spec#the-ul-element
 // @see http://ç.whatwg.org#the-ul-element
-// @see http://dev.w3.org/html5/spec#the-li-element
-// @see http://ç.whatwg.org#the-li-element
 
-ol,
-ul {
-	
-	font-size: #{relative(16)}rem;
-	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
-	margin: #{relative(12)}rem 0;
-	padding: 0;
-	list-style-position: outside;
-	
-	& li {
-		margin: 0 0 #{baseline(16, .25)}rem; // (1.5 * .25) = .375 (6px)
-		padding: 0;
-	}
-	
-	& li img {
-		display: inline;
-		vertical-align: top;
-	}
-	
-}
-
-ol {
-	
-	margin-left: #{relative(40)}rem;
-	
-	li & { margin-left: #{relative(40)}rem; }
-	
-}
+ul { @extend %ol; }
 
 ul {
 	
@@ -715,6 +718,23 @@ a {}
 // @see http://ç.whatwg.org#the-abbr-element
 
 abbr {}
+
+// The `<b>` element represents a span of text to be stylistically offset
+// from the normal prose without conveying any extra importance. Examples
+// are key words in a document abstract, product names in a review, or
+// other spans of text whose typical typographic presentation is bold.
+//
+// The `<b>` element should be used as a last resort when no other element
+// is more appropriate. In particular, headings should use the `<h1>` to
+// `<h6>` elements, stress emphasis should use the `<em>` element,
+// importance should be denoted with the `<strong>` element, and text
+// marked or highlighted should use the `<mark>` element.
+//
+// @see https://developer.mozilla.org/docs/web/html/element/b
+// @see http://dev.w3.org/html5/spec#the-b-element
+// @see http://ç.whatwg.org#the-b-element
+
+b {}
 
 // The `<bdi>` element represents a span of text that is to be isolated
 // from its surroundings for the purposes of bidirectional text formatting.
@@ -815,6 +835,12 @@ dfn {}
 // linguistic. If spoken, this stress would be emphasized pronunciation on
 // a word that can change the nuance of a sentence.
 //
+// @see https://developer.mozilla.org/docs/web/html/element/em
+// @see http://dev.w3.org/html5/spec#the-em-element
+// @see http://ç.whatwg.org#the-em-element
+
+em {}
+
 // The `<i>` element represents a span of text in an alternate voice or
 // mood, or otherwise offset from the normal prose, such as a taxonomic
 // designation, a technical term, an idiomatic phrase from another
@@ -826,14 +852,10 @@ dfn {}
 // importance, `<cite>` for titles in a citation or bibliography, `<dfn>`
 // for defining a word, and `<var>` for mathematical variables.
 //
-// @see https://developer.mozilla.org/docs/web/html/element/em
 // @see https://developer.mozilla.org/docs/web/html/element/i
-// @see http://dev.w3.org/html5/spec#the-em-element
-// @see http://ç.whatwg.org#the-em-element
 // @see http://dev.w3.org/html5/spec#the-i-element
 // @see http://ç.whatwg.org#the-i-element
 
-em,
 i {}
 
 // The `<kbd>` element represents user input (typically keyboard input,
@@ -967,47 +989,37 @@ span {}
 // importance of a piece of text with the strong element does not change
 // the meaning of the sentence.
 //
-// The `<b>` element represents a span of text to be stylistically offset
-// from the normal prose without conveying any extra importance. Examples
-// are key words in a document abstract, product names in a review, or
-// other spans of text whose typical typographic presentation is bold.
-//
-// The `<b>` element should be used as a last resort when no other element
-// is more appropriate. In particular, headings should use the `<h1>` to
-// `<h6>` elements, stress emphasis should use the `<em>` element,
-// importance should be denoted with the `<strong>` element, and text
-// marked or highlighted should use the `<mark>` element.
-//
 // @see https://developer.mozilla.org/docs/web/html/element/strong
-// @see https://developer.mozilla.org/docs/web/html/element/b
 // @see http://dev.w3.org/html5/spec#the-strong-element
 // @see http://ç.whatwg.org#the-strong-element
-// @see http://dev.w3.org/html5/spec#the-b-element
-// @see http://ç.whatwg.org#the-b-element
 
-strong,
-b {}
+strong {}
 
 // The `<sub>` element can be used inside a `<var>` element, for variables
 // that have subscripts.
 //
-// The `<sup>` element represents a superscript and the `<sub>` element
-// represents a subscript.
-//
 // @see https://gist.github.com/unruthless/413930
 // @see https://developer.mozilla.org/docs/web/html/element/sub
-// @see https://developer.mozilla.org/docs/web/html/element/sup
 // @see http://dev.w3.org/html5/spec#the-sub-and-sup-elements
 // @see http://ç.whatwg.org#the-sub-and-sup-elements
 
 sub,
-sup {
+%sub {
 	font-size: 75%;
 	line-height: 0;
 	vertical-align: baseline;
 	position: relative;
 }
 sub { bottom: -#{relative(4)}em; }
+
+// The `<sup>` element represents a superscript and the `<sub>` element
+// represents a subscript.
+//
+// @see https://developer.mozilla.org/docs/web/html/element/sup
+// @see http://dev.w3.org/html5/spec#the-sub-and-sup-elements
+// @see http://ç.whatwg.org#the-sub-and-sup-elements
+
+sup { @extend %sub; }
 sup { top: -#{relative(8)}em; }
 
 // The `<time>` element represents a precise date and/or time in the
@@ -1385,22 +1397,25 @@ tr {}
 
 // The `<th>` element represents a header cell in a `<table>` element.
 //
-// The `<td>` element represents a data cell in a `<table>` element.
-//
 // @see https://developer.mozilla.org/docs/web/html/element/th
-// @see https://developer.mozilla.org/docs/web/html/element/td
 // @see http://dev.w3.org/html5/spec#the-th-element
 // @see http://ç.whatwg.org#the-th-element
-// @see http://dev.w3.org/html5/spec#the-td-element
-// @see http://ç.whatwg.org#the-td-element
 
 th,
-td {
+%th {
 	font-size: #{relative(16)}rem;
 	line-height: baseline(16, .75); // (((1.5 / 1) = 1.5) * .75) = 1.125
 	margin: 0;
 	padding: #{baseline(16, .25) / 2}em 0; // (((1.5 * .25) = .375) / 2) = .1875
 }
+
+// The `<td>` element represents a data cell in a `<table>` element.
+//
+// @see https://developer.mozilla.org/docs/web/html/element/td
+// @see http://dev.w3.org/html5/spec#the-td-element
+// @see http://ç.whatwg.org#the-td-element
+
+td { @extend %th; }
 
 //======================================================================
 // FORMS
