@@ -39,73 +39,28 @@
 	margin: #{relative(12)}rem 0;
 }
 
-// Pending:
+// Demo only:
 //----------------------------------------------------------------------
 
-body {
-	padding: #{relative(12)}rem;
-	-webkit-font-smoothing: antialiased;
-	        font-smoothing: antialiased;
-	text-rendering: optimizeLegibility;
-}
+body { padding: #{relative(12)}rem; }
 
 h1, h2, h3, h4, h5, h6 {
 	+ p { margin-top: 0; }
 }
 
-abbr {
-	
-	font-style: italic;
-	cursor: help;
-	
-	&[title] { border-bottom: #{relative(1)}rem dotted; }
-	
-	&[title="et cetera"],
-	.#{$NS}etc { font-family: "Hoefler Text", Palatino, Constantia, "Palatino Linotype", cursive; }
-	
+img {
+	max-width: 100%;
+	max-height: 100%;
 }
 
-cite { font-style: italic; }
-
-dfn {
+.#{$NS}scroll {
 	
-	font-weight: bold;
-	font-style: italic;
+	width: 100%;
+	margin: #{relative(12)}rem 0;
+	overflow-y: auto;
+	/*-webkit-overflow-scrolling: touch;*/
 	
-	&[title] {
-		border-bottom: #{relative(1)}rem dotted;
-		cursor: help;
-	}
-	
-}
-
-q { quotes: '“' '”' '‘' '’'; }
-
-span {
-	
-	// The italic version of an ampersand is more decorative and interesting
-	// than its roman counterpart.
-	//
-	// @see http://simplebits.com/notebook/2008/08/14/ampersands-2/
-	// @see http://fluidbaselinegrid.com/css/style.css
-	
-	&.#{$NS}amp {
-		font-size: 110%;
-		font-family: adobe-caslon-pro, Adobe Caslon Pro, Baskerville, "Goudy Old Style", Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif;;
-		font-weight: 400;
-		line-height: 0;
-		vertical-align: baseline;
-		position: relative;
-	}
-	
-}
-
-ins {
-	
-	text-decoration: none;
-	
-	&:before { content: "["; }
-	&:after { content: "]"; }
+	& > * { margin: 0 !important; }
 	
 }
 

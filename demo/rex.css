@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 0.4.0
- * @date 2013/09/02
+ * @date 2013/09/03
  */
 
 *,
@@ -138,8 +138,6 @@ h6,
 .rex_sh5,
 .rex_sh6 { font-weight: normal; }
 
-h1:empty { display: none; }
-
 blockquote { margin: 0.75rem 1.5rem; }
 blockquote > :first-child { margin-top: 0 !important; }
 blockquote > :last-child { margin-bottom: 0 !important; }
@@ -155,11 +153,9 @@ dl dd {
 	margin: 0 0 0.375rem;
 	padding: 0;
 }
-dl dt { font-weight: bold; }
 dl dd { margin-left: 0.5rem; }
 
 figure { margin: 0.75rem 0; }
-figure img { display: block; }
 figure figcaption {
 	font-size: 0.875rem;
 	line-height: 1.5;
@@ -170,9 +166,9 @@ figure figcaption > :last-child { margin-bottom: 0 !important; }
 
 hr,
 .rex_hr {
-	color: black;
 	border: 0;
-	background: black;
+	border-top-width: 0.0625rem;
+	border-style: solid;
 	height: 0.0625rem;
 	margin: 0.75rem 0;
 	padding: 0;
@@ -189,10 +185,6 @@ pre {
 	line-height: 1.28571428571429;
 	margin: 0.75rem 0;
 	padding: 0.75rem;
-	word-wrap: normal;
-	overflow: auto;
-	white-space: pre;
-	/*-webkit-overflow-scrolling: touch;*/
 }
 
 ol,
@@ -220,23 +212,6 @@ li ol { margin-left: 2.5rem; }
 ul { margin-left: 1.5rem; }
 li ul { margin-left: 0.5rem; }
 
-code {
-	white-space: pre;
-	white-space: pre-wrap;
-	white-space: pre-line;
-	white-space: -pre-wrap;
-	white-space: -o-pre-wrap;
-	white-space: -moz-pre-wrap;
-	white-space: -hp-pre-wrap;
-	word-wrap: break-word;
-}
-
-small,
-.rex_small {
-	font-size: smaller;
-	letter-spacing: .03em;
-}
-
 sub,
 sup {
 	font-size: 75%;
@@ -245,34 +220,13 @@ sup {
 	position: relative;
 }
 
-sub { bottom: -.25em; }
+sub { bottom: -0.25em; }
 
-sup { top: -.5em; }
-
-wbr:after { content: "\00200B"; }
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-	vertical-align: middle;
-}
-img.rex_reset {
-	max-width: none;
-	max-height: none;
-}
-
-.rex_scroll {
-	width: 100%;
-	margin: 0.75rem 0;
-	overflow-y: auto;
-	/*-webkit-overflow-scrolling: touch;*/
-}
-.rex_scroll > * { margin: 0 !important; }
+sup { top: -0.5em; }
 
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	empty-cells: hide;
 }
 
 caption {
@@ -280,10 +234,6 @@ caption {
 	line-height: 1.28571428571429;
 	padding: 0.21428571428571em 0;
 }
-
-thead { vertical-align: bottom; }
-
-tfoot { vertical-align: top; }
 
 th,
 td {
@@ -296,7 +246,6 @@ td {
 form { margin: 0; }
 
 fieldset {
-	border: 0;
 	margin: 1rem 0;
 	padding: 0.0625rem 0 0;
 }
@@ -304,11 +253,8 @@ fieldset {
 legend {
 	font-size: 1.125rem;
 	line-height: 1.16666666666667;
-	width: 100%;
 	margin: 0;
 	padding: 0 0 0.33333333333333em;
-	display: block;
-	white-space: normal;
 }
 
 input[type="color"],
@@ -339,5 +285,4 @@ input[type="radio"] {
 textarea {
 	overflow: auto;
 	vertical-align: top;
-	resize: vertical;
 }

@@ -366,13 +366,6 @@ h6,
 	
 }
 
-// Used for `title`-free sections.
-//
-// @see https://developer.mozilla.org/en-US/docs/Web/CSS/:empty
-// @see http://camendesign.com/design/design.css
-
-h1:empty { display: none; }
-
 // The `<header>` element represents the "header" of a document or section
 // of a document. It is typically used to group a set of `<h1>`–`<h6>`
 // elements to mark up a page's title with its subtitle or tagline. header
@@ -534,7 +527,6 @@ dl {
 		padding: 0;
 	}
 	
-	& dt { font-weight: bold; }
 	& dd { margin-left: #{relative(8)}rem; }
 	
 }
@@ -564,8 +556,6 @@ figure {
 	
 	margin: #{relative(12)}rem 0;
 	
-	& img { display: block; }
-	
 	& figcaption {
 		
 		font-size: #{relative(14)}rem;
@@ -594,9 +584,9 @@ figure {
 
 hr,
 .#{$NS}hr {
-	color: black;
 	border: 0;
-	background: black;
+	border-top-width: #{relative(1)}rem;
+	border-style: solid;
 	height: #{relative(1)}rem;
 	margin: #{relative(12)}rem 0;
 	padding: 0;
@@ -630,10 +620,6 @@ pre {
 	line-height: baseline(14, .75); // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
 	margin: #{relative(12)}rem 0;
 	padding: #{relative(12)}rem;
-	word-wrap: normal;
-	overflow: auto;
-	white-space: pre;
-	/*-webkit-overflow-scrolling: touch;*/
 }
 
 // The `<ol>` element represents a list of items, where the items have
@@ -794,16 +780,7 @@ cite {}
 // @see http://dev.w3.org/html5/spec#the-code-element
 // @see http://ç.whatwg.org#the-code-element
 
-code {
-	white-space: pre;           // CSS 2.0
-	white-space: pre-wrap;      // CSS 2.1
-	white-space: pre-line;      // CSS 3.0
-	white-space: -pre-wrap;     // Opera 4-6
-	white-space: -o-pre-wrap;   // Opera 7
-	white-space: -moz-pre-wrap; // Mozilla
-	white-space: -hp-pre-wrap;  // HP Printers
-	word-wrap: break-word;      // IE 5+
-}
+code {}
 
 // The `<data>` element links a given content with a machine-readable
 // translation. If the content is time- or date-related, the `<time>` must
@@ -972,11 +949,7 @@ samp {}
 // @see http://dev.w3.org/html5/spec#the-small-element
 // @see http://ç.whatwg.org#the-small-element
 
-small,
-.#{$NS}small {
-	font-size: smaller;
-	letter-spacing: .03em;
-}
+small {}
 
 // The `<span>` element doesn't mean anything on its own, but can be
 // useful when used together with the global attributes, e.g. `class`,
@@ -1034,8 +1007,8 @@ sup {
 	vertical-align: baseline;
 	position: relative;
 }
-sub { bottom: -.25em; }
-sup { top: -.5em; }
+sub { bottom: -#{relative(4)}em; }
+sup { top: -#{relative(8)}em; }
 
 // The `<time>` element represents a precise date and/or time in the
 // proleptic Gregorian calendar. The time element encodes modern dates and
@@ -1085,9 +1058,7 @@ var {}
 // @see http://dev.w3.org/html5/spec#the-wbr-element
 // @see http://ç.whatwg.org#the-wbr-element
 
-wbr {
-	&:after { content: "\00200B"; }
-}
+wbr {}
 
 //======================================================================
 // EDITS
@@ -1220,22 +1191,7 @@ iframe {}
 // @see http://dev.w3.org/html5/spec#the-img-element
 // @see http://ç.whatwg.org#the-img-element
 
-@if $flag_responsive-images {
-	
-	img {
-		
-		max-width: 100%;
-		max-height: 100%;
-		vertical-align: middle;
-		
-		&.#{$NS}reset {
-			max-width: none;
-			max-height: none;
-		}
-		
-	}
-	
-}
+img {}
 
 // The `<map>` element, in conjunction with any area element descendants,
 // defines an image map. The element represents its children.
@@ -1328,28 +1284,6 @@ video {}
 // TABULAR DATA
 //======================================================================
 
-// Simple solution for responsive tables.
-//
-// @see http://www.maxdesign.com.au/2013/03/22/simple-responsive-table/
-// @see http://creativeandcode.com/simple-solution-for-responsive-tables/
-
-@if $flag_element-scroller {
-	
-	.#{$NS}scroll {
-		
-		width: 100%;
-		margin: #{relative(12)}rem 0;
-		overflow-y: auto;
-		/*-webkit-overflow-scrolling: touch;*/
-		
-		& > * { margin: 0 !important; }
-		
-	}
-	
-}
-
-//----------------------------------------------------------------------
-
 // The `<table>` element represents data with more than one dimension, in
 // the form of a table. Tables must not be used as layout aids.
 //
@@ -1374,7 +1308,6 @@ video {}
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	empty-cells: hide;
 }
 
 // The `<caption>` element represents the title of a `<table>` element.
@@ -1422,7 +1355,7 @@ col {}
 // @see http://dev.w3.org/html5/spec#the-thead-element
 // @see http://ç.whatwg.org#the-thead-element
 
-thead { vertical-align: bottom; }
+thead {}
 
 // The `<tfoot>` element represents the block of rows that consist of the
 // column summaries (footers) for the parent `<table>` element.
@@ -1431,7 +1364,7 @@ thead { vertical-align: bottom; }
 // @see http://dev.w3.org/html5/spec#the-tfoot-element
 // @see http://ç.whatwg.org#the-tfoot-element
 
-tfoot { vertical-align: top; }
+tfoot {}
 
 // The `<tbody>` element represents a block of rows that consist of a body
 // of data for the parent `<table>` element.
@@ -1499,7 +1432,6 @@ form { margin: 0; }
 // @see http://ç.whatwg.org#the-fieldset-element
 
 fieldset {
-	border: 0;
 	margin: #{relative(16)}rem 0;
 	padding: #{relative(1)}rem 0 0; // 1px (prevents margin collapse)
 }
@@ -1514,11 +1446,8 @@ fieldset {
 legend {
 	font-size: #{relative(18)}rem;
 	line-height: baseline(18, .875); // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
-	width: 100%;
 	margin: 0;
 	padding: 0 0 #{baseline(18, .25)}em; // (1.33333333333333 * .25) = .33333333333333
-	display: block;
-	white-space: normal; // Corrects text not wrapping in Firefox 3.
 }
 
 // The `<label>` element represents a caption in a user interface which
@@ -1803,7 +1732,6 @@ input[type="radio"] {
 textarea {
 	overflow: auto;
 	vertical-align: top;
-	resize: vertical; // [ none | horizontal | vertical | both ]
 }
 
 // The `<select>` element represents a control for selecting amongst a set

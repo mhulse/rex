@@ -342,7 +342,7 @@ module.exports = function(grunt) {
 				files : {
 					
 					'./temp/<%= pkg.name %>.css' : './files/styles/rex.scss',
-					'../demo/<%= pkg.name %>.dev.css' : './files/styles/development.scss',
+					'../demo/demo.css' : './files/styles/demo.scss',
 					
 				},
 				

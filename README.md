@@ -98,8 +98,6 @@ Name | Description | Default
 `$flag_baseline` | Include the baseline class? | `true`
 `$flag_heading-classes` | Heading classes? | `true`
 `$flag_subheading-classes` | Subheading classes? | `true`
-`$flag_responsive-images` | Responsive images? | `true`
-`$flag_element-scroller` | Element scroller? | `true`
 
 ### Functions:
 
@@ -124,9 +122,6 @@ Feature | Description
 `.rex_baseline` | If `$flag_baseline` is `true`, then a `.rex_baseline` class becomes available for use; this class should be applied to a wrapping `div` in order to test a "module", "content area" or element's placement on a "local" baseline grid. When the grid is clicked (i.e., `:active`) the base lines will hide and each child element will be outlined with a red border.
 `.h1`-`.h6` | All headings (e.g., `h1` through `h6`) have a corresponding class of the same name (i.e., `.h1` through `.h6`); for more information, read: [Don’t Style Headings Using HTML5 Sections](http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/). These classes can be disabled via the `$flag_heading-classes` variable.
 `.sh1`-`.sh6` |  In the same vein as the heading classes above, there's a set of subheading classes (i.e., `.sh1` through `.sh6`) that have similar functionality and can be disable via the `$flag_subheading-classes` variable.
-`.rex_scroller` | An "element" scroller class (`.rex_scroller`) has been included for the sake of wide tables; this class can be disabled via the `$flag_element-scroller` variable.
-
-**Note:** Responsive image styles have been included and are used mostly for the sake of the demo (disable via the `$flag_responsive-images` variable); this feature may be removed in the near future.
 
 ## Feedback
 
