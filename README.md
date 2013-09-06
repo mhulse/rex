@@ -98,6 +98,9 @@ Name | Description | Default
 `$flag_baseline` | Include the baseline class? | `true`
 `$flag_heading-classes` | Heading classes? | `true`
 `$flag_subheading-classes` | Subheading classes? | `true`
+`$baseline_major-grid-color` | Baseline "major" grid color. | `#f00`
+`$baseline_minor-grid-color` | Baseline "minor" grid color. | `#0ff`
+`$baseline_outline-color` | Baseline "outline" grid color. | `#f00`
 
 ### Functions:
 
