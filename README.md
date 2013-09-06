@@ -20,7 +20,7 @@
 - [CSS](#css)
 	- [Features](#features)
 - [Feedback](#feedback)
-- [Changelog](#changelog)
+- [Release History](#release-history)
 - [LEGAL](#legal)
 
 ## About
