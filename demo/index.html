@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	
+	<!--! WOOT -->
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
@@ -330,7 +330,7 @@
 		
 		<figure>
 			
-			<img src="rex.jpg" alt="Rex O'Herlihan">
+			<img src="image1.jpg" alt="Rex O'Herlihan">
 			
 			<figcaption>In the first place, the bad guys probably wouldn't all be such cowards. Rex probably wouldn't be so damn perfect all the time.</figcaption>
 			
@@ -489,7 +489,7 @@ colonel@rancho:~$ _</samp>
 		
 		<ol>
 			<li>Go hide in the trees.</li>
-			<li><img width="400" src="oherlihan.jpg"></li>
+			<li><img width="400" src="image2.jpg"></li>
 			<li>I'll call you when it's safe.</li>
 		</ol>
 		
@@ -534,7 +534,7 @@ colonel@rancho:~$ _</samp>
 		
 		<ul>
 			<li>Look, I painted a circle around Isabel's eye.</li>
-			<li>What do you <img width="400" src="oherlihan.jpg"> think?</li>
+			<li>What do you <img width="400" src="image2.jpg"> think?</li>
 			<li>I think you're weird.</li>
 		</ul>
 		
@@ -1239,7 +1239,7 @@ colonel@rancho:~$ _</samp>
 				
 				<div>
 					<label for="fm_input-image-1">Image</label>
-					<input type="image" id="fm_input-image-1" name="input-image-1" src="rhapsody.png" alt="" width="100" height="32">
+					<input type="image" id="fm_input-image-1" name="input-image-1" src="image1.png" alt="" width="100" height="32">
 				</div>
 				
 				<div>
@@ -1484,43 +1484,10 @@ colonel@rancho:~$ _</samp>
 	<br>
 	<br>
 	
-	<script>
-		
-		;(function(document) {
-			
-			var $switch = document.createElement('a'),
-			       txt0 = 'Enable CSS',
-			       txt1 = 'Disable CSS';
-			
-			$switch.href = '#';
-			$switch.innerHTML = txt1;
-			$switch.setAttribute('style', 'position:fixed;top:5px;right:5px;padding:5px 10px;background:rgba(0,0,0,.1);border:1px solid rgba(0,0,0,.1);border-radius:3px;');
-			
-			$switch.onclick = function() {
-				
-				var $style,
-				    i,
-				    l;
-				
-				this.innerHTML = ((this.innerHTML == txt1) ? txt0 : txt1);
-				
-				for (i = 0, l = document.styleSheets.length; i < l; i++) {
-					
-					$style = document.styleSheets.item(i);
-					
-					void($style.disabled = ( ! $style.disabled));
-					
-				}
-				
-				return false;
-				
-			};
-			
-			document.body.appendChild($switch);
-			
-		}(document));
-		
-	</script>
+	
+	<script src="demo.js"></script>
+	
+	
 	
 </body>
 </html>
