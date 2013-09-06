@@ -229,6 +229,33 @@ module.exports = function(grunt) {
 			
 		},
 		
+		/*----------------------------------( ASCIIFY )----------------------------------*/
+		
+		/**
+		 * Ascii awesomizer. A Grunt task for better banners and hot logs.
+		 *
+		 * @see https://github.com/olizilla/grunt-asciify
+		 * @see https://github.com/olizilla/figlet-js/tree/master/fonts
+		 * @see http://www.figlet.org/examples.html
+		 */
+		
+		asciify : {
+			
+			banner : {
+				
+				options : {
+					
+					font : 'usaflag',
+					log : false,
+					
+				},
+				
+				text : '<%= pkg.name %> - <%= pkg.version %>',
+				
+			},
+			
+		},
+		
 		/*----------------------------------( PREPROCESS )----------------------------------*/
 		
 		/**
@@ -244,6 +271,7 @@ module.exports = function(grunt) {
 				
 				context : {
 					
+					banner : '<!--!\n<%= asciify_banner %>-->',
 					title : '<%= pkg.title %>',
 					description : '<%= pkg.description %>',
 					name : '<%= pkg.name %>',
@@ -472,6 +500,8 @@ module.exports = function(grunt) {
 	
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
+	grunt.loadNpmTasks('grunt-asciify');
+	
 	grunt.loadNpmTasks('grunt-preprocess');
 	
 	grunt.loadNpmTasks('grunt-contrib-htmlmin');
@@ -493,7 +523,7 @@ module.exports = function(grunt) {
 	
 	//----------------------------------
 	
-	grunt.registerTask('init', ['jshint', 'clean:start',]);
+	grunt.registerTask('init', ['jshint', 'clean:start', 'asciify',]);
 	
 	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev', 'copy:dev',]);
 	
