@@ -131,17 +131,17 @@
 		// Grid overlay:
 		&::before {
 			background-image:
-				-webkit-linear-gradient(fade-out(#f00, .25) 1px, transparent 1px),
-				-webkit-linear-gradient(fade-out(#0ff, .25) 1px, transparent 1px),
-				-webkit-linear-gradient(fade-out(#0ff, .75) 1px, transparent 1px);
+				-webkit-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+				-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+				-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
 			background-image:
-				-moz-linear-gradient(fade-out(#f00, .25) 1px, transparent 1px),
-				-moz-linear-gradient(fade-out(#0ff, .25) 1px, transparent 1px),
-				-moz-linear-gradient(fade-out(#0ff, .75) 1px, transparent 1px);
+				-moz-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+				-moz-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+				-moz-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
 			background-image:
-				linear-gradient(fade-out(#f00, .25) 1px, transparent 1px),
-				linear-gradient(fade-out(#0ff, .25) 1px, transparent 1px),
-				linear-gradient(fade-out(#0ff, .75) 1px, transparent 1px);
+				linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+				linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+				linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
 			background-size:
 				100% #{relative($base_line-height)}rem,     // Match base `line-height`.
 				100% #{relative($base_line-height) / 2}rem, // Half base `line-height`.
@@ -163,7 +163,7 @@
 		&:active::before { display: none; }
 		
 		// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
-		&:active * { box-shadow: inset 0 0 0 1px fade-out(#f00, .5); }
+		&:active * { box-shadow: inset 0 0 0 1px fade-out($baseline_outline-color, .5); }
 		
 	}
 	
