@@ -128,6 +128,7 @@ module.exports = function(grunt) {
 			init : [
 				
 				'./Gruntfile.js',
+				'./files/scripts/**/*',
 				
 			],
 			
@@ -198,6 +199,31 @@ module.exports = function(grunt) {
 					'./temp',
 					
 				],
+				
+			},
+			
+		},
+		
+		/*----------------------------------( UGLIFY )----------------------------------*/
+		
+		/**
+		 * Minify files with UglifyJS.
+		 *
+		 * @see https://github.com/gruntjs/grunt-contrib-uglify
+		 * @see http://lisperator.net/uglifyjs/
+		 */
+		
+		uglify : {
+			
+			prod : {
+				
+				files : {
+					
+					'./temp/demo.min.js' : [
+						'./files/scripts/**/*'
+					],
+					
+				},
 				
 			},
 			
@@ -379,15 +405,16 @@ module.exports = function(grunt) {
 			
 			options : {
 				
-				process : function(src) {
+				process : function(src, filepath) {
 					
-					return src
+					// If the file extension is "css":
+					return (filepath.split('.').pop() == 'css') ? src
 						// Removes "@charset "UTF-8"" inserted by SCSS:
 						.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1')
 						// Convert space indentation to tab:
 						.replace(/\n\s\s/g, '\n\t')
 						// Single-line styles:
-						.replace(/\{\n\t(.*)\n\}/g, '{ $1 }');
+						.replace(/\{\n\t(.*)\n\}/g, '{ $1 }') : src; // ... otherwise, return unaltered source.
 					
 				},
 				
@@ -401,8 +428,12 @@ module.exports = function(grunt) {
 					
 				},
 				
-				src : ['./temp/<%= pkg.name %>.css',],
-				dest : '../demo/<%= pkg.name %>.css',
+				files : {
+					
+					'../demo/<%= pkg.name %>.css' : ['./temp/<%= pkg.name %>.css',],
+					'../demo/demo.js' : ['./files/scripts/**/*',],
+					
+				},
 				
 			},
 			
@@ -414,8 +445,12 @@ module.exports = function(grunt) {
 					
 				},
 				
-				src : ['./temp/<%= pkg.name %>.min.css',],
-				dest : '../demo/<%= pkg.name %>.min.css',
+				files : {
+					
+					'../demo/<%= pkg.name %>.min.css' : ['./temp/<%= pkg.name %>.min.css',],
+					'../demo/demo.min.js' : ['./temp/demo.min.js',],
+					
+				},
 				
 			}
 			
@@ -434,6 +469,8 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-env');
 	
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	
+	grunt.loadNpmTasks('grunt-contrib-uglify');
 	
 	grunt.loadNpmTasks('grunt-preprocess');
 	
@@ -460,7 +497,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['env:prod', 'preprocess:prod', 'htmlmin:prod', 'sass:prod', 'concat:prod',]);
+	grunt.registerTask('prod', ['env:prod', 'uglify:prod', 'preprocess:prod', 'htmlmin:prod', 'sass:prod', 'concat:prod',]);
 	
 	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy:all', 'clean:finish',]);
 	

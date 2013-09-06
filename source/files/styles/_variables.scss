@@ -24,10 +24,10 @@ $flag_heading-classes: true !default;
 $flag_subheading-classes: true !default;
 
 // Baseline "major" grid color:
-$baseline_major-grid-color: #f00;
+$baseline_major-grid-color: #f00 !default;
 
 // Baseline "minor" grid color:
-$baseline_minor-grid-color: #0ff;
+$baseline_minor-grid-color: #0ff !default;
 
 // Baseline "outline" grid color:
-$baseline_outline-color: #f00;
+$baseline_outline-color: #f00 !default;
