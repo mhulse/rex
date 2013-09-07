@@ -216,8 +216,7 @@ body {
 // @see http://ç.whatwg.org#the-address-element
 
 address {
-	font-size: #{relative(16)}rem;
-	line-height: baseline(16, .75); // (((1.5 / 1) = 1.5) * .75) = 1.125
+	@include baseline($size: 16, $offset: .75);
 	margin: #{relative(12)}rem 0;
 }
 
