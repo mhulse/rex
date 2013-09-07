@@ -20,7 +20,7 @@
 - [CSS](#css)
 	- [Features](#features)
 - [Feedback](#feedback)
-- [Release History](#release-history)
+- [Release history](#release-history)
 - [LEGAL](#legal)
 
 ## About
@@ -130,7 +130,7 @@ Feature | Description
 
 [Bugs? Constructive feedback? Questions?](https://github.com/mhulse/rex/issues)
 
-## [Release History](https://github.com/mhulse/rex/releases)
+## [Release history](https://github.com/mhulse/rex/releases)
 
 * 2013-08-25   [v0.4.0](https://github.com/mhulse/rex/releases/tag/v0.4.0)   Bower version bump.
 * 2013-08-18   [v0.3.0](https://github.com/mhulse/rex/releases/tag/v0.3.0)   SCSS build setup.
