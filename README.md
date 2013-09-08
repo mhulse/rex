@@ -20,6 +20,7 @@
 	- [Mixins](#mixins)
 - [CSS](#css)
 	- [Features](#features)
+- [Caveats, limitations and/or assumptions](#caveats-limitations-andor-assumptions)
 - [Feedback](#feedback)
 - [Release history](#release-history)
 - [LEGAL](#legal)
@@ -132,6 +133,11 @@ Feature | Description
 `.baseline` | If `$flag_baseline` is `true`, then a `.baseline` class becomes available for use; this class should be applied to a wrapping `div` in order to test a "module", "content area" or element's placement on a "local" baseline grid. When the grid is clicked (i.e., `:active`) the base lines will hide and each child element will be outlined with a red border.
 `.h1`-`.h6` | All headings (e.g., `h1` through `h6`) have a corresponding class of the same name (i.e., `.h1` through `.h6`); for more information, read: [Don’t Style Headings Using HTML5 Sections](http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/). These classes can be disabled via the `$flag_heading-classes` variable.
 `.sh1`-`.sh6` | In the same vein as the heading classes above, there's a set of subheading classes (i.e., `.sh1` through `.sh6`) that have similar functionality and can be disable via the `$flag_subheading-classes` variable.
+
+## Caveats, limitations and/or assumptions
+
+1. If you change the base `font-size` and `line-height`, there's no guarantees that out of the box styles will adapt well; in other words, changing these variables will probably require one to adjust each of Rex's elements to fit the new base values.
+1. Due to the "fudge factor", the `.baseline` class does not actually align its grid lines to the baseline of a character; instead, this class aligns the text to the vertical center of a grid line.
 
 ## Feedback
 
