@@ -17,6 +17,7 @@
 - [SCSS API](#scss-api)
 	- [Variables](#variables)
 	- [Functions](#functions)
+	- [Mixins](#mixins)
 - [CSS](#css)
 	- [Features](#features)
 - [Feedback](#feedback)
@@ -110,6 +111,12 @@ Name | Description
 `relative($value, ...)` | Convert `$value` to relative number.
 `baseline($value, ...)` | Calculate baseline from `$value`, which is assumed to be the baseline's element's `font-size`.
 
+### Mixins:
+
+Name | Description
+:-- | :--
+`baseline` | Simple baseline mixin.
+
 ## CSS
 
 CSS details:
@@ -122,7 +129,7 @@ Feature | Description
 `16px`/`24px` | Base `font-size` is `16px` and base `line-height` is `24px`; both of these values can be controlled via the SCSS variables `$base_font-size` and `$base_line-height` respectively.
 `rem` & `em` | All units are relative; using `rem` and `em` where appropriate.
 `border-box` | If `$flag_natural-box-model` is `true`, then all elements (including pseudo elements) will use `box-sizing: border-box;`; this change affects the box model in that the `width` and `height` properties include the `padding` and `border`, but not the `margin`.
-`.rex_baseline` | If `$flag_baseline` is `true`, then a `.rex_baseline` class becomes available for use; this class should be applied to a wrapping `div` in order to test a "module", "content area" or element's placement on a "local" baseline grid. When the grid is clicked (i.e., `:active`) the base lines will hide and each child element will be outlined with a red border.
+`.baseline` | If `$flag_baseline` is `true`, then a `.baseline` class becomes available for use; this class should be applied to a wrapping `div` in order to test a "module", "content area" or element's placement on a "local" baseline grid. When the grid is clicked (i.e., `:active`) the base lines will hide and each child element will be outlined with a red border.
 `.h1`-`.h6` | All headings (e.g., `h1` through `h6`) have a corresponding class of the same name (i.e., `.h1` through `.h6`); for more information, read: [Don’t Style Headings Using HTML5 Sections](http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/). These classes can be disabled via the `$flag_heading-classes` variable.
 `.sh1`-`.sh6` | In the same vein as the heading classes above, there's a set of subheading classes (i.e., `.sh1` through `.sh6`) that have similar functionality and can be disable via the `$flag_subheading-classes` variable.
 

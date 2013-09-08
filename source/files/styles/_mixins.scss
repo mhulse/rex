@@ -7,7 +7,7 @@
 // Usage:
 //
 // ```
-// @import "functions";
+// @import "mixins";
 // address {
 //     @include baseline($size: 16, $offset: .75, $optional: "italic", $family: "Arial, sans-serif");
 //     @include baseline($size: 16, $offset: .75, $optional: "bold");
