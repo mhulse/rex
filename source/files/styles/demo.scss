@@ -10,8 +10,7 @@
 .#{$NS}test1 { line-height: baseline(16); }
 
 .#{$NS}test2 {
-	font-size: #{relative(25)}rem;          // (25 / 16) = 1.5625
-	line-height: baseline(25, .625);        // (((3 / 1.5625) = 1.92) * .625) = 1.2
+	@include baseline(25, .625);
 	padding: #{baseline(25, .375) / 2}em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
 
@@ -21,7 +20,7 @@
 //----------------------------------------------------------------------
 
 .#{$NS}marker {
-	font: bold #{relative(22)}rem/baseline(22, .875) Arial, sans-serif;
+	@include baseline(22, .875, $optional: bold, $family: "Arial, sans-serif");
 	color: #fff;
 	text-transform: none;
 	background: fade-out(#000, .15);
@@ -34,7 +33,7 @@
 }
 
 .#{$NS}subtle {
-	font: normal #{relative(19)}rem/baseline(19, .875) monospace, serif;
+	@include baseline(19, .875, $optional: normal, $family: "monospace, serif");
 	color: #666;
 	margin: #{relative(12)}rem 0;
 }

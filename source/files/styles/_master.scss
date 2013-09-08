@@ -216,7 +216,7 @@ body {
 // @see http://ç.whatwg.org#the-address-element
 
 address {
-	@include baseline($size: 16, $offset: .75);
+	@include baseline(16, .75);
 	margin: #{relative(12)}rem 0;
 }
 
@@ -281,46 +281,27 @@ h4,
 h5,
 h6,
 %h1-h2-h3-h4-h5-h6 {
-	font-size: #{relative(16)}rem;
-	line-height: baseline(16);
+	@include baseline(16);
 	margin: 0;
 }
 
 h1,
-%h1 {
-	font-size: #{relative(46)}rem;
-	line-height: baseline(46); // (3 / 2.875) = 1.04347826086957
-}
+%h1 { @include baseline(46); }
 
 h2,
-%h2 {
-	font-size: #{relative(40)}rem;
-	line-height: baseline(40, .875); // (((3 / 2.5) = 1.2) * .875) = 1.05
-}
+%h2 { @include baseline(40, .875); }
 
 h3,
-%h3 {
-	font-size: #{relative(34)}rem;
-	line-height: baseline(34, .75); // (((3 / 2.125) = 1.41176470588235) * .75) = 1.05882352941176
-}
+%h3 { @include baseline(34, .75); }
 
 h4,
-%h4 {
-	font-size: #{relative(28)}rem;
-	line-height: baseline(28, .625); // (((3 / 1.75) = 1.71428571428571) * .625) = 1.07142857142857
-}
+%h4 { @include baseline(28, .625); }
 
 h5,
-%h5 {
-	font-size: #{relative(22)}rem;
-	line-height: baseline(22); // (1.5 / 1.375) = 1.09090909090909
-}
+%h5 { @include baseline(22); }
 
 h6,
-%h6 {
-	font-size: #{relative(18)}rem;
-	line-height: baseline(18, .875); // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
-}
+%h6 { @include baseline(18, .875); }
 
 @if $flag_heading-classes {
 	
@@ -515,8 +496,7 @@ div {}
 
 dl {
 	
-	font-size: #{relative(16)}rem;
-	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
+	@include baseline(16, .75);
 	margin: #{relative(12)}rem 0;
 	padding: 0;
 	
@@ -557,8 +537,7 @@ figure {
 	
 	& figcaption {
 		
-		font-size: #{relative(14)}rem;
-		line-height: #{baseline(14, .875)}; // ((((1.5 / .875) = 1.71428571428571) * .875) = 1.5)
+		@include baseline(14, .875);
 		
 		& p { font-size: inherit; }
 		
@@ -611,8 +590,7 @@ hr,
 ol,
 %ol {
 	
-	font-size: #{relative(16)}rem;
-	line-height: baseline(16, .75); // (1.5 * .75) = 1.125
+	@include baseline(16, .75);
 	margin: #{relative(12)}rem 0;
 	padding: 0;
 	list-style-position: outside;
@@ -644,8 +622,7 @@ ol {
 // @see http://ç.whatwg.org#the-p-element
 
 p {
-	font-size: #{relative(16)}rem;
-	line-height: baseline(16);
+	@include baseline(16);
 	margin: #{baseline(16, .5)}rem 0; // (1.5 / 2) = .75
 }
 
@@ -661,8 +638,7 @@ p {
 // @see http://ç.whatwg.org#the-pre-element
 
 pre {
-	font-size: #{relative(14)}rem;
-	line-height: baseline(14, .75); // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	@include baseline(14, .75);
 	margin: #{relative(12)}rem 0;
 }
 
@@ -1331,8 +1307,7 @@ table {
 // @see http://ç.whatwg.org#the-caption-element
 
 caption {
-	font-size: #{relative(14)}rem;
-	line-height: baseline(14, .75); // (((1.5 / .875) = 1.71428571428571) * .75) = 1.28571428571428
+	@include baseline(14, .75);
 	padding: #{baseline(14, .25) / 2}em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
 }
 
@@ -1401,8 +1376,7 @@ tr {}
 
 th,
 %th {
-	font-size: #{relative(16)}rem;
-	line-height: baseline(16, .75); // (((1.5 / 1) = 1.5) * .75) = 1.125
+	@include baseline(16, .75);
 	margin: 0;
 	padding: #{baseline(16, .25) / 2}em 0; // (((1.5 * .25) = .375) / 2) = .1875
 }
@@ -1457,8 +1431,7 @@ fieldset {
 // @see http://ç.whatwg.org#the-legend-element
 
 legend {
-	font-size: #{relative(18)}rem;
-	line-height: baseline(18, .875); // (((1.5 / 1.125) = 1.33333333333333) * .875) = 1.16666666666666
+	@include baseline(18, .875);
 	margin: 0;
 	padding: 0 0 #{baseline(18, .25)}em; // (1.33333333333333 * .25) = .33333333333333
 }
