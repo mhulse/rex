@@ -12,6 +12,10 @@
   line-height: 1.5;
 }
 
+.rex_test4 {
+  margin: 50% 25% 10px 0.625rem 0.5rem 0 19.25em 50px 13.875rem;
+}
+
 .rex_marker {
   font: bold 1.375rem/0.95454545454545 Arial, sans-serif;
   color: #fff;

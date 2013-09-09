@@ -6,7 +6,7 @@
 //
 // Usage:
 //
-// `.foo { line-height: unitless(1.5em); }`
+// `.foo { line-height: strip(1.5em); }`
 //
 // Output:
 //
@@ -18,7 +18,7 @@
 // @param { integer } $value Any value with optional unit.
 // @return { integer } $value minus its unit.
 
-@function unitless($value) {
+@function strip($value) {
 	
 	@return ($value / ($value * 0 + 1));
 	
@@ -52,8 +52,8 @@
 
 @function relative($value, $context: $base_font-size) {
 	
-	$value: unitless($value);
-	$context: unitless($context);
+	$value: strip($value);
+	$context: strip($context);
 	
 	@return ($value / $context);
 	
@@ -89,10 +89,112 @@
 
 @function baseline($value, $offset: 1, $context: $base_line-height) {
 	
-	$value: unitless($value);
-	$offset: unitless($offset);
-	$context: unitless($context);
+	$value: strip($value);
+	$offset: strip($offset);
+	$context: strip($context);
 	
 	@return ((($context * ceil($value / $context)) / $value) * $offset);
+	
+}
+
+// Convert input list string of values with units.
+//
+// Rules:
+//
+// 1) If an item's unit exists, then retain item and unit on ouput.
+// 5) If value is zero, do not add a unit.
+// 2) If unit doesn't exist, then convert unit a relative value.
+// 4) If an item's second argument exists, then multiply item by argument.
+//
+// Usage:
+//
+// ```
+// .foo {
+//     margin: expand( // Expected:
+//         50%,        // 50%
+//         25%,        // 25%
+//         10px,       // 10px
+//         20 .5,      // .625rem
+//         8,          // .5rem
+//         0,          // 0
+//         22em .875,  // 19.25em
+//         50px,       // 50px
+//         222         // 13.875rem
+//     );
+// }
+// ```
+//
+// Output:
+//
+// ```
+// .foo {
+//     margin: 50% 25% 10px 0.625rem 0.5rem 0 19.25em 50px 13.875rem;
+// }
+// ```
+//
+// @see http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
+// @see http://stackoverflow.com/a/6575710/922323
+// @see http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+//
+// @param { list } $list... List of values with optional units and offsets.
+// @return { string } Processed list as string of values with units.
+
+@function expand($list...) {
+	
+	// Return value:
+	$return: "";
+	
+	// Total items in list:
+	$count: length($list);
+	
+	// Loop over list:
+	@for $i from 1 through $count {
+		
+		// Current list key:
+		$key: nth($list, $i);
+		
+		// First value in key:
+		$value: nth($key, 1);
+		
+		// Get the value's unit:
+		$unit: unquote(unit($value));
+		
+		// Strip any units from value:
+		$value: strip($value);
+		
+		// If no unit specified and value is not zero:
+		@if $unit == "" and $value > 0 { // SASS 3.3, use `str-length($unit)`.
+			
+			// Default to `rem`:
+			$unit: rem;
+			
+			// Convert unit to a relative value:
+			$value: relative($value);
+			
+		}
+		
+		// Offset?
+		@if length($key) > 1 {
+			
+			// Multiply value by offset:
+			$value: $value * nth($key, 2);
+			
+		}
+		
+		// Combine unit and value:
+		$return: #{$return + $value}$unit;
+		
+		// Before reaching the end ...
+		@if $i < $count {
+			
+			// ... put a space between return values:
+			$return: #{$return + " "};
+			
+		}
+		
+	}
+	
+	// Return string of new values and units:
+	@return $return;
 	
 }

@@ -108,9 +108,10 @@ Name | Description | Default
 
 Name | Description
 :-- | :--
-`unitless($value, ...)` | Remove units from `$value`.
+`strip($value, ...)` | Remove units from `$value`.
 `relative($value, ...)` | Convert `$value` to relative number.
 `baseline($value, ...)` | Calculate baseline from `$value`, which is assumed to be the baseline's element's `font-size`.
+`expand($list...)` | Convert input list string of values with units.
 
 ### Mixins:
 
