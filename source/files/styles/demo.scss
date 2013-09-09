@@ -17,17 +17,20 @@
 .#{$NS}test3 { line-height: strip(1.5em); }
 
 .#{$NS}test4 {
-	margin: expand( // Expected:
-		50%,        // 50%
-		25%,        // 25%
-		10px,       // 10px
-		20 .5,      // .625rem
-		8,          // .5rem
-		0,          // 0
-		22em .875,  // 19.25em
-		50px,       // 50px
-		222         // 13.875rem
+	margin: expand(
+		relative,       // Expected:
+		50% .2,         // 10%
+		25%,            // 25%
+		10px,           // 10px
+		20 .5 baseline, // .6rem
+		8 baseline,     // 3rem
+		0,              // 0
+		22em .875,      // 19.25em
+		50px,           // 50px
+		222             // 13.875rem
 	);
+	margin: baseline(20, .5); // .6
+	margin: baseline(8);      // 3
 }
 
 // Custom headings:

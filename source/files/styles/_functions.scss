@@ -101,25 +101,31 @@
 //
 // Rules:
 //
-// 1) If an item's unit exists, then retain item and unit on ouput.
-// 5) If value is zero, do not add a unit.
-// 2) If unit doesn't exist, then convert unit a relative value.
-// 4) If an item's second argument exists, then multiply item by argument.
+// 1) First argument is required:
+//    * It's value must be one of `baseline` or `relative`.
+//    * An items's optional argument will override this setting.
+// 2) If an item's unit exists, then retain item and unit on ouput.
+// 3) If value is zero, do not add a unit.
+// 4) If unit doesn't exist, then convert unit a relative value.
+// 5) If an item's optional arguments exist:
+//    * If argument is a number, then multiply value by number.
+//    * If argument is a string, then use that as callback function.
 //
 // Usage:
 //
 // ```
 // .foo {
-//     margin: expand( // Expected:
-//         50%,        // 50%
-//         25%,        // 25%
-//         10px,       // 10px
-//         20 .5,      // .625rem
-//         8,          // .5rem
-//         0,          // 0
-//         22em .875,  // 19.25em
-//         50px,       // 50px
-//         222         // 13.875rem
+//     prop: expand(
+//         relative,       // Expected:
+//         50% .2,         // 10%
+//         25%,            // 25%
+//         10px,           // 10px
+//         20 .5 baseline, // .6rem
+//         8 baseline,     // 3rem
+//         0,              // 0
+//         22em .875,      // 19.25em
+//         50px,           // 50px
+//         222             // 13.875rem
 //     );
 // }
 // ```
@@ -128,67 +134,127 @@
 //
 // ```
 // .foo {
-//     margin: 50% 25% 10px 0.625rem 0.5rem 0 19.25em 50px 13.875rem;
+//     prop: 10% 25% 10px 0.6rem 3rem 0 19.25em 50px 13.875rem;
 // }
 // ```
 //
 // @see http://css-tricks.com/snippets/css/less-mixin-for-rem-font-sizing/
 // @see http://stackoverflow.com/a/6575710/922323
 // @see http://hugogiraudel.com/2013/07/15/understanding-sass-lists/
+// @see http://thesassway.com/advanced/pure-sass-functions
+// @see http://stackoverflow.com/a/14884562/922323
 //
-// @param { list } $list... List of values with optional units and offsets.
+// @param { string } $function Name of function used to process unitless values.
+// @param { list } $list... List of values with optional units offsets and/or callbacks.
 // @return { string } Processed list as string of values with units.
 
-@function expand($list...) {
+@function expand($function, $list...) {
 	
-	// Return value:
-	$return: "";
+	// Neutralize return value:
+	$return: null;
 	
-	// Total items in list:
-	$count: length($list);
-	
-	// Loop over list:
-	@for $i from 1 through $count {
+	// Requre first argument as string:
+	@if type_of($function) != string {
 		
-		// Current list key:
-		$key: nth($list, $i);
+		@warn "First argument must be string; one of `baseline` or `relative`.";
 		
-		// First value in key:
-		$value: nth($key, 1);
+	} @else {
 		
-		// Get the value's unit:
-		$unit: unquote(unit($value));
+		// Prepare return value for string concatenation:
+		$return: "";
 		
-		// Strip any units from value:
-		$value: strip($value);
+		// Total items in list:
+		$count: length($list);
 		
-		// If no unit specified and value is not zero:
-		@if $unit == "" and $value > 0 { // SASS 3.3, use `str-length($unit)`.
+		// Loop over list:
+		@for $i from 1 through $count {
 			
-			// Default to `rem`:
-			$unit: rem;
+			// Current list key:
+			$key: nth($list, $i);
 			
-			// Convert unit to a relative value:
-			$value: relative($value);
+			// Number of list items in key:
+			$size: length($key);
 			
-		}
-		
-		// Offset?
-		@if length($key) > 1 {
+			// Initialize:
+			$arg1: false;
 			
-			// Multiply value by offset:
-			$value: $value * nth($key, 2);
+			// First optional argument?
+			@if $size > 1 {
+				
+				// Get first optional argument:
+				$arg1: nth($key, 2); // I wish I could use nth() without getting an error (or have ability to specify default return value).
+				
+			}
 			
-		}
-		
-		// Combine unit and value:
-		$return: #{$return + $value}$unit;
-		
-		// Before reaching the end ...
-		@if $i < $count {
+			// Initialize:
+			$arg2: false;
 			
-			// ... put a space between return values:
-			$return: #{$return + " "};
+			// Second optional argument?
+			@if $size > 2 {
+				
+				// Get second optional argument:
+				$arg2: nth($key, 3); // IBID.
+				
+			}
+			
+			// First value in key:
+			$value: nth($key, 1);
+			
+			// Get the value's unit:
+			$unit: unquote(unit($value));
+			
+			// Strip any units from value:
+			$value: strip($value);
+			
+			// If no unit specified and value is not zero:
+			@if $unit == "" and $value > 0 { // SASS 3.3, use `str-length($unit)`.
+				
+				// Default to `rem`:
+				$unit: rem;
+				
+				// Local `$function` argument?
+				@if type_of($arg1) == string or type_of($arg2) == string {
+					
+					// Convert unit to a relative value:
+					$value: if($arg1 == baseline or $arg2 == baseline, baseline($value), relative($value)); // @TODO: Use string for `$function` instead of hard coding.
+					
+				} @else {
+					
+					// No local `$function` argument, so use global `$function`:
+					$value: if($function == baseline, baseline($value), relative($value)); // @TODO: Re-factor this logic; I'm a little frustrated with SASS limitations and also my inexperience with the language.
+					
+				}
+				
+			}
+			
+			// Offset?
+			@if type_of($arg1) == number or type_of($arg2) == number {
+				
+				// @TODO: SASS 3.3 shorthand `if()` should be used instead.
+				@if type_of($arg1) == number {
+					
+					// Multiply value by first argment:
+					$value: $value * $arg1;
+					
+				} @else {
+					
+					// Multiply value by second argment:
+					$value: $value * $arg2;
+					
+				}
+				
+			}
+			
+			// Combine unit and value:
+			$return: #{$return + $value}$unit;
+			
+			// Before reaching the end ...
+			@if $i < $count {
+				
+				// ... put a space between return values:
+				$return: #{$return + " "};
+				
+			}
 			
 		}
 		
