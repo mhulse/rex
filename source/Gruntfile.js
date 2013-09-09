@@ -442,6 +442,8 @@ module.exports = function(grunt) {
 						.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1')
 						// Convert space indentation to tab:
 						.replace(/\n\s\s/g, '\n\t')
+						// Leading zeros:
+						.replace(/0(\.)/g, '$1')
 						// Single-line styles:
 						.replace(/\{\n\t(.*)\n\}/g, '{ $1 }') : src; // ... otherwise, return unaltered source.
 					
