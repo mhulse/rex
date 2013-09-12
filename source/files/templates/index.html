@@ -1162,15 +1162,10 @@ colonel@rancho:~$ _</samp>
 				
 				<legend>Let me guess. You're new here at Oakwood Estates, aren't you, mister? You buy me a drink, I'll tell you what's going on.</legend>
 				
-				<p><code>&lt;fieldset&gt;</code> &amp; <code>&lt;legend&gt;</code> elements only &#8593;</p>
-				
-			</fieldset>
-			
-			<fieldset>
-				
-				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
-				
-				<p><code>&lt;input&gt;</code> element types:</p>
+				<div>
+					<label for="fm_input-hidden-1">Hidden</label>
+					<input type="hidden" id="fm_input-hidden-1" name="input-hidden-1" value="hidden">
+				</div>
 				
 				<div class="<!--@echo ns-->baseline">
 					<label for="fm_input-button-1">Button</label>
@@ -1185,61 +1180,6 @@ colonel@rancho:~$ _</samp>
 					<input type="checkbox" id="fm_input-checkbox-5" name="input-checkbox[]" value="checkbox">&nbsp;<label for="fm_input-checkbox-5">Checkbox</label>
 				</div>
 				
-				<div class="<!--@echo ns-->baseline">
-					<label for="fm_input-color-1">Color</label>
-					<input type="color" id="fm_input-color-1" name="input-color-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-date-1">Date</label>
-					<input type="date" id="fm_input-date-1" name="input-date-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-datetime-1">Datetime</label>
-					<input type="datetime" id="fm_input-datetime-1" name="input-datetime-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-datetime-local-1">Datetime-local</label>
-					<input type="datetime-local" id="fm_input-datetime-local-1" name="input-datetime-local-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-email-1">Email</label>
-					<input type="email" id="fm_input-email-1" name="input-email-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-file-1">File</label>
-					<input type="file" id="fm_input-file-1" name="input-file-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-hidden-1">Hidden</label>
-					<input type="hidden" id="fm_input-hidden-1" name="input-hidden-1" value="hidden">
-				</div>
-				
-				<div>
-					<label for="fm_input-image-1">Image</label>
-					<input type="image" id="fm_input-image-1" name="input-image-1" src="image1.png" alt="" width="100" height="32">
-				</div>
-				
-				<div>
-					<label for="fm_input-month-1">Month</label>
-					<input type="month" id="fm_input-month-1" name="input-month-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-number-1">Number</label>
-					<input type="number" id="fm_input-number-1" name="input-number-1" min="5" max="18" step="0.5" value="9">
-				</div>
-				
-				<div>
-					<label for="fm_input-password-1">Password</label> 
-					<input type="password" id="fm_input-password-1" name="input-password-1">
-				</div>
-				
 				<div>
 					<input type="radio" id="fm_input-radio-1" name="input-radio" value="radio">&nbsp;<label for="fm_input-radio-1">Radio</label>
 					<input type="radio" id="fm_input-radio-2" name="input-radio" value="radio">&nbsp;<label for="fm_input-radio-2">Radio</label>
@@ -1249,8 +1189,13 @@ colonel@rancho:~$ _</samp>
 				</div>
 				
 				<div>
-					<label for="fm_input-range-1">Range</label>
-					<input type="range" id="fm_input-range-1" name="input-range-1" min="1" max="100" value="0">
+					<label for="fm_input-password-1">Password</label> 
+					<input type="password" id="fm_input-password-1" name="input-password-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-file-1">File</label>
+					<input type="file" id="fm_input-file-1" name="input-file-1">
 				</div>
 				
 				<div>
@@ -1259,18 +1204,8 @@ colonel@rancho:~$ _</samp>
 				</div>
 				
 				<div>
-					<label for="fm_input-search-1">Search</label>
-					<input type="search" id="fm_input-search-1" name="input-search-1" placeholder="Search &hellip;">
-				</div>
-				
-				<div>
 					<label for="fm_input-submit-1">Submit</label>
 					<input type="submit" id="fm_input-submit-1" name="input-submit-1" value="Submit">
-				</div>
-				
-				<div>
-					<label for="fm_input-tel-1">Tel</label>
-					<input type="tel" id="fm_input-tel-1" name="input-tel-1" pattern="\(\d\d\d\) ?\d\d\d-\d\d\d\d" title="Phone Number (Format: (###) ###-####)" placeholder="(###) ###-####">
 				</div>
 				
 				<div>
@@ -1289,29 +1224,6 @@ colonel@rancho:~$ _</samp>
 				</div>
 				
 				<div>
-					<label for="fm_input-time-1">Time</label>
-					<input type="time" id="fm_input-time-1" name="input-time-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-url-1">URL</label>
-					<input type="url" id="fm_input-url-1" name="input-url-1">
-				</div>
-				
-				<div>
-					<label for="fm_input-week-1">Week</label>
-					<input type="week" id="fm_input-week-1" name="input-week-1">
-				</div>
-				
-			</fieldset>
-			
-			<fieldset>
-				
-				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
-				
-				<p><code>&lt;textarea&gt;</code> element:</p>
-				
-				<div>
 					<label for="fm_input-textarea-1">Textarea</label>
 					<textarea id="fm_input-textarea-1" name="textarea-1"></textarea>
 				</div>
@@ -1320,14 +1232,6 @@ colonel@rancho:~$ _</samp>
 					<label for="fm_input-textarea-2">Textarea</label>
 					<textarea id="fm_input-textarea-2" name="textarea-2"></textarea>
 				</div>
-				
-			</fieldset>
-			
-			<fieldset>
-				
-				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
-				
-				<p><code>&lt;select&gt;</code></p>
 				
 				<div>
 					<label for="fm_select-1">Select</label>
@@ -1356,14 +1260,6 @@ colonel@rancho:~$ _</samp>
 					</select>
 				</div>
 				
-			</fieldset>
-			
-			<fieldset>
-				
-				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
-				
-				<p><code>&lt;button&gt;</code> element:</p>
-				
 				<div>
 					<button type="button" name="fm_button-button-1">Button</button>
 				</div>
@@ -1382,7 +1278,75 @@ colonel@rancho:~$ _</samp>
 				
 				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
 				
-				<p><code>&lt;datalist&gt;</code> element:</p>
+				<div class="<!--@echo ns-->baseline">
+					<label for="fm_input-color-1">Color</label>
+					<input type="color" id="fm_input-color-1" name="input-color-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-date-1">Date</label>
+					<input type="date" id="fm_input-date-1" name="input-date-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-datetime-1">Datetime</label>
+					<input type="datetime" id="fm_input-datetime-1" name="input-datetime-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-datetime-local-1">Datetime-local</label>
+					<input type="datetime-local" id="fm_input-datetime-local-1" name="input-datetime-local-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-email-1">Email</label>
+					<input type="email" id="fm_input-email-1" name="input-email-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-image-1">Image</label>
+					<input type="image" id="fm_input-image-1" name="input-image-1" src="image1.png" alt="" width="100" height="32">
+				</div>
+				
+				<div>
+					<label for="fm_input-month-1">Month</label>
+					<input type="month" id="fm_input-month-1" name="input-month-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-number-1">Number</label>
+					<input type="number" id="fm_input-number-1" name="input-number-1" min="5" max="18" step="0.5" value="9">
+				</div>
+				
+				<div>
+					<label for="fm_input-range-1">Range</label>
+					<input type="range" id="fm_input-range-1" name="input-range-1" min="1" max="100" value="0">
+				</div>
+				
+				<div>
+					<label for="fm_input-search-1">Search</label>
+					<input type="search" id="fm_input-search-1" name="input-search-1" placeholder="Search &hellip;">
+				</div>
+				
+				<div>
+					<label for="fm_input-tel-1">Tel</label>
+					<input type="tel" id="fm_input-tel-1" name="input-tel-1" pattern="\(\d\d\d\) ?\d\d\d-\d\d\d\d" title="Phone Number (Format: (###) ###-####)" placeholder="(###) ###-####">
+				</div>
+				
+				<div>
+					<label for="fm_input-time-1">Time</label>
+					<input type="time" id="fm_input-time-1" name="input-time-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-url-1">URL</label>
+					<input type="url" id="fm_input-url-1" name="input-url-1">
+				</div>
+				
+				<div>
+					<label for="fm_input-week-1">Week</label>
+					<input type="week" id="fm_input-week-1" name="input-week-1">
+				</div>
 				
 				<div class="<!--@echo ns-->baseline">
 					<label for="fm_datalist-input-1">Select</label>
@@ -1395,26 +1359,10 @@ colonel@rancho:~$ _</samp>
 					</datalist>
 				</div>
 				
-			</fieldset>
-			
-			<fieldset>
-				
-				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
-				
-				<p><code>&lt;keygen&gt;</code> element:</p>
-				
 				<div class="<!--@echo ns-->baseline">
 					<label for="fm_keygen-1">Keygen</label>
 					<keygen id="fm_keygen-1" name="fm_keygen-1" challenge="challenge string" keytype="type" keyparams="pqg-params">
 				</div>
-				
-			</fieldset>
-			
-			<fieldset>
-				
-				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
-				
-				<p><code>&lt;meter&gt;</code> element:</p>
 				
 				<div class="<!--@echo ns-->baseline">
 				<p><meter value="0.5">Moderate activity,</meter> Oakwood Estates Saloon, 89 patrons</p>
@@ -1422,14 +1370,6 @@ colonel@rancho:~$ _</samp>
 				</div>
 				
 				<p><meter value="0.25">Low activity,</meter> Oakwood Estates Saloon, 66 patrons</p>
-				
-			</fieldset>
-			
-			<fieldset>
-				
-				<legend>Mister, I never saw shooting like that in my life. You're good.</legend>
-				
-				<p><code>&lt;progress&gt;</code> element:</p>
 				
 				<div class="<!--@echo ns-->baseline">
 				<progress></progress>
