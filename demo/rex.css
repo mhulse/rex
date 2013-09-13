@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 0.4.0
- * @date 2013/09/11
+ * @date 2013/09/12
  */
 
 *, *::before, *::after {
@@ -257,7 +257,7 @@ legend {
 input[type="password"], input[type="text"] {
 	font-size: 1rem;
 	line-height: 1.5;
-	height: 1.875rem;
+	height: 1.5rem;
 	padding: 0 .25em;
 	margin: 0;
 	vertical-align: baseline;

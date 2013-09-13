@@ -444,6 +444,8 @@ module.exports = function(grunt) {
 						.replace(/\n\s\s/g, '\n\t')
 						// Leading zeros:
 						.replace(/0(\.)/g, '$1')
+						// Single-line selectors:
+						//.replace(/(, (?=.*\{))/g, ',\n') // https://github.com/gruntjs/grunt-contrib-concat/issues/46
 						// Single-line styles:
 						.replace(/\{\n\t(.*)\n\}/g, '{ $1 }') : src; // ... otherwise, return unaltered source.
 					

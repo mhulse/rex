@@ -1373,7 +1373,7 @@ form { margin: 0; }
 
 fieldset {
 	margin: #{relative(16)}rem 0;
-	padding: #{relative(1)}rem 0 0; // 1px (prevents margin collapse)
+	padding: #{relative(1)}rem 0 0; // Prevents margin collapse.
 }
 
 // The `<legend>` element represents a caption for the parent `<fieldset>`
@@ -1628,7 +1628,7 @@ input {
 	&[type="password"],
 	&[type="text"] {
 		@include baseline(16);
-		height: #{baseline(16, 1.25)}rem;
+		height: #{relative(24)}rem;
 		padding: 0 #{relative(4)}em;
 		margin: 0;
 		vertical-align: baseline;
