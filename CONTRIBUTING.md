@@ -33,11 +33,9 @@ Please read the following guidelines before opening an issue.
 
 In general, and for anything not listed below, take care to maintain the existing coding style of the document(s) your editing.
 
-### `if (5 == count) ...`
+### Absolutely NO Yoda conditions!!!
 
-Absolutely NO Yoda conditional logic!!!
-
-**Yoda conditions:**
+Yoda conditions:
 
 > Using `if(constant == variable)` instead of `if(variable == constant)`, like `if(4 == foo)`. Because it's like saying "if blue is the sky" or "if tall is the man". 
 
