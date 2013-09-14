@@ -15,8 +15,8 @@
 // @see https://github.com/mhulse/rex/issues/77
 // @see http://stackoverflow.com/a/12335841/922323
 //
-// @param { integer } $value Any value with optional unit.
-// @return { integer } $value minus its unit.
+// @param { number } $value Any value with optional unit.
+// @return { number } $value minus its unit.
 
 @function strip($value) {
 	
@@ -46,9 +46,9 @@
 // }
 // ```
 //
-// @param { integer } $value Can be a value with or without a unit.
-// @param { integer } [ $context = $base_font-size ] Context of relative unit calculation.
-// @return { integer } Relative result based on input params.
+// @param { number } $value Can be a value with or without a unit.
+// @param { number } [ $context = $base_font-size ] Context of relative unit calculation.
+// @return { number } Relative result based on input params.
 
 @function relative($value, $context: $base_font-size) {
 	
@@ -82,10 +82,10 @@
 // }
 // ```
 //
-// @param { integer } $value An integer, assumed to be in pixels, where unit is optional.
-// @param { integer } [ $offset = 1 ] Multiply the return value by this number.
-// @param { integer } [ $context = $base_line-height ] Base `line-height` of document.
-// @return { integer } A number relative to baseline.
+// @param { number } $value A number, assumed to be in pixels, where unit is optional.
+// @param { number } [ $offset = 1 ] Multiply the return value by this number.
+// @param { number } [ $context = $base_line-height ] Base `line-height` of document.
+// @return { number } A number relative to baseline.
 
 @function baseline($value, $offset: 1, $context: $base_line-height) {
 	
