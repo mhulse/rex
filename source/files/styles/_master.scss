@@ -111,11 +111,7 @@
 
 @if $flag_baseline {
 	
-	.#{$NS}baseline {
-		
-		@include baseline-grid;
-		
-	}
+	.#{$NS}baseline { @include baseline-grid; }
 	
 }
 
@@ -515,9 +511,11 @@ hr,
 	border: 0;
 	border-top-width: #{relative(1)}rem;
 	border-style: solid;
-	height: #{relative(1)}rem;
+	height: 0;
 	margin: #{relative(12)}rem 0;
 	padding: 0;
+	-moz-box-sizing: content-box;
+	     box-sizing: content-box;
 }
 
 // The `<ol>` element represents a list of items, where the items have
@@ -724,7 +722,8 @@ cite {}
 // @see http://dev.w3.org/html5/spec#the-code-element
 // @see http://ç.whatwg.org#the-code-element
 
-code {}
+code,
+%code { font-size: #{relative(16)}em; }
 
 // The `<data>` element links a given content with a machine-readable
 // translation. If the content is time- or date-related, the `<time>` must
@@ -802,7 +801,7 @@ i {}
 // @see http://dev.w3.org/html5/spec#the-kbd-element
 // @see http://ç.whatwg.org#the-kbd-element
 
-kbd {}
+kbd { @extend %code; }
 
 // The `<mark>` element represents a run of text in one document marked or
 // highlighted because of its relevance in another context.
@@ -884,7 +883,7 @@ s {}
 // @see http://dev.w3.org/html5/spec#the-samp-element
 // @see http://ç.whatwg.org#the-samp-element
 
-samp {}
+samp { @extend %code; }
 
 // The `<small>` element represents side comments such as small print. It
 // is not intended to be presentational. The `<small>` element should not
@@ -895,7 +894,7 @@ samp {}
 // @see http://dev.w3.org/html5/spec#the-small-element
 // @see http://ç.whatwg.org#the-small-element
 
-small {}
+small { font-size: 80%; }
 
 // The `<span>` element doesn't mean anything on its own, but can be
 // useful when used together with the global attributes, e.g. `class`,
@@ -931,8 +930,8 @@ sub,
 %sub {
 	font-size: 75%;
 	line-height: 0;
-	vertical-align: baseline;
 	position: relative;
+	vertical-align: baseline;
 }
 sub { bottom: -#{relative(4)}em; }
 
@@ -1364,7 +1363,8 @@ form { margin: 0; }
 // @see http://dev.w3.org/html5/spec#the-button-element
 // @see http://ç.whatwg.org#the-button-element
 
-button {}
+button,
+%button { @extend %input; }
 
 // The `<fieldset>` element is expected to establish a new block
 // formatting context.
@@ -1396,7 +1396,12 @@ fieldset {
 // @see http://dev.w3.org/html5/spec#the-input-element
 // @see http://ç.whatwg.org#the-input-element
 
-input {}
+input,
+%input {
+	font-size: #{relative(16)}em;
+	line-height: normal;
+	vertical-align: baseline;
+}
 
 // A push button with no default behavior.
 //
@@ -1416,9 +1421,10 @@ input[type="button"] {}
 
 input[type="checkbox"],
 %input-checkbox {
-	vertical-align: middle;
+	padding: 0;
 	position: relative;
 	bottom: #{relative(2)}em;
+	vertical-align: middle;
 }
 
 // A control that lets the user select a file. Use the `accept` attribute
@@ -1454,9 +1460,7 @@ input[type="image"] {}
 // @see http://dev.w3.org/html5/spec#password-state-(type=password)
 // @see http://ç.whatwg.org#password-state-(type=password)
 
-input[type="password"] {
-	@extend %input-text;
-}
+input[type="password"] { @extend %input-text; }
 
 // A radio button. You must use the `value` attribute to define the value
 // submitted by this item. Use the `checked` attribute to indicate whether
@@ -1467,9 +1471,7 @@ input[type="password"] {
 // @see http://dev.w3.org/html5/spec#radio-button-state-(type=radio)
 // @see http://ç.whatwg.org#radio-button-state-(type=radio)
 
-input[type="radio"] {
-	@extend %input-checkbox;
-}
+input[type="radio"] { @extend %input-checkbox; }
 
 // A button that resets the contents of the form to default values.
 //
@@ -1493,10 +1495,10 @@ input[type="submit"] {}
 
 input[type="text"],
 %input-text {
-	@include baseline(16);
+	@include baseline(16, 1, em);
 	height: #{relative(24)}rem;
-	padding: 0 #{relative(4)}em;
 	margin: 0;
+	padding: 0 #{relative(4)}em;
 	vertical-align: baseline;
 }
 
@@ -1509,7 +1511,10 @@ input[type="text"],
 // @see http://dev.w3.org/html5/spec#the-label-element
 // @see http://ç.whatwg.org#the-label-element
 
-label {}
+label {
+	@include baseline(16, 1, em);
+	vertical-align: middle;
+}
 
 // The `<legend>` element represents a caption for the parent `<fieldset>`
 // element.
@@ -1561,7 +1566,10 @@ option {}
 // @see http://dev.w3.org/html5/spec#the-select-element
 // @see http://ç.whatwg.org#the-select-element
 
-select {}
+select {
+	@include baseline(16, 1, em);
+	vertical-align: baseline;
+}
 
 // The `<textarea>` element represents a multiline plain text edit control
 // for the element's raw value. The contents of the control represent the
@@ -1574,12 +1582,12 @@ select {}
 // @see http://ç.whatwg.org#the-textarea-element
 
 textarea {
-	@include baseline(16);
+	@include baseline(16, 1, em);
 	min-height: #{relative(120)}rem;
 	overflow: auto;
-	vertical-align: top;
 	margin: 0;
 	padding: 0;
+	vertical-align: top;
 }
 
 // HTML 5:

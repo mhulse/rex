@@ -169,9 +169,11 @@ hr,
 	border: 0;
 	border-top-width: .0625rem;
 	border-style: solid;
-	height: .0625rem;
+	height: 0;
 	margin: .75rem 0;
 	padding: 0;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
 }
 
 ol,
@@ -211,12 +213,18 @@ pre {
 ul { margin-left: 1.5rem; }
 li ul { margin-left: .5rem; }
 
+code,
+kbd,
+samp { font-size: 1em; }
+
+small { font-size: 80%; }
+
 sub,
 sup {
 	font-size: 75%;
 	line-height: 0;
-	vertical-align: baseline;
 	position: relative;
+	vertical-align: baseline;
 }
 
 sub { bottom: -.25em; }
@@ -249,21 +257,35 @@ fieldset {
 	padding: .0625rem 0 0;
 }
 
+input,
+button {
+	font-size: 1em;
+	line-height: normal;
+	vertical-align: baseline;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
-	vertical-align: middle;
+	padding: 0;
 	position: relative;
 	bottom: .125em;
+	vertical-align: middle;
 }
 
 input[type="text"],
 input[type="password"] {
-	font-size: 1rem;
+	font-size: 1em;
 	line-height: 1.5;
 	height: 1.5rem;
-	padding: 0 .25em;
 	margin: 0;
+	padding: 0 .25em;
 	vertical-align: baseline;
+}
+
+label {
+	font-size: 1em;
+	line-height: 1.5;
+	vertical-align: middle;
 }
 
 legend {
@@ -273,12 +295,18 @@ legend {
 	padding: 0 0 .33333333333333em;
 }
 
+select {
+	font-size: 1em;
+	line-height: 1.5;
+	vertical-align: baseline;
+}
+
 textarea {
-	font-size: 1rem;
+	font-size: 1em;
 	line-height: 1.5;
 	min-height: 7.5rem;
 	overflow: auto;
-	vertical-align: top;
 	margin: 0;
 	padding: 0;
+	vertical-align: top;
 }
