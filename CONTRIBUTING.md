@@ -35,7 +35,7 @@ In general, and for anything not listed below, take care to maintain the existin
 
 ### Absolutely NO Yoda conditions!!!
 
-> Using `if(constant == variable)` instead of `if(variable == constant)`, like `if(4 == foo)`. Because it's like saying "if blue is the sky" or "if tall is the man". 
+> Using `if (constant == variable)` instead of `if (variable == constant)`, like `if (4 == foo)`. Because it's like saying "if blue is the sky" or "if tall is the man". 
 
 * [Coding Horror: New Programming Jargon](http://www.codinghorror.com/blog/2012/07/new-programming-jargon.html)
 
