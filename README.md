@@ -145,6 +145,7 @@ Feature | Description
 
 ## [Release history](https://github.com/mhulse/rex/releases)
 
+* 2013-08-25   [v1.0.0](https://github.com/mhulse/rex/releases/tag/v1.0.0)   On, Wildfire, on!
 * 2013-08-25   [v0.4.0](https://github.com/mhulse/rex/releases/tag/v0.4.0)   Bower version bump.
 * 2013-08-18   [v0.3.0](https://github.com/mhulse/rex/releases/tag/v0.3.0)   SCSS build setup.
 * 2013-08-16   [v0.2.0](https://github.com/mhulse/rex/releases/tag/v0.2.0)   Bower pre-release.
