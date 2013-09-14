@@ -249,15 +249,15 @@ fieldset {
 	padding: .0625rem 0 0;
 }
 
-legend {
-	font-size: 1.125rem;
-	line-height: 1.16666666666667;
-	margin: 0;
-	padding: 0 0 .33333333333333em;
+input[type="checkbox"],
+input[type="radio"] {
+	vertical-align: middle;
+	position: relative;
+	bottom: .125em;
 }
 
-input[type="password"],
-input[type="text"] {
+input[type="text"],
+input[type="password"] {
 	font-size: 1rem;
 	line-height: 1.5;
 	height: 1.5rem;
@@ -265,11 +265,12 @@ input[type="text"] {
 	margin: 0;
 	vertical-align: baseline;
 }
-input[type="checkbox"],
-input[type="radio"] {
-	vertical-align: middle;
-	position: relative;
-	bottom: .125em;
+
+legend {
+	font-size: 1.125rem;
+	line-height: 1.16666666666667;
+	margin: 0;
+	padding: 0 0 .33333333333333em;
 }
 
 textarea {
