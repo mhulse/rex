@@ -8,10 +8,12 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 0.4.0
- * @date 2013/09/12
+ * @date 2013/09/13
  */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
@@ -254,7 +256,8 @@ legend {
 	padding: 0 0 .33333333333333em;
 }
 
-input[type="password"], input[type="text"] {
+input[type="password"],
+input[type="text"] {
 	font-size: 1rem;
 	line-height: 1.5;
 	height: 1.5rem;
@@ -262,7 +265,8 @@ input[type="password"], input[type="text"] {
 	margin: 0;
 	vertical-align: baseline;
 }
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
 	vertical-align: middle;
 	position: relative;
 	bottom: .125em;

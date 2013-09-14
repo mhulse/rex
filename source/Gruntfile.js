@@ -5,6 +5,41 @@ module.exports = function(grunt) {
 	
 	'use strict';
 	
+	/*----------------------------------( HELPERS )----------------------------------*/
+	
+	/**
+	 * Helper functions.
+	 *
+	 * @todo Improve modularity of code.
+	 *
+	 * @see https://github.com/mhulse/rex/issues/115
+	 */
+	
+	var helpers = {
+		
+		// Get extension from path.
+		get_ext : function(path) { return path.split('.').pop(); },
+		
+		// Does path end with a specific extension?
+		is_ext : function(path, extension) { return (this.get_ext(path) == extension); },
+		
+		// Removes "@charset "UTF-8"" inserted by SCSS.
+		no_charset : function(string) { return string.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1'); },
+		
+		// Convert space indentation to tab.
+		space_to_tab : function(string) { return string.replace(/\n\s\s/g, '\n\t'); },
+		
+		// No leading zeros!
+		zero_zeros : function(string) { return string.replace(/0(\.)/g, '$1'); },
+		
+		// One selector per line.
+		per_line : function(string) { return string.replace(/(, (?=.*\{))/g, ',\n'); },
+		
+		// Styles with one property to one line.
+		singular : function(string) { return string.replace(/\{\n\t(.*)\n\}/g, '{ $1 }'); }
+		
+	};
+	
 	grunt.initConfig({
 		
 		/*----------------------------------( PACKAGE )----------------------------------*/
@@ -432,32 +467,26 @@ module.exports = function(grunt) {
 		
 		concat : {
 			
-			options : {
-				
-				process : function(src, filepath) {
-					
-					// If the file extension is "css":
-					return (filepath.split('.').pop() == 'css') ? src
-						// Removes "@charset "UTF-8"" inserted by SCSS:
-						.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1')
-						// Convert space indentation to tab:
-						.replace(/\n\s\s/g, '\n\t')
-						// Leading zeros:
-						.replace(/0(\.)/g, '$1')
-						// Single-line selectors:
-						//.replace(/(, (?=.*\{))/g, ',\n') // https://github.com/gruntjs/grunt-contrib-concat/issues/46
-						// Single-line styles:
-						.replace(/\{\n\t(.*)\n\}/g, '{ $1 }') : src; // ... otherwise, return unaltered source.
-					
-				},
-				
-			},
-			
 			dev : {
 				
 				options : {
 					
 					banner : '<%= banner.long %>',
+					process : function(source, filepath) {
+						
+						if (helpers.is_ext(filepath, 'css')) {
+							
+							source = helpers.no_charset(source);
+							source = helpers.space_to_tab(source);
+							source = helpers.zero_zeros(source);
+							source = helpers.per_line(source);
+							source = helpers.singular(source);
+							
+						}
+						
+						return source;
+						
+					},
 					
 				},
 				
@@ -475,6 +504,18 @@ module.exports = function(grunt) {
 				options : {
 					
 					banner : '<%= banner.short %>',
+					process : function(source, filepath) {
+						
+						if (helpers.is_ext(filepath, 'css')) {
+							
+							source = helpers.no_charset(source);
+							source = helpers.zero_zeros(source);
+							
+						}
+						
+						return source;
+						
+					},
 					
 				},
 				
