@@ -5,7 +5,8 @@
     "./demo/rex.css"
   ],
   "ignore": [
-    "**/.*"
+    "**/.*",
+    "files/styles/tests.scss"
   ],
   "dependencies": {},
   "devDependencies": {}
