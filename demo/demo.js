@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 1.0.0
- * @date 2013/09/14
+ * @date 2013/09/15
  */
 
 (function(document) {
