@@ -21,6 +21,7 @@
 - [CSS](#css)
 	- [Features](#features)
 - [Caveats, limitations and/or assumptions](#caveats-limitations-andor-assumptions)
+- [Contributing](#contributing)
 - [Feedback](#feedback)
 - [Release history](#release-history)
 - [LEGAL](#legal)
@@ -70,7 +71,7 @@ There are several ways to install this code:
 1. Download as a [`zip`](https://github.com/mhulse/rex/archive/gh-pages.zip).
 1. Clone it: `$ git clone https://github.com/mhulse/rex.git`.
 1. Fork it and clone: `$ git clone git@github.com:USERNAME/rex.git`.
-1. Just grab the [relevant CSS](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.css) ([minified](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.min.css)).
+1. Just grab the relevant [CSS](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.css) ([minified](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.min.css)) and/or [SCSS](https://github.com/mhulse/rex/tree/gh-pages/rex/scss) files.
 1. Using [Bower](http://bower.io/): `$ bower install https://github.com/mhulse/rex.git`.
 
 ### Build process:
@@ -139,17 +140,22 @@ Feature | Description
 1. If you change the base `font-size` and `line-height`, there's no guarantees that out of the box styles will adapt well; in other words, changing these variables will probably require one to adjust each of Rex's elements to fit the new base values.
 1. Due to the "fudge factor", the `.baseline` class does not actually align its grid lines to the baseline of a character; instead, this class aligns the text to the vertical center of a grid line.
 
+## Contributing
+
+Please read the [CONTRIBUTING.md](https://github.com/mhulse/rex/blob/gh-pages/CONTRIBUTING.md).
+
 ## Feedback
 
 [Bugs? Constructive feedback? Questions?](https://github.com/mhulse/rex/issues)
 
 ## [Release history](https://github.com/mhulse/rex/releases)
 
-* 2013-08-25   [v1.0.0](https://github.com/mhulse/rex/releases/tag/v1.0.0)   On, Wildfire, on!
+* 2013-09-15   [v1.1.0](https://github.com/mhulse/rex/releases/tag/v1.1.0)   Better organization.
+* 2013-09-13   [v1.0.0](https://github.com/mhulse/rex/releases/tag/v1.0.0)   On, Wildfire, on!
 * 2013-08-25   [v0.4.0](https://github.com/mhulse/rex/releases/tag/v0.4.0)   Bower version bump.
 * 2013-08-18   [v0.3.0](https://github.com/mhulse/rex/releases/tag/v0.3.0)   SCSS build setup.
 * 2013-08-16   [v0.2.0](https://github.com/mhulse/rex/releases/tag/v0.2.0)   Bower pre-release.
-* 2013-08-10   [v0.1.0](https://github.com/mhulse/rex/releases/tag/v0.1.0)   Maximum Grunt setup (next versions will be simplified Grunt builds).
+* 2013-08-10   [v0.1.0](https://github.com/mhulse/rex/releases/tag/v0.1.0)   Maximum Grunt setup.
 
 ---
 

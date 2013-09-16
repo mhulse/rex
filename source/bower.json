@@ -1,5 +1,5 @@
 {
-  "name": "rex",
+  "name": "simple-bower",
   "version": "0.0.0",
   "dependencies": {
     "normalize-css": "*"
