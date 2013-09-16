@@ -5,41 +5,6 @@ module.exports = function(grunt) {
 	
 	'use strict';
 	
-	/*----------------------------------( HELPERS )----------------------------------*/
-	
-	/**
-	 * Helper functions.
-	 *
-	 * @todo Improve modularity of code.
-	 *
-	 * @see https://github.com/mhulse/rex/issues/115
-	 */
-	
-	var helpers = {
-		
-		// Get extension from path.
-		get_ext : function(path) { return path.split('.').pop(); },
-		
-		// Does path end with a specific extension?
-		is_ext : function(path, extension) { return (this.get_ext(path) == extension); },
-		
-		// Removes "@charset "UTF-8"" inserted by SCSS.
-		no_charset : function(string) { return string.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1'); },
-		
-		// Convert space indentation to tab.
-		space_to_tab : function(string) { return string.replace(/\n\s\s/g, '\n\t'); },
-		
-		// No leading zeros!
-		zero_zeros : function(string) { return string.replace(/0(\.)/g, '$1'); },
-		
-		// One selector per line.
-		per_line : function(string) { return string.replace(/(, (?=.*\{))/g, ',\n'); },
-		
-		// Styles with one property to one line.
-		singular : function(string) { return string.replace(/\{\n\t(.*)\n\}/g, '{ $1 }'); }
-		
-	};
-	
 	grunt.initConfig({
 		
 		/*----------------------------------( PACKAGE )----------------------------------*/
@@ -432,7 +397,7 @@ module.exports = function(grunt) {
 				files : {
 					
 					'./temp/<%= pkg.name %>.css' : './files/styles/rex.scss',
-					'../demo/demo.css' : './files/styles/demo.scss',
+					'../demo/tests.css' : './files/styles/tests.scss',
 					
 				},
 				
@@ -531,6 +496,41 @@ module.exports = function(grunt) {
 		},
 		
 	});
+	
+	/*----------------------------------( HELPERS )----------------------------------*/
+	
+	/**
+	 * Helper functions.
+	 *
+	 * @todo Improve modularity of code.
+	 *
+	 * @see https://github.com/mhulse/rex/issues/115
+	 */
+	
+	var helpers = {
+		
+		// Get extension from path.
+		get_ext : function(path) { return path.split('.').pop(); },
+		
+		// Does path end with a specific extension?
+		is_ext : function(path, extension) { return (this.get_ext(path) == extension); },
+		
+		// Removes "@charset "UTF-8"" inserted by SCSS.
+		no_charset : function(string) { return string.replace(/(^|\n)[ \t]*(@charset "UTF-8");?\s*/g, '$1'); },
+		
+		// Convert space indentation to tab.
+		space_to_tab : function(string) { return string.replace(/\n\s\s/g, '\n\t'); },
+		
+		// No leading zeros!
+		zero_zeros : function(string) { return string.replace(/0(\.)/g, '$1'); },
+		
+		// One selector per line.
+		per_line : function(string) { return string.replace(/(, (?=.*\{))/g, ',\n'); },
+		
+		// Styles with one property to one line.
+		singular : function(string) { return string.replace(/\{\n\t(.*)\n\}/g, '{ $1 }'); }
+		
+	};
 	
 	/*----------------------------------( TASKS )----------------------------------*/
 	
