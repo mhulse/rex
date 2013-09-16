@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 			files : [
 				
 				'<%= jshint.init %>',
-				'./files/styles/*.scss',
+				'./files/styles/**/*',
 				'./files/templates/*.html',
 				
 			],
@@ -188,6 +188,7 @@ module.exports = function(grunt) {
 				src : [
 					
 					'../demo/**/*',
+					'../<%= pkg.name %>/**/*',
 					
 				],
 				
@@ -356,6 +357,19 @@ module.exports = function(grunt) {
 				
 			},
 			
+			prod : {
+				
+				filter : 'isFile',
+				expand : true,
+				cwd : './files/styles/',
+				src : [
+					'**/*',
+					'!demo.scss',
+				],
+				dest : '../<%= pkg.name %>/scss/',
+				
+			},
+			
 			all : {
 				
 				expand : true,
@@ -397,7 +411,7 @@ module.exports = function(grunt) {
 				files : {
 					
 					'./temp/<%= pkg.name %>.css' : './files/styles/rex.scss',
-					'../demo/tests.css' : './files/styles/tests.scss',
+					'./temp/demo.css' : './files/styles/demo.scss',
 					
 				},
 				
@@ -414,6 +428,7 @@ module.exports = function(grunt) {
 				files : {
 					
 					'./temp/<%= pkg.name %>.min.css' : './files/styles/rex.scss',
+					'./temp/demo.min.css' : './files/styles/demo.scss',
 					
 				},
 				
@@ -439,13 +454,13 @@ module.exports = function(grunt) {
 					banner : '<%= banner.long %>',
 					process : function(source, filepath) {
 						
-						if (helpers.is_ext(filepath, 'css')) {
+						if (grunt.rexHelpers.is_ext(filepath, 'css')) {
 							
-							source = helpers.no_charset(source);
-							source = helpers.space_to_tab(source);
-							source = helpers.zero_zeros(source);
-							source = helpers.per_line(source);
-							source = helpers.singular(source);
+							source = grunt.rexHelpers.no_charset(source);
+							source = grunt.rexHelpers.space_to_tab(source);
+							source = grunt.rexHelpers.no_zeros(source);
+							source = grunt.rexHelpers.per_line(source);
+							source = grunt.rexHelpers.one_line(source);
 							
 						}
 						
@@ -457,7 +472,8 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../demo/<%= pkg.name %>.css' : ['./temp/<%= pkg.name %>.css',],
+					'../<%= pkg.name %>/<%= pkg.name %>.css' : ['./temp/<%= pkg.name %>.css',],
+					'../demo/demo.css' : ['./temp/demo.css',],
 					'../demo/demo.js' : ['./files/scripts/**/*',],
 					
 				},
@@ -471,10 +487,10 @@ module.exports = function(grunt) {
 					banner : '<%= banner.short %>',
 					process : function(source, filepath) {
 						
-						if (helpers.is_ext(filepath, 'css')) {
+						if (grunt.rexHelpers.is_ext(filepath, 'css')) {
 							
-							source = helpers.no_charset(source);
-							source = helpers.zero_zeros(source);
+							source = grunt.rexHelpers.no_charset(source);
+							source = grunt.rexHelpers.no_zeros(source);
 							
 						}
 						
@@ -486,7 +502,8 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'../demo/<%= pkg.name %>.min.css' : ['./temp/<%= pkg.name %>.min.css',],
+					'../<%= pkg.name %>/<%= pkg.name %>.min.css' : ['./temp/<%= pkg.name %>.min.css',],
+					'../demo/demo.min.css' : ['./temp/demo.min.css',],
 					'../demo/demo.min.js' : ['./temp/demo.min.js',],
 					
 				},
@@ -507,7 +524,7 @@ module.exports = function(grunt) {
 	 * @see https://github.com/mhulse/rex/issues/115
 	 */
 	
-	var helpers = {
+	grunt.rexHelpers = {
 		
 		// Get extension from path.
 		get_ext : function(path) { return path.split('.').pop(); },
@@ -522,13 +539,13 @@ module.exports = function(grunt) {
 		space_to_tab : function(string) { return string.replace(/\n\s\s/g, '\n\t'); },
 		
 		// No leading zeros!
-		zero_zeros : function(string) { return string.replace(/0(\.)/g, '$1'); },
+		no_zeros : function(string) { return string.replace(/0(\.)/g, '$1'); },
 		
 		// One selector per line.
 		per_line : function(string) { return string.replace(/(, (?=.*\{))/g, ',\n'); },
 		
 		// Styles with one property to one line.
-		singular : function(string) { return string.replace(/\{\n\t(.*)\n\}/g, '{ $1 }'); }
+		one_line : function(string) { return string.replace(/\{\n\t(.*)\n\}/g, '{ $1 }'); }
 		
 	};
 	
@@ -573,7 +590,7 @@ module.exports = function(grunt) {
 	
 	grunt.registerTask('dev', ['env:dev', 'preprocess:dev', 'sass:dev', 'concat:dev', 'copy:dev',]);
 	
-	grunt.registerTask('prod', ['env:prod', 'uglify:prod', 'preprocess:prod', 'htmlmin:prod', 'sass:prod', 'concat:prod',]);
+	grunt.registerTask('prod', ['env:prod', 'uglify:prod', 'preprocess:prod', 'htmlmin:prod', 'sass:prod', 'concat:prod', 'copy:prod',]);
 	
 	grunt.registerTask('default', ['init', 'dev', 'prod', 'copy:all', 'clean:finish',]);
 	

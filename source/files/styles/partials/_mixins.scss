@@ -1,0 +1,128 @@
+//======================================================================
+// Mixins:
+//======================================================================
+
+// Baseline grid css.
+//
+// Usage:
+//
+// `.foo { @include baseline-grid; }`
+
+@mixin baseline-grid {
+	
+	// For positioning of pseudo elements:
+	position: relative;
+	
+	// Show the mouse as a hand:
+	cursor: pointer;
+	cursor: hand;
+	
+	// Disable selection in WebKit/iOS:
+	-webkit-highlight: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-touch-callout: none;
+	-webkit-user-drag: none;
+	-webkit-user-modify: none;
+	-webkit-user-select: none;
+	 -khtml-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	     -o-user-select: none;
+	        user-select: none;
+	
+	// Grid overlay:
+	&::before {
+		background-image:
+			-webkit-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+			-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+			-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+		background-image:
+			-moz-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+			-moz-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+			-moz-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+		background-image:
+			linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+			linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+			linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+		background-size:
+			100% #{relative($base_line-height)}rem,     // Match base `line-height`.
+			100% #{relative($base_line-height) / 2}rem, // Half base `line-height`.
+			100% #{relative($base_line-height) / 4}rem; // Quarter base `line-height`.
+		background-position: 0 0;       // Put line adjustments here.
+		background-origin: content-box; // Regardless of padding, background will begin in the corner of the box.
+		background-attachment: local;   // For scrolling.
+		width: 100%;
+		display: block;
+		position: absolute;
+		top: 0;
+		bottom: -1px; // Allows for the bottom-most border to show.
+		z-index: 999; // Above all other content.
+		content: "";
+		pointer-events: none; // The element is never the target of mouse events.
+	}
+	
+	// On click, hide grid:
+	&:active::before { display: none; }
+	
+	// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
+	&:active * { box-shadow: inset 0 0 0 1px fade-out($baseline_outline-color, .5); }
+	
+}
+
+// Simple baseline mixin.
+//
+// Usage:
+//
+// ```
+// @import "mixins";
+// .foo {
+//     @include baseline($size: 16, $offset: .75, $optional: "italic", $family: "Arial, sans-serif");
+//     @include baseline($size: 16, $offset: .75, $optional: "bold");
+//     @include baseline($size: 16, $offset: .75, $family: "Georgia, serif");
+//     @include baseline($size: 16, $offset: .75);
+//     @include baseline($size: 16);
+// }
+// ```
+//
+// Output:
+//
+// ```
+// .foo {
+//     font: italic 1rem/1.125 Arial, sans-serif;
+//     font: bold 1rem/1.125;
+//     font: 1rem/1.125 Georgia, serif;
+//     font-size: 1rem;
+//     line-height: 1.125;
+//     font-size: 1rem;
+//     line-height: 1.5;
+//     margin: 0.75rem 0;
+// }
+//
+// @see http://stackoverflow.com/questions/3525007
+// @see http://stackoverflow.com/a/12523209/922323
+// @see http://www.impressivewebs.com/css-font-shorthand-property-cheat-sheet/
+//
+// @param { number } $size The `font-size`.
+// @param { number } $offset Baseline offset.
+// @param { string } $unit The `font-size` unit.
+// @param { string } $optional Font shorthand "optionals".
+// @param { string } $family The `font-family`.
+// @return { string } Longhand `font-family` and `line-height` or shorthand `font`.
+
+@mixin baseline($size, $offset: 1, $unit: rem, $optional: null, $family: null) {
+	
+	$font-size: #{relative($size)}$unit;
+	$line-height: baseline($size, $offset);
+	
+	@if $optional or $family {
+		
+		font: unquote($optional) $font-size/$line-height unquote($family);
+		
+	} @else {
+		
+		font-size: $font-size;
+		line-height: $line-height;
+		
+	}
+	
+}

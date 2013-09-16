@@ -1,0 +1,98 @@
+//======================================================================
+// Functions:
+//======================================================================
+
+// Remove units from `$value`.
+//
+// Usage:
+//
+// `.foo { line-height: strip(1.5em); }`
+//
+// Output:
+//
+// `.foo { line-height: 1.5; }`
+//
+// @see https://github.com/mhulse/rex/issues/77
+// @see http://stackoverflow.com/a/12335841/922323
+//
+// @param { number } $value Any value with optional unit.
+// @return { number } $value minus its unit.
+
+@function strip($value) {
+	
+	@return ($value / ($value * 0 + 1));
+	
+}
+
+//----------------------------------------------------------------------
+
+// Convert `$value` to relative number.
+//
+// Usage:
+//
+// ```
+// .foo {
+//     font-size: #{relative(25px)}rem;
+//     margin: #{relative(10)}em 0;
+// }
+// ```
+//
+// Output:
+//
+// ```
+// .foo {
+//     font-size: 1.5625rem;
+//     margin: 0.625rem 0;
+// }
+// ```
+//
+// @param { number } $value Can be a value with or without a unit.
+// @param { number } [ $context = $base_font-size ] Context of relative unit calculation.
+// @return { number } Relative result based on input params.
+
+@function relative($value, $context: $base_font-size) {
+	
+	$value: strip($value);
+	$context: strip($context);
+	
+	@return ($value / $context);
+	
+}
+
+//----------------------------------------------------------------------
+
+// Calculate baseline from `$value`, which is assumed to be the baseline's
+// element's `font-size`.
+//
+// Usage:
+//
+// ```
+// .foo {
+//     line-height: baseline(25, .625);
+//     padding: #{baseline(25, .375) / 2)}em 0;
+// }
+// ```
+//
+// Output:
+//
+// ```
+// .foo {
+//     line-height: 1.2;
+//     padding: 0.36em 0;
+// }
+// ```
+//
+// @param { number } $value A number, assumed to be in pixels, where unit is optional.
+// @param { number } [ $offset = 1 ] Multiply the return value by this number.
+// @param { number } [ $context = $base_line-height ] Base `line-height` of document.
+// @return { number } A number relative to baseline.
+
+@function baseline($value, $offset: 1, $context: $base_line-height) {
+	
+	$value: strip($value);
+	$offset: strip($offset);
+	$context: strip($context);
+	
+	@return ((($context * ceil($value / $context)) / $value) * $offset);
+	
+}

@@ -2,11 +2,10 @@
   "name": "rex",
   "version": "1.0.0",
   "main": [
-    "./demo/rex.css"
+    "./rex/rex.css"
   ],
   "ignore": [
-    "**/.*",
-    "files/styles/tests.scss"
+    "**/.*"
   ],
   "dependencies": {},
   "devDependencies": {}

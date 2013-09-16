@@ -1,0 +1,65 @@
+/**
+ * Rex (O'Herlihan)
+ * Oh yeah, root's kicking in!
+ *
+ * @author Micky Hulse
+ * @link http://mhulse.com
+ * @docs https://github.com/mhulse/rex
+ * @copyright Copyright (c) 2013 Micky Hulse.
+ * @license Released under the Apache License, Version 2.0.
+ * @version 1.0.0
+ * @date 2013/09/15
+ */
+
+.test1 { line-height: 1.5; }
+
+.test2 {
+	font-size: 1.5625rem;
+	line-height: 1.2;
+	padding: .36em 0;
+}
+
+.test3 { line-height: 1.5; }
+
+body { padding: .75rem; }
+
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p { margin-top: 0; }
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+fieldset > div { margin: .75rem 0; }
+
+.marker {
+	font: bold 1.375rem/.95454545454545 Arial, sans-serif;
+	color: #fff;
+	text-transform: none;
+	background: rgba(0, 0, 0, .85);
+	margin: .75rem 0;
+	padding: .47727272727273em;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	box-shadow: 0 0 .3125rem 0 rgba(0, 0, 0, .55);
+}
+
+.subtle {
+	font: normal 1.1875rem/1.10526315789474 monospace, serif;
+	color: #666;
+	margin: .75rem 0;
+}
+
+.scroll {
+	width: 100%;
+	margin: .75rem 0;
+	overflow-y: auto;
+	/*-webkit-overflow-scrolling: touch;*/
+}
+.scroll > * { margin: 0 !important; }

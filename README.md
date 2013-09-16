@@ -70,7 +70,7 @@ There are several ways to install this code:
 1. Download as a [`zip`](https://github.com/mhulse/rex/archive/gh-pages.zip).
 1. Clone it: `$ git clone https://github.com/mhulse/rex.git`.
 1. Fork it and clone: `$ git clone git@github.com:USERNAME/rex.git`.
-1. Just grab the [relevant CSS](https://raw.github.com/mhulse/rex/gh-pages/demo/rex.css) ([minified](https://raw.github.com/mhulse/rex/gh-pages/demo/rex.min.css)).
+1. Just grab the [relevant CSS](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.css) ([minified](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.min.css)).
 1. Using [Bower](http://bower.io/): `$ bower install https://github.com/mhulse/rex.git`.
 
 ### Build process:

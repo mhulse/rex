@@ -1,4 +1,6 @@
-@import "functions", "mixins", "variables";
+@import "partials/functions",
+        "partials/mixins",
+        "partials/variables";
 
 //======================================================================
 // DEVELOPMENT-ONLY CSS
@@ -7,36 +9,14 @@
 // SCSS tests:
 //----------------------------------------------------------------------
 
-.#{$NS}test1 { line-height: baseline(16); }
+.test1 { line-height: baseline(16); }
 
-.#{$NS}test2 {
+.test2 {
 	@include baseline(25, .625);
 	padding: #{baseline(25, .375) / 2}em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
 
-.#{$NS}test3 { line-height: strip(1.5em); }
-
-// Custom headings:
-//----------------------------------------------------------------------
-
-.#{$NS}marker {
-	@include baseline(22, .875, $optional: bold, $family: "Arial, sans-serif");
-	color: #fff;
-	text-transform: none;
-	background: fade-out(#000, .15);
-	margin: #{relative(12)}rem 0;
-	padding: #{baseline(22, .875) / 2}em;
-	display: inline-block;
-	*display: inline;
-	*zoom: 1;
-	box-shadow: 0 0 #{relative(5)}rem 0 fade-out(#000, .45);
-}
-
-.#{$NS}subtle {
-	@include baseline(19, .875, $optional: normal, $family: "monospace, serif");
-	color: #666;
-	margin: #{relative(12)}rem 0;
-}
+.test3 { line-height: strip(1.5em); }
 
 // Demo only:
 //----------------------------------------------------------------------
@@ -55,8 +35,30 @@ img {
 	max-height: 100%;
 }
 
+// Spacing for form elements:
+fieldset > div { margin: #{relative(12)}rem 0; }
+
+.marker {
+	@include baseline(22, .875, $optional: bold, $family: "Arial, sans-serif");
+	color: #fff;
+	text-transform: none;
+	background: fade-out(#000, .15);
+	margin: #{relative(12)}rem 0;
+	padding: #{baseline(22, .875) / 2}em;
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	box-shadow: 0 0 #{relative(5)}rem 0 fade-out(#000, .45);
+}
+
+.subtle {
+	@include baseline(19, .875, $optional: normal, $family: "monospace, serif");
+	color: #666;
+	margin: #{relative(12)}rem 0;
+}
+
 // Responsive tablular data:
-.#{$NS}scroll {
+.scroll {
 	
 	width: 100%;
 	margin: #{relative(12)}rem 0;
@@ -66,6 +68,3 @@ img {
 	& > * { margin: 0 !important; }
 	
 }
-
-// Spacing for form elements:
-fieldset > div { margin: #{relative(12)}rem 0; }
