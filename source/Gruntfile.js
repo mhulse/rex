@@ -410,7 +410,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'./temp/<%= pkg.name %>.css' : './files/styles/rex.scss',
+					'./temp/<%= pkg.name %>.css' : './files/styles/<%= pkg.name %>.scss',
 					'./temp/demo.css' : './files/styles/demo.scss',
 					
 				},
@@ -427,7 +427,7 @@ module.exports = function(grunt) {
 				
 				files : {
 					
-					'./temp/<%= pkg.name %>.min.css' : './files/styles/rex.scss',
+					'./temp/<%= pkg.name %>.min.css' : './files/styles/<%= pkg.name %>.scss',
 					'./temp/demo.min.css' : './files/styles/demo.scss',
 					
 				},
