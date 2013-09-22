@@ -133,7 +133,7 @@ Feature | Description
 `border-box` | If `$flag_natural-box-model` is `true`, then all elements (including pseudo elements) will use `box-sizing: border-box;`; this change affects the box model in that the `width` and `height` properties include the `padding` and `border`, but not the `margin`.
 `.baseline` | If `$flag_baseline` is `true`, then a `.baseline` class becomes available for use; this class should be applied to a wrapping `div` in order to test a "module", "content area" or element's placement on a "local" baseline grid. When the grid is clicked (i.e., `:active`) the base lines will hide and each child element will be outlined with a red border.
 `.h1`-`.h6` | All headings (e.g., `h1` through `h6`) have a corresponding class of the same name (i.e., `.h1` through `.h6`); for more information, read: [Don’t Style Headings Using HTML5 Sections](http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/). These classes can be disabled via the `$flag_heading-classes` variable.
-`.sh1`-`.sh6` | In the same vein as the heading classes above, there's a set of subheading classes (i.e., `.sh1` through `.sh6`) that have similar functionality and can be disable via the `$flag_subheading-classes` variable.
+`.sh1`-`.sh6` | In the same vein as the heading classes above, there's a set of subheading classes (i.e., `.sh1` through `.sh6`) that have similar functionality and can be disabled via the `$flag_subheading-classes` variable.
 
 ## Caveats, limitations and/or assumptions
 
