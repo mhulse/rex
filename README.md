@@ -58,7 +58,7 @@ Just watch **[Rustlers' Rhapsody](http://amzn.to/19CUPdE)** ([Amazon VOD](http:/
 
 ## Demonstration
 
-DEVELOPMENT &bull;&nbsp;[html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.html) &bull;&nbsp;[css](https://raw.github.com/mhulse/rex/gh-pages/demo/rex.css) | PRODUCTION &bull;&nbsp;[html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.min.html) &bull;&nbsp;[css](https://raw.github.com/mhulse/rex/gh-pages/demo/rex.min.css)
+DEVELOPMENT &bull;&nbsp;[html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.html) &bull;&nbsp;[css](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.css) | PRODUCTION &bull;&nbsp;[html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.min.html) &bull;&nbsp;[css](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.min.css)
 :-: | :-:
 [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/rex/demo/&chs=240x240)](http://mhulse.github.io/rex/demo/) | [![qr code](http://chart.apis.google.com/chart?cht=qr&chl=http://mhulse.github.io/rex/demo/index.min.html&chs=240x240)](http://mhulse.github.io/rex/demo/index.min.html)
 
