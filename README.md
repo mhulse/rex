@@ -142,7 +142,7 @@ Feature | Description
 
 ## Contributing
 
-Please read the [CONTRIBUTING.md](https://github.com/mhulse/rex/blob/gh-pages/CONTRIBUTING.md).
+Please review the [contributing guidelines](https://github.com/mhulse/rex/blob/gh-pages/CONTRIBUTING.md) for this repository.
 
 ## Feedback
 
