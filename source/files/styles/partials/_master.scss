@@ -396,8 +396,8 @@ blockquote {
 	
 	margin: #{relative(12)}rem #{relative(24)}rem;
 	
-	& > :first-child { margin-top: 0 !important; }
-	& > :last-child { margin-bottom: 0 !important; }
+	> :first-child { margin-top: 0 !important; }
+	> :last-child { margin-bottom: 0 !important; }
 	
 }
 
@@ -446,13 +446,13 @@ dl {
 	margin: #{relative(12)}rem 0;
 	padding: 0;
 	
-	& dt,
+	dt,
 	dd {
 		margin: 0 0 #{relative(6)}rem;
 		padding: 0;
 	}
 	
-	& dd { margin-left: #{relative(8)}rem; }
+	dd { margin-left: #{relative(8)}rem; }
 	
 }
 
@@ -481,14 +481,14 @@ figure {
 	
 	margin: #{relative(12)}rem 0;
 	
-	& figcaption {
+	figcaption {
 		
 		@include baseline(14, .875);
 		
-		& p { font-size: inherit; }
+		p { font-size: inherit; }
 		
-		& > :first-child { margin-top: 0 !important; }
-		& > :last-child { margin-bottom: 0 !important; }
+		> :first-child { margin-top: 0 !important; }
+		> :last-child { margin-bottom: 0 !important; }
 		
 	}
 	
@@ -543,12 +543,12 @@ ol,
 	padding: 0;
 	list-style-position: outside;
 	
-	& li {
+	li {
 		margin: 0 0 #{baseline(16, .25)}rem; // (1.5 * .25) = .375 (6px)
 		padding: 0;
 	}
 	
-	& li img {
+	li img {
 		display: inline;
 		vertical-align: top;
 	}
@@ -604,7 +604,7 @@ ul {
 	
 	margin-left: #{relative(24)}rem;
 	
-	li & { margin-left: #{relative(8)}rem; }
+	& li & { margin-left: #{relative(8)}rem; }
 	
 }
 
