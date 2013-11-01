@@ -139,6 +139,7 @@ Feature | Description
 
 1. If you change the base `font-size` and `line-height`, there's no guarantees that out of the box styles will adapt well; in other words, changing these variables will probably require one to adjust each of Rex's elements to fit the new base values.
 1. Due to the "fudge factor", the `.baseline` class does not actually align its grid lines to the baseline of a character; instead, this class aligns the text to the vertical center of a grid line.
+1. Buyer beware: I make heavy use of the [`rem` unit](http://snook.ca/archives/html_and_css/font-size-with-rem), with no fallbacks.
 
 ## Contributing
 
