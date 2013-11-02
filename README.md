@@ -95,8 +95,10 @@ Available SCSS overrides and utilities:
 Name | Description | Default
 :-- | :-- | :--
 `$NS` | Selector's "pseudo namespace" prefix | `rex_`
+`$browser_font-size` | Browser default `font-size`. | `16px`
 `$base_font-size` | Base `font-size`. | `16px`
 `$base_line-height` | Base `line-height`. | `24px`
+`$base_margin` | Base `margin`. | `12px`
 `$flag_natural-box-model` | Natural box layout? | `true`
 `$flag_baseline` | Include the baseline class? | `true`
 `$flag_heading-classes` | Heading classes? | `true`
@@ -115,9 +117,10 @@ Name | Description
 
 ### Mixins:
 
-Name | Description
+Name | Shorthand | Description
 :-- | :--
-`baseline` | Simple baseline mixin.
+`baseline` | `bl` | Simple baseline mixin.
+`baseline-grid` | `blg` | Baseline grid css.
 
 ## CSS
 
@@ -151,6 +154,7 @@ Please review the [contributing guidelines](https://github.com/mhulse/rex/blob/g
 
 ## [Release history](https://github.com/mhulse/rex/releases)
 
+* 2013-09-15   [v1.2.0](https://github.com/mhulse/rex/releases/tag/v1.2.0)   More control.
 * 2013-09-15   [v1.1.0](https://github.com/mhulse/rex/releases/tag/v1.1.0)   Better organization.
 * 2013-09-13   [v1.0.0](https://github.com/mhulse/rex/releases/tag/v1.0.0)   On, Wildfire, on!
 * 2013-08-25   [v0.4.0](https://github.com/mhulse/rex/releases/tag/v0.4.0)   Bower version bump.

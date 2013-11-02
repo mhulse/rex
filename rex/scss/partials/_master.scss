@@ -126,7 +126,7 @@
 // @see http://dev.w3.org/html5/spec#the-html-element
 // @see http://ç.whatwg.org#the-html-element
 
-html {}
+html { font-size: percentage(relative($base_font-size, $browser_font-size)); }
 
 //======================================================================
 // SECTIONS
@@ -142,6 +142,8 @@ html {}
 // @see http://stackoverflow.com/questions/2703056/body-font-size-100-01-vs-body-font-size-100
 // @see http://www.sitepoint.com/typography-baseline-rhythm-deciphered/
 // @see http://modularscale.com/scale/?px1=16&px2=40&ra1=1.618&ra2=0
+// @see http://snook.ca/archives/html_and_css/font-size-with-rem
+// @see http://csswizardry.com/2011/05/font-sizing-with-rem-could-be-avoided/
 // @see https://developer.mozilla.org/docs/web/html/element/body
 // @see https://developer.mozilla.org/docs/web/css/font-smooth
 // @see http://dev.w3.org/html5/spec#the-body-element
@@ -162,8 +164,8 @@ body {
 // @see http://ç.whatwg.org#the-address-element
 
 address {
-	@include baseline(16, .75);
-	margin: #{relative(12)}rem 0;
+	@include baseline($base_font-size, .75);
+	margin: #{relative($base_margin)}rem 0;
 }
 
 // The `<article>` element represents a section of a page that consists of
@@ -227,27 +229,27 @@ h4,
 h5,
 h6,
 %h1-h2-h3-h4-h5-h6 {
-	@include baseline(16);
+	@include baseline($base_font-size);
 	margin: 0 0 .125em;
 }
 
 h1,
-%h1 { @include baseline(46); }
+%h1 { @include baseline($base_font-size + 30); }
 
 h2,
-%h2 { @include baseline(40, .875); }
+%h2 { @include baseline($base_font-size + 24, .875); }
 
 h3,
-%h3 { @include baseline(34, .75); }
+%h3 { @include baseline($base_font-size + 18, .75); }
 
 h4,
-%h4 { @include baseline(28, .625); }
+%h4 { @include baseline($base_font-size + 12, .625); }
 
 h5,
-%h5 { @include baseline(22); }
+%h5 { @include baseline($base_font-size + 6); }
 
 h6,
-%h6 { @include baseline(18, .875); }
+%h6 { @include baseline($base_font-size + 2, .875); }
 
 @if $flag_heading-classes {
 	
@@ -394,7 +396,7 @@ section {}
 
 blockquote {
 	
-	margin: #{relative(12)}rem #{relative(24)}rem;
+	margin: #{relative($base_margin)}rem #{relative($base_margin * 2)}rem;
 	
 	> :first-child { margin-top: 0 !important; }
 	> :last-child { margin-bottom: 0 !important; }
@@ -442,17 +444,17 @@ div {}
 
 dl {
 	
-	@include baseline(16, .75);
-	margin: #{relative(12)}rem 0;
+	@include baseline($base_font-size, .75);
+	margin: #{relative($base_margin)}rem 0;
 	padding: 0;
 	
 	dt,
 	dd {
-		margin: 0 0 #{relative(6)}rem;
+		margin: 0 0 #{relative($base_margin / 2)}rem;
 		padding: 0;
 	}
 	
-	dd { margin-left: #{relative(8)}rem; }
+	dd { margin-left: #{relative($base_margin / 1.5)}rem; }
 	
 }
 
@@ -479,11 +481,11 @@ dl {
 
 figure {
 	
-	margin: #{relative(12)}rem 0;
+	margin: #{relative($base_margin)}rem 0;
 	
 	figcaption {
 		
-		@include baseline(14, .875);
+		@include baseline($base_font-size - 2, .875);
 		
 		p { font-size: inherit; }
 		
@@ -512,7 +514,7 @@ hr,
 	border-top-width: #{relative(1)}rem;
 	border-style: solid;
 	height: 0;
-	margin: #{relative(12)}rem 0;
+	margin: #{relative($base_margin)}rem 0;
 	padding: 0;
 	-moz-box-sizing: content-box;
 	     box-sizing: content-box;
@@ -538,13 +540,13 @@ hr,
 ol,
 %ol {
 	
-	@include baseline(16, .75);
-	margin: #{relative(12)}rem 0;
+	@include baseline($base_font-size, .75);
+	margin: #{relative($base_margin)}rem 0;
 	padding: 0;
 	list-style-position: outside;
 	
 	li {
-		margin: 0 0 #{baseline(16, .25)}rem; // (1.5 * .25) = .375 (6px)
+		margin: 0 0 #{baseline($base_font-size, .25)}rem; // (1.5 * .25) = .375 (6px)
 		padding: 0;
 	}
 	
@@ -557,9 +559,9 @@ ol,
 
 ol {
 	
-	margin-left: #{relative(40)}rem;
+	margin-left: #{relative($base_margin * 4)}rem;
 	
-	li & { margin-left: #{relative(40)}rem; }
+	li & { margin-left: #{relative($base_margin * 4)}rem; }
 	
 }
 
@@ -570,8 +572,8 @@ ol {
 // @see http://ç.whatwg.org#the-p-element
 
 p {
-	@include baseline(16);
-	margin: #{baseline(16, .5)}rem 0; // (1.5 / 2) = .75
+	@include baseline($base_font-size);
+	margin: #{baseline($base_font-size, .5)}rem 0;
 }
 
 // The `<pre>` element represents a block of preformatted text, in which
@@ -586,8 +588,8 @@ p {
 // @see http://ç.whatwg.org#the-pre-element
 
 pre {
-	@include baseline(14, .75);
-	margin: #{relative(12)}rem 0;
+	@include baseline($base_font-size - 2, .75);
+	margin: #{relative($base_margin)}rem 0;
 }
 
 // The `<ul>` element represents a list of items, where the order of the
@@ -602,9 +604,9 @@ ul { @extend %ol; }
 
 ul {
 	
-	margin-left: #{relative(24)}rem;
+	margin-left: #{relative($base_margin * 2)}rem;
 	
-	& li & { margin-left: #{relative(8)}rem; }
+	& li & { margin-left: #{relative($base_margin / 1.5)}rem; }
 	
 }
 
@@ -722,8 +724,7 @@ cite {}
 // @see http://dev.w3.org/html5/spec#the-code-element
 // @see http://ç.whatwg.org#the-code-element
 
-code,
-%code { font-size: #{relative(16)}em; }
+code {}
 
 // The `<data>` element links a given content with a machine-readable
 // translation. If the content is time- or date-related, the `<time>` must
@@ -801,7 +802,7 @@ i {}
 // @see http://dev.w3.org/html5/spec#the-kbd-element
 // @see http://ç.whatwg.org#the-kbd-element
 
-kbd { @extend %code; }
+kbd {}
 
 // The `<mark>` element represents a run of text in one document marked or
 // highlighted because of its relevance in another context.
@@ -883,7 +884,7 @@ s {}
 // @see http://dev.w3.org/html5/spec#the-samp-element
 // @see http://ç.whatwg.org#the-samp-element
 
-samp { @extend %code; }
+samp {}
 
 // The `<small>` element represents side comments such as small print. It
 // is not intended to be presentational. The `<small>` element should not
@@ -1258,8 +1259,8 @@ table {
 // @see http://ç.whatwg.org#the-caption-element
 
 caption {
-	@include baseline(14, .75);
-	padding: #{baseline(14, .25) / 2}em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
+	@include baseline($base_font-size - 2, .75);
+	padding: #{baseline($base_font-size - 2, .25) / 2}em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
 }
 
 // The `<colgroup>` element represents a group of one or more columns in a
@@ -1327,9 +1328,9 @@ tr {}
 
 th,
 %th {
-	@include baseline(16, .75);
+	@include baseline($base_font-size, .75);
 	margin: 0;
-	padding: #{baseline(16, .25) / 2}em 0; // (((1.5 * .25) = .375) / 2) = .1875
+	padding: #{baseline($base_font-size, .25) / 2}em 0; // (((1.5 * .25) = .375) / 2) = .1875
 }
 
 // The `<td>` element represents a data cell in a `<table>` element.
@@ -1382,7 +1383,7 @@ button,
 // @see http://ç.whatwg.org#the-fieldset-element
 
 fieldset {
-	margin: #{relative(16)}rem 0;
+	margin: #{relative($base_font-size)}rem 0;
 	padding: #{relative(1)}rem 0 0; // Prevents margin collapse.
 }
 
@@ -1398,7 +1399,7 @@ fieldset {
 
 input,
 %input {
-	font-size: #{relative(16)}em;
+	font-size: #{relative($base_font-size)}em;
 	line-height: normal;
 	vertical-align: baseline;
 }
@@ -1495,10 +1496,10 @@ input[type="submit"] {}
 
 input[type="text"],
 %input-text {
-	@include baseline(16, 1, em);
-	height: #{relative(24)}rem;
+	@include baseline($base_font-size, 1, em);
+	height: #{relative($base_line-height)}rem;
 	margin: 0;
-	padding: 0 #{relative(4)}em;
+	padding: 0 #{relative($base_line-height / 6)}em;
 	vertical-align: baseline;
 }
 
@@ -1512,7 +1513,7 @@ input[type="text"],
 // @see http://ç.whatwg.org#the-label-element
 
 label {
-	@include baseline(16, 1, em);
+	@include baseline($base_font-size, 1, em);
 	vertical-align: middle;
 }
 
@@ -1524,9 +1525,9 @@ label {
 // @see http://ç.whatwg.org#the-legend-element
 
 legend {
-	@include baseline(18, .875);
+	@include baseline($base_font-size + 2, .875);
 	margin: 0;
-	padding: 0 0 #{baseline(18, .25)}em; // (1.33333333333333 * .25) = .33333333333333
+	padding: 0 0 #{baseline($base_font-size + 2, .25)}em; // (1.33333333333333 * .25) = .33333333333333
 }
 
 // The `<optgroup>` element represents a group of `<option>` elements with
@@ -1567,7 +1568,7 @@ option {}
 // @see http://ç.whatwg.org#the-select-element
 
 select {
-	@include baseline(16, 1, em);
+	@include baseline($base_font-size, 1, em);
 	vertical-align: baseline;
 }
 
@@ -1582,8 +1583,8 @@ select {
 // @see http://ç.whatwg.org#the-textarea-element
 
 textarea {
-	@include baseline(16, 1, em);
-	min-height: #{relative(120)}rem;
+	@include baseline($base_font-size, 1, em);
+	min-height: #{relative($base_line-height * 5)}rem;
 	overflow: auto;
 	margin: 0;
 	padding: 0;

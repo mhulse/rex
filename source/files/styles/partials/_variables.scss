@@ -5,11 +5,17 @@
 // Selector's "pseudo namespace" prefix:
 $NS: 'rex_' !default;
 
+// Browser default `font-size`:
+$browser_font-size: 16px !default;
+
 // Base `font-size`:
 $base_font-size: 16px !default;
 
 // Base `line-height`:
 $base_line-height: 24px !default;
+
+// Base `margin`:
+$base_margin: 12px !default;
 
 // Natural box layout?
 $flag_natural-box-model: true !default;
