@@ -119,7 +119,7 @@ Name | Description
 ### Mixins:
 
 Name | Shorthand | Description
-:-- | :--
+:-- | :-- | :--
 `baseline` | `bl` | Simple baseline mixin.
 `baseline-grid` | `blg` | Baseline grid css.
 
