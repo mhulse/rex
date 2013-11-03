@@ -9,11 +9,11 @@
 // SCSS tests:
 //----------------------------------------------------------------------
 
-.test1 { line-height: baseline(16); }
+.test1 { line-height: baseline($base_font-size + 9); }
 
 .test2 {
-	@include baseline(25, .625);
-	padding: #{baseline(25, .375) / 2}em 0; // (((1.92 * .375) = .72) / 2) = .36
+	@include baseline($base_font-size + 9, .625);
+	padding: #{baseline($base_font-size + 9, .375) / 2}em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
 
 .test3 { line-height: strip(1.5em); }
@@ -22,7 +22,7 @@
 //----------------------------------------------------------------------
 
 // Spacing for demo's sake:
-body { padding: #{relative(12)}rem; }
+body { padding: #{relative($base_margin)}rem; }
 
 // Tidy-up paragraphs after headings:
 h1, h2, h3, h4, h5, h6 {
@@ -36,32 +36,32 @@ img {
 }
 
 // Spacing for form elements:
-fieldset > div { margin: #{relative(12)}rem 0; }
+fieldset > div { margin: #{relative($base_margin)}rem 0; }
 
 .marker {
-	@include baseline(22, .875, $optional: bold, $family: "Arial, sans-serif");
+	@include baseline($base_font-size + 6, .875, $optional: bold, $family: "Arial, sans-serif");
 	color: #fff;
 	text-transform: none;
 	background: fade-out(#000, .15);
-	margin: #{relative(12)}rem 0;
-	padding: #{baseline(22, .875) / 2}em;
+	margin: #{relative($base_margin)}rem 0;
+	padding: #{baseline($base_font-size + 6, .875) / 2}em;
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	box-shadow: 0 0 #{relative(5)}rem 0 fade-out(#000, .45);
+	box-shadow: 0 0 #{relative(5)}em 0 fade-out(#000, .45);
 }
 
 .subtle {
-	@include baseline(19, .875, $optional: normal, $family: "monospace, serif");
+	@include baseline($base_font-size + 3, .875, $optional: normal, $family: "monospace, serif");
 	color: #666;
-	margin: #{relative(12)}rem 0;
+	margin: #{relative($base_margin)}rem 0;
 }
 
 // Responsive tablular data:
 .scroll {
 	
 	width: 100%;
-	margin: #{relative(12)}rem 0;
+	margin: #{relative($base_margin)}rem 0;
 	overflow-y: auto;
 	/*-webkit-overflow-scrolling: touch;*/
 	
