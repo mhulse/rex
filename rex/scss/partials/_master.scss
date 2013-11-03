@@ -561,7 +561,7 @@ ol {
 	
 	margin-left: #{relative($base_margin * 4)}rem;
 	
-	li & { margin-left: #{relative($base_margin * 4)}rem; }
+	& li & { margin-left: #{relative($base_margin * 4)}rem; }
 	
 }
 
