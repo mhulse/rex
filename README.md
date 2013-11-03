@@ -22,6 +22,7 @@
 	- [Features](#features)
 - [Caveats, limitations and/or assumptions](#caveats-limitations-andor-assumptions)
 - [Contributing](#contributing)
+	- [Bumping the version](#bumping-the-version)
 - [Feedback](#feedback)
 - [Release history](#release-history)
 - [LEGAL](#legal)
@@ -148,13 +149,28 @@ Feature | Description
 
 Please review the [contributing guidelines](https://github.com/mhulse/rex/blob/gh-pages/CONTRIBUTING.md) for this repository.
 
+### Bumping the version:
+
+**Note:** REX uses [Semantic Versioning](http://semver.org/).
+
+1. When a build is ready for a version bump ...
+1. Update `version` key value in `source/package.json`.
+1. Update `version` key value in `bower.json`.
+1. Build: `$ grunt`.
+1. Add [release note to README](https://github.com/mhulse/rex#release-history) (if copy/pasting, don't forget to update the date and version numbers).
+1. Push changes to GitHub.
+1. Visit the [releases page](https://github.com/mhulse/rex/releases) and click "[Draft a new release](https://github.com/mhulse/rex/releases/new)".
+1. Type the new version number in the "Tag version" field (e.g., `v1.2.1`).
+1. Click "Publish release".
+
 ## Feedback
 
 [Bugs? Constructive feedback? Questions?](https://github.com/mhulse/rex/issues)
 
 ## [Release history](https://github.com/mhulse/rex/releases)
 
-* 2013-09-15   [v1.2.0](https://github.com/mhulse/rex/releases/tag/v1.2.0)   More control.
+* 2013-11-03   [v1.2.1](https://github.com/mhulse/rex/releases/tag/v1.2.1)   Minor v1.2.1 patch.
+* 2013-11-01   [v1.2.0](https://github.com/mhulse/rex/releases/tag/v1.2.0)   More control.
 * 2013-09-15   [v1.1.0](https://github.com/mhulse/rex/releases/tag/v1.1.0)   Better organization.
 * 2013-09-13   [v1.0.0](https://github.com/mhulse/rex/releases/tag/v1.0.0)   On, Wildfire, on!
 * 2013-08-25   [v0.4.0](https://github.com/mhulse/rex/releases/tag/v0.4.0)   Bower version bump.
