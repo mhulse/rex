@@ -7,7 +7,7 @@
  * @docs https://github.com/mhulse/rex
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
- * @version 1.2.0
+ * @version 1.2.1
  * @date 2013/11/03
  */
 

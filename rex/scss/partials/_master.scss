@@ -448,15 +448,15 @@ dl {
 	margin: #{relative($base_margin)}rem 0;
 	padding: 0;
 	
-	dt,
-	dd {
-		margin: 0 0 #{relative($base_margin / 2)}rem;
-		padding: 0;
-	}
-	
-	dd { margin-left: #{relative($base_margin / 1.5)}rem; }
-	
 }
+
+dt,
+dd {
+	margin: 0 0 #{relative($base_margin / 2)}rem;
+	padding: 0;
+}
+
+dd { margin-left: #{relative($base_margin / 1.5)}rem; }
 
 // The `<figure>` element represents some flow content, optionally with a
 // caption, that is self-contained and is typically referenced as a single
@@ -479,20 +479,16 @@ dl {
 // @see http://dev.w3.org/html5/spec#the-figcaption-element
 // @see http://ç.whatwg.org#the-figcaption-element
 
-figure {
+figure { margin: #{relative($base_margin)}rem 0; }
+
+figcaption {
 	
-	margin: #{relative($base_margin)}rem 0;
+	@include baseline($base_font-size - 2, .875);
 	
-	figcaption {
-		
-		@include baseline($base_font-size - 2, .875);
-		
-		p { font-size: inherit; }
-		
-		> :first-child { margin-top: 0 !important; }
-		> :last-child { margin-bottom: 0 !important; }
-		
-	}
+	p { font-size: inherit; }
+	
+	> :first-child { margin-top: 0 !important; }
+	> :last-child { margin-bottom: 0 !important; }
 	
 }
 
@@ -539,31 +535,29 @@ hr,
 
 ol,
 %ol {
-	
 	@include baseline($base_font-size, .75);
 	margin: #{relative($base_margin)}rem 0;
 	padding: 0;
 	list-style-position: outside;
-	
-	li {
-		margin: 0 0 #{baseline($base_font-size, .25)}rem; // (1.5 * .25) = .375 (6px)
-		padding: 0;
-	}
-	
-	li img {
-		display: inline;
-		vertical-align: top;
-	}
-	
+}
+
+li {
+	margin: 0 0 #{baseline($base_font-size, .25)}rem; // (1.5 * .25) = .375 (6px)
+	padding: 0;
+}
+
+li img {
+	display: inline;
+	vertical-align: top;
 }
 
 ol {
 	
 	margin-left: #{relative($base_margin * 4)}rem;
 	
-	& li & { margin-left: #{relative($base_margin * 4)}rem; }
-	
 }
+
+li ol { margin-left: #{relative($base_margin * 4)}rem; }
 
 // The `<p>` element represents a paragraph.
 //
@@ -600,15 +594,12 @@ pre {
 // @see http://dev.w3.org/html5/spec#the-ul-element
 // @see http://ç.whatwg.org#the-ul-element
 
-ul { @extend %ol; }
-
 ul {
-	
+	@extend %ol;
 	margin-left: #{relative($base_margin * 2)}rem;
-	
-	& li & { margin-left: #{relative($base_margin / 1.5)}rem; }
-	
 }
+
+li ul { margin-left: #{relative($base_margin / 1.5)}rem; }
 
 //======================================================================
 // TEXT-LEVEL SEMANTICS
