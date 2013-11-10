@@ -99,11 +99,12 @@ Name | Description | Default
 `$browser_font-size` | Browser default `font-size`. | `16px`
 `$base_font-size` | Base `font-size`. | `16px`
 `$base_line-height` | Base `line-height`. | `24px`
-`$base_margin` | Base `margin`. | `12px`
 `$flag_natural-box-model` | Natural box layout? | `true`
-`$flag_baseline` | Include the baseline class? | `true`
 `$flag_heading-classes` | Heading classes? | `true`
 `$flag_subheading-classes` | Subheading classes? | `true`
+`$flag_tables` | Table styles? | `true`
+`$flag_forms` | Form styles? | `true`
+`$flag_baseline` | Include the baseline class? | `true`
 `$baseline_major-grid-color` | Baseline "major" grid color. | `#f00`
 `$baseline_minor-grid-color` | Baseline "minor" grid color. | `#0ff`
 `$baseline_outline-color` | Baseline "outline" grid color. | `#f00`
@@ -151,9 +152,8 @@ Please review the [contributing guidelines](https://github.com/mhulse/rex/blob/g
 
 ### Bumping the version:
 
-**Note:** REX uses [Semantic Versioning](http://semver.org/).
+When a build is ready for a version bump ...
 
-1. When a build is ready for a version bump ...
 1. Update `version` key value in `source/package.json`.
 1. Update `version` key value in `bower.json`.
 1. Build: `$ grunt`.
@@ -163,12 +163,15 @@ Please review the [contributing guidelines](https://github.com/mhulse/rex/blob/g
 1. Type the new version number in the "Tag version" field (e.g., `v1.2.1`).
 1. Click "Publish release".
 
+**Note:** REX uses [Semantic Versioning](http://semver.org/).
+
 ## Feedback
 
 [Bugs? Constructive feedback? Questions?](https://github.com/mhulse/rex/issues)
 
 ## [Release history](https://github.com/mhulse/rex/releases)
 
+* 2013-11-09   [v2.0.0](https://github.com/mhulse/rex/releases/tag/v2.0.0)   Simplified base styles.
 * 2013-11-03   [v1.2.1](https://github.com/mhulse/rex/releases/tag/v1.2.1)   Minor v1.2.1 patch.
 * 2013-11-01   [v1.2.0](https://github.com/mhulse/rex/releases/tag/v1.2.0)   More control.
 * 2013-09-15   [v1.1.0](https://github.com/mhulse/rex/releases/tag/v1.1.0)   Better organization.

@@ -163,10 +163,7 @@ body {
 // @see http://dev.w3.org/html5/spec#the-address-element
 // @see http://ç.whatwg.org#the-address-element
 
-address {
-	@include baseline($base_font-size, .75);
-	margin: #{relative($base_margin)}rem 0;
-}
+address {}
 
 // The `<article>` element represents a section of a page that consists of
 // a composition that forms an independent part of a document, page, or
@@ -228,28 +225,31 @@ h3,
 h4,
 h5,
 h6,
-%h1-h2-h3-h4-h5-h6 {
+%rex_h1-h2-h3-h4-h5-h6 {
 	@include baseline($base_font-size);
-	margin: 0 0 .125em;
+	margin: {
+		top: 0;
+		bottom: .125em;
+	}
 }
 
 h1,
-%h1 { @include baseline($base_font-size + 30); }
+%rex_h1 { @include baseline($base_font-size + 30); }
 
 h2,
-%h2 { @include baseline($base_font-size + 24, .875); }
+%rex_h2 { @include baseline($base_font-size + 24, .875); }
 
 h3,
-%h3 { @include baseline($base_font-size + 18, .75); }
+%rex_h3 { @include baseline($base_font-size + 18, .75); }
 
 h4,
-%h4 { @include baseline($base_font-size + 12, .625); }
+%rex_h4 { @include baseline($base_font-size + 12, .625); }
 
 h5,
-%h5 { @include baseline($base_font-size + 6); }
+%rex_h5 { @include baseline($base_font-size + 6); }
 
 h6,
-%h6 { @include baseline($base_font-size + 2, .875); }
+%rex_h6 { @include baseline($base_font-size + 2, .875); }
 
 @if $flag_heading-classes {
 	
@@ -258,14 +258,14 @@ h6,
 	.#{$NS}h3,
 	.#{$NS}h4,
 	.#{$NS}h5,
-	.#{$NS}h6 { @extend %h1-h2-h3-h4-h5-h6; }
+	.#{$NS}h6 { @extend %rex_h1-h2-h3-h4-h5-h6; }
 	
-	.#{$NS}h1 { @extend %h1; }
-	.#{$NS}h2 { @extend %h2; }
-	.#{$NS}h3 { @extend %h3; }
-	.#{$NS}h4 { @extend %h4; }
-	.#{$NS}h5 { @extend %h5; }
-	.#{$NS}h6 { @extend %h6; }
+	.#{$NS}h1 { @extend %rex_h1; }
+	.#{$NS}h2 { @extend %rex_h2; }
+	.#{$NS}h3 { @extend %rex_h3; }
+	.#{$NS}h4 { @extend %rex_h4; }
+	.#{$NS}h5 { @extend %rex_h5; }
+	.#{$NS}h6 { @extend %rex_h6; }
 	
 }
 
@@ -276,7 +276,7 @@ h6,
 	.#{$NS}sh3,
 	.#{$NS}sh4,
 	.#{$NS}sh5,
-	.#{$NS}sh6 { @extend %h1-h2-h3-h4-h5-h6; }
+	.#{$NS}sh6 { @extend %rex_h1-h2-h3-h4-h5-h6; }
 	
 	.#{$NS}sh1,
 	.#{$NS}sh2,
@@ -285,12 +285,12 @@ h6,
 	.#{$NS}sh5,
 	.#{$NS}sh6 { font-weight: normal; }
 	
-	.#{$NS}sh1 { @extend %h1; }
-	.#{$NS}sh2 { @extend %h2; }
-	.#{$NS}sh3 { @extend %h3; }
-	.#{$NS}sh4 { @extend %h4; }
-	.#{$NS}sh5 { @extend %h5; }
-	.#{$NS}sh6 { @extend %h6; }
+	.#{$NS}sh1 { @extend %rex_h1; }
+	.#{$NS}sh2 { @extend %rex_h2; }
+	.#{$NS}sh3 { @extend %rex_h3; }
+	.#{$NS}sh4 { @extend %rex_h4; }
+	.#{$NS}sh5 { @extend %rex_h5; }
+	.#{$NS}sh6 { @extend %rex_h6; }
 	
 }
 
@@ -394,14 +394,7 @@ section {}
 // @see http://dev.w3.org/html5/spec#the-blockquote-element
 // @see http://ç.whatwg.org#the-blockquote-element
 
-blockquote {
-	
-	margin: #{relative($base_margin)}rem #{relative($base_margin * 2)}rem;
-	
-	> :first-child { margin-top: 0 !important; }
-	> :last-child { margin-bottom: 0 !important; }
-	
-}
+blockquote {}
 
 // The `<div>` element has no special meaning at all. It represents its
 // children. It can be used with the `class`, `lang`, and `title`
@@ -424,39 +417,31 @@ div {}
 // group are alternatives; multiple paragraphs forming part of the same
 // value must all be given within the same dd element.
 //
+// @see http://www.maxdesign.com.au/articles/definition/
+// @see https://developer.mozilla.org/docs/web/html/element/dl
+// @see http://dev.w3.org/html5/spec#the-dl-element
+// @see http://ç.whatwg.org#the-dl-element
+
+dl {}
+
 // The `<dt>` (description term) element represents the term, or name,
 // part of a term-description group in a description list (`<dl>` element).
 //
+// @see https://developer.mozilla.org/docs/web/html/element/dd
+// @see http://dev.w3.org/html5/spec#the-dd-element
+// @see http://ç.whatwg.org#the-dd-element
+
+dt { @extend %rex_list; }
+
 // The `<dd>` (description definition) element represents the description,
 // definition, or value, part of a term-description group in a description
 // list (`<dl>` element).
 //
-// @see http://www.maxdesign.com.au/articles/definition/
-// @see https://developer.mozilla.org/docs/web/html/element/dl
-// @see https://developer.mozilla.org/docs/web/html/element/dt
 // @see https://developer.mozilla.org/docs/web/html/element/dd
-// @see http://dev.w3.org/html5/spec#the-dl-element
-// @see http://ç.whatwg.org#the-dl-element
-// @see http://dev.w3.org/html5/spec#the-dt-element
-// @see http://ç.whatwg.org#the-dt-element
 // @see http://dev.w3.org/html5/spec#the-dd-element
 // @see http://ç.whatwg.org#the-dd-element
 
-dl {
-	
-	@include baseline($base_font-size, .75);
-	margin: #{relative($base_margin)}rem 0;
-	padding: 0;
-	
-}
-
-dt,
-dd {
-	margin: 0 0 #{relative($base_margin / 2)}rem;
-	padding: 0;
-}
-
-dd { margin-left: #{relative($base_margin / 1.5)}rem; }
+dd { @extend %rex_list; }
 
 // The `<figure>` element represents some flow content, optionally with a
 // caption, that is self-contained and is typically referenced as a single
@@ -468,29 +453,21 @@ dd { margin-left: #{relative($base_margin / 1.5)}rem; }
 // document, be moved away from that primary content — e.g., to the side
 // of the page, to dedicated pages, or to an appendix.
 //
+// @see https://developer.mozilla.org/docs/web/html/element/figure
+// @see http://dev.w3.org/html5/spec#the-figure-element
+// @see http://ç.whatwg.org#the-figure-element
+
+figure {}
+
 // The `<figcaption>` element represents a caption or legend for the rest
 // of the contents of the `<figcaption>` element's parent figure element,
 // if any.
 //
-// @see https://developer.mozilla.org/docs/web/html/element/figure
 // @see https://developer.mozilla.org/docs/web/html/element/figcaption
-// @see http://dev.w3.org/html5/spec#the-figure-element
-// @see http://ç.whatwg.org#the-figure-element
 // @see http://dev.w3.org/html5/spec#the-figcaption-element
 // @see http://ç.whatwg.org#the-figcaption-element
 
-figure { margin: #{relative($base_margin)}rem 0; }
-
-figcaption {
-	
-	@include baseline($base_font-size - 2, .875);
-	
-	p { font-size: inherit; }
-	
-	> :first-child { margin-top: 0 !important; }
-	> :last-child { margin-bottom: 0 !important; }
-	
-}
+figcaption {}
 
 // The `<hr>` element represents a paragraph-level thematic break. It
 // separates different topics within a section of prose, or between scenes
@@ -504,60 +481,36 @@ figcaption {
 // @see http://dev.w3.org/html5/spec#the-hr-element
 // @see http://ç.whatwg.org#the-hr-element
 
-hr,
-.#{$NS}hr {
-	border: 0;
-	border-top-width: #{relative(1)}rem;
-	border-style: solid;
-	height: 0;
-	margin: #{relative($base_margin)}rem 0;
-	padding: 0;
-	-moz-box-sizing: content-box;
-	     box-sizing: content-box;
-}
+hr {}
 
 // The `<ol>` element represents a list of items, where the items have
 // been intentionally ordered, such that changing the order would change
 // the meaning of the list.
 //
+// @see https://developer.mozilla.org/docs/web/html/element/ol
+// @see http://dev.w3.org/html5/spec#the-ol-element
+// @see http://ç.whatwg.org#the-ol-element
+
+ol {}
+
 // The `<li>` element represents a list item. If its parent element is an
 // `<ol>`, `<ul>`, or `<menu>` element, then the element is an item of the
 // parent element's list, as defined for those elements. Otherwise, the
 // list item has no defined list-related relationship to any other `<li>`
 // element.
 //
-// @see https://developer.mozilla.org/docs/web/html/element/ol
 // @see https://developer.mozilla.org/docs/web/html/element/li
-// @see http://dev.w3.org/html5/spec#the-ol-element
-// @see http://ç.whatwg.org#the-ol-element
 // @see http://dev.w3.org/html5/spec#the-li-element
 // @see http://ç.whatwg.org#the-li-element
 
-ol,
-%ol {
+li,
+%rex_list {
 	@include baseline($base_font-size, .75);
-	margin: #{relative($base_margin)}rem 0;
-	padding: 0;
-	list-style-position: outside;
+	margin: {
+		top: #{baseline($base_font-size, .25)}em;
+		bottom: #{baseline($base_font-size, .25)}em;
+	}
 }
-
-li {
-	margin: 0 0 #{baseline($base_font-size, .25)}rem; // (1.5 * .25) = .375 (6px)
-	padding: 0;
-}
-
-li img {
-	display: inline;
-	vertical-align: top;
-}
-
-ol {
-	
-	margin-left: #{relative($base_margin * 4)}rem;
-	
-}
-
-li ol { margin-left: #{relative($base_margin * 4)}rem; }
 
 // The `<p>` element represents a paragraph.
 //
@@ -567,7 +520,10 @@ li ol { margin-left: #{relative($base_margin * 4)}rem; }
 
 p {
 	@include baseline($base_font-size);
-	margin: #{baseline($base_font-size, .5)}rem 0;
+	margin: {
+		top: #{baseline($base_font-size, .5)}rem;
+		bottom: #{baseline($base_font-size, .5)}rem;
+	}
 }
 
 // The `<pre>` element represents a block of preformatted text, in which
@@ -581,10 +537,7 @@ p {
 // @see http://dev.w3.org/html5/spec#the-pre-element
 // @see http://ç.whatwg.org#the-pre-element
 
-pre {
-	@include baseline($base_font-size - 2, .75);
-	margin: #{relative($base_margin)}rem 0;
-}
+pre {}
 
 // The `<ul>` element represents a list of items, where the order of the
 // items is not important — that is, where changing the order would not
@@ -594,12 +547,7 @@ pre {
 // @see http://dev.w3.org/html5/spec#the-ul-element
 // @see http://ç.whatwg.org#the-ul-element
 
-ul {
-	@extend %ol;
-	margin-left: #{relative($base_margin * 2)}rem;
-}
-
-li ul { margin-left: #{relative($base_margin / 1.5)}rem; }
+ul {}
 
 //======================================================================
 // TEXT-LEVEL SEMANTICS
@@ -827,35 +775,38 @@ q {}
 // Japanese and Chinese. Examples include furigana and zhùyin fúhào
 // (bopomofo).
 //
+// @see http://html5doctor.com/ruby-rt-rp-element/
+// @see http://caniuse.com/#feat=ruby
+// @see https://developer.mozilla.org/docs/web/html/element/ruby
+// @see http://dev.w3.org/html5/spec#the-ruby-element
+// @see http://ç.whatwg.org#the-ruby-element
+// @see http://dev.w3.org/html5/spec#the-rp-element
+// @see http://ç.whatwg.org#the-rp-element
+
+ruby {}
+
 // The `<rt>` element represents a container for ruby text inside a
 // `<ruby>` element. The `<rt>` content becomes the small annotations
 // rendered by default above horizontal base text or to the right of
 // vertical base text.
 //
+// @see https://developer.mozilla.org/docs/web/html/element/rt
+// @see http://dev.w3.org/html5/spec#the-rt-element
+// @see http://ç.whatwg.org#the-rt-element
+
+rt {}
+
 // The `<rp>` element represents a container for parentheses used to wrap
 // ruby text (`<rt>`) inside a `<ruby>` element. These are displayed by
 // browsers which don't support `<ruby>`, allowing for graceful
 // degradation of ruby content. Browsers which support `<ruby>` hide
 // `<rp>` via `display: none`.
 //
-// @see http://html5doctor.com/ruby-rt-rp-element/
-// @see http://caniuse.com/#feat=ruby
-// @see https://developer.mozilla.org/docs/web/html/element/ruby
-// @see https://developer.mozilla.org/docs/web/html/element/rt
 // @see https://developer.mozilla.org/docs/web/html/element/rp
-// @see http://dev.w3.org/html5/spec#the-ruby-element
-// @see http://ç.whatwg.org#the-ruby-element
-// @see http://dev.w3.org/html5/spec#the-rt-element
-// @see http://ç.whatwg.org#the-rt-element
 // @see http://dev.w3.org/html5/spec#the-rp-element
 // @see http://ç.whatwg.org#the-rp-element
 
-ruby {
-	
-	rt {}
-	rp {}
-	
-}
+rp {}
 
 // The `<s>` element represents contents that are no longer accurate or no
 // longer relevant.
@@ -919,7 +870,7 @@ strong {}
 // @see http://ç.whatwg.org#the-sub-and-sup-elements
 
 sub,
-%sub {
+%rex_sub {
 	font-size: 75%;
 	line-height: 0;
 	position: relative;
@@ -935,7 +886,7 @@ sub { bottom: -#{relative(4)}em; }
 // @see http://ç.whatwg.org#the-sub-and-sup-elements
 
 sup {
-	@extend %sub;
+	@extend %rex_sub;
 	top: -#{relative(8)}em;
 }
 
@@ -1120,7 +1071,7 @@ iframe {}
 // @see http://dev.w3.org/html5/spec#the-img-element
 // @see http://ç.whatwg.org#the-img-element
 
-img {}
+img { vertical-align: top; }
 
 // The `<map>` element, in conjunction with any area element descendants,
 // defines an image map. The element represents its children.
@@ -1213,564 +1164,585 @@ video {}
 // TABULAR DATA
 //======================================================================
 
-// The `<table>` element represents data with more than one dimension, in
-// the form of a table. Tables must not be used as layout aids.
-//
-// Permitted content in this order:
-//
-// * an optional `<caption>` element,
-// * zero or more `<colgroup>` elements,
-// * an optional `<thead>` element,
-// * one of the two alternatives:
-//   * one `<tfoot>` element, followed by:
-//     * zero or more `<tbody>` elements,
-//     * or one or more `<tr>` elements,
-//   * a second alternative followed by an optional `<tfoot>` element:
-//     * either zero or more `<tbody>` elements,
-//     * or one or more `<tr>` elements
-//
-// @see http://www.vanseodesign.com/web-design/baseline-grid-non-textual/
-// @see https://developer.mozilla.org/docs/web/html/element/table
-// @see http://dev.w3.org/html5/spec#the-table-element
-// @see http://ç.whatwg.org#the-table-element
-
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
+@if flag_tables {
+	
+	// The `<table>` element represents data with more than one dimension, in
+	// the form of a table. Tables must not be used as layout aids.
+	//
+	// Permitted content in this order:
+	//
+	// * an optional `<caption>` element,
+	// * zero or more `<colgroup>` elements,
+	// * an optional `<thead>` element,
+	// * one of the two alternatives:
+	//   * one `<tfoot>` element, followed by:
+	//     * zero or more `<tbody>` elements,
+	//     * or one or more `<tr>` elements,
+	//   * a second alternative followed by an optional `<tfoot>` element:
+	//     * either zero or more `<tbody>` elements,
+	//     * or one or more `<tr>` elements
+	//
+	// @see http://www.vanseodesign.com/web-design/baseline-grid-non-textual/
+	// @see https://developer.mozilla.org/docs/web/html/element/table
+	// @see http://dev.w3.org/html5/spec#the-table-element
+	// @see http://ç.whatwg.org#the-table-element
+	
+	table {
+		border: {
+			collapse: collapse;
+			spacing: 0;
+		}
+	}
+	
+	// The `<caption>` element represents the title of a `<table>` element.
+	//
+	// When a `<table>` element is the only content in a `<figure> element
+	// other than the `<figcaption>`, the `<caption>` element should be
+	// omitted in favor of the `<figcaption>`.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/caption
+	// @see http://dev.w3.org/html5/spec#the-caption-element
+	// @see http://ç.whatwg.org#the-caption-element
+	
+	caption {
+		@include baseline($base_font-size - 2, .75);
+		padding: {
+			top: #{baseline($base_font-size - 2, .25) / 2}em;
+			bottom: #{baseline($base_font-size - 2, .25) / 2}em;
+		}
+	}
+	
+	// The `<colgroup>` element represents a group of one or more columns in a
+	// `<table>` element.
+	//
+	// If the `<colgroup>` element contains no `<col>` elements, then the
+	// element may have a `span` content attribute specified, whose value must
+	// be a valid non-negative integer greater than zero.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/colgroup
+	// @see http://dev.w3.org/html5/spec#the-colgroup-element
+	// @see http://ç.whatwg.org#the-colgroup-element
+	
+	colgroup {}
+	
+	// The `<col>` element represents one or more columns in the column group
+	// represented by a `<table>` element's `<colgroup>`.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/col
+	// @see http://dev.w3.org/html5/spec#the-col-element
+	// @see http://ç.whatwg.org#the-col-element
+	
+	col {}
+	
+	// The `<thead>` element represents the block of rows that consist of the
+	// column labels (headers) for the parent `<table>` element.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/thead
+	// @see http://dev.w3.org/html5/spec#the-thead-element
+	// @see http://ç.whatwg.org#the-thead-element
+	
+	thead {}
+	
+	// The `<tfoot>` element represents the block of rows that consist of the
+	// column summaries (footers) for the parent `<table>` element.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/tfoot
+	// @see http://dev.w3.org/html5/spec#the-tfoot-element
+	// @see http://ç.whatwg.org#the-tfoot-element
+	
+	tfoot {}
+	
+	// The `<tbody>` element represents a block of rows that consist of a body
+	// of data for the parent `<table>` element.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/tbody
+	// @see http://dev.w3.org/html5/spec#the-tbody-element
+	// @see http://ç.whatwg.org#the-tbody-element
+	
+	tbody {}
+	
+	// The `<tr>` element represents a row of cells in a `<table>` element.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/tr
+	// @see http://dev.w3.org/html5/spec#the-tr-element
+	// @see http://ç.whatwg.org#the-tr-element
+	
+	tr {}
+	
+	// The `<th>` element represents a header cell in a `<table>` element.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/th
+	// @see http://dev.w3.org/html5/spec#the-th-element
+	// @see http://ç.whatwg.org#the-th-element
+	
+	th,
+	%rex_th {
+		@include baseline($base_font-size, .75);
+		margin: 0;
+		padding: {
+			top: #{baseline($base_font-size, .25) / 2}em;
+			bottom: #{baseline($base_font-size, .25) / 2}em;
+		}
+	}
+	
+	// The `<td>` element represents a data cell in a `<table>` element.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/td
+	// @see http://dev.w3.org/html5/spec#the-td-element
+	// @see http://ç.whatwg.org#the-td-element
+	
+	td { @extend %rex_th; }
+	
 }
-
-// The `<caption>` element represents the title of a `<table>` element.
-//
-// When a `<table>` element is the only content in a `<figure> element
-// other than the `<figcaption>`, the `<caption>` element should be
-// omitted in favor of the `<figcaption>`.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/caption
-// @see http://dev.w3.org/html5/spec#the-caption-element
-// @see http://ç.whatwg.org#the-caption-element
-
-caption {
-	@include baseline($base_font-size - 2, .75);
-	padding: #{baseline($base_font-size - 2, .25) / 2}em 0; // (((1.71428571428571 * .25) = .42857142857143) / 2) = .21428571428572
-}
-
-// The `<colgroup>` element represents a group of one or more columns in a
-// `<table>` element.
-//
-// If the `<colgroup>` element contains no `<col>` elements, then the
-// element may have a `span` content attribute specified, whose value must
-// be a valid non-negative integer greater than zero.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/colgroup
-// @see http://dev.w3.org/html5/spec#the-colgroup-element
-// @see http://ç.whatwg.org#the-colgroup-element
-
-colgroup {}
-
-// The `<col>` element represents one or more columns in the column group
-// represented by a `<table>` element's `<colgroup>`.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/col
-// @see http://dev.w3.org/html5/spec#the-col-element
-// @see http://ç.whatwg.org#the-col-element
-
-col {}
-
-// The `<thead>` element represents the block of rows that consist of the
-// column labels (headers) for the parent `<table>` element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/thead
-// @see http://dev.w3.org/html5/spec#the-thead-element
-// @see http://ç.whatwg.org#the-thead-element
-
-thead {}
-
-// The `<tfoot>` element represents the block of rows that consist of the
-// column summaries (footers) for the parent `<table>` element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/tfoot
-// @see http://dev.w3.org/html5/spec#the-tfoot-element
-// @see http://ç.whatwg.org#the-tfoot-element
-
-tfoot {}
-
-// The `<tbody>` element represents a block of rows that consist of a body
-// of data for the parent `<table>` element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/tbody
-// @see http://dev.w3.org/html5/spec#the-tbody-element
-// @see http://ç.whatwg.org#the-tbody-element
-
-tbody {}
-
-// The `<tr>` element represents a row of cells in a `<table>` element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/tr
-// @see http://dev.w3.org/html5/spec#the-tr-element
-// @see http://ç.whatwg.org#the-tr-element
-
-tr {}
-
-// The `<th>` element represents a header cell in a `<table>` element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/th
-// @see http://dev.w3.org/html5/spec#the-th-element
-// @see http://ç.whatwg.org#the-th-element
-
-th,
-%th {
-	@include baseline($base_font-size, .75);
-	margin: 0;
-	padding: #{baseline($base_font-size, .25) / 2}em 0; // (((1.5 * .25) = .375) / 2) = .1875
-}
-
-// The `<td>` element represents a data cell in a `<table>` element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/td
-// @see http://dev.w3.org/html5/spec#the-td-element
-// @see http://ç.whatwg.org#the-td-element
-
-td { @extend %th; }
 
 //======================================================================
 // FORMS
 //======================================================================
 
-// The `<form>` element represents a collection of form-associated
-// elements, some of which can represent editable values that can be
-// submitted to a server for processing.
-//
-// @see http://www.vanseodesign.com/web-design/baseline-grid-non-textual/
-// @see https://developer.mozilla.org/docs/web/html/element/form
-// @see http://dev.w3.org/html5/spec#the-form-element
-// @see http://ç.whatwg.org#the-form-element
-
-form { margin: 0; }
-
-// The `<button>` element represents a button. If the element is not
-// disabled, then the user agent should allow the user to activate the
-// button.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/button
-// @see http://dev.w3.org/html5/spec#the-button-element
-// @see http://ç.whatwg.org#the-button-element
-
-button,
-%button { @extend %input; }
-
-// The `<fieldset>` element is expected to establish a new block
-// formatting context.
-//
-// If the `<fieldset>` element has a child that matches the conditions in
-// the list below, then the first such child is the `<fieldset>` element's
-// rendered legend:
-//
-// * The child is a `<legend>` element.
-// * The child is not out-of-flow (e.g. not absolutely positioned or floated).
-// * The child is generating a box (e.g. it is not `display: none`).
-//
-// @see https://developer.mozilla.org/docs/web/html/element/fieldset
-// @see http://dev.w3.org/html5/spec#the-fieldset-element
-// @see http://ç.whatwg.org#the-fieldset-element
-
-fieldset {
-	margin: #{relative($base_font-size)}rem 0;
-	padding: #{relative(1)}rem 0 0; // Prevents margin collapse.
+@if flag_forms {
+	
+	// The `<form>` element represents a collection of form-associated
+	// elements, some of which can represent editable values that can be
+	// submitted to a server for processing.
+	//
+	// @see http://www.vanseodesign.com/web-design/baseline-grid-non-textual/
+	// @see https://developer.mozilla.org/docs/web/html/element/form
+	// @see http://dev.w3.org/html5/spec#the-form-element
+	// @see http://ç.whatwg.org#the-form-element
+	
+	form { margin: 0; }
+	
+	// The `<button>` element represents a button. If the element is not
+	// disabled, then the user agent should allow the user to activate the
+	// button.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/button
+	// @see http://dev.w3.org/html5/spec#the-button-element
+	// @see http://ç.whatwg.org#the-button-element
+	
+	button { @extend %rex_input; }
+	
+	// The `<fieldset>` element is expected to establish a new block
+	// formatting context.
+	//
+	// If the `<fieldset>` element has a child that matches the conditions in
+	// the list below, then the first such child is the `<fieldset>` element's
+	// rendered legend:
+	//
+	// * The child is a `<legend>` element.
+	// * The child is not out-of-flow (e.g. not absolutely positioned or floated).
+	// * The child is generating a box (e.g. it is not `display: none`).
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/fieldset
+	// @see http://dev.w3.org/html5/spec#the-fieldset-element
+	// @see http://ç.whatwg.org#the-fieldset-element
+	
+	fieldset {
+		margin: {
+			top: #{relative($base_font-size)}rem;
+			bottom: #{relative($base_font-size)}rem;
+		}
+		padding-top: #{relative(1)}rem; // Prevents margin collapse.
+	}
+	
+	// The `<input>` element represents a typed data field, usually with a
+	// form control to allow the user to edit the data.
+	//
+	// The default type is `text`, if this attribute is not specified.
+	//
+	// @see http://html5doctor.com/html5-forms-input-types/
+	// @see https://developer.mozilla.org/docs/web/html/element/input
+	// @see http://dev.w3.org/html5/spec#the-input-element
+	// @see http://ç.whatwg.org#the-input-element
+	
+	input,
+	%rex_input {
+		font-size: #{relative($base_font-size)}em;
+		line-height: normal;
+		vertical-align: baseline;
+	}
+	
+	// A push button with no default behavior.
+	//
+	// @see http://dev.w3.org/html5/spec#button-state-(type=button)
+	// @see http://ç.whatwg.org#button-state-(type=button)
+	
+	input[type="button"] {}
+	
+	// A check box. You must use the `value` attribute to define the value
+	// submitted by this item. Use the `checked` attribute to indicate whether
+	// this item is selected. You can also use the `indeterminate` attribute
+	// to indicate that the checkbox is in an "indeterminate" state (on most
+	// platforms, this draws a horizontal line across the `checkbox`).
+	//
+	// @see http://dev.w3.org/html5/spec#checkbox-state-(type=checkbox)
+	// @see http://ç.whatwg.org#checkbox-state-(type=checkbox)
+	
+	input[type="checkbox"],
+	%rex_input-checkbox {
+		padding: 0;
+		position: relative;
+		bottom: #{relative(2)}em;
+		vertical-align: middle;
+	}
+	
+	// A control that lets the user select a file. Use the `accept` attribute
+	// to define the types of files that the control can select.
+	//
+	// @see https://developer.mozilla.org/docs/using_files_from_web_applications
+	// @see http://dev.w3.org/html5/spec#file-upload-state-(type=file)
+	// @see http://ç.whatwg.org#file-upload-state-(type=file)
+	
+	input[type="file"] {}
+	
+	// A control that is not displayed, but whose value is submitted to the
+	// server.
+	//
+	// @see http://dev.w3.org/html5/spec#hidden-state-(type=hidden)
+	// @see http://ç.whatwg.org#hidden-state-(type=hidden)
+	
+	input[type="hidden"] {}
+	
+	// A graphical `submit` button. You must use the `src` attribute to define
+	// the source of the image and the `alt` attribute to define alternative
+	// text. You can use the `height` and `width` attributes to define the
+	// size of the image in pixels.
+	//
+	// @see http://dev.w3.org/html5/spec#image-button-state-(type=image)
+	// @see http://ç.whatwg.org#image-button-state-(type=image)
+	
+	input[type="image"] {}
+	
+	// A single-line text field whose value is obscured. Use the `maxlength`
+	// attribute to specify the maximum length of the value that can be entered.
+	//
+	// @see http://dev.w3.org/html5/spec#password-state-(type=password)
+	// @see http://ç.whatwg.org#password-state-(type=password)
+	
+	input[type="password"] { @extend %rex_input-text; }
+	
+	// A radio button. You must use the `value` attribute to define the value
+	// submitted by this item. Use the `checked` attribute to indicate whether
+	// this item is selected by default. Radio buttons that have the same
+	// value for the `name` attribute are in the same "radio button group";
+	// only one radio button in a group can be selected at one time.
+	//
+	// @see http://dev.w3.org/html5/spec#radio-button-state-(type=radio)
+	// @see http://ç.whatwg.org#radio-button-state-(type=radio)
+	
+	input[type="radio"] { @extend %rex_input-checkbox; }
+	
+	// A button that resets the contents of the form to default values.
+	//
+	// @see http://dev.w3.org/html5/spec#reset-button-state-(type=reset)
+	// @see http://ç.whatwg.org#reset-button-state-(type=reset)
+	
+	input[type="reset"] {}
+	
+	// A button that submits the form.
+	//
+	// @see http://dev.w3.org/html5/spec#submit-button-state-(type=submit)
+	// @see http://ç.whatwg.org#submit-button-state-(type=submit)
+	
+	input[type="submit"] {}
+	
+	// A single-line text field; line-breaks are automatically removed from
+	// the input value.
+	//
+	// @see http://dev.w3.org/html5/spec#text-(type=text)-state-and-search-state-(type=search)
+	// @see http://ç.whatwg.org#text-(type=text)-state-and-search-state-(type=search)
+	
+	input[type="text"],
+	%rex_input-text {
+		@include baseline($base_font-size, 1, em);
+		height: #{relative($base_line-height)}rem;
+		margin: 0;
+		padding: {
+			right: #{relative($base_line-height / 6)}em;
+			left: #{relative($base_line-height / 6)}em;
+		}
+		vertical-align: baseline;
+	}
+	
+	// The `<label>` element represents a caption in a user interface which
+	// can be associated with a specific form control, known as the `<label>`
+	// element's labeled control, either using the `for` attribute, or by
+	// putting the form control inside the `<label>` element itself.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/label
+	// @see http://dev.w3.org/html5/spec#the-label-element
+	// @see http://ç.whatwg.org#the-label-element
+	
+	label {
+		@include baseline($base_font-size, 1, em);
+		vertical-align: middle;
+	}
+	
+	// The `<legend>` element represents a caption for the parent `<fieldset>`
+	// element.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/legend
+	// @see http://dev.w3.org/html5/spec#the-legend-element
+	// @see http://ç.whatwg.org#the-legend-element
+	
+	legend {
+		@include baseline($base_font-size + 2, .875);
+		margin: 0;
+		padding-bottom: #{baseline($base_font-size + 2, .25)}em;
+	}
+	
+	// The `<optgroup>` element represents a group of `<option>` elements with
+	// a common label. The element's group of `<option>` elements consists of
+	// the `<option>` elements that are children of the `<optgroup>` element.
+	//
+	// When showing `<option>` elements in `<select>` elements, user agents
+	// should show the `<option>` elements of such groups as being related to
+	// each other and separate from other `<option>` elements.
+	//
+	// @see http://www.htmldog.com/reference/htmltags/optgroup/
+	// @see https://developer.mozilla.org/docs/web/html/element/optgroup
+	// @see http://dev.w3.org/html5/spec#the-optgroup-element
+	// @see http://ç.whatwg.org#the-optgroup-element
+	
+	optgroup {}
+	
+	// The `<option>` element represents an option in a `<select>` element or
+	// as part of a list of suggestions in a `<datalist>` element.
+	//
+	// In certain circumstances described in the definition of the `<select>`
+	// element, an `<option>` element can be a `<select>` element's
+	// placeholder label option. A placeholder label option does not represent
+	// an actual option, but instead represents a label for the `<select>`
+	// control.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/option
+	// @see http://dev.w3.org/html5/spec#the-option-element
+	// @see http://ç.whatwg.org#the-option-element
+	
+	option {}
+	
+	// The `<select>` element represents a control for selecting amongst a set
+	// of options.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/select
+	// @see http://dev.w3.org/html5/spec#the-select-element
+	// @see http://ç.whatwg.org#the-select-element
+	
+	select {
+		@include baseline($base_font-size, 1, em);
+		vertical-align: baseline;
+	}
+	
+	// The `<textarea>` element represents a multiline plain text edit control
+	// for the element's raw value. The contents of the control represent the
+	// control's default value.
+	//
+	// @see http://davidwalsh.name/textarea-resize
+	// @see http://www.456bereastreet.com/lab/styling-form-controls-revisited/text-input-multiple/
+	// @see https://developer.mozilla.org/docs/web/html/element/textarea
+	// @see http://dev.w3.org/html5/spec#the-textarea-element
+	// @see http://ç.whatwg.org#the-textarea-element
+	
+	textarea {
+		@include baseline($base_font-size, 1, em);
+		min-height: #{relative($base_line-height * 5)}rem;
+		overflow: auto;
+		margin: 0;
+		padding: 0;
+		vertical-align: top;
+	}
+	
+	// HTML 5:
+	//----------------------------------------------------------------------
+	
+	// The `<datalist>` element represents a set of option elements that
+	// represent predefined options for other controls. The contents of the
+	// element represents fallback content for legacy user agents, intermixed
+	// with `<option>` elements that represent the predefined options. In the
+	// rendering, the `<datalist>` element represents nothing and it, along
+	// with its children, should be hidden.
+	//
+	// The `<datalist>` element is hooked up to an `<input>` element using the
+	// `list` attribute on the `<input>` element.
+	//
+	// @see http://caniuse.com/#feat=datalist
+	// @see https://developer.mozilla.org/docs/web/html/element/datalist
+	// @see http://dev.w3.org/html5/spec#the-datalist-element
+	// @see http://ç.whatwg.org#the-datalist-element
+	
+	datalist {}
+	
+	// A control for specifying a color.
+	//
+	// @see http://caniuse.com/input-color
+	// @see http://dev.w3.org/html5/spec#color-state-(type=color)
+	// @see http://ç.whatwg.org#color-state-(type=color)
+	
+	input[type="color"] {}
+	
+	// A control for entering a date (year, month, and day, with no time).
+	//
+	// @see http://caniuse.com/input-datetime
+	// @see http://dev.w3.org/html5/spec#date-state-(type=date)
+	// @see http://ç.whatwg.org#date-state-(type=date)
+	
+	input[type="date"] {}
+	
+	// A control for entering a date and time (hour, minute, second, and
+	// fraction of a second) based on UTC time zone.
+	//
+	// @see http://caniuse.com/input-datetime
+	// @see http://dev.w3.org/html5/spec#date-and-time-state-(type=datetime)
+	// @see http://ç.whatwg.org#date-and-time-state-(type=datetime)
+	
+	input[type="datetime"] {}
+	
+	// A control for entering a date and time, with no time zone.
+	//
+	// @see http://caniuse.com/input-datetime
+	// @see http://dev.w3.org/html5/spec#local-date-and-time-state-(type=datetime-local)
+	// @see http://ç.whatwg.org#local-date-and-time-state-(type=datetime-local)
+	
+	input[type="datetime-local"] {}
+	
+	// A field for editing an e-mail address. The `:valid` and `:invalid` CSS
+	// pseudo-classes are applied as appropriate.
+	//
+	// @see http://dev.w3.org/html5/spec#e-mail-state-(type=email)
+	// @see http://ç.whatwg.org#e-mail-state-(type=email)
+	
+	input[type="email"] {}
+	
+	// A control for entering a month and year, with no time zone.
+	//
+	// @see http://dev.w3.org/html5/spec#month-state-(type=month)
+	// @see http://ç.whatwg.org#month-state-(type=month)
+	
+	input[type="month"] {}
+	
+	// A control for entering a floating point number.
+	//
+	// @see http://caniuse.com/input-number
+	// @see http://dev.w3.org/html5/spec#number-state-(type=number)
+	// @see http://ç.whatwg.org#number-state-(type=number)
+	
+	input[type="number"] {}
+	
+	// A control for entering a number whose exact value is not important.
+	//
+	// @see http://caniuse.com/input-range
+	// @see http://dev.w3.org/html5/spec#range-state-(type=range)
+	// @see http://ç.whatwg.org#range-state-(type=range)
+	
+	input[type="range"] {}
+	
+	// A single-line text field for entering search strings; line-breaks are
+	// automatically removed from the input value.
+	//
+	// @see http://dev.w3.org/html5/spec#text-(type=text)-state-and-search-state-(type=search)
+	// @see http://ç.whatwg.org#text-(type=text)-state-and-search-state-(type=search)
+	
+	input[type="search"] {}
+	
+	// A control for entering a telephone number; line-breaks are
+	// automatically removed from the input value, but no other syntax is
+	// enforced. You can use attributes such as `pattern` and `maxlength` to
+	// restrict values entered in the control. The `:valid` and `:invalid` CSS
+	// pseudo-classes are applied as appropriate.
+	//
+	// @see http://dev.w3.org/html5/spec#telephone-state-(type=tel)
+	// @see http://ç.whatwg.org#telephone-state-(type=tel)
+	
+	input[type="tel"] {}
+	
+	// A control for entering a time value with no time zone.
+	//
+	// @see http://dev.w3.org/html5/spec#time-state-(type=time)
+	// @see http://ç.whatwg.org#time-state-(type=time)
+	
+	input[type="time"] {}
+	
+	// A field for editing a URL. The user may enter a blank or invalid
+	// address. Line-breaks are automatically removed from the input value.
+	// You can use attributes such as `pattern` and `maxlength` to restrict
+	// values entered in the control. The `:valid` and `:invalid` CSS
+	// pseudo-classes are applied as appropriate.
+	//
+	// @see http://dev.w3.org/html5/spec#url-state-(type=url)
+	// @see http://ç.whatwg.org#url-state-(type=url)
+	
+	input[type="url"] {}
+	
+	// A control for entering a date consisting of a week-year number and a
+	// week number with no time zone.
+	//
+	// @see http://dev.w3.org/html5/spec#week-state-(type=week)
+	// @see http://ç.whatwg.org#week-state-(type=week)
+	
+	input[type="week"] {}
+	
+	// The `<keygen>` element represents a key pair generator control. When
+	// the control's form is submitted, the private key is stored in the local
+	// keystore, and the public key is packaged and sent to the server.
+	//
+	// @see https://developer.mozilla.org/docs/web/html/element/keygen
+	// @see http://dev.w3.org/html5/spec#the-keygen-element
+	// @see http://ç.whatwg.org#the-keygen-element
+	
+	keygen {}
+	
+	// When the meter binding applies to a `<meter>` element, the element is
+	// expected to render as an `inline-block` box with a `height` of `1em`
+	// and a `width` of `5em`, a `vertical-align` of `-0.2em`, and with its
+	// contents depicting a gauge.
+	//
+	// When the element is wider than it is tall (or square), the depiction is
+	// expected to be of a horizontal gauge, with the minimum value on the
+	// right if the `direction` property on this element has a computed value
+	// of `rtl`, and on the left otherwise. When the element is taller than it
+	// is wide, it is expected to depict a vertical gauge, with the minimum
+	// value on the bottom.
+	//
+	// @see http://html5doctor.com/measure-up-with-the-meter-tag/
+	// @see http://caniuse.com/#feat=progressmeter
+	// @see https://developer.mozilla.org/docs/web/html/element/meter
+	// @see http://dev.w3.org/html5/spec#the-meter-element
+	// @see http://ç.whatwg.org#the-meter-element
+	
+	meter {}
+	
+	// The `<output>` element represents the result of a calculation.
+	//
+	// The optional `for` attribute allows an explicit relationship to be made
+	// between the result of a calculation and the elements representing the
+	// values that influenced the calculation. If specified, the `for`
+	// attribute must contain a string consisting of an unordered set of
+	// unique, space-separated tokens, each of which must be the `id` of an
+	// element in the same document.
+	//
+	// @see http://html5doctor.com/the-output-element/
+	// @see https://developer.mozilla.org/docs/web/html/element/output
+	// @see http://dev.w3.org/html5/spec#the-output-element
+	// @see http://ç.whatwg.org#the-output-element
+	
+	output {}
+	
+	// The `<progress>` element epresents the completion progress of a task.
+	// Progress may be either indeterminate — meaning it is unclear how much
+	// work remains before the task is complete (e.g., the task is waiting for
+	// a response from a remote host) — or a numeric value between 0 and a
+	// given maximum, explicitly specifying the fraction of work that has so
+	// far been completed.
+	//
+	// @see http://html5doctor.com/the-progress-element/
+	// @see http://caniuse.com/#feat=progressmeter
+	// @see https://developer.mozilla.org/docs/web/html/element/progress
+	// @see http://dev.w3.org/html5/spec#the-progress-element
+	// @see http://ç.whatwg.org#the-progress-element
+	
+	progress {}
+	
 }
-
-// The `<input>` element represents a typed data field, usually with a
-// form control to allow the user to edit the data.
-//
-// The default type is `text`, if this attribute is not specified.
-//
-// @see http://html5doctor.com/html5-forms-input-types/
-// @see https://developer.mozilla.org/docs/web/html/element/input
-// @see http://dev.w3.org/html5/spec#the-input-element
-// @see http://ç.whatwg.org#the-input-element
-
-input,
-%input {
-	font-size: #{relative($base_font-size)}em;
-	line-height: normal;
-	vertical-align: baseline;
-}
-
-// A push button with no default behavior.
-//
-// @see http://dev.w3.org/html5/spec#button-state-(type=button)
-// @see http://ç.whatwg.org#button-state-(type=button)
-
-input[type="button"] {}
-
-// A check box. You must use the `value` attribute to define the value
-// submitted by this item. Use the `checked` attribute to indicate whether
-// this item is selected. You can also use the `indeterminate` attribute
-// to indicate that the checkbox is in an "indeterminate" state (on most
-// platforms, this draws a horizontal line across the `checkbox`).
-//
-// @see http://dev.w3.org/html5/spec#checkbox-state-(type=checkbox)
-// @see http://ç.whatwg.org#checkbox-state-(type=checkbox)
-
-input[type="checkbox"],
-%input-checkbox {
-	padding: 0;
-	position: relative;
-	bottom: #{relative(2)}em;
-	vertical-align: middle;
-}
-
-// A control that lets the user select a file. Use the `accept` attribute
-// to define the types of files that the control can select.
-//
-// @see https://developer.mozilla.org/docs/using_files_from_web_applications
-// @see http://dev.w3.org/html5/spec#file-upload-state-(type=file)
-// @see http://ç.whatwg.org#file-upload-state-(type=file)
-
-input[type="file"] {}
-
-// A control that is not displayed, but whose value is submitted to the
-// server.
-//
-// @see http://dev.w3.org/html5/spec#hidden-state-(type=hidden)
-// @see http://ç.whatwg.org#hidden-state-(type=hidden)
-
-input[type="hidden"] {}
-
-// A graphical `submit` button. You must use the `src` attribute to define
-// the source of the image and the `alt` attribute to define alternative
-// text. You can use the `height` and `width` attributes to define the
-// size of the image in pixels.
-//
-// @see http://dev.w3.org/html5/spec#image-button-state-(type=image)
-// @see http://ç.whatwg.org#image-button-state-(type=image)
-
-input[type="image"] {}
-
-// A single-line text field whose value is obscured. Use the `maxlength`
-// attribute to specify the maximum length of the value that can be entered.
-//
-// @see http://dev.w3.org/html5/spec#password-state-(type=password)
-// @see http://ç.whatwg.org#password-state-(type=password)
-
-input[type="password"] { @extend %input-text; }
-
-// A radio button. You must use the `value` attribute to define the value
-// submitted by this item. Use the `checked` attribute to indicate whether
-// this item is selected by default. Radio buttons that have the same
-// value for the `name` attribute are in the same "radio button group";
-// only one radio button in a group can be selected at one time.
-//
-// @see http://dev.w3.org/html5/spec#radio-button-state-(type=radio)
-// @see http://ç.whatwg.org#radio-button-state-(type=radio)
-
-input[type="radio"] { @extend %input-checkbox; }
-
-// A button that resets the contents of the form to default values.
-//
-// @see http://dev.w3.org/html5/spec#reset-button-state-(type=reset)
-// @see http://ç.whatwg.org#reset-button-state-(type=reset)
-
-input[type="reset"] {}
-
-// A button that submits the form.
-//
-// @see http://dev.w3.org/html5/spec#submit-button-state-(type=submit)
-// @see http://ç.whatwg.org#submit-button-state-(type=submit)
-
-input[type="submit"] {}
-
-// A single-line text field; line-breaks are automatically removed from
-// the input value.
-//
-// @see http://dev.w3.org/html5/spec#text-(type=text)-state-and-search-state-(type=search)
-// @see http://ç.whatwg.org#text-(type=text)-state-and-search-state-(type=search)
-
-input[type="text"],
-%input-text {
-	@include baseline($base_font-size, 1, em);
-	height: #{relative($base_line-height)}rem;
-	margin: 0;
-	padding: 0 #{relative($base_line-height / 6)}em;
-	vertical-align: baseline;
-}
-
-// The `<label>` element represents a caption in a user interface which
-// can be associated with a specific form control, known as the `<label>`
-// element's labeled control, either using the `for` attribute, or by
-// putting the form control inside the `<label>` element itself.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/label
-// @see http://dev.w3.org/html5/spec#the-label-element
-// @see http://ç.whatwg.org#the-label-element
-
-label {
-	@include baseline($base_font-size, 1, em);
-	vertical-align: middle;
-}
-
-// The `<legend>` element represents a caption for the parent `<fieldset>`
-// element.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/legend
-// @see http://dev.w3.org/html5/spec#the-legend-element
-// @see http://ç.whatwg.org#the-legend-element
-
-legend {
-	@include baseline($base_font-size + 2, .875);
-	margin: 0;
-	padding: 0 0 #{baseline($base_font-size + 2, .25)}em; // (1.33333333333333 * .25) = .33333333333333
-}
-
-// The `<optgroup>` element represents a group of `<option>` elements with
-// a common label. The element's group of `<option>` elements consists of
-// the `<option>` elements that are children of the `<optgroup>` element.
-//
-// When showing `<option>` elements in `<select>` elements, user agents
-// should show the `<option>` elements of such groups as being related to
-// each other and separate from other `<option>` elements.
-//
-// @see http://www.htmldog.com/reference/htmltags/optgroup/
-// @see https://developer.mozilla.org/docs/web/html/element/optgroup
-// @see http://dev.w3.org/html5/spec#the-optgroup-element
-// @see http://ç.whatwg.org#the-optgroup-element
-
-optgroup {}
-
-// The `<option>` element represents an option in a `<select>` element or
-// as part of a list of suggestions in a `<datalist>` element.
-//
-// In certain circumstances described in the definition of the `<select>`
-// element, an `<option>` element can be a `<select>` element's
-// placeholder label option. A placeholder label option does not represent
-// an actual option, but instead represents a label for the `<select>`
-// control.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/option
-// @see http://dev.w3.org/html5/spec#the-option-element
-// @see http://ç.whatwg.org#the-option-element
-
-option {}
-
-// The `<select>` element represents a control for selecting amongst a set
-// of options.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/select
-// @see http://dev.w3.org/html5/spec#the-select-element
-// @see http://ç.whatwg.org#the-select-element
-
-select {
-	@include baseline($base_font-size, 1, em);
-	vertical-align: baseline;
-}
-
-// The `<textarea>` element represents a multiline plain text edit control
-// for the element's raw value. The contents of the control represent the
-// control's default value.
-//
-// @see http://davidwalsh.name/textarea-resize
-// @see http://www.456bereastreet.com/lab/styling-form-controls-revisited/text-input-multiple/
-// @see https://developer.mozilla.org/docs/web/html/element/textarea
-// @see http://dev.w3.org/html5/spec#the-textarea-element
-// @see http://ç.whatwg.org#the-textarea-element
-
-textarea {
-	@include baseline($base_font-size, 1, em);
-	min-height: #{relative($base_line-height * 5)}rem;
-	overflow: auto;
-	margin: 0;
-	padding: 0;
-	vertical-align: top;
-}
-
-// HTML 5:
-//----------------------------------------------------------------------
-
-// The `<datalist>` element represents a set of option elements that
-// represent predefined options for other controls. The contents of the
-// element represents fallback content for legacy user agents, intermixed
-// with `<option>` elements that represent the predefined options. In the
-// rendering, the `<datalist>` element represents nothing and it, along
-// with its children, should be hidden.
-//
-// The `<datalist>` element is hooked up to an `<input>` element using the
-// `list` attribute on the `<input>` element.
-//
-// @see http://caniuse.com/#feat=datalist
-// @see https://developer.mozilla.org/docs/web/html/element/datalist
-// @see http://dev.w3.org/html5/spec#the-datalist-element
-// @see http://ç.whatwg.org#the-datalist-element
-
-datalist {}
-
-// A control for specifying a color.
-//
-// @see http://caniuse.com/input-color
-// @see http://dev.w3.org/html5/spec#color-state-(type=color)
-// @see http://ç.whatwg.org#color-state-(type=color)
-
-input[type="color"] {}
-
-// A control for entering a date (year, month, and day, with no time).
-//
-// @see http://caniuse.com/input-datetime
-// @see http://dev.w3.org/html5/spec#date-state-(type=date)
-// @see http://ç.whatwg.org#date-state-(type=date)
-
-input[type="date"] {}
-
-// A control for entering a date and time (hour, minute, second, and
-// fraction of a second) based on UTC time zone.
-//
-// @see http://caniuse.com/input-datetime
-// @see http://dev.w3.org/html5/spec#date-and-time-state-(type=datetime)
-// @see http://ç.whatwg.org#date-and-time-state-(type=datetime)
-
-input[type="datetime"] {}
-
-// A control for entering a date and time, with no time zone.
-//
-// @see http://caniuse.com/input-datetime
-// @see http://dev.w3.org/html5/spec#local-date-and-time-state-(type=datetime-local)
-// @see http://ç.whatwg.org#local-date-and-time-state-(type=datetime-local)
-
-input[type="datetime-local"] {}
-
-// A field for editing an e-mail address. The `:valid` and `:invalid` CSS
-// pseudo-classes are applied as appropriate.
-//
-// @see http://dev.w3.org/html5/spec#e-mail-state-(type=email)
-// @see http://ç.whatwg.org#e-mail-state-(type=email)
-
-input[type="email"] {}
-
-// A control for entering a month and year, with no time zone.
-//
-// @see http://dev.w3.org/html5/spec#month-state-(type=month)
-// @see http://ç.whatwg.org#month-state-(type=month)
-
-input[type="month"] {}
-
-// A control for entering a floating point number.
-//
-// @see http://caniuse.com/input-number
-// @see http://dev.w3.org/html5/spec#number-state-(type=number)
-// @see http://ç.whatwg.org#number-state-(type=number)
-
-input[type="number"] {}
-
-// A control for entering a number whose exact value is not important.
-//
-// @see http://caniuse.com/input-range
-// @see http://dev.w3.org/html5/spec#range-state-(type=range)
-// @see http://ç.whatwg.org#range-state-(type=range)
-
-input[type="range"] {}
-
-// A single-line text field for entering search strings; line-breaks are
-// automatically removed from the input value.
-//
-// @see http://dev.w3.org/html5/spec#text-(type=text)-state-and-search-state-(type=search)
-// @see http://ç.whatwg.org#text-(type=text)-state-and-search-state-(type=search)
-
-input[type="search"] {}
-
-// A control for entering a telephone number; line-breaks are
-// automatically removed from the input value, but no other syntax is
-// enforced. You can use attributes such as `pattern` and `maxlength` to
-// restrict values entered in the control. The `:valid` and `:invalid` CSS
-// pseudo-classes are applied as appropriate.
-//
-// @see http://dev.w3.org/html5/spec#telephone-state-(type=tel)
-// @see http://ç.whatwg.org#telephone-state-(type=tel)
-
-input[type="tel"] {}
-
-// A control for entering a time value with no time zone.
-//
-// @see http://dev.w3.org/html5/spec#time-state-(type=time)
-// @see http://ç.whatwg.org#time-state-(type=time)
-
-input[type="time"] {}
-
-// A field for editing a URL. The user may enter a blank or invalid
-// address. Line-breaks are automatically removed from the input value.
-// You can use attributes such as `pattern` and `maxlength` to restrict
-// values entered in the control. The `:valid` and `:invalid` CSS
-// pseudo-classes are applied as appropriate.
-//
-// @see http://dev.w3.org/html5/spec#url-state-(type=url)
-// @see http://ç.whatwg.org#url-state-(type=url)
-
-input[type="url"] {}
-
-// A control for entering a date consisting of a week-year number and a
-// week number with no time zone.
-//
-// @see http://dev.w3.org/html5/spec#week-state-(type=week)
-// @see http://ç.whatwg.org#week-state-(type=week)
-
-input[type="week"] {}
-
-// The `<keygen>` element represents a key pair generator control. When
-// the control's form is submitted, the private key is stored in the local
-// keystore, and the public key is packaged and sent to the server.
-//
-// @see https://developer.mozilla.org/docs/web/html/element/keygen
-// @see http://dev.w3.org/html5/spec#the-keygen-element
-// @see http://ç.whatwg.org#the-keygen-element
-
-keygen {}
-
-// When the meter binding applies to a `<meter>` element, the element is
-// expected to render as an `inline-block` box with a `height` of `1em`
-// and a `width` of `5em`, a `vertical-align` of `-0.2em`, and with its
-// contents depicting a gauge.
-//
-// When the element is wider than it is tall (or square), the depiction is
-// expected to be of a horizontal gauge, with the minimum value on the
-// right if the `direction` property on this element has a computed value
-// of `rtl`, and on the left otherwise. When the element is taller than it
-// is wide, it is expected to depict a vertical gauge, with the minimum
-// value on the bottom.
-//
-// @see http://html5doctor.com/measure-up-with-the-meter-tag/
-// @see http://caniuse.com/#feat=progressmeter
-// @see https://developer.mozilla.org/docs/web/html/element/meter
-// @see http://dev.w3.org/html5/spec#the-meter-element
-// @see http://ç.whatwg.org#the-meter-element
-
-meter {}
-
-// The `<output>` element represents the result of a calculation.
-//
-// The optional `for` attribute allows an explicit relationship to be made
-// between the result of a calculation and the elements representing the
-// values that influenced the calculation. If specified, the `for`
-// attribute must contain a string consisting of an unordered set of
-// unique, space-separated tokens, each of which must be the `id` of an
-// element in the same document.
-//
-// @see http://html5doctor.com/the-output-element/
-// @see https://developer.mozilla.org/docs/web/html/element/output
-// @see http://dev.w3.org/html5/spec#the-output-element
-// @see http://ç.whatwg.org#the-output-element
-
-output {}
-
-// The `<progress>` element epresents the completion progress of a task.
-// Progress may be either indeterminate — meaning it is unclear how much
-// work remains before the task is complete (e.g., the task is waiting for
-// a response from a remote host) — or a numeric value between 0 and a
-// given maximum, explicitly specifying the fraction of work that has so
-// far been completed.
-//
-// @see http://html5doctor.com/the-progress-element/
-// @see http://caniuse.com/#feat=progressmeter
-// @see https://developer.mozilla.org/docs/web/html/element/progress
-// @see http://dev.w3.org/html5/spec#the-progress-element
-// @see http://ç.whatwg.org#the-progress-element
-
-progress {}
 
 //======================================================================
 // INTERACTIVE ELEMENTS

@@ -14,20 +14,23 @@ $base_font-size: 16px !default;
 // Base `line-height`:
 $base_line-height: 24px !default;
 
-// Base `margin`:
-$base_margin: 12px !default;
-
 // Natural box layout?
 $flag_natural-box-model: true !default;
-
-// Include the baseline class?
-$flag_baseline: true !default;
 
 // Heading classes?
 $flag_heading-classes: true !default;
 
 // Subheading classes?
 $flag_subheading-classes: true !default;
+
+// Table styles?
+$flag_tables: true !default;
+
+// Form styles?
+$flag_forms: true !default;
+
+// Include the baseline class?
+$flag_baseline: true !default;
 
 // Baseline "major" grid color:
 $baseline_major-grid-color: #f00 !default;

@@ -22,7 +22,7 @@
 //----------------------------------------------------------------------
 
 // Spacing for demo's sake:
-body { padding: #{relative($base_margin)}rem; }
+body { padding: #{relative(50)}rem; }
 
 // Tidy-up paragraphs after headings:
 h1, h2, h3, h4, h5, h6 {
@@ -36,14 +36,14 @@ img {
 }
 
 // Spacing for form elements:
-fieldset > div { margin: #{relative($base_margin)}rem 0; }
+fieldset > div { margin: #{relative(10)}rem 0; }
 
 .marker {
 	@include baseline($base_font-size + 6, .875, $optional: bold, $family: "Arial, sans-serif");
 	color: #fff;
 	text-transform: none;
 	background: fade-out(#000, .15);
-	margin: #{relative($base_margin)}rem 0;
+	margin: #{relative(20)}rem 0;
 	padding: #{baseline($base_font-size + 6, .875) / 2}em;
 	display: inline-block;
 	*display: inline;
@@ -54,14 +54,14 @@ fieldset > div { margin: #{relative($base_margin)}rem 0; }
 .subtle {
 	@include baseline($base_font-size + 3, .875, $optional: normal, $family: "monospace, serif");
 	color: #666;
-	margin: #{relative($base_margin)}rem 0;
+	margin: #{relative(20)}rem 0;
 }
 
 // Responsive tablular data:
 .scroll {
 	
 	width: 100%;
-	margin: #{relative($base_margin)}rem 0;
+	margin: #{relative(10)}rem 0;
 	overflow-y: auto;
 	/*-webkit-overflow-scrolling: touch;*/
 	

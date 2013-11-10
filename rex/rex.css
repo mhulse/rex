@@ -7,8 +7,8 @@
  * @docs https://github.com/mhulse/rex
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
- * @version 1.2.1
- * @date 2013/11/03
+ * @version 2.0.0
+ * @date 2013/11/09
  */
 
 *,
@@ -62,12 +62,6 @@ body {
 	line-height: 1.5;
 }
 
-address {
-	font-size: 1rem;
-	line-height: 1.125;
-	margin: .75rem 0;
-}
-
 h1,
 h2,
 h3,
@@ -88,7 +82,8 @@ h6,
 .rex_sh6 {
 	font-size: 1rem;
 	line-height: 1.5;
-	margin: 0 0 .125em;
+	margin-top: 0;
+	margin-bottom: .125em;
 }
 
 h1,
@@ -140,85 +135,21 @@ h6,
 .rex_sh5,
 .rex_sh6 { font-weight: normal; }
 
-blockquote { margin: .75rem 1.5rem; }
-blockquote > :first-child { margin-top: 0 !important; }
-blockquote > :last-child { margin-bottom: 0 !important; }
-
-dl {
-	font-size: 1rem;
-	line-height: 1.125;
-	margin: .75rem 0;
-	padding: 0;
-}
-
+li,
 dt,
 dd {
-	margin: 0 0 .375rem;
-	padding: 0;
-}
-
-dd { margin-left: .5rem; }
-
-figure { margin: .75rem 0; }
-
-figcaption {
-	font-size: .875rem;
-	line-height: 1.5;
-}
-figcaption p { font-size: inherit; }
-figcaption > :first-child { margin-top: 0 !important; }
-figcaption > :last-child { margin-bottom: 0 !important; }
-
-hr,
-.rex_hr {
-	border: 0;
-	border-top-width: .0625rem;
-	border-style: solid;
-	height: 0;
-	margin: .75rem 0;
-	padding: 0;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
-}
-
-ol,
-ul {
 	font-size: 1rem;
 	line-height: 1.125;
-	margin: .75rem 0;
-	padding: 0;
-	list-style-position: outside;
+	margin-top: .375em;
+	margin-bottom: .375em;
 }
-
-li {
-	margin: 0 0 .375rem;
-	padding: 0;
-}
-
-li img {
-	display: inline;
-	vertical-align: top;
-}
-
-ol { margin-left: 3rem; }
-
-li ol { margin-left: 3rem; }
 
 p {
 	font-size: 1rem;
 	line-height: 1.5;
-	margin: .75rem 0;
+	margin-top: .75rem;
+	margin-bottom: .75rem;
 }
-
-pre {
-	font-size: .875rem;
-	line-height: 1.28571428571429;
-	margin: .75rem 0;
-}
-
-ul { margin-left: 1.5rem; }
-
-li ul { margin-left: .5rem; }
 
 small { font-size: 80%; }
 
@@ -234,6 +165,8 @@ sub { bottom: -.25em; }
 
 sup { top: -.5em; }
 
+img { vertical-align: top; }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
@@ -242,7 +175,8 @@ table {
 caption {
 	font-size: .875rem;
 	line-height: 1.28571428571429;
-	padding: .21428571428571em 0;
+	padding-top: .21428571428571em;
+	padding-bottom: .21428571428571em;
 }
 
 th,
@@ -250,14 +184,16 @@ td {
 	font-size: 1rem;
 	line-height: 1.125;
 	margin: 0;
-	padding: .1875em 0;
+	padding-top: .1875em;
+	padding-bottom: .1875em;
 }
 
 form { margin: 0; }
 
 fieldset {
-	margin: 1rem 0;
-	padding: .0625rem 0 0;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	padding-top: .0625rem;
 }
 
 input,
@@ -281,7 +217,8 @@ input[type="password"] {
 	line-height: 1.5;
 	height: 1.5rem;
 	margin: 0;
-	padding: 0 .25em;
+	padding-right: .25em;
+	padding-left: .25em;
 	vertical-align: baseline;
 }
 
@@ -295,7 +232,7 @@ legend {
 	font-size: 1.125rem;
 	line-height: 1.16666666666667;
 	margin: 0;
-	padding: 0 0 .33333333333333em;
+	padding-bottom: .33333333333333em;
 }
 
 select {

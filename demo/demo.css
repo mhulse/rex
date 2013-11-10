@@ -7,8 +7,8 @@
  * @docs https://github.com/mhulse/rex
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
- * @version 1.2.1
- * @date 2013/11/03
+ * @version 2.0.0
+ * @date 2013/11/09
  */
 
 .test1 { line-height: 1.92; }
@@ -21,7 +21,7 @@
 
 .test3 { line-height: 1.5; }
 
-body { padding: .75rem; }
+body { padding: 3.125rem; }
 
 h1 + p,
 h2 + p,
@@ -35,14 +35,14 @@ img {
 	max-height: 100%;
 }
 
-fieldset > div { margin: .75rem 0; }
+fieldset > div { margin: .625rem 0; }
 
 .marker {
 	font: bold 1.375rem/.95454545454545 Arial, sans-serif;
 	color: #fff;
 	text-transform: none;
 	background: rgba(0, 0, 0, .85);
-	margin: .75rem 0;
+	margin: 1.25rem 0;
 	padding: .47727272727273em;
 	display: inline-block;
 	*display: inline;
@@ -53,12 +53,12 @@ fieldset > div { margin: .75rem 0; }
 .subtle {
 	font: normal 1.1875rem/1.10526315789474 monospace, serif;
 	color: #666;
-	margin: .75rem 0;
+	margin: 1.25rem 0;
 }
 
 .scroll {
 	width: 100%;
-	margin: .75rem 0;
+	margin: .625rem 0;
 	overflow-y: auto;
 	/*-webkit-overflow-scrolling: touch;*/
 }

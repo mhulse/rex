@@ -7,8 +7,8 @@
  * @docs https://github.com/mhulse/rex
  * @copyright Copyright (c) 2013 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
- * @version 1.2.1
- * @date 2013/11/03
+ * @version 2.0.0
+ * @date 2013/11/09
  */
 
 (function(document) {
@@ -21,7 +21,7 @@
 	
 	$switch.href = '#';
 	$switch.innerHTML = txt1;
-	$switch.setAttribute('style', 'position:fixed;top:5px;right:5px;padding:5px 10px;background:rgba(0,0,0,.1);border:1px solid rgba(0,0,0,.1);border-radius:3px;');
+	$switch.setAttribute('style', 'position:fixed;top:25px;right:25px;padding:5px 10px;background:rgba(0,0,0,.1);border:1px solid rgba(0,0,0,.1);border-radius:3px;');
 	
 	$switch.onclick = function() {
 		

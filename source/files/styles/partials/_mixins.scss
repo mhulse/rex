@@ -96,25 +96,31 @@
 	
 	// Grid overlay:
 	&::before {
-		background-image:
-			-webkit-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-			-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-			-webkit-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
-		background-image:
-			-moz-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-			-moz-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-			-moz-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
-		background-image:
-			linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-			linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-			linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
-		background-size:
-			100% #{relative($base_line-height)}rem,     // Match base `line-height`.
-			100% #{relative($base_line-height) / 2}rem, // Half base `line-height`.
-			100% #{relative($base_line-height) / 4}rem; // Quarter base `line-height`.
-		background-position: 0 0;       // Put line adjustments here.
-		background-origin: content-box; // Regardless of padding, background will begin in the corner of the box.
-		background-attachment: local;   // For scrolling.
+		
+		background: {
+			
+			image: -webkit-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+			       -webkit-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+			       -webkit-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+			
+			image: -moz-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+			       -moz-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+			       -moz-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+			
+			image: linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
+			       linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
+			       linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+			
+			size: 100% #{relative($base_line-height)}rem,     // Match base `line-height`.
+			      100% #{relative($base_line-height) / 2}rem, // Half base `line-height`.
+			      100% #{relative($base_line-height) / 4}rem; // Quarter base `line-height`.
+			
+			position: 0 0;       // Put line adjustments here.
+			origin: content-box; // Regardless of padding, background will begin in the corner of the box.
+			attachment: local;   // For scrolling.
+			
+		}
+		
 		width: 100%;
 		display: block;
 		position: absolute;
@@ -123,6 +129,7 @@
 		z-index: 999; // Above all other content.
 		content: "";
 		pointer-events: none; // The element is never the target of mouse events.
+		
 	}
 	
 	// On click, hide grid:
