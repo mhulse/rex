@@ -21,6 +21,8 @@
 - [CSS](#css)
 	- [Features](#features)
 - [Caveats, limitations and/or assumptions](#caveats-limitations-andor-assumptions)
+- [Q & A](#q-a)
+	- [How do I make everything smaller?](#how-do-i-make-everything-smaller)
 - [Contributing](#contributing)
 	- [Bumping the version](#bumping-the-version)
 - [Feedback](#feedback)
@@ -145,6 +147,19 @@ Feature | Description
 1. If you change the base `font-size` and `line-height`, there's no guarantees that out of the box styles will adapt well; in other words, changing these variables will probably require one to adjust each of Rex's elements to fit the new base values.
 1. Due to the "fudge factor", the `.baseline` class does not actually align its grid lines to the baseline of a character; instead, this class aligns the text to the vertical center of a grid line.
 1. Buyer beware: I make heavy use of the [`rem` unit](http://snook.ca/archives/html_and_css/font-size-with-rem), with no fallbacks.
+
+## Q & A
+
+### Q: How do I make everything smaller?
+
+**A:** Crack open the `_variables.scss` partial, and:
+
+```text
+$base_font-size: 14px;
+$base_line-height: 22px;
+```
+
+![Bam!](https://f.cloud.github.com/assets/218624/1966914/e42a5ee8-82ce-11e3-8fe1-758f00f88f65.gif)
 
 ## Contributing
 
