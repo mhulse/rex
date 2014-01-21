@@ -215,7 +215,6 @@ input[type="text"],
 input[type="password"] {
 	font-size: 1em;
 	line-height: 1.5;
-	height: 1.5rem;
 	margin: 0;
 	padding-right: .25em;
 	padding-left: .25em;

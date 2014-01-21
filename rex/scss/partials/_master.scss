@@ -1455,7 +1455,7 @@ video {}
 	input[type="text"],
 	%rex_input-text {
 		@include baseline($base_font-size, 1, em);
-		height: #{relative($base_line-height)}rem;
+		//height: #{relative($base_line-height)}rem;
 		margin: 0;
 		padding: {
 			right: #{relative($base_line-height / 6)}em;
