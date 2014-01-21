@@ -21,7 +21,7 @@
 - [CSS](#css)
 	- [Features](#features)
 - [Caveats, limitations and/or assumptions](#caveats-limitations-andor-assumptions)
-- [Q & A](#q-a)
+- [Q & A](#qa)
 - [Contributing](#contributing)
 	- [Bumping the version](#bumping-the-version)
 - [Feedback](#feedback)
@@ -147,7 +147,7 @@ Feature | Description
 1. Due to the "fudge factor", the `.baseline` class does not actually align its grid lines to the baseline of a character; instead, this class aligns the text to the vertical center of a grid line.
 1. Buyer beware: I make heavy use of the [`rem` unit](http://snook.ca/archives/html_and_css/font-size-with-rem), with no fallbacks.
 
-## Q & A&nbsp;[&#8613;](#table-of-contents)
+## Q&nbsp;&amp;&nbsp;A&nbsp;[&#8613;](#table-of-contents)
 
 **Q: How do I make everything smaller?**
 
