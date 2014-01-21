@@ -28,7 +28,7 @@
 - [Release history](#release-history)
 - [LEGAL](#legal)
 
-## About [&#8613;](#table-of-contents)
+## About&nbsp;[&#8613;](#table-of-contents)
 
 Essentially, this code serves as a slightly opinionated yet very simple "local baseline grid" toolkit for use in other css projects.
 
@@ -58,7 +58,7 @@ The goal is to use a "local" baseline (and the math that powers it) as a quick a
 
 Just watch **[Rustlers' Rhapsody](http://amzn.to/19CUPdE)** ([Amazon VOD](http://amzn.to/18PXwre)) and all will be explained. :)
 
-## Demonstration [&#8613;](#table-of-contents)
+## Demonstration&nbsp;[&#8613;](#table-of-contents)
 
 DEVELOPMENT &bull;&nbsp;[html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.html) &bull;&nbsp;[css](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.css) | PRODUCTION &bull;&nbsp;[html](https://raw.github.com/mhulse/rex/gh-pages/demo/index.min.html) &bull;&nbsp;[css](https://raw.github.com/mhulse/rex/gh-pages/rex/rex.min.css)
 :-: | :-:
@@ -66,7 +66,7 @@ DEVELOPMENT &bull;&nbsp;[html](https://raw.github.com/mhulse/rex/gh-pages/demo/i
 
 **Note:** Only the [`DEVELOPMENT` demo](http://mhulse.github.io/rex/demo/) uses [`normalize.css`](http://necolas.github.io/normalize.css/).
 
-## Installation [&#8613;](#table-of-contents)
+## Installation&nbsp;[&#8613;](#table-of-contents)
 
 There are several ways to install this code:
 
@@ -88,7 +88,7 @@ Run `$ grunt watch` to automatically regenerate build files when you modify the 
 
 **Bonus:** Install the [LiveReload](http://feedback.livereload.com/knowledgebase/articles/86242) browser plugin to automatically reload your demo page when Grunt regenerates a new build (I'm using [Sublime Text 2](http://www.sublimetext.com/) and [LiveReload for Sublime Text 2](https://github.com/dz0ny/LiveReload-sublimetext2)).
 
-## SCSS API [&#8613;](#table-of-contents)
+## SCSS API&nbsp;[&#8613;](#table-of-contents)
 
 Available SCSS overrides and utilities:
 
@@ -125,7 +125,7 @@ Name | Shorthand | Description
 `baseline` | `bl` | Simple baseline mixin.
 `baseline-grid` | `blg` | Baseline grid css.
 
-## CSS [&#8613;](#table-of-contents)
+## CSS&nbsp;[&#8613;](#table-of-contents)
 
 CSS details:
 
@@ -141,13 +141,13 @@ Feature | Description
 `.h1`-`.h6` | All headings (e.g., `h1` through `h6`) have a corresponding class of the same name (i.e., `.h1` through `.h6`); for more information, read: [Don’t Style Headings Using HTML5 Sections](http://www.stubbornella.org/content/2011/09/06/style-headings-using-html5-sections/). These classes can be disabled via the `$flag_heading-classes` variable.
 `.sh1`-`.sh6` | In the same vein as the heading classes above, there's a set of subheading classes (i.e., `.sh1` through `.sh6`) that have similar functionality and can be disabled via the `$flag_subheading-classes` variable.
 
-## Caveats, limitations and/or assumptions [&#8613;](#table-of-contents)
+## Caveats, limitations and/or assumptions&nbsp;[&#8613;](#table-of-contents)
 
 1. If you change the base `font-size` and `line-height`, there's no guarantees that out of the box styles will adapt well; in other words, changing these variables will probably require one to adjust each of Rex's elements to fit the new base values.
 1. Due to the "fudge factor", the `.baseline` class does not actually align its grid lines to the baseline of a character; instead, this class aligns the text to the vertical center of a grid line.
 1. Buyer beware: I make heavy use of the [`rem` unit](http://snook.ca/archives/html_and_css/font-size-with-rem), with no fallbacks.
 
-## Q & A [&#8613;](#table-of-contents)
+## Q & A&nbsp;[&#8613;](#table-of-contents)
 
 **Q: How do I make everything smaller?**
 
@@ -160,7 +160,7 @@ $base_line-height: 22px;
 
 ![Bam!](https://f.cloud.github.com/assets/218624/1966914/e42a5ee8-82ce-11e3-8fe1-758f00f88f65.gif)
 
-## Contributing [&#8613;](#table-of-contents)
+## Contributing&nbsp;[&#8613;](#table-of-contents)
 
 Please review the [contributing guidelines](https://github.com/mhulse/rex/blob/gh-pages/CONTRIBUTING.md) for this repository.
 
@@ -179,11 +179,11 @@ When a build is ready for a version bump ...
 
 **Note:** REX uses [Semantic Versioning](http://semver.org/).
 
-## Feedback [&#8613;](#table-of-contents)
+## Feedback&nbsp;[&#8613;](#table-of-contents)
 
 [Bugs? Constructive feedback? Questions?](https://github.com/mhulse/rex/issues)
 
-## [Release history](https://github.com/mhulse/rex/releases) [&#8613;](#table-of-contents)
+## [Release history](https://github.com/mhulse/rex/releases)&nbsp;[&#8613;](#table-of-contents)
 
 * 2013-11-09   [v2.0.0](https://github.com/mhulse/rex/releases/tag/v2.0.0)   Simplified base styles.
 * 2013-11-03   [v1.2.1](https://github.com/mhulse/rex/releases/tag/v1.2.1)   Minor v1.2.1 patch.
