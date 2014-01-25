@@ -3,7 +3,7 @@
   "name": "rex",
   "ns": "rex_",
   "description": "Oh yeah, root's kicking in!",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "homepage": "https://github.com/mhulse/rex",
   "repository": {
     "type": "git",
@@ -11,7 +11,7 @@
   },
   "author": {
     "name": "Micky Hulse",
-    "url": "http://mhulse.com"
+    "url": "http://mky.io"
   },
   "licenses": [
     {
@@ -24,16 +24,16 @@
   },
   "dependencies": {
     "grunt": "0.4.1",
-    "grunt-contrib-jshint": "0.7.1",
+    "grunt-contrib-jshint": "0.8.0",
     "grunt-contrib-clean": "0.5.0",
-    "grunt-contrib-copy": "0.4.1",
-    "grunt-contrib-sass": "0.5.0",
+    "grunt-contrib-copy": "0.5.0",
+    "grunt-contrib-sass": "0.6.0",
     "grunt-contrib-watch": "0.5.3",
     "grunt-contrib-htmlmin": "0.1.3",
     "grunt-contrib-concat": "0.3.0",
-    "grunt-contrib-uglify": "0.2.6",
+    "grunt-contrib-uglify": "0.3.2",
     "grunt-env": "0.4.0",
-    "grunt-preprocess": "3.0.1",
+    "grunt-preprocess": "4.0.0",
     "grunt-bower-task": "0.3.2",
     "grunt-asciify": "0.2.2"
   },
