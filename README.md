@@ -86,8 +86,6 @@ For subsequent builds, just run `$ grunt`; this default task will generate or co
 
 Run `$ grunt watch` to automatically regenerate build files when you modify the `Gruntfile.js`, any of the templates or SCSS files.
 
-**Bonus:** Install the [LiveReload](http://feedback.livereload.com/knowledgebase/articles/86242) browser plugin to automatically reload your demo page when Grunt regenerates a new build (I'm using [Sublime Text 2](http://www.sublimetext.com/) and [LiveReload for Sublime Text 2](https://github.com/dz0ny/LiveReload-sublimetext2)).
-
 ## SCSS API&nbsp;[&#8613;](#table-of-contents)
 
 Available SCSS overrides and utilities:
