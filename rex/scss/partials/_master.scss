@@ -72,7 +72,7 @@
 // @see https://developer.mozilla.org/docs/web/css/box-sizing
 // @see https://github.com/twbs/bootstrap
 
-@if $flag_natural-box-model {
+@if $rex_flag-natural-box-model {
 	
 	* {
 		
@@ -109,9 +109,9 @@
 // @see http://stackoverflow.com/a/8877902/922323
 // @see https://coderwall.com/p/jsb-vw
 
-@if $flag_baseline {
+@if $rex_flag-baseline {
 	
-	.#{$NS}baseline { @include baseline-grid; }
+	.#{$REX}baseline { @include rex_baseline-grid; }
 	
 }
 
@@ -126,7 +126,7 @@
 // @see http://dev.w3.org/html5/spec#the-html-element
 // @see http://ç.whatwg.org#the-html-element
 
-html { font-size: percentage(relative($base_font-size, $browser_font-size)); }
+html { font-size: percentage(rex_relative($rex_base-font-size, $rex_browser-font-size)); }
 
 //======================================================================
 // SECTIONS
@@ -151,7 +151,7 @@ html { font-size: percentage(relative($base_font-size, $browser_font-size)); }
 
 body {
 	font-size: 100%;
-	line-height: relative($base_line-height);
+	line-height: rex_relative($rex_base-line-height);
 }
 
 //----------------------------------------------------------------------
@@ -226,7 +226,7 @@ h4,
 h5,
 h6,
 %rex_h1-h2-h3-h4-h5-h6 {
-	@include baseline($base_font-size);
+	@include rex_baseline($rex_base-font-size);
 	margin: {
 		top: 0;
 		bottom: .125em;
@@ -234,63 +234,63 @@ h6,
 }
 
 h1,
-%rex_h1 { @include baseline($base_font-size + 30); }
+%rex_h1 { @include rex_baseline($rex_base-font-size + 30); }
 
 h2,
-%rex_h2 { @include baseline($base_font-size + 24, .875); }
+%rex_h2 { @include rex_baseline($rex_base-font-size + 24, .875); }
 
 h3,
-%rex_h3 { @include baseline($base_font-size + 18, .75); }
+%rex_h3 { @include rex_baseline($rex_base-font-size + 18, .75); }
 
 h4,
-%rex_h4 { @include baseline($base_font-size + 12, .625); }
+%rex_h4 { @include rex_baseline($rex_base-font-size + 12, .625); }
 
 h5,
-%rex_h5 { @include baseline($base_font-size + 6); }
+%rex_h5 { @include rex_baseline($rex_base-font-size + 6); }
 
 h6,
-%rex_h6 { @include baseline($base_font-size + 2, .875); }
+%rex_h6 { @include rex_baseline($rex_base-font-size + 2, .875); }
 
-@if $flag_heading-classes {
+@if $rex_flag-heading-classes {
 	
-	.#{$NS}h1,
-	.#{$NS}h2,
-	.#{$NS}h3,
-	.#{$NS}h4,
-	.#{$NS}h5,
-	.#{$NS}h6 { @extend %rex_h1-h2-h3-h4-h5-h6; }
+	.#{$REX}h1,
+	.#{$REX}h2,
+	.#{$REX}h3,
+	.#{$REX}h4,
+	.#{$REX}h5,
+	.#{$REX}h6 { @extend %rex_h1-h2-h3-h4-h5-h6; }
 	
-	.#{$NS}h1 { @extend %rex_h1; }
-	.#{$NS}h2 { @extend %rex_h2; }
-	.#{$NS}h3 { @extend %rex_h3; }
-	.#{$NS}h4 { @extend %rex_h4; }
-	.#{$NS}h5 { @extend %rex_h5; }
-	.#{$NS}h6 { @extend %rex_h6; }
+	.#{$REX}h1 { @extend %rex_h1; }
+	.#{$REX}h2 { @extend %rex_h2; }
+	.#{$REX}h3 { @extend %rex_h3; }
+	.#{$REX}h4 { @extend %rex_h4; }
+	.#{$REX}h5 { @extend %rex_h5; }
+	.#{$REX}h6 { @extend %rex_h6; }
 	
 }
 
-@if $flag_subheading-classes {
+@if $rex_flag-subheading-classes {
 	
-	.#{$NS}sh1,
-	.#{$NS}sh2,
-	.#{$NS}sh3,
-	.#{$NS}sh4,
-	.#{$NS}sh5,
-	.#{$NS}sh6 { @extend %rex_h1-h2-h3-h4-h5-h6; }
+	.#{$REX}sh1,
+	.#{$REX}sh2,
+	.#{$REX}sh3,
+	.#{$REX}sh4,
+	.#{$REX}sh5,
+	.#{$REX}sh6 { @extend %rex_h1-h2-h3-h4-h5-h6; }
 	
-	.#{$NS}sh1,
-	.#{$NS}sh2,
-	.#{$NS}sh3,
-	.#{$NS}sh4,
-	.#{$NS}sh5,
-	.#{$NS}sh6 { font-weight: normal; }
+	.#{$REX}sh1,
+	.#{$REX}sh2,
+	.#{$REX}sh3,
+	.#{$REX}sh4,
+	.#{$REX}sh5,
+	.#{$REX}sh6 { font-weight: normal; }
 	
-	.#{$NS}sh1 { @extend %rex_h1; }
-	.#{$NS}sh2 { @extend %rex_h2; }
-	.#{$NS}sh3 { @extend %rex_h3; }
-	.#{$NS}sh4 { @extend %rex_h4; }
-	.#{$NS}sh5 { @extend %rex_h5; }
-	.#{$NS}sh6 { @extend %rex_h6; }
+	.#{$REX}sh1 { @extend %rex_h1; }
+	.#{$REX}sh2 { @extend %rex_h2; }
+	.#{$REX}sh3 { @extend %rex_h3; }
+	.#{$REX}sh4 { @extend %rex_h4; }
+	.#{$REX}sh5 { @extend %rex_h5; }
+	.#{$REX}sh6 { @extend %rex_h6; }
 	
 }
 
@@ -505,10 +505,10 @@ ol {}
 
 li,
 %rex_list {
-	@include baseline($base_font-size, .75);
+	@include rex_baseline($rex_base-font-size, .75);
 	margin: {
-		top: #{baseline($base_font-size, .25)}em;
-		bottom: #{baseline($base_font-size, .25)}em;
+		top: #{rex_baseline($rex_base-font-size, .25)}em;
+		bottom: #{rex_baseline($rex_base-font-size, .25)}em;
 	}
 }
 
@@ -519,10 +519,10 @@ li,
 // @see http://ç.whatwg.org#the-p-element
 
 p {
-	@include baseline($base_font-size);
+	@include rex_baseline($rex_base-font-size);
 	margin: {
-		top: #{baseline($base_font-size, .5)}rem;
-		bottom: #{baseline($base_font-size, .5)}rem;
+		top: #{rex_baseline($rex_base-font-size, .5)}rem;
+		bottom: #{rex_baseline($rex_base-font-size, .5)}rem;
 	}
 }
 
@@ -876,7 +876,7 @@ sub,
 	position: relative;
 	vertical-align: baseline;
 }
-sub { bottom: -#{relative(4)}em; }
+sub { bottom: -#{rex_relative(4)}em; }
 
 // The `<sup>` element represents a superscript and the `<sub>` element
 // represents a subscript.
@@ -887,7 +887,7 @@ sub { bottom: -#{relative(4)}em; }
 
 sup {
 	@extend %rex_sub;
-	top: -#{relative(8)}em;
+	top: -#{rex_relative(8)}em;
 }
 
 // The `<time>` element represents a precise date and/or time in the
@@ -1205,10 +1205,10 @@ video {}
 	// @see http://ç.whatwg.org#the-caption-element
 	
 	caption {
-		@include baseline($base_font-size - 2, .75);
+		@include rex_baseline($rex_base-font-size - 2, .75);
 		padding: {
-			top: #{baseline($base_font-size - 2, .25) / 2}em;
-			bottom: #{baseline($base_font-size - 2, .25) / 2}em;
+			top: #{rex_baseline($rex_base-font-size - 2, .25) / 2}em;
+			bottom: #{rex_baseline($rex_base-font-size - 2, .25) / 2}em;
 		}
 	}
 	
@@ -1277,11 +1277,11 @@ video {}
 	
 	th,
 	%rex_th {
-		@include baseline($base_font-size, .75);
+		@include rex_baseline($rex_base-font-size, .75);
 		margin: 0;
 		padding: {
-			top: #{baseline($base_font-size, .25) / 2}em;
-			bottom: #{baseline($base_font-size, .25) / 2}em;
+			top: #{rex_baseline($rex_base-font-size, .25) / 2}em;
+			bottom: #{rex_baseline($rex_base-font-size, .25) / 2}em;
 		}
 	}
 	
@@ -1339,10 +1339,10 @@ video {}
 	
 	fieldset {
 		margin: {
-			top: #{relative($base_font-size)}rem;
-			bottom: #{relative($base_font-size)}rem;
+			top: #{rex_relative($rex_base-font-size)}rem;
+			bottom: #{rex_relative($rex_base-font-size)}rem;
 		}
-		padding-top: #{relative(1)}rem; // Prevents margin collapse.
+		padding-top: #{rex_relative(1)}rem; // Prevents margin collapse.
 	}
 	
 	// The `<input>` element represents a typed data field, usually with a
@@ -1357,7 +1357,7 @@ video {}
 	
 	input,
 	%rex_input {
-		font-size: #{relative($base_font-size)}em;
+		font-size: #{rex_relative($rex_base-font-size)}em;
 		line-height: normal;
 		vertical-align: baseline;
 	}
@@ -1382,7 +1382,7 @@ video {}
 	%rex_input-checkbox {
 		padding: 0;
 		position: relative;
-		bottom: #{relative(2)}em;
+		bottom: #{rex_relative(2)}em;
 		vertical-align: middle;
 	}
 	
@@ -1454,12 +1454,12 @@ video {}
 	
 	input[type="text"],
 	%rex_input-text {
-		@include baseline($base_font-size, 1, em);
-		//height: #{relative($base_line-height)}rem;
+		@include rex_baseline($rex_base-font-size, 1, em);
+		//height: #{rex_relative($rex_base-line-height)}rem;
 		margin: 0;
 		padding: {
-			right: #{relative($base_line-height / 6)}em;
-			left: #{relative($base_line-height / 6)}em;
+			right: #{rex_relative($rex_base-line-height / 6)}em;
+			left: #{rex_relative($rex_base-line-height / 6)}em;
 		}
 		vertical-align: baseline;
 	}
@@ -1474,7 +1474,7 @@ video {}
 	// @see http://ç.whatwg.org#the-label-element
 	
 	label {
-		@include baseline($base_font-size, 1, em);
+		@include rex_baseline($rex_base-font-size, 1, em);
 		vertical-align: middle;
 	}
 	
@@ -1486,9 +1486,9 @@ video {}
 	// @see http://ç.whatwg.org#the-legend-element
 	
 	legend {
-		@include baseline($base_font-size + 2, .875);
+		@include rex_baseline($rex_base-font-size + 2, .875);
 		margin: 0;
-		padding-bottom: #{baseline($base_font-size + 2, .25)}em;
+		padding-bottom: #{rex_baseline($rex_base-font-size + 2, .25)}em;
 	}
 	
 	// The `<optgroup>` element represents a group of `<option>` elements with
@@ -1529,7 +1529,7 @@ video {}
 	// @see http://ç.whatwg.org#the-select-element
 	
 	select {
-		@include baseline($base_font-size, 1, em);
+		@include rex_baseline($rex_base-font-size, 1, em);
 		vertical-align: baseline;
 	}
 	
@@ -1544,8 +1544,8 @@ video {}
 	// @see http://ç.whatwg.org#the-textarea-element
 	
 	textarea {
-		@include baseline($base_font-size, 1, em);
-		min-height: #{relative($base_line-height * 5)}rem;
+		@include rex_baseline($rex_base-font-size, 1, em);
+		min-height: #{rex_relative($rex_base-line-height * 5)}rem;
 		overflow: auto;
 		margin: 0;
 		padding: 0;

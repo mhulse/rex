@@ -9,11 +9,11 @@
 // ```
 // @import "mixins";
 // .foo {
-//     @include baseline($size: 16, $offset: .75, $optional: "italic", $family: "Arial, sans-serif");
-//     @include baseline($size: 16, $offset: .75, $optional: "bold");
-//     @include baseline($size: 16, $offset: .75, $family: "Georgia, serif");
-//     @include baseline($size: 16, $offset: .75);
-//     @include baseline($size: 16);
+//     @include rex_baseline($size: 16, $offset: .75, $optional: "italic", $family: "Arial, sans-serif");
+//     @include rex_baseline($size: 16, $offset: .75, $optional: "bold");
+//     @include rex_baseline($size: 16, $offset: .75, $family: "Georgia, serif");
+//     @include rex_baseline($size: 16, $offset: .75);
+//     @include rex_baseline($size: 16);
 // }
 // ```
 //
@@ -50,10 +50,10 @@
 // @param { string } $family The `font-family`.
 // @return { string } Longhand `font-family` and `line-height` or shorthand `font`.
 
-@mixin baseline($size, $offset: 1, $unit: rem, $optional: null, $family: null) {
+@mixin rex_baseline($size, $offset: 1, $unit: rem, $optional: null, $family: null) {
 	
-	$font-size: #{relative($size)}$unit;
-	$line-height: baseline($size, $offset);
+	$font-size: #{rex_relative($size)}$unit;
+	$line-height: rex_baseline($size, $offset);
 	
 	@if $optional or $family {
 		
@@ -68,9 +68,9 @@
 	
 }
 	// Shorthand:
-	@mixin bl($size, $offset: 1, $unit: rem, $optional: null, $family: null) {
+	@mixin rex_bl($size, $offset: 1, $unit: rem, $optional: null, $family: null) {
 		
-		@include baseline($size, $offset, $unit, $optional, $family);
+		@include rex_baseline($size, $offset, $unit, $optional, $family);
 		
 	}
 
@@ -78,9 +78,9 @@
 //
 // Usage:
 //
-// `.foo { @include baseline-grid; }`
+// `.foo { @include rex_baseline-grid; }`
 
-@mixin baseline-grid {
+@mixin rex_baseline-grid {
 	
 	// For positioning of pseudo elements:
 	position: relative;
@@ -107,21 +107,21 @@
 		
 		background: {
 			
-			image: -webkit-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-			       -webkit-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-			       -webkit-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+			image: -webkit-linear-gradient(rgba($rex_baseline-major-grid-color, .75) 1px, transparent 1px),
+			       -webkit-linear-gradient(rgba($rex_baseline-minor-grid-color, .75) 1px, transparent 1px),
+			       -webkit-linear-gradient(rgba($rex_baseline-minor-grid-color, .25) 1px, transparent 1px);
 			
-			image: -moz-linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-			       -moz-linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-			       -moz-linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+			image: -moz-linear-gradient(rgba($rex_baseline-major-grid-color, .25) 1px, transparent 1px),
+			       -moz-linear-gradient(rgba($rex_baseline-minor-grid-color, .75) 1px, transparent 1px),
+			       -moz-linear-gradient(rgba($rex_baseline-minor-grid-color, .25) 1px, transparent 1px);
 			
-			image: linear-gradient(fade-out($baseline_major-grid-color, .25) 1px, transparent 1px),
-			       linear-gradient(fade-out($baseline_minor-grid-color, .25) 1px, transparent 1px),
-			       linear-gradient(fade-out($baseline_minor-grid-color, .75) 1px, transparent 1px);
+			image: linear-gradient(rgba($rex_baseline-major-grid-color, .75) 1px, transparent 1px),
+			       linear-gradient(rgba($rex_baseline-minor-grid-color, .75) 1px, transparent 1px),
+			       linear-gradient(rgba($rex_baseline-minor-grid-color, .25) 1px, transparent 1px);
 			
-			size: 100% #{relative($base_line-height)}rem,     // Match base `line-height`.
-			      100% #{relative($base_line-height) / 2}rem, // Half base `line-height`.
-			      100% #{relative($base_line-height) / 4}rem; // Quarter base `line-height`.
+			size: 100% #{rex_relative($rex_base-line-height)}rem,     // Match base `line-height`.
+			      100% #{rex_relative($rex_base-line-height) / 2}rem, // Half base `line-height`.
+			      100% #{rex_relative($rex_base-line-height) / 4}rem; // Quarter base `line-height`.
 			
 			position: 0 0;       // Put line adjustments here.
 			origin: content-box; // Regardless of padding, background will begin in the corner of the box.
@@ -144,12 +144,12 @@
 	&:active::before { display: none; }
 	
 	// On click, add a faux border to child elements to view where they begin/end in relationship to the baseline:
-	&:active * { box-shadow: inset 0 0 0 1px fade-out($baseline_outline-color, .5); }
+	&:active * { box-shadow: inset 0 0 0 1px rgba($rex_baseline-outline-color, .5); }
 	
 }
 	// Shorthand:
-	@mixin blg {
+	@mixin rex_blg {
 		
-		@include baseline-grid;
+		@include rex_baseline-grid;
 		
 	}

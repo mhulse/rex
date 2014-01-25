@@ -3,12 +3,12 @@
  * Oh yeah, root's kicking in!
  *
  * @author Micky Hulse
- * @link http://mhulse.com
+ * @link http://mky.io
  * @docs https://github.com/mhulse/rex
  * @copyright Copyright (c) 2014 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
- * @version 2.0.0
- * @date 2014/01/21
+ * @version 3.0.0
+ * @date 2014/01/24
  */
 
 (function(document) {

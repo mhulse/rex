@@ -3,12 +3,12 @@
  * Oh yeah, root's kicking in!
  *
  * @author Micky Hulse
- * @link http://mhulse.com
+ * @link http://mky.io
  * @docs https://github.com/mhulse/rex
  * @copyright Copyright (c) 2014 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
- * @version 2.0.0
- * @date 2014/01/21
+ * @version 3.0.0
+ * @date 2014/01/24
  */
 
 .test1 { line-height: 1.92; }
@@ -30,9 +30,9 @@ h4 + p,
 h5 + p,
 h6 + p { margin-top: 0; }
 
-img {
-	max-width: 100%;
-	max-height: 100%;
+img max {
+	width: 100%;
+	height: 100%;
 }
 
 fieldset > div { margin: .625rem 0; }

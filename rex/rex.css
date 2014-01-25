@@ -3,12 +3,12 @@
  * Oh yeah, root's kicking in!
  *
  * @author Micky Hulse
- * @link http://mhulse.com
+ * @link http://mky.io
  * @docs https://github.com/mhulse/rex
  * @copyright Copyright (c) 2014 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
- * @version 2.0.0
- * @date 2014/01/21
+ * @version 3.0.0
+ * @date 2014/01/24
  */
 
 *,
@@ -37,7 +37,7 @@
 }
 .rex_baseline::before {
 	background-image: -webkit-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px), -webkit-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
-	background-image: -moz-linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
+	background-image: -moz-linear-gradient(rgba(255, 0, 0, .25) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px), -moz-linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
 	background-image: linear-gradient(rgba(255, 0, 0, .75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, .75) 1px, transparent 1px), linear-gradient(rgba(0, 255, 255, .25) 1px, transparent 1px);
 	background-size: 100% 1.5rem, 100% .75rem, 100% .375rem;
 	background-position: 0 0;

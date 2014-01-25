@@ -6,7 +6,7 @@
 //
 // Usage:
 //
-// `.foo { line-height: strip(1.5em); }`
+// `.foo { line-height: rex_strip(1.5em); }`
 //
 // Output:
 //
@@ -18,7 +18,7 @@
 // @param { number } $value Any value with optional unit.
 // @return { number } $value minus its unit.
 
-@function strip($value) {
+@function rex_strip($value) {
 	
 	@return ($value / ($value * 0 + 1));
 	
@@ -32,8 +32,8 @@
 //
 // ```
 // .foo {
-//     font-size: #{relative(25px)}rem;
-//     margin: #{relative(10)}em 0;
+//     font-size: #{rex_relative(25px)}rem;
+//     margin: #{rex_relative(10)}em 0;
 // }
 // ```
 //
@@ -47,13 +47,13 @@
 // ```
 //
 // @param { number } $value Can be a value with or without a unit.
-// @param { number } [ $context = $base_font-size ] Context of relative unit calculation.
+// @param { number } [ $context = $rex_base-font-size ] Context of relative unit calculation.
 // @return { number } Relative result based on input params.
 
-@function relative($value, $context: $base_font-size) {
+@function rex_relative($value, $context: $rex_base-font-size) {
 	
-	$value: strip($value);
-	$context: strip($context);
+	$value: rex_strip($value);
+	$context: rex_strip($context);
 	
 	@return ($value / $context);
 	
@@ -68,8 +68,8 @@
 //
 // ```
 // .foo {
-//     line-height: baseline(25, .625);
-//     padding: #{baseline(25, .375) / 2)}em 0;
+//     line-height: rex_baseline(25, .625);
+//     padding: #{rex_baseline(25, .375) / 2)}em 0;
 // }
 // ```
 //
@@ -84,14 +84,14 @@
 //
 // @param { number } $value A number, assumed to be in pixels, where unit is optional.
 // @param { number } [ $offset = 1 ] Multiply the return value by this number.
-// @param { number } [ $context = $base_line-height ] Base `line-height` of document.
+// @param { number } [ $context = $rex_base-line-height ] Base `line-height` of document.
 // @return { number } A number relative to baseline.
 
-@function baseline($value, $offset: 1, $context: $base_line-height) {
+@function rex_baseline($value, $offset: 1, $context: $rex_base-line-height) {
 	
-	$value: strip($value);
-	$offset: strip($offset);
-	$context: strip($context);
+	$value: rex_strip($value);
+	$offset: rex_strip($offset);
+	$context: rex_strip($context);
 	
 	@return ((($context * ceil($value / $context)) / $value) * $offset);
 	

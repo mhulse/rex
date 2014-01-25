@@ -9,20 +9,20 @@
 // SCSS tests:
 //----------------------------------------------------------------------
 
-.test1 { line-height: baseline($base_font-size + 9); }
+.test1 { line-height: rex_baseline($rex_base-font-size + 9); }
 
 .test2 {
-	@include baseline($base_font-size + 9, .625);
-	padding: #{baseline($base_font-size + 9, .375) / 2}em 0; // (((1.92 * .375) = .72) / 2) = .36
+	@include rex_baseline($rex_base-font-size + 9, .625);
+	padding: #{rex_baseline($rex_base-font-size + 9, .375) / 2}em 0; // (((1.92 * .375) = .72) / 2) = .36
 }
 
-.test3 { line-height: strip(1.5em); }
+.test3 { line-height: rex_strip(1.5em); }
 
 // Demo only:
 //----------------------------------------------------------------------
 
 // Spacing for demo's sake:
-body { padding: #{relative(50)}rem; }
+body { padding: #{rex_relative(50)}rem; }
 
 // Tidy-up paragraphs after headings:
 h1, h2, h3, h4, h5, h6 {
@@ -31,37 +31,39 @@ h1, h2, h3, h4, h5, h6 {
 
 // Responsive images:
 img {
-	max-width: 100%;
-	max-height: 100%;
+	max {
+		width: 100%;
+		height: 100%;
+	}
 }
 
 // Spacing for form elements:
-fieldset > div { margin: #{relative(10)}rem 0; }
+fieldset > div { margin: #{rex_relative(10)}rem 0; }
 
 .marker {
-	@include baseline($base_font-size + 6, .875, $optional: bold, $family: "Arial, sans-serif");
+	@include rex_baseline($rex_base-font-size + 6, .875, $optional: bold, $family: "Arial, sans-serif");
 	color: #fff;
 	text-transform: none;
 	background: fade-out(#000, .15);
-	margin: #{relative(20)}rem 0;
-	padding: #{baseline($base_font-size + 6, .875) / 2}em;
+	margin: #{rex_relative(20)}rem 0;
+	padding: #{rex_baseline($rex_base-font-size + 6, .875) / 2}em;
 	display: inline-block;
 	*display: inline;
 	*zoom: 1;
-	box-shadow: 0 0 #{relative(5)}em 0 fade-out(#000, .45);
+	box-shadow: 0 0 #{rex_relative(5)}em 0 fade-out(#000, .45);
 }
 
 .subtle {
-	@include baseline($base_font-size + 3, .875, $optional: normal, $family: "monospace, serif");
+	@include rex_baseline($rex_base-font-size + 3, .875, $optional: normal, $family: "monospace, serif");
 	color: #666;
-	margin: #{relative(20)}rem 0;
+	margin: #{rex_relative(20)}rem 0;
 }
 
 // Responsive tablular data:
 .scroll {
 	
 	width: 100%;
-	margin: #{relative(10)}rem 0;
+	margin: #{rex_relative(10)}rem 0;
 	overflow-y: auto;
 	/*-webkit-overflow-scrolling: touch;*/
 	
