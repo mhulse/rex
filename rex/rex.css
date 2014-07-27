@@ -8,7 +8,7 @@
  * @copyright Copyright (c) 2014 Micky Hulse.
  * @license Released under the Apache License, Version 2.0.
  * @version 3.0.0
- * @date 2014/01/24
+ * @date 2014/07/27
  */
 
 *,
@@ -24,7 +24,7 @@
 	cursor: pointer;
 	cursor: hand;
 	-webkit-highlight: none;
-	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
 	-webkit-touch-callout: none;
 	-webkit-user-drag: none;
 	-webkit-user-modify: none;

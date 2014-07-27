@@ -1,6 +1,5 @@
 {
-  "name": "simple-bower",
-  "version": "0.0.0",
+  "name": "bower",
   "dependencies": {
     "normalize-css": "*"
   }
